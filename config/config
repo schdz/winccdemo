@@ -30,3 +30,5 @@ NofThreads=25
 
 [ui]
 versionControl = "git"
+defaultPanelFormat = “XML”
+numPanelBakFiles = 0
