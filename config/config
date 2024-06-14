@@ -1,7 +1,7 @@
 [general]
-pvss_path ="C:\Siemens\Automation\WinCC_OA\3.17\"
-proj_path ="C:\WinCC_OA_Proj\DemoApplication_3.17"
-proj_version ="3.17"
+pvss_path = "C:/Siemens/Automation/WinCC_OA/3.17"
+proj_path = "C:/WinCC_OA_Proj/v_3.17"
+proj_version = "3.17"
 
 langs = "de_AT.utf8"
 langs = "en_US.utf8"
@@ -15,7 +15,7 @@ activateAlertFiltering = 1
 [PID]
 dpTypeName = "PID_Control"
 
-[webClient] 
+[webClient]
 panel = "vision/login.pnl"
 httpPort = 8081
 httpsPort = 8443
@@ -24,9 +24,9 @@ httpsPort = 8443
 useHeaderSize = "Windows"
 
 [reporting]
-httpPort=8080
-httpAuth=0
-NofThreads=25
+httpPort = 8080
+httpAuth = 0
+NofThreads = 25
 
 [ui]
 versionControl = "git"
