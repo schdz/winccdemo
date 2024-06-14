@@ -12,14 +12,14 @@
 // 				is an own callback function. Measurements are generated       *
 //				normally artificially, process simulation is only done for	  *
 //				the 'water_supply' scenery. 								  *
-//                                                                            *  
-// Last modified:	Author:		Changes:                                      *	
+//                                                                            *
+// Last modified:	Author:		Changes:                                      *
 // 2001-04-30		MK			baseversion									  *
 // YYYY-MM-DD		You			please describe modifications				  *
 // 														 					  *
 //*****************************************************************************
 
-// ************************* GLOBAL VARIABLES *********************************
+//  1 ************************* GLOBAL VARIABLES *********************************
 
 //*****************************************************************************
 // These global variables are used to perform the value- and process simulation
@@ -51,10 +51,10 @@
   dyn_bool bRed, bRedYellow, bGreen, bFlashingGreen, bYellow;                 //
 // Weather station                                                            //
   int   iWeatherTime, iWeatherCountMS;                                        //
-//*****************************************************************************        
+//*****************************************************************************
 
 main()
-{ 
+{
   int 		 i;
   dyn_string slide_valve2,
              asDp;
@@ -70,17 +70,17 @@ main()
   GboSimValueOn=0;
 
   dpConnect("simulation_CB","ApplicationProperties.simulation.on:_online.._value",
-                            "ApplicationProperties.simulation.values.on:_online.._value",                            
+                            "ApplicationProperties.simulation.values.on:_online.._value",
                             "ApplicationProperties.simulation.values.speed:_online.._value",
-                            "ApplicationProperties.simulation.checkback.on:_online.._value",                            
+                            "ApplicationProperties.simulation.checkback.on:_online.._value",
                             "ApplicationProperties.simulation.checkback.delay:_online.._value",
-                            "ApplicationProperties.simulation.process.on:_online.._value");  
+                            "ApplicationProperties.simulation.process.on:_online.._value");
 
 
   //****************************************************************************
   //*********Simulation for the 'traffic_control' scenery*******************
   //****************************************************************************
-  
+
   //Simulation for all the Datapoints with the DpType TC_TRAFFIC_SIGN
   asDp = dpNames("*","TC_TRAFFIC_SIGN");
   if (dynlen(asDp) >= 1)
@@ -93,8 +93,8 @@ main()
                                       asDp[i]+".cmd.manual:_online.._value");
     }
   }
- 
-  //Simulation for all the Datapoints with the DpType TC_TRAFFIC_ALERT  
+
+  //Simulation for all the Datapoints with the DpType TC_TRAFFIC_ALERT
   asDp = dpNames("*","TC_TRAFFIC_ALERT");
   if (dynlen(asDp) >= 1)
   {
@@ -122,13 +122,13 @@ main()
                                       ,asDp[i]+".cmd.flashing_yellow:_online.._value"
                                       ,asDp[i]+".cmd.green:_online.._value"
                                       ,asDp[i]+".cmd.flashing_green:_online.._value");
-    } 
-  } 
+    }
+  }
 
   //****************************************************************************
   //*********Simulation for the 'building_automation' scenery*******************
   //****************************************************************************
-  
+
   //Simulation for all the Datapoint with the DpType 'HVAC_DEVICESWITCH'
   asDp = dpNames("*","HVAC_DEVICESWITCH");
   if (dynlen(asDp) >= 1)
@@ -156,7 +156,7 @@ main()
     }
   }
 
-  //Simulation for all the Datapoint with the DpType 'HVAC_FLAP' 
+  //Simulation for all the Datapoint with the DpType 'HVAC_FLAP'
   asDp = dpNames("*","HVAC_FLAP");
   if (dynlen(asDp) >= 1)
   {
@@ -202,7 +202,7 @@ main()
     }
   }
 
-  //Simulation for all the Datapoint with the DpType 'HVAC_pump'  
+  //Simulation for all the Datapoint with the DpType 'HVAC_pump'
   asDp = dpNames("*","HVAC_PUMP");
   if (dynlen(asDp) >= 1)
   {
@@ -268,11 +268,11 @@ main()
   //Simulation of values + process for water supply, building automation, traffic control
   //and weather station ****************************************************************
   startThread("All_simulations");
-  //*************************************************************************************  
+  //*************************************************************************************
 }
 
 //*****************************************************************************
-// simulation_CB(...)												  		  *	
+// simulation_CB(...)												  		  *
 //*****************************************************************************
 simulation_CB(string dp1, bool  boSimOn,
               string dp2, bool  boSimValuesOn,
@@ -296,7 +296,7 @@ simulation_CB(string dp1, bool  boSimOn,
 // end of simulation_CB(...)*************************************************
 
 //*****************************************************************************
-// traffic_sign_CB(...)												  		  *	
+// traffic_sign_CB(...)												  		  *
 //*****************************************************************************
 traffic_sign_CB(string dp1 , int  iValue,
                 string dp2 , bool booff,
@@ -308,7 +308,7 @@ traffic_sign_CB(string dp1 , int  iValue,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-  
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
 
     dpSet(dpe+".state.value:_original.._value",iValue,
@@ -319,7 +319,7 @@ traffic_sign_CB(string dp1 , int  iValue,
 // end of traffic_sign_CB(...)*************************************************
 
 //*****************************************************************************
-// traffic_alert_CB(...)												  		  *	
+// traffic_alert_CB(...)												  		  *
 //*****************************************************************************
 traffic_alert_CB(string dp1 , bool boAlert,
                  string dp2 , bool booff,
@@ -331,9 +331,9 @@ traffic_alert_CB(string dp1 , bool boAlert,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-  
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
-    
+
     dpSet(dpe+".state.alert:_original.._value",boAlert,
         dpe+".state.off:_original.._value",booff,
         dpe+".state.manual:_original.._value",boManual);
@@ -342,7 +342,7 @@ traffic_alert_CB(string dp1 , bool boAlert,
 // end of traffic_alert_CB(..) *************************************************
 
 //*****************************************************************************
-// traffic_Light_CB(...)												  		  *	
+// traffic_Light_CB(...)												  		  *
 //*****************************************************************************
 traffic_Light_CB(string dp1,bool boManual,
                  string dp2,bool boOff,
@@ -359,9 +359,9 @@ traffic_Light_CB(string dp1,bool boManual,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-  
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
-    
+
     dpSet(dpe+".state.manual:_original.._value",boManual
          ,dpe+".state.off:_original.._value",boOff
          ,dpe+".state.red:_original.._value",boRed
@@ -375,7 +375,7 @@ traffic_Light_CB(string dp1,bool boManual,
 // end of traffic_Light_CB(...) ***********************************************
 
 //*****************************************************************************
-// HVAC_fan_CB(...)												  		  *	
+// HVAC_fan_CB(...)												  		  *
 //*****************************************************************************
 HVAC_fan_CB(string dp1 , bool bon1,
             string dp2 , bool bon2,
@@ -388,7 +388,7 @@ HVAC_fan_CB(string dp1 , bool bon1,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-  
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
 
     dpSet(dpe+".state.n1:_original.._value",bon1,
@@ -400,7 +400,7 @@ HVAC_fan_CB(string dp1 , bool bon1,
 // end of HVAC_fan_CB(...)*************************************************
 
 //*****************************************************************************
-// HVAC_flap_CB(...)												  		  *	
+// HVAC_flap_CB(...)												  		  *
 //*****************************************************************************
 HVAC_flap_CB(string dp1 , float fOpen,
              string dp2 , float fClose)
@@ -411,7 +411,7 @@ HVAC_flap_CB(string dp1 , float fOpen,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-  
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
     dpSet(dpe+".state.open:_original.._value",fOpen,
           dpe+".state.closed:_original.._value",fClose);
@@ -420,7 +420,7 @@ HVAC_flap_CB(string dp1 , float fOpen,
 // end of HVAC_flap_CB(...)*************************************************
 
 //*****************************************************************************
-// HVAC_preheaterPump_CB(...)												  		  *	
+// HVAC_preheaterPump_CB(...)												  		  *
 //*****************************************************************************
 HVAC_preheaterPump_CB(string dp1 , bool boPumpOn,
                       string dp2 , bool boPumpOff,
@@ -432,9 +432,9 @@ HVAC_preheaterPump_CB(string dp1 , bool boPumpOn,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-   
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
- 
+
     dpSet(dpe+".pump.state.on:_original.._value",boPumpOn,
           dpe+".pump.state.off:_original.._value",boPumpOff,
           dpe+".pump.state.manual:_original.._value",boPumpManual);
@@ -443,7 +443,7 @@ HVAC_preheaterPump_CB(string dp1 , bool boPumpOn,
 // end of HVAC_preheaterPump_CB(...)*******************************************
 
 //*****************************************************************************
-// HVAC_preheaterValve_CB(...)												  		  *	
+// HVAC_preheaterValve_CB(...)												  		  *
 //*****************************************************************************
 HVAC_preheaterValve_CB(string dp1 , bool boValveOpen,
                        string dp2 , bool boValveClose,
@@ -456,7 +456,7 @@ HVAC_preheaterValve_CB(string dp1 , bool boValveOpen,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-   
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
 
     dpSet(dpe+".valve.state.open:_original.._value",boValveOpen,
@@ -469,7 +469,7 @@ HVAC_preheaterValve_CB(string dp1 , bool boValveOpen,
 
 
 //*****************************************************************************
-// HVAC_valve_CB(...)												  		  *	
+// HVAC_valve_CB(...)												  		  *
 //*****************************************************************************
 HVAC_valve_CB(string dp1 , bool boValveOpen,
               string dp2 , bool boValveClose,
@@ -482,19 +482,19 @@ HVAC_valve_CB(string dp1 , bool boValveOpen,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-  
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
 
     dpSet(dpe+".state.open:_original.._value",boValveOpen,
           dpe+".state.closed:_original.._value",boValveClose,
           dpe+".state.manual:_original.._value",boValveManual,
           dpe+".value.position:_original.._value",fValveSetpoint);
-  }  
+  }
 }
 // end of HVAC_valve_CB(...)*************************************************
 
 //*****************************************************************************
-// HVAC_pump_CB(...)												  		  *	
+// HVAC_pump_CB(...)												  		  *
 //*****************************************************************************
 HVAC_pump_CB(string dp1 , bool boOn,
              string dp2 , bool booff,
@@ -506,7 +506,7 @@ HVAC_pump_CB(string dp1 , bool boOn,
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-  
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
 
     dpSet(dpe+".state.on:_original.._value",boOn,
@@ -517,7 +517,7 @@ HVAC_pump_CB(string dp1 , bool boOn,
 // end of HVAC_pump_CB(...)*************************************************
 
 //*****************************************************************************
-// HVAC_deviceswitch_CB(...)												  		  *	
+// HVAC_deviceswitch_CB(...)												  		  *
 //*****************************************************************************
 HVAC_deviceswitch_CB(string dp1 , bool boAuto,
                      string dp2 , bool booff,
@@ -532,16 +532,16 @@ HVAC_deviceswitch_CB(string dp1 , bool boAuto,
     dyn_string asDp;
     float fPosition;
     int i;
-    
+
     if(booff) fPosition=0;
     else      fPosition=100;
-  
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
 
     dpSet(dpe+".state.auto:_original.._value",boAuto,
           dpe+".state.off:_original.._value",booff,
           dpe+".state.manual:_original.._value",boManual);
-    
+
     //change the state of all the Datapoint with the DpType 'HVAC_FAN'
     asDp = dpNames("*","HVAC_FAN");
     if (dynlen(asDp) >= 1)
@@ -634,11 +634,11 @@ HVAC_deviceswitch_CB(string dp1 , bool boAuto,
                   asDp[i]+".cmd.close:_original.._value",0,
                   asDp[i]+".cmd.manual:_original.._value",0,
                   asDp[i]+".cmd.setpoint:_original.._value",50);
-        } 
+        }
       }
     }
 
-    //change the state of all the Datapoint with the DpType 'HVAC_pump'  
+    //change the state of all the Datapoint with the DpType 'HVAC_pump'
     asDp = dpNames("*","HVAC_PUMP");
     if (dynlen(asDp) >= 1)
     {
@@ -658,12 +658,12 @@ HVAC_deviceswitch_CB(string dp1 , bool boAuto,
             dpSet(asDp[i]+".cmd.on:_original.._value",0,
                   asDp[i]+".cmd.off:_original.._value",0,
                   asDp[i]+".cmd.manual:_original.._value",0);
-      
+
         }
       }
     }
- 
-  //change the state of all the Datapoint with the DpType 'HVAC_FLAP' 
+
+  //change the state of all the Datapoint with the DpType 'HVAC_FLAP'
   asDp = dpNames("*","HVAC_FLAP");
   if (dynlen(asDp) >= 1)
   {
@@ -685,7 +685,7 @@ HVAC_deviceswitch_CB(string dp1 , bool boAuto,
 // end of HVAC_deviceswitch_CB(...)********************************************
 
 //*****************************************************************************
-// WATER_Reservoir_valve_CB											  		  *	
+// WATER_Reservoir_valve_CB											  		  *
 //*****************************************************************************
 WATER_Reservoir_valve_CB(string dp1, int   iOpen, //.cmd.open
                          string dp2, int   iAuto, //.cmd.mode.auto
@@ -695,32 +695,32 @@ WATER_Reservoir_valve_CB(string dp1, int   iOpen, //.cmd.open
 
 //DebugTN("WATER_Reservoir_valve_CB");
 //DebugTN("WATER_Reservoir_valve_CB",iOpen, iAuto, fPosition);
-//DebugTN("WATER_Reservoir_valve_CB: GboSimOn, GboSimCheckBackOn", GboSimOn, GboSimCheckBackOn);    
+//DebugTN("WATER_Reservoir_valve_CB: GboSimOn, GboSimCheckBackOn", GboSimOn, GboSimCheckBackOn);
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-    
+
     if(iOpen == 2) //open cmd
       bIsOpen = TRUE;
     else
       if(iOpen == 4) //close cmd
         bIsOpen = FALSE;
 
-    if(iOpen != 1) //stop command    
+    if(iOpen != 1) //stop command
       bIsClosed = !bIsOpen;
-    
+
     dpSet(dpe+".state.opening:_original.._value",bIsOpen,
           dpe+".state.closing:_original.._value",bIsClosed);
 
-//DebugTN("WATER_Reservoir_valve_CB: GfDelayCheckBack", GfDelayCheckBack); 
+//DebugTN("WATER_Reservoir_valve_CB: GfDelayCheckBack", GfDelayCheckBack);
 
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
-    
+
     if(iAuto == 1)
       bIsAuto = TRUE;
     else
       bIsAuto = FALSE;
-      
+
     bIsManual = !bIsAuto;
     if(bIsManual)
     {
@@ -737,84 +737,84 @@ WATER_Reservoir_valve_CB(string dp1, int   iOpen, //.cmd.open
         bIsOpen   = TRUE;
       }
     }
-      
+
     if(bIsAuto) //automatic mode - do not modify position
     {
-//DebugTN("WATER_Reservoir_valve_CB: bIsAuto, fPosition", bIsAuto, fPosition);  
+//DebugTN("WATER_Reservoir_valve_CB: bIsAuto, fPosition", bIsAuto, fPosition);
       dpSet(dpe+".state.open:_original.._value",0,  //a position between full open or closed state
             dpe+".state.close:_original.._value",0,
             dpe+".state.mode.auto:_original.._value",bIsAuto,
             dpe+".state.mode.man:_original.._value",bIsManual,
             dpe+".state.opening:_original.._value",0,
-            dpe+".state.closing:_original.._value",0);    
+            dpe+".state.closing:_original.._value",0);
     }
-    else        //manual mode 
+    else        //manual mode
     {
-//DebugTN("WATER_Reservoir_valve_CB: fPosition",fPosition);  
+//DebugTN("WATER_Reservoir_valve_CB: fPosition",fPosition);
       dpSet(dpe+".state.open:_original.._value",bIsOpen,
             dpe+".state.close:_original.._value",bIsClosed,
             dpe+".state.mode.auto:_original.._value",bIsAuto,
             dpe+".state.mode.man:_original.._value",bIsManual,
             dpe+".value.position:_original.._value",fPosition,
             dpe+".state.opening:_original.._value",0,
-            dpe+".state.closing:_original.._value",0);    
+            dpe+".state.closing:_original.._value",0);
     }
-  }      
+  }
 }
-                         
-// end of WATER_Reservoir_valve_CB(...)****************************************		
+
+// end of WATER_Reservoir_valve_CB(...)****************************************
 
 //*****************************************************************************
-// WATER_PUMP2_CB											  		          *	
+// WATER_PUMP2_CB											  		          *
 //*****************************************************************************
 WATER_Pump2_CB(string dp1, int   iOn,    //.cmd.on
                string dp2, int   iAuto,  //.cmd.mode.auto
                string dp3, float fSpeed) //.para.speed
 {
   bool bIsOn, bIsOff, bIsAuto, bIsManual;
-  
+
 //DebugTN("WATER_Pump2_CB");
-    
+
   if(GboSimOn && GboSimCheckBackOn)
   {
     string dpe=substr(dp1,0,strpos(dp1,"."));
-    
+
     bIsOn = FALSE;
     if(iOn > 1)
       bIsOn = TRUE;
-    
+
     bIsOff = !bIsOn;
-    
+
         delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
-    
+
     if(iAuto == 1)
       bIsAuto = TRUE;
     else
       bIsAuto = FALSE;
-      
+
     bIsManual = !bIsAuto;
     if(bIsManual && bIsOff)
-      fSpeed = 0.0; 
-      
+      fSpeed = 0.0;
+
     if(bIsAuto) //automatic mode do not modify speed
       dpSet(dpe+".state.on:_original.._value",bIsOn,
             dpe+".state.off:_original.._value",bIsOff,
             dpe+".state.mode.auto:_original.._value",bIsAuto,
             dpe+".state.mode.man:_original.._value",bIsManual);
-    else        //manual mode 
+    else        //manual mode
       dpSet(dpe+".state.on:_original.._value",bIsOn,
             dpe+".state.off:_original.._value",bIsOff,
             dpe+".state.mode.auto:_original.._value",bIsAuto,
             dpe+".state.mode.man:_original.._value",bIsManual,
             dpe+".value.speed:_original.._value",fSpeed);
-  }      
+  }
 }
-                         
+
 // end of WATER_PUMP2_CB(...)*****************************************************
 
 //********************************************************************************
-//Simulation of values + process for water supply, building automation, 
-//traffic control and weather station, designed as own thread with an endless loop 
+//Simulation of values + process for water supply, building automation,
+//traffic control and weather station, designed as own thread with an endless loop
 //********************************************************************************
 
 All_simulations()
@@ -827,30 +827,30 @@ All_simulations()
 
 //DebugTN("All_simulations");
 
-  //Setup the callback to get the actual values for building automation       
-  dpConnect("BuildingCB",                                                     
-        //Cooler                                                                    
-        "Cooler.valve.value.position:_online.._value",                
-        "Cooler.valve.value.position:_pv_range.._max",                
-        "Cooler.valve.state.manual:_online.._value",                  
-        //Preheater                                                               
-        "PreHeater.valve.value.position:_online.._value",             
-        "PreHeater.valve.value.position:_pv_range.._max",             
-        "PreHeater.valve.state.manual:_online.._value",               
-        //Reheaters                                                               
-        "ReHeater.valve.value.position:_online.._value",              
-        "ReHeater.valve.value.position:_pv_range.._max",              
-        "ReHeater.valve.state.manual:_online.._value",                
-        "ReHeater_2.valve.value.position:_online.._value",            
-        "ReHeater_2.valve.value.position:_pv_range.._max",            
-        "ReHeater_2.valve.state.manual:_online.._value",              
-        "ReHeater_3.valve.value.position:_online.._value",            
-        "ReHeater_3.valve.value.position:_pv_range.._max",            
-        "ReHeater_3.valve.state.manual:_online.._value",              
-         //Evaporator                                                              
-        "Evaporator.value.position:_online.._value",                  
-        "Evaporator.value.position:_pv_range.._max",                  
-        "Evaporator.state.manual:_online.._value");                   
+  //Setup the callback to get the actual values for building automation
+  dpConnect("BuildingCB",
+        //Cooler
+        "Cooler.valve.value.position:_online.._value",
+        "Cooler.valve.value.position:_pv_range.._max",
+        "Cooler.valve.state.manual:_online.._value",
+        //Preheater
+        "PreHeater.valve.value.position:_online.._value",
+        "PreHeater.valve.value.position:_pv_range.._max",
+        "PreHeater.valve.state.manual:_online.._value",
+        //Reheaters
+        "ReHeater.valve.value.position:_online.._value",
+        "ReHeater.valve.value.position:_pv_range.._max",
+        "ReHeater.valve.state.manual:_online.._value",
+        "ReHeater_2.valve.value.position:_online.._value",
+        "ReHeater_2.valve.value.position:_pv_range.._max",
+        "ReHeater_2.valve.state.manual:_online.._value",
+        "ReHeater_3.valve.value.position:_online.._value",
+        "ReHeater_3.valve.value.position:_pv_range.._max",
+        "ReHeater_3.valve.state.manual:_online.._value",
+         //Evaporator
+        "Evaporator.value.position:_online.._value",
+        "Evaporator.value.position:_pv_range.._max",
+        "Evaporator.state.manual:_online.._value");
 
   //Setup the callbacks to get the actual values for water simulation         //
   dpConnect("WaterCB",                                                        //
@@ -908,8 +908,8 @@ All_simulations()
   //***************************************************************************
   //Setup the time counter for the weather station triggers                   //
   iWeatherTime    = 1;
-  iWeatherCountMS = 0; 
-  
+  iWeatherCountMS = 0;
+
   while(TRUE) //forever loop
   {
     //Do nothing if simulation mode is off
@@ -918,7 +918,7 @@ All_simulations()
       delay(5,0); //wait for 5 sec
       continue;   //continue while loop at top
     }
-   
+
     if(GboSimValueOn) //simulate values
     {
       //********** make a value simulation for building automation panel *********************************
@@ -933,8 +933,8 @@ All_simulations()
     }
 
     iSimulationSpeed = (GiSpeedSimValue >= 100) ? GiSpeedSimValue : 100;//to prevent div by zero in next line
-    fCount2 = (fCount2 > 6.28) ? 0.0 : (fCount2 + (2 * 3.141592 * (1.0 / iSimulationSpeed))); 
-    
+    fCount2 = (fCount2 > 6.28) ? 0.0 : (fCount2 + (2 * 3.141592 * (1.0 / iSimulationSpeed)));
+
     //delay loop
     delay((GiSpeedSimValue / 1000),(GiSpeedSimValue % 1000)); //delay x.y sec before next loop
   }
@@ -952,21 +952,21 @@ Water_simulation(float &fCount1, float &fCount3)
 
   dyn_string  dpName;
   dyn_anytype values;
-  
+
 //DebugTN("Water_simulation");
-    
+
   fInflow1 = fInMax1 * fInPosition1 / 100.0;
-  fInflow2 = fInMax2 * fInPosition2 / 100.0;      
+  fInflow2 = fInMax2 * fInPosition2 / 100.0;
 
   if(bOutValve1Auto && (fOutPosition1 == 0))
     fOutflow1 = fOutMax1 * 0.5;
   else
-    fOutflow1 = fOutMax1 * fOutPosition1 / 100.0;      
+    fOutflow1 = fOutMax1 * fOutPosition1 / 100.0;
 
   if(bOutValve2Auto && (fOutPosition2 == 0))
     fOutflow2 = fOutMax2 * 0.5;
   else
-    fOutflow2 = fOutMax2 * fOutPosition2 / 100.0;      
+    fOutflow2 = fOutMax2 * fOutPosition2 / 100.0;
 
   iSimulationSpeed = (GiSpeedSimValue >= 100) ? GiSpeedSimValue : 100;//to prevent div by zero
   do
@@ -983,7 +983,7 @@ Water_simulation(float &fCount1, float &fCount3)
   //modify outflow only in automativ mode of aoutflow valve
   if(bOutValve1Auto)
     fOutflow1 = fValue;
-      
+
   do
   {
     fValue = fOutflow2;
@@ -1051,16 +1051,16 @@ Water_simulation(float &fCount1, float &fCount3)
         i++;
       }
     }
-    
+
     fInflow1  /= 3600.0;// cubic meter per hour / 3600 = cubic meter per second
-    fInflow2  /= 3600.0;      
+    fInflow2  /= 3600.0;
     fOutflow1 /= 3600.0;// cubic meter per hour / 3600 = cubic meter per second
-    fOutflow2 /= 3600.0;      
+    fOutflow2 /= 3600.0;
     //calculate difference between inflow and outflow to get a new reservoir level
     fTrend1 = fInflow1 - fOutflow1;
     fTrend2 = fInflow2 - fOutflow2;
-  
-    //in the following calculation the factor 0.07292 based on experience to make 
+
+    //in the following calculation the factor 0.07292 based on experience to make
     //the alteration of level visible and smoothed together
     fLevel1 = fLevel1 + (fTrend1 * GiSpeedSimValue / 1000.0 / 0.07292);
     //avoid out of bounds
@@ -1068,7 +1068,7 @@ Water_simulation(float &fCount1, float &fCount3)
     fLevel2 = fLevel2 + (fTrend2 * GiSpeedSimValue / 1000.0 / 0.07292);
     //avoid out of bounds
     fLevel2 = (fLevel2 < 0.0) ? 0.0 : ((fLevel2 > fLevelMax2) ? fLevelMax2 : fLevel2);
-    
+
     fInflow1  *= 3600.0;//cubic meter per second to cubic meter per hour
     fInflow2  *= 3600.0;
     fOutflow1 *= 3600.0;
@@ -1111,7 +1111,7 @@ Water_simulation(float &fCount1, float &fCount3)
       i++;
     }
   }
-  
+
   if(i > 1) // at least one DP needs to be written
     dpSet(dpName,values);
 }
@@ -1131,7 +1131,7 @@ Building_automation(float fCount2)
   int   i = 1;
 
 //DebugTN("Building_automation");
-        
+
   //check for valid upper limits
   fCoolerMax     = (fCoolerMax > 0.0)     ? fCoolerMax     : 10.0;
   fPreHeaterMax  = (fPreHeaterMax > 0.0)  ? fPreHeaterMax  : 10.0;
@@ -1139,9 +1139,9 @@ Building_automation(float fCount2)
   fReHeaterMax2  = (fReHeaterMax2 > 0.0)  ? fReHeaterMax2  : 10.0;
   fReHeaterMax3  = (fReHeaterMax3 > 0.0)  ? fReHeaterMax3  : 10.0;
   fEvaporatorMax = (fEvaporatorMax > 0.0) ? fEvaporatorMax : 10.0;
-    
+
   //Cooler
-  if(!bCoolerState) //FALSE means cooler´s state in automatic mode
+  if(!bCoolerState) //FALSE means coolerï¿½s state in automatic mode
   {
     fCount = fCount2;
     do
@@ -1156,11 +1156,11 @@ Building_automation(float fCount2)
     while((fValue > (fCoolerMax * 0.9)) || (fValue < 0.5));
     fCooler = fValue;
   }
-     
-  //PreHeater 
-  if(!bPreHeaterState) //FALSE means PreHeater´s state in automatic mode
+
+  //PreHeater
+  if(!bPreHeaterState) //FALSE means PreHeaterï¿½s state in automatic mode
   {
-    fCount = fCount2 + 0.987654; 
+    fCount = fCount2 + 0.987654;
     do
     {
       fValue = fPreHeaterMax;
@@ -1173,9 +1173,9 @@ Building_automation(float fCount2)
     while((fValue > (fPreHeaterMax * 0.9)) || (fValue < 0.5));
     fPreHeater = fValue;
   }
-    
+
   //ReHeater
-  if(!bReHeaterState) //FALSE means ReHeater´s state in automatic mode
+  if(!bReHeaterState) //FALSE means ReHeaterï¿½s state in automatic mode
   {
     fCount = fCount2 + 1.23456;
     do
@@ -1190,11 +1190,11 @@ Building_automation(float fCount2)
     while((fValue > (fReHeaterMax * 0.9)) || (fValue < 0.5));
     fReHeater = fValue;
   }
-    
+
   //ReHeater2
-  if(!bReHeaterState2) //FALSE means ReHeater´s state in automatic mode
+  if(!bReHeaterState2) //FALSE means ReHeaterï¿½s state in automatic mode
   {
-    fCount = fCount2 + 3.456789; 
+    fCount = fCount2 + 3.456789;
     do
     {
       fValue = fReHeaterMax2;
@@ -1207,9 +1207,9 @@ Building_automation(float fCount2)
     while((fValue > (fReHeaterMax2 * 0.9)) || (fValue < 0.5));
     fReHeater2 = fValue;
   }
-    
+
   //ReHeater3
-  if(!bReHeaterState3) //FALSE means ReHeater´s state in automatic mode
+  if(!bReHeaterState3) //FALSE means ReHeaterï¿½s state in automatic mode
   {
     fCount = fCount2 + 0.765432;
     do
@@ -1224,9 +1224,9 @@ Building_automation(float fCount2)
     while((fValue > (fReHeaterMax3 * 0.9)) || (fValue < 0.5));
     fReHeater3 = fValue;
   }
-    
+
   //Evaporator
-  if(!bEvaporatorState) //FALSE means Evaporator´s state in automatic mode
+  if(!bEvaporatorState) //FALSE means Evaporatorï¿½s state in automatic mode
   {
     fCount = fCount2 + 2.34567;
     do
@@ -1240,7 +1240,7 @@ Building_automation(float fCount2)
     }
     while((fValue > (fEvaporatorMax * 0.9)) || (fValue < 0.5));
     fEvaporator = fValue;
-  }    
+  }
 
   //set new values if state of ... is automatic
   if(!bCoolerState)
@@ -1281,7 +1281,7 @@ Building_automation(float fCount2)
   }
   if(i > 1) //at least one DP needs to be written
     dpSet(dpName,values);
-    
+
 }
 //End of building automation
 
@@ -1295,22 +1295,22 @@ Traffic_Light_simulation()
        i = 1,
        j,
        iLight;
-       
+
   //this trigger has a shortest intervall of three sec, or
   //GiSpeedSimValue if GiSpeedSimValue > 3000 ms
   bool bTrigger = (iOldTime == iNewTime) ? FALSE : TRUE,
        bLightIsManual, bLightIsOff,
        bChanged = FALSE;
-       
+
   dyn_string  dpName;
   dyn_anytype values;
-  
+
 //DebugTN("Traffic_Light_simulation");
-  
+
   iTrafficTime += GiSpeedSimValue;
   if(!bTrigger) //do nothing
     return;
-    
+
   //The sequences for the lights
   iLight  = iLight1 + 1;
   iLight1 = (iLight < 15) ? iLight : 1;
@@ -1320,7 +1320,7 @@ Traffic_Light_simulation()
   iLight3 = (iLight < 15) ? iLight : 1;
   iLight  = iLight4 + 1;
   iLight4 = (iLight < 15) ? iLight : 1;
-  
+
   //control the traffic lights
   for(j = 1; j < 5; j++) //do it for all 4 lights
   {
@@ -1363,24 +1363,24 @@ Traffic_Light_simulation()
     //not in manual mode, not switched off and state has changed
     if(!bLightIsManual && !bLightIsOff && bChanged)
     {
-      dpName[i] = "TC_traffic_light_"+j+".state.red:_original.._value"; 
+      dpName[i] = "TC_traffic_light_"+j+".state.red:_original.._value";
       values[i] = bRed[iLight];
       i++;
-      dpName[i] = "TC_traffic_light_"+j+".state.red-yellow:_original.._value"; 
+      dpName[i] = "TC_traffic_light_"+j+".state.red-yellow:_original.._value";
       values[i] = bRedYellow[iLight];
-      i++;    
-      dpName[i] = "TC_traffic_light_"+j+".state.yellow:_original.._value"; 
+      i++;
+      dpName[i] = "TC_traffic_light_"+j+".state.yellow:_original.._value";
       values[i] = bYellow[iLight];
-      i++;    
-      dpName[i] = "TC_traffic_light_"+j+".state.flashing_yellow:_original.._value"; 
+      i++;
+      dpName[i] = "TC_traffic_light_"+j+".state.flashing_yellow:_original.._value";
       values[i] = FALSE;
-      i++;    
-      dpName[i] = "TC_traffic_light_"+j+".state.green:_original.._value"; 
+      i++;
+      dpName[i] = "TC_traffic_light_"+j+".state.green:_original.._value";
       values[i] = bGreen[iLight];
-      i++;        
-      dpName[i] = "TC_traffic_light_"+j+".state.flashing_green:_original.._value"; 
+      i++;
+      dpName[i] = "TC_traffic_light_"+j+".state.flashing_green:_original.._value";
       values[i] = bFlashingGreen[iLight];
-      i++;    
+      i++;
     }
   }
   if(i > 1) //at least one DP needs to be written
@@ -1396,7 +1396,7 @@ Weather_simulation()
   time  tToday   = getCurrentTime();
   int   iSec     = daySecond(tToday),
         i        = 1;
-  
+
   bool  bTrigger_X_Sec  = (iWeatherTime % 6)   ? FALSE : TRUE;
   bool  bTrigger2Sec  = (iWeatherTime % 2)        ? FALSE : TRUE;
   bool  bTrigger5Sec  = (iWeatherTime % 5)        ? FALSE : TRUE;
@@ -1413,18 +1413,18 @@ Weather_simulation()
   float fCycle2 = sin(6.2832 * iSec / 86399.0);//1 cycle  per 24 hours
   float fCycle3 = sin(6.2832 * iSec / 3600.0);
 
-  //simulate a cycling temperature with max at noon and min at midnight                      
+  //simulate a cycling temperature with max at noon and min at midnight
   float fTemp  = 17 + (12 * fCycle1);
 
-  //simulate a wind direction cycling 360° per 24 hours
+  //simulate a wind direction cycling 360ï¿½ per 24 hours
   if (fCycle3 < 0) fCycle3 = fCycle3 * -1;
   float fDir   = 180 * fCycle3;
 
   //simulate a wind speed with max at noon and min at midnight
   if (fCycle2 < 0) fCycle2 = fCycle2 * -1;
   float fSpeed = 10 + (20 * fCycle2);
-  
-  //simulate air pressure 
+
+  //simulate air pressure
   float fPress = 1000 + (100 * fCycle2);
 
   //simulate humidity
@@ -1435,12 +1435,12 @@ Weather_simulation()
 
   //simulate a random disturbance factor
   float fDist  = sin(rand());
-  
+
   dyn_string  dpName;
   dyn_anytype values;
-  
+
 //DebugTN("Weather_simulation: fTemp, fDir, fSpeed, fPress, fHumty, fDist", fTemp, fDir, fSpeed, fPress, fHumty, fDist);
- 
+
   //operate weather time count, counts up one per second if GiSpeedSimValue = 1000 ms
   //if GiSpeedSimValue > 1000ms -> all trigger rates are reduced with same proportion
   //if GiSpeedSimValue < 1000ms -> waits until 1000ms are expired
@@ -1452,11 +1452,11 @@ Weather_simulation()
     iWeatherCountMS = 0;
   }
   iWeatherTime++;
-    
+
   //superpose a disturbance
   fDir   = fDir * (1 + fDist);
   fSpeed = fSpeed *  (1 + fDist);
-    
+
   if(bTrigger_X_Sec)
   {
 //DebugTN("fSpeed, fDir");
@@ -1467,7 +1467,7 @@ Weather_simulation()
     values[i] = fDir;
     i++;
   }
-  
+
   if(bTrigger5Min)
   {
 //DebugTN("fTemp");
@@ -1475,7 +1475,7 @@ Weather_simulation()
     values[i] = fTemp;
     i++;
   }
-  
+
   if(bTrigger10Min)
   {
 //DebugTN("fPress");
@@ -1494,7 +1494,7 @@ Weather_simulation()
     values[i] = fRain;
     i++;
   }
-  
+
   if(i > 1) //at least one DP needs to be written
     dpSet(dpName,values);
 }
@@ -1579,12 +1579,12 @@ WaterCB(
 {
   float fInPosNew1, fInPosNew2, fOutPosNew1, fOutPosNew2;
   int   i = 1;
-  
+
   dyn_string  dpName;
   dyn_anytype values;
-  
+
 //DebugTN("WaterCB");
-  
+
     //zone 1+2 inflow
       fInPosNew1    = value1;
       fInMax1       = value2;
@@ -1615,7 +1615,7 @@ WaterCB(
       }
       if((fInPosition2 != fInPosNew2) || !bInValve2Auto)
       {
-        fInflow2 = fInMax2 * fInPosNew2 / 100.0;   
+        fInflow2 = fInMax2 * fInPosNew2 / 100.0;
         dpName[i] = "Sources_2_flow.value:_original.._value";
         values[i] = fInflow2;
         fInPosition2  = fInPosNew2;
@@ -1623,7 +1623,7 @@ WaterCB(
       }
       if((fOutPosition1 != fOutPosNew1) || !bOutValve1Auto)
       {
-        fOutflow1 = fOutMax1 * fOutPosNew1 / 100.0;      
+        fOutflow1 = fOutMax1 * fOutPosNew1 / 100.0;
         dpName[i] = "Zone_1_flow.value:_original.._value";
         values[i] = fOutflow1;
         fOutPosition1 = fOutPosNew1;
@@ -1631,7 +1631,7 @@ WaterCB(
       }
       if((fOutPosition2 != fOutPosNew2) || !bOutValve2Auto)
       {
-        fOutflow2 = fOutMax2 * fOutPosNew2 / 100.0;      
+        fOutflow2 = fOutMax2 * fOutPosNew2 / 100.0;
         dpName[i] = "Zone_2_flow.value:_original.._value";
         values[i] = fOutflow2;
         fOutPosition2 = fOutPosNew2;
@@ -1640,7 +1640,7 @@ WaterCB(
 
       if(i > 1) //at least one DP needs to be written
         dpSet(dpName,values);
-      
+
 }
 //End of WaterCB
 
@@ -1648,16 +1648,16 @@ WaterCB(
 //Callback to make avalaible the atual values for the simulation loop    *
 //************************************************************************
 TrafficCB(
-    //Light 1                                                                 
+    //Light 1
     string dp1, bool value1,
     string dp2, bool value2,
-    //Light 2                                                                 
+    //Light 2
     string dp3, bool value3,
     string dp4, bool value4,
-    //Light 3                                                                
+    //Light 3
     string dp5, bool value5,
     string dp6, bool value6,
-    //Light 4                                                                 
+    //Light 4
     string dp7, bool value7,
     string dp8, bool value8)
 {
@@ -1698,7 +1698,7 @@ CP_DRIVE_CB(string dp1, bool on,
   else if (on && alert)
   {
     delay( (GfDelayCheckBack/1000),(GfDelayCheckBack % 1000) );
-    strreplace(dp1,"online","original");  
+    strreplace(dp1,"online","original");
     dpSet(dp1, false,
           dp, false);
   }
