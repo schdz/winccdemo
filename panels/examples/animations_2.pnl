@@ -1,4 +1,4 @@
-V 13
+V 14
 3
 LANG:10000 8 (NoName)
 LANG:10001 8 (NoName)
@@ -10,9 +10,10 @@ PANEL,-1 -1 1004 584 N "STD_panel_back" 0
 }" 0
  E E E E 1 -1 -1 0  956 51
 ""0  1
-E E 2
+E E 3
 "CBRef" "0"
 "EClose" E
+"dpi" "96"
 0 0 0
 ""
 1
@@ -35,7 +36,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  0 E 10 40 496 260
@@ -52,7 +54,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  0 E 11 41 497 261
@@ -69,7 +72,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  0 E 680 490 984 552
@@ -86,7 +90,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  0 E 681 491 985 553
@@ -103,7 +108,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 10 1 1 1 E U  1 E 780 390 980 480
@@ -120,7 +126,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  0 E 508 40 994 260
@@ -137,7 +144,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  0 E 509 41 995 261
@@ -154,7 +162,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  0 E 10 280 994 562
@@ -171,7 +180,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  0 E 11 281 995 563
@@ -188,7 +198,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 4 1 0 1 E U  1 E 215 368 64 64
@@ -205,7 +216,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -249,7 +261,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -293,7 +306,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -337,7 +351,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -381,7 +396,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -425,7 +441,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -459,7 +476,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -504,7 +522,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -580,7 +599,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -656,7 +676,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 780 61 981 73
@@ -673,7 +694,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 939 80 982 231
@@ -690,7 +712,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -722,7 +745,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -758,7 +782,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 806 106 904 204
@@ -775,7 +800,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 833 133 881 178
@@ -792,7 +818,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 806 106 834 134
@@ -809,7 +836,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -841,7 +869,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 10 1 1 1 E U  1 E 520 160 710 250
@@ -858,11 +887,12 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E E 0 1 1 0 1 E U  0 E 527 177 697 230
+E E 0 1 1 0 1 E U  0 E 533 177 691 230
 0 2 0 "0s" 0 0 0 193 0 0  612 177 3
 3
 LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
@@ -886,6 +916,7 @@ LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
 LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
 0 3
 LANG:10000 19 der Sliderstellung
+
 LANG:10001 18 position of slider
 LANG:10027 35 положения слайдера
 10 484
@@ -901,7 +932,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 9 733 73
@@ -927,7 +959,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 3 1 0 1 E 1 0 1.01190476190476 0 -1.14880952380952 0 E 711 96.5 41 42
@@ -944,7 +977,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 9 710 52
@@ -970,7 +1004,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -1024,7 +1059,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 711 97 14 15
@@ -1041,8 +1077,9 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 3 1 0 1 E U  0 E 698 90 726 104
@@ -1068,7 +1105,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 4 1 0 1 E U  1 E 98 368 64 64
@@ -1085,7 +1123,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -1115,7 +1154,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -1145,7 +1185,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -1174,7 +1215,7 @@ rotate(string dp1, int value)
 }
 
 " 0
- E 0 1 1 0 1 E 1.00806451612903 0 1 -3.1008064516129 0 1 E 384.5 335 62 30
+ E 0 1 1 0 1 E 1.00806451612903 0 1 22.89919354838795 45 1 E 384.5 335 62 30
 4 517
 "Line2"
 ""
@@ -1188,7 +1229,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 20 2 1 1 E  531 360 977 360
@@ -1205,7 +1247,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -1243,7 +1286,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 528 297 595 351
@@ -1260,7 +1304,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 913 296 980 350
@@ -1277,8 +1322,9 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "bool On;
@@ -1341,7 +1387,7 @@ DoSimulation()
   }
 }
 " 0
- E 0 1 1 0 1 E U  0 E 797 497 934 520
+ E 0 1 1 0 1 E U  0 E 797 497 933 520
 0 2 0 "0s" 0 0 0 192 0 0  797 497 1
 3
 LANG:10000 26 Arial,-1,20,5,69,0,0,0,0,0
@@ -1364,11 +1410,12 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E E 0 1 1 0 1 E U  0 E 797 523 939 546
+E E 0 1 1 0 1 E U  0 E 797 523 932 546
 0 2 0 "0s" 0 0 0 192 0 0  797 523 1
 3
 LANG:10000 26 Arial,-1,20,5,69,0,0,0,0,0
@@ -1391,7 +1438,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -1467,11 +1515,12 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E E 0 1 1 0 1 E U  0 E 336 69 474 122
+E E 0 1 1 0 1 E U  0 E 329 69 481 122
 0 2 0 "0s" 0 0 0 193 0 0  405 69 3
 3
 LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
@@ -1510,8 +1559,9 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -1540,7 +1590,7 @@ work(string dp, int value)
            break;
   }
 }" 0
- E 0 1 1 0 1 E U  0 E 90 64 298 79
+ E 0 1 1 0 1 E U  0 E 90 64 300 79
 0 2 0 "0s" 0 0 0 192 0 0  90 64 1
 3
 LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
@@ -1563,11 +1613,12 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E E 0 1 1 0 1 E U  0 E 788 398 978 469
+E E 0 1 1 0 1 E U  0 E 789 398 977 469
 0 2 0 "0s" 0 0 0 193 0 0  883 398 4
 3
 LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
@@ -1614,7 +1665,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 4 1 0 1 E U  1 E 380 54 550
@@ -2011,7 +2063,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 "main()
@@ -2045,7 +2098,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 2 1 0 1 E U  1 E 6 46 545
@@ -2068,7 +2122,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 5 20 28
@@ -2090,11 +2145,12 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E E 0 1 1 0 1 E U  0 E 22 34 200 49
+E E 0 1 1 0 1 E U  0 E 22 34 207 49
 0 2 0 "0s" 0 0 0 192 0 0  22 34 1
 3
 LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
@@ -2117,7 +2173,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 5 984 28
@@ -2139,11 +2196,12 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E E 0 1 1 0 1 E U  0 E 783 32 981 47
+E E 0 1 1 0 1 E U  0 E 776 32 981 47
 0 2 0 "0s" 0 0 0 194 0 0  981 32 1
 3
 LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
@@ -2166,7 +2224,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 5 20 268
@@ -2188,11 +2247,12 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E E 0 1 1 0 1 E U  0 E 25 271 111 286
+E E 0 1 1 0 1 E U  0 E 25 271 94 286
 0 2 0 "0s" 0 0 0 192 0 0  25 271 1
 3
 LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
@@ -2215,7 +2275,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 8 433 4
@@ -2240,7 +2301,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E 1.07142857142857 0 1 -30.75 0 1 E 430.5 14 7 10
@@ -2257,7 +2319,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E 1.07142857142857 0 1 -30.75 0 1 E 430.5 24 7 10
@@ -2274,7 +2337,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E 1.07142857142857 0 1 -36.5357142857143 0 1 E 511.5 14 7 10
@@ -2291,7 +2355,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E 1.07142857142857 0 1 -36.5357142857143 0 1 E 511.5 24 7 10
@@ -2308,7 +2373,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E U  1 E 8 501 4
@@ -2333,7 +2399,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E 1.07142857142857 0 1 -35.6071428571428 0 1 E 498.5 14 7 10
@@ -2350,7 +2417,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E 1.07142857142857 0 1 -35.6071428571428 0 1 E 498.5 24 7 10
@@ -2367,7 +2435,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E 1.07142857142857 0 1 -41.3928571428571 0 1 E 579.5 14 7 10
@@ -2384,7 +2453,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-2
+3
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E E 0 1 1 0 1 E 1.07142857142857 0 1 -41.3928571428571 0 1 E 579.5 24 7 10
@@ -2401,11 +2471,12 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-3
+4
 "sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignCenter"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E E 0 1 1 0 1 E U  0 E 430 10 576 28
+E E 0 1 1 0 1 E U  0 E 429 10 577 28
 0 2 0 "0s" 0 0 0 193 0 0  503 10 1
 3
 LANG:10000 26 Arial,-1,17,5,69,0,0,0,0,0
@@ -2428,7 +2499,8 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-0
+1
+"layoutAlignment" "AlignCenter"
 3
 LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
 LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
@@ -2483,7 +2555,7 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-9
+10
 "minValue" "int 1"
 "backgroundOrigin" "enum 0"
 "orientation" "enum 1"
@@ -2493,10 +2565,11 @@ LANG:10027 0
 "pageStep" "int 1"
 "maxValue" "int 8"
 "invertedAppearance" "bool TRUE"
+"layoutAlignment" "AlignCenter"
 3
-LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
-LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
-LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10000 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
 0  210 99 271 220
 12 SliderWidget
 1
@@ -2534,15 +2607,16 @@ LANG:10000 0
 LANG:10001 0 
 LANG:10027 0 
 
-4
+5
 "lineStep" "int 10"
 "maxValue" "int 100"
 "tickPosition" "enum 3"
 "orientation" "enum 0"
+"layoutAlignment" "AlignCenter"
 3
-LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
-LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
-LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10000 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
 0  521 70 655 120
 12 SliderWidget
 1
@@ -2596,6 +2670,7 @@ LANG:10001 6 Layer8
 LANG:10027 6 Layer8
 0
 3 9 "" -1
+"layoutAlignment" "AlignCenter"
 "" ""
 "objects/STD_SWITCHES/switch_1.pnl" 745 479 T 3 1 0 1 192 7
 5
@@ -2605,11 +2680,13 @@ LANG:10027 6 Layer8
 "$dpe_value_On""ExampleDP_OnOff."
 "$dpe_value_Rm""ExampleDP_OnOff."
 3 11 "" -1
+"layoutAlignment" "AlignCenter"
 "" ""
 "objects/help_button_large.pnl" 482 432 T 82 1 0 1 208 8
 1
 "$hlp_keyword""da_animation2"
 3 15 "PANEL_REF16" -1
+"layoutAlignment" "AlignCenter"
 "" ""
 "examples/animations_ref1.pnl" 73 314 T 87 1 0 1 -35 -150
 0
