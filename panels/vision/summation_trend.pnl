@@ -1,0 +1,1872 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 8 (NoName)
+PANEL,-1 -1 800 560 N "STD_panel_back" 8
+"$dpe_1"
+"$dpe_2"
+"$dpe_3"
+"$dpe_4"
+"$dpe_5"
+"$dpe_6"
+"$dpe_7"
+"$dpe_8"
+"main()
+{
+}" 0
+ E E E E 1 -1 -1 0  569 703
+""0  1
+E E 3
+"CBRef" "0"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 7
+"SummationTrend"
+""
+1 10 7 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 8 150 29
+0 2 2 "0s" 0 0 0 192 0 0  12 8 1
+3
+LANG:10000 26 Arial,-1,19,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,19,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,19,5,40,0,0,0,0,0
+0 3
+LANG:10000 11 Summentrend
+LANG:10001 15 Summation trend
+LANG:10027 25 Сводный тренд
+6 20
+"curveColor_4"
+""
+1 20 512 E E E 1 E 0 E N {0,0,0} E N "STD_trend_pen4" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 20 497 35 512
+6 21
+"curveColor_3"
+""
+1 55 1029 E E E 1 E 0 E N {0,0,0} E N "STD_trend_pen3" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 20 479 35 494
+6 22
+"curveColor_2"
+""
+1 90 1523 E E E 1 E 0 E N {0,0,0} E N "STD_trend_pen2" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 20 460 35 475
+6 23
+"curveColor_1"
+""
+1 124 1995 E E E 1 E 0 E N {0,0,0} E N "STD_trend_pen1" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 20 441 35 456
+2 24
+"curveName_1"
+""
+1 40 440 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 42 442 121 456
+0 2 0 "0s" 0 0 0 192 0 0  42 442 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 curve_1
+LANG:10001 11 curveName_1
+LANG:10027 11 curveName_1
+2 35
+"curveName_2"
+""
+1 40 458 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 42 460 121 474
+0 2 0 "0s" 0 0 0 192 0 0  42 460 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 curve_2
+LANG:10001 11 curveName_2
+LANG:10027 11 curveName_2
+2 36
+"curveName_3"
+""
+1 40 476 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 42 478 121 492
+0 2 0 "0s" 0 0 0 192 0 0  42 478 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 curve_3
+LANG:10001 11 curveName_3
+LANG:10027 11 curveName_3
+2 37
+"curveName_4"
+""
+1 40 494 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 42 496 121 510
+0 2 0 "0s" 0 0 0 192 0 0  42 496 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 curve_4
+LANG:10001 11 curveName_4
+LANG:10027 11 curveName_4
+6 38
+"curveColor_8"
+""
+1 323 511 E E E 1 E 0 E N {0,0,0} E N "STD_trend_pen8" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 323 496 338 511
+6 39
+"curveColor_7"
+""
+1 358 1028 E E E 1 E 0 E N {0,0,0} E N "STD_trend_pen7" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 323 478 338 493
+6 40
+"curveColor_6"
+""
+1 393 1522 E E E 1 E 0 E N {0,0,0} E N "STD_trend_pen6" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 323 459 338 474
+6 41
+"curveColor_5"
+""
+1 427 1994 E E E 1 E 0 E N {0,0,0} E N "STD_trend_pen5" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 323 440 338 455
+2 42
+"curveName_5"
+""
+1 343 439 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 345 441 424 455
+0 2 0 "0s" 0 0 0 192 0 0  345 441 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 curve_5
+LANG:10001 11 curveName_5
+LANG:10027 11 curveName_5
+2 43
+"curveName_6"
+""
+1 343 457 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 345 459 424 473
+0 2 0 "0s" 0 0 0 192 0 0  345 459 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 curve_6
+LANG:10001 11 curveName_6
+LANG:10027 11 curveName_6
+2 44
+"curveName_7"
+""
+1 343 475 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 345 477 424 491
+0 2 0 "0s" 0 0 0 192 0 0  345 477 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 curve_7
+LANG:10001 11 curveName_7
+LANG:10027 11 curveName_7
+2 45
+"curveName_8"
+""
+1 343 493 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 345 495 424 509
+0 2 0 "0s" 0 0 0 192 0 0  345 495 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 curve_8
+LANG:10001 11 curveName_8
+LANG:10027 11 curveName_8
+6 49
+"Border3"
+""
+1 11 517 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 433 626 517
+6 50
+"Border4"
+""
+1 12 518 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 434 627 518
+2 48
+"Text4"
+""
+1 20 423 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 22 423 162 438
+0 2 2 "0s" 0 0 0 192 0 0  22 423 1
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10000 7 Legende
+LANG:10001 6 Legend
+LANG:10027 39 Условные обозначения
+6 51
+"Border2"
+""
+1 639 517 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 639 433 786 517
+6 52
+"Border1"
+""
+1 640 518 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 640 434 787 518
+2 53
+"Filter"
+""
+1 648 425 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 650 425 779 440
+0 2 2 "0s" 0 0 0 192 0 0  650 425 1
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10000 11 Zeitbereich
+LANG:10001 9 Timerange
+LANG:10027 35 Временной диапазон
+2 60
+"txt_info"
+""
+1 291 210 E E E 1 E 1 E N {153,153,153} E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 293 212 517 230
+0 2 0 "0s" 0 0 0 192 0 0  293 212 1
+3
+LANG:10000 26 Arial,-1,17,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,69,0,0,0,0,0
+0 3
+LANG:10000 28 Trendauswahl wird geladen...
+LANG:10001 37               Loading...             
+LANG:10027 46               Загрузка...             
+23 0
+"trend"
+""
+1 10 30 E E E 1 E 0 E N "STD_text" E N "STD_trend_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,40,0,0,0,0,0
+0  8 28 788 423
+5 "main()
+{
+  int maxx;
+  string dpe_1=$dpe_1,
+         dpe_2=$dpe_2,
+         dpe_3=$dpe_3,
+         dpe_4=$dpe_4,
+         dpe_5=$dpe_5,
+         dpe_6=$dpe_6,
+         dpe_7=$dpe_7,
+         dpe_8=$dpe_8;
+
+  if((!dpExists(dpe_1) && dpe_1 !=\"\") || (!dpExists(dpe_2) && dpe_2 !=\"\") ||
+     (!dpExists(dpe_3) && dpe_3 !=\"\") || (!dpExists(dpe_4) && dpe_4 !=\"\") ||
+     (!dpExists(dpe_5) && dpe_5 !=\"\") || (!dpExists(dpe_6) && dpe_6 !=\"\") ||
+     (!dpExists(dpe_7) && dpe_7 !=\"\") || (!dpExists(dpe_8) && dpe_8 !=\"\"))
+    setValue(\"trend\",\"backCol\",\"_dpdoesnotexist\",\"foreCol\",\"_dpdoesnotexist\");
+    
+    
+  else
+  {
+    int iLauf,inumberOfCurve=8;
+    time t1,t2;
+    string sCurveName_1,sCurveName_2,sCurveName_3,sCurveName_4,
+           sCurveName_5,sCurveName_6,sCurveName_7,sCurveName_8;
+    dyn_float dfElements_1,dfElements_2,dfElements_3,dfElements_4,
+              dfElements_5,dfElements_6,dfElements_7,dfElements_8;
+    dyn_float dfMinValue,dfMaxValue;
+    dyn_time dtDates_1,dtDates_2,dtDates_3,dtDates_4,dtDates_5,
+             dtDates_6,dtDates_7,dtDates_8;
+    dyn_int evt_1,evt_2,evt_3,evt_4,evt_5,evt_6,evt_7,evt_8;
+    
+    trend.visible = FALSE;
+    
+    dynClear(dfMinValue);
+    dynClear(dfMaxValue);
+    dynClear(dfElements_1);
+    dynClear(dfElements_2);
+    dynClear(dfElements_3);
+    dynClear(dfElements_4);
+    dynClear(dfElements_5);
+    dynClear(dfElements_6);
+    dynClear(dfElements_7);
+    dynClear(dfElements_8);
+    dynClear(dtDates_1);
+    dynClear(dtDates_2);
+    dynClear(dtDates_3);
+    dynClear(dtDates_4);
+    dynClear(dtDates_5);
+    dynClear(dtDates_6);
+    dynClear(dtDates_7);
+    dynClear(dtDates_8);
+    
+    t2=getCurrentTime();
+    t1=setPeriod(t1, period(t2)-86400);
+    //  t1=setPeriod(t1, period(t2)-18000);
+    
+    if(dpe_1==\"\")
+      inumberOfCurve--;
+    else
+    {
+      sCurveName_1=dpGetComment(dpe_1);
+      if(sCurveName_1==\"\")
+        sCurveName_1=dpe_1;
+      setMultiValue(\"curveName_1\",\"text\",sCurveName_1,
+                    \"curveName_1\",\"visible\",1,
+                    \"curveColor_1\",\"visible\",1);
+    }
+    if(dpe_2==\"\")
+      inumberOfCurve--;
+    else
+    {
+      sCurveName_2=dpGetComment(dpe_2);
+      if(sCurveName_2==\"\")
+        sCurveName_2=dpe_2;
+      setMultiValue(\"curveName_2\",\"text\",sCurveName_2,
+                    \"curveName_2\",\"visible\",1,
+                    \"curveColor_2\",\"visible\",1);
+    }
+    if(dpe_3==\"\")
+      inumberOfCurve--;
+    else
+    {
+      sCurveName_3=dpGetComment(dpe_3);
+      if(sCurveName_3==\"\")
+        sCurveName_3=dpe_3;
+      setMultiValue(\"curveName_3\",\"text\",sCurveName_3,
+                    \"curveName_3\",\"visible\",1,
+                    \"curveColor_3\",\"visible\",1);
+    }
+    if(dpe_4==\"\")
+      inumberOfCurve--;
+    else
+    {
+      sCurveName_4=dpGetComment(dpe_4);
+      if(sCurveName_4==\"\")
+        sCurveName_4=dpe_4;
+      setMultiValue(\"curveName_4\",\"text\",sCurveName_4,
+                    \"curveName_4\",\"visible\",1,
+                    \"curveColor_4\",\"visible\",1);
+    }
+    if(dpe_5==\"\")
+      inumberOfCurve--;
+    else
+    {
+      sCurveName_5=dpGetComment(dpe_5);
+      if(sCurveName_5==\"\")
+        sCurveName_5=dpe_5;
+      setMultiValue(\"curveName_5\",\"text\",sCurveName_5,
+                    \"curveName_5\",\"visible\",1,
+                    \"curveColor_5\",\"visible\",1);
+    }
+    if(dpe_6==\"\")
+      inumberOfCurve--;
+    else
+    {
+      sCurveName_6=dpGetComment(dpe_6);
+      if(sCurveName_6==\"\")
+        sCurveName_6=dpe_6;
+      setMultiValue(\"curveName_6\",\"text\",sCurveName_6,
+                    \"curveName_6\",\"visible\",1,
+                    \"curveColor_6\",\"visible\",1);
+    }
+    if(dpe_7==\"\")
+      inumberOfCurve--;
+    else
+    {
+      sCurveName_7=dpGetComment(dpe_7);
+      if(sCurveName_7==\"\")
+        sCurveName_7=dpe_7;
+      setMultiValue(\"curveName_7\",\"text\",sCurveName_7,
+                    \"curveName_7\",\"visible\",1,
+                    \"curveColor_7\",\"visible\",1);
+    }
+    if(dpe_8==\"\")
+      inumberOfCurve--;
+    else
+    {
+      sCurveName_8=dpGetComment(dpe_8);
+      if(sCurveName_8==\"\")
+        sCurveName_8=dpe_8;
+      setMultiValue(\"curveName_8\",\"text\",sCurveName_8,
+                    \"curveName_8\",\"visible\",1,
+                    \"curveColor_8\",\"visible\",1);
+    }
+      
+    if(inumberOfCurve==8)
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6,
+                              dpe_7 + \":_offline.._value\",dfElements_7, dtDates_7, evt_7,
+                              dpe_8 + \":_offline.._value\",dfElements_8, dtDates_8, evt_8); 
+    else if(inumberOfCurve==7)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6,
+                              dpe_7 + \":_offline.._value\",dfElements_7, dtDates_7, evt_7); 
+                              
+    else if(inumberOfCurve==6)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6);    
+    else if(inumberOfCurve==5)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5); 
+    else if(inumberOfCurve==4)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4); 
+    else if(inumberOfCurve==3)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3); 
+    else if(inumberOfCurve==2)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2); 
+    else if(inumberOfCurve==1)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1); 
+        
+    for(iLauf=1;iLauf<=inumberOfCurve;iLauf++)
+    {
+    
+    
+    }
+    setValue(\"\",\"trendStop\");
+    setValue(\"\",\"timeInterval\",t2-t1);
+    setValue(\"\",\"timeBegin\",t1);
+    setValue(\"\",\"trendRun\");
+        
+    for(iLauf=1;iLauf<=dynlen(dfElements_1);iLauf++)
+    {
+      
+      dynAppend(dfMinValue,dynMin(dfElements_1));
+      dynAppend(dfMaxValue,dynMax(dfElements_1));
+      
+      if(dfElements_1[iLauf]<0)
+        dfElements_1[iLauf]=0;
+      if(inumberOfCurve >= 2 && dynlen(dfElements_2) >= iLauf)
+      {
+        dfElements_2[iLauf]=dfElements_2[iLauf]+dfElements_1[iLauf];
+        if(dfElements_2[iLauf]<0)
+          dfElements_2[iLauf]=0;
+        dynAppend(dfMinValue,dynMin(dfElements_2));
+        dynAppend(dfMaxValue,dynMax(dfElements_2));
+      }
+      if(inumberOfCurve >= 3 && dynlen(dfElements_3) >= iLauf)
+      {
+        dfElements_3[iLauf]=dfElements_3[iLauf]+dfElements_2[iLauf];
+        if(dfElements_3[iLauf]<0)
+          dfElements_3[iLauf]=0;
+        dynAppend(dfMinValue,dynMin(dfElements_3));
+        dynAppend(dfMaxValue,dynMax(dfElements_3));
+      }
+      if(inumberOfCurve >= 4 && dynlen(dfElements_4) >= iLauf)
+      {
+        dfElements_4[iLauf]=dfElements_4[iLauf]+dfElements_3[iLauf];
+        if(dfElements_4[iLauf]<0)
+          dfElements_4[iLauf]=0;
+        dynAppend(dfMinValue,dynMin(dfElements_4));
+        dynAppend(dfMaxValue,dynMax(dfElements_4));
+      }
+      if(inumberOfCurve >= 5 && dynlen(dfElements_5) >= iLauf)
+      {
+        dfElements_5[iLauf]=dfElements_5[iLauf]+dfElements_4[iLauf];
+        if(dfElements_5[iLauf]<0)
+          dfElements_5[iLauf]=0;
+        dynAppend(dfMinValue,dynMin(dfElements_5));
+        dynAppend(dfMaxValue,dynMax(dfElements_5));
+      }
+      if(inumberOfCurve >= 6 && dynlen(dfElements_6) >= iLauf)
+      {
+        dfElements_6[iLauf]=dfElements_6[iLauf]+dfElements_5[iLauf];
+        if(dfElements_6[iLauf]<0)
+          dfElements_6[iLauf]=0;
+        dynAppend(dfMinValue,dynMin(dfElements_6));
+        dynAppend(dfMaxValue,dynMax(dfElements_6));      
+      }
+      if(inumberOfCurve >= 7 && dynlen(dfElements_7) >= iLauf)
+      {
+        dfElements_7[iLauf]=dfElements_7[iLauf]+dfElements_6[iLauf];
+        if(dfElements_7[iLauf]<0)
+          dfElements_7[iLauf]=0;
+        dynAppend(dfMinValue,dynMin(dfElements_7));
+        dynAppend(dfMaxValue,dynMax(dfElements_7));
+      }
+      if(inumberOfCurve >= 8 && dynlen(dfElements_8) >= iLauf)
+      {
+        dfElements_8[iLauf]=dfElements_8[iLauf]+dfElements_7[iLauf];
+        if(dfElements_8[iLauf]<0)
+          dfElements_8[iLauf]=0;
+        dynAppend(dfMinValue,dynMin(dfElements_8));
+        dynAppend(dfMaxValue,dynMax(dfElements_8));
+      }    
+    } 
+
+    maxx = dynMax(dfMaxValue);
+    if (maxx <= 0)
+      maxx = 1;
+ 
+    setMultiValue(\"\",\"curveAutoscale\",\"curve_1\",0,
+                  \"\",\"curveAutoscale\",\"curve_2\",0,
+                  \"\",\"curveAutoscale\",\"curve_3\",0,
+                  \"\",\"curveAutoscale\",\"curve_4\",0,
+                  \"\",\"curveAutoscale\",\"curve_5\",0,
+                  \"\",\"curveAutoscale\",\"curve_6\",0,
+                  \"\",\"curveAutoscale\",\"curve_7\",0,
+                  \"\",\"curveAutoscale\",\"curve_8\",0,
+                  \"\",\"curveMax\",\"curve_1\",maxx,
+                  \"\",\"curveMax\",\"curve_2\",maxx,
+                  \"\",\"curveMax\",\"curve_3\",maxx,
+                  \"\",\"curveMax\",\"curve_4\",maxx,
+                  \"\",\"curveMax\",\"curve_5\",maxx,
+                  \"\",\"curveMax\",\"curve_6\",maxx,
+                  \"\",\"curveMax\",\"curve_7\",maxx,
+                  \"\",\"curveMax\",\"curve_8\",maxx,
+                  \"\",\"curveMin\",\"curve_1\",0,
+                  \"\",\"curveMin\",\"curve_2\",0,
+                  \"\",\"curveMin\",\"curve_3\",0,
+                  \"\",\"curveMin\",\"curve_4\",0,
+                  \"\",\"curveMin\",\"curve_5\",0,
+                  \"\",\"curveMin\",\"curve_6\",0,
+                  \"\",\"curveMin\",\"curve_7\",0,
+                  \"\",\"curveMin\",\"curve_8\",0,
+                  \"\",\"curveVals\",\"curve_1\",dfElements_1, dtDates_1,
+                  \"\",\"curveVals\",\"curve_2\",dfElements_2, dtDates_2,
+                  \"\",\"curveVals\",\"curve_3\",dfElements_3, dtDates_3,
+                  \"\",\"curveVals\",\"curve_4\",dfElements_4, dtDates_4,
+                  \"\",\"curveVals\",\"curve_5\",dfElements_5, dtDates_5,
+                  \"\",\"curveVals\",\"curve_6\",dfElements_6, dtDates_6,
+                  \"\",\"curveVals\",\"curve_7\",dfElements_7, dtDates_7,
+                  \"\",\"curveVals\",\"curve_8\",dfElements_8, dtDates_8);
+                 
+                 trend.visible = TRUE;
+  }  
+} " 0
+ E E 1 775 N {0,0,0} 0 0 1 0 1 0 8 0 "curve_8" "" 0 1 2 0 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 7 curve_8
+LANG:10001 1 0
+LANG:10027 1 0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 0 1 0 1 N "STD_trend_pen8"
+0 0 0 0 0 0 0 0
+0 "curve_7" "" 0 1 2 0 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 7 curve_7
+LANG:10001 1 1
+LANG:10027 1 1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 0 1 0 1 N "STD_trend_pen7"
+0 0 0 0 0 0 0 0
+0 "curve_6" "" 0 1 2 0 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 7 curve_6
+LANG:10001 1 2
+LANG:10027 1 2
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 0 1 0 1 N "STD_trend_pen6"
+0 0 0 0 0 0 0 0
+0 "curve_5" "" 0 1 2 0 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 7 curve_5
+LANG:10001 1 3
+LANG:10027 1 3
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 0 1 0 1 N "STD_trend_pen5"
+0 0 0 0 0 0 0 0
+0 "curve_4" "" 0 1 2 0 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 7 curve_4
+LANG:10001 1 4
+LANG:10027 1 4
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 0 1 0 1 N "STD_trend_pen4"
+0 0 0 0 0 0 0 0
+0 "curve_3" "" 0 1 2 0 0 E
+E
+0 0 0 5 2
+3
+LANG:10000 7 curve_3
+LANG:10001 1 5
+LANG:10027 1 5
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 0 1 0 1 N "STD_trend_pen3"
+0 0 0 0 0 0 0 0
+0 "curve_2" "" 0 1 2 0 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 7 curve_2
+LANG:10001 1 6
+LANG:10027 1 6
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 0 1 0 1 N "STD_trend_pen2"
+0 0 0 0 0 0 0 0
+0 "curve_1" "" 0 1 2 0 1 "0 2 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 7 curve_1
+LANG:10001 1 7
+LANG:10027 1 7
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 0 1 0 1 N "STD_trend_pen1"
+0 0 0 0 0 0 0 0
+1 1 "%X" "%x" 0 1 0 0 
+E 1 0 0 0 10 0 10 207446400
+3
+LANG:10000 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,40,0,0,0,0,0
+0  3
+LANG:10000 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,40,0,0,0,0,0
+0  3
+LANG:10000 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,40,0,0,0,0,0
+0  100 
+N {0,0,0} 0 0 1 0 1 150 0 5 5 1 2
+0
+13 11
+"cmd_close"
+""
+1 675 521 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+4 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  675 521 789 551
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  removeGlobal(\"Exporting\");
+  removeGlobal(\"TrendType\");
+  removeGlobal(\"TrendName\");
+  removeGlobal(\"FileName\");
+  removeGlobal(\"StartTime\");
+  removeGlobal(\"EndTime\");
+  removeGlobal(\"DP\");
+  removeGlobal(\"name\");
+  removeGlobal(\"unit\");
+//  removeGlobal(\"ddt\");
+//  removeGlobal(\"ddf\");
+  dpSet(\"_VarTrendOpen.UiNumber:_original.._value\",0,
+        \"_VarTrendOpen.PanelName:_original.._value\",\"\",
+        \"_VarTrendOpen.TrendData:_original.._value\",\"\");
+  PanelOff();
+}" 0
+ E E E
+13 17
+"cmd_toolbar"
+""
+1 825 1201 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  555 521 669 551
+
+T 
+3
+LANG:10000 15 Funktionsleiste
+LANG:10001 7 Toolbar
+LANG:10027 22 Инструменты
+"main()
+{
+  int open;
+	
+  getValue(\"trend\",\"manageCommands\",open);
+	
+  setValue(\"trend\",\"manageCommands\",!open);  
+}
+" 0
+ E E E
+13 57
+"Button2"
+""
+1 650 480 E E E 1 E 0 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  648 478 772 508
+
+T 
+3
+LANG:10000 17 Demo- Zeitbereich
+LANG:10001 15 Demo time range
+LANG:10027 25 Демо-диапазон
+"main()
+{  
+  int  iRange = 21600, i;	// Show 6 hours (=default time range summation trend)
+  time demoDataStart, demoDataEnd; 
+
+  string dpe_1=$dpe_1,
+         dpe_2=$dpe_2,
+         dpe_3=$dpe_3,
+         dpe_4=$dpe_4,
+         dpe_5=$dpe_5,
+         dpe_6=$dpe_6,
+         dpe_7=$dpe_7,
+         dpe_8=$dpe_8;
+  
+  // Get demo start and end time   
+  dpGet(\"ApplicationProperties.demoDataStart:_online.._value\", demoDataStart,
+  		\"ApplicationProperties.demoDataEnd:_online.._value\", demoDataEnd);
+
+  // If dp does not exists...
+  if((!dpExists(dpe_1) && dpe_1 !=\"\") || (!dpExists(dpe_2) && dpe_2 !=\"\") ||
+     (!dpExists(dpe_3) && dpe_3 !=\"\") || (!dpExists(dpe_4) && dpe_4 !=\"\") ||
+     (!dpExists(dpe_5) && dpe_5 !=\"\") || (!dpExists(dpe_6) && dpe_6 !=\"\") ||
+     (!dpExists(dpe_7) && dpe_7 !=\"\") || (!dpExists(dpe_8) && dpe_8 !=\"\"))
+    setValue(\"trend\",\"backCol\",\"_dpdoesnotexist\",\"foreCol\",\"_dpdoesnotexist\");
+  
+  // If ok...
+  else
+  {
+    int       iLauf,inumberOfCurve=8;
+    time      t1,t2;
+    string    sCurveName_1,sCurveName_2,sCurveName_3,sCurveName_4,
+              sCurveName_5,sCurveName_6,sCurveName_7,sCurveName_8;
+    dyn_float dfElements_1,dfElements_2,dfElements_3,dfElements_4,
+              dfElements_5,dfElements_6,dfElements_7,dfElements_8,
+              dfMinValue,dfMaxValue;
+    dyn_time  dtDates_1,dtDates_2,dtDates_3,dtDates_4,dtDates_5,
+              dtDates_6,dtDates_7,dtDates_8;
+    dyn_int   evt_1,evt_2,evt_3,evt_4,evt_5,evt_6,evt_7,evt_8;
+
+    trend.visible = FALSE;
+    
+    dynClear(dfMinValue);
+    dynClear(dfMaxValue);
+    dynClear(dfElements_1);
+    dynClear(dfElements_2);
+    dynClear(dfElements_3);
+    dynClear(dfElements_4);
+    dynClear(dfElements_5);
+    dynClear(dfElements_6);
+    dynClear(dfElements_7);
+    dynClear(dfElements_8);
+    dynClear(dtDates_1);
+    dynClear(dtDates_2);
+    dynClear(dtDates_3);
+    dynClear(dtDates_4);
+    dynClear(dtDates_5);
+    dynClear(dtDates_6);
+    dynClear(dtDates_7);
+    dynClear(dtDates_8);
+    
+    t2=demoDataEnd;
+    t1=setPeriod(t1, period(t2)-iRange);
+    
+    
+    if(dpe_1 == \"\") inumberOfCurve--;     
+    else
+    {
+      sCurveName_1 = dpGetComment(dpe_1);
+      if(sCurveName_1 == \"\") sCurveName_1 = dpe_1;
+      
+      setMultiValue(\"curveName_1\",\"text\",    sCurveName_1,
+                    \"curveName_1\",\"visible\", 1,
+                    \"curveColor_1\",\"visible\",1);
+      trend.curveRemoveData(\"curve_1\",t1);
+    }
+    
+    
+    if(dpe_2 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_2 = dpGetComment(dpe_2);
+      if(sCurveName_2 == \"\") sCurveName_2 = dpe_2;
+      
+      setMultiValue(\"curveName_2\",\"text\",    sCurveName_2,
+                    \"curveName_2\",\"visible\", 1,
+                    \"curveColor_2\",\"visible\",1);
+    trend.curveRemoveData(\"curve_2\",t1);
+    }
+    
+    
+    if(dpe_3 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_3 = dpGetComment(dpe_3);
+      if(sCurveName_3 == \"\") sCurveName_3 = dpe_3;
+      
+      setMultiValue(\"curveName_3\",\"text\",    sCurveName_3,
+                    \"curveName_3\",\"visible\", 1,
+                    \"curveColor_3\",\"visible\",1);
+      trend.curveRemoveData(\"curve_3\",t1);
+    }
+    
+    
+    if(dpe_4 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_4 = dpGetComment(dpe_4);
+      if(sCurveName_4 == \"\") sCurveName_4 = dpe_4;
+      
+      setMultiValue(\"curveName_4\",\"text\",    sCurveName_4,
+                    \"curveName_4\",\"visible\", 1,
+                    \"curveColor_4\",\"visible\",1);
+      trend.curveRemoveData(\"curve_4\",t1);
+    }
+    
+    
+    if(dpe_5==\"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_5 = dpGetComment(dpe_5);
+      if(sCurveName_5 == \"\") sCurveName_5 = dpe_5;
+      
+      setMultiValue(\"curveName_5\",\"text\",    sCurveName_5,
+                    \"curveName_5\",\"visible\", 1,
+                    \"curveColor_5\",\"visible\",1);
+      trend.curveRemoveData(\"curve_5\",t1);
+    }
+    
+    
+    if(dpe_6 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_6 = dpGetComment(dpe_6);
+      if(sCurveName_6==\"\") sCurveName_6 = dpe_6;
+      
+      setMultiValue(\"curveName_6\",\"text\",    sCurveName_6,
+                    \"curveName_6\",\"visible\", 1,
+                    \"curveColor_6\",\"visible\",1);
+      trend.curveRemoveData(\"curve_6\",t1);
+    }
+    
+    
+    if(dpe_7 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_7 = dpGetComment(dpe_7);
+      if(sCurveName_7 == \"\") sCurveName_7 = dpe_7;
+      
+      setMultiValue(\"curveName_7\",\"text\",    sCurveName_7,
+                    \"curveName_7\",\"visible\", 1,
+                    \"curveColor_7\",\"visible\",1);
+      trend.curveRemoveData(\"curve_7\",t1);
+    }
+    
+    
+    if(dpe_8 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_8 = dpGetComment(dpe_8);
+      if(sCurveName_8 == \"\") sCurveName_8 = dpe_8;
+      
+      setMultiValue(\"curveName_8\",\"text\",    sCurveName_8,
+                    \"curveName_8\",\"visible\", 1,
+                    \"curveColor_8\",\"visible\",1);
+      trend.curveRemoveData(\"curve_8\",t1);
+    }
+    
+      
+    if(inumberOfCurve == 8)
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6,
+                              dpe_7 + \":_offline.._value\",dfElements_7, dtDates_7, evt_7,
+                              dpe_8 + \":_offline.._value\",dfElements_8, dtDates_8, evt_8); 
+    else if(inumberOfCurve == 7)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6,
+                              dpe_7 + \":_offline.._value\",dfElements_7, dtDates_7, evt_7); 
+                              
+    else if(inumberOfCurve == 6)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6);    
+    else if(inumberOfCurve == 5)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5); 
+    else if(inumberOfCurve == 4)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4); 
+    else if(inumberOfCurve == 3)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3); 
+    else if(inumberOfCurve == 2)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2); 
+    else if(inumberOfCurve == 1)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1); 
+   
+        
+    for(iLauf=1; iLauf<=dynlen(dfElements_1); iLauf++)
+    {
+      
+      dynAppend(dfMinValue,dynMin(dfElements_1));
+      dynAppend(dfMaxValue,dynMax(dfElements_1));
+      
+      if(dfElements_1[iLauf]<0) dfElements_1[iLauf]=0;
+      
+      if(inumberOfCurve >= 2)
+      {
+        dfElements_2[iLauf] = dfElements_2[iLauf]+dfElements_1[iLauf];
+        if(dfElements_2[iLauf]<0) dfElements_2[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_2));
+        dynAppend(dfMaxValue,dynMax(dfElements_2));
+      }
+      if(inumberOfCurve >= 3)
+      {
+        dfElements_3[iLauf] = dfElements_3[iLauf]+dfElements_2[iLauf];
+        if(dfElements_3[iLauf]<0) dfElements_3[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_3));
+        dynAppend(dfMaxValue,dynMax(dfElements_3));
+      }
+      if(inumberOfCurve >= 4)
+      {
+        dfElements_4[iLauf] = dfElements_4[iLauf]+dfElements_3[iLauf];
+        if(dfElements_4[iLauf]<0) dfElements_4[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_4));
+        dynAppend(dfMaxValue,dynMax(dfElements_4));
+      }
+      if(inumberOfCurve >= 5)
+      {
+        dfElements_5[iLauf] = dfElements_5[iLauf]+dfElements_4[iLauf];
+        if(dfElements_5[iLauf]<0) dfElements_5[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_5));
+        dynAppend(dfMaxValue,dynMax(dfElements_5));
+      }
+      if(inumberOfCurve >= 6)
+      {
+        dfElements_6[iLauf] = dfElements_6[iLauf]+dfElements_5[iLauf];
+        if(dfElements_6[iLauf]<0) dfElements_6[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_6));
+        dynAppend(dfMaxValue,dynMax(dfElements_6));      
+      }
+      if(inumberOfCurve >= 7)
+      {
+        dfElements_7[iLauf] = dfElements_7[iLauf]+dfElements_6[iLauf];
+        if(dfElements_7[iLauf]<0) dfElements_7[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_7));
+        dynAppend(dfMaxValue,dynMax(dfElements_7));
+      }
+      if(inumberOfCurve >= 8)
+      {
+        dfElements_8[iLauf] = dfElements_8[iLauf]+dfElements_7[iLauf];
+        if(dfElements_8[iLauf]<0) dfElements_8[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_8));
+        dynAppend(dfMaxValue,dynMax(dfElements_8));
+      }    
+    } 
+
+    setMultiValue(\"trend\",\"trendStop\",
+                  \"trend\",\"timeInterval\",t2-t1,
+                  \"trend\",\"curveAutoscale\",\"curve_1\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_2\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_3\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_4\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_5\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_6\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_7\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_8\",0,
+                  \"trend\",\"curveMax\",\"curve_1\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_2\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_3\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_4\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_5\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_6\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_7\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_8\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMin\",\"curve_1\",0,
+                  \"trend\",\"curveMin\",\"curve_2\",0,
+                  \"trend\",\"curveMin\",\"curve_3\",0,
+                  \"trend\",\"curveMin\",\"curve_4\",0,
+                  \"trend\",\"curveMin\",\"curve_5\",0,
+                  \"trend\",\"curveMin\",\"curve_6\",0,
+                  \"trend\",\"curveMin\",\"curve_7\",0,
+                  \"trend\",\"curveMin\",\"curve_8\",0,
+                  \"trend\",\"curveVals\",\"curve_1\",dfElements_1, dtDates_1,
+                  \"trend\",\"curveVals\",\"curve_2\",dfElements_2, dtDates_2,
+                  \"trend\",\"curveVals\",\"curve_3\",dfElements_3, dtDates_3,
+                  \"trend\",\"curveVals\",\"curve_4\",dfElements_4, dtDates_4,
+                  \"trend\",\"curveVals\",\"curve_5\",dfElements_5, dtDates_5,
+                  \"trend\",\"curveVals\",\"curve_6\",dfElements_6, dtDates_6,
+                  \"trend\",\"curveVals\",\"curve_7\",dfElements_7, dtDates_7,
+                  \"trend\",\"curveVals\",\"curve_8\",dfElements_8, dtDates_8,
+                  \"trend\",\"timeBegin\",t1);                    
+                  
+    trend.visible = TRUE;         
+  }  
+}
+" 0
+ E E "main()
+{
+  time demoDataEnd;
+  
+  dpGet(\"ApplicationProperties.demoDataEnd:_online.._value\", demoDataEnd);
+    
+  if (demoDataEnd == makeTime(1970,01,01)) this.visible = FALSE;
+  else this.visible = TRUE;
+}" 0
+
+22 56
+"ChooseTime"
+""
+1 650 449 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  648 447 774 474
+4
+3
+LANG:10000 8 1 Stunde
+LANG:10001 6 1 hour
+LANG:10027 8 1 час
+
+0
+3
+LANG:10000 9 6 Stunden
+LANG:10001 7 6 hours
+LANG:10027 12 6 часов
+
+0
+3
+LANG:10000 10 12 Stunden
+LANG:10001 7 12 hous
+LANG:10027 13 12 часов
+
+0
+3
+LANG:10000 5 1 Tag
+LANG:10001 5 1 day
+LANG:10027 10 1 день
+
+0
+
+"main()
+{
+  this.selectedPos=2;
+}" 0
+
+"main()
+{
+  int timeInterval, selection = this.selectedPos;
+  time t;
+
+  string dpe_1=$dpe_1,
+         dpe_2=$dpe_2,
+         dpe_3=$dpe_3,
+         dpe_4=$dpe_4,
+         dpe_5=$dpe_5,
+         dpe_6=$dpe_6,
+         dpe_7=$dpe_7,
+         dpe_8=$dpe_8;
+    
+  // If dp does not exists...
+  if((!dpExists(dpe_1) && dpe_1 !=\"\") || (!dpExists(dpe_2) && dpe_2 !=\"\") ||
+     (!dpExists(dpe_3) && dpe_3 !=\"\") || (!dpExists(dpe_4) && dpe_4 !=\"\") ||
+     (!dpExists(dpe_5) && dpe_5 !=\"\") || (!dpExists(dpe_6) && dpe_6 !=\"\") ||
+     (!dpExists(dpe_7) && dpe_7 !=\"\") || (!dpExists(dpe_8) && dpe_8 !=\"\"))
+    setValue(\"trend\",\"backCol\",\"_dpdoesnotexist\",\"foreCol\",\"_dpdoesnotexist\");
+  
+  // If ok...
+  else
+  {
+    int       iLauf,inumberOfCurve=8;
+    time      t1,t2;
+    string    sCurveName_1,sCurveName_2,sCurveName_3,sCurveName_4,
+              sCurveName_5,sCurveName_6,sCurveName_7,sCurveName_8;
+    dyn_float dfElements_1,dfElements_2,dfElements_3,dfElements_4,
+              dfElements_5,dfElements_6,dfElements_7,dfElements_8,
+              dfMinValue,dfMaxValue;
+    dyn_time  dtDates_1,dtDates_2,dtDates_3,dtDates_4,dtDates_5,
+              dtDates_6,dtDates_7,dtDates_8;
+    dyn_int   evt_1,evt_2,evt_3,evt_4,evt_5,evt_6,evt_7,evt_8;
+    
+    trend.visible = FALSE;
+    
+    // Switch time range
+    switch(selection)
+    {
+      case(1): timeInterval = 3600;
+               break;
+      case(2): timeInterval = 21600;
+               break;
+      case(3): timeInterval = 43200;
+               break;
+      case(4): timeInterval = 86400;
+               break;
+      default: timeInterval = 3600;
+               break;
+    }
+    
+    dynClear(dfMinValue);
+    dynClear(dfMaxValue);
+    dynClear(dfElements_1);
+    dynClear(dfElements_2);
+    dynClear(dfElements_3);
+    dynClear(dfElements_4);
+    dynClear(dfElements_5);
+    dynClear(dfElements_6);
+    dynClear(dfElements_7);
+    dynClear(dfElements_8);
+    dynClear(dtDates_1);
+    dynClear(dtDates_2);
+    dynClear(dtDates_3);
+    dynClear(dtDates_4);
+    dynClear(dtDates_5);
+    dynClear(dtDates_6);
+    dynClear(dtDates_7);
+    dynClear(dtDates_8);
+    
+    t2=getCurrentTime();
+    t1=setPeriod(t1, period(t2)-timeInterval);
+    
+    if(dpe_1 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_1 = dpGetComment(dpe_1);
+      if(sCurveName_1 == \"\") sCurveName_1 = dpe_1;
+      
+      setMultiValue(\"curveName_1\",\"text\",    sCurveName_1,
+                    \"curveName_1\",\"visible\", 1,
+                    \"curveColor_1\",\"visible\",1);
+      trend.curveRemoveData(\"curve_1\",t1);
+    }
+    
+    
+    if(dpe_2 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_2 = dpGetComment(dpe_2);
+      if(sCurveName_2 == \"\") sCurveName_2 = dpe_2;
+      
+      setMultiValue(\"curveName_2\",\"text\",    sCurveName_2,
+                    \"curveName_2\",\"visible\", 1,
+                    \"curveColor_2\",\"visible\",1);
+      trend.curveRemoveData(\"curve_2\",t1);
+    }
+    
+    
+    if(dpe_3 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_3 = dpGetComment(dpe_3);
+      if(sCurveName_3 == \"\") sCurveName_3 = dpe_3;
+      
+      setMultiValue(\"curveName_3\",\"text\",    sCurveName_3,
+                    \"curveName_3\",\"visible\", 1,
+                    \"curveColor_3\",\"visible\",1);
+      trend.curveRemoveData(\"curve_3\",t1);
+    }
+    
+    if(dpe_4 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_4 = dpGetComment(dpe_4);
+      if(sCurveName_4 == \"\") sCurveName_4 = dpe_4;
+      
+      setMultiValue(\"curveName_4\",\"text\",    sCurveName_4,
+                    \"curveName_4\",\"visible\", 1,
+                    \"curveColor_4\",\"visible\",1);
+      trend.curveRemoveData(\"curve_4\",t1);
+    }
+    
+    
+    if(dpe_5 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_5 = dpGetComment(dpe_5);
+      if(sCurveName_5 == \"\") sCurveName_5 = dpe_5;
+      
+      setMultiValue(\"curveName_5\",\"text\",    sCurveName_5,
+                    \"curveName_5\",\"visible\", 1,
+                    \"curveColor_5\",\"visible\",1);
+      trend.curveRemoveData(\"curve_5\",t1);
+    }
+    
+    
+    if(dpe_6 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_6 = dpGetComment(dpe_6);
+      if(sCurveName_6 == \"\") sCurveName_6 = dpe_6;
+      
+      setMultiValue(\"curveName_6\",\"text\",    sCurveName_6,
+                    \"curveName_6\",\"visible\", 1,
+                    \"curveColor_6\",\"visible\",1);
+      trend.curveRemoveData(\"curve_6\",t1);
+    }
+    
+    
+    if(dpe_7 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_7 = dpGetComment(dpe_7);
+      if(sCurveName_7 == \"\") sCurveName_7 = dpe_7;
+      
+      setMultiValue(\"curveName_7\",\"text\",    sCurveName_7,
+                    \"curveName_7\",\"visible\", 1,
+                    \"curveColor_7\",\"visible\",1);
+      trend.curveRemoveData(\"curve_7\",t1);
+    }
+    
+    
+    if(dpe_8 == \"\") inumberOfCurve--;
+    else
+    {
+      sCurveName_8 = dpGetComment(dpe_8);
+      if(sCurveName_8 == \"\") sCurveName_8 = dpe_8;
+      
+      setMultiValue(\"curveName_8\",\"text\",    sCurveName_8,
+                    \"curveName_8\",\"visible\", 1,
+                    \"curveColor_8\",\"visible\",1);
+      trend.curveRemoveData(\"curve_8\",t1);
+    }
+      
+    if(inumberOfCurve == 8)
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6,
+                              dpe_7 + \":_offline.._value\",dfElements_7, dtDates_7, evt_7,
+                              dpe_8 + \":_offline.._value\",dfElements_8, dtDates_8, evt_8); 
+    else if(inumberOfCurve == 7)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6,
+                              dpe_7 + \":_offline.._value\",dfElements_7, dtDates_7, evt_7); 
+                              
+    else if(inumberOfCurve == 6)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5,
+                              dpe_6 + \":_offline.._value\",dfElements_6, dtDates_6, evt_6);    
+    else if(inumberOfCurve == 5)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4,
+                              dpe_5 + \":_offline.._value\",dfElements_5, dtDates_5, evt_5); 
+    else if(inumberOfCurve == 4)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3,
+                              dpe_4 + \":_offline.._value\",dfElements_4, dtDates_4, evt_4); 
+    else if(inumberOfCurve == 3)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2,
+                              dpe_3 + \":_offline.._value\",dfElements_3, dtDates_3, evt_3); 
+    else if(inumberOfCurve == 2)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1,
+                              dpe_2 + \":_offline.._value\",dfElements_2, dtDates_2, evt_2); 
+    else if(inumberOfCurve == 1)     
+        dpGetPeriod(t1,t2, -1,dpe_1 + \":_offline.._value\",dfElements_1, dtDates_1, evt_1); 
+        
+        
+    for(iLauf=1;iLauf<=dynlen(dfElements_1);iLauf++)
+    {   
+      dynAppend(dfMinValue,dynMin(dfElements_1));
+      dynAppend(dfMaxValue,dynMax(dfElements_1));
+      
+      if(dfElements_1[iLauf]<0) dfElements_1[iLauf]=0;
+      if(inumberOfCurve >= 2 && dynlen(dfElements_2) >= iLauf)
+      {
+        dfElements_2[iLauf]=dfElements_2[iLauf]+dfElements_1[iLauf];
+        if(dfElements_2[iLauf]<0) dfElements_2[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_2));
+        dynAppend(dfMaxValue,dynMax(dfElements_2));
+      }
+      if(inumberOfCurve >= 3 && dynlen(dfElements_3) >= iLauf)
+      {
+        dfElements_3[iLauf]=dfElements_3[iLauf]+dfElements_2[iLauf];
+        if(dfElements_3[iLauf]<0) dfElements_3[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_3));
+        dynAppend(dfMaxValue,dynMax(dfElements_3));
+      }
+      if(inumberOfCurve >= 4 && dynlen(dfElements_4) >= iLauf)
+      {
+        dfElements_4[iLauf]=dfElements_4[iLauf]+dfElements_3[iLauf];
+        if(dfElements_4[iLauf]<0) dfElements_4[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_4));
+        dynAppend(dfMaxValue,dynMax(dfElements_4));
+      }
+      if(inumberOfCurve >= 5 && dynlen(dfElements_5) >= iLauf)
+      {
+        dfElements_5[iLauf]=dfElements_5[iLauf]+dfElements_4[iLauf];
+        if(dfElements_5[iLauf]<0) dfElements_5[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_5));
+        dynAppend(dfMaxValue,dynMax(dfElements_5));
+      }
+      if(inumberOfCurve >= 6 && dynlen(dfElements_6) >= iLauf)
+      {
+        dfElements_6[iLauf]=dfElements_6[iLauf]+dfElements_5[iLauf];
+        if(dfElements_6[iLauf]<0) dfElements_6[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_6));
+        dynAppend(dfMaxValue,dynMax(dfElements_6));      
+      }
+      if(inumberOfCurve >= 7 && dynlen(dfElements_7) >= iLauf)
+      {
+        dfElements_7[iLauf]=dfElements_7[iLauf]+dfElements_6[iLauf];
+        if(dfElements_7[iLauf]<0) dfElements_7[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_7));
+        dynAppend(dfMaxValue,dynMax(dfElements_7));
+      }
+      if(inumberOfCurve >= 8 && dynlen(dfElements_8) >= iLauf)
+      {
+        dfElements_8[iLauf]=dfElements_8[iLauf]+dfElements_7[iLauf];
+        if(dfElements_8[iLauf]<0) dfElements_8[iLauf]=0;
+        
+        dynAppend(dfMinValue,dynMin(dfElements_8));
+        dynAppend(dfMaxValue,dynMax(dfElements_8));
+      }    
+    } 
+    setMultiValue(\"trend\",\"trendStop\",
+                  \"trend\",\"timeInterval\",t2-t1,
+                  \"trend\",\"curveAutoscale\",\"curve_1\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_2\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_3\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_4\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_5\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_6\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_7\",0,
+                  \"trend\",\"curveAutoscale\",\"curve_8\",0,
+                  \"trend\",\"curveMax\",\"curve_1\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_2\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_3\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_4\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_5\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_6\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_7\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMax\",\"curve_8\",dynMax(dfMaxValue),
+                  \"trend\",\"curveMin\",\"curve_1\",0,
+                  \"trend\",\"curveMin\",\"curve_2\",0,
+                  \"trend\",\"curveMin\",\"curve_3\",0,
+                  \"trend\",\"curveMin\",\"curve_4\",0,
+                  \"trend\",\"curveMin\",\"curve_5\",0,
+                  \"trend\",\"curveMin\",\"curve_6\",0,
+                  \"trend\",\"curveMin\",\"curve_7\",0,
+                  \"trend\",\"curveMin\",\"curve_8\",0,
+                  \"trend\",\"curveVals\",\"curve_1\",dfElements_1, dtDates_1,
+                  \"trend\",\"curveVals\",\"curve_2\",dfElements_2, dtDates_2,
+                  \"trend\",\"curveVals\",\"curve_3\",dfElements_3, dtDates_3,
+                  \"trend\",\"curveVals\",\"curve_4\",dfElements_4, dtDates_4,
+                  \"trend\",\"curveVals\",\"curve_5\",dfElements_5, dtDates_5,
+                  \"trend\",\"curveVals\",\"curve_6\",dfElements_6, dtDates_6,
+                  \"trend\",\"curveVals\",\"curve_7\",dfElements_7, dtDates_7,
+                  \"trend\",\"curveVals\",\"curve_8\",dfElements_8, dtDates_8,
+                  \"trend\",\"timeBegin\",t1);
+                                 
+     trend.visible = TRUE;     
+  }  
+}       
+" 0
+
+E
+ 0 0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 61 0 "" 2
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 504 530 T 29 1 0 1 -443 93
+1
+"$hlp_keyword""da_summation_trend"
+0

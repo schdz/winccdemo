@@ -1,0 +1,16 @@
+The WinCC OA DemoApplication is a simple WinCC OA project that 
+implements a number of process control and visualization 
+tasks from different sectors of automation technology by way 
+of example. It is primarily intended for demonstration 
+purposes and for giving an initial insight into the range of
+facilities offered by WinCC OA . However this application can 
+also be used as an introductory manual for users taking their
+ first steps in creating their own WinCC OA projects. The 
+DemoApplication can certainly be applied to numerous smaller 
+project exercises and used as a basis for new projects.Some 
+of the different scenarios originate from real applications 
+and have merely been simplified, while others have been made
+ up as imaginary situations. In either case, the interfaces,
+ contents and data structures are only intended for 
+demonstration, and should in no way be seen as bearing too 
+close a relationship with reality.

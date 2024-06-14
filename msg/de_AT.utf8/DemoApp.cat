@@ -1,0 +1,95 @@
+tank,Tank
+production_id,Prod-ID
+reaction_tank,Reaktionsbehälter
+instExt1,Installation
+instExt2,Der Installationsprozess wurde erfolgreich\nabgeschlossen.\nBitte starten Sie das Projekt neu!
+title_of_dpeMonitor,DPE-Monitor
+title_of_xy_trend,XY Trend
+title_of_groups,Gruppen
+title_of_measurements,Tabellarische Übersicht "Messwerte"
+title_of_counters,Tabellarische Übersicht "Zählwerte"
+title_of_target_values,Tabellarische Übersicht "Sollwerte"
+setpoints,Sollwerte
+title_of_binary_commands,Tabellarische Übersicht "Binärbefehle"
+binarycommands,Binärbefehle
+title_of_userdefined,Tabellarische Übersicht "Benutzerdefiniert"
+userdefined,Benutzerdefiniert
+title_of_login_list,Tabellarische Übersicht "Login Liste"
+title_of_dpe_info_editable,Direktabfrage - Werte setzen
+title_of_dpe_info,Direktabfrage
+title_of_bar_trend,Balken-Trend
+title_of_summation_trend,Summentrend
+title_of_tc_trend,Zeitvergleichstrend
+panelNotFound,Das angegebene Panel existiert nicht am\nangegebenen Ort: 
+not_defined,nicht definiert
+no_archiv,Wert wird nicht archiviert
+last5minutes,letzte 5 min
+last15minutes,letzte 15 min
+last1hour,letzte 1 Stunde
+last24hours,letzte 24 Stunden
+StatisticTimePeriod, Statistikzeitraum auswählen
+loginAs,Anmelden als...
+logout,Abmelden
+userC,Benutzerverwaltung
+loginT,Anmeldezeit
+userP,Benutzerprotokoll
+visC,Visualisierung schließen
+valSmall, Startzeitpunkt muss kleiner sein als Endzeitpunkt!
+NoArchiv, Der Datenpunkt wird nicht archiviert!
+timeVal, Der Zeitbereich darf nicht in der Zukunft liegen!
+title_of_tc_comparison, Zeitvergleichstrend
+counters,Zählwerte
+values,Values
+measurements,Measurements
+commands,Commands
+properties,Eigenschaften
+deadEnd,Die angeforderte Funktion ist nicht für die\nDemo Applikation verfügbar.
+DpeNotExisting,Auswahl ist kein vollständiges Datenpunktelement
+veryMuch,Die Auswahl kann zu umfangreichen Datenmengen führen
+userNotAllowed,Ungenügende Berechtigung für die Operation !
+PVSSVRangeNotExisting, Der WinCC OA Wertebereich enthält keine zulässigen Werte!
+SelectDp, Bitte wählen Sie zuerst einen gültigen Datenpunkt aus
+WrongType,DP-Element muss vom Typ DYN_BOOL, DYN_INT, DYN_UNIT oder DYN_FLOAT sein!
+WrongTypeGen,DP-Element ist vom falschen Typ!
+reallyClose,Möchten Sie die aktuelle Visualisierung tatsächlich\nbeenden? (Leitsystem läuft weiter)
+timeValPast,Es liegt bereits ein aktuellerer Wert vor!
+ChooseCloud,Bitte wählen Sie zuerst einen Wolkentyp aus
+title_of_man_input,Handeingabe
+rdworks,Bauarbeiten
+danger,Gefahr
+left,Links halten
+right,Rechts halten
+speed,Geschwindigkeitsbeschränkung
+jam,Achtung Stau
+overtk,Überholverbot
+NoAlertDelay,Es wurde keine Alarm-Verzögerungszeit angegeben!
+NoPriority,Es wurde keine Priorität angegeben!
+AlertHornDPE,Ein oder zwei Felder im Fenster "DPE Auswahl" wurden nicht korrekt ausgefüllt!
+AlertHornWAV,Ein oder zwei Felder im Fenster "WAV File- Parameter" wurden nicht korrekt ausgefüllt!
+AlertHornBEEPER,Ein oder mehrere Felder im Fenster "Beeper Parameter" wurden nicht korrekt ausgefüllt!
+AlarmHornTEST,Um den Sound- Test starten zu können, müssen alle benötigten Felder ausgefüllt werden.
+AlarmHornWAVFile,Bitte wählen Sie zuerst ein File aus
+AlarmHornWAVFileWrong,Das File muß vom Typ ".wav" sein um abgespielt werden zu können.
+Values,Werte
+frequdist,Häufigkeitsverteilung
+windProfile,Windrichtungsprofil
+panelNotExisting,Das ausgewählte Panel existiert nicht
+InfoRestartHorn,Um die neuen Einstellungen zu aktivieren, wird die Hupe jetzt neu gestartet
+noDollarParams,keine Dollarparameter
+leftClicked,Mausklick links ausgelöst !!!
+rightClicked,Mausklick rechts ausgelöst !!!
+dblClicked,Doppelklick ausgelöst !!!
+provideName&Number,Bitte geben Sie Namen und Telefonnummer des\nEmpfängers korrekt ein.
+noMessage,Sie haben keinen Nachrichtentext für die Übertragung\nangegeben.
+userNotSaved,Empfänger muß gespeichert werden bevor Nachrichten\nan ihn versandt werden können.
+activatingSMSSend,Aktiviere SMS Übermittlung an: 
+water_supply,Wasserversorgung
+building_automation,Gebäudetechnik
+production,Produktion
+traffic,Verkehrsübersicht
+weather_station,Wetterstation
+warning,Warnung
+path_incorrect,Der angegebene Pfad ist nicht korrekt, bzw. zeigt\nnicht auf eine erlaubte Datei!
+
+language,de_AT.iso88591
+timeRange,neuer Zeitbereich...

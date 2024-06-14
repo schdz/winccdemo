@@ -1,0 +1,168 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "_3DFace" 0
+E E E E E 1 -1 -1 0  956 51
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+13 17
+"Button2"
+""
+1 270 190 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,40,0,0,0,0,0
+0  268 188 362 272
+
+T 
+3
+LANG:10000 7 Button2
+LANG:10001 7 Button2
+LANG:10027 7 Button2
+E E E "main()
+{
+  setInputFocus(myModuleName(), myPanelName(), \"Button2\");
+}" 0
+
+13 16
+"Button1"
+""
+1 0 0 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+16 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,40,0,0,0,0,0
+0  -2 -2 1006 586
+
+T 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E E "main()
+{
+  this.text = \"\";
+  
+  if (getLocale(getActiveLang()) == \"de_AT.utf8\")
+    this.fill = \"[pattern,[tile,gif,\"+PICTURES_REL_PATH+\"ci/pvss_woman_german.gif]]\";
+  else
+    this.fill = \"[pattern,[tile,gif,\"+PICTURES_REL_PATH+\"ci/pvss_woman_english.gif]]\";
+}
+" 0
+
+1 18 0 "" 0
+19 "toolTipText" 0 0 3
+LANG:10000 17 Zurück zum Start
+LANG:10001 13 Back to start
+LANG:10027 17 К запуску
+
+1 "message" 1 1 "main()
+{
+  int            pos, pNr=$panelNumber;
+  string         pNa = $panelName, jump = $jump;
+  dyn_int        alertNumber;
+  dyn_string     ds, fileName;
+  dyn_langString dls;
+  
+  dpGet(\"_PanelTopology.fileName:_online.._value\", fileName,
+        \"_PanelTopology.sumAlertNumber:_online.._value\", alertNumber,
+        \"_PanelTopology.nodeName:_online.._value\", dls);
+
+  pos=pt_getTopologyNumber(fileName, alertNumber, pNa, pNr);
+  
+  // set text
+  this.text = \"\";
+  
+  if (getLocale(getActiveLang()) == \"de_AT.iso88591\")
+    this.fill = \"[pattern,[tile,gif,\"+PICTURES_REL_PATH+\"ci/pvss_woman_german.gif]]\";
+  else
+    this.fill = \"[pattern,[tile,gif,\"+PICTURES_REL_PATH+\"ci/pvss_woman_english.gif]]\";
+}
+" 0
+ 
+31 "transform" 0 0 5.580276409005692 0 14.59756268180453 1.706895944951692e-015 3.615252161801556e-016
+0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "bu_home" -1
+"" ""
+"objects/STD_PANELS/PT_jump.pnl" 159 456 T 18 1.63636363636364 0 1.33333333333333 -260.1818181818188 -607.9999999999984
+3
+"$jump""0"
+"$panelName""mainpanels/geographical_overview.pnl"
+"$panelNumber""1"
+0

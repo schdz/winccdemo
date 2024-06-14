@@ -1,0 +1,1504 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 531 594 N "STD_panel_back" 1
+"$DPE"
+"main()
+{
+}" 0
+ E E E E 1 -1 -1 0  11 211
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 37
+"Border4"
+""
+1 21 331 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 271 511 331
+6 9
+"Border3"
+""
+1 11 415 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 11 521 551
+6 1
+"Border2"
+""
+1 10 544 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 10 520 550
+2 8
+"Filter"
+""
+1 15 0 E E E 1 E 1 E N "STD_text" E N "_3DFace" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 17 2 322 20
+0 2 2 "0s" 0 0 0 192 0 0  17 2 1
+3
+LANG:10000 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,75,0,0,0,0,0
+0 3
+LANG:10000 38 Eigenschaften des Panel Direktzugriffs
+LANG:10001 29  Properties of direct access 
+LANG:10027 63  Свойства прямого доступа к панели
+2 29
+"Text3"
+""
+1 40 290 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 42 292 95 307
+0 2 0 "0s" 0 0 0 192 0 0  42 292 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Enabled:
+LANG:10001 7 Enabled
+LANG:10027 18 Разрешено
+2 30
+"Text4"
+""
+1 280 290 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 282 292 338 307
+0 2 0 "0s" 0 0 0 192 0 0  282 292 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Disabled:
+LANG:10001 8 Disabled
+LANG:10027 18 Запрещено
+2 31
+"txtEnabledFileName"
+""
+1 130 280 E E E 1 E 0 E N "_3DText" E N "_3DFace" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 132 282 148 298
+0 2 0 "0s" 0 0 0 64 0 0  132 282 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Enabled FileName
+LANG:10001 5 Text5
+LANG:10027 27 Разрешено FileName
+2 32
+"txtDisabledFileName"
+""
+1 380 280 E E E 1 E 0 E N "_3DText" E N "_3DFace" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 382 282 398 298
+0 2 0 "0s" 0 0 0 64 0 0  382 282 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 17 Disabled FileName
+LANG:10001 5 Text5
+LANG:10027 27 Запрещено FileName
+6 36
+"Border1"
+""
+1 20 330 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 270 510 330
+2 25
+"Text2"
+""
+1 30 260 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 262 58 277
+0 2 0 "0s" 0 0 0 192 0 0  32 262 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Icon
+LANG:10001 6  Icon 
+LANG:10027 14  Значок 
+6 40
+"Border5"
+""
+1 20 100 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 40 510 100
+6 41
+"Border6"
+""
+1 21 101 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 41 511 101
+2 19
+"Text1"
+""
+1 30 32 E E E 1 E 1 E N "STD_text" E N "_3DFace" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 32 103 47
+0 2 2 "0s" 0 0 0 192 0 0  32 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Panelname:
+LANG:10001 11  Panelname 
+LANG:10027 21  Имя панели 
+6 42
+"Border7"
+""
+1 20 416 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 356 510 416
+6 43
+"Border8"
+""
+1 21 417 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 357 511 417
+6 145
+"Border9"
+""
+1 21 541 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 441 511 541
+6 146
+"Border10"
+""
+1 20 540 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 440 510 540
+2 38
+"Text6"
+""
+1 30 430 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 432 113 447
+0 2 0 "0s" 0 0 0 192 0 0  32 432 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 $ - Parameter
+LANG:10001 13  $ Parameter 
+LANG:10027 20  $ Параметр 
+2 33
+"Text5"
+""
+1 30 346 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 348 187 363
+0 2 0 "0s" 0 0 0 192 0 0  32 348 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 21 Summenmeldebehandlung
+LANG:10001 13  Sumalert DP 
+LANG:10027 28  DP групп. аларма
+2 147
+"txtSaving"
+""
+1 60 560 E E E 1 E 0 E N "_3DText" E N "_3DFace" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 62 562 182 577
+0 2 0 "0s" 0 0 0 192 0 0  62 562 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 19 wird gespeichert...
+LANG:10001 9 saving...
+LANG:10027 23 сохранение...
+6 148
+"Border11"
+""
+1 19 249 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 19 120 510 249
+2 155
+"Text7"
+""
+1 30 500 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 502 66 517
+0 2 0 "0s" 0 0 0 192 0 0  32 502 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 Wert:
+LANG:10001 6 Value:
+LANG:10027 10 Знач.:
+6 156
+"Border12"
+""
+1 330 520 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "156.bmp" 4294967295 E 330 500 350 520
+2 157
+"Text8"
+""
+1 30 460 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 462 78 478
+0 2 0 "0s" 0 0 0 64 0 0  32 462 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 Name:
+LANG:10001 5 Name:
+LANG:10027 7 Имя:
+13 6
+"cmdOK"
+""
+1 318 557 E E E 1 E 1 E N "_3DText" E N "STD_panel_back" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  318 558 412 585
+
+T 
+3
+LANG:10000 2 OK
+LANG:10001 2 OK
+LANG:10027 2 OK
+"main() 
+{ 
+  // Function for creating and saving the new informations as Panel name, icon pic,
+  // sum alert DP and dollar Parameter
+
+  string 	 enabledName, disabledName, panelName, sum_alert, sValue, sPara, sNewParam, sNewVal;
+  int 	 	 directAccessButtonNumber = $DPE, pos, i;
+  dyn_string icons_enabled, icons_disabled, panelNameList, sum_alertList, sum_alert_made, 
+  			 dollarParam, dollarNew, dollarOld, dollarListParam, dollarListValues;
+  				
+  getMultiValue(\"txtFile\",\"text\",			 panelName,
+  				\"txtEnabledFileName\",\"text\", enabledName,
+  				\"txtDisabledFileName\",\"text\",disabledName,
+  				\"txtDP\",\"text\",				 sum_alert,
+  				\"ComboBox1\",\"items\",		 dollarNew);
+  
+  // if panel does not exist
+  if (access(PROJ_PATH +PANELS_REL_PATH + panelName,F_OK) ==-1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"panelNotExisting\");
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText));
+    return;
+  }
+  else setMultiValue(\"cmdCancel\",\"enabled\", 0,
+  					 \"cmdOK\",\"enabled\", 0,
+  					 \"txtSaving\",\"visible\",TRUE);
+  
+  // create a new sumalert DP list				
+  if (!dpExists(sum_alert))
+  {
+    getConfirmDps(panelName, sum_alert_made);
+    dpCreate( sum_alert,\"SUMALERTS\"); 
+    if (dpSetWait(sum_alert+\".Warning:_alert_hdl.._type\",		DPCONFIG_SUM_ALERT,
+    		      sum_alert+\".Warning:_alert_hdl.._dp_list\", 	sum_alert_made,
+    		  	  sum_alert+\".Warning:_alert_hdl.._prio_pattern\",\"1-59\",
+    		  	  sum_alert+\".Warning:_alert_hdl.._class\",		\"warning.\",
+    		  	  sum_alert+\".Warning:_alert_hdl.._active\",		1,								
+			  	  sum_alert+\".Alert:_alert_hdl.._type\",			DPCONFIG_SUM_ALERT,
+    		  	  sum_alert+\".Alert:_alert_hdl.._dp_list\",		sum_alert_made,
+    		  	  sum_alert+\".Alert:_alert_hdl.._prio_pattern\",	\"60-100\",
+    		  	  sum_alert+\".Alert:_alert_hdl.._class\",			\"alert.\",
+    		  	  sum_alert+\".Alert:_alert_hdl.._active\",		1) == -1) return;
+    // check errors		  	  
+    if ( dynlen(getLastError()) )
+	{ 
+  	  dyn_errClass err = getLastError();
+  	  errorDialog(err);
+  	  setMultiValue(\"cmdCancel\",\"enabled\", 1,
+  					\"cmdOK\",\"enabled\", 1,
+  					\"txtSaving\",\"visible\", FALSE);
+  	  return;
+	}
+  }				
+  
+  dpGet(\"ApplicationProperties.panels.directaccess.panels:_online.._value\",			panelNameList,
+  		\"ApplicationProperties.panels.directaccess.icons_enabled:_online.._value\",	icons_enabled,
+  	    \"ApplicationProperties.panels.directaccess.icons_disabled:_online.._value\",	icons_disabled,
+  	    \"ApplicationProperties.panels.directaccess.sum_alerts:_online.._value\",		sum_alertList,
+  	    \"ApplicationProperties.panels.directaccess.dollar_params:_original.._value\", dollarListParam,
+  		\"ApplicationProperties.panels.directaccess.dollar_values:_original.._value\", dollarListValues);
+  
+  // create new lists...
+  // new panel name list:
+  dynRemove(panelNameList,directAccessButtonNumber);
+  dynInsertAt(panelNameList,panelName,directAccessButtonNumber);
+  
+  // new icon_enabled list:
+  dynRemove(icons_enabled, directAccessButtonNumber);
+  dynInsertAt(icons_enabled, enabledName, directAccessButtonNumber);
+ 
+  // new icon_disabled list:
+  dynRemove(icons_disabled, directAccessButtonNumber);
+  dynInsertAt(icons_disabled, disabledName, directAccessButtonNumber);
+  
+  // new sum_alert list:
+  dynRemove(sum_alertList, directAccessButtonNumber);
+  dynInsertAt(sum_alertList, sum_alert, directAccessButtonNumber);
+  
+  
+  // new Dollar Parameter:
+  for (i=1; i<=dynlen(dollarNew); i++)
+  {
+    sPara=substr(dollarNew[i], 0, strpos(dollarNew[i],\":\"));
+    sValue=substr(dollarNew[i], (strpos(dollarNew[i],\":\")+1), strlen(dollarNew[i]));
+    sNewParam = sNewParam+ sPara + \" \";
+    sNewVal = sNewVal+sValue + \" \";
+  }
+  if (sNewParam == \"\") sNewParam = \"\\\"\\\"\";
+  if (sNewVal == \"\") sNewVal = \"\\\"\\\"\";
+  
+  dynRemove(dollarListParam, directAccessButtonNumber);		// dollar parameter names...
+  dynInsertAt(dollarListParam, sNewParam, directAccessButtonNumber);
+  dynRemove(dollarListValues, directAccessButtonNumber);	// dollar values...
+  dynInsertAt(dollarListValues, sNewVal, directAccessButtonNumber);
+  
+  // save the new list: 
+  dpSet(\"ApplicationProperties.panels.directaccess.panels:_original.._value\", 		 panelNameList,
+  		\"ApplicationProperties.panels.directaccess.icons_enabled:_original.._value\", icons_enabled,
+  		\"ApplicationProperties.panels.directaccess.icons_disabled:_original.._value\",icons_disabled,
+  		\"ApplicationProperties.panels.directaccess.sum_alerts:_original.._value\",	 sum_alertList,
+  		\"ApplicationProperties.panels.directaccess.dollar_params:_original.._value\", dollarListParam,
+  		\"ApplicationProperties.panels.directaccess.dollar_values:_original.._value\", dollarListValues);
+    
+  PanelOffReturn(makeDynFloat(1),makeDynString(enabledName,disabledName));
+} " 0
+ E E E
+13 5
+"cmdCancel"
+""
+1 428 557 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+4 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  428 558 522 585
+
+T 
+3
+LANG:10000 9 Abbrechen
+LANG:10001 6 Cancel
+LANG:10027 16 Отменить
+"main() 
+{   
+  PanelOffReturn(makeDynFloat(-1),makeDynString());
+} 
+" 0
+ E E E
+13 18
+"iconPreviewEnabled"
+""
+1 110 280 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  108 278 162 322
+
+T 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	name;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY,
+  				\"txtEnabledFileName\",\"text\", name);			
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+name+\" \"),posX-80,posY+54,10,1,1);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ E E "main()
+{
+  // shows the current picture file for enabled- and disabled mode
+
+  dyn_string icons_enabled, icons_disabled;
+  int directAccessButtonNumber = $DPE;
+  
+  dpGet(\"ApplicationProperties.panels.directaccess.icons_enabled:_online.._value\",icons_enabled,
+  	    \"ApplicationProperties.panels.directaccess.icons_disabled:_online.._value\",icons_disabled);
+
+  setValue(\"\", \"fill\",\"[pattern,[tile,bmp,\"+icons_enabled[directAccessButtonNumber]+\"]]\", \"enabled\", true);
+  setValue(\"iconPreviewDisabled\",\"fill\",\"[pattern,[tile,bmp,\"+icons_disabled[directAccessButtonNumber]+\"]]\",\"enabled\", true);
+	
+  setMultiValue(\"txtEnabledFileName\",\"text\", icons_enabled[directAccessButtonNumber],
+				\"txtDisabledFileName\",\"text\",icons_disabled[directAccessButtonNumber]);
+		  
+}" 0
+
+13 23
+"FileSelect"
+""
+1 368 58 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  368 58 408 88
+
+P 
+4294967295
+"23.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{ 
+  string 	 sFile;
+  dyn_string dollar_params, dollar_values, dollarList, dollarName, dollarVal, asDollar, sDyn_string;
+  int 		 directAccessButtonNumber = $DPE, i, length;
+  
+  // Opens the file selector and reduces the incomming string to the needed panelname
+  fileSelector(sFile, PROJ_PATH+\"panels/mainpanels\", true);
+  
+  if (sFile!=\"\")
+  {
+    length = strlen (sFile);
+    sFile = substr(sFile, strlen(PROJ_PATH+PANELS_REL_PATH), length);
+    setMultiValue(\"txtFile\",\"text\",sFile);
+  
+    // Create a list including all dollar parameters in the selected panel
+    dpGet(\"ApplicationProperties.panels.directaccess.dollar_params:_online.._value\",dollar_params,
+  	      \"ApplicationProperties.panels.directaccess.dollar_values:_online.._value\",dollar_values);
+  	    
+    dollarName = strsplit(dollar_params[directAccessButtonNumber], \" \");
+    dollarVal = strsplit(dollar_values[directAccessButtonNumber], \" \");
+  
+    getDollarList(sFile, asDollar); 
+  
+    if (dollarVal == \"\\\"\\\"\") 
+    {
+      dynRemove(dollarVal, 1);
+      for (i=1; i<=dynlen(asDollar); i++)
+      {
+        dynAppend(dollarVal, \"\\\"\\\"\");
+      }
+    }
+    for (i=1; i<=dynlen(asDollar); i++)
+    { 
+      if (dollarVal[i] == asDollar[i]) dynAppend(dollarList, asDollar[i]+\":\");
+      if (dollarVal[i] == \"\\\"\\\"\")
+      {
+        dynAppend(dollarList, asDollar[i]+\":\");
+        dynAppend(sDyn_string, asDollar[i]+\":\\\"\\\"\"); 
+      }
+      else dynAppend(dollarList, asDollar[i]+\":\"+dollarVal[i]); 
+    }
+  
+    setValue(\"ComboBox1\", \"items\", sDyn_string);  	
+  
+    if (dynlen(sDyn_string)>=1) 
+    {
+      setMultiValue(\"ComboBox1\", \"items\", sDyn_string,
+    			    \"ComboBox1\", \"text\", dollarList[1],
+    			    \"txtDollars\",\"text\", \"\");    
+    }
+    else  setMultiValue(\"ComboBox1\", \"text\", 	\"\",
+  					    \"txtDollars\",\"text\", 	getCatStr(\"DemoApp\",\"noDollarParams\"),
+  					    \"txtDollars\",\"enabled\", false,
+  					    \"cmdDpe\",\"enabled\", 	false,
+    					\"cmdFile\",\"enabled\", 	false,
+    					\"cmdColor\",\"enabled\", 	false);  
+  			
+    RootPanelOnModule(sFile, sFile, \"paneltest\", dollarList);
+  }
+}" 0
+ E E E
+14 24
+"txtFile"
+""
+1 40 60 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  38 58 362 85
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  // shows the current panel name 
+  
+  dyn_string panelName;
+  int 		 directAccessButtonNumber = $DPE;
+  
+  dpGet(\"ApplicationProperties.panels.directaccess.panels:_online.._value\",panelName);
+  setValue(\"\", \"text\",panelName[directAccessButtonNumber]);
+}" 0
+ E
+13 26
+"Button1"
+""
+1 178 278 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  178 278 218 308
+
+P 
+4294967295
+"26.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // opens a file selector window 
+  
+  string sFile;
+  int    length;
+
+  fileSelector(sFile, PROJ_PATH+ICONS_REL_PATH+\"icons\", true, \"*.bmp\");
+  if (sFile!=\"\") 
+  {
+    length = strlen (sFile);
+    sFile = substr(sFile, strlen(PROJ_PATH+ICONS_REL_PATH), length);
+    setValue(\"iconPreviewEnabled\",\"fill\",\"[pattern,[tile,bmp,\"+sFile+\"]]\");
+    setMultiValue(\"txtEnabledFileName\",\"text\", sFile);				
+  }
+}" 0
+ E E E
+13 27
+"iconPreviewDisabled"
+""
+1 360 280 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  358 278 412 322
+
+T 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // opens a small, tool-tipp like display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	name;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY,
+  				\"txtDisabledFileName\",\"text\", name);			
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+name+\" \"),posX-120,posY+54,10,1,1);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ E E E
+13 28
+"Button3"
+""
+1 428 278 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  428 278 468 308
+
+P 
+4294967295
+"28.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // opens a file selector window 
+  
+  string sFile;
+  int 	 length;
+
+  fileSelector(sFile, PROJ_PATH+ICONS_REL_PATH+\"icons\", true, \"*.bmp\");
+  if (sFile!=\"\") 
+  {
+    length = strlen (sFile);
+    sFile = substr(sFile, strlen(PROJ_PATH+ICONS_REL_PATH), length);
+    setValue(\"iconPreviewDisabled\",\"fill\",\"[pattern,[tile,bmp,\"+sFile+\"]]\");
+    setValue(\"txtDisabledFileName\",\"text\", sFile);
+  }
+}" 0
+ E E E
+14 34
+"txtDP"
+""
+1 40 376 E E E 0 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  38 374 332 401
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  // get current sum alert DP
+ 
+  dyn_string dpeName;
+  int directAccessButtonNumber = $DPE;
+  
+  dpGet(\"ApplicationProperties.panels.directaccess.sum_alerts:_online.._value\",dpeName);
+  setValue(\"\", \"text\",dpeName[directAccessButtonNumber]);
+}" 0
+ "main()
+{
+  this.enabled= false;
+}" 0
+
+13 35
+"dpsel"
+""
+1 358 374 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  358 374 398 404
+
+P 
+4294967295
+"35.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // opens a DP- selector window starting 
+  // with the needed type 'SUMALERTS'
+  
+  string dp;
+
+  dpSelector(dp, 0, \"OWN_SYSTEM_NAME_SYS\", true, \"SUMALERTS\");
+  dp = dpSubStr(dp,DPSUB_DP);
+  if (dp != \"\") setMultiValue(\"txtDP\",\"enabled\", FALSE,
+  							  \"txtDP\",\"text\",dp);
+}" 0
+ E E E
+13 44
+"Button2"
+""
+1 408 374 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  408 374 448 404
+
+T 
+3
+LANG:10000 3 Neu
+LANG:10001 3 New
+LANG:10027 7 Нов.
+"main()
+{
+  // enables txt field to allow input.
+  // data will be stored by clicking OK
+
+  setMultiValue(\"txtDP\", \"enabled\", \"TRUE\",
+  				\"txtDP\", \"text\", \"\");
+}" 0
+ E E E
+13 45
+"cmdDpe"
+""
+1 360 498 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  360 498 400 528
+
+P 
+4294967295
+"45.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // opens a DP- selector window in case
+  // that dollar parameter shall be a DP string
+
+  string dp;
+
+  dpSelector(dp);
+
+  setValue(\"txtDollars\",\"text\",dp);
+}" 0
+ E E E
+13 46
+"cmdColor"
+""
+1 408 498 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  408 498 448 528
+
+P 
+4294967295
+"46.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // opens the color editor in case that 
+  // dollar parameter shall be a color string
+
+  string color;
+ 
+  colorEditor(color);
+  
+  setValue(\"txtDollars\",\"text\", color);
+ 
+}" 0
+ E E E
+13 47
+"cmdFile"
+""
+1 458 498 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  458 498 498 528
+
+P 
+4294967295
+"47.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // opens a file selector window in case that
+  // dollar parameter shall be a file string
+
+  string sFile;
+  int    length;
+
+  fileSelector(sFile, PROJ_PATH, true);
+  if (sFile!=\"\") setValue(\"txtDollars\", \"text\", sFile);
+}" 0
+ E E E
+22 149
+"ComboBox1"
+""
+1 90 460 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  88 458 332 485
+0
+
+"main()
+{
+  // shows the current dollar parameters
+  
+  string 	 sFile;
+  dyn_string dollar_params, dollar_values, dollarList, dollarName,
+  			 dollarVal, asDollar, asPara, sDyn_string;
+  int 		 directAccessButtonNumber = $DPE, i, iAnz, j;
+
+  dpGet(\"ApplicationProperties.panels.directaccess.dollar_params:_online.._value\",dollar_params,
+  	    \"ApplicationProperties.panels.directaccess.dollar_values:_online.._value\",dollar_values);
+  	    
+  dollarName = strsplit(dollar_params[directAccessButtonNumber], \" \");
+  dollarVal = strsplit(dollar_values[directAccessButtonNumber], \" \");
+  
+  delay(0,500);
+  getValue(\"txtFile\",\"text\",sFile);
+  getDollarList(sFile, asDollar); 
+  
+  if (dollarVal == \"\\\"\\\"\") 
+  {
+    dynRemove(dollarVal, 1);
+    for (i=1; i<=dynlen(asDollar); i++)
+    {
+      dynAppend(dollarVal, \"\\\"\\\"\");
+    }
+  }
+  
+  for (i=1; i<=dynlen(asDollar); i++)
+  { 
+    if (dollarVal[i] != asDollar[i]) dynAppend(dollarList, asDollar[i]+\":\"+dollarVal[i]);
+    if (dollarVal[i] == asDollar[i]) dynAppend(dollarList, asDollar[i]+\":\\\"\\\"\");		   // if dollarVal == empty show with \"\"
+  }
+  
+  if (dynlen(dollarList)>=1) 
+  {
+    setMultiValue(\"ComboBox1\", \"items\", dollarList,
+    			  \"ComboBox1\", \"text\", dollarList[1],
+    			  \"txtDollars\",\"text\",\"\");    
+  }
+  else  setMultiValue(\"ComboBox1\", \"text\", 		\"\",
+  					  \"txtDollars\",\"text\", 		getCatStr(\"DemoApp\",\"noDollarParams\"),
+  					  \"txtDollars\",\"enabled\", 	false,
+  					  \"cmdDpe\",\"enabled\", 		false,
+    				  \"cmdFile\",\"enabled\", 		false,
+    				  \"cmdColor\",\"enabled\", 	false); 
+} " 0
+
+"main()
+{
+  // cut the dollar-value and put it into the dollar- value textfield
+  
+  int    pos;
+  string s, sValue, sPara;
+
+  getValue(\"\",\"text\",s);
+  sPara=strltrim(s,\"$\");
+  sPara=substr(sPara, 0, strpos(sPara,\":\"));
+  sValue=substr(s, (strpos(s,\":\")+1), strlen(s));
+  if (sValue == \"\\\"\\\"\") sValue = \"\";
+  setMultiValue(\"txtDollars\",\"text\",	sValue,
+    			\"txtDollars\",\"enabled\", true,
+    			\"cmdDpe\",\"enabled\", 	true,
+    			\"cmdFile\",\"enabled\", 	true,
+    			\"cmdColor\",\"enabled\", 	true);
+}" 0
+
+E
+ 0 0
+29 153
+"panel"
+""
+1 63 -74 E E E 1 E 1 E N "_Window" E N {102,102,204} E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  20 121 510 250
+15 Canvas.Canvas.1
+0
+"main()
+{
+  // opens a preview window
+  
+  string 		sPanel;
+  dyn_string 	panelName, dollarList, dollar_params, dollar_values, dollarName, dollarVal;
+  int 			directAccessButtonNumber = $DPE, i;
+  
+  // read first panel to load after startup from the properties datapoint  
+  dpGet(\"ApplicationProperties.panels.directaccess.panels:_online.._value\",panelName,
+  		\"ApplicationProperties.panels.directaccess.dollar_params:_online.._value\",dollar_params,
+  	    \"ApplicationProperties.panels.directaccess.dollar_values:_online.._value\",dollar_values);	    
+
+  dollarName = strsplit(dollar_params[directAccessButtonNumber], \" \");
+  dollarVal = strsplit(dollar_values[directAccessButtonNumber], \" \");
+  
+  for(i=1; i<=dynlen(dollarName); i++)
+  {
+    dynAppend(dollarList, dollarName[i]+\":\");
+  }   
+  
+  // set the 'canvas class' object, that allows panel-in-panel displaying
+  // with it´s own module name \"panel\"
+  propPut(\"\",\"ModuleName\",\"paneltest\");
+  
+  // check if the specified panel still exists (readable) and if so
+  // open it, if not -> open a standard error dialog
+  if (access((PROJ_PATH+panelName[directAccessButtonNumber]),R_OK))
+  {
+    RootPanelOnModule(panelName[directAccessButtonNumber],\"startpanel\",\"paneltest\",dollarList);
+  }
+  else
+  {
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",\"\",
+                             makeDynString((getCatStr(\"DemoApp\",\"panelNotFound\")+
+                             panelName[directAccessButtonNumber])));
+  }
+}" 0
+14 154
+"txtDollars"
+""
+1 90 500 E E E 0 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  88 498 332 525
+3 "0s" 0 0 0 0 0 -1  E E "main()
+{
+  // Creates the new dollar string and puts
+  // it back in the item list
+  
+  int    pos;
+  string s, sValue, sPara, sNewValue;
+  dyn_string sList;
+
+  getMultiValue(\"ComboBox1\",\"text\",s,
+  				\"ComboBox1\",\"items\", sList,
+  				\"\",\"text\", sNewValue);
+  if (sNewValue==\"\") sNewValue = \"\\\"\\\"\";
+  
+  sPara=substr(s, strpos(s,\":\")+1, strlen(s));
+  sValue=substr(s, 0, strpos(s,\":\")+1);
+  
+  pos = dynContains(sList, s);
+  
+  if (dynContains(sList, sValue+\"$\"+sNewValue) <=0)
+  {
+    dynRemove(sList, pos);
+    dynInsertAt(sList, sValue+sNewValue, pos);
+    setValue(\"ComboBox1\",\"items\", sList);
+  }
+  setValue(\"ComboBox1\",\"text\", sList[pos]);
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 158 0 "" 2
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 298 569 T 49 1 0 1 -238 88
+1
+"$hlp_keyword""da_direct_access"
+0

@@ -1,0 +1,609 @@
+V 13
+3
+LANG:10000 10 Navigation
+LANG:10001 10 Navigation
+LANG:10027 18 Навигация
+PANEL,-1 -1 1007 54 N "_3DFace" 0
+E E E E E 1 -1 -1 0  350 60
+""0  1
+E "
+//****************************************
+switchFlags()
+{
+  string flags;
+
+//   IM 117836
+//   this.enabled(FALSE);
+//   delay(1);
+//   this.enabled(TRUE);
+//   
+//   switch(strltrim(strrtrim(getLocale(getActiveLang()))))
+//   {
+//     case \"en_US.iso88591\": flags = \"langsEnDe\"; break; //DebugTN(\"Englisch - US\");
+//     case \"en_GB.iso88591\": flags = \"langsEnDe\"; break; //DebugTN(\"Englisch - Großbritannien\");
+//     case \"de_AT.iso88591\": flags = \"langsDeEn\"; break; //DebugTN(\"Deutsch - Österreich\");
+//     case \"de_DE.iso88591\": flags = \"langsDeEn\"; break; //DebugTN(\"Deutsch - Deutschland\");
+//     case \"de_CH.iso88591\": flags = \"langsDeEn\"; break; //DebugTN(\"Deutsch - Schweiz\");
+//     default              : ;
+//   }
+
+  flags = \"langsEnDe\";   
+  
+  this.fill = \"[pattern,[tile,gif,\"+PICTURES_REL_PATH+flags+\".gif]]\";
+
+}
+//****************************************
+
+
+
+" 0
+ 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+NC
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 9 Слой1
+1 218 16 "" 0
+0
+1 222 23 "" 0
+0
+1 226 24 "" 0
+0
+1 230 25 "" 0
+0
+1 234 29 "" 0
+0
+1 238 30 "" 7
+0
+1 242 37 "" 0
+0
+1 243 38 "" 0
+0
+1 244 39 "" 0
+0
+1 245 40 "" 0
+0
+1 246 41 "" 1
+0
+1 247 42 "" 2
+0
+1 248 44 "" 46
+0
+13 193
+"AboutButton"
+""
+1 944.5 0 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  ChildPanelOnCentralModal(\"mainpanels/childs/About.pnl\", \"PVSS II Demo Application\", makeDynString(\"$b_close:TRUE\"));
+}" 0
+ E
+56 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 50 Klick links: PVSS II / Klick rechts: Informationen
+LANG:10001 46 Click left: PVSS II / Click right: About panel
+LANG:10027 132 Щелчок левой кнопкой мыши: WinCC OA / Щелчок правой кнопкой мыши: О программе
+
+0
+3
+LANG:10000 25 Arial,6,-1,5,50,0,0,0,0,0
+LANG:10001 25 Arial,6,-1,5,50,0,0,0,0,0
+LANG:10027 25 Arial,6,-1,5,50,0,0,0,0,0
+0  943 -2 1007 27
+
+T 
+3
+LANG:10000 15 SIMATIC
+WinCCOA
+LANG:10001 15 SIMATIC
+WinCCOA
+LANG:10027 15 SIMATIC
+WinCCOA
+"//Function DirectPanelSel_1_EventClick()
+main()
+{
+  RootPanelOnModule( \"mainpanels/pvss.pnl\", 
+                     \"pvss_image\",
+                     ptms_BuildModuleName(\"mainModule\",ptnavi_GetScreenName()),
+                     makeDynString());
+}
+" 0
+ E E "main()
+{
+  dpConnect(\"work\",\"ApplicationProperties.ci.logo_small_2:_online.._value\");
+  dpConnect(\"manageAccess\",myUiDpName()+\".UserName:_online.._value\");
+}
+
+// script for displaying the correct logo for this button
+work(string dpe, string iconfile)
+{
+  return;  // IM 105166 m.pokorny
+  
+  string filetype;
+
+  if((iconfile != \"default\") && (iconfile != \"\"))
+  {
+    // extract the filetype (bmp, gif, xpm) by cutting off the last 3 chars
+    filetype = substr(iconfile, (strlen(iconfile)-3),3);
+    this.fill = \"[pattern,[tile,\"+filetype+\",\"+iconfile+\"]]\";
+  }
+  
+ // if (iconfile == \"default\") this.fill = \"[pattern,[tile,gif,\"+PICTURES_REL_PATH+\"ci/pvss_DemoApplication.gif]]\";
+  if (iconfile == \"default\") this.fill = \"[pattern,[tile,gif,\"+PICTURES_REL_PATH+\"ci/pvss_AdvancedScada_II.gif]]\";
+}
+
+manageAccess(string dp1, string UserName)
+{
+  if (!getUserPermission(1))
+  { 
+    RootPanelOnModule(\"mainpanels/geographical_overview.pnl\", 
+    				  \"geographical_overview\", 
+    				  //\"panel\",
+           ptms_BuildModuleName(\"mainModule\",ptnavi_GetScreenName()),
+    				  makeDynString());
+  } 
+}
+
+
+" 0
+
+13 194
+"LayersButton"
+""
+1 557 0 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  int		 asciiVal;
+  int 		 i, answer;
+  string     s;
+  dyn_string panelList, popUpItems;
+  
+  //ChangePerm = TRUE;
+  // read all panelfile names (*.pnl)of teh /mainpanels/ directory
+  // into an array of strings
+  panelList = getFileNames(PROJ_PATH+\"panels/mainpanels\",\"*.pnl\");
+
+  // sort the file list alphabethically
+  dynSortAsc(panelList);
+
+  // the popupMenu() (=context menue) can get its selectable items
+  // in an another array of strings (dyn_strings) - here it is build
+  // together in a loop. Syntax for each entry is \"TYPE,text,answerValue,enabled\"
+  // for details please see the \"PVSS Online Help\" for popupMenu() 
+  // the +i+((i<=9)?\"    \":\"  \") means: \"set the number in front of 
+  // the filename and for the numbers less or equal than 9 make add more spaces
+  // in order to have the filenames formated one above each other - details
+  // for this \"structure\" you find in the section \"control structures\" in the help
+
+  for(i=1; i<=dynlen(panelList); i++)
+  {
+    dynAppend(popUpItems,\"PUSH_BUTTON, \"+i+((i<=9)?\"    \":\"  \")+panelList[i]+\", \"+i+\", 1\");
+    s = substr(panelList[i],0,1);
+    asciiVal = s;
+  }  
+
+  // open the popup with given parametrisation and the returnvalue int 'answer'
+  popupMenu(popUpItems,answer);
+  
+  // open the selected panel in the module \"panel\" an answer was given (answer not 0)
+  if (answer)
+    RootPanelOnModule( \"mainpanels/\"+panelList[answer], 
+                       \"panel\"+answer, 
+                       //\"panel\", 
+                       ptms_BuildModuleName(\"mainModule\",ptnavi_GetScreenName()),
+                       makeDynString());
+
+}
+" 0
+ E
+57 1 0 0 119 0
+E E E
+0
+3
+LANG:10000 28 Sichtbarkeits-Ebenen ändern
+LANG:10001 22 Modify layer visablity
+LANG:10027 48 Изменение видимости слоев
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  555 -2 604 54
+
+P 
+12632256
+"pictures/icons/layer_control_enabled.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  ChildPanelOnRelativModal(\"mainpanels/childs/LayerControl.pnl\",\"Layer\",
+  			               makeDynString(\"$ManagerNumber:\"+myUiNumber()),-1,41);
+}" 0
+ E E "main()
+{
+  dpConnect(\"manageAccess\",myUiDpName()+\".UserName:_online.._value\");
+}
+
+manageAccess(string dp1, string UserName)
+{
+ if (getUserPermission(2))
+   setValue(\"\",\"fill\",\"[pattern,[tile,gif,icons/layer_control_enabled.gif]]\",
+   			   \"enabled\", true);
+ else
+   //setValue(\"\",\"fill\",\"[pattern,[tile,gif,icons/layer_control_disabled.gif]]\",
+   setValue(\"\",\"enabled\", false);
+}" 0
+
+13 195
+"SetValuesButton"
+""
+1 607 0 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 37 Datenpunkt Information / Werte setzen
+LANG:10001 34 Datapoint information / set values
+LANG:10027 104 Информация об элементе точки данных / установка значений
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  605 -2 654 54
+
+P 
+12632256
+"pictures/icons/set_datapoint_enabled.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+    ChildPanelOnCentralModal(\"vision/dpe_info.pnl\",getCatStr(\"DemoApp\",\"title_of_dpe_info_editable\"),
+                             makeDynString(\"$dpe:\",\"$b_editable:\"+\"1\")); 
+}" 0
+ E E "main()
+{
+  dpConnect(\"manageAccess\",myUiDpName()+\".UserName:_online.._value\");
+}
+
+manageAccess(string dp1, string UserName)
+{
+ if (getUserPermission(3))
+   setValue(\"\",\"fill\",\"[pattern,[tile,gif,icons/set_datapoint_enabled.gif]]\",
+   			   \"enabled\", true);
+ else
+   //setValue(\"\",\"fill\",\"[pattern,[tile,gif,icons/set_datapoint_disabled.gif]]\",
+   setValue(\"\",\"enabled\", false);
+}" 0
+
+13 196
+"Button1"
+""
+1 508 0 E E E 1 E 1 E N "_3DText" E N "STD_pushbutton_back" E E
+ E E
+59 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 14 Zoom Navigator
+LANG:10001 20 Open zoom navigation
+LANG:10027 54 Навигация с масштабированием
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  506 -2 555 54
+
+P 
+12632256
+"pictures/icons/zoom_enabled.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  int iModuleNumber = strsplit(myModuleName(), \"_\")[2];
+  ChildPanelOn(\"vision/navigator.pnl\",
+      \"Navigator\",
+      makeDynString(\"$moduleName:mainModule_\"+iModuleNumber),
+      0, 55);
+}" 0
+ E E "main()
+{
+  dpConnect(\"manageAccess\",TRUE,myUiDpName()+\".UserName:_online.._value\");
+}
+
+manageAccess(string dp1, string UserName)
+{
+ if (getUserPermission(1))
+   setValue(\"\",\"fill\",\"[pattern,[tile,gif,icons/zoom_enabled.gif]]\",
+   			   \"enabled\", true);
+ else
+   //setValue(\"\",\"fill\",\"[pattern,[tile,gif,icons/zoom_disabled.gif]]\",
+   setValue(\"\",\"enabled\", false);
+}" 0
+
+1 253 48 "" 0
+0
+1 257 49 "" 0
+0
+13 217
+"Button2"
+""
+1 955.5 27 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  int         i, answer;
+  dyn_string  ds, txt;
+
+  //PopUp menu with all possible languages
+  for (i = 1; i <= getNoOfLangs(); i++)
+  {
+    ds[i]   = getLocale(i-1);    
+    txt[i]  = \"PUSH_BUTTON, \" + getCatStr(\"trans\", strrtrim(strltrim(ds[i]))) + \",\" + getLangIdx(ds[i]) + \", 1\";
+  }
+  popupMenu(txt, answer);
+  
+  if (getLocale(getActiveLang()) != getLocale(answer))
+  {
+    switchLang(getLangIdx(getLocale(answer)));
+    switchFlags();
+  }
+}" 0
+ E
+63 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 86 Klick links: Online Sprachumschaltung / Klick rechts: Zeige alle verfügbaren Sprachen
+LANG:10001 68 Click left: Switch language / Click right: Show configured languages
+LANG:10027 188 Щелчок левой кнопкой мыши: Диалоговое окно выбора языка / Щелчок правой кнопкой мыши: Меню выбора языка
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  943 25 1007 54
+
+P 
+12303291
+"pictures/langsEnDe.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+//   IM 117836
+//   this.enabled(FALSE);
+//   switch(getLocale(getActiveLang()))
+//   {
+//     case \"en_US.iso88591\": switchLang(getLangIdx(\"de_AT.iso88591\")); break;//Englisch - US
+//     case \"en_GB.iso88591\": switchLang(getLangIdx(\"en_GB.iso88591\")); break;//Englisch - Großbritannien
+//     case \"de_AT.iso88591\": switchLang(getLangIdx(\"en_US.iso88591\")); break;//Deutsch - Österreich
+//     case \"de_DE.iso88591\": switchLang(getLangIdx(\"de_DE.iso88591\")); break;//Deutsch - Deutschland
+//     case \"de_CH.iso88591\": switchLang(getLangIdx(\"de_CH.iso88591\")); break;//Deutsch - Schweiz
+//     default              : ;
+//   }
+
+  string newLocale, locale = getLocale(getActiveLang());     
+  dyn_string dsParameters; 
+  dyn_float dfResult; 
+  dyn_string dsResult;  
+  
+  ChildPanelOnCentralReturn(\"projAdmin/project_admin_switchLang.pnl\", getCatStr(\"trans\", \"labels_select_langs\"), makeDynString(), dfResult, dsResult); 
+  
+  if ( dynlen(dsResult) < 3 || dsResult[3] == \"\" )
+  {
+    return;
+  }
+  
+  newLocale = dsResult[3];
+  if ( locale != newLocale )
+  {
+    switchLang(getLangIdx(newLocale));
+  }  
+  
+  switchFlags();
+}
+
+" 0
+ E E "main()
+{
+  dpConnect(\"manageAccess\",myUiDpName()+\".UserName:_online.._value\");
+  switchFlags();
+}
+
+manageAccess(string dp1, string UserName)
+{
+  if (!getUserPermission(1))
+  { 
+    RootPanelOnModule(\"mainpanels/geographical_overview.pnl\", 
+    				  \"geographical_overview\", 
+    				  //\"panel\",
+           ptms_BuildModuleName(\"mainModule\",ptnavi_GetScreenName()),
+    				  makeDynString());
+  } 
+}
+" 0
+
+1 261 50 "" 2
+31 "transform" 0 0 1.03921568627451 0 1.03921568627451 -19.72549019607854 -1.039215686274508
+0
+1 262 50 "" 3
+31 "transform" 0 0 1 0 1 -2.000000000000171 -0.9999999999999982
+0
+1 263 50 "" 4
+31 "transform" 0 0 1 0 1 -2.000000000000171 -0.9999999999999982
+0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 9 Слой2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 9 Слой3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 9 Слой4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 9 Слой5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 9 Слой6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 9 Слой7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 9 Слой8
+0
+3 16 "sum1" -1
+"" ""
+"objects/STD_PANELS/PT_sumq.pnl" 11 14 T 29 1 0 1 39 -14
+6
+"$1""Warning"
+"$2""Alert"
+"$3""Danger"
+"$panelName"""
+"$panelNumber""0"
+"$refNumber""1"
+3 23 "sum5" -1
+"" ""
+"objects/STD_PANELS/PT_sumq.pnl" 70 10 T 36 1 0 1 180 -10
+6
+"$1""Warning"
+"$2""Alert"
+"$3""Danger"
+"$panelName"""
+"$panelNumber"""
+"$refNumber""5"
+3 24 "sum4" -1
+"" ""
+"objects/STD_PANELS/PT_sumq.pnl" 70 10 T 37 1 0 1 130 -10
+6
+"$1""Warning"
+"$2""Alert"
+"$3""Danger"
+"$panelName"""
+"$panelNumber"""
+"$refNumber""4"
+3 25 "sum3" -1
+"" ""
+"objects/STD_PANELS/PT_sumq.pnl" 70 10 T 38 1 0 1 80 -10
+6
+"$1""Warning"
+"$2""Alert"
+"$3""Danger"
+"$panelName"""
+"$panelNumber"""
+"$refNumber""3"
+3 29 "sum2" -1
+"" ""
+"objects/STD_PANELS/PT_sumq.pnl" 70 10 T 42 1 0 1 30 -10
+6
+"$1""Warning"
+"$2""Alert"
+"$3""Danger"
+"$panelName""test.pnl"
+"$panelNumber""1"
+"$refNumber""2"
+3 30 "" -1
+"" ""
+"objects/STD_PANELS/PT_cascade0_1.pnl" 14 24 T 43 1.011111111111111 0 1 -14.15555555555556 -24
+0
+3 37 "Group28" -1
+"" ""
+"objects/STD_PANELS/PT_navi_vt.pnl" 1150 10 T 49 1 0 1 -495 -10
+0
+3 38 "Group29" -1
+"" ""
+"objects/STD_PANELS/PT_navi_as.pnl" 1220 10 T 50 1 0 1 -516 -10
+0
+3 39 "Group30" -1
+"" ""
+"objects/STD_PANELS/PT_navi_hq.pnl" 1290 10 T 51 1 0 1 -538 -10
+0
+3 40 "Group31" -1
+"" ""
+"objects/STD_PANELS/PT_navi_gq.pnl" 1360 10 T 52 1 0 1 -560 -10
+0
+3 41 "Group32" -1
+"" ""
+"objects/STD_PANELS/PT_navi_sm.pnl" 1430 10 T 53 1 0 1 -581 -10
+0
+3 42 "Group33" -1
+"" ""
+"objects/STD_PANELS/PT_navi_hlp.pnl" 1500 10 T 54 0.9883720930232558 0 1 -585.5581395348839 -10
+0
+3 44 "" -1
+"" ""
+"objects/STD_PANELS/PT_naviCompact.pnl" 487 22 T 55 1 0 1 -87 -22
+0
+3 48 "" -1
+"" ""
+"objects/STD_PANELS/PT_sumq.pnl" 325 19 T 62 1 0 1 -25 -19
+6
+"$1""Warning"
+"$2""Alert"
+"$3""Danger"
+"$panelName""mainpanels/color_plant.pnl"
+"$panelNumber""1"
+"$refNumber""0"
+3 49 "" -1
+"" ""
+"objects/STD_PANELS/PT_sumq.pnl" 384 22 T 63 1 0 1 -34 -22
+6
+"$1""Warning"
+"$2""Alert"
+"$3""Danger"
+"$panelName""mainpanels/reactor.pnl"
+"$panelNumber""1"
+"$refNumber""0"
+3 50 "PANEL_REF50" -1
+"" ""
+"objects/STD_PANELS/PT_navi_moveScreen.pnl" 466 0 T 64 0.8360655737704918 0 0.8360655737704918 78.27868852459015 0.1639344262295082
+0
+0

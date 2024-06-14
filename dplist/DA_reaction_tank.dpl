@@ -1,0 +1,404 @@
+# ascii dump of database
+
+# DpType
+TypeName
+_DpGroup._DpGroup	1#1
+	Types	9#2
+	Dps	9#3
+	Level	21#4
+_DynamicDatapoints._DynamicDatapoints	1#1
+	Leaf	9#2
+	DynamicAttribute	9#3
+PID_Control.PID_Control	1#1
+	parameters	1#2
+		kR	22#3
+		TN	22#4
+		TV	22#5
+		u_min	22#6
+		u_max	22#7
+		scale	22#8
+		antiwindup	23#9
+		scanrate	20#28
+		tolerance	22#20
+		mode	20#29
+	input	1#10
+		w	27#30
+		x	27#31
+	state	1#13
+		e	22#14
+		limiter	23#23
+		nocontrol	23#27
+	output	1#15
+		u	27#32
+	cmd	1#25
+		on	23#26
+Motor_N1.Motor_N1	1#1
+	cmd	1#2
+		on	23#9
+	state	1#4
+		on	23#10
+		local	23#13
+		transition	23#14
+	alarm	1#6
+		torque	23#11
+		temp	23#12
+Control_Var.Control_Var	1#1
+	cmd	1#2
+		setpoint	22#3
+	state	1#4
+		value	22#5
+	alarm	1#6
+		sensor	23#7
+SimCenter.SimCenter	1#1
+	minScanRate	21#2
+	modelLoopTime	21#3
+	modelSimOn	23#4
+	devicesLoopTime	21#5
+	devicesSimOn	21#6
+	visu	1#7
+		panelRequest	21#8
+		currentLease	21#9
+		leaseTime	26#10
+PID_Control_Config.PID_Control_Config	1#1
+	confName	9#2
+	confStr	9#3
+Device.Device	1#1
+	state	1#7
+		value	22#8
+		local	23#9
+		transition	23#15
+		on	23#19
+		off	23#20
+	alarm	1#12
+		general	23#16
+	cmd	1#17
+		setpoint	22#18
+	para	1#23
+		maxChangeRate	22#25
+
+# Datapoint/DpId
+DpName	TypeName	ID
+_DpGroup00001_Public	_DpGroup	283
+_DpGroup00002_Public	_DpGroup	284
+_DpGroup00003_Public	_DpGroup	285
+_DpGroup00004_Public	_DpGroup	286
+_DpGroup00005_Public	_DpGroup	287
+_dt_WH_SC_SUB	_DynamicDatapoints	1443
+_dt_WH_SC_SERVICE	_DynamicDatapoints	1444
+_dt_WH_SC1	_DynamicDatapoints	1445
+_dt_SLIDE_VALVE_HAND1	_DynamicDatapoints	1446
+_dt_SLIDE_VALVE2	_DynamicDatapoints	1447
+_dt_SLIDE_VALVE1	_DynamicDatapoints	1448
+_dt_SETPOINT	_DynamicDatapoints	1449
+_dt_PUMP2	_DynamicDatapoints	1450
+_dt_PUMP1	_DynamicDatapoints	1451
+_dt_LABOR_COUNTER	_DynamicDatapoints	1452
+_dt_LABOR_ANALOG	_DynamicDatapoints	1453
+_dt_DRIVE2	_DynamicDatapoints	1454
+_dt_DRIVE1	_DynamicDatapoints	1455
+_dt_COUNTER_SUB	_DynamicDatapoints	1456
+_dt_COUNTER1	_DynamicDatapoints	1457
+_dt_BIT_CONDITION	_DynamicDatapoints	1458
+_dt_ANALOG2	_DynamicDatapoints	1459
+_dt_ANALOG1	_DynamicDatapoints	1460
+_DpGroup00006_Public	_DpGroup	1519
+_DpGroup00007_Public	_DpGroup	1520
+_DpGroup00009_Public	_DpGroup	1522
+_DpGroup00010_Public	_DpGroup	1523
+_dt__SumAlertPanel	_DynamicDatapoints	9532
+_dt_HVAC_VALVE	_DynamicDatapoints	9533
+_dt_HVAC_PUMP	_DynamicDatapoints	9534
+_dt_HVAC_PREHEATER	_DynamicDatapoints	9535
+_dt_HVAC_MEASUREMENT	_DynamicDatapoints	9536
+_dt_HVAC_FLAP	_DynamicDatapoints	9537
+_dt_HVAC_FAN	_DynamicDatapoints	9538
+_dt_HVAC_DEVICESWITCH	_DynamicDatapoints	9539
+_dt_CP_TANK	_DynamicDatapoints	9570
+_dt_CP_DRIVE	_DynamicDatapoints	9571
+_mp_Device	Device	9590
+_dt_Device	_DynamicDatapoints	9591
+_mp_Motor_N1	Motor_N1	9618
+_dt_Motor_N1	_DynamicDatapoints	9619
+_mp_Control_Var	Control_Var	9620
+_dt_Control_Var	_DynamicDatapoints	9621
+R01_Discharge_Valve	Device	9633
+R01_Feeder_Pump	Device	9634
+R01_HE_Inlet_Hot_Valve	Device	9635
+R01_HE_Inlet_Cold_Valve	Device	9636
+R01_HE_Return_Valve	Device	9637
+R01_Injection_Valve	Device	9638
+R01_Mixer	Motor_N1	9639
+R01_LICA_01	Control_Var	9640
+R01_LICA_01_c	PID_Control	9642
+SimCenter	SimCenter	9644
+_mp_PID_Control	PID_Control	9645
+_dt_PID_Control	_DynamicDatapoints	9646
+R01_TICA_02_c	PID_Control	9823
+R01_TICA_02	Control_Var	9856
+PID_Control_Config	PID_Control_Config	9875
+
+# Aliases/Comments
+AliasId	AliasName	CommentName
+_DpGroup00001_Public.	"Alerts"	lt:2 LANG:1 "Alerts@%s@" LANG:0 "Alerts@%s@" 
+_DpGroup00002_Public.	"Parameters"	lt:2 LANG:1 "Parameters@%s@" LANG:0 "Parameters@%s@" 
+_DpGroup00003_Public.	"Commands"	lt:2 LANG:1 "Commands@%s@" LANG:0 "Commands@%s@" 
+_DpGroup00004_Public.	"States"	lt:2 LANG:1 "States@%s@" LANG:0 "States@%s@" 
+_DpGroup00005_Public.	"Values"	lt:2 LANG:1 "Values@%s@" LANG:0 "Values@%s@" 
+_DpGroup00006_Public.	"OPCRead"	lt:2 LANG:1 "OPCRead@%s@" LANG:0 "OPCRead@%s@" 
+_DpGroup00007_Public.	"OPCWrite"	lt:2 LANG:1 "OPCWrite@%s@" LANG:0 "OPCWrite@%s@" 
+_DpGroup00009_Public.	""	lt:2 LANG:1 "Binary commands@@" LANG:0 "Binärbefehle@@" 
+_DpGroup00010_Public.	""	lt:2 LANG:1 "Setpoints@@" LANG:0 "Sollwerte@@" 
+_mp_Device.	""	lt:2 LANG:1 "Device@%s@" LANG:0 "Gerät@%s@" 
+_mp_Device.state.value	""	lt:2 LANG:1 "process variable@%3.2f@%" LANG:0 "Istwert@%3.2f@%" 
+_mp_Device.state.local	""	lt:2 LANG:1 "local operation@@" LANG:0 "Ortbetrieb@@" 
+_mp_Device.cmd.setpoint	""	lt:2 LANG:1 "setpoint@%3.2f@%" LANG:0 "Sollwert@%3.2f@%" 
+_mp_Motor_N1.	""	lt:2 LANG:1 "Motor@%s@" LANG:0 "Motor@%s@" 
+_mp_Control_Var.	""	lt:2 LANG:1 "Controlled variable@%s@" LANG:0 "Regelgröße@%s@" 
+_mp_Control_Var.cmd.setpoint	""	lt:2 LANG:1 "setpoint@%3.2f@%" LANG:0 "Sollwert@%3.2f@%" 
+_mp_Control_Var.state.value	""	lt:2 LANG:1 "current value@%3.2f@%" LANG:0 "Istwert@%3.2f@%" 
+R01_Discharge_Valve.	""	lt:2 LANG:1 "Reaktor 01 discharge valve@@" LANG:0 "Reaktor 01 Auslassventil@@" 
+R01_Feeder_Pump.	""	lt:2 LANG:1 "Reactor_01 feeder pump@@" LANG:0 "Reaktor_01 Speisepumpe@@" 
+R01_HE_Inlet_Hot_Valve.	""	lt:2 LANG:1 "Reactor_01 heatexchanger cold inlet valve@@" LANG:0 "Reaktor_01 Wärmetauscher Heisswasser Zulaufventil@@" 
+R01_HE_Inlet_Cold_Valve.	""	lt:2 LANG:1 "Reactor_01 heat exchanger cold inlet valve@@" LANG:0 "Reaktor_01 Wärmetauscher Kaltwasser Zulaufventil@@" 
+R01_HE_Return_Valve.	""	lt:2 LANG:1 "Reactor_01 heat exchanger return valve@@" LANG:0 "Reaktor_01 Wärmetauscher Rücklaufventil@@" 
+R01_Injection_Valve.	""	lt:2 LANG:1 "Reactor_01 injection valve@@" LANG:0 "Reaktor_01 Dosierventil@@" 
+R01_Mixer.	""	lt:2 LANG:1 "R01 Mixer@@" LANG:0 "R01 Mixer@@" 
+R01_LICA_01.	""	lt:2 LANG:1 "LICA01@@" LANG:0 "LICA01@@" 
+R01_LICA_01.cmd.setpoint	""	lt:2 LANG:1 "setpoint level@%3.2f@%" LANG:0 "Sollwert Niveau@%3.2f@%" 
+R01_LICA_01_c.	""	lt:2 LANG:1 "LICA01@@" LANG:0 "LICA01@@" 
+_mp_PID_Control.	""	lt:2 LANG:1 "Loop name@%s@" LANG:0 "Bezeichnung Regelkreis@%s@" 
+R01_TICA_02_c.	""	lt:2 LANG:1 "TICA02@@" LANG:0 "TICA02@@" 
+R01_TICA_02.	""	lt:2 LANG:1 "TICA02@@" LANG:0 "TICA02@@" 
+R01_TICA_02.cmd.setpoint	""	lt:2 LANG:1 "setpoint temperature@%3.2f@°C" LANG:0 "Sollwert Temperatur@%3.2f@°C" 
+R01_TICA_02.state.value	""	lt:2 LANG:1 "temperature@%3.2f@°C" LANG:0 "Temperatur@%3.2f@°C" 
+
+# DpValue
+ElementName	TypeName	_original.._value	_original.._status	_original.._stime
+_DpGroup00001_Public.Types	_DpGroup	"", ""	0x101	12.06.2003 09:35:33.020
+_DpGroup00001_Public.Dps	_DpGroup	"*.alert.**", "*.alert"	0x101	12.06.2003 09:35:33.040
+_DpGroup00001_Public.Level	_DpGroup	1	0x101	12.06.2003 09:35:33.060
+_DpGroup00002_Public.Types	_DpGroup	"", ""	0x101	12.06.2003 09:35:33.080
+_DpGroup00002_Public.Dps	_DpGroup	"*.para.**", "*.para"	0x101	12.06.2003 09:35:33.100
+_DpGroup00002_Public.Level	_DpGroup	1	0x101	12.06.2003 09:35:33.120
+_DpGroup00003_Public.Types	_DpGroup	"", ""	0x101	12.06.2003 09:35:33.140
+_DpGroup00003_Public.Dps	_DpGroup	"*.cmd**", "*.cmd"	0x101	12.06.2003 09:35:33.160
+_DpGroup00003_Public.Level	_DpGroup	1	0x101	12.06.2003 09:35:33.180
+_DpGroup00004_Public.Types	_DpGroup	"", ""	0x101	12.06.2003 09:35:33.200
+_DpGroup00004_Public.Dps	_DpGroup	"*.state.**", "*.state"	0x101	12.06.2003 09:35:33.220
+_DpGroup00004_Public.Level	_DpGroup	1	0x101	12.06.2003 09:35:33.240
+_DpGroup00005_Public.Types	_DpGroup	"", ""	0x101	12.06.2003 09:35:33.260
+_DpGroup00005_Public.Dps	_DpGroup	"*.value", "*.value.**"	0x101	12.06.2003 09:35:33.280
+_DpGroup00005_Public.Level	_DpGroup	1	0x101	12.06.2003 09:35:33.300
+_dt_WH_SC_SUB.Leaf	_DynamicDatapoints	"_mp_WH_SC_SUB.value:_distrib", "_mp_WH_SC_SUB.value:_common"	0x101	12.06.2003 09:35:33.320
+_dt_WH_SC_SUB.DynamicAttribute	_DynamicDatapoints	"_da_distrib", "_da_common"	0x101	12.06.2003 09:35:33.340
+_dt_WH_SC_SERVICE.Leaf	_DynamicDatapoints	"_mp_WH_SC_SERVICE.cmd.off:_alert_hdl", "_mp_WH_SC_SERVICE.value.timeLeft:_alert_hdl", "_mp_WH_SC_SERVICE.para.action:_original", "_mp_WH_SC_SERVICE.para.interval:_original", "_mp_WH_SC_SERVICE.para.offLimit:_original", "_mp_WH_SC_SERVICE.para.timeLeftOld:_original", "_mp_WH_SC_SERVICE.para.type:_original"	0x101	12.06.2003 09:35:33.360
+_dt_WH_SC_SERVICE.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl", "_da_alert_hdl", "_da_original", "_da_original", "_da_original", "_da_original", "_da_original"	0x101	12.06.2003 09:35:33.380
+_dt_WH_SC1.Leaf	_DynamicDatapoints	"_mp_WH_SC1.cmd.resetPLC:_address", "_mp_WH_SC1.cmd.resetPLC:_distrib", "_mp_WH_SC1.value.plcCounter:_address", "_mp_WH_SC1.value.plcCounter:_distrib", "_mp_WH_SC1.wh.value:_common", "_mp_WH_SC1.para.overflow:_original", "_mp_WH_SC1.para.plcFactor:_original", "_mp_WH_SC1.para.tolerance:_original", "_mp_WH_SC1.para.type:_original"	0x101	12.06.2003 09:35:33.400
+_dt_WH_SC1.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_none", "_da_address_super", "_da_none", "_da_common", "_da_original", "_da_original", "_da_original", "_da_original"	0x101	12.06.2003 09:35:33.420
+_dt_SLIDE_VALVE_HAND1.Leaf	_DynamicDatapoints	"_mp_SLIDE_VALVE_HAND1.alert.alert:_alert_hdl"	0x101	12.06.2003 09:35:33.440
+_dt_SLIDE_VALVE_HAND1.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl"	0x101	12.06.2003 09:35:33.460
+_dt_SLIDE_VALVE2.Leaf	_DynamicDatapoints	"_mp_SLIDE_VALVE2.alert.controlFuse:_address", "_mp_SLIDE_VALVE2.alert.controlFuse:_alert_hdl", "_mp_SLIDE_VALVE2.alert.controlFuse:_smooth", "_mp_SLIDE_VALVE2.alert.controlFuse:_distrib", "_mp_SLIDE_VALVE2.alert.heater:_address", "_mp_SLIDE_VALVE2.alert.heater:_alert_hdl", "_mp_SLIDE_VALVE2.alert.heater:_smooth", "_mp_SLIDE_VALVE2.alert.heater:_distrib", "_mp_SLIDE_VALVE2.alert.motorSwitch:_address", "_mp_SLIDE_VALVE2.alert.motorSwitch:_alert_hdl", "_mp_SLIDE_VALVE2.alert.motorSwitch:_smooth", "_mp_SLIDE_VALVE2.alert.motorSwitch:_distrib", "_mp_SLIDE_VALVE2.alert.motorTherm:_address", "_mp_SLIDE_VALVE2.alert.motorTherm:_alert_hdl", "_mp_SLIDE_VALVE2.alert.motorTherm:_smooth", "_mp_SLIDE_VALVE2.alert.motorTherm:_distrib", "_mp_SLIDE_VALVE2.alert.sumalert:_alert_hdl", "_mp_SLIDE_VALVE2.alert.sumalertPLC:_address", "_mp_SLIDE_VALVE2.alert.sumalertPLC:_alert_hdl", "_mp_SLIDE_VALVE2.alert.sumalertPLC:_smooth", "_mp_SLIDE_VALVE2.alert.sumalertPLC:_distrib", "_mp_SLIDE_VALVE2.alert.time:_address", "_mp_SLIDE_VALVE2.alert.time:_alert_hdl", "_mp_SLIDE_VALVE2.alert.time:_smooth", "_mp_SLIDE_VALVE2.alert.time:_distrib", "_mp_SLIDE_VALVE2.alert.torque:_address", "_mp_SLIDE_VALVE2.alert.torque:_alert_hdl", "_mp_SLIDE_VALVE2.alert.torque:_smooth", "_mp_SLIDE_VALVE2.alert.torque:_distrib", "_mp_SLIDE_VALVE2.cmd.mode.auto:_address", "_mp_SLIDE_VALVE2.cmd.mode.auto:_distrib", "_mp_SLIDE_VALVE2.cmd.mode.auto:_cmd_conv", "_mp_SLIDE_VALVE2.cmd.open:_address", "_mp_SLIDE_VALVE2.cmd.open:_distrib", "_mp_SLIDE_VALVE2.cmd.open:_cmd_conv", "_mp_SLIDE_VALVE2.para.position:_address", "_mp_SLIDE_VALVE2.para.position:_pv_range", "_mp_SLIDE_VALVE2.para.position:_distrib", "_mp_SLIDE_VALVE2.para.position:_cmd_conv", "_mp_SLIDE_VALVE2.state.close:_address", "_mp_SLIDE_VALVE2.state.close:_smooth", "_mp_SLIDE_VALVE2.state.close:_distrib", "_mp_SLIDE_VALVE2.state.closing:_address", "_mp_SLIDE_VALVE2.state.closing:_smooth", "_mp_SLIDE_VALVE2.state.closing:_distrib", "_mp_SLIDE_VALVE2.state.mode.auto:_address", "_mp_SLIDE_VALVE2.state.mode.auto:_smooth", "_mp_SLIDE_VALVE2.state.mode.auto:_distrib", "_mp_SLIDE_VALVE2.state.mode.local:_address", "_mp_SLIDE_VALVE2.state.mode.local:_smooth", "_mp_SLIDE_VALVE2.state.mode.local:_distrib", "_mp_SLIDE_VALVE2.state.mode.man:_address", "_mp_SLIDE_VALVE2.state.mode.man:_smooth", "_mp_SLIDE_VALVE2.state.mode.man:_distrib", "_mp_SLIDE_VALVE2.state.mode.remote:_address", "_mp_SLIDE_VALVE2.state.mode.remote:_smooth", "_mp_SLIDE_VALVE2.state.mode.remote:_distrib", "_mp_SLIDE_VALVE2.state.mode.service:_address", "_mp_SLIDE_VALVE2.state.mode.service:_smooth", "_mp_SLIDE_VALVE2.state.mode.service:_distrib", "_mp_SLIDE_VALVE2.state.open:_address", "_mp_SLIDE_VALVE2.state.open:_smooth", "_mp_SLIDE_VALVE2.state.open:_distrib", "_mp_SLIDE_VALVE2.state.opening:_address", "_mp_SLIDE_VALVE2.state.opening:_smooth", "_mp_SLIDE_VALVE2.state.opening:_distrib", "_mp_SLIDE_VALVE2.value.position:_address", "_mp_SLIDE_VALVE2.value.position:_alert_hdl", "_mp_SLIDE_VALVE2.value.position:_default", "_mp_SLIDE_VALVE2.value.position:_smooth", "_mp_SLIDE_VALVE2.value.position:_pv_range", "_mp_SLIDE_VALVE2.value.position:_distrib", "_mp_SLIDE_VALVE2.value.position:_msg_conv", "_mp_SLIDE_VALVE2.para.position:_common", "_mp_SLIDE_VALVE2.value.position:_common", "_mp_SLIDE_VALVE2.para.position:_original"	0x101	12.06.2003 09:35:33.481
+_dt_SLIDE_VALVE2.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_alert_hdl_2", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_pv_range", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_common", "_da_none", "_da_original"	0x101	12.06.2003 09:35:33.501
+_dt_SLIDE_VALVE1.Leaf	_DynamicDatapoints	"_mp_SLIDE_VALVE1.alert.controlFuse:_address", "_mp_SLIDE_VALVE1.alert.controlFuse:_alert_hdl", "_mp_SLIDE_VALVE1.alert.controlFuse:_smooth", "_mp_SLIDE_VALVE1.alert.controlFuse:_distrib", "_mp_SLIDE_VALVE1.alert.motorSwitch:_address", "_mp_SLIDE_VALVE1.alert.motorSwitch:_alert_hdl", "_mp_SLIDE_VALVE1.alert.motorSwitch:_smooth", "_mp_SLIDE_VALVE1.alert.motorSwitch:_distrib", "_mp_SLIDE_VALVE1.alert.sumalert:_alert_hdl", "_mp_SLIDE_VALVE1.alert.sumalertPLC:_address", "_mp_SLIDE_VALVE1.alert.sumalertPLC:_alert_hdl", "_mp_SLIDE_VALVE1.alert.sumalertPLC:_smooth", "_mp_SLIDE_VALVE1.alert.sumalertPLC:_distrib", "_mp_SLIDE_VALVE1.state.close:_address", "_mp_SLIDE_VALVE1.state.close:_smooth", "_mp_SLIDE_VALVE1.state.close:_distrib", "_mp_SLIDE_VALVE1.state.closing:_address", "_mp_SLIDE_VALVE1.state.closing:_smooth", "_mp_SLIDE_VALVE1.state.closing:_distrib", "_mp_SLIDE_VALVE1.state.mode.auto:_address", "_mp_SLIDE_VALVE1.state.mode.auto:_smooth", "_mp_SLIDE_VALVE1.state.mode.auto:_distrib", "_mp_SLIDE_VALVE1.state.mode.local:_address", "_mp_SLIDE_VALVE1.state.mode.local:_smooth", "_mp_SLIDE_VALVE1.state.mode.local:_distrib", "_mp_SLIDE_VALVE1.state.mode.man:_address", "_mp_SLIDE_VALVE1.state.mode.man:_smooth", "_mp_SLIDE_VALVE1.state.mode.man:_distrib", "_mp_SLIDE_VALVE1.state.mode.remote:_address", "_mp_SLIDE_VALVE1.state.mode.remote:_smooth", "_mp_SLIDE_VALVE1.state.mode.remote:_distrib", "_mp_SLIDE_VALVE1.state.mode.service:_address", "_mp_SLIDE_VALVE1.state.mode.service:_smooth", "_mp_SLIDE_VALVE1.state.mode.service:_distrib", "_mp_SLIDE_VALVE1.state.open:_address", "_mp_SLIDE_VALVE1.state.open:_smooth", "_mp_SLIDE_VALVE1.state.open:_distrib", "_mp_SLIDE_VALVE1.state.opening:_address", "_mp_SLIDE_VALVE1.state.opening:_smooth", "_mp_SLIDE_VALVE1.state.opening:_distrib", "_mp_SLIDE_VALVE1.value.position:_address", "_mp_SLIDE_VALVE1.value.position:_alert_hdl", "_mp_SLIDE_VALVE1.value.position:_default", "_mp_SLIDE_VALVE1.value.position:_smooth", "_mp_SLIDE_VALVE1.value.position:_pv_range", "_mp_SLIDE_VALVE1.value.position:_distrib", "_mp_SLIDE_VALVE1.value.position:_msg_conv", "_mp_SLIDE_VALVE1.value.position:_common"	0x101	12.06.2003 09:35:33.521
+_dt_SLIDE_VALVE1.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_alert_hdl_2", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_none"	0x101	12.06.2003 09:35:33.541
+_dt_SETPOINT.Leaf	_DynamicDatapoints	"_mp_SETPOINT.cmd:_address", "_mp_SETPOINT.cmd:_pv_range", "_mp_SETPOINT.cmd:_distrib", "_mp_SETPOINT.cmd:_cmd_conv", "_mp_SETPOINT.value:_address", "_mp_SETPOINT.value:_alert_hdl", "_mp_SETPOINT.value:_default", "_mp_SETPOINT.value:_smooth", "_mp_SETPOINT.value:_pv_range", "_mp_SETPOINT.value:_distrib", "_mp_SETPOINT.value:_msg_conv"	0x101	12.06.2003 09:35:33.560
+_dt_SETPOINT.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_pv_range", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv"	0x101	12.06.2003 09:35:33.581
+_dt_PUMP2.Leaf	_DynamicDatapoints	"_mp_PUMP2.alert.controlFuse:_address", "_mp_PUMP2.alert.controlFuse:_alert_hdl", "_mp_PUMP2.alert.controlFuse:_smooth", "_mp_PUMP2.alert.controlFuse:_distrib", "_mp_PUMP2.alert.converter:_address", "_mp_PUMP2.alert.converter:_alert_hdl", "_mp_PUMP2.alert.converter:_smooth", "_mp_PUMP2.alert.converter:_distrib", "_mp_PUMP2.alert.flow:_address", "_mp_PUMP2.alert.flow:_alert_hdl", "_mp_PUMP2.alert.flow:_smooth", "_mp_PUMP2.alert.flow:_distrib", "_mp_PUMP2.alert.motorSwitch:_address", "_mp_PUMP2.alert.motorSwitch:_alert_hdl", "_mp_PUMP2.alert.motorSwitch:_smooth", "_mp_PUMP2.alert.motorSwitch:_distrib", "_mp_PUMP2.alert.motorTherm:_address", "_mp_PUMP2.alert.motorTherm:_alert_hdl", "_mp_PUMP2.alert.motorTherm:_smooth", "_mp_PUMP2.alert.motorTherm:_distrib", "_mp_PUMP2.alert.overload:_address", "_mp_PUMP2.alert.overload:_alert_hdl", "_mp_PUMP2.alert.overload:_smooth", "_mp_PUMP2.alert.overload:_distrib", "_mp_PUMP2.alert.pressure:_address", "_mp_PUMP2.alert.pressure:_alert_hdl", "_mp_PUMP2.alert.pressure:_smooth", "_mp_PUMP2.alert.pressure:_distrib", "_mp_PUMP2.alert.runDry:_address", "_mp_PUMP2.alert.runDry:_alert_hdl", "_mp_PUMP2.alert.runDry:_smooth", "_mp_PUMP2.alert.runDry:_distrib", "_mp_PUMP2.alert.speed:_address", "_mp_PUMP2.alert.speed:_alert_hdl", "_mp_PUMP2.alert.speed:_smooth", "_mp_PUMP2.alert.speed:_distrib", "_mp_PUMP2.alert.sumalert:_alert_hdl", "_mp_PUMP2.alert.sumalertPLC:_address", "_mp_PUMP2.alert.sumalertPLC:_alert_hdl", "_mp_PUMP2.alert.sumalertPLC:_smooth", "_mp_PUMP2.alert.sumalertPLC:_distrib", "_mp_PUMP2.cmd.mode.auto:_address", "_mp_PUMP2.cmd.mode.auto:_distrib", "_mp_PUMP2.cmd.mode.auto:_cmd_conv", "_mp_PUMP2.cmd.on:_address", "_mp_PUMP2.cmd.on:_distrib", "_mp_PUMP2.cmd.on:_cmd_conv", "_mp_PUMP2.para.speed:_address", "_mp_PUMP2.para.speed:_pv_range", "_mp_PUMP2.para.speed:_distrib", "_mp_PUMP2.para.speed:_cmd_conv", "_mp_PUMP2.state.mode.auto:_address", "_mp_PUMP2.state.mode.auto:_smooth", "_mp_PUMP2.state.mode.auto:_distrib", "_mp_PUMP2.state.mode.local:_address", "_mp_PUMP2.state.mode.local:_smooth", "_mp_PUMP2.state.mode.local:_distrib", "_mp_PUMP2.state.mode.man:_address", "_mp_PUMP2.state.mode.man:_smooth", "_mp_PUMP2.state.mode.man:_distrib", "_mp_PUMP2.state.mode.remote:_address", "_mp_PUMP2.state.mode.remote:_smooth", "_mp_PUMP2.state.mode.remote:_distrib", "_mp_PUMP2.state.mode.service:_address", "_mp_PUMP2.state.mode.service:_smooth", "_mp_PUMP2.state.mode.service:_distrib", "_mp_PUMP2.state.off:_address", "_mp_PUMP2.state.off:_smooth", "_mp_PUMP2.state.off:_distrib", "_mp_PUMP2.state.on:_address", "_mp_PUMP2.state.on:_smooth", "_mp_PUMP2.state.on:_distrib", "_mp_PUMP2.state.on_2:_address", "_mp_PUMP2.state.on_2:_smooth", "_mp_PUMP2.state.on_2:_distrib", "_mp_PUMP2.value.powerCon:_address", "_mp_PUMP2.value.powerCon:_alert_hdl", "_mp_PUMP2.value.powerCon:_default", "_mp_PUMP2.value.powerCon:_smooth", "_mp_PUMP2.value.powerCon:_pv_range", "_mp_PUMP2.value.powerCon:_distrib", "_mp_PUMP2.value.powerCon:_msg_conv", "_mp_PUMP2.value.speed:_address", "_mp_PUMP2.value.speed:_alert_hdl", "_mp_PUMP2.value.speed:_default", "_mp_PUMP2.value.speed:_smooth", "_mp_PUMP2.value.speed:_pv_range", "_mp_PUMP2.value.speed:_distrib", "_mp_PUMP2.value.speed:_msg_conv", "_mp_PUMP2.para.speed:_common", "_mp_PUMP2.value.powerCon:_common", "_mp_PUMP2.value.speed:_common", "_mp_PUMP2.para.speed:_original"	0x101	12.06.2003 09:35:33.601
+_dt_PUMP2.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_alert_hdl_2", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_pv_range", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_common", "_da_none", "_da_none", "_da_original"	0x101	12.06.2003 09:35:33.621
+_dt_PUMP1.Leaf	_DynamicDatapoints	"_mp_PUMP1.alert.controlFuse:_address", "_mp_PUMP1.alert.controlFuse:_alert_hdl", "_mp_PUMP1.alert.controlFuse:_smooth", "_mp_PUMP1.alert.controlFuse:_distrib", "_mp_PUMP1.alert.motorSwitch:_address", "_mp_PUMP1.alert.motorSwitch:_alert_hdl", "_mp_PUMP1.alert.motorSwitch:_smooth", "_mp_PUMP1.alert.motorSwitch:_distrib", "_mp_PUMP1.alert.sumalert:_alert_hdl", "_mp_PUMP1.alert.sumalertPLC:_address", "_mp_PUMP1.alert.sumalertPLC:_alert_hdl", "_mp_PUMP1.alert.sumalertPLC:_smooth", "_mp_PUMP1.alert.sumalertPLC:_distrib", "_mp_PUMP1.state.mode.auto:_address", "_mp_PUMP1.state.mode.auto:_smooth", "_mp_PUMP1.state.mode.auto:_distrib", "_mp_PUMP1.state.mode.local:_address", "_mp_PUMP1.state.mode.local:_smooth", "_mp_PUMP1.state.mode.local:_distrib", "_mp_PUMP1.state.mode.man:_address", "_mp_PUMP1.state.mode.man:_smooth", "_mp_PUMP1.state.mode.man:_distrib", "_mp_PUMP1.state.mode.remote:_address", "_mp_PUMP1.state.mode.remote:_smooth", "_mp_PUMP1.state.mode.remote:_distrib", "_mp_PUMP1.state.mode.service:_address", "_mp_PUMP1.state.mode.service:_smooth", "_mp_PUMP1.state.mode.service:_distrib", "_mp_PUMP1.state.off:_address", "_mp_PUMP1.state.off:_smooth", "_mp_PUMP1.state.off:_distrib", "_mp_PUMP1.state.on:_address", "_mp_PUMP1.state.on:_smooth", "_mp_PUMP1.state.on:_distrib", "_mp_PUMP1.state.on_2:_address", "_mp_PUMP1.state.on_2:_smooth", "_mp_PUMP1.state.on_2:_distrib", "_mp_PUMP1.value.powerCon:_address", "_mp_PUMP1.value.powerCon:_alert_hdl", "_mp_PUMP1.value.powerCon:_default", "_mp_PUMP1.value.powerCon:_smooth", "_mp_PUMP1.value.powerCon:_pv_range", "_mp_PUMP1.value.powerCon:_distrib", "_mp_PUMP1.value.powerCon:_msg_conv", "_mp_PUMP1.value.speed:_address", "_mp_PUMP1.value.speed:_alert_hdl", "_mp_PUMP1.value.speed:_default", "_mp_PUMP1.value.speed:_smooth", "_mp_PUMP1.value.speed:_pv_range", "_mp_PUMP1.value.speed:_distrib", "_mp_PUMP1.value.speed:_msg_conv", "_mp_PUMP1.value.powerCon:_common", "_mp_PUMP1.value.speed:_common"	0x101	12.06.2003 09:35:33.641
+_dt_PUMP1.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_alert_hdl_2", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_none", "_da_none"	0x101	12.06.2003 09:35:33.661
+_dt_LABOR_COUNTER.Leaf	_DynamicDatapoints	"_mp_LABOR_COUNTER.C1.MAN:_archive", "_mp_LABOR_COUNTER.C2.AVG_WT0:_archive", "_mp_LABOR_COUNTER.C2.AVG_WT0:_dp_fct", "_mp_LABOR_COUNTER.C2.MAX:_archive", "_mp_LABOR_COUNTER.C2.MAX:_dp_fct", "_mp_LABOR_COUNTER.C2.MIN:_archive", "_mp_LABOR_COUNTER.C2.MIN:_dp_fct", "_mp_LABOR_COUNTER.C2.SUM:_archive", "_mp_LABOR_COUNTER.C2.SUM:_dp_fct"	0x101	12.06.2003 09:35:33.681
+_dt_LABOR_COUNTER.DynamicAttribute	_DynamicDatapoints	"_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none"	0x101	12.06.2003 09:35:33.701
+_dt_LABOR_ANALOG.Leaf	_DynamicDatapoints	"_mp_LABOR_ANALOG.C1.MAN:_archive", "_mp_LABOR_ANALOG.C2.AVG_WT0:_archive", "_mp_LABOR_ANALOG.C2.AVG_WT0:_dp_fct", "_mp_LABOR_ANALOG.C2.MAX:_archive", "_mp_LABOR_ANALOG.C2.MAX:_dp_fct", "_mp_LABOR_ANALOG.C2.MIN:_archive", "_mp_LABOR_ANALOG.C2.MIN:_dp_fct"	0x101	12.06.2003 09:35:33.721
+_dt_LABOR_ANALOG.DynamicAttribute	_DynamicDatapoints	"_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none"	0x101	12.06.2003 09:35:33.741
+_dt_DRIVE2.Leaf	_DynamicDatapoints	"_mp_DRIVE2.alert.controlFuse:_address", "_mp_DRIVE2.alert.controlFuse:_alert_hdl", "_mp_DRIVE2.alert.controlFuse:_smooth", "_mp_DRIVE2.alert.controlFuse:_distrib", "_mp_DRIVE2.alert.converter:_address", "_mp_DRIVE2.alert.converter:_alert_hdl", "_mp_DRIVE2.alert.converter:_smooth", "_mp_DRIVE2.alert.converter:_distrib", "_mp_DRIVE2.alert.motorSwitch:_address", "_mp_DRIVE2.alert.motorSwitch:_alert_hdl", "_mp_DRIVE2.alert.motorSwitch:_smooth", "_mp_DRIVE2.alert.motorSwitch:_distrib", "_mp_DRIVE2.alert.motorTherm:_address", "_mp_DRIVE2.alert.motorTherm:_alert_hdl", "_mp_DRIVE2.alert.motorTherm:_smooth", "_mp_DRIVE2.alert.motorTherm:_distrib", "_mp_DRIVE2.alert.overload:_address", "_mp_DRIVE2.alert.overload:_alert_hdl", "_mp_DRIVE2.alert.overload:_smooth", "_mp_DRIVE2.alert.overload:_distrib", "_mp_DRIVE2.alert.speed:_address", "_mp_DRIVE2.alert.speed:_alert_hdl", "_mp_DRIVE2.alert.speed:_smooth", "_mp_DRIVE2.alert.speed:_distrib", "_mp_DRIVE2.alert.sumalert:_alert_hdl", "_mp_DRIVE2.alert.sumalertPLC:_address", "_mp_DRIVE2.alert.sumalertPLC:_alert_hdl", "_mp_DRIVE2.alert.sumalertPLC:_smooth", "_mp_DRIVE2.alert.sumalertPLC:_distrib", "_mp_DRIVE2.cmd.mode.auto:_address", "_mp_DRIVE2.cmd.mode.auto:_distrib", "_mp_DRIVE2.cmd.mode.auto:_cmd_conv", "_mp_DRIVE2.cmd.on:_address", "_mp_DRIVE2.cmd.on:_distrib", "_mp_DRIVE2.cmd.on:_cmd_conv", "_mp_DRIVE2.para.speed:_address", "_mp_DRIVE2.para.speed:_pv_range", "_mp_DRIVE2.para.speed:_distrib", "_mp_DRIVE2.para.speed:_cmd_conv", "_mp_DRIVE2.state.ccOn:_address", "_mp_DRIVE2.state.ccOn:_smooth", "_mp_DRIVE2.state.ccOn:_distrib", "_mp_DRIVE2.state.ccOn_2:_address", "_mp_DRIVE2.state.ccOn_2:_smooth", "_mp_DRIVE2.state.ccOn_2:_distrib", "_mp_DRIVE2.state.mode.auto:_address", "_mp_DRIVE2.state.mode.auto:_smooth", "_mp_DRIVE2.state.mode.auto:_distrib", "_mp_DRIVE2.state.mode.local:_address", "_mp_DRIVE2.state.mode.local:_smooth", "_mp_DRIVE2.state.mode.local:_distrib", "_mp_DRIVE2.state.mode.man:_address", "_mp_DRIVE2.state.mode.man:_smooth", "_mp_DRIVE2.state.mode.man:_distrib", "_mp_DRIVE2.state.mode.remote:_address", "_mp_DRIVE2.state.mode.remote:_smooth", "_mp_DRIVE2.state.mode.remote:_distrib", "_mp_DRIVE2.state.mode.service:_address", "_mp_DRIVE2.state.mode.service:_smooth", "_mp_DRIVE2.state.mode.service:_distrib", "_mp_DRIVE2.state.off:_address", "_mp_DRIVE2.state.off:_smooth", "_mp_DRIVE2.state.off:_distrib", "_mp_DRIVE2.state.on:_address", "_mp_DRIVE2.state.on:_smooth", "_mp_DRIVE2.state.on:_distrib", "_mp_DRIVE2.state.on_2:_address", "_mp_DRIVE2.state.on_2:_smooth", "_mp_DRIVE2.state.on_2:_distrib", "_mp_DRIVE2.value.powerCon:_address", "_mp_DRIVE2.value.powerCon:_alert_hdl", "_mp_DRIVE2.value.powerCon:_default", "_mp_DRIVE2.value.powerCon:_smooth", "_mp_DRIVE2.value.powerCon:_pv_range", "_mp_DRIVE2.value.powerCon:_distrib", "_mp_DRIVE2.value.powerCon:_msg_conv", "_mp_DRIVE2.value.speed:_address", "_mp_DRIVE2.value.speed:_alert_hdl", "_mp_DRIVE2.value.speed:_default", "_mp_DRIVE2.value.speed:_smooth", "_mp_DRIVE2.value.speed:_pv_range", "_mp_DRIVE2.value.speed:_distrib", "_mp_DRIVE2.value.speed:_msg_conv", "_mp_DRIVE2.para.speed:_common", "_mp_DRIVE2.value.powerCon:_common", "_mp_DRIVE2.value.speed:_common", "_mp_DRIVE2.para.speed:_original"	0x101	12.06.2003 09:35:33.761
+_dt_DRIVE2.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_alert_hdl_2", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_pv_range", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_common", "_da_none", "_da_none", "_da_original"	0x101	12.06.2003 09:35:33.781
+_dt_DRIVE1.Leaf	_DynamicDatapoints	"_mp_DRIVE1.alert.controlFuse:_address", "_mp_DRIVE1.alert.controlFuse:_alert_hdl", "_mp_DRIVE1.alert.controlFuse:_smooth", "_mp_DRIVE1.alert.controlFuse:_distrib", "_mp_DRIVE1.alert.motorSwitch:_address", "_mp_DRIVE1.alert.motorSwitch:_alert_hdl", "_mp_DRIVE1.alert.motorSwitch:_smooth", "_mp_DRIVE1.alert.motorSwitch:_distrib", "_mp_DRIVE1.alert.sumalert:_alert_hdl", "_mp_DRIVE1.alert.sumalertPLC:_address", "_mp_DRIVE1.alert.sumalertPLC:_alert_hdl", "_mp_DRIVE1.alert.sumalertPLC:_smooth", "_mp_DRIVE1.alert.sumalertPLC:_distrib", "_mp_DRIVE1.state.ccOn:_address", "_mp_DRIVE1.state.ccOn:_smooth", "_mp_DRIVE1.state.ccOn:_distrib", "_mp_DRIVE1.state.mode.auto:_address", "_mp_DRIVE1.state.mode.auto:_smooth", "_mp_DRIVE1.state.mode.auto:_distrib", "_mp_DRIVE1.state.mode.local:_address", "_mp_DRIVE1.state.mode.local:_smooth", "_mp_DRIVE1.state.mode.local:_distrib", "_mp_DRIVE1.state.mode.man:_address", "_mp_DRIVE1.state.mode.man:_smooth", "_mp_DRIVE1.state.mode.man:_distrib", "_mp_DRIVE1.state.mode.remote:_address", "_mp_DRIVE1.state.mode.remote:_smooth", "_mp_DRIVE1.state.mode.remote:_distrib", "_mp_DRIVE1.state.mode.service:_address", "_mp_DRIVE1.state.mode.service:_smooth", "_mp_DRIVE1.state.mode.service:_distrib", "_mp_DRIVE1.state.off:_address", "_mp_DRIVE1.state.off:_smooth", "_mp_DRIVE1.state.off:_distrib", "_mp_DRIVE1.state.on:_address", "_mp_DRIVE1.state.on:_smooth", "_mp_DRIVE1.state.on:_distrib", "_mp_DRIVE1.value.powerCon:_address", "_mp_DRIVE1.value.powerCon:_alert_hdl", "_mp_DRIVE1.value.powerCon:_default", "_mp_DRIVE1.value.powerCon:_smooth", "_mp_DRIVE1.value.powerCon:_pv_range", "_mp_DRIVE1.value.powerCon:_distrib", "_mp_DRIVE1.value.powerCon:_msg_conv", "_mp_DRIVE1.value.speed:_address", "_mp_DRIVE1.value.speed:_alert_hdl", "_mp_DRIVE1.value.speed:_default", "_mp_DRIVE1.value.speed:_smooth", "_mp_DRIVE1.value.speed:_pv_range", "_mp_DRIVE1.value.speed:_distrib", "_mp_DRIVE1.value.speed:_msg_conv", "_mp_DRIVE1.value.powerCon:_common", "_mp_DRIVE1.value.speed:_common"	0x101	12.06.2003 09:35:33.801
+_dt_DRIVE1.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_alert_hdl_2", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_none", "_da_none"	0x101	12.06.2003 09:35:33.831
+_dt_COUNTER_SUB.Leaf	_DynamicDatapoints	"_mp_COUNTER_SUB.C1.SUM:_archive", "_mp_COUNTER_SUB.C1.SUM:_dp_fct", "_mp_COUNTER_SUB.C2.AVG_WT0:_archive", "_mp_COUNTER_SUB.C2.AVG_WT0:_dp_fct", "_mp_COUNTER_SUB.C2.MAX:_archive", "_mp_COUNTER_SUB.C2.MAX:_dp_fct", "_mp_COUNTER_SUB.C2.MIN:_archive", "_mp_COUNTER_SUB.C2.MIN:_dp_fct", "_mp_COUNTER_SUB.C2.SUM:_archive", "_mp_COUNTER_SUB.C2.SUM:_dp_fct", "_mp_COUNTER_SUB.C3.AVG_WT0:_archive", "_mp_COUNTER_SUB.C3.AVG_WT0:_dp_fct", "_mp_COUNTER_SUB.C3.MAX:_archive", "_mp_COUNTER_SUB.C3.MAX:_dp_fct", "_mp_COUNTER_SUB.C3.MIN:_archive", "_mp_COUNTER_SUB.C3.MIN:_dp_fct", "_mp_COUNTER_SUB.C3.SUM:_archive", "_mp_COUNTER_SUB.C3.SUM:_dp_fct"	0x101	12.06.2003 09:35:33.851
+_dt_COUNTER_SUB.DynamicAttribute	_DynamicDatapoints	"_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none", "_da_none"	0x101	12.06.2003 09:35:33.872
+_dt_COUNTER1.Leaf	_DynamicDatapoints	"_mp_COUNTER1.cmd.resetPLC:_address", "_mp_COUNTER1.cmd.resetPLC:_distrib", "_mp_COUNTER1.counter.value:_default", "_mp_COUNTER1.counter.value:_pv_range", "_mp_COUNTER1.value.plcCounter:_address", "_mp_COUNTER1.value.plcCounter:_smooth", "_mp_COUNTER1.value.plcCounter:_distrib", "_mp_COUNTER1.value.plcImpulse:_address", "_mp_COUNTER1.value.plcImpulse:_smooth", "_mp_COUNTER1.value.plcImpulse:_distrib", "_mp_COUNTER1.para.integralFactor:_original", "_mp_COUNTER1.para.overflow:_original", "_mp_COUNTER1.para.tolerance:_original", "_mp_COUNTER1.para.type:_original"	0x101	12.06.2003 09:35:33.891
+_dt_COUNTER1.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_none", "_da_default_super", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none", "_da_original", "_da_original", "_da_original", "_da_original"	0x101	12.06.2003 09:35:33.912
+_dt_BIT_CONDITION.Leaf	_DynamicDatapoints	"_mp_BIT_CONDITION.alert.alert:_address", "_mp_BIT_CONDITION.alert.alert:_alert_hdl", "_mp_BIT_CONDITION.alert.alert:_smooth", "_mp_BIT_CONDITION.alert.alert:_distrib", "_mp_BIT_CONDITION.state.state:_address", "_mp_BIT_CONDITION.state.state:_smooth", "_mp_BIT_CONDITION.state.state:_distrib"	0x101	12.06.2003 09:35:33.931
+_dt_BIT_CONDITION.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_smooth", "_da_none"	0x101	12.06.2003 09:35:33.951
+_dt_ANALOG2.Leaf	_DynamicDatapoints	"_mp_ANALOG2.alert.H1:_address", "_mp_ANALOG2.alert.H1:_alert_hdl", "_mp_ANALOG2.alert.H1:_smooth", "_mp_ANALOG2.alert.H1:_distrib", "_mp_ANALOG2.alert.H2:_address", "_mp_ANALOG2.alert.H2:_alert_hdl", "_mp_ANALOG2.alert.H2:_smooth", "_mp_ANALOG2.alert.H2:_distrib", "_mp_ANALOG2.alert.L1:_address", "_mp_ANALOG2.alert.L1:_alert_hdl", "_mp_ANALOG2.alert.L1:_smooth", "_mp_ANALOG2.alert.L1:_distrib", "_mp_ANALOG2.alert.L2:_address", "_mp_ANALOG2.alert.L2:_alert_hdl", "_mp_ANALOG2.alert.L2:_smooth", "_mp_ANALOG2.alert.L2:_distrib", "_mp_ANALOG2.alert.error:_address", "_mp_ANALOG2.alert.error:_alert_hdl", "_mp_ANALOG2.alert.error:_smooth", "_mp_ANALOG2.alert.error:_distrib", "_mp_ANALOG2.alert.sumalert:_alert_hdl", "_mp_ANALOG2.analog.value:_address", "_mp_ANALOG2.analog.value:_alert_hdl", "_mp_ANALOG2.analog.value:_default", "_mp_ANALOG2.analog.value:_smooth", "_mp_ANALOG2.analog.value:_pv_range", "_mp_ANALOG2.analog.value:_distrib", "_mp_ANALOG2.analog.value:_msg_conv", "_mp_ANALOG2.para.H1_limit:_address", "_mp_ANALOG2.para.H1_limit:_distrib", "_mp_ANALOG2.para.H1_limit:_cmd_conv", "_mp_ANALOG2.para.H2_limit:_address", "_mp_ANALOG2.para.H2_limit:_distrib", "_mp_ANALOG2.para.H2_limit:_cmd_conv", "_mp_ANALOG2.para.L1_limit:_address", "_mp_ANALOG2.para.L1_limit:_distrib", "_mp_ANALOG2.para.L1_limit:_cmd_conv", "_mp_ANALOG2.para.L2_limit:_address", "_mp_ANALOG2.para.L2_limit:_distrib", "_mp_ANALOG2.para.L2_limit:_cmd_conv", "_mp_ANALOG2.analog.value:_common", "_mp_ANALOG2.para.H1_limit:_original", "_mp_ANALOG2.para.H2_limit:_original", "_mp_ANALOG2.para.L1_limit:_original", "_mp_ANALOG2.para.L2_limit:_original"	0x101	12.06.2003 09:35:33.972
+_dt_ANALOG2.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_address_super", "_da_alert_hdl", "_da_smooth", "_da_none", "_da_alert_hdl_2", "_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_address_super", "_da_none", "_da_cmd_conv", "_da_none", "_da_original", "_da_original", "_da_original", "_da_original"	0x101	12.06.2003 09:35:33.991
+_dt_ANALOG1.Leaf	_DynamicDatapoints	"_mp_ANALOG1.value:_address", "_mp_ANALOG1.value:_alert_hdl", "_mp_ANALOG1.value:_default", "_mp_ANALOG1.value:_smooth", "_mp_ANALOG1.value:_pv_range", "_mp_ANALOG1.value:_distrib", "_mp_ANALOG1.value:_msg_conv", "_mp_ANALOG1.value:_common"	0x101	12.06.2003 09:35:34.012
+_dt_ANALOG1.DynamicAttribute	_DynamicDatapoints	"_da_address_super", "_da_alert_hdl", "_da_default_super", "_da_smooth", "_da_none", "_da_none", "_da_msg_conv", "_da_none"	0x101	12.06.2003 09:35:34.031
+_DpGroup00006_Public.Types	_DpGroup	"Device", "Control_Var", "PID_Control", "Motor_N1"	0x101	12.06.2003 09:35:34.051
+_DpGroup00006_Public.Dps	_DpGroup	"*.**", "*.**", "*.**", "*.**"	0x101	12.06.2003 09:35:34.072
+_DpGroup00006_Public.Level	_DpGroup	1	0x101	12.06.2003 09:35:34.091
+_DpGroup00007_Public.Types	_DpGroup	"Control_Var", "Device", "PID_Control", "Motor_N1", "PID_Control"	0x101	12.06.2003 09:35:34.112
+_DpGroup00007_Public.Dps	_DpGroup	"*.cmd*.**", "*.cmd*.**", "*.para*.**", "*.cmd*.**", "*.cmd.on"	0x101	12.06.2003 09:35:34.131
+_DpGroup00007_Public.Level	_DpGroup	1	0x101	12.06.2003 09:35:34.151
+_DpGroup00009_Public.Types	_DpGroup	"System1:_DpGroup00003_Public"	0x101	12.06.2003 09:35:34.172
+_DpGroup00009_Public.Dps	_DpGroup	""	0x101	12.06.2003 09:35:34.211
+_DpGroup00009_Public.Level	_DpGroup	0	0x101	12.06.2003 09:35:34.232
+_DpGroup00010_Public.Types	_DpGroup	"", "", "", "", "", "", "", "", "", ""	0x101	12.06.2003 09:35:34.252
+_DpGroup00010_Public.Dps	_DpGroup	"PreHeater.valve.cmd.setpoint", "ReHeater.valve.cmd.setpoint", "ReHeater_2.valve.cmd.setpoint", "ReHeater_3.valve.cmd.setpoint", "Cooler.valve.cmd.setpoint", "Evaporator.cmd.setpoint", "Reservoir_1_outflow_valve.para.position", "Reservoir_1_inflow_valve.para.position", "Reservoir_2_outflow_valve.para.position", "Reservoir_2_inflow_valve.para.position"	0x101	12.06.2003 09:35:34.272
+_DpGroup00010_Public.Level	_DpGroup	0	0x101	12.06.2003 09:35:34.292
+_dt__SumAlertPanel.Leaf	_DynamicDatapoints	"_mp_SumAlertPanel.Alert:_alert_hdl", "_mp_SumAlertPanel.Danger:_alert_hdl", "_mp_SumAlertPanel.Warning:_alert_hdl"	0x101	12.06.2003 09:35:34.312
+_dt__SumAlertPanel.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl_sum", "_da_alert_hdl_sum", "_da_alert_hdl_sum"	0x101	12.06.2003 09:35:34.332
+_dt_HVAC_VALVE.Leaf	_DynamicDatapoints	"_mp_HVAC_VALVE.alert.sumalert:_alert_hdl", "_mp_HVAC_VALVE.cmd.setpoint:_pv_range", "_mp_HVAC_VALVE.value.position:_pv_range", "_mp_HVAC_VALVE.cmd.setpoint:_common", "_mp_HVAC_VALVE.value.position:_common"	0x101	12.06.2003 09:35:34.352
+_dt_HVAC_VALVE.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl", "_da_pv_range", "_da_pv_range", "_da_common", "_da_common"	0x101	12.06.2003 09:35:34.372
+_dt_HVAC_PUMP.Leaf	_DynamicDatapoints	"_mp_HVAC_PUMP.alert.sumalert:_alert_hdl"	0x101	12.06.2003 09:35:34.392
+_dt_HVAC_PUMP.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl"	0x101	12.06.2003 09:35:34.412
+_dt_HVAC_PREHEATER.Leaf	_DynamicDatapoints	"_mp_HVAC_PREHEATER.alert.frost_air:_alert_hdl", "_mp_HVAC_PREHEATER.alert.frost_fluid:_alert_hdl", "_mp_HVAC_PREHEATER.pump.alert.sumalert:_alert_hdl", "_mp_HVAC_PREHEATER.valve.alert.sumalert:_alert_hdl", "_mp_HVAC_PREHEATER.valve.cmd.setpoint:_pv_range", "_mp_HVAC_PREHEATER.valve.value.position:_alert_hdl", "_mp_HVAC_PREHEATER.valve.value.position:_pv_range", "_mp_HVAC_PREHEATER.valve.cmd.setpoint:_common", "_mp_HVAC_PREHEATER.valve.value.position:_common"	0x101	12.06.2003 09:35:34.432
+_dt_HVAC_PREHEATER.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl", "_da_alert_hdl", "_da_alert_hdl", "_da_alert_hdl", "_da_pv_range", "_da_alert_hdl_3", "_da_pv_range", "_da_common", "_da_common"	0x101	12.06.2003 09:35:34.452
+_dt_HVAC_MEASUREMENT.Leaf	_DynamicDatapoints	"_mp_HVAC_MEASUREMENT.value:_alert_hdl", "_mp_HVAC_MEASUREMENT.value:_pv_range", "_mp_HVAC_MEASUREMENT.value:_common"	0x101	12.06.2003 09:35:34.472
+_dt_HVAC_MEASUREMENT.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl_5", "_da_pv_range", "_da_common"	0x101	12.06.2003 09:35:34.492
+_dt_HVAC_FLAP.Leaf	_DynamicDatapoints		0x101	12.06.2003 09:35:34.512
+_dt_HVAC_FLAP.DynamicAttribute	_DynamicDatapoints		0x101	12.06.2003 09:35:34.555
+_dt_HVAC_FAN.Leaf	_DynamicDatapoints	"_mp_HVAC_FAN.alert.sumalert:_alert_hdl"	0x101	12.06.2003 09:35:34.573
+_dt_HVAC_FAN.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl"	0x101	12.06.2003 09:35:34.592
+_dt_HVAC_DEVICESWITCH.Leaf	_DynamicDatapoints		0x101	12.06.2003 09:35:34.613
+_dt_HVAC_DEVICESWITCH.DynamicAttribute	_DynamicDatapoints		0x101	12.06.2003 09:35:34.632
+_dt_CP_TANK.Leaf	_DynamicDatapoints	"_mp_CP_TANK.level:_alert_hdl", "_mp_CP_TANK.level:_pv_range", "_mp_CP_TANK.level:_common"	0x101	12.06.2003 09:35:34.652
+_dt_CP_TANK.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl_5", "_da_pv_range", "_da_common"	0x101	12.06.2003 09:35:34.672
+_dt_CP_DRIVE.Leaf	_DynamicDatapoints	"_mp_CP_DRIVE.alert.runDry:_alert_hdl", "_mp_CP_DRIVE.alert.runDry:_common"	0x101	12.06.2003 09:35:34.692
+_dt_CP_DRIVE.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl", "_da_common"	0x101	12.06.2003 09:35:34.713
+_mp_Device.para.maxChangeRate	Device	0.2	0x101	12.06.2003 12:50:59.927
+_dt_Device.Leaf	_DynamicDatapoints	"_mp_Device.state.value:_pv_range", "_mp_Device.state.value:_common", "_mp_Device.state.local:_common", "_mp_Device.alarm.general:_alert_hdl", "_mp_Device.:_common", "_mp_Device.cmd.setpoint:_pv_range", "_mp_Device.cmd.setpoint:_common"	0x101	12.06.2003 09:35:34.752
+_dt_Device.DynamicAttribute	_DynamicDatapoints	"_da_pv_range", "_da_common", "_da_common_4", "_da_none", "_da_common_4", "_da_pv_range", "_da_common"	0x101	12.06.2003 09:35:34.772
+_dt_Motor_N1.Leaf	_DynamicDatapoints	"_mp_Motor_N1.alarm.torque:_alert_hdl", "_mp_Motor_N1.alarm.temp:_alert_hdl", "_mp_Motor_N1.:_common"	0x101	12.06.2003 09:35:34.792
+_dt_Motor_N1.DynamicAttribute	_DynamicDatapoints	"_da_alert_hdl", "_da_alert_hdl", "_da_common_4"	0x101	12.06.2003 09:35:34.813
+_dt_Control_Var.Leaf	_DynamicDatapoints	"_mp_Control_Var.:_common", "_mp_Control_Var.cmd.setpoint:_pv_range", "_mp_Control_Var.cmd.setpoint:_common", "_mp_Control_Var.state.value:_alert_hdl", "_mp_Control_Var.state.value:_pv_range", "_mp_Control_Var.state.value:_common", "_mp_Control_Var.alarm.sensor:_alert_hdl"	0x101	12.06.2003 09:35:34.833
+_dt_Control_Var.DynamicAttribute	_DynamicDatapoints	"_da_common_4", "_da_pv_range", "_da_common", "_da_alert_hdl_3", "_da_pv_range", "_da_common", "_da_none"	0x101	12.06.2003 09:35:34.852
+R01_Discharge_Valve.state.value	Device	80	0x101	12.06.2003 12:52:10.772
+R01_Discharge_Valve.state.transition	Device	0	0x101	12.06.2003 12:52:11.270
+R01_Discharge_Valve.cmd.setpoint	Device	80	0x101	12.06.2003 12:52:09.656
+R01_Discharge_Valve.state.on	Device	0	0x101	12.06.2003 12:52:10.772
+R01_Discharge_Valve.state.off	Device	0	0x101	12.06.2003 12:52:10.772
+R01_Discharge_Valve.para.maxChangeRate	Device	0.2	0x101	12.06.2003 12:50:59.926
+R01_Feeder_Pump.state.value	Device	37.59098	0x101	17.06.2003 07:48:06.554
+R01_Feeder_Pump.state.transition	Device	0	0x101	17.06.2003 07:48:07.055
+R01_Feeder_Pump.cmd.setpoint	Device	37.59098	0x101	17.06.2003 07:48:06.437
+R01_Feeder_Pump.state.on	Device	0	0x101	17.06.2003 07:48:06.554
+R01_Feeder_Pump.state.off	Device	0	0x101	17.06.2003 07:48:06.554
+R01_Feeder_Pump.para.maxChangeRate	Device	0.2	0x101	12.06.2003 12:50:59.926
+R01_HE_Inlet_Hot_Valve.state.value	Device	1.147237	0x101	17.06.2003 07:49:30.144
+R01_HE_Inlet_Hot_Valve.state.transition	Device	0	0x101	17.06.2003 07:49:30.625
+R01_HE_Inlet_Hot_Valve.cmd.setpoint	Device	1.147237	0x101	17.06.2003 07:49:29.976
+R01_HE_Inlet_Hot_Valve.state.on	Device	0	0x101	17.06.2003 07:49:30.144
+R01_HE_Inlet_Hot_Valve.state.off	Device	0	0x101	17.06.2003 07:49:30.144
+R01_HE_Inlet_Hot_Valve.para.maxChangeRate	Device	0.2	0x101	12.06.2003 12:50:59.926
+R01_HE_Inlet_Cold_Valve.state.value	Device	98.85276	0x101	17.06.2003 07:49:30.140
+R01_HE_Inlet_Cold_Valve.state.transition	Device	0	0x101	17.06.2003 07:49:30.622
+R01_HE_Inlet_Cold_Valve.cmd.setpoint	Device	98.85276	0x101	17.06.2003 07:49:29.986
+R01_HE_Inlet_Cold_Valve.state.on	Device	0	0x101	17.06.2003 07:49:30.141
+R01_HE_Inlet_Cold_Valve.state.off	Device	0	0x101	17.06.2003 07:49:30.141
+R01_HE_Inlet_Cold_Valve.para.maxChangeRate	Device	0.2	0x101	12.06.2003 12:50:59.926
+R01_HE_Return_Valve.para.maxChangeRate	Device	0.2	0x101	12.06.2003 12:50:59.927
+R01_Injection_Valve.state.value	Device	70	0x101	12.06.2003 12:18:15.568
+R01_Injection_Valve.state.transition	Device	0	0x101	12.06.2003 12:18:16.062
+R01_Injection_Valve.cmd.setpoint	Device	70	0x101	12.06.2003 12:18:15.417
+R01_Injection_Valve.state.on	Device	0	0x101	12.06.2003 12:18:15.568
+R01_Injection_Valve.state.off	Device	0	0x101	12.06.2003 12:18:15.568
+R01_Injection_Valve.para.maxChangeRate	Device	0.2	0x101	12.06.2003 12:50:59.927
+R01_Mixer.cmd.on	Motor_N1	1	0x101	12.06.2003 09:35:35.493
+R01_Mixer.state.on	Motor_N1	1	0x101	12.06.2003 09:35:35.514
+R01_Mixer.state.transition	Motor_N1	0	0x101	12.06.2003 09:35:35.535
+R01_LICA_01.cmd.setpoint	Control_Var	60	0x101	17.06.2003 07:12:24.385
+R01_LICA_01.state.value	Control_Var	60.01777	0x101	17.06.2003 07:49:41.633
+R01_LICA_01_c.parameters.kR	PID_Control	15	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.parameters.TN	PID_Control	5.5	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.parameters.TV	PID_Control	0.98	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.parameters.u_min	PID_Control	0	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.parameters.u_max	PID_Control	100	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.parameters.scale	PID_Control	1	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.parameters.antiwindup	PID_Control	0	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.state.e	PID_Control	-0.1252583	0x101	17.06.2003 07:48:06.437
+R01_LICA_01_c.parameters.tolerance	PID_Control	0.1	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.state.limiter	PID_Control	1	0x101	17.06.2003 07:02:28.812
+R01_LICA_01_c.cmd.on	PID_Control	1	0x101	12.06.2003 12:48:47.520
+R01_LICA_01_c.state.nocontrol	PID_Control	0	0x101	17.06.2003 07:02:28.812
+R01_LICA_01_c.parameters.scanrate	PID_Control	500	0x101	17.06.2003 07:44:49.600
+R01_LICA_01_c.parameters.mode	PID_Control	0	0x101	16.06.2003 08:37:40.403
+R01_LICA_01_c.input.w	PID_Control	System1:R01_LICA_01.cmd.setpoint	0x101	12.06.2003 09:35:35.874
+R01_LICA_01_c.input.x	PID_Control	System1:R01_LICA_01.state.value	0x101	12.06.2003 09:35:35.894
+R01_LICA_01_c.output.u	PID_Control	System1:R01_Feeder_Pump.cmd.setpoint	0x101	12.06.2003 09:35:35.915
+SimCenter.minScanRate	SimCenter	250	0x101	12.06.2003 09:35:35.934
+SimCenter.modelLoopTime	SimCenter	500	0x101	12.06.2003 12:03:27.279
+SimCenter.modelSimOn	SimCenter	1	0x101	12.06.2003 09:35:35.974
+SimCenter.devicesLoopTime	SimCenter	500	0x101	12.06.2003 12:03:21.802
+SimCenter.devicesSimOn	SimCenter	1	0x101	12.06.2003 09:35:36.015
+SimCenter.visu.panelRequest	SimCenter	3	0x101	12.06.2003 09:35:36.034
+SimCenter.visu.currentLease	SimCenter	1	0x101	12.06.2003 09:35:36.054
+SimCenter.visu.leaseTime	SimCenter	19.05.2003 21:38:03.515	0x101	12.06.2003 09:35:36.074
+_mp_PID_Control.state.limiter	PID_Control	0	0x101	17.06.2003 06:56:58.911
+_mp_PID_Control.state.nocontrol	PID_Control	1	0x101	17.06.2003 06:56:58.911
+_dt_PID_Control.Leaf	_DynamicDatapoints	"_mp_PID_Control.:_common"	0x101	12.06.2003 09:35:36.134
+_dt_PID_Control.DynamicAttribute	_DynamicDatapoints	"_da_common_4"	0x101	12.06.2003 09:35:36.154
+R01_TICA_02_c.parameters.kR	PID_Control	0.5	0x101	17.06.2003 06:48:54.803
+R01_TICA_02_c.parameters.TN	PID_Control	0.05	0x101	17.06.2003 06:48:43.041
+R01_TICA_02_c.parameters.TV	PID_Control	0.001	0x101	17.06.2003 06:47:22.753
+R01_TICA_02_c.parameters.u_min	PID_Control	0	0x101	12.06.2003 09:35:36.235
+R01_TICA_02_c.parameters.u_max	PID_Control	100	0x101	12.06.2003 09:35:36.254
+R01_TICA_02_c.parameters.scale	PID_Control	1	0x101	16.06.2003 11:09:27.249
+R01_TICA_02_c.parameters.antiwindup	PID_Control	0	0x101	12.06.2003 09:35:36.295
+R01_TICA_02_c.state.e	PID_Control	-0.5167869	0x101	17.06.2003 07:49:29.976
+R01_TICA_02_c.parameters.tolerance	PID_Control	0.5	0x101	12.06.2003 09:35:36.335
+R01_TICA_02_c.state.limiter	PID_Control	1	0x101	17.06.2003 07:02:28.691
+R01_TICA_02_c.cmd.on	PID_Control	1	0x101	17.06.2003 06:47:26.231
+R01_TICA_02_c.state.nocontrol	PID_Control	1	0x101	17.06.2003 07:02:34.710
+R01_TICA_02_c.parameters.scanrate	PID_Control	500	0x101	17.06.2003 07:12:38.737
+R01_TICA_02_c.parameters.mode	PID_Control	0	0x101	17.06.2003 06:49:17.365
+R01_TICA_02_c.input.w	PID_Control	System1:R01_TICA_02.cmd.setpoint	0x101	12.06.2003 09:35:36.455
+R01_TICA_02_c.input.x	PID_Control	System1:R01_TICA_02.state.value	0x101	12.06.2003 09:35:36.475
+R01_TICA_02_c.output.u	PID_Control	System1:R01_HE_Inlet_Hot_Valve.cmd.setpoint	0x101	12.06.2003 09:35:36.495
+R01_TICA_02.cmd.setpoint	Control_Var	30	0x101	17.06.2003 07:12:36.812
+R01_TICA_02.state.value	Control_Var	30.18242	0x101	17.06.2003 07:49:39.130
+PID_Control_Config.confName	PID_Control_Config	"LICA_aperiod_1", "LICA_aperiod_3_5", "LICA_aperiod_3", "LICA_20%", "LICA_aperiod_7", "LICA_oscillation", "LICA_aperiod_3_367", "LICA_PT1"	0x101	17.06.2003 07:12:01.327
+PID_Control_Config.confStr	PID_Control_Config	"3|10|0.4|100|0|0.5|1|500|FALSE", "3|10|0.4|100|0|0.5|1|500|FALSE", "3.367|5.5|0.98|100|0|0.5|1|500|FALSE", "5.331|7.425|0.921|100|0|0.5|1|500|FALSE", "7|10|0.4|100|0|0.5|1|500|FALSE", "15|2|0.05|100|0|0.5|1|500|FALSE", "3.367|5.5|0.98|100|0|0.5|1|500|FALSE", "15|5.5|0.98|100|0|0.1|1|500|FALSE"	0x101	17.06.2003 07:12:01.327
+
+# PvssRangeCheck
+ElementName	TypeName	_pv_range.._type	_pv_range.._ignor_inv	_pv_range.._neg	_pv_range.._min	_pv_range.._max	_pv_range.._incl_min	_pv_range.._incl_max	_pv_range.._set	_pv_range.._match
+_mp_Device.state.value	Device	7	0	0	0	100	1	1		
+_mp_Device.cmd.setpoint	Device	7	0	0	0	100	1	1		
+_mp_Control_Var.cmd.setpoint	Control_Var	7	0	0	0	100	1	1		
+_mp_Control_Var.state.value	Control_Var	7	1	0	0	100	1	1		
+R01_Discharge_Valve.state.value	Device	7	0	0	0	100	1	1		
+R01_Discharge_Valve.cmd.setpoint	Device	7	0	0	0	100	1	1		
+R01_Feeder_Pump.state.value	Device	7	0	0	0	100	1	1		
+R01_Feeder_Pump.cmd.setpoint	Device	7	0	0	0	100	1	1		
+R01_HE_Inlet_Hot_Valve.state.value	Device	7	0	0	0	100	1	1		
+R01_HE_Inlet_Hot_Valve.cmd.setpoint	Device	7	0	0	0	100	1	1		
+R01_HE_Inlet_Cold_Valve.state.value	Device	7	0	0	0	100	1	1		
+R01_HE_Inlet_Cold_Valve.cmd.setpoint	Device	7	0	0	0	100	1	1		
+R01_HE_Return_Valve.state.value	Device	7	0	0	0	100	1	1		
+R01_HE_Return_Valve.cmd.setpoint	Device	7	0	0	0	100	1	1		
+R01_Injection_Valve.state.value	Device	7	0	0	0	100	1	1		
+R01_Injection_Valve.cmd.setpoint	Device	7	0	0	0	100	1	1		
+R01_LICA_01.cmd.setpoint	Control_Var	7	0	0	0	100	1	1		
+R01_LICA_01.state.value	Control_Var	7	1	0	0	100	1	1		
+R01_TICA_02.cmd.setpoint	Control_Var	7	0	0	10	70	1	1		
+R01_TICA_02.state.value	Control_Var	7	1	0	10	70	1	1		
+
+# AlertValue
+ElementName	TypeName	DetailNr	_alert_hdl.._type	_alert_hdl.._l_limit	_alert_hdl.._u_limit	_alert_hdl.._l_incl	_alert_hdl.._u_incl	_alert_hdl.._panel	_alert_hdl.._panel_param	_alert_hdl.._help	_alert_hdl.._min_prio	_alert_hdl.._class	_alert_hdl.._text	_alert_hdl.._active	_alert_hdl.._orig_hdl	_alert_hdl.._ok_range	_alert_hdl.._hyst_type	_alert_hdl.._hyst_time	_alert_hdl.._l_hyst_limit	_alert_hdl.._u_hyst_limit	_alert_hdl.._text1	_alert_hdl.._text0	_alert_hdl.._ack_has_prio	_alert_hdl.._order	_alert_hdl.._dp_pattern	_alert_hdl.._dp_list	_alert_hdl.._prio_pattern	_alert_hdl.._abbr_pattern	_alert_hdl.._ack_deletes	_alert_hdl.._non_ack	_alert_hdl.._came_ack	_alert_hdl.._pair_ack	_alert_hdl.._both_ack
+_mp_Device.alarm.general	Device		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "device fault" LANG:0 "Gerätefehler" 	lt:2 LANG:1 "" LANG:0 "" 
+_mp_Motor_N1.alarm.torque	Motor_N1		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "torque" LANG:0 "Drehmoment" 	lt:2 LANG:1 "OK" LANG:0 "OK" 
+_mp_Motor_N1.alarm.temp	Motor_N1		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "Max temperature" LANG:0 "Übertemperatur" 	lt:2 LANG:1 "OK" LANG:0 "OK" 
+_mp_Control_Var.state.value	Control_Var		13					""		lt:2 LANG:1 "" LANG:0 "" 	\0			1	0							
+_mp_Control_Var.state.value	Control_Var	1	4	-3.402823e+038	5	1	1					System1:alert.	lt:2 LANG:1 "Low alarm" LANG:0 "Niedrigalarm" 				0	01.01.1970 00:00:00.000	-3.402823e+038	5		
+_mp_Control_Var.state.value	Control_Var	2	4	5	95	0	1						lt:2 LANG:1 "" LANG:0 "" 				0	01.01.1970 00:00:00.000	5	95		
+_mp_Control_Var.state.value	Control_Var	3	4	95	3.402823e+038	0	1					System1:alert.	lt:2 LANG:1 "High alarm" LANG:0 "Hochalarm" 				0	01.01.1970 00:00:00.000	95	3.402823e+038		
+_mp_Control_Var.alarm.sensor	Control_Var		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "sensor fault" LANG:0 "Sensorfehler" 	lt:2 LANG:1 "" LANG:0 "" 
+R01_Discharge_Valve.alarm.general	Device		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "device fault" LANG:0 "Gerätefehler" 	lt:2 LANG:1 "" LANG:0 "" 
+R01_Feeder_Pump.alarm.general	Device		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "device fault" LANG:0 "Gerätefehler" 	lt:2 LANG:1 "" LANG:0 "" 
+R01_HE_Inlet_Hot_Valve.alarm.general	Device		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "device fault" LANG:0 "Gerätefehler" 	lt:2 LANG:1 "" LANG:0 "" 
+R01_HE_Inlet_Cold_Valve.alarm.general	Device		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "device fault" LANG:0 "Gerätefehler" 	lt:2 LANG:1 "" LANG:0 "" 
+R01_HE_Return_Valve.alarm.general	Device		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "device fault" LANG:0 "Gerätefehler" 	lt:2 LANG:1 "" LANG:0 "" 
+R01_Injection_Valve.alarm.general	Device		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "device fault" LANG:0 "Gerätefehler" 	lt:2 LANG:1 "" LANG:0 "" 
+R01_Mixer.alarm.torque	Motor_N1		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "torque" LANG:0 "Drehmoment" 	lt:2 LANG:1 "OK" LANG:0 "OK" 
+R01_Mixer.alarm.temp	Motor_N1		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "Max temperature" LANG:0 "Übertemperatur" 	lt:2 LANG:1 "OK" LANG:0 "OK" 
+R01_LICA_01.state.value	Control_Var		13					""		lt:2 LANG:1 "" LANG:0 "" 	\0			1	0							
+R01_LICA_01.state.value	Control_Var	1	4	-3.402823e+038	5	1	1					System1:alert.	lt:2 LANG:1 "Low alarm" LANG:0 "Niedrigalarm" 				0	01.01.1970 00:00:00.000	-3.402823e+038	5		
+R01_LICA_01.state.value	Control_Var	2	4	5	95	0	1						lt:2 LANG:1 "" LANG:0 "" 				0	01.01.1970 00:00:00.000	5	95		
+R01_LICA_01.state.value	Control_Var	3	4	95	3.402823e+038	0	1					System1:alert.	lt:2 LANG:1 "High alarm" LANG:0 "Hochalarm" 				0	01.01.1970 00:00:00.000	95	3.402823e+038		
+R01_LICA_01.alarm.sensor	Control_Var		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "sensor fault" LANG:0 "Sensorfehler" 	lt:2 LANG:1 "" LANG:0 "" 
+R01_TICA_02.state.value	Control_Var		13					""		lt:2 LANG:1 "" LANG:0 "" 	\0			1	0							
+R01_TICA_02.state.value	Control_Var	1	4	-3.402823e+038	15	1	1					System1:alert.	lt:2 LANG:1 "Low alarm" LANG:0 "Niedrigalarm" 				0	01.01.1970 00:00:00.000	-3.402823e+038	5		
+R01_TICA_02.state.value	Control_Var	2	4	15	65	0	1						lt:2 LANG:1 "" LANG:0 "" 				0	01.01.1970 00:00:00.000	5	95		
+R01_TICA_02.state.value	Control_Var	3	4	65	3.402823e+038	0	1					System1:alert.	lt:2 LANG:1 "High alarm" LANG:0 "Hochalarm" 				0	01.01.1970 00:00:00.000	95	3.402823e+038		
+R01_TICA_02.alarm.sensor	Control_Var		12					""		lt:2 LANG:1 "" LANG:0 "" 	\0	System1:alert.		1	0	0	0	01.01.1970 00:00:00.000			lt:2 LANG:1 "sensor fault" LANG:0 "Sensorfehler" 	lt:2 LANG:1 "" LANG:0 "" 

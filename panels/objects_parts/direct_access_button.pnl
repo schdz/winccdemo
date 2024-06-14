@@ -1,0 +1,307 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 92 98 N "STD_panel_back" 1
+"$directAccNr"
+"main()
+{
+
+}" 0
+ E E E E 1 -1 -1 0  20 70
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 2
+"Border11"
+""
+1 47 70 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 47 63 69 70
+6 4
+"fraIconWarning"
+""
+1 48 71 E E E 1 E 1 E N {102,102,102} E N {204,204,204} E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 48 64 70 71
+6 5
+"Border1"
+""
+1 20 70 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 63 42 70
+6 6
+"fraIconAlert"
+""
+1 21 71 E E E 1 E 1 E N {102,102,102} E N {204,204,204} E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 21 64 43 71
+13 0
+"DirectPanelSel_2"
+""
+1 20 20 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  // opens the directAccess properties menue
+  
+  int   	 answer, directAccessButtonNumber = $directAccNr;
+  dyn_string popUpItems, iconFile, icons_enabled, icons_disabled;
+  dyn_float  dummy_return;
+  string 	 sicons_enabled, sicons_disabled;
+ 
+  // if user permission not sufficient, the direct access button 
+  // can not be modified...
+
+  if (getUserPermission(3))  // check if user accesslevel is from group \"para\" or \"root\"
+  {
+    popUpItems = makeDynString(\"PUSH_BUTTON,\"+getCatStr(\"DemoApp\",\"properties\")+\",1,1\");
+    popupMenu(popUpItems, answer);
+       
+    if (answer == 1)
+    {
+      ChildPanelOnCentralModalReturn(\"objects_parts/direct_access_properties.pnl\",getCatStr(\"DemoApp\",\"properties\"),
+      								makeDynString(\"$DPE:\"+directAccessButtonNumber),     
+      								dummy_return,iconFile);      								 
+ 	}
+ 	if (dynlen(iconFile) > 1)
+ 	{
+ 	  // to load the icons correctly we take them from the dp, not from the return string	
+ 	  dpGet(\"ApplicationProperties.panels.directaccess.icons_enabled:_online.._value\", icons_enabled,
+ 	  		\"ApplicationProperties.panels.directaccess.icons_disabled:_online.._value\", icons_disabled);  
+ 	  		    						
+ 	  if (getUserPermission(1)) setValue(\"\",\"fill\",\"[pattern,[tile,bmp,\"+icons_enabled[directAccessButtonNumber]+\"]]\",\"enabled\", true);
+ 	  else setValue(\"\",\"fill\",\"[pattern,[tile,bmp,\"+icons_disabled[directAccessButtonNumber]+\"]]\",\"enabled\", true); 
+ 	}
+  }
+} " 0
+ E
+1 1 0 0 113 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  18 18 72 62
+
+T 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // read the currently for this \"direct access button\" parametrized
+  // panel which should be opened on click
+  
+  int 		 directAccessButtonNumber = $directAccNr, i;
+  dyn_string direct_access_panels, dollar_params, dollar_values, dollarName, dollarVal, dollarList;
+  
+  dpGet(\"ApplicationProperties.panels.directaccess.panels:_online.._value\",direct_access_panels,
+  	    \"ApplicationProperties.panels.directaccess.dollar_params:_online.._value\",dollar_params,
+  	    \"ApplicationProperties.panels.directaccess.dollar_values:_online.._value\",dollar_values);
+
+  dollarName = strsplit(dollar_params[directAccessButtonNumber], \" \");
+  dollarVal =  strsplit(dollar_values[directAccessButtonNumber], \" \");  
+  
+  for(i=1; i<=dynlen(dollarName); i++)
+  {
+    if (dollarVal[i] == \"\\\"\\\"\") dynAppend(dollarList, dollarName[i]+\":\");
+    else dynAppend(dollarList, dollarName[i]+\":\"+dollarVal[i]);
+  }  
+  
+  RootPanelOnModule( direct_access_panels[directAccessButtonNumber], direct_access_panels[directAccessButtonNumber], 
+                     \"panel\", dollarList);
+}" 0
+ E E "  string	 lastDirectAcc;
+  bool		 done;
+  dyn_string oldPanels;
+
+main()
+{ 
+  // script for the reference \"directAccess\" -button with alert indication
+
+  int 		 iAccNr, i;
+  dyn_string dollar_list;
+ 
+  dpConnect(\"manageAccess\",myUiDpName()+\".UserName:_online.._value\",
+  						   \"ApplicationProperties.panels.directaccess.panels:_online.._value\");
+  
+  // check the saved dollar parameter if there are any.
+  // for each panel which can be loaded by an directAccess 
+  // button there must be at least a \"\"- string in the DP.		
+  		   
+  dpGet(\"ApplicationProperties.panels.directaccess.dollar_params:_online.._value\", dollar_list);
+  iAccNr = getDollarValue (\"$directAccNr\");
+  if(dynlen(dollar_list)== 0 || dynlen(dollar_list) < iAccNr)
+  {
+    for (i=1; i<=iAccNr; i++)
+    {
+     if (dynlen(dollar_list) < iAccNr) dynAppend(dollar_list, \"\\\"\\\"\");
+     else break;
+    }
+    dpSetWait(\"ApplicationProperties.panels.directaccess.dollar_params:_original.._value\", dollar_list,
+              \"ApplicationProperties.panels.directaccess.dollar_values:_original.._value\", dollar_list);  
+  } 
+}
+
+
+manageAccess(string dp1, string UserName, string dp2, dyn_string panels)
+{ 
+  // get all needed values
+  int 		 directAccessButtonNumber = $directAccNr;
+  dyn_string icons_enabled, icons_disabled;
+ 
+  dpGet(\"ApplicationProperties.panels.directaccess.icons_enabled:_online.._value\",icons_enabled,
+  	    \"ApplicationProperties.panels.directaccess.icons_disabled:_online.._value\",icons_disabled);
+
+  // checks Permission - depending on that use the enabled or disabled icon
+  if (getUserPermission(1))
+    setValue(\"\",\"fill\",\"[pattern,[tile,bmp,\"+icons_enabled[directAccessButtonNumber]+\"]]\",
+   			    \"enabled\", true);
+  else
+    setValue(\"\",\"fill\",\"[pattern,[tile,bmp,\"+icons_disabled[directAccessButtonNumber]+\"]]\",
+                \"enabled\", false);
+                
+  // checks if any sumalert dps' have changed  
+  if (panels != oldPanels) dpConnect(\"sumAlertCheck\", \"ApplicationProperties.panels.directaccess.sum_alerts:_online.._value\");              
+  oldPanels = panels;
+}
+
+// Function for indicating the current alert state color in the 2 forms right under this button. 	
+sumAlertCheck(string dpe, dyn_string value)
+{
+  int directAccessButtonNumber = $directAccNr;
+  
+  if (value[directAccessButtonNumber] != lastDirectAcc)		// if new value != old value
+  {
+    if (done == 1) 
+    {
+      dpDisconnect(\"alertHandling\",lastDirectAcc+\".Alert:_alert_hdl.._act_state_color\",
+  							       lastDirectAcc+\".Warning:_alert_hdl.._act_state_color\");
+  	  done = 0;
+    }
+    if (done == 0)
+    {					   
+      dpConnect(\"alertHandling\", value[directAccessButtonNumber]+\".Alert:_alert_hdl.._act_state_color\",
+  							     value[directAccessButtonNumber]+\".Warning:_alert_hdl.._act_state_color\");
+      done = 1;
+    }
+  }
+  lastDirectAcc = value[directAccessButtonNumber];
+}
+
+// Function for changing colors
+alertHandling(string dpe1, string color1,
+			  string dpe2, string color2)
+{
+  int directAccessButtonNumber = $directAccNr;
+  
+  setMultiValue (\"fraIconAlert\",\"backCol\", color1,
+  				 \"fraIconWarning\", \"backCol\", color2);
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

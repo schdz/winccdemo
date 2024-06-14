@@ -1,0 +1,59 @@
+shiftEntry,Schichteingabe
+shiftEdit,Editieren von Schicht
+delete,Löschen von
+confirmDelete,Wollen Sie wirklich löschen?
+weekDay1,Montag
+weekDay2,Dienstag
+weekDay3,Mittwoch
+weekDay4,Donnerstag
+weekDay5,Freitag
+weekDay6,Samstag
+weekDay7,Sonntag
+at,um
+Day,Tag
+colorUsed,Farbe wird von einem anderen Benutzer verwendet!
+entryExists,Dieser Eintrag existiert bereits!
+defMissing,Benutzer oder Farbe nicht definiert!
+colorFailure,Für diesen Benutzer ist bereits eine andere Farbe definiert! Farbe wird vorgeschlagen!
+showIndex,Index anzeigen
+hideIndex,Index verstecken
+noTimeOrDuration,Bitte wählen Sie 1. die Dauer, 2. den Halbtag, und 3. den Zeitpunkt, ab welchem Sie die Belegung löschen wollen!
+noTimeDurOrPersonnel,Bitte wählen Sie 1. die Dauer, 2. den Halbtag, 3. den Zeitpunkt, und 4. einen Benutzer um die Belegung zu ändern!
+noDurOrPersonnel,Bitte wählen Sie 1. die Dauer und 2. einen Benutzer um eine neue Belegung anzuhängen!
+noName,Bitte wählen sie zuerst einen Namen!
+recipient,Benutzer
+rc_entry,Benutzereingabe
+rc_entry_device,Geräteeingabe
+mobilephone,Mobil
+phone,Festnetz
+pager,Pager
+SMS,SMS
+email,EMail
+fax,Fax
+wllText1,niedrig (<10h/Woche)
+wllText2,mittel (<20h/Woche)
+wllText3,hoch (<30h/Woche)
+wllText4,sehr hoch (<30h/Woche)
+wllText5,beliebig (<168h/Woche)
+validNumber,Die Nummer darf nur aus Ziffern bestehen!
+validPassword,Die ID darf nur aus Ziffern bestehen und muss vierstellig sein!
+validPersNum,Die Personalnummer darf kein Leerstring sein und muss eindeutig sein!
+shiftAggregationEdit,Editieren der Schichtabfolge
+noDomainsDefined,Bitte editieren sie zuerst die Branchen!
+shiftAggregationBlanks,Schichtabfolgenübersicht
+RecipientUsed,Der Empfänger ist in folgenden Schichten/Serviceplänen parametriert!
+UsedInAggs,Dieses Element wird in folgenden Schichtabfolgen verwendet!
+delNotPos,Löschen nicht möglich!
+editNotPos,Änderungsfunktionen eingeschränkt!
+ackfrom,Quittiert von
+IdentifierError, Dieser Gerätename existiert bereits!
+devNumberToolTip,z.B.: +4369912345678
+devMailToolTip,z.B.: name@hostname.com
+
+status_1,Schichtplan
+status_2,Statische Anrufliste
+status_3,Deaktiviert
+
+-10,Empfänger ist Mitglieder einer ungültigen Branche!
+-11,Ungültige Belastbarkeit!
+-12,Ungültiges Gerät gefunden in der persönlichen Benachrichtigungs-Reihenfolge!

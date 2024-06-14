@@ -1,0 +1,4 @@
+rep_connection,Bitte überprüfen sie ob der BIRT Server läuft bzw. ob die IP - Adresse korrekt ist.
+rep_missing,Es fehlen IP - Adresse und/oder Port.
+rep_port,Bitte überprüfen sie die angegebene Port Nummer.
+rep_error,Es ist ein Fehler aufgetreten.

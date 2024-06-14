@@ -1,0 +1,1133 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 620 560 N "STD_panel_back" 0
+E E E E E 1 -1 -1 0  40 140
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 17
+"Border14"
+""
+1 10 189 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 60 600 249
+6 18
+"Border15"
+""
+1 11 217 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 61 601 250
+2 19
+"txt2"
+""
+1 20 50 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 1 3 1 0 1 E U  1 E 22 52 173 67
+0 2 0 "0s" 0 0 0 192 0 0  22 52 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 24  Bedienung mit der Maus 
+LANG:10001 18  Mouse operations 
+LANG:10027 32  Операции с мышью 
+6 22
+"Border1"
+""
+1 10 331 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 270 600 410
+6 23
+"Border2"
+""
+1 11 367 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 271 601 411
+2 24
+"Text1"
+""
+1 20 260 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 1 3 1 0 1 E U  1 E 22 262 139 277
+0 2 0 "0s" 0 0 0 192 0 0  22 262 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 20  Allgemeine Klänge 
+LANG:10001 15  General sounds
+LANG:10027 22  Общие звуки
+22 25
+"stopCombo"
+""
+1 360 334 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  358 332 512 359
+0
+
+E
+"main()
+{
+  string SoundFile;
+
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+this.text);
+  
+  if (this.text != \"\")
+  {  
+    // Play the selected sound once
+    startSound(SoundFile,false);
+  
+    dpSet(\"ApplicationProperties.sound.onStop:_original.._value\",this.text);
+  }
+}" 0
+
+E
+ 0 0
+13 26
+"stopTest"
+""
+1 531 331 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  529 329 563 363
+
+P 
+13421772
+"pictures/icons/horn.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main() 
+{ 
+  string sWavFile = stopCombo.text, SoundFile;
+
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+sWavFile);
+  
+  if(sWavFile != \"\") 
+    startSound(SoundFile,false);								
+}" 0
+ E E E
+22 27
+"errorCombo"
+""
+1 360 373 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  358 371 512 398
+0
+
+E
+"main()
+{
+  string SoundFile;
+
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+this.text);
+  
+  if (this.text != \"\")
+  {  
+    // Play the selected sound once
+    startSound(SoundFile,false);
+  
+    dpSet(\"ApplicationProperties.sound.onInternalError:_original.._value\",this.text);
+  }
+}" 0
+
+E
+ 0 0
+13 28
+"errorTest"
+""
+1 531 370 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  529 368 563 402
+
+P 
+13421772
+"pictures/icons/horn.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main() 
+{ 
+  string sWavFile = errorCombo.text, SoundFile;
+
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+sWavFile);
+  
+  if(sWavFile != \"\")
+    startSound(SoundFile,false);
+}" 0
+ E E E
+20 5
+"soundOnCheckbox"
+""
+1 10 10 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  8 8 212 42
+1
+T 
+3
+LANG:10000 30 Klang-Unterstützung aktiviert
+LANG:10001 23 Sound support activated
+LANG:10027 48 Активация поддержки звука
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+"main()
+{  
+  dpConnect(\"displaySettings\",\"ApplicationProperties.sound.on:_online.._value\");
+}
+
+displaySettings(string dp1, bool soundOn)
+{  
+  setMultiValue(\"\",\"state\",0,					soundOn,
+  				\"baseSoundCheckbox\",\"enabled\",	soundOn,
+  				\"leftClickCombo\",	\"enabled\",	soundOn,
+				\"dblClickCombo\",	\"enabled\",	soundOn,
+				\"rightClickCombo\",	\"enabled\",	soundOn,
+				\"leftClickTest\",	\"enabled\",	soundOn,
+				\"dblClickTest\",		\"enabled\",	soundOn,
+				\"rightClickTest\",	\"enabled\",	soundOn,
+				
+				\"addSoundCheckBox\", \"enabled\",  soundOn,
+				\"startCombo\",		\"enabled\",	soundOn,
+				\"stopCombo\",		\"enabled\",	soundOn,
+				\"errorCombo\",		\"enabled\",	soundOn,
+				\"startTest\",		\"enabled\",	soundOn,
+				\"stopTest\",			\"enabled\",	soundOn,
+				\"errorTest\",		\"enabled\",	soundOn);
+}" 0
+"main(int number, bool state)
+{ 
+  bool	  	  ClickSoundEnabled,  DblClickSoundEnabled,  RightClickSoundEnabled;
+  string	  selectedClickSound, selectedDblClickSound, selectedRightClickSound;
+   
+  dpGet(\"ApplicationProperties.sound.onClick:_online.._value\",             selectedClickSound,
+  		\"ApplicationProperties.sound.onDblClick:_online.._value\",          selectedDblClickSound,
+  		\"ApplicationProperties.sound.onRightClick:_online.._value\",        selectedRightClickSound,
+		\"ApplicationProperties.sound.onRightClickEnabled:_online.._value\", ClickSoundEnabled,
+		\"ApplicationProperties.sound.onRightClickEnabled:_online.._value\", DblClickSoundEnabled,
+		\"ApplicationProperties.sound.onRightClickEnabled:_online.._value\", RightClickSoundEnabled);
+
+  if (state)
+  {
+    dpSet(\"ApplicationProperties.sound.on:_original.._value\", TRUE);
+    
+    // Enable or disable the generally supported sounds 
+    // indicating the execution of event scripts
+    
+    enableSound(1,ClickSoundEnabled,      selectedClickSound);
+    enableSound(2,RightClickSoundEnabled, selectedRightClickSound);
+    enableSound(3,DblClickSoundEnabled,   selectedDblClickSound);
+  } 
+  else
+  {
+    dpSet(\"ApplicationProperties.sound.on:_original.._value\", FALSE);
+    
+    // Enable or disable the generally supported sounds 
+    // indicating the execution of event scripts
+    
+    enableSound(1,FALSE);
+    enableSound(2,FALSE);
+    enableSound(3,FALSE);
+  }
+}" 0
+20 0
+"baseSoundCheckbox"
+""
+1 30 70 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  28 68 302 189
+3
+T 
+3
+LANG:10000 37 Klang bei Bedienung / Mausklick links
+LANG:10001 36 Sound on execution / left mouseclick
+LANG:10027 54 При нажатии левой кнопки мыши
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 38 Klang bei Bedienung / Mausklick rechts
+LANG:10001 37 Sound on execution / right mouseclick
+LANG:10027 56 При нажатии правой кнопки мыши
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 39 Klang bei Bedienung / Doppelklick links
+LANG:10001 38 Sound on execution / double mouseclick
+LANG:10027 43 При двойном щелчке мыши
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+3
+E E
+E E
+E E
+"main()
+{
+  dpConnect(\"displaySettings\", \"ApplicationProperties.sound.onClickEnabled:_online.._value\",
+  							   \"ApplicationProperties.sound.onRightClickEnabled:_online.._value\",
+  							   \"ApplicationProperties.sound.onDblClickEnabled:_online.._value\");
+}
+
+displaySettings(string dp1, bool onClickEnabled,
+				string dp2, bool onRightClickEnabled,
+				string dp3, bool onDblClickEnabled)
+{
+  setValue(\"\",\"state\",0,onClickEnabled,
+  			  \"state\",1,onRightClickEnabled,
+              \"state\",2,onDblClickEnabled);
+}" 0
+"main(int number, bool state)
+{
+  string sFile;
+
+  switch(number)
+  {
+    case(0):  dpSet(\"ApplicationProperties.sound.onClickEnabled:_original.._value\",state);
+    		  getValue(\"leftClickCombo\",\"text\",sFile);
+    		  enableSound(1,state,sFile);
+              break;
+            
+    case(1):  dpSet(\"ApplicationProperties.sound.onRightClickEnabled:_original.._value\",state);
+    		  getValue(\"rightClickCombo\",\"text\",sFile);
+    		  enableSound(2,state,sFile);
+              break;
+            
+    case(2):  dpSet(\"ApplicationProperties.sound.onDblClickEnabled:_original.._value\",state);
+    		  getValue(\"dblClickCombo\",\"text\",sFile);
+    		  enableSound(3,state,sFile);
+              break;
+  }           
+}" 0
+22 1
+"leftClickCombo"
+""
+1 360 77 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  358 75 512 102
+0
+
+"main()
+{
+  int         i;
+  string	  selectedClickSound, selectedDblClickSound, selectedRightClickSound,
+  			  selectedStartSound, selectedStopSound, onIntError, dummyString;
+  dyn_string  dsTmpSoundsList, dsSoundsList;
+
+
+  // Search in the Project path for .wav files.
+  dsTmpSoundsList = getFileNames(PROJ_PATH+\"data/sounds/\",\"*.*\");
+  if (dynlen(dsTmpSoundsList) != 0)
+  {
+    for(i=1; i<=dynlen(dsTmpSoundsList); i++)  
+    {
+      dummyString = strtolower(dsTmpSoundsList[i]);	    // Changes to lowercase
+      if (strpos(dummyString,\".wav\") >= 0) dynAppend(dsSoundsList,dummyString);
+    }
+  }
+  
+  // Search in the version for .wav files if there are none in the project path.
+  if(dynlen(dsSoundsList) == 0) 
+  {
+    dsTmpSoundsList = getFileNames(PVSS_PATH+\"data/sounds/\",\"*.*\");
+    if (dynlen(dsTmpSoundsList) != 0)
+    {
+      for(i=1; i<=dynlen(dsTmpSoundsList); i++)  
+      {
+        dummyString = strtolower(dsTmpSoundsList[i]);    // Changes to lowercase
+        if (strpos(dummyString,\".wav\") >= 0) dynAppend(dsSoundsList,dummyString);
+      }
+    }
+  }
+  if (dynlen(dsSoundsList) != 0) dynSortAsc(dsSoundsList);
+  
+  
+  if (dynlen(dsSoundsList) > 0)
+  {
+    // Read the current, application specific settings from the ApplicationProperties
+    // datapoint
+    dpGet(\"ApplicationProperties.sound.onClick:_online.._value\",      selectedClickSound,
+  		  \"ApplicationProperties.sound.onDblClick:_online.._value\",   selectedDblClickSound,
+  		  \"ApplicationProperties.sound.onRightClick:_online.._value\", selectedRightClickSound,
+  		
+  		  \"ApplicationProperties.sound.onStart:_online.._value\",         selectedStartSound,
+  		  \"ApplicationProperties.sound.onStop:_online.._value\",          selectedStopSound,
+  		  \"ApplicationProperties.sound.onInternalError:_online.._value\", onIntError);
+  
+  
+    // Initialize the combo box with the sound filenames if there are any
+  
+    setMultiValue(\"leftClickCombo\",\"items\",  dsSoundsList,
+    			  \"dblClickCombo\", \"items\",  dsSoundsList,
+    			  \"rightClickCombo\",\"items\", dsSoundsList,
+    			  \"startCombo\",    \"items\",  dsSoundsList,
+    			  \"stopCombo\",     \"items\",  dsSoundsList,
+    			  \"errorCombo\",    \"items\",  dsSoundsList,
+    			  
+    			  \"leftClickCombo\",\"text\",   selectedClickSound,
+    			  \"dblClickCombo\", \"text\",   selectedDblClickSound,
+    			  \"rightClickCombo\",\"text\",  selectedRightClickSound,
+    			  \"startCombo\",    \"text\",   selectedStartSound,
+    			  \"stopCombo\",     \"text\",   selectedStopSound,
+    			  \"errorCombo\",    \"text\",   onIntError);
+  }
+    			  
+  else setMultiValue(\"leftClickCombo\",\"text\", \"\",
+    			  	 \"dblClickCombo\",\"text\",  \"\",
+    			  	 \"rightClickCombo\",\"text\",\"\",
+    			  	 
+    			  	 \"startCombo\",\"text\", 	  \"\",
+    			  	 \"stopCombo\",\"text\", 	  \"\",
+    			  	 \"errorCombo\",\"text\",	  \"\");
+}" 0
+
+"main()
+{
+  string SoundFile;
+  bool   bOK;
+  
+  getValue(\"baseSoundCheckbox\",\"state\",0, bOK);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+this.text);
+  
+  // Play the selected sound once
+  startSound(SoundFile,false);
+  
+  // If checkboxes (sound general, sound for event) and enabled...
+  if (bOK) enableSound( 1, TRUE, this.text );
+  
+  // Save to the application properties datapoint...
+
+  dpSet(\"ApplicationProperties.sound.onClick:_original.._value\",this.text);
+
+}" 0
+
+E
+ 0 0
+13 9
+"leftClickTest"
+""
+1 531 74 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  529 72 563 106
+
+P 
+13421772
+"pictures/icons/horn.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main() 
+{ 
+  string sWavFile = leftClickCombo.text, SoundFile;
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+sWavFile);
+  
+  if(sWavFile != \"\")
+    startSound(SoundFile,false);    
+} " 0
+ E E E
+22 3
+"rightClickCombo"
+""
+1 360 120 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  358 118 512 145
+0
+
+E
+"main()
+{
+  string SoundFile;
+  bool   bOK;
+  
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound
+  stopSound();
+  delay(1);
+  
+  getValue(\"baseSoundCheckbox\",\"state\",1, bOK);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+this.text);
+  
+  if (this.text != \"\")
+  {  
+    startSound(SoundFile,false);	
+     
+    // If checkboxes (sound general, sound for event) and enabled...
+    if (bOK) enableSound( 2, TRUE, this.text );
+ 
+    // Save to the application properties datapoint... 
+    dpSet(\"ApplicationProperties.sound.onRightClick:_original.._value\",this.text);
+  }
+}" 0
+
+E
+ 0 0
+13 11
+"rightClickTest"
+""
+1 531 117 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  529 115 563 149
+
+P 
+13421772
+"pictures/icons/horn.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main() 
+{ 
+  string sWavFile = rightClickCombo.text, SoundFile;
+
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+sWavFile);
+  
+  if(sWavFile != \"\")     
+    startSound(SoundFile,false);								
+}" 0
+ E E E
+22 4
+"dblClickCombo"
+""
+1 360 160 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  358 158 512 185
+0
+
+E
+"main()
+{
+  string SoundFile;
+  bool   bOK;
+  
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+  
+  getValue(\"baseSoundCheckbox\",\"state\",2, bOK);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+this.text);
+  
+  if (this.text != \"\")
+  {  
+    // Play the selected sound once
+    startSound(SoundFile,false);
+  
+    // If checkboxes (sound general, sound for event) and enabled...
+    if (bOK) enableSound( 3, TRUE, this.text );
+  
+    // Save to the application properties datapoint... 
+    dpSet(\"ApplicationProperties.sound.onDblClick:_original.._value\",this.text);
+  }
+}" 0
+
+E
+ 0 0
+13 10
+"dblClickTest"
+""
+1 531 157 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  529 155 563 189
+
+P 
+13421772
+"pictures/icons/horn.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main() 
+{ 
+  string sWavFile = dblClickCombo.text, SoundFile;
+
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+sWavFile);
+  
+  if(sWavFile != \"\")
+    startSound(SoundFile,false);
+}" 0
+ E E E
+13 2
+"Button1"
+""
+1 29 201 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  resultTest.text = getCatStr(\"DemoApp\",\"rightClicked\");
+  delay(1);
+  resultTest.text = \"\";
+}" 0
+ "main()
+{
+  resultTest.text = getCatStr(\"DemoApp\",\"dblClicked\");
+  delay(1);
+  resultTest.text = \"\";
+}" 0
+
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  27 199 161 230
+
+T 
+3
+LANG:10000 11 Test Button
+LANG:10001 11 Test button
+LANG:10027 22 Тест. кнопка
+"main()
+{
+  resultTest.text = getCatStr(\"DemoApp\",\"leftClicked\");
+  delay(1);
+  resultTest.text = \"\";
+}" 0
+ E E E
+14 21
+"resultTest"
+""
+1 170 200 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,75,0,0,0,0,0
+0  168 198 563 228
+2 "0s" 0 0 0 0 0 -1  E E E
+20 12
+"addSoundCheckBox"
+""
+1 30 290 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  28 288 302 409
+3
+T 
+3
+LANG:10000 37 Klang beim Starten der Visualisierung
+LANG:10001 16 Sound on startup
+LANG:10027 30 Звук при запуске
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 37 Klang beim Beenden der Visualisierung
+LANG:10001 13 Sound on exit
+LANG:10027 28 Звук при выходе
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 32 Klang beim Auftreten von Fehlern
+LANG:10001 14 Sound on error
+LANG:10027 28 Звук при ошибке
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+3
+E E
+E E
+E E
+"main()
+{
+  dpConnect(\"displaySettings\", \"ApplicationProperties.sound.onStartEnabled:_online.._value\",
+  							   \"ApplicationProperties.sound.onStopEnabled:_online.._value\",
+  							   \"ApplicationProperties.sound.onInternalErrorEnabled:_online.._value\"); 								
+}
+
+displaySettings(string dp1, bool onStartEnabled,
+				string dp2, bool onStopEnabled,
+				string dp3, bool onIntErrorEnabled)
+{
+  setValue(\"\",\"state\",0,onStartEnabled,
+  			  \"state\",1,onStopEnabled,
+  		   	  \"state\",2,onIntErrorEnabled);
+}" 0
+"main(int number, bool state)
+{
+  switch(number)
+  {
+    case(0):  dpSet(\"ApplicationProperties.sound.onStartEnabled:_original.._value\",state);
+              break;
+              
+    case(1):  dpSet(\"ApplicationProperties.sound.onStopEnabled:_original.._value\",state);
+              break;
+            
+    case(2):  dpSet(\"ApplicationProperties.sound.onInternalErrorEnabled:_original.._value\",state);
+    		  break;
+  }           
+}" 0
+22 13
+"startCombo"
+""
+1 360 294 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  358 292 512 319
+0
+
+E
+"main()
+{
+  string SoundFile;
+
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+this.text);
+  
+  if (this.text != \"\")
+  {  
+    // Play the selected sound once
+    startSound(SoundFile,false);
+  
+    dpSet(\"ApplicationProperties.sound.onStart:_original.._value\",this.text);
+  }
+}" 0
+
+E
+ 0 0
+13 16
+"startTest"
+""
+1 531 291 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  529 289 563 323
+
+P 
+13421772
+"pictures/icons/horn.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main() 
+{ 
+  string sWavFile = startCombo.text, SoundFile;
+
+  // In case that there is a sound on left click enabled,
+  // stop the sound, wait one second, then start the test sound  
+  stopSound();
+  delay(1);
+  
+  SoundFile = getPath(DATA_REL_PATH,\"sounds/\"+sWavFile);
+  
+  if(sWavFile != \"\")
+    startSound(SoundFile,false);								
+} " 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

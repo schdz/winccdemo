@@ -1,0 +1,6154 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+"main()
+{
+noFlickerRedraw(true);
+}" 0
+ "main()
+{
+  dpSet(\"CP_Sim.Mode\",1);
+}" 0
+ E E E 1 -1 -1 0  956 51
+""0  1
+E "int   cnt = 0; 
+int   sim = 1; // 0..off, 1..process, 2..demo;
+int   simCR = 5; // maximum change rate for valve.position in simulation mode;
+
+
+// memory flag for previous rundry state
+bool old_runDry = false, simCBConnected = false, refCBConnected = false, stoppFillingInProgress = false;
+
+
+// panel-global vars help to communicate the current flow values to all shapes with scripts
+float cmyk_flow = 0, white_flow = 0, out_flow = 0, flow_c = 0, flow_m = 0, flow_y = 0, flow_k = 0;
+
+// pipefactor defines the (maximum) flow through a valve.. most of all dependant on the effective aperture
+float pipefactor = 0.00024; // flow = aperture * area * sqrt( 2*g*h ) * delta_time = pipefactor * aperture * sqrt(level)
+
+// the area factors define how fast tanks fill
+float areafactor = 1.5, areafactor_small_tanks = 1.2, areafactor_large_tanks = 0.4;
+
+int c_255_100(float color)
+{
+  color = (100.0*color)/255.0;
+  return color;
+}
+
+int c_100_255(float color)
+{
+  color = (255*color)/100.0;
+}
+
+cmykw2rgb(float cyan, float magenta, float yellow, float black, float white, int &red, int &green, int &blue)
+{
+  cyan = cyan/100.0;
+  magenta = magenta/100.0;
+  yellow = yellow/100.0;
+  black = black/100.0;
+
+  red = (1.0 - ((1.0 > (cyan*(1.0-black)+black)) ? (cyan*(1.0-black)+black) : 1.0))*255.0 + 0.5;
+  green = (1.0 - ((1.0 > (magenta*(1.0-black)+black)) ? (magenta*(1.0-black)+black) : 1.0 ))*255.0 + 0.5;
+  blue = (1.0 - ((1.0 > (yellow*(1.0-black)+black)) ? (yellow*(1.0 - black)+black) : 1.0 ))*255.0 + 0.5;
+  
+}
+
+
+rgb2cmyk(int red, int green, int blue, float &cyan, float &magenta, float &yellow, float &black)
+{
+// here, the rgb values are converted to cmy with k = 0 valus !
+  black = 0;
+  cyan = (255 - red)/2.55 + 0.5;
+  magenta = (255 - green)/2.55 + 0.5;
+  yellow = (255 - blue)/2.55 + 0.5;
+
+// following section could be used for real rgb -> cmyk (with black) conversion
+/*
+  black = 255- red;
+  if ((255 - green) < black)
+    black = 255 - green;
+  if ((255 - blue) < black)
+    black = 255 - blue;
+
+  if(black == 255)
+  {
+    cyan = 0; magenta = 0; yellow = 0; 
+  }
+  else
+  { 
+    cyan = (255 - red - black) / (255 - black); 
+    magenta = (255 - green - black) / (255 - black); 
+    yellow = (255 - blue - black) / (255 - black); 
+
+    cyan = cyan*100.0;
+    magenta = magenta*100.0;
+    yellow = yellow*100.0;
+  }
+*/
+}
+
+void calculateColors(bool rgb = false)
+{
+ float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+ 
+  if(rgb)
+  {
+    rgb2cmyk(red, green, blue, cyan, magenta, yellow, black);    
+    setMultiValue(	\"cyan_t\",\"text\",cyan,
+    				\"magenta_t\",\"text\",magenta,
+    				\"yellow_t\",\"text\",yellow,
+    				\"black_t\",\"text\",black);
+    cyan_slider.Value = cyan;
+    Magenta_Slider.Value = magenta;
+    Yellow_Slider.Value = yellow;
+    black_slider.Value = black;    				 
+  }
+  else
+  { 
+    cmykw2rgb(cyan, magenta, yellow, black, white, red, green, blue);
+    setMultiValue(	\"r\",\"text\",red,
+    				\"g\",\"text\",green,
+    				\"b\",\"text\",blue);
+    red_slider.Value = red;
+    green_slider.Value = green;
+    blue_slider.Value = blue;    				 
+  }
+  
+  if(previewActive.state(0))
+  {
+    mixtank.backCol = \"{\"+red+\",\"+green+\",\"+blue+\"}\";
+    col_preview.backCol = \"{\"+red+\",\"+green+\",\"+blue+\"}\";
+    cmyk_inflow.backCol = \"{\"+red+\",\"+green+\",\"+blue+\"}\";
+  }
+  else
+  {
+    col_preview.backCol = \"{\"+red+\",\"+green+\",\"+blue+\"}\";
+  }
+}
+
+void colorCommand2Valves()
+{
+   
+  int cyan = cyan_t.text,
+   magenta = magenta_t.text,
+   yellow = yellow_t.text,
+   black = black_t.text;
+   
+  dpSet(\"Valve_Tank1.cmd.setpoint\",cyan,
+        \"Valve_Tank2.cmd.setpoint\",magenta,  		
+        \"Valve_Tank3.cmd.setpoint\",yellow,  		
+        \"Valve_Tank4.cmd.setpoint\",black,
+        \"Valve_Tank1.cmd.manual\",false,
+        \"Valve_Tank2.cmd.manual\",false,  		
+        \"Valve_Tank3.cmd.manual\",false,  		
+        \"Valve_Tank4.cmd.manual\",false); 		
+
+}
+
+void setRandomColor()
+{
+    int c,m,y,k, r, g, b;
+
+    c = (rand()*100.0)/32767.0; 
+    m = (rand()*100.0)/32767.0;  
+    y = (rand()*100.0)/32767.0;
+    k = (rand()*30.0)/32767.0;  
+    
+    cyan_t.text = c;
+  	magenta_t.text = m;
+  	yellow_t.text = y;
+  	black_t.text = b;
+    
+    cyan_slider.Value = c;
+    Magenta_Slider.Value = m;
+    Yellow_Slider.Value = y;
+    black_slider.Value = b;
+    
+    calculateColors();
+    
+    dpSet(\"Valve_Tank5.cmd.setpoint\",49.0 + ((rand()*50.0)/32767.0)); 
+}
+" 0
+ 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+NC
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 225
+"cmyk_inflow"
+""
+1 676 537 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+57 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"hide\",\"CP_Sim.Mode\");
+}
+
+hide(string dp, int mode)
+{
+  this.visible = mode;
+}" 0
+ E 0 1 1 0 1 E U  1 E 676 456 690 558
+6 226
+"basis_inflow"
+""
+1 841 537 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"hide\",\"CP_Sim.Mode\");
+}
+
+hide(string dp, int mode)
+{
+  this.visible = mode;
+}" 0
+ E 0 1 1 0 1 E U  1 E 841 456 855 558
+6 215
+"Border14"
+""
+1 516 561 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "215.wmf" 4294967295 E 516 545 631 561
+6 214
+"out_pipe"
+""
+1 10 526 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "214.wmf" 4294967295 E 10 510 466 526
+6 203
+"k_pipe"
+""
+1 485 422 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "203.wmf" 4294967295 E 485 280 500 422
+6 199
+"y_pipe"
+""
+1 345 431 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "199.wmf" 4294967295 E 345 289 360 431
+6 196
+"m_pipe"
+""
+1 205 422 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "196.wmf" 4294967295 E 205 280 220 422
+6 110
+"c_pipe"
+""
+1 64 422 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "110.wmf" 4294967295 E 64 280 79 422
+6 34
+"mixtank"
+""
+1 646 559 E E E 1 E 1 E N "STD_border_dark" E N {255,255,255} E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 14 Mischbehälter
+LANG:10001 12 Mixing basin
+LANG:10027 39 Смесительная ёмкость
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(dpConnect(\"level\",\"MixingPond.level\",
+  					   \"MixingPond.level:_pv_range.._min\",
+                       \"MixingPond.level:_pv_range.._max\",
+                     /*  \"MixingPond.level:_alert_hdl.._act_state_color\",
+                       \"MixingPond.level:_alert_hdl.._act_range\",*/
+                       \"MixingPond.productid\",
+                       \"MixingPond.name\")==-1)
+    setValue(\"\",\"backCol\",\"_dpdoesnotexist\");
+}
+//show current level and alarms
+level(string dp1, float value,
+      string dp2, float min,
+      string dp3, float max,
+   /*   string dp4, string color,
+      string dp5, int range, */
+      string dp6, string prID,
+      string dp7, string name)
+{
+   float  x,y, factor = 1;
+   string valString;
+    
+   getValue(\"\",\"scale\",x,y);
+   
+   max = (max > 0) ? max : 100;
+   
+   y=((100.000000/100.0-(0.000000)/100.0)/(max-min))*(value-min)+(0.000000)/100.0;
+   if(y>100.000000/100.0) y=100.000000/100.0;
+   if(y<0.000000/100.0) y=0.000000/100.0;
+   
+   // sprintf(valString,\"%3.1f cm\\n%2.2f m³\",value, value*factor);
+   setValue(\"\",\"scale\",x,y);
+/*   				 
+   switch(range)
+   {
+     case (1):	  setMultiValue(	\"AlertRange_1\",\"backCol\",color,
+  	  			  						\"AlertRange_Txt_1\",\"visible\",true,
+  	  			  						\"AlertRange_2\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_2\",\"visible\",false,
+  	  			  						\"AlertRange_4\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_4\",\"visible\",false,
+  	  			  						\"AlertRange_5\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_5\",\"visible\",false);
+  	  			  break;
+  	 case (2):	  setMultiValue(	\"AlertRange_1\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_1\",\"visible\",false,
+  	  			  						\"AlertRange_2\",\"backCol\",color,
+  	  			  						\"AlertRange_Txt_2\",\"visible\",true,
+  	  			  						\"AlertRange_4\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_4\",\"visible\",false,
+  	  			  						\"AlertRange_5\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_5\",\"visible\",false);
+  	  			  break; 			  
+  	 case (4):	  setMultiValue(	\"AlertRange_1\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_1\",\"visible\",false,
+  	  			  						\"AlertRange_2\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_2\",\"visible\",false,
+  	  			  						\"AlertRange_4\",\"backCol\",color,
+  	  			  						\"AlertRange_Txt_4\",\"visible\",true,
+  	  			  						\"AlertRange_5\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_5\",\"visible\",false);
+  	  			  break;
+  	 case (5):	  setMultiValue(	\"AlertRange_1\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_1\",\"visible\",false,
+  	  			  						\"AlertRange_2\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_2\",\"visible\",false,
+  	  			  						\"AlertRange_4\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_4\",\"visible\",false,
+  	  			  						\"AlertRange_5\",\"backCol\",color,
+  	  			  						\"AlertRange_Txt_5\",\"visible\",true);;
+  	  			  break;  	  			      
+    
+     default:		  setMultiValue(	\"AlertRange_1\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_1\",\"visible\",false,
+  	  			  						\"AlertRange_2\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_2\",\"visible\",false,
+  	  			  						\"AlertRange_4\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_4\",\"visible\",false,
+  	  			  						\"AlertRange_5\",\"backCol\",\"STD_led_Off\",
+  	  			  						\"AlertRange_Txt_5\",\"visible\",false);
+   }
+*/	
+}" 0
+ E 0 1 1 0 1 E U  1 E 646 473 884 559
+6 99
+"Border17"
+""
+1 907 413 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "99.wmf" 4294967295 E 907 336 925 423
+6 101
+"white_pipe"
+""
+1 860 447 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "101.wmf" 4294967295 E 860 429 899 447
+6 102
+"Border22"
+""
+1 898 450 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "102.wmf" 4294967295 E 898 420 928 450
+6 100
+"Border18"
+""
+1 836 457 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "100.wmf" 4294967295 E 836 426 866 457
+6 107
+"cmyk_pipe"
+""
+1 84 447 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "107.wmf" 4294967295 E 84 431 673 447
+6 108
+"Border29"
+""
+1 667 456 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "108.wmf" 4294967295 E 667 428 694 456
+6 109
+"Border30"
+""
+1 60 451 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "109.wmf" 4294967295 E 60 422 88 451
+6 112
+"Border33"
+""
+1 198 452 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "112.wmf" 4294967295 E 198 420 228 452
+6 202
+"Border8"
+""
+1 338 452 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "202.wmf" 4294967295 E 338 420 368 452
+6 206
+"Border10"
+""
+1 478 452 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "206.wmf" 4294967295 E 478 420 508 452
+6 211
+"Border12"
+""
+1 620 561 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "211.wmf" 4294967295 E 620 540 625 567
+6 216
+"Border15"
+""
+1 520 558 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "216.wmf" 4294967295 E 520 542 538 566
+6 269
+"SimMain"
+""
+1 313 571 E E E 1 E 0 E N "STD_border_dark" E N {255,255,0} E E
+ E E
+75 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  // Presets for initialisation 
+  dpSet(\"Tank_Cyan.level\",  86.4,
+        \"Tank_Magenta.level\",  49.1,  
+        \"Tank_Yellow.level\",  71.2,  
+        \"Tank_Black.level\",  56.9,
+        \"Tank_White.level\",  92.7,
+        \"MixingPond.level\", 68.6,
+        \"Valve_Tank1.cmd.manual\", false,
+        \"Valve_Tank2.cmd.manual\", false,
+        \"Valve_Tank3.cmd.manual\", false,
+        \"Valve_Tank4.cmd.manual\", false,
+        \"Valve_Tank5.cmd.manual\", false,
+        \"Valve_Basin_Outlet.cmd.manual\", false);
+  delay(0,100);
+  dpSet(\"Valve_Tank1.cmd.setpoint\", 0.0,
+        \"Valve_Tank2.cmd.setpoint\", 0.0,
+        \"Valve_Tank3.cmd.setpoint\", 0.0,
+        \"Valve_Tank4.cmd.setpoint\", 0.0,
+        \"Valve_Tank5.cmd.setpoint\", 0.0,
+        \"Valve_Basin_Outlet.cmd.setpoint\", 100.0);      
+
+  dpConnect(\"simControl\",\"CP_Sim.Mode\");
+}
+
+simControl(string dp, int mode)
+{
+  int errSim, errRef;
+  
+  // this script handles the \"on event\" parts of the simulation
+  // only - the cyclic parts are calculated in the \"EventInitialize\" 
+  // script of SimCyclic shape (red prim.text \"Cycl.F.\"
+  if ((mode != 0 ) && !simCBConnected)
+  {
+     errSim = dpConnect(\"sim\",\"Valve_Tank1.value.position\",
+					      \"Valve_Tank2.value.position\",
+					      \"Valve_Tank3.value.position\",
+					      \"Valve_Tank4.value.position\",
+					      \"Valve_Tank5.value.position\",
+					      \"Valve_Basin_Outlet.value.position\",
+					      \"Tank_Cyan.level\",
+					      \"Tank_Magenta.level\",
+					      \"Tank_Yellow.level\",
+					      \"Tank_Black.level\",
+					      \"Tank_White.level\",
+					      \"MixingPond.level\",
+					      \"Color_Pump.state.on\",
+					      \"Mixer.state.on\");
+  	 if(errRef > -1)
+  	   simCBConnected = true;		      				      
+  }
+  
+  if (simCBConnected)
+  {
+    errSim = dpDisconnect(\"sim\",\"Valve_Tank1.value.position\",
+					      \"Valve_Tank2.value.position\",
+					      \"Valve_Tank3.value.position\",
+					      \"Valve_Tank4.value.position\",
+					      \"Valve_Tank5.value.position\",
+					  	  \"Valve_Basin_Outlet.value.position\",
+					      \"Tank_Cyan.level\",
+					      \"Tank_Magenta.level\",
+					      \"Tank_Yellow.level\",
+					      \"Tank_Black.level\",
+					      \"Tank_White.level\",
+					      \"MixingPond.level\",
+					      \"Color_Pump.state.on\",
+					      \"Mixer.state.on\");
+	   if(errRef > -1)
+	     simCBConnected = false;
+  }
+
+  if ((mode == 2) && !refCBConnected)
+  {
+     setRandomColor();
+	 areafactor = 2; 
+	 areafactor_small_tanks = 1.6;
+	 areafactor_large_tanks = 0.6;   
+	 calculateColors();  
+     
+     errRef = dpConnect(\"refill\",  \"Tank_Cyan.level\",
+					      \"Tank_Magenta.level\",
+					      \"Tank_Yellow.level\",
+					      \"Tank_Black.level\",
+					      \"Tank_White.level\");	      				      
+	if(errRef > -1)
+	  refCBConnected = true;
+  }
+  else if (refCBConnected)
+  {
+     areafactor = 1.5; 
+	 areafactor_small_tanks = 1.2;
+	 areafactor_large_tanks = 0.4; 
+     errRef = dpDisconnect(\"refill\",\"Tank_Cyan.level\",
+					      \"Tank_Magenta.level\",
+					      \"Tank_Yellow.level\",
+					      \"Tank_Black.level\",
+					      \"Tank_White.level\");
+	 if(errRef > -1)
+	   refCBConnected = false;
+  }	 
+
+}
+
+refill(	string dp1, float level1,
+        string dp2, float level2,
+        string dp3, float level3,
+        string dp4, float level4,
+        string dp5, float level5)
+{
+  float c_max, m_max, y_max, k_max, w_max;
+  bool filled = false;
+  
+  //DebugTN(\"REFILL / SIMDEMO CALLED !\");
+
+  // refill to maximum level (without hi alert)
+  // as soon as empty
+
+  if (level1 <= 0.0)
+  {
+    delay(0,500);
+    dpGet(\"Tank_Cyan.level:_alert_hdl.3._u_limit\",  c_max);
+    dpSet(\"Tank_Cyan.level\",  c_max);
+    filled = true;
+  }
+  if (level2 <= 0.0)
+  {
+    delay(0,500);
+    dpGet(\"Tank_Magenta.level:_alert_hdl.3._u_limit\",  m_max);
+    dpSet(\"Tank_Magenta.level\",  m_max);
+    filled = true;
+  }
+  if (level3 <= 0.0)
+  {
+    delay(0,500);
+    dpGet(\"Tank_Yellow.level:_alert_hdl.3._u_limit\",  y_max);
+    dpSet(\"Tank_Yellow.level\",  y_max);
+    filled = true;    
+  }
+  if (level4 <= 0.0)
+  {
+    delay(0,500);
+    dpGet(\"Tank_Black.level:_alert_hdl.3._u_limit\",  k_max);
+    dpSet(\"Tank_Black.level\",  k_max);
+    filled = true;
+  }
+  if (level5 <= 0.0)
+  {
+    delay(0,500);
+    dpGet(\"Tank_White.level:_alert_hdl.3._u_limit\",  w_max);
+    dpSet(\"Tank_White.level\",  w_max);
+    filled = true;
+  }
+}
+
+
+sim(	string dp1, float pos1,
+        string dp2, float pos2,
+        string dp3, float pos3,
+        string dp4, float pos4,
+        string dp5, float pos5,
+        string dp6, float pos6,
+        string dp7, float level1,
+        string dp8, float level2,
+        string dp9, float level3,
+        string dp10, float level4,
+        string dp11, float level5,
+        string dp12, float level6,
+        string dp13,bool pumpOn,
+        string dp14,bool mixerOn)
+{
+  float flow = 0.0,
+        flow_basis;
+  int   r,g,b,w, simMode;
+  bool  colorPump_runDry, mixer_runDry;
+  time  t_on_mixer, t_on_colorPump, t_on_dryRun_mixer, t_on_dryRun_colorPump;
+
+  // calculate flow values
+  
+  //DebugTN(\"--------------------   >>>   EVENT CB CALLED !\");
+
+  if(level1 > 0)
+  {
+    flow_c = pos1*sqrt(10 + level1)*pipefactor;
+    flow = flow + flow_c;
+  }
+  if(level2 > 0)
+  {
+    flow_m = pos2*sqrt(10 + level2)*pipefactor;
+    flow = flow + flow_m;
+  }
+  if(level3 > 0)
+  {
+    flow_y = pos3*sqrt(10 + level3)*pipefactor;
+    flow = flow + flow_y;
+  }
+  if(level4 > 0)
+  {
+    flow_k = pos4*sqrt(10 + level4)*pipefactor;
+    flow = flow + flow_k;
+  }
+  if(level5 > 0)
+  {
+    flow_basis = pos5*sqrt(10 + level5)*pipefactor* 4.002898184;
+  }
+
+  if (level1 == 0)
+    pos1 = 0;
+  if (level2 == 0)
+    pos2 = 0;
+  if (level3 == 0)
+    pos3 = 0;
+  if (level4 == 0)
+    pos4 = 0;
+    
+  if(pumpOn)
+    out_flow = 2 * pos6 / 100.0;
+  else
+    out_flow = 0 * pos6 / 100.0;
+
+  cmykw2rgb(pos1, pos2, pos3, pos4, w, r, g, b);
+  
+  cmyk_flow = flow;
+  white_flow = flow_basis;
+
+  if (!stoppFillingInProgress)
+  {
+    // indicate flow by width of inflow streams
+    // if flow is not zero - display a minimum flow
+  
+    if ((flow > 0) && !previewActive.state(0))
+    {
+      if ((flow < 0.18) && (flow > 0.0))
+        flow = 0.18;
+      if ((flow_basis < 0.18) && (flow_basis > 0.0))
+        flow_basis = 0.18;
+      
+      setMultiValue(\"cmyk_inflow\",\"scale\",flow, 1,
+                  \"cmyk_inflow\",\"backCol\",\"{\"+r+\",\"+g+\",\"+b+\"}\",
+                  \"mixtank\",\"backCol\",\"{\"+r+\",\"+g+\",\"+b+\"}\",
+                  \"basis_inflow\",\"scale\",flow_basis,1);
+    } 
+    else if (previewActive.state(0))
+   {
+      setMultiValue(\"cmyk_inflow\",\"scale\",flow, 1,
+    		  	    \"basis_inflow\",\"scale\",flow_basis,1);
+    }
+    else if (flow == 0)
+    {
+      setMultiValue(\"cmyk_inflow\",\"scale\",0, 1,
+    			    \"basis_inflow\",\"scale\",flow_basis,1);   
+    }
+  }
+  else
+  {
+      if ((flow < 0.18) && (flow > 0.0))
+        flow = 0.18;
+      if ((flow_basis < 0.18) && (flow_basis > 0.0))
+        flow_basis = 0.18;
+      
+      setMultiValue(\"cmyk_inflow\",\"scale\",flow, 1,
+                    \"basis_inflow\",\"scale\",flow_basis,1);
+  }
+
+
+  dpGet(\"Mixer.alert.runDry:_online.._stime\",t_on_dryRun_mixer,
+  		\"Mixer.state.on:_online.._stime\",t_on_mixer,
+  		\"Color_Pump.alert.runDry:_online.._stime\",t_on_dryRun_colorPump,
+  		\"Color_Pump.state.on:_online.._stime\",t_on_colorPump);
+
+
+  // set run dry errors when basin is almost empty
+  // mixer and color pump have to stop by rundry faults
+  if ((level6 < 2.0) || (pos6 == 0))
+  { 
+    if ( pumpOn )
+    {
+      dpGet(\"Color_Pump.alert.runDry\",colorPump_runDry);
+      if(!colorPump_runDry) 
+        dpSet(\"Color_Pump.alert.runDry\",true);
+    }
+    else
+    {
+      dpGet(\"Color_Pump.alert.runDry\",colorPump_runDry);
+      if(colorPump_runDry && ( t_on_dryRun_colorPump > t_on_colorPump ))      
+        dpSet(\"Color_Pump.alert.runDry\",false);
+    }
+  }
+  
+  if (level6 < 2.0 )
+  { 
+    if ( mixerOn )
+    {
+      dpGet(\"Mixer.alert.runDry\",mixer_runDry);
+      if(!mixer_runDry) 
+        dpSet(\"Mixer.alert.runDry\",true);
+    }
+    else
+    {
+      dpGet(\"Mixer.alert.runDry\",mixer_runDry);
+      if(mixer_runDry && (t_on_mixer < t_on_dryRun_mixer))      
+        dpSet(\"Mixer.alert.runDry\",false);
+    }
+  }
+  
+  if (level6 >= 2.0 )
+  {
+    dpGet(\"Mixer.alert.runDry\",mixer_runDry,
+          \"Color_Pump.alert.runDry\",colorPump_runDry,
+          \"CP_Sim.Mode\",simMode);
+    
+    if(!mixerOn && (simMode == 2))
+      dpSet(\"Mixer.cmd.on\",true); 
+    
+    if(mixer_runDry)
+    {
+       dpSet(\"Mixer.alert.runDry\",false);     
+    }
+    if(colorPump_runDry)
+       dpSet(\"Color_Pump.alert.runDry\",false);
+  }
+  
+  // if process simulation is on, when reaching \"tank full\"
+  // the color pump has to start (will be stopped by rundry
+  
+  
+  if (level6 == 100.0)
+  {
+    dpGet(\"CP_Sim.Mode\",simMode);
+    if (simMode != 0)
+    {
+      dpGet(\"Mixer.alert.runDry\",mixer_runDry);
+      if (mixer_runDry)
+        dpSet(\"Color_Pump.alert.runDry\",false);
+    } 
+    
+    if (simMode == 2)
+    {
+      dpGet(\"Color_Pump.state.on\",pumpOn);
+      if (!pumpOn)
+        dpSet(\"Color_Pump.cmd.on\",true);
+    }
+  }
+}
+
+
+" 0
+ E 0 1 1 0 1 E U  1 E 313 534 450 581
+2 270
+"Text3"
+""
+1 315 533 E E E 1 E 0 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 317 535 346 550
+0 2 0 "0s" 0 0 0 192 0 0  317 535 1
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10000 4 Sim:
+LANG:10001 10 Simulation
+LANG:10027 16 Эмуляция
+2 273
+"Text4"
+""
+1 366 534 E E E 1 E 0 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+81 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 368 536 442 550
+0 2 0 "0s" 0 0 0 192 0 0  368 536 1
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 12 ChgR    Loop
+LANG:10001 12 ChgR    Loop
+LANG:10027 12 ChgR    Loop
+2 276
+"SimCyclic"
+""
+1 316 556 E E E 1 E 0 E N {255,0,0} E N "_Transparent" E E
+ E E
+83 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  int   mode, looptime = SimLooptime.text, looptime_s, looptime_ms;
+  float flooptime = looptime, pos5; 
+  float mt_level, mt_min, mt_max, mt_level_old, low_mt_level = 2.0;
+  float c_level, c_min, c_max, c_level_old;
+  float m_level, m_min, m_max, m_level_old;
+  float y_level, y_min, y_max, y_level_old;
+  float k_level, k_min, k_max, k_level_old;
+  float w_level, w_min, w_max, w_level_old;
+  float v_cyan, v_magenta, v_yellow, v_black;
+  int cyan = cyan_t.text,
+      magenta = magenta_t.text,
+      yellow = yellow_t.text,
+      black = black_t.text,
+      red, green, blue;
+  bool c_man, m_man, y_man, k_man, stoppFillingCMD_old = false;
+  string flowStr;
+
+  
+ 
+  while(true)
+  {
+     dpGet(\"CP_Sim.Mode\",mode);
+     if (mode > 0)
+     {
+	   // read input values for simulation
+	   dpGet(\"MixingPond.level\",mt_level,
+	         \"MixingPond.level:_pv_range.._min\",mt_min,
+			 \"MixingPond.level:_pv_range.._max\",mt_max,
+			 \"Tank_Cyan.level\",c_level,
+	         \"Tank_Cyan.level:_pv_range.._min\",c_min,
+			 \"Tank_Cyan.level:_pv_range.._max\",c_max,
+			 \"Tank_Magenta.level\",m_level,
+	         \"Tank_Magenta.level:_pv_range.._min\",m_min,
+			 \"Tank_Magenta.level:_pv_range.._max\",m_max,			 
+			 \"Tank_Yellow.level\",y_level,
+	         \"Tank_Yellow.level:_pv_range.._min\",y_min,
+			 \"Tank_Yellow.level:_pv_range.._max\",y_max,			 
+			 \"Tank_Black.level\",k_level,
+	         \"Tank_Black.level:_pv_range.._min\",k_min,
+			 \"Tank_Black.level:_pv_range.._max\",k_max,			 
+			 \"Tank_White.level\",w_level,
+	         \"Tank_White.level:_pv_range.._min\",w_min,
+			 \"Tank_White.level:_pv_range.._max\",w_max,
+			 \"Valve_Tank1.value.position\",v_cyan,
+             \"Valve_Tank2.value.position\",v_magenta,  		
+             \"Valve_Tank3.value.position\",v_yellow,  		
+             \"Valve_Tank4.value.position\",v_black,
+             \"Valve_Tank1.cmd.manual\",c_man,
+             \"Valve_Tank2.cmd.manual\",m_man,  		
+             \"Valve_Tank3.cmd.manual\",y_man,  		
+             \"Valve_Tank4.cmd.manual\",k_man);
+
+       cyan = cyan_t.text;
+       magenta = magenta_t.text;
+       yellow = yellow_t.text;
+       black = black_t.text;
+
+       c_level_old = c_level;
+       m_level_old = m_level;
+       y_level_old = y_level;
+       k_level_old = k_level;
+       w_level_old = w_level;       
+       mt_level_old = mt_level; 
+       
+	   
+	   // calculate levels from valve positions and current level (preassure) - 
+	   // flow calculation is done \"on event\" in SimMain shape - yellow rectangle
+	   mt_level = mt_level + (cmyk_flow + white_flow - out_flow) * areafactor *flooptime/1000.0;
+	   if (mt_level < mt_min)
+	     mt_level = mt_min;
+	   if (mt_level >= mt_max)
+       {
+         //stoppFilling if mixing basin (mixtank) is full
+         
+         dpGet(\"Valve_Tank5.value.position\", pos5);
+         if (pos5 != 0)
+           dpSet(\"Valve_Tank5.value.position\", 0.0); 
+         
+         stoppFillingInProgress = true;
+         
+         cyan = 0;
+         magenta = 0;
+         yellow = 0;
+         black = 0;
+         red = 255;
+         green = 255;
+         blue = 255;
+         
+         cyan_t.text = cyan;
+         magenta_t.text = magenta;
+         yellow_t.text = yellow;
+         black_t.text = black;
+         r.text = red;
+         g.text = green;
+         b.text = blue;
+         
+         cyan_slider.Value = cyan;
+         Magenta_Slider.Value = magenta;
+         Yellow_Slider.Value = yellow;
+         black_slider.Value = black;   
+         red_slider.Value = red;
+         green_slider.Value = green;
+         blue_slider.Value = blue; 
+         
+         flow_c = 0;
+         flow_m = 0;
+         flow_y = 0;
+         flow_k = 0;
+         white_flow = 0;
+         
+         simCR = 100;
+         
+         mt_level = mt_max;
+       }
+       else
+       {
+         stoppFillingInProgress = false;
+       }
+    
+  
+       // if \"demo mode\", when level falls beyond 2.0 set new
+       // color setpoint and activate hysteresis       
+       if ((mode == 2) && (mt_level < low_mt_level))
+       {
+         setRandomColor();	
+         low_mt_level = 0.0; 
+       }
+       else 
+         low_mt_level = 2.0;    
+	     
+	   
+	   // show flow rate as tooltip on the color pipes 
+	   sprintf(flowStr,\"%3.1f %\",cmyk_flow * 100);
+	   cmyk_pipe.toolTipText = flowStr;
+	   
+	   sprintf(flowStr,\"%3.1f %\",flow_c  * 100);
+	   c_pipe.toolTipText = flowStr;
+	   
+	   sprintf(flowStr,\"%3.1f %\",flow_m * 100);
+	   m_pipe.toolTipText = flowStr;
+	   
+	   sprintf(flowStr,\"%3.1f %\",flow_y * 100);
+	   y_pipe.toolTipText = flowStr;
+	   
+	   sprintf(flowStr,\"%3.1f %\",flow_k * 100);
+	   k_pipe.toolTipText = flowStr;
+	   
+	   sprintf(flowStr,\"%3.1f %\",white_flow * 100);
+	   white_pipe.toolTipText = flowStr;
+	   
+	   sprintf(flowStr,\"%3.1f %\",out_flow * 50);
+	   out_pipe.toolTipText = flowStr;
+	   
+	     
+	   c_level = c_level - flow_c * areafactor_small_tanks * flooptime/1000.0;
+	   m_level = m_level - flow_m * areafactor_small_tanks * flooptime/1000.0;
+	   y_level = y_level - flow_y * areafactor_small_tanks * flooptime/1000.0;	   	    
+	   k_level = k_level - flow_k * areafactor_small_tanks * flooptime/1000.0;	   
+	   w_level = w_level - white_flow * areafactor_large_tanks * flooptime/1000.0;	  
+
+	   if (c_level < c_min)
+	     c_level = c_min;
+	   if (c_level > c_max)
+	     c_level = c_max;
+	     
+	   if (m_level < m_min)
+	     m_level = m_min;
+	   if (mt_level > mt_max)
+	     m_level = m_max;
+	     
+	   if (y_level < y_min)
+	     y_level = y_min;
+	   if (y_level > y_max)
+	     y_level = y_max;	
+	          	   
+	   if (k_level < k_min)
+	     k_level = k_min;
+	   if (k_level > k_max)
+	     k_level = k_max;	    
+	   
+	   if (w_level < w_min)
+	     w_level = w_min;
+	   if (w_level > w_max)
+	     w_level = w_max;
+	   
+	 
+	 // change setpoints (positions) of valves with the 
+	 // current color setting - and do it realistic - 
+	 // valves do not change instantanous but step by step 
+	   if(!c_man)
+	   {
+	     if( v_cyan > cyan )
+	     { 
+	       if ((v_cyan - cyan) > simCR)
+	         v_cyan = v_cyan - simCR;
+	       else
+	         v_cyan = v_cyan - (v_cyan - cyan);
+	       dpSet(\"Valve_Tank1.value.position\",v_cyan);
+	     }
+	     else if (v_cyan < cyan)
+	     { 
+	       if ((cyan - v_cyan) > simCR)
+	         v_cyan = v_cyan + simCR;
+	       else
+	         v_cyan = v_cyan + (cyan - v_cyan);
+	       dpSet(\"Valve_Tank1.value.position\",v_cyan);
+	     }	 
+	   }
+
+	   if(!m_man)
+	   {
+	     if( v_magenta > magenta )
+	     { 
+	       if ((v_magenta - magenta) > simCR)
+	         v_magenta = v_magenta - simCR;
+	       else
+	         v_magenta = v_magenta - (v_magenta - magenta);
+	       dpSet(\"Valve_Tank2.value.position\",v_magenta);
+	     }
+	     else if (v_magenta < magenta)
+	     { 
+	       if ((magenta - v_magenta) > simCR)
+	         v_magenta = v_magenta + simCR;
+	       else
+	         v_magenta = v_magenta + (magenta - v_magenta);
+	       dpSet(\"Valve_Tank2.value.position\",v_magenta);
+	     }	 
+	   }	       
+
+	   if(!y_man)
+	   {
+	     if( v_yellow > yellow )
+	     { 
+	       if ((v_yellow - yellow) > simCR)
+	         v_yellow = v_yellow - simCR;
+	       else
+	         v_yellow = v_yellow - (v_yellow - yellow);
+	       dpSet(\"Valve_Tank3.value.position\",v_yellow);
+	     }
+	     else if (v_yellow < yellow)
+	     { 
+	       if ((yellow - v_yellow) > simCR)
+	         v_yellow = v_yellow + simCR;
+	       else
+	         v_yellow = v_yellow + (yellow - v_yellow);
+	       dpSet(\"Valve_Tank3.value.position\",v_yellow);
+	     }	 
+	   }	
+
+	   if(!k_man)
+	   {
+	     if( v_black > black )
+	     { 
+	       if ((v_black - black) > simCR)
+	         v_black = v_black - simCR;
+	       else
+	         v_black = v_black - (v_black - black);
+	       dpSet(\"Valve_Tank4.value.position\",v_black);
+	     }
+	     else if (v_black < black)
+	     { 
+	       if ((black - v_black) > simCR)
+	         v_black = v_black + simCR;
+	       else
+	         v_black = v_black + (black - v_black);
+	       dpSet(\"Valve_Tank4.value.position\",v_black);
+	     }	 
+	   }	
+
+
+		   
+	 // ==============================================  
+	 // write output values from sim
+	 if (mt_level != mt_level_old)
+	   dpSet(\"MixingPond.level\",mt_level);
+	 if (c_level != c_level_old)
+	   dpSet(\"Tank_Cyan.level\",c_level);	 
+	 if (m_level != m_level_old)
+	   dpSet(\"Tank_Magenta.level\",m_level);
+	 if (y_level != y_level_old)
+	   dpSet(\"Tank_Yellow.level\",y_level);	   
+	 if (k_level != k_level_old)
+	   dpSet(\"Tank_Black.level\",k_level);	   
+	 if (w_level != w_level_old)
+	   dpSet(\"Tank_White.level\",w_level);	   
+
+     simCR = SimChangeRate.text;
+	   
+	   looptime = SimLooptime.text;
+	   flooptime = looptime; 
+	 }
+	 else
+	 {
+	   looptime = 1000;
+	   flooptime = 1000.0;
+	 }
+     looptime_s = looptime/1000.0;
+     looptime_ms = looptime - looptime_s*1000;
+	 delay(looptime_s, looptime_ms);
+   }			      				      
+}" 0
+ E 0 1 1 0 1 E U  0 E 318 558 355 572
+0 2 0 "0s" 0 0 0 192 0 0  318 558 1
+3
+LANG:10000 26 Arial,-1,12,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,69,0,0,0,0,0
+0 3
+LANG:10000 7 Cycl.F.
+LANG:10001 7 Cycl.F.
+LANG:10027 7 Cycl.F.
+6 59
+"Border2"
+""
+1 630 573 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 14 Mischbehälter
+LANG:10001 12 Mixing basin
+LANG:10027 39 Смесительная ёмкость
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  ChildPanelOnCentralModal(\"vision/dpe_info.pnl\",\"MixinPond.level\",makeDynString(\"$dpe:\"+\"MixingPond.level\",\"$b_editable:\"+true));
+}" 0
+ 0 1 1 0 1 E U  2  1 4  "59.wmf" 4294967295 E 630 463 900 573
+6 210
+"Border11"
+""
+1 442 522 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "210.wmf" 4294967295 E 442 506 460 530
+19 274
+"SimSelector"
+""
+1 246 536 E E E 1 E 0 E N "_3DText" E N "STD_panel_back" E E
+ E E
+82 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  244 534 310 577
+3
+T 
+3
+LANG:10000 3 Aus
+LANG:10001 3 Off
+LANG:10027 8 Выкл
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 7 Prozess
+LANG:10001 7 Process
+LANG:10027 14 Процесс
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 4 Demo
+LANG:10001 4 Demo
+LANG:10027 8 Демо
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  dpConnect(\"state\",\"CP_Sim.Mode\");
+}
+state (string dp, int mode)
+{
+  this.number = mode;
+}
+" 0
+ "main(int button)
+{
+  dpSet(\"CP_Sim.Mode\",button);
+}" 0
+
+14 271
+"SimLooptime"
+""
+1 406 554 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+79 0 0 0 0 0
+E "main()
+{
+  int val = this.text;
+  if (val < 400)
+     this.text = 400;
+}" 0
+ E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  404 552 448 579
+3 "4d" 4 0 0 0 0 -1  E "main()
+{
+  this.text = 1500;
+}" 0
+ "main()
+{
+  int val = this.text;
+  if (val < 400)
+     this.text = 400;
+}" 0
+
+14 272
+"SimChangeRate"
+""
+1 361 554 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+80 0 0 0 0 0
+E "main()
+{
+  int val = this.text;
+  if (val > 100)
+     this.text = 100;
+  else if (val < 1)
+     this.text = 1;
+  else
+     simCR = val;
+     
+}" 0
+ E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  359 552 403 579
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  // change rate in % of value range per loop
+  this.text = 7;
+  simCR = 7;
+}" 0
+ "main()
+{
+  int val = this.text;
+  if (val > 100)
+     this.text = 100;
+  else if (val < 1)
+     this.text = 1;
+  else
+     simCR = val;
+     
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+1 857 23 "" 2
+0
+1 855 22 "" 2
+0
+1 850 15 "" 7
+0
+1 846 12 "" 6
+0
+1 842 11 "" 6
+0
+1 838 10 "" 6
+0
+1 834 9 "" 6
+0
+1 830 7 "" 6
+0
+1 813 4 "" 20
+0
+1 796 3 "" 20
+0
+1 779 2 "" 20
+0
+1 745 0 "" 20
+0
+1 762 1 "" 20
+0
+6 294
+"MixerShaft"
+""
+1 765 532 E E E 1 E 1 E N {51,51,51} E N "_Transparent" E E
+ E E
+193 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "294.wmf" 4294967295 E 765 426 770 532
+6 295
+"Mixer"
+""
+1 737 456 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+194 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 44 Farbmixer: Klicken um Bedienpanel zu öffnen
+LANG:10001 40 Color Mixer: Click to open command panel
+LANG:10027 90 Смеситель: Нажать для открытия панели управления
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(dpConnect(\"state\",\"Mixer.state.on\")==-1)
+    setValue(\"valve_3D\",\"backCol\",\"_dpdoesnotexist\");
+}
+
+state(string dp, bool on)
+{
+    MixerBlade.visible = on;
+    MixerBladeStatic.visible = !on;
+}" 0
+ "main()
+{
+  ChildPanelOnRelativ(\"objects_parts/CP_Drive_Operation.pnl\",dpGetDescription(\"Mixer\"),
+                      makeDynString(\"$DP:\"+\"Mixer.\"),40,-60);
+}" 0
+ 0 1 1 0 1 E U  2  1 4  "295.wmf" 4294967295 E 737 399 797 456
+6 296
+"MixerBladeStatic"
+""
+1 719 555 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+195 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "296.bmp" 1649628 E 719 525 816 555
+6 366
+"Pump"
+""
+1 458 555 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+263 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 47 Abfüllpumpe: Klicken um Bedienpanel zu öffnen
+LANG:10001 40 Filler pump: Click to open command panel
+LANG:10027 107 Насос наполнителя: нажмите для открытия панели управления
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(dpConnect(\"state\",\"Color_Pump.state.on\",
+  					   \"Valve_Basin_Outlet.value.position\")==-1)
+       setValue(\"valve_3D\",\"backCol\",\"_dpdoesnotexist\");
+}
+
+state(string dp,  bool on,
+      string dp2, int valve)
+{
+  float level;
+
+  PumpFan.visible = on;
+  PumpFanStatic.visible = !on;
+  
+  stoppFillingInProgress = on;
+
+/*
+    if(valve < 5.0)
+      dpSet(\"Color_Pump.alert.runDry\",true);
+    else
+    {
+      dpGet(\"MixingPond.level\",level);
+      if (level > 0)
+         dpSet(\"Color_Pump.alert.runDry\",false);
+    }   
+*/
+}" 0
+ "main()
+{
+  ChildPanelOnRelativ(\"objects_parts/CP_Drive_Operation.pnl\",dpGetDescription(\"Color_Pump\"),makeDynString(\"$DP:\"+\"Color_Pump.\"),40,-60);
+}" 0
+ 0 1 1 0 1 E U  2  1 4  "366.wmf" 4294967295 E 458 509 519 562
+6 368
+"PumpFanStatic"
+""
+1 476 550 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+265 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "368.bmp" 12632256 E 476 524 502 550
+6 371
+"PumpClickBox"
+""
+1 459 566 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+266 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 47 Abfüllpumpe: Klicken um Bedienpanel zu öffnen
+LANG:10001 40 Filler pump: Click to open command panel
+LANG:10027 107 Насос наполнителя: нажмите для открытия панели управления
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+}" 0
+ "main()
+{
+  ChildPanelOnRelativ(\"objects_parts/CP_Drive_Operation.pnl\",dpGetDescription(\"Color_Pump\"),makeDynString(\"$DP:\"+\"Color_Pump.\"),40,-60);
+}" 0
+ 0 1 1 0 1 E U  0 E 459 506 521 566
+6 293
+"MixerBlade"
+""
+1 719 555 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+192 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "293.gif" 1649628 E 719 525 816 555
+6 367
+"PumpFan"
+""
+1 476 549 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+264 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "367.gif" 4294967295 E 476 523 502 549
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+30 326
+"Frame1"
+""
+1 593 381 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+222 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 49 Farbe für die Produktion auswählen / definieren
+LANG:10001 12 Define color
+LANG:10027 29 Определить цвет
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 593 59 798 381
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 12  Farbvorgabe
+LANG:10001 15 Color selection
+LANG:10027 21 Выбор цвета
+6 327
+"col_preview"
+""
+1 712 113 E E E 1 E 1 E N "STD_border_dark" E N {255,255,255} E E
+ E E
+223 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 12 Farbvorschau
+LANG:10001 25 Preview of selected color
+LANG:10027 48 Просмотр выбранного цвета
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 712 80 782 113
+10 328
+"Polyline1"
+""
+1 712 112 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+224 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 3 712 112
+712 80
+780 80
+ 0
+10 329
+"Polyline3"
+""
+1 712 112 E E E 1 E 1 E N "STD_border_light" E N "_Transparent" E E
+ E E
+225 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 3 782 79
+782 113
+712 113
+ 0
+2 330
+"t1"
+""
+1 624 328 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+226 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 625 330 639 345
+0 2 0 "0s" 0 0 0 193 0 0  632 330 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 2 C:
+LANG:10001 2 C:
+LANG:10027 2 C:
+2 331
+"t2"
+""
+1 670 328 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+227 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 671 330 687 345
+0 2 0 "0s" 0 0 0 193 0 0  679 330 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 2 M:
+LANG:10001 2 M:
+LANG:10027 2 M:
+2 332
+"t3"
+""
+1 718 328 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+228 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 720 330 732 345
+0 2 0 "0s" 0 0 0 193 0 0  726 330 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 2 Y:
+LANG:10001 2 Y:
+LANG:10027 2 Y:
+2 333
+"t4"
+""
+1 765 328 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+229 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 766 330 780 345
+0 2 0 "0s" 0 0 0 193 0 0  773 330 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 2 K:
+LANG:10001 2 K:
+LANG:10027 2 K:
+30 351
+"Frame2"
+""
+1 908 565 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+247 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 908 466 997 576
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 10 Simulation
+LANG:10001 10 Simulation
+LANG:10027 18 Симуляция
+6 352
+"SimOffLED"
+""
+1 913 508 E E E 1 E 1 E N "STD_border_med" E N "STD_led_Off" E E
+ E E
+248 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"enable\",\"CP_Sim.Mode\");
+}
+
+enable(string dp, int mode)
+{
+  if (mode == 1)
+    setMultiValue(\"SimOffLED\",\"backCol\",\"STD_led_Off\",
+    			  \"SimProcLED\",\"backCol\",\"STD_led_On\",
+    			  \"SimDemoLED\",\"backCol\",\"STD_led_Off\");
+  else if (mode == 2)
+    setMultiValue(\"SimOffLED\",\"backCol\",\"STD_led_Off\",
+    			  \"SimProcLED\",\"backCol\",\"STD_led_Off\",
+    			  \"SimDemoLED\",\"backCol\",\"STD_led_On\");
+  else
+    setMultiValue(\"SimOffLED\",\"backCol\",\"STD_led_On\",
+    			  \"SimProcLED\",\"backCol\",\"STD_led_Off\",
+    			  \"SimDemoLED\",\"backCol\",\"STD_led_Off\");
+}" 0
+ E 0 1 1 0 1 E U  1 E 913 486 919 508
+6 353
+"SimProcLED"
+""
+1 913 539 E E E 1 E 1 E N "STD_border_med" E N "STD_led_Off" E E
+ E E
+249 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 913 517 919 539
+6 354
+"SimDemoLED"
+""
+1 913 569 E E E 1 E 1 E N "STD_border_med" E N "STD_led_Off" E E
+ E E
+250 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 913 547 919 569
+14 334
+"black_t"
+""
+1 749 348 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+230 0 0 0 0 0
+E "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+
+ 
+  calculateColors();
+ 
+  cyan_slider.Value = cyan;
+  Magenta_Slider.Value = magenta;
+  Yellow_Slider.Value = yellow;
+  black_slider.Value = black;
+}" 0
+ E
+0
+3
+LANG:10000 7 Schwarz
+LANG:10001 5 Black
+LANG:10027 12 Черный
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  747 346 788 372
+3 "3d" 3 0 0 0 0 -1  E "main()
+{
+  this.text = 0;
+}" 0
+ "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+
+  calculateColors();
+
+  cyan_slider.Value = cyan;
+  Magenta_Slider.Value = magenta;
+  Yellow_Slider.Value = yellow;
+  black_slider.Value = black;
+}" 0
+
+14 335
+"white_t"
+""
+1 750 348 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+231 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  748 346 789 372
+3 "3d" 3 0 0 0 0 -1  E "main()
+{
+  this.text = 0;
+}" 0
+ "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+  
+  calculateColors();
+  r.text = red;
+  g.text = green;
+  b.text = blue;
+}" 0
+
+14 336
+"cyan_t"
+""
+1 606 348 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+232 0 0 0 0 0
+E "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+  
+  calculateColors();
+ 
+  cyan_slider.Value = cyan;
+  Magenta_Slider.Value = magenta;
+  Yellow_Slider.Value = yellow;
+  black_slider.Value = black;
+}" 0
+ E
+0
+3
+LANG:10000 14 Türkis (Cyan)
+LANG:10001 4 Cyan
+LANG:10027 10 Синий
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  604 346 645 372
+3 "3d" 3 0 0 0 0 -1  E "main()
+{
+  this.text = 0;
+}" 0
+ "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+  
+  
+  calculateColors();
+
+  cyan_slider.Value = cyan;
+  Magenta_Slider.Value = magenta;
+  Yellow_Slider.Value = yellow;
+  black_slider.Value = black;
+}" 0
+
+14 337
+"magenta_t"
+""
+1 654 348 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+233 0 0 0 0 0
+E "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+
+  
+  calculateColors();
+ 
+  cyan_slider.Value = cyan;
+  Magenta_Slider.Value = magenta;
+  Yellow_Slider.Value = yellow;
+  black_slider.Value = black;
+}" 0
+ E
+0
+3
+LANG:10000 16 Purpur (Magenta)
+LANG:10001 7 Magenta
+LANG:10027 7 Magenta
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  652 346 693 372
+3 "3d" 3 0 0 0 0 -1  E "main()
+{
+  this.text = 0;
+}" 0
+ "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+
+  
+  calculateColors();
+
+  cyan_slider.Value = cyan;
+  Magenta_Slider.Value = magenta;
+  Yellow_Slider.Value = yellow;
+  black_slider.Value = black;
+}" 0
+
+14 338
+"yellow_t"
+""
+1 702 348 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+234 0 0 0 0 0
+E "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+
+  calculateColors();
+ 
+  cyan_slider.Value = cyan;
+  Magenta_Slider.Value = magenta;
+  Yellow_Slider.Value = yellow;
+  black_slider.Value = black;
+}" 0
+ E
+0
+3
+LANG:10000 4 Gelb
+LANG:10001 6 Yellow
+LANG:10027 12 Желтый
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  700 346 741 372
+3 "3d" 3 0 0 0 0 -1  E "main()
+{
+  this.text = 0;
+}" 0
+ "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+
+  
+  calculateColors();
+
+  cyan_slider.Value = cyan;
+  Magenta_Slider.Value = magenta;
+  Yellow_Slider.Value = yellow;
+  black_slider.Value = black;
+}" 0
+
+14 339
+"r"
+""
+1 621 348 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+235 0 0 0 0 0
+E "main()
+{
+ float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;	
+  
+  calculateColors(true);
+  
+  red_slider.Value = red;
+}" 0
+ E
+0
+3
+LANG:10000 3 Rot
+LANG:10001 3 Red
+LANG:10027 14 Красный
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  619 346 660 372
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  this.text = 255;
+}" 0
+ "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+  
+  calculateColors(true);
+  
+  red_slider.Value = red;
+  
+}" 0
+
+14 340
+"b"
+""
+1 720 348 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+236 0 0 0 0 0
+E "main()
+{
+ float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+  
+  calculateColors(true);
+  
+  red_slider.Value = red;
+}" 0
+ E
+0
+3
+LANG:10000 4 Blau
+LANG:10001 4 Blue
+LANG:10027 14 Голубой
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  718 346 759 372
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  this.text = 255;
+}" 0
+ "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+  
+  calculateColors(true);
+  
+  blue_slider.Value = blue;
+  
+}" 0
+
+14 341
+"g"
+""
+1 670 348 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+237 0 0 0 0 0
+E "main()
+{
+ float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+  
+  calculateColors(true);
+  
+  green_slider.Value = green;
+}" 0
+ E
+0
+3
+LANG:10000 5 Grün
+LANG:10001 5 Green
+LANG:10027 14 Зеленый
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,40,0,0,0,0,0
+0  668 346 709 372
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  this.text = 255;
+}" 0
+ "main()
+{
+  float	cyan = cyan_t.text,
+  		magenta = magenta_t.text,
+  		yellow = yellow_t.text,
+  		black = black_t.text,
+  		white = white_t.text,
+  		red = r.text,
+  		green = g.text,
+  		blue = b.text;
+  
+  calculateColors(true);
+  
+  green_slider.Value = green;
+  
+}" 0
+
+19 342
+"ColorModeSelector"
+""
+1 599 77 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+238 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 71 CMYK: Cyan, Purpur (Magenta), Gelb, Schwarz  bzw. RGB: Rot, Grün, Blau
+LANG:10001 60 CMYK: Cyan, Magenta, Yellow, Black  or RGB: Red, Green, Blue
+LANG:10027 124 CMYK: Синий, Пурпурный, Желтый, Черный  или RGB: Красный, Зеленый, Голубой
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  597 75 710 120
+2
+T 
+3
+LANG:10000 11 CMYK Modell
+LANG:10001 10 CYMK model
+LANG:10027 17 CYMK модель
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 10 RGB Modell
+LANG:10001 9 RGB model
+LANG:10027 16 RGB модель
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  setMultiValue( \"r\",\"visible\",false,
+            				 \"g\",\"visible\",false,
+            				 \"b\",\"visible\",false,
+            				 \"cyan_t\",\"visible\",true,
+            				 \"magenta_t\",\"visible\",true,
+            				 \"yellow_t\",\"visible\",true,
+            				 \"black_t\",\"visible\",true,
+            				 \"t1\",\"text\",\"C:\",
+            				 \"t2\",\"text\",\"M:\",
+            				 \"t3\",\"text\",\"Y:\",
+            				 \"t4\",\"text\",\"K:\");
+ //IM 111388
+  setMultiValue(\"SHAPE_RED\",\"visible\",FALSE,
+                \"SHAPE_GREEN\",\"visible\",FALSE,
+                \"SHAPE_BLUE\",\"visible\",FALSE,
+                \"SHAPE_CYAN\",\"visible\",TRUE,
+                \"SHAPE_MAGENTA\",\"visible\",TRUE,
+                \"SHAPE_YELLOW\",\"visible\",TRUE,
+                \"SHAPE_BLACK\",\"visible\",TRUE
+                );
+}
+" 0
+ "main(int button)
+{
+  switch(button)
+  {
+    case (0):	{
+                  setMultiValue( \"r\",\"visible\",false,
+                  				 \"g\",\"visible\",false,
+                  				 \"b\",\"visible\",false,
+                  				 \"cyan_t\",\"visible\",true,
+                  				 \"magenta_t\",\"visible\",true,
+                  				 \"yellow_t\",\"visible\",true,
+                  				 \"black_t\",\"visible\",true,
+                  				 \"t1\",\"text\",\"C:\",
+                  				 \"t2\",\"text\",\"M:\",
+                  				 \"t3\",\"text\",\"Y:\",
+                  				 \"t4\",\"text\",\"K:\");
+                  //IM 111388
+//                   red_slider.visible = false;
+//                   green_slider.visible = false;
+//                   blue_slider.visible = false;
+//                   cyan_slider.visible = true;
+//                   Magenta_Slider.visible = true;
+//                   Yellow_Slider.visible = true;
+//                   black_slider.visible = true;
+                   setMultiValue(\"SHAPE_RED\",\"visible\",FALSE,
+                                 \"SHAPE_GREEN\",\"visible\",FALSE,
+                                 \"SHAPE_BLUE\",\"visible\",FALSE,
+                                 \"SHAPE_CYAN\",\"visible\",TRUE,
+                                 \"SHAPE_MAGENTA\",\"visible\",TRUE,
+                                 \"SHAPE_YELLOW\",\"visible\",TRUE,
+                                 \"SHAPE_BLACK\",\"visible\",TRUE
+                                 );                 
+               }
+                 break;
+     case (1):	{
+                  setMultiValue( \"r\",\"visible\",true,
+                  				 \"g\",\"visible\",true,
+                  				 \"b\",\"visible\",true,
+                  				 \"cyan_t\",\"visible\",false,
+                  				 \"magenta_t\",\"visible\",false,
+                  				 \"yellow_t\",\"visible\",false,
+                  				 \"black_t\",\"visible\",false,
+                  				 \"t1\",\"text\",\"R:\",
+                  				 \"t2\",\"text\",\"G:\",
+                  				 \"t3\",\"text\",\"B:\",
+                  				 \"t4\",\"text\",\"\");
+                  //IM 111388
+//                   red_slider.visible = true;
+//                   green_slider.visible = true;
+//                   blue_slider.visible = true;
+//                   cyan_slider.visible = false;
+//                   Magenta_Slider.visible = false;
+//                   Yellow_Slider.visible = false;
+//                   black_slider.visible = false;
+                   setMultiValue(\"SHAPE_RED\",\"visible\",TRUE,
+                                 \"SHAPE_GREEN\",\"visible\",TRUE,
+                                 \"SHAPE_BLUE\",\"visible\",TRUE,
+                                 \"SHAPE_CYAN\",\"visible\",FALSE,
+                                 \"SHAPE_MAGENTA\",\"visible\",FALSE,
+                                 \"SHAPE_YELLOW\",\"visible\",FALSE,
+                                 \"SHAPE_BLACK\",\"visible\",FALSE
+                                 );
+                 }
+                 break;
+     default:	break;
+  }
+                 
+                 
+}
+
+
+" 0
+
+20 343
+"previewActive"
+""
+1 594 384 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+239 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 43 Farbauswahl auch im Mischbehälter anzeigen
+LANG:10001 48 Show current color selection also in mixing pond
+LANG:10027 90 Показывать текущий выбор цвета также в смесителе
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  592 382 721 405
+1
+T 
+3
+LANG:10000 14 Vorschau-Modus
+LANG:10001 12 Preview mode
+LANG:10027 29 Режим просмотра
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, bool state)
+{
+ float	cyan;
+
+  
+  if(!this.state(0))
+  {
+    dpGet(\"Valve_Tank1.value.position\",cyan);
+    dpSet(\"Valve_Tank1.value.position\",cyan);
+  }
+  else
+    calculateColors();
+}" 0
+13 357
+"SimDemoButton"
+""
+1 923 546 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+253 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 40 Aktivierung einer permanenten Simulation
+LANG:10001 26 Enable permanet simulation
+LANG:10027 54 Включить постоянную эмуляцию
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  921 544 992 572
+
+T 
+3
+LANG:10000 4 Demo
+LANG:10001 4 Demo
+LANG:10027 8 Демо
+"main()
+{
+  dpSet(\"CP_Sim.Mode\",2);
+}" 0
+ E E "main()
+{
+  dpConnect(\"enable\",\"CP_Sim.Mode\");
+}
+
+enable(string dp, int mode)
+{
+  if(mode == 1)
+    this.enabled = false;
+  else
+  {
+    delay(0,500);
+    this.enabled = true;
+  }
+}" 0
+
+13 356
+"SimProcButton"
+""
+1 923 515 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+252 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 45 Aktivierung der Prozess antworten (simuliert)
+LANG:10001 36 Enable process responses (simulated)
+LANG:10027 63 Включить обратную связь (эмуляция)
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  921 513 992 542
+
+T 
+3
+LANG:10000 7 Prozess
+LANG:10001 7 Process
+LANG:10027 14 Процесс
+"main()
+{
+  dpSet(\"CP_Sim.Mode\",1);
+}" 0
+ E E "main()
+{
+  //dpConnect(\"enable\",\"CP_Sim.Mode\");
+}
+
+enable(string dp, int mode)
+{
+  if(mode == 2)
+    this.enabled = false;
+  else
+  {
+    delay(0,500);
+    this.enabled = true;
+  }
+}" 0
+
+13 355
+"SimOffButton"
+""
+1 923 485 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+251 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 39 Simulation für diese Anlage abschalten
+LANG:10001 38 Switch off simulation for this station
+LANG:10027 62 Отключить эмуляцию для этого цеха
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  921 483 992 511
+
+T 
+3
+LANG:10000 3 Aus
+LANG:10001 3 Off
+LANG:10027 8 Выкл
+"main()
+{
+  dpSet(\"CP_Sim.Mode\",0);
+}" 0
+ E E E
+13 363
+"ResetButton"
+""
+1 52 534 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+259 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 32 In Ausgangszustand zurücksetzen
+LANG:10001 22 Reset to initial state
+LANG:10027 57 Вернуть к начальному состоянию
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  50 532 144 575
+
+T 
+3
+LANG:10000 11 Rücksetzen
+LANG:10001 5 Reset
+LANG:10027 16 Сбросить
+"main()
+{
+  dpSet(\"CP_Sim.Mode\",0);
+  
+  delay(0,500);
+  
+  dpSet(\"Tank_Cyan.level\",  86.4,
+        \"Tank_Magenta.level\",  49.1,  
+        \"Tank_Yellow.level\",  71.2,  
+        \"Tank_Black.level\",  56.9,
+        \"Tank_White.level\",  92.7,
+        \"MixingPond.level\", 65.5,
+        \"Valve_Tank1.cmd.manual\", false,
+        \"Valve_Tank2.cmd.manual\", false,
+        \"Valve_Tank3.cmd.manual\", false,
+        \"Valve_Tank4.cmd.manual\", false,
+        \"Valve_Tank5.cmd.manual\", false,
+        \"Valve_Basin_Outlet.cmd.manual\", false);
+  delay(0,200);
+  dpSet(\"Valve_Tank1.cmd.setpoint\", 0.0,
+        \"Valve_Tank2.cmd.setpoint\", 0.0,
+        \"Valve_Tank3.cmd.setpoint\", 0.0,
+        \"Valve_Tank4.cmd.setpoint\", 0.0,
+        \"Valve_Tank5.cmd.setpoint\", 0.0,
+        \"Valve_Basin_Outlet.cmd.setpoint\", 100.0);      
+  
+  delay(0,200);
+  calculateColors();
+  
+  ColorModeSelector.number = 0;
+  
+  setMultiValue( \"r\",\"visible\",false,
+                 \"g\",\"visible\",false,
+                 \"b\",\"visible\",false,
+                 \"cyan_t\",\"visible\",true,
+                 \"magenta_t\",\"visible\",true,
+                 \"yellow_t\",\"visible\",true,
+                 \"black_t\",\"visible\",true,
+                 \"t1\",\"text\",\"C:\",
+                 \"t2\",\"text\",\"M:\",
+                 \"t3\",\"text\",\"Y:\",
+                 \"t4\",\"text\",\"K:\");
+ //IM 111388
+  setMultiValue(\"SHAPE_RED\",\"visible\",FALSE,
+                \"SHAPE_GREEN\",\"visible\",FALSE,
+                \"SHAPE_BLUE\",\"visible\",FALSE,
+                \"SHAPE_MAGENTA\",\"visible\",TRUE,
+                \"SHAPE_YELLOW\",\"visible\",TRUE,
+                \"SHAPE_CYAN\",\"visible\",TRUE,
+                \"SHAPE_BLACK\",\"visible\",TRUE
+                );
+//  red_slider.visible = false;
+//  green_slider.visible = false;
+//  blue_slider.visible = false;
+//  cyan_slider.visible = true;
+//  Magenta_Slider.visible = true;
+//  Yellow_Slider.visible = true;
+//  black_slider.visible = true;
+
+  commonConfirm(\"panel\"); 
+}
+
+
+" 0
+ E E E
+13 364
+"RefillButton"
+""
+1 150 534 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+260 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 51 Alle Tanks mit der ursprünglichen Farbe auffüllen
+LANG:10001 36 Refill all tanks with original color
+LANG:10027 72 Заполнить все ёмкости исходной краской
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  148 532 242 575
+
+T 
+3
+LANG:10000 13 Tanks füllen
+LANG:10001 10 Fill tanks
+LANG:10027 18 Заполнить
+"main()
+{
+  float c_max, m_max, y_max, k_max, w_max;
+
+  dpGet(\"Tank_Cyan.level:_alert_hdl.3._u_limit\",  c_max,
+        \"Tank_Magenta.level:_alert_hdl.3._u_limit\",  m_max,  
+        \"Tank_Yellow.level:_alert_hdl.3._u_limit\",  y_max,  
+        \"Tank_Black.level:_alert_hdl.3._u_limit\",  k_max,
+        \"Tank_White.level:_alert_hdl.3._u_limit\",  w_max );          
+  
+  dpSet(\"Tank_Cyan.level\",  c_max,
+        \"Tank_Magenta.level\",  m_max,  
+        \"Tank_Yellow.level\",  y_max,  
+        \"Tank_Black.level\",  k_max,
+        \"Tank_White.level\",  w_max );  
+ 
+  commonConfirm(\"panel\"); 
+}" 0
+ E E E
+13 358
+"Button6"
+""
+1 982 273 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+254 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  980 271 994 285
+
+T 
+3
+LANG:10000 7 Button6
+LANG:10001 7 Button6
+LANG:10027 7 Button6
+E E E E
+29 678
+"SLIDER4"
+""
+1 640.3333333333334 132.3333333333333 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+306 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"maxValue" "int 255"
+"tickInterval" "int 15"
+"tickPosition" "enum 1"
+"sliderPosition" "int 255"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  640 132 656 328
+12 SliderWidget
+1
+0 "Slide" "(int value)"
+"  setValue(\"r\",\"text\",value);
+  if (fmod(++cnt,2.0) == 0)
+    calculateColors(true);"
+"main()
+{
+  this.name = \"red_slider\";
+}" 0
+29 659
+"SLIDER3"
+""
+1 692.3333333333334 132.3333333333333 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+287 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"maxValue" "int 255"
+"tickInterval" "int 15"
+"tickPosition" "enum 1"
+"sliderPosition" "int 255"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  692 132 708 328
+12 SliderWidget
+1
+0 "Slide" "(int value)"
+"  setValue(\"g\",\"text\",value);
+  if (fmod(++cnt,2.0) == 0)
+    calculateColors(true);"
+"main()
+{
+  this.name = \"green_slider\";
+}" 0
+29 640
+"SLIDER2"
+""
+1 744.3333333333334 132.3333333333333 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+268 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"maxValue" "int 255"
+"tickInterval" "int 15"
+"tickPosition" "enum 1"
+"sliderPosition" "int 255"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  744 132 760 328
+12 SliderWidget
+1
+0 "Slide" "(int value)"
+"  setValue(\"b\",\"text\",value);
+  if (fmod(++cnt,2.0) == 0)
+    calculateColors(true);"
+"main()
+{
+  this.name = \"blue_slider\";
+}" 0
+29 697
+"SLIDER5"
+""
+1 617.3333333333334 135.3333333333333 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+325 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"tickPosition" "enum 1"
+"tickInterval" "int 10"
+"maxValue" "int 100"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  617 135 633 331
+12 SliderWidget
+1
+0 "Slide" "(int value)"
+"  cyan_t.text = value;
+  
+  if (fmod(++cnt,2.0) == 0)
+    calculateColors();"
+"main()
+{
+  this.name = \"cyan_slider\";
+}" 0
+2 708
+"PRIMITIVE_TEXT65"
+""
+1 615 130.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+336 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 597 130.5 615 143
+0 2 2 "0s" 0 0 0 194 0 0  615 130.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 100
+LANG:10001 3 100
+LANG:10027 3 100
+2 707
+"PRIMITIVE_TEXT64"
+""
+1 615 153 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+335 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 603 153 615 165
+0 2 2 "0s" 0 0 0 194 0 0  615 153 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 90
+LANG:10001 2 90
+LANG:10027 2 90
+2 706
+"PRIMITIVE_TEXT63"
+""
+1 615 171 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+334 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 603 171 615 183
+0 2 2 "0s" 0 0 0 194 0 0  615 171 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 80
+LANG:10001 2 80
+LANG:10027 2 80
+2 705
+"PRIMITIVE_TEXT62"
+""
+1 615 190 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+333 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 603 190 615 202
+0 2 2 "0s" 0 0 0 194 0 0  615 190 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 70
+LANG:10001 2 70
+LANG:10027 2 70
+2 696
+"PRIMITIVE_TEXT54"
+""
+1 638 128.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+324 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 128.5 638 141
+0 2 2 "0s" 0 0 0 194 0 0  638 128.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 255
+LANG:10001 3 255
+LANG:10027 3 255
+2 677
+"PRIMITIVE_TEXT36"
+""
+1 690 128.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+305 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 128.5 690 141
+0 2 2 "0s" 0 0 0 194 0 0  690 128.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 255
+LANG:10001 3 255
+LANG:10027 3 255
+2 658
+"PRIMITIVE_TEXT18"
+""
+1 743 128.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+286 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 128.5 743 141
+0 2 2 "0s" 0 0 0 194 0 0  743 128.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 255
+LANG:10001 3 255
+LANG:10027 3 255
+2 695
+"PRIMITIVE_TEXT53"
+""
+1 637.5 139 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+323 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 139 637.5 151
+0 2 2 "0s" 0 0 0 194 0 0  637.5 139 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 240
+LANG:10001 3 240
+LANG:10027 3 240
+2 676
+"PRIMITIVE_TEXT35"
+""
+1 689.5 139 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+304 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 139 689.5 151
+0 2 2 "0s" 0 0 0 194 0 0  689.5 139 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 240
+LANG:10001 3 240
+LANG:10027 3 240
+2 657
+"PRIMITIVE_TEXT17"
+""
+1 742.5 139 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+285 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 139 742.5 151
+0 2 2 "0s" 0 0 0 194 0 0  742.5 139 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 240
+LANG:10001 3 240
+LANG:10027 3 240
+2 694
+"PRIMITIVE_TEXT52"
+""
+1 638 150.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+322 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 150.5 638 163
+0 2 2 "0s" 0 0 0 194 0 0  638 150.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 225
+LANG:10001 3 225
+LANG:10027 3 225
+2 675
+"PRIMITIVE_TEXT34"
+""
+1 690 150.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+303 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 150.5 690 163
+0 2 2 "0s" 0 0 0 194 0 0  690 150.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 225
+LANG:10001 3 225
+LANG:10027 3 225
+2 656
+"PRIMITIVE_TEXT16"
+""
+1 743 150.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+284 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 150.5 743 163
+0 2 2 "0s" 0 0 0 194 0 0  743 150.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 225
+LANG:10001 3 225
+LANG:10027 3 225
+2 693
+"PRIMITIVE_TEXT51"
+""
+1 638 162 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+321 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 162 638 174
+0 2 2 "0s" 0 0 0 194 0 0  638 162 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 210
+LANG:10001 3 210
+LANG:10027 3 210
+2 674
+"PRIMITIVE_TEXT33"
+""
+1 690 162 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+302 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 162 690 174
+0 2 2 "0s" 0 0 0 194 0 0  690 162 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 210
+LANG:10001 3 210
+LANG:10027 3 210
+2 655
+"PRIMITIVE_TEXT15"
+""
+1 743 162 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+283 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 162 743 174
+0 2 2 "0s" 0 0 0 194 0 0  743 162 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 210
+LANG:10001 3 210
+LANG:10027 3 210
+2 692
+"PRIMITIVE_TEXT50"
+""
+1 638 173.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+320 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 173.5 638 186
+0 2 2 "0s" 0 0 0 194 0 0  638 173.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 195
+LANG:10001 3 195
+LANG:10027 3 195
+2 673
+"PRIMITIVE_TEXT32"
+""
+1 690 172.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+301 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 172.5 690 185
+0 2 2 "0s" 0 0 0 194 0 0  690 172.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 195
+LANG:10001 3 195
+LANG:10027 3 195
+2 654
+"PRIMITIVE_TEXT14"
+""
+1 743 173.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+282 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 173.5 743 186
+0 2 2 "0s" 0 0 0 194 0 0  743 173.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 195
+LANG:10001 3 195
+LANG:10027 3 195
+2 691
+"PRIMITIVE_TEXT49"
+""
+1 637.5 184 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+319 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 184 637.5 196
+0 2 2 "0s" 0 0 0 194 0 0  637.5 184 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 180
+LANG:10001 3 180
+LANG:10027 3 180
+2 672
+"PRIMITIVE_TEXT31"
+""
+1 689.5 184 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+300 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 184 689.5 196
+0 2 2 "0s" 0 0 0 194 0 0  689.5 184 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 180
+LANG:10001 3 180
+LANG:10027 3 180
+2 653
+"PRIMITIVE_TEXT13"
+""
+1 742.5 184 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+281 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 184 742.5 196
+0 2 2 "0s" 0 0 0 194 0 0  742.5 184 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 180
+LANG:10001 3 180
+LANG:10027 3 180
+2 690
+"PRIMITIVE_TEXT48"
+""
+1 637.5 195.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+318 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 195.5 637.5 208
+0 2 2 "0s" 0 0 0 194 0 0  637.5 195.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 165
+LANG:10001 3 165
+LANG:10027 3 165
+2 671
+"PRIMITIVE_TEXT30"
+""
+1 689.5 195.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+299 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 195.5 689.5 208
+0 2 2 "0s" 0 0 0 194 0 0  689.5 195.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 165
+LANG:10001 3 165
+LANG:10027 3 165
+2 652
+"PRIMITIVE_TEXT12"
+""
+1 742.5 195.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+280 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 195.5 742.5 208
+0 2 2 "0s" 0 0 0 194 0 0  742.5 195.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 165
+LANG:10001 3 165
+LANG:10027 3 165
+2 689
+"PRIMITIVE_TEXT47"
+""
+1 637.5 206.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+317 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 206.5 637.5 219
+0 2 2 "0s" 0 0 0 194 0 0  637.5 206.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 150
+LANG:10001 3 150
+LANG:10027 3 150
+2 670
+"PRIMITIVE_TEXT29"
+""
+1 689.5 206.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+298 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 206.5 689.5 219
+0 2 2 "0s" 0 0 0 194 0 0  689.5 206.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 150
+LANG:10001 3 150
+LANG:10027 3 150
+2 651
+"PRIMITIVE_TEXT11"
+""
+1 742.5 206.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+279 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 206.5 742.5 219
+0 2 2 "0s" 0 0 0 194 0 0  742.5 206.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 150
+LANG:10001 3 150
+LANG:10027 3 150
+2 688
+"PRIMITIVE_TEXT46"
+""
+1 637 218.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+316 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 619 218.5 637 231
+0 2 2 "0s" 0 0 0 194 0 0  637 218.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 135
+LANG:10001 3 135
+LANG:10027 3 135
+2 669
+"PRIMITIVE_TEXT28"
+""
+1 690 218.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+297 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 218.5 690 231
+0 2 2 "0s" 0 0 0 194 0 0  690 218.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 135
+LANG:10001 3 135
+LANG:10027 3 135
+2 650
+"PRIMITIVE_TEXT10"
+""
+1 742 219.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+278 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 724 219.5 742 232
+0 2 2 "0s" 0 0 0 194 0 0  742 219.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 135
+LANG:10001 3 135
+LANG:10027 3 135
+2 687
+"PRIMITIVE_TEXT45"
+""
+1 637.5 229.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+315 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 229.5 637.5 242
+0 2 2 "0s" 0 0 0 194 0 0  637.5 229.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 120
+LANG:10001 3 120
+LANG:10027 3 120
+2 668
+"PRIMITIVE_TEXT27"
+""
+1 689.5 229.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+296 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 229.5 689.5 242
+0 2 2 "0s" 0 0 0 194 0 0  689.5 229.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 120
+LANG:10001 3 120
+LANG:10027 3 120
+2 649
+"PRIMITIVE_TEXT9"
+""
+1 742.5 230.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+277 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 230.5 742.5 243
+0 2 2 "0s" 0 0 0 194 0 0  742.5 230.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 120
+LANG:10001 3 120
+LANG:10027 3 120
+2 686
+"PRIMITIVE_TEXT44"
+""
+1 638 241 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+314 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 620 241 638 253
+0 2 2 "0s" 0 0 0 194 0 0  638 241 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 105
+LANG:10001 3 105
+LANG:10027 3 105
+2 667
+"PRIMITIVE_TEXT26"
+""
+1 690 241 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+295 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 672 241 690 253
+0 2 2 "0s" 0 0 0 194 0 0  690 241 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 105
+LANG:10001 3 105
+LANG:10027 3 105
+2 648
+"PRIMITIVE_TEXT8"
+""
+1 743 241 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+276 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 725 241 743 253
+0 2 2 "0s" 0 0 0 194 0 0  743 241 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 105
+LANG:10001 3 105
+LANG:10027 3 105
+2 685
+"PRIMITIVE_TEXT43"
+""
+1 -2581.5 -105.4999999999999 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+313 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.9999999999999999 -118 5.000000000000028 0 E 744 246.5 755.5 259
+0 2 2 "0s" 0 0 0 194 0 0  755.5 246.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 90
+LANG:10001 2 90
+LANG:10027 2 90
+2 666
+"PRIMITIVE_TEXT25"
+""
+1 -2379.5 -105.4999999999999 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+294 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.9999999999999999 -67 5.000000000000028 0 E 744 246.5 755.5 259
+0 2 2 "0s" 0 0 0 194 0 0  755.5 246.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 90
+LANG:10001 2 90
+LANG:10027 2 90
+2 647
+"PRIMITIVE_TEXT7"
+""
+1 -2166.5 -105.4999999999999 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+275 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.9999999999999999 -13 5.000000000000028 0 E 744 246.5 755.5 259
+0 2 2 "0s" 0 0 0 194 0 0  755.5 246.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 90
+LANG:10001 2 90
+LANG:10027 2 90
+2 684
+"PRIMITIVE_TEXT42"
+""
+1 637.5 263 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+312 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 626 263 637.5 275
+0 2 2 "0s" 0 0 0 194 0 0  637.5 263 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 75
+LANG:10001 2 75
+LANG:10027 2 75
+2 665
+"PRIMITIVE_TEXT24"
+""
+1 689.5 263 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+293 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 678 263 689.5 275
+0 2 2 "0s" 0 0 0 194 0 0  689.5 263 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 75
+LANG:10001 2 75
+LANG:10027 2 75
+2 646
+"PRIMITIVE_TEXT6"
+""
+1 742.5 263 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+274 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 731 263 742.5 275
+0 2 2 "0s" 0 0 0 194 0 0  742.5 263 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 75
+LANG:10001 2 75
+LANG:10027 2 75
+2 683
+"PRIMITIVE_TEXT41"
+""
+1 638 274.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+311 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 626 274.5 638 287
+0 2 2 "0s" 0 0 0 194 0 0  638 274.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 60
+LANG:10001 2 60
+LANG:10027 2 60
+2 664
+"PRIMITIVE_TEXT23"
+""
+1 690 274.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+292 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 678 274.5 690 287
+0 2 2 "0s" 0 0 0 194 0 0  690 274.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 60
+LANG:10001 2 60
+LANG:10027 2 60
+2 645
+"PRIMITIVE_TEXT5"
+""
+1 743 274.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+273 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 731 274.5 743 287
+0 2 2 "0s" 0 0 0 194 0 0  743 274.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 60
+LANG:10001 2 60
+LANG:10027 2 60
+2 682
+"PRIMITIVE_TEXT40"
+""
+1 637.5 286 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+310 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 626 286 637.5 298
+0 2 2 "0s" 0 0 0 194 0 0  637.5 286 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 45
+LANG:10001 2 45
+LANG:10027 2 45
+2 663
+"PRIMITIVE_TEXT22"
+""
+1 689.5 286 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+291 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 678 286 689.5 298
+0 2 2 "0s" 0 0 0 194 0 0  689.5 286 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 45
+LANG:10001 2 45
+LANG:10027 2 45
+2 644
+"PRIMITIVE_TEXT4"
+""
+1 742.5 286 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+272 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 731 286 742.5 298
+0 2 2 "0s" 0 0 0 194 0 0  742.5 286 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 45
+LANG:10001 2 45
+LANG:10027 2 45
+2 681
+"PRIMITIVE_TEXT39"
+""
+1 638 297.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+309 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 626 297.5 638 310
+0 2 2 "0s" 0 0 0 194 0 0  638 297.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 30
+LANG:10001 2 30
+LANG:10027 2 30
+2 662
+"PRIMITIVE_TEXT21"
+""
+1 690 296.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+290 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 678 296.5 690 309
+0 2 2 "0s" 0 0 0 194 0 0  690 296.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 30
+LANG:10001 2 30
+LANG:10027 2 30
+2 643
+"PRIMITIVE_TEXT3"
+""
+1 743 296.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+271 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 731 296.5 743 309
+0 2 2 "0s" 0 0 0 194 0 0  743 296.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 30
+LANG:10001 2 30
+LANG:10027 2 30
+2 680
+"PRIMITIVE_TEXT38"
+""
+1 637.5 308.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+308 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 623 308.5 637.5 321
+0 2 2 "0s" 0 0 0 194 0 0  637.5 308.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3  15
+LANG:10001 2 15
+LANG:10027 2 15
+2 661
+"PRIMITIVE_TEXT20"
+""
+1 689.5 308.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+289 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 675 308.5 689.5 321
+0 2 2 "0s" 0 0 0 194 0 0  689.5 308.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3  15
+LANG:10001 2 15
+LANG:10027 2 15
+2 642
+"PRIMITIVE_TEXT2"
+""
+1 742.5 308.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+270 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 728 308.5 742.5 321
+0 2 2 "0s" 0 0 0 194 0 0  742.5 308.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3  15
+LANG:10001 2 15
+LANG:10027 2 15
+2 679
+"PRIMITIVE_TEXT37"
+""
+1 637.5 319.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+307 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 632 319.5 637.5 332
+0 2 2 "0s" 0 0 0 194 0 0  637.5 319.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 660
+"PRIMITIVE_TEXT19"
+""
+1 689.5 319.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+288 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 684 319.5 689.5 332
+0 2 2 "0s" 0 0 0 194 0 0  689.5 319.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 641
+"PRIMITIVE_TEXT1"
+""
+1 742.5 319.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+269 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 737 319.5 742.5 332
+0 2 2 "0s" 0 0 0 194 0 0  742.5 319.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 704
+"PRIMITIVE_TEXT61"
+""
+1 615 207 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+332 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 603 207 615 219
+0 2 2 "0s" 0 0 0 194 0 0  615 207 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 60
+LANG:10001 2 60
+LANG:10027 2 60
+2 703
+"PRIMITIVE_TEXT60"
+""
+1 615 227 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+331 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 603 227 615 239
+0 2 2 "0s" 0 0 0 194 0 0  615 227 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 50
+LANG:10001 2 50
+LANG:10027 2 50
+2 702
+"PRIMITIVE_TEXT59"
+""
+1 615 246 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+330 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 603 246 615 258
+0 2 2 "0s" 0 0 0 194 0 0  615 246 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 40
+LANG:10001 2 40
+LANG:10027 2 40
+2 701
+"PRIMITIVE_TEXT58"
+""
+1 616 264 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+329 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 604 264 616 276
+0 2 2 "0s" 0 0 0 194 0 0  616 264 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 30
+LANG:10001 2 30
+LANG:10027 2 30
+2 700
+"PRIMITIVE_TEXT57"
+""
+1 615 283 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+328 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 603 283 615 295
+0 2 2 "0s" 0 0 0 194 0 0  615 283 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 20
+LANG:10001 2 20
+LANG:10027 2 20
+2 699
+"PRIMITIVE_TEXT56"
+""
+1 614 300.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+327 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 602 300.5 614 313
+0 2 2 "0s" 0 0 0 194 0 0  614 300.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 10
+LANG:10001 2 10
+LANG:10027 2 10
+2 698
+"PRIMITIVE_TEXT55"
+""
+1 614.5 322.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+326 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 609 322.5 614.5 335
+0 2 2 "0s" 0 0 0 194 0 0  614.5 322.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+29 733
+"SLIDER8"
+""
+1 761.3333333333334 135.3333333333333 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+361 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"tickPosition" "enum 1"
+"tickInterval" "int 10"
+"maxValue" "int 100"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  761 135 777 331
+12 SliderWidget
+1
+0 "Slide" "(int value)"
+"  black_t.text = value;
+  
+  if (fmod(++cnt,2.0) == 0)
+    calculateColors();"
+"main()
+{
+  this.name = \"black_slider\";
+}" 0
+29 721
+"SLIDER7"
+""
+1 713.3333333333334 135.3333333333333 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+349 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"tickPosition" "enum 1"
+"tickInterval" "int 10"
+"maxValue" "int 100"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  713 135 729 331
+12 SliderWidget
+1
+0 "Slide" "(int value)"
+"  yellow_t.text = value;
+  
+  if (fmod(++cnt,2.0) == 0)
+    calculateColors();"
+"main()
+{
+  this.name = \"Yellow_Slider\";
+}" 0
+29 709
+"SLIDER6"
+""
+1 664.3333333333334 135.3333333333333 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+337 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"tickPosition" "enum 1"
+"tickInterval" "int 10"
+"maxValue" "int 100"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  664 135 680 331
+12 SliderWidget
+1
+0 "Slide" "(int value)"
+"  magenta_t.text = value;
+  
+  if (fmod(++cnt,2.0) == 0)
+    calculateColors();"
+"main()
+{
+  this.name = \"Magenta_Slider\";
+}" 0
+2 710
+"PRIMITIVE_TEXT66"
+""
+1 662 130.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+338 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 644 130.5 662 143
+0 2 2 "0s" 0 0 0 194 0 0  662 130.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 100
+LANG:10001 3 100
+LANG:10027 3 100
+2 722
+"PRIMITIVE_TEXT77"
+""
+1 711 130.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+350 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 693 130.5 711 143
+0 2 2 "0s" 0 0 0 194 0 0  711 130.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 100
+LANG:10001 3 100
+LANG:10027 3 100
+2 734
+"PRIMITIVE_TEXT88"
+""
+1 759 130.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+362 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 741 130.5 759 143
+0 2 2 "0s" 0 0 0 194 0 0  759 130.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 100
+LANG:10001 3 100
+LANG:10027 3 100
+2 711
+"PRIMITIVE_TEXT67"
+""
+1 662 153 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+339 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 650 153 662 165
+0 2 2 "0s" 0 0 0 194 0 0  662 153 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 90
+LANG:10001 2 90
+LANG:10027 2 90
+2 723
+"PRIMITIVE_TEXT78"
+""
+1 711 153 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+351 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 699 153 711 165
+0 2 2 "0s" 0 0 0 194 0 0  711 153 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 90
+LANG:10001 2 90
+LANG:10027 2 90
+2 735
+"PRIMITIVE_TEXT89"
+""
+1 759 153 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+363 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 747 153 759 165
+0 2 2 "0s" 0 0 0 194 0 0  759 153 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 90
+LANG:10001 2 90
+LANG:10027 2 90
+2 712
+"PRIMITIVE_TEXT68"
+""
+1 662 171 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+340 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 650 171 662 183
+0 2 2 "0s" 0 0 0 194 0 0  662 171 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 80
+LANG:10001 2 80
+LANG:10027 2 80
+2 724
+"PRIMITIVE_TEXT79"
+""
+1 711 171 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+352 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 699 171 711 183
+0 2 2 "0s" 0 0 0 194 0 0  711 171 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 80
+LANG:10001 2 80
+LANG:10027 2 80
+2 736
+"PRIMITIVE_TEXT90"
+""
+1 759 171 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+364 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 747 171 759 183
+0 2 2 "0s" 0 0 0 194 0 0  759 171 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 80
+LANG:10001 2 80
+LANG:10027 2 80
+2 713
+"PRIMITIVE_TEXT69"
+""
+1 662 190 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+341 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 650 190 662 202
+0 2 2 "0s" 0 0 0 194 0 0  662 190 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 70
+LANG:10001 2 70
+LANG:10027 2 70
+2 725
+"PRIMITIVE_TEXT80"
+""
+1 711 190 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+353 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 699 190 711 202
+0 2 2 "0s" 0 0 0 194 0 0  711 190 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 70
+LANG:10001 2 70
+LANG:10027 2 70
+2 737
+"PRIMITIVE_TEXT91"
+""
+1 759 190 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+365 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 747 190 759 202
+0 2 2 "0s" 0 0 0 194 0 0  759 190 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 70
+LANG:10001 2 70
+LANG:10027 2 70
+2 714
+"PRIMITIVE_TEXT70"
+""
+1 662 207 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+342 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 650 207 662 219
+0 2 2 "0s" 0 0 0 194 0 0  662 207 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 60
+LANG:10001 2 60
+LANG:10027 2 60
+2 726
+"PRIMITIVE_TEXT81"
+""
+1 711 207 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+354 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 699 207 711 219
+0 2 2 "0s" 0 0 0 194 0 0  711 207 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 60
+LANG:10001 2 60
+LANG:10027 2 60
+2 738
+"PRIMITIVE_TEXT92"
+""
+1 759 207 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+366 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 747 207 759 219
+0 2 2 "0s" 0 0 0 194 0 0  759 207 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 60
+LANG:10001 2 60
+LANG:10027 2 60
+2 715
+"PRIMITIVE_TEXT71"
+""
+1 662 227 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+343 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 650 227 662 239
+0 2 2 "0s" 0 0 0 194 0 0  662 227 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 50
+LANG:10001 2 50
+LANG:10027 2 50
+2 727
+"PRIMITIVE_TEXT82"
+""
+1 711 227 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+355 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 699 227 711 239
+0 2 2 "0s" 0 0 0 194 0 0  711 227 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 50
+LANG:10001 2 50
+LANG:10027 2 50
+2 739
+"PRIMITIVE_TEXT93"
+""
+1 759 227 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+367 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 747 227 759 239
+0 2 2 "0s" 0 0 0 194 0 0  759 227 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 50
+LANG:10001 2 50
+LANG:10027 2 50
+2 716
+"PRIMITIVE_TEXT72"
+""
+1 662 246 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+344 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 650 246 662 258
+0 2 2 "0s" 0 0 0 194 0 0  662 246 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 40
+LANG:10001 2 40
+LANG:10027 2 40
+2 728
+"PRIMITIVE_TEXT83"
+""
+1 711 246 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+356 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 699 246 711 258
+0 2 2 "0s" 0 0 0 194 0 0  711 246 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 40
+LANG:10001 2 40
+LANG:10027 2 40
+2 740
+"PRIMITIVE_TEXT94"
+""
+1 759 246 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+368 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 747 246 759 258
+0 2 2 "0s" 0 0 0 194 0 0  759 246 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 40
+LANG:10001 2 40
+LANG:10027 2 40
+2 717
+"PRIMITIVE_TEXT73"
+""
+1 663 264 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+345 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 651 264 663 276
+0 2 2 "0s" 0 0 0 194 0 0  663 264 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 30
+LANG:10001 2 30
+LANG:10027 2 30
+2 729
+"PRIMITIVE_TEXT84"
+""
+1 712 264 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+357 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 700 264 712 276
+0 2 2 "0s" 0 0 0 194 0 0  712 264 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 30
+LANG:10001 2 30
+LANG:10027 2 30
+2 741
+"PRIMITIVE_TEXT95"
+""
+1 760 264 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+369 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 748 264 760 276
+0 2 2 "0s" 0 0 0 194 0 0  760 264 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 30
+LANG:10001 2 30
+LANG:10027 2 30
+2 718
+"PRIMITIVE_TEXT74"
+""
+1 662 283 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+346 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 650 283 662 295
+0 2 2 "0s" 0 0 0 194 0 0  662 283 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 20
+LANG:10001 2 20
+LANG:10027 2 20
+2 730
+"PRIMITIVE_TEXT85"
+""
+1 711 283 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+358 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 699 283 711 295
+0 2 2 "0s" 0 0 0 194 0 0  711 283 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 20
+LANG:10001 2 20
+LANG:10027 2 20
+2 742
+"PRIMITIVE_TEXT96"
+""
+1 759 283 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+370 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 747 283 759 295
+0 2 2 "0s" 0 0 0 194 0 0  759 283 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 20
+LANG:10001 2 20
+LANG:10027 2 20
+2 719
+"PRIMITIVE_TEXT75"
+""
+1 661 300.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+347 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 649 300.5 661 313
+0 2 2 "0s" 0 0 0 194 0 0  661 300.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 10
+LANG:10001 2 10
+LANG:10027 2 10
+2 731
+"PRIMITIVE_TEXT86"
+""
+1 710 300.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+359 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 698 300.5 710 313
+0 2 2 "0s" 0 0 0 194 0 0  710 300.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 10
+LANG:10001 2 10
+LANG:10027 2 10
+2 743
+"PRIMITIVE_TEXT97"
+""
+1 758 300.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+371 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 746 300.5 758 313
+0 2 2 "0s" 0 0 0 194 0 0  758 300.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 10
+LANG:10001 2 10
+LANG:10027 2 10
+2 720
+"PRIMITIVE_TEXT76"
+""
+1 661.5 322.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+348 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 656 322.5 661.5 335
+0 2 2 "0s" 0 0 0 194 0 0  661.5 322.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 732
+"PRIMITIVE_TEXT87"
+""
+1 710.5 322.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+360 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 705 322.5 710.5 335
+0 2 2 "0s" 0 0 0 194 0 0  710.5 322.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 744
+"PRIMITIVE_TEXT98"
+""
+1 758.5 322.5 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+372 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 753 322.5 758.5 335
+0 2 2 "0s" 0 0 0 194 0 0  758.5 322.5 1
+3
+LANG:10000 34 MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+2 361
+"Text2"
+""
+1 46 480 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+257 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 48 482 188 506
+0 2 0 "0s" 0 0 0 64 0 0  48 482 1
+3
+LANG:10000 26 Arial,-1,17,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,69,0,0,0,0,0
+0 3
+LANG:10000 17 Abfüllstation A3
+LANG:10001 17 Filler station A3
+LANG:10027 23 Цех наполн. A3
+10 362
+"Polyline2"
+""
+1 10 491 E E E 1 E 1 E N "STD_border_dark" E N "STD_frame_light" E E
+ E E
+258 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  1 E 7 10 491
+25 476
+25 484
+40 484
+40 498
+25 498
+25 506
+ 1
+2 365
+"Text1"
+""
+1 185 2 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+261 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 187 4 780 40
+0 2 0 "0s" 0 0 0 65 0 0  187 4 1
+3
+LANG:10000 26 Arial,-1,29,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,29,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,29,5,40,0,0,0,0,0
+0 3
+LANG:10000 43 Farben- und Lackproduktion  Mischstation C3
+LANG:10001 36 Paint Production - Mixing station C3
+LANG:10027 70 Производство краски - Цех смешивания C3
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 854 20 "" 1
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/3D_STYLE/tank_indicator.pnl" 160 360 T 21 1 0 1 -153 -68
+3
+"$DP""Tank_Cyan."
+"$c_barColor""{0,255,255}"
+"$f_l2c_factor""0.002"
+3 1 "Gruppe3" -1
+"" ""
+"objects/3D_STYLE/tank_indicator.pnl" 7 42 T 34 1 0 1 141 250
+3
+"$DP""Tank_Magenta."
+"$c_barColor""{255,0,255}"
+"$f_l2c_factor""0.002"
+3 2 "Gruppe5" -1
+"" ""
+"objects/3D_STYLE/tank_indicator.pnl" 148 42 T 35 1 0 1 140 250
+3
+"$DP""Tank_Yellow."
+"$c_barColor""{255,255,0}"
+"$f_l2c_factor""0.002"
+3 3 "Gruppe7" -1
+"" ""
+"objects/3D_STYLE/tank_indicator.pnl" 288 42 T 36 1 0 1 140 250
+3
+"$DP""Tank_Black."
+"$c_barColor""{70,70,70}"
+"$f_l2c_factor""0.002"
+3 4 "" -1
+"" ""
+"objects/3D_STYLE/tank_indicator_xl.pnl" 836 70 T 37 1 0 1 -2 207
+3
+"$DP""Tank_White."
+"$c_barColor""{255,255,255}"
+"$f_l2c_factor""0.05"
+3 7 "" -1
+"" ""
+"objects/3D_STYLE/valve_3d_v.pnl" 41 346 T 38 1 0 1 -26 43
+1
+"$DP""Valve_Tank1."
+3 9 "Gruppe10" -1
+"" ""
+"objects/3D_STYLE/valve_3d_v.pnl" 11 325 T 39 1 0 1 145 64
+1
+"$DP""Valve_Tank2."
+3 10 "Gruppe12" -1
+"" ""
+"objects/3D_STYLE/valve_3d_v.pnl" 152 325 T 41 1 0 1 144 64
+1
+"$DP""Valve_Tank3."
+3 11 "Gruppe14" -1
+"" ""
+"objects/3D_STYLE/valve_3d_v.pnl" 292 325 T 44 1 0 1 144 64
+1
+"$DP""Valve_Tank4."
+3 12 "Gruppe16" -1
+"" ""
+"objects/3D_STYLE/valve_3d_v.pnl" 432 325 T 47 1 0 1 426 89
+1
+"$DP""Valve_Tank5."
+3 15 "" -1
+"" ""
+"objects/3D_STYLE/valve_3d_h.pnl" 540 470 T 59 1 0 1 7 69
+1
+"$DP""Valve_Basin_Outlet."
+3 20 "Gruppe16" -1
+"" ""
+"objects/help_button_large.pnl" 540 500 T 189 0.9722222222222222 0 0.9722222222222222 -515.0000000000001 47.88888888888883
+1
+"$hlp_keyword""da_colorplant"
+3 22 "Gruppe21" -1
+"" ""
+"objects/runDryIndicator.pnl" 750 396 T 196 1 0 1 7 10
+1
+"$DPE""Mixer.alert.runDry"
+3 23 "Gruppe24" -1
+"" ""
+"objects/runDryIndicator.pnl" 474 488 T 262 1 0 1 5 9
+1
+"$DPE""Color_Pump.alert.runDry"
+1 24 "SHAPE_GROUP0" 25
+18 0 
+641 642 643 644 645 646 647 648 649 650 651 652 653 654 655 656 657 658 
+
+"" ""
+1 25 "SHAPE_BLUE" -1
+1 1 
+640 
+24 
+"" ""
+1 26 "SHAPE_GROUP26" 27
+18 0 
+660 661 662 663 664 665 666 667 668 669 670 671 672 673 674 675 676 677 
+
+"" ""
+1 27 "SHAPE_GREEN" -1
+1 1 
+659 
+26 
+"" ""
+1 28 "SHAPE_GROUP28" 29
+18 0 
+679 680 681 682 683 684 685 686 687 688 689 690 691 692 693 694 695 696 
+
+"" ""
+1 29 "SHAPE_RED" -1
+1 1 
+678 
+28 
+"" ""
+1 30 "SHAPE_CYAN" -1
+12 0 
+697 698 699 700 701 702 703 704 705 706 707 708 
+
+"" ""
+1 31 "SHAPE_MAGENTA" -1
+12 0 
+709 720 719 718 717 716 715 714 713 712 711 710 
+
+"" ""
+1 32 "SHAPE_YELLOW" -1
+12 0 
+721 732 731 730 729 728 727 726 725 724 723 722 
+
+"" ""
+1 33 "SHAPE_BLACK" -1
+12 0 
+733 744 743 742 741 740 739 738 737 736 735 734 
+
+"" ""
+0

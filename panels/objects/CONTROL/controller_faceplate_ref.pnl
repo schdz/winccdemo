@@ -1,0 +1,1218 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 187 570 N "_3DFace" 1
+"$controller"
+E E E E E 1 -1 -1 0  10 10
+""0  1
+E "const int NoBevel = 0;
+const int BevelRaised = 1;
+const int BevelLowered = 2;
+
+string g_dpe_w, g_dpe_x, g_dpe_u, g_max_val, g_min_val;
+" 0
+ 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+NC
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+4 64
+"guideline"
+""
+1 160 250 E E E 1 E 0 E N {0,0,0} E N {255,255,255} E E
+ E E
+64 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  175 250 160 250
+6 3
+"valueBar"
+""
+1 93 251 E E E 1 E 1 E N {0,0,0} E N "PV_value" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 7 Istwert
+LANG:10001 13 Current Value
+LANG:10027 31 Текущее значение
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  int x,y;
+  float max,min, val;
+  string sys = getSystemName(), valStr;
+  
+  if (dpGet($controller+\".input.x\",g_dpe_x) == -1)
+    this.backCol(\"_dpdoesnotexist\");
+  else
+    if (dpExists(g_dpe_x))
+    {
+      dpConnect(\"updateBars\", g_dpe_x,
+  						      g_dpe_x+\":_pv_range.._min\",
+  						      g_dpe_x+\":_pv_range.._max\");
+  	  dpGet(g_dpe_x,g_max_val);
+  	  
+  	  dpGet(g_dpe_x,val,
+  	  		g_dpe_x+\":_pv_range.._min\",min,
+  	  		g_dpe_x+\":_pv_range.._max\",max);
+
+    sprintf(valStr,dpGetFormat(g_dpe_x)+\" \"+dpGetUnit(g_dpe_x),val);
+
+    getValue(\"guideline\",\"position\",x,y);
+    setValue(\"max_val\",\"position\",x,y-(205*val/(max-min)),
+    				   \"toolTipText\",valStr);
+    setValue(\"min_val\",\"position\",x,y-(205*val/(max-min)),
+    				   \"toolTipText\",valStr);  	  
+
+  	  g_min_val = g_max_val;
+    }
+  if(dpSubStr(g_dpe_x, DPSUB_SYS) == sys)
+    value.toolTipText = dpSubStr(g_dpe_x,DPSUB_DP_EL);
+  else
+    value.toolTipText = g_dpe_x;
+  value_unit.text = dpGetUnit(g_dpe_x);	   
+}
+updateBars(string dp, float val, string dp2, float min, string dp3, float max)
+{
+  string valStr, format = dpGetFormat(dp);
+  int x,y;
+  
+  setValue(\"\",\"scale\",1,(val-min)/(max-min));  
+  sprintf(valStr,format, val);
+  value.text = valStr;
+  
+  if(val > g_max_val)
+  {
+    g_max_val = val;
+    getValue(\"guideline\",\"position\",x,y);
+    setValue(\"max_val\",\"position\",x,y-(205*(val-min)/(max-min)),
+    				   \"toolTipText\",valStr + \" \"+dpGetUnit(dp));
+  }
+  else if (val < g_min_val)
+  {
+    g_min_val = val;
+    getValue(\"guideline\",\"position\",x,y);
+    setValue(\"min_val\",\"position\",x,y-(205*(val-min)/(max-min)),
+    				   \"toolTipText\",valStr + \" \"+dpGetUnit(dp));
+  }
+}" 0
+ E 0 1 1 0 1 E 1 0 1 44 0 1 E 93 46 115 251
+2 0
+"Text3"
+""
+1 34 8 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.text = dpGetDescription($controller+\".\");
+  this.toolTipText = $controller;
+}" 0
+ E 0 1 1 0 1 E U  0 E 36 10 152 26
+1 2 0 "0s" 0 0 0 64 0 0  36 10 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Reglername
+LANG:10001 10 Controller
+LANG:10027 20 Контроллер
+2 9
+"value_unit"
+""
+1 142 281 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 144 283 165 304
+0 2 0 "0s" 0 0 0 66 0 0  144 283 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 [ ]
+LANG:10001 3 [ ]
+LANG:10027 3 [ ]
+2 10
+"Text5"
+""
+1 15 258 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 17 260 98 276
+0 2 0 "0s" 0 0 0 64 0 0  17 260 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Istwert x
+LANG:10001 8 Value PV
+LANG:10027 16 Значение
+10 19
+"Polyline1"
+""
+1 113 46 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 44 0 0 E 3 113 46
+93 46
+93 252
+ 0
+10 20
+"Polyline2"
+""
+1 114 44 E E E 1 E 1 E N "STD_border_light" E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 44 0 0 E 3 94 252
+116 252
+116 44
+ 0
+2 21
+"Text2"
+""
+1 14 120 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 122 97 138
+0 2 0 "0s" 0 0 0 64 0 0  16 122 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Sollwert w
+LANG:10001 11 Setpoint SP
+LANG:10027 14 Уставка
+2 22
+"output_unit"
+""
+1 142 397 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 144 399 165 420
+0 2 0 "0s" 0 0 0 66 0 0  144 399 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 [ ]
+LANG:10001 3 [ ]
+LANG:10027 3 [ ]
+2 23
+"Text7"
+""
+1 15 372 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 17 374 98 393
+0 2 0 "0s" 0 0 0 64 0 0  17 374 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 14 Stellgröße u
+LANG:10001 9 Output OP
+LANG:10027 10 Вывод
+2 30
+"setpoint_unit"
+""
+1 66 142 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 68 144 89 165
+0 2 0 "0s" 0 0 0 66 0 0  68 144 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 [ ]
+LANG:10001 3 [ ]
+LANG:10027 3 [ ]
+6 41
+"pic"
+""
+1 16 550 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 16 Regelung Ein/Aus
+LANG:10001 19 Controller On / Off
+LANG:10027 36 Контроллер Вкл/Выкл
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  dpConnect(\"manageAccess\",myUiDpName()+\".UserName\",
+  			               $controller+\".cmd.on\",
+  			               $controller+\".parameters.scanrate\",
+  			               $controller+\".state.nocontrol\");
+}
+
+manageAccess(string dp1, string UserName, string dp2, bool on, string dp3, 
+             int rate, string dp4, bool nocontrol)
+{
+ if (getUserPermission(2))
+ {
+   if(on && (rate > 0) && nocontrol)
+   {
+     setMultiValue(\"\",\"fill\",\"[pattern,[tile,gif,Animation/arr_stat_32_b.gif]]\",
+   			       \"\",\"enabled\", true,
+   			       \"border_3d\",\"borderStyle\", 2,
+   			       \"output\",\"editable\",false,
+   			       \"output\",\"backCol\",\"_3DFace\",
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_idle\"));
+     outputSlider.enabled = false;
+     
+   }
+   else if (on && (rate > 0))
+   {
+     setMultiValue(\"\",\"fill\",\"[pattern,[tile,gif,Animation/arr_ani_32_b.gif]]\",
+   			       \"\",\"enabled\", true,
+   			       \"border_3d\",\"borderStyle\", 2,
+   			       \"output\",\"editable\",false,
+   			       \"output\",\"backCol\",\"_3DFace\",
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_on\"));
+     outputSlider.enabled = false;
+  
+   }
+   else
+   {
+     setMultiValue(\"\",\"fill\",\"[pattern,[fit,wmf,Misc/manual_mode_operation_red.wmf]]\",
+   			       \"\",\"enabled\", true,
+   			       \"border_3d\",\"borderStyle\", 4,
+   			       \"output\",\"editable\",true,
+   			       \"output\",\"backCol\",\"_Window\",
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_off\"));
+   	 outputSlider.enabled = true;
+    
+   }   
+ }
+ else
+ {
+   if(on && (rate > 0) && nocontrol)
+   {
+     setMultiValue(\"\",\"fill\",\"[pattern,[tile,gif,Animation/arr_stat_32_b.gif]]\",
+   			       \"\",\"enabled\", false,
+   			       \"border_3d\",\"borderStyle\", 2,
+   			       \"output\",\"editable\",false,
+   			       \"output\",\"backCol\",\"_3DFace\",
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_idle\"));
+     outputSlider.enabled = false;
+      
+   }
+   else if(on && (rate > 0))
+   {
+     setMultiValue(\"\",\"fill\",\"[pattern,[tile,gif,Animation/arr_ani_32_b.gif]]\",
+   			       \"\",\"enabled\", false,
+   			       \"border_3d\",\"borderStyle\", 2,
+   			       \"output\",\"editable\",false,
+   			       \"output\",\"backCol\",\"_3DFace\",
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_on\"));
+     outputSlider.enabled = false;
+   
+   }
+   else
+   {
+     setMultiValue(\"\",\"fill\",\"[pattern,[fit,wmf,Misc/manual_mode_operation_grey.wmf]]\",
+   			       \"\",\"enabled\", false,
+   			       \"border_3d\",\"borderStyle\", 4,
+   			       \"output\",\"editable\",false,
+   			       \"output\",\"backCol\",\"_3DFace\",
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_off\"));
+     outputSlider.enabled = false;
+   
+   }  
+ }
+}" 0
+ "main()
+{
+  bool state;
+
+  dpGet($controller+\".cmd.on\",state);
+  dpSet($controller+\".cmd.on\",!state); 
+}" 0
+ 0 1 1 0 1 E 1 0 1 16 -40 0 E 16 518 48 550
+10 62
+"max_val"
+""
+1 113 250 E E E 1 E 1 E N {51,51,51} E N {255,0,0} E E
+ E E
+62 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 44 0 1 E 3 114 250
+123 245
+123 255
+ 1
+10 63
+"min_val"
+""
+1 113 250 E E E 1 E 1 E N {0,0,0} E N {255,255,0} E E
+ E E
+63 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 44 0 1 E 3 114 250
+123 245
+123 255
+ 1
+2 68
+"Text6"
+""
+1 16 316 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+67 0 1 1 53 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  if(error.visible)
+  {
+    setMultiValue(\"error\",\"visible\",false,
+    			  \"error_perc\",\"visible\",true,
+    			  \"error_unit\",\"text\", \"%\");
+  }
+  else
+  {
+    setMultiValue(\"error\",\"visible\",true,
+    			  \"error_perc\",\"visible\",false,
+    			  \"error_unit\",\"text\",dpGetUnit(g_dpe_x));
+  }
+}" 0
+ 0 1 1 0 1 E U  0 E 18 318 99 334
+0 2 0 "0s" 0 0 0 64 0 0  18 318 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Fehler e
+LANG:10001 10 Deviation 
+LANG:10027 20 Отклонение
+2 69
+"error_unit"
+""
+1 142 342 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+68 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 61 Umschaltung zwischen % und Absolutanzeige der Regelabweichung
+LANG:10001 39 Switch between % and absolute deviation
+LANG:10027 109 Переключение между относительным и абсолютным отклонением
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  if(error.visible)
+  {
+    setMultiValue(\"error\",\"visible\",false,
+    			  \"error_perc\",\"visible\",true,
+    			  \"error_unit\",\"text\", \"%\");
+  }
+  else
+  {
+    setMultiValue(\"error\",\"visible\",true,
+    			  \"error_perc\",\"visible\",false,
+    			  \"error_unit\",\"text\",dpGetUnit(g_dpe_x));
+  }
+}" 0
+ 0 1 1 0 1 E U  0 E 144 344 165 365
+0 2 0 "0s" 0 0 0 66 0 0  144 344 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 [ ]
+LANG:10001 3 [ ]
+LANG:10027 3 [ ]
+6 72
+"Border1"
+""
+1 10 560 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.38333333333333 0 0.925714285714286 -3.83333333333333 1.6 0 E 10 35 130 560
+6 40
+"border_3d"
+""
+1 14 551 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+2
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 16 -39 0 E 14 515 49 551
+13 1
+"close"
+""
+1 32 531 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+2 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 16 Panel schließen
+LANG:10001 11 Close Panel
+LANG:10027 27 Закрыть панель
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  30 529 154 563
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E "main()
+{
+  if(patternMatch(myPanelName(),$controller) || patternMatch(myPanelName(),dpGetComment($controller+\".\")) )
+    this.visible = true;
+  else
+    this.visible = false;
+}" 0
+
+14 12
+"value"
+""
+1 15 280 E E E 1 E 1 E N "PV_value" E N "_3DFace" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  13 278 147 308
+2 "0s" 0 0 0 2 0 -1  E E E
+14 33
+"output"
+""
+1 17 393 E E E 1 E 1 E N "OP_output" E N "_3DFace" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  15 391 146 421
+2 "0s" 0 0 0 2 0 -1  E E "main()
+{
+  float min, max, val, new_val = this.text; 
+  
+  dpGet(g_dpe_u+\":_pv_range.._min\",min,
+        g_dpe_u+\":_pv_range.._max\",max);
+  
+  if(new_val > max)
+    new_val = max;
+  else if (new_val < min)
+    new_val = min;
+    
+  dpSet(g_dpe_u,new_val);
+}" 0
+
+14 38
+"setpoint"
+""
+1 15 141 E E E 1 E 1 E N "SP_setpoint" E N "_Window" E E
+ E E
+39 0 0 0 0 0
+E "main()
+{
+  float min, max, val, new_val = this.text; 
+  dpGet(g_dpe_w, val,
+  		g_dpe_w+\":_pv_range.._min\",min,
+  		g_dpe_w+\":_pv_range.._max\",max);
+  
+  if(new_val > max)
+    new_val = max;
+  else if (new_val < min)
+    new_val = min;
+    
+  dpSet(g_dpe_w,new_val);
+}" 0
+ E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  13 139 74 169
+3 "0s" 0 0 0 2 0 -1  E E "main()
+{
+  float min, max, val, new_val = this.text; 
+  dpGet(g_dpe_w, val,
+  		g_dpe_w+\":_pv_range.._min\",min,
+  		g_dpe_w+\":_pv_range.._max\",max);
+  
+  if(new_val > max)
+    new_val = max;
+  else if (new_val < min)
+    new_val = min;
+    
+  dpSet(g_dpe_w,new_val);
+}" 0
+
+13 43
+"Button1"
+""
+1 107 476 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+43 0 0 1 80 0
+E E E
+0
+3
+LANG:10000 48 Reglerparameter berbeiten / Trendansicht [ALT+P]
+LANG:10001 37 Controller parameters / Trend [ALT+P]
+LANG:10027 62 Параметры контроллера / Тренд [ALT+P]
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  105 474 144 515
+
+P 
+12632256
+"pictures/icons/43.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  if(shapeExists(\"settings.cTrend\"))  // means the settings panel is visible and has to be closed
+  {
+    if(patternMatch(myPanelName(),$controller) || patternMatch(myPanelName(),dpGetComment($controller+\".\")) )
+    { 
+      removeSymbol(myModuleName(), myPanelName(),\"settings\"); 
+      setPanelSize( myModuleName(),myPanelName(), false, 187, 570);  
+      setMultiValue(\"close\",\"position\",10,570,
+                    \"\",\"fill\",\"[pattern,[tile,gif,icons/close_SysMgm_small_en.gif]]\");  
+    }
+  
+  }
+  else // means the settings panel is not visible and has to be opened
+  {
+    if(patternMatch(myPanelName(),$controller) || patternMatch(myPanelName(),dpGetComment($controller+\".\")) )
+    { 
+      addSymbol( myModuleName(), myPanelName(),\"objects_parts/CONTROL/controller_settings_ref.pnl\",
+                 \"settings\", makeDynString(\"$controller:\"+$controller, \"$child:\"+false), 179,0, 0 ,0,0);
+      setPanelSize( myModuleName(),myPanelName(), false, 784, 606);  
+      setMultiValue(\"close\",\"position\",364,570,
+                    \"\",\"fill\",\"[pattern,[tile,gif,icons/open_SysMgm_small_en.gif]]\"); 
+    }
+    else
+      ChildPanelOnRelativ(\"objects_parts/CONTROL/controller_settings_ref.pnl\",dpGetDescription($controller+\".\")+\" [\"+
+                          $controller+\"]\", makeDynString(\"$controller:\"+$controller, \"$child:\"+true),200,-500);
+  }
+}" 0
+ E E E
+13 48
+"Button3"
+""
+1 69 476 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ "main()
+{
+  int		 x,y;
+  float      max,min, val;
+  int 		 answer;
+  string 	 valStr;
+  dyn_string popUpItems;
+  
+  popUpItems = makeDynString(\"PUSH_BUTTON, \"+getCatStr(\"control\",\"reset_min_max_arrows\")+\",1,1\");
+
+  // open the popup with given parametrisation and the returnvalue int 'answer'
+  popupMenu(popUpItems,answer);
+  
+  // open the selected panel in the module \"panel\" an answer was given (answer not 0)
+  if (answer ==1)
+  { 
+  	  dpGet(g_dpe_x,g_max_val);
+  	  dpGet(g_dpe_x,val,
+  	  		g_dpe_x+\":_pv_range.._min\",min,
+  	  		g_dpe_x+\":_pv_range.._max\",max);
+
+    sprintf(valStr,dpGetFormat(g_dpe_x)+\" \"+dpGetUnit(g_dpe_x),val);
+
+    getValue(\"guideline\",\"position\",x,y);
+    setValue(\"max_val\",\"position\",x,y-(205*(val-min)/(max-min)),
+    				   \"toolTipText\",valStr);
+    setValue(\"min_val\",\"position\",x,y-(205*(val-min)/(max-min)),
+    				   \"toolTipText\",valStr);  	  
+  }
+}" 0
+ E
+48 0 0 1 72 0
+E E E
+0
+3
+LANG:10000 67 Schleppzeiger anzeigen/verbergen (Rechtsklick: Rücksetzen) [ALT+H]
+LANG:10001 56 Show / hide min-max pointers (ClickRight: Reset) [ALT+H]
+LANG:10027 112 Показать/скрыть указатели мин-макс (Правый шелчок: Сброс) [ALT+H]
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  67 474 106 515
+
+P 
+12632256
+"pictures/icons/48.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  if(max_val.visible)
+    setMultiValue(\"max_val\",\"visible\",false,
+    			  \"min_val\",\"visible\",false);
+  else
+    setMultiValue(\"max_val\",\"visible\",true,
+    			  \"min_val\",\"visible\",true);
+}" 0
+ E E E
+14 70
+"error"
+""
+1 17 339 E E E 1 E 1 E N "DEV_error" E N "_3DFace" E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 61 Umschaltung zwischen % und Absolutanzeige der Regelabweichung
+LANG:10001 39 Switch between % and absolute deviation
+LANG:10027 109 Переключение между относительным и абсолютным отклонением
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  15 337 145 367
+2 "0s" 0 0 0 2 0 -1  "main()
+{
+  if(error.visible)
+  {
+    setMultiValue(\"error\",\"visible\",false,
+    			  \"error_perc\",\"visible\",true,
+    			  \"error_unit\",\"text\", \"%\");
+  }
+  else
+  {
+    setMultiValue(\"error\",\"visible\",true,
+    			  \"error_perc\",\"visible\",false,
+    			  \"error_unit\",\"text\",dpGetUnit(g_dpe_x));
+  }
+}" 0
+ "main()
+{
+  string sys = getSystemName();
+  if (dpGet($controller+\".input.w\",g_dpe_w) == -1)
+    this.backColor(\"_dpdoesnotexist\");
+  else
+    if (dpExists(g_dpe_w))
+    {
+      dpConnect(\"updateBars\", g_dpe_w+\":_pv_range.._min\",
+  						      g_dpe_w+\":_pv_range.._max\",
+  						      $controller+\".state.e\",
+  						      $controller+\".state.nocontrol\",
+  						      $controller+\".cmd.on\");
+    }
+    	
+  error_unit.text = dpGetUnit(g_dpe_w);   
+}
+updateBars(string dp2, float min, string dp3, float max, string dp4, float e, 
+           string dp5, bool nocontrol, string dp6, bool on)
+{
+  string  valStr, format, format_perc;
+  float	  e_perc;
+  
+  e_perc = 100*e/(max-min);	
+  
+  sprintf(valStr,findFormat(e), e_perc);
+  error_perc.text = valStr;
+ 
+  sprintf(valStr,findFormat(e), e);
+  error.text = valStr;  
+  
+  if(nocontrol && on)
+  {
+    this.foreCol = \"DEV_error_in_tolerance\";
+    error_perc.foreCol = \"DEV_error_in_tolerance\";
+  }
+  else
+  {
+    this.foreCol = \"DEV_error\";
+    error_perc.foreCol = \"DEV_error\";
+  }
+}
+
+string findFormat(float val)
+{
+  string format;
+  val = fabs(val);
+  
+  if (val > 100)
+    format = \"%3.0f\";
+  else if (val > 10)
+    format = \"%2.1f\";
+  else if (val > 1 )
+    format = \"%2.2f\";
+  else if (val > 0.1)
+    format = \"%1.3f\";
+  else
+    format = \"%1.4f\";
+  
+  return format;
+}
+" 0
+ E
+14 71
+"error_perc"
+""
+1 15 338 E E E 1 E 1 E N "DEV_error" E N "_3DFace" E E
+ "main()
+{
+  if(error.visible)
+  {
+    setMultiValue(\"error\",\"visible\",false,
+    			  \"error_perc\",\"visible\",true,
+    			  \"error_unit\",\"text\", \"%\");
+  }
+  else
+  {
+    setMultiValue(\"error\",\"visible\",true,
+    			  \"error_perc\",\"visible\",false,
+    			  \"error_unit\",\"text\",dpGetUnit(g_dpe_x));
+  }
+}" 0
+ E
+70 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 61 Umschaltung zwischen % und Absolutanzeige der Regelabweichung
+LANG:10001 39 Switch between % and absolute deviation
+LANG:10027 109 Переключение между относительным и абсолютным отклонением
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  13 336 145 367
+2 "0s" 0 0 0 2 0 -1  "main()
+{
+  if(error.visible)
+  {
+    setMultiValue(\"error\",\"visible\",false,
+    			  \"error_perc\",\"visible\",true,
+    			  \"error_unit\",\"text\", \"%\");
+  }
+  else
+  {
+    setMultiValue(\"error\",\"visible\",true,
+    			  \"error_perc\",\"visible\",false,
+    			  \"error_unit\",\"text\",dpGetUnit(g_dpe_x));
+  }
+}" 0
+ E E
+29 73
+"SLIDER1"
+""
+1 133 47 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+72 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"invertedAppearance" "bool TRUE"
+"tickPosition" "enum 0"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  91 47 132 252
+12 SliderWidget
+1
+0 "Change" "(int value)"
+"  float  val = this.value;
+  
+  string valStr, format = dpGetFormat(g_dpe_w);
+  
+  sprintf(valStr,format, val);
+  setpoint.text = valStr;
+  dpSet(g_dpe_w,valStr);"
+"main()
+{
+  string sys = getSystemName();
+  int startvalue;
+  if (dpGet($controller+\".input.w\",g_dpe_w) == -1)
+  {
+    this.backColor(\"_dpdoesnotexist\");
+  
+  }  
+  else
+    if (dpExists(g_dpe_w))
+    {
+      dpGet(g_dpe_w, startvalue);
+      this.value = startvalue;
+       dpConnect(\"updateBars\", g_dpe_w,g_dpe_w+\":_pv_range.._min\",g_dpe_w+\":_pv_range.._max\");
+                }
+  if(dpSubStr(g_dpe_w, DPSUB_SYS) == sys)
+    { setpoint.toolTipText = dpSubStr(g_dpe_w,DPSUB_DP_EL);
+    }
+  else
+    setpoint.toolTipText = g_dpe_w;
+    	
+  setpoint_unit.text = dpGetUnit(g_dpe_w);
+  this.BackColor = OLEColor(\"_3DFace\");	   
+}
+updateBars(string dp, float val, string dp2, float min, string dp3, float max)
+{
+  string valStr, format = dpGetFormat(dp);
+  this.minValue = min;
+  this.lineStep = 1;
+  this.maxValue = max;
+  
+    
+  sprintf(valStr,format, val);
+  setpoint.text = valStr;
+}" 0
+29 74
+"outputSlider"
+""
+1 17.0000000000001 431 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+73 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"orientation" "enum 0"
+"tickPosition" "enum 1"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  17 431 144 465
+12 SliderWidget
+1
+0 "Change" "(int value)"
+"  float  val = value;
+  string valStr, format = dpGetFormat(g_dpe_u);
+  sprintf(valStr,format, val);
+  output.text = valStr;
+  
+  dpSet(g_dpe_u,valStr);"
+"main()
+{
+  string sys = getSystemName();
+    
+  
+  if (dpGet($controller+\".output.u\",g_dpe_u) == -1)
+    this.backColor(\"_dpdoesnotexist\");
+  else
+    if (dpExists(g_dpe_u))
+    {
+      dpConnect(\"updateBars\", g_dpe_u,
+  						      g_dpe_u+\":_pv_range.._min\",
+  						      g_dpe_u+\":_pv_range.._max\");
+  						      
+  	  dpConnect(\"indicateLimiter\",$controller+\".state.limiter\");					      
+    }
+  if(dpSubStr(g_dpe_u, DPSUB_SYS) == sys)
+    output.toolTipText = dpSubStr(g_dpe_u,DPSUB_DP_EL);
+  else
+    output.toolTipText = g_dpe_u;
+    	
+  output_unit.text = dpGetUnit(g_dpe_u);
+  this.BackColor = OLEColor(\"_3DFace\");	  
+   
+}
+updateBars(string dp, float val, string dp2, float min, string dp3, float max)
+{
+  string valStr, format = dpGetFormat(dp);
+  int state;
+  dpGet($controller+\".cmd.on\",state);
+
+  this.maxValue = max;
+  this.minValue = min;
+  if (state == 1)  
+  {this.value = val;}
+ 
+  sprintf(valStr,format, val);
+  output.text = valStr;
+}
+indicateLimiter(string dp, bool limiter)
+{
+  if (limiter)
+    this.backCol = OLEColor(\"OP_output_limited\");
+  else
+    this.backCol = OLEColor(\"OP_output\");  
+}" 0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

@@ -1,0 +1,332 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 623 142 N "STD_panel_back" 0
+"main()
+{
+  bool Warningact, Alertact;
+  float WarningAFG, AlertAFG;
+  dpGet(\"Wattersupply_Alertfilter_Alert.Sumalert:_alert_hdl.._active\",Alertact);
+  dpGet(\"Wattersupply_Alertfilter_Warning.Sumalert:_alert_hdl.._active\",Warningact);
+  dpGet(\"Wattersupply_Alertfilter_Alert.Sumalert:_alert_hdl.._filter_threshold\",AlertAFG);
+  dpGet(\"Wattersupply_Alertfilter_Warning.Sumalert:_alert_hdl.._filter_threshold\",WarningAFG);
+  Alerts.text = AlertAFG;
+  Warning.text = WarningAFG;
+  CHECK_BOX1.state(0) = Warningact;
+  CHECK_BOX1.state(1) = Alertact;
+  if (Warningact == true)
+  { 
+    Warning.enabled = false;
+    Warningbt.enabled = false;
+                      }
+    if (Alertact == true)
+  { 
+    Alerts.enabled = false;
+    Alertbt.enabled = false;
+                      }                  
+  }" 0
+ E E E E 1 -1 -1 0  81 68
+""0  1
+E E 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+20 1
+"CHECK_BOX1"
+""
+1 24 24 E E E 1 E 1 E N "_3DText" E N "STD_panel_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,21,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,21,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,21,5,50,0,0,0,0,0
+0  22 22 264 105
+2
+T 
+3
+LANG:10000 21 Alarm Filter Warnings
+LANG:10001 21 Alarm Filter Warnings
+LANG:10027 29 Фильтр по сообщ.
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 19 Alarm Filter Alerts
+LANG:10001 19 Alarm Filter Alerts
+LANG:10027 32 Фильтр по алармам
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, int state)
+{
+  if (button == 0 && state == 1)
+  {
+    dpSet(\"Wattersupply_Alertfilter_Warning.Sumalert:_alert_hdl.._active\", TRUE);
+    Warning.enabled = false;
+    Warningbt.enabled = false;
+  }
+  if(button == 0 && state == 0)
+  {
+    dpSet (\"Wattersupply_Alertfilter_Warning.Sumalert:_alert_hdl.._active\", false);
+     Warning.enabled = true;
+    Warningbt.enabled = true;
+  }
+  if(button == 1 && state == 1)
+  {
+    dpSet (\"Wattersupply_Alertfilter_Alert.Sumalert:_alert_hdl.._active\", true);
+    Alerts.enabled = false;
+    Alertbt.enabled = false;
+  }
+  if (button == 1 && state == 0)
+  {
+    dpSet (\"Wattersupply_Alertfilter_Alert.Sumalert:_alert_hdl.._active\", false);
+    Alerts.enabled = true;
+    Alertbt.enabled = true;
+  }
+  }" 0
+14 4
+"Alerts"
+""
+1 307 65 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  305 63 371 90
+3 "2d" 2 0 0 0 0 -1  E E E
+14 5
+"Warning"
+""
+1 307 25 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  305 23 371 50
+3 "2d" 2 0 0 0 0 -1  E E E
+2 6
+"PRIMITIVE_TEXT3"
+""
+1 570 -39 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  1 E 570 -39 724 -22
+0 5 2 "0s" 0 0 0 65 0 0  570 -39 1
+3
+LANG:10000 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+LANG:10001 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+LANG:10027 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 21 Alarmfilter Grenzwert
+LANG:10001 26 Threshold filter parameter
+LANG:10027 50 Пороговое значение фильтра
+13 8
+"Warningbt"
+""
+1 395 22 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  393 20 616 52
+
+T 
+3
+LANG:10000 28 Alarmfilter Grenzwert setzen
+LANG:10001 30 Set Threshold filter parameter
+LANG:10027 43 Уст. пороговое значение
+"main()
+{ float AFG_warning;
+  AFG_warning = Warning.text ;
+  dpSet (\"Wattersupply_Alertfilter_Warning.Sumalert:_alert_hdl.._filter_threshold\",AFG_warning);
+}" 0
+ E E E
+13 9
+"Alertbt"
+""
+1 395 65 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  393 63 616 95
+
+T 
+3
+LANG:10000 28 Alarmfilter Grenzwert setzen
+LANG:10001 30 Set Threshold filter parameter
+LANG:10027 43 Уст. пороговое значение
+"main()
+{ float AFG_warning;
+  AFG_warning = Alerts.text ;
+  dpSet (\"Wattersupply_Alertfilter_Alert.Sumalert:_alert_hdl.._filter_threshold\",AFG_warning);
+}" 0
+ E E E
+13 11
+"Button17"
+""
+1 449 110 E E E 1 E 1 E N "STD_text" E N "STD_pushbutton_back" E E
+ E E
+16 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  447 108 551 138
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 2 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 3 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 4 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 5 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 12 0 "" 2
+1 "leftClick" 1 1 "main()
+{
+  std_help($hlp_keyword);
+}" 0
+ 
+0
+0
+LAYER, 6 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 7 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 232 284 T 14 1 0 1 406 -74
+1
+"$hlp_keyword""Alarm Filter"
+0

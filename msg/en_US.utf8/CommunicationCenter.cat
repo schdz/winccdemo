@@ -1,0 +1,59 @@
+shiftEntry,Shift Entry
+shiftEdit,Edit Shift
+delete,delete
+confirmDelete,Do you really want to delete
+weekDay1,Monday
+weekDay2,Tuesday
+weekDay3,Wednesday
+weekDay4,Thursday
+weekDay5,Friday
+weekDay6,Saturday
+weekDay7,Sunday
+at,at
+Day,Day
+colorUsed,Color used from another recipient!
+entryExists,This entry already exists!
+defMissing,Recipient or color not defined!
+colorFailure,For this recipient is already another color defined! Colour is suggested!
+showIndex,Show Index
+hideIndex,Hide Index
+noTimeOrDuration,Please select 1. duration, 2. half day and 3. start time to delete an allocation!
+noTimeDurOrPersonnel,Please select 1. duration, 2. half day, 3. start time and 4. a recipient to change an allocation!
+noDurOrPersonnel,Please select 1. duration and 2. a recipient to set a new allocation!
+noName,Please insert a name first!
+recipient,Recipients
+rc_entry,Recipient Entry
+rc_entry_device,Device Entry
+mobilephone,Mobile
+phone,Phone
+pager,Pager
+SMS,SMS
+email,EMail
+fax,Fax
+wllText1,low (<10h/week)
+wllText2,medium (<20h/week)
+wllText3,high (<30h/week)
+wllText4,very high (<40h/week)
+wllText5,arbitrary (<168h/week)
+validNumber,Number has to be digits!
+validPassword,ID has to be four digits!
+validPersNum,PersonnelNumber must not be an empty String an has to be unique!
+shiftAggregationEdit,Edit Shift Set
+noDomainsDefined,Please edit domains first!
+shiftAggregationBlanks,Shift set overview
+RecipientUsed,The recipient is used in the following shifts/serviceplans!
+UsedInAggs,This element is used in the following shift sets!
+delNotPos,Deletion not possible!
+editNotPos,Modification functions reduced!
+ackfrom,Acknowledged by
+IdentifierError, This devicename already exists
+devNumberToolTip,e.g.: +4369912345678
+devMailToolTip,e.g.: name@hostname.com
+
+status_1,Shift plan
+status_2,Static calling list
+status_3,Deactivated
+
+-10,User is member of an invalid domain!
+-11,Invalid workload level!
+-12,Invalid device found in personal messaging order!

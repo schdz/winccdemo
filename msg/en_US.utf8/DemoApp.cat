@@ -1,0 +1,95 @@
+tank,Tank
+production_id,Prod-ID
+reaction_tank,Reaction tank
+instExt1,Installation
+instExt2,The installation process has been completed\nsucessfully.\nPlease restart your project now!
+title_of_dpeMonitor,DPE Monitor
+title_of_xy_trend,XY Trend
+title_of_groups,Groups
+title_of_measurements,Overview "measurements"
+title_of_counters,Overview "counters"
+title_of_target_values,Overview "target values"
+setpoints,Setpoints
+title_of_binary_commands,Overview "binary commands"
+binarycommands,Binary_commands
+title_of_userdefined,Overview "User-defined"
+userdefined,User-defined
+title_of_login_list,Overview "Login list"
+title_of_dpe_info_editable,Direct interrogation - Set values
+title_of_dpe_info,Direct interrogation
+title_of_bar_trend,Bar trend
+title_of_summation_trend,Summation trend
+title_of_tc_trend,Time-comparison trend
+panelNotFound,The specified panel does not exist in the\ngiven location: 
+not_defined,not defined
+no_archiv,Value is not archived
+last5minutes,last 5 min
+last15minutes,last 15 min
+last1hour,last 1 h
+last24hours,last 24 h
+StatisticTimePeriod,Choose Time Period
+loginAs,login as...
+logout,logout
+userC,user administration
+loginT,login time
+userP,user report
+visC,close visualisation
+valSmall, Starting-time must be smaller than end-time! 
+NoArchiv, This data point is not archived! 
+timeVal, The time intervall may not be situated in the future! 
+title_of_tc_comparison, Time-comparison trend
+counters,Counters
+values,Values
+measurements,Measurements
+commands,Commands
+properties,Properties
+deadEnd,The requested functionality is not available\nin this demo application.
+DpeNotExisting,Selection not a complete datapoint element
+veryMuch,Selection may cause data overflow
+userNotAllowed,User not authorized !
+PVSSVRangeNotExisting, The WinCC OA value-range does not contain acceptable values !
+SelectDp, Please select first a valid data point
+WrongType,DP-item must be of the type DYN_BOOL, DYN_INT, DYN_UNIT or DYN_FLOAT!
+WrongTypeGen,DP-item has a wrong type!
+reallyClose,Do you really want to close the current user\ninterface ? (SCADA System keeps running)
+timeValPast,A more current value is already present! 
+ChooseCloud,Please select first a type of cloud 
+title_of_man_input,Manual input
+rdworks,Road works
+danger,Danger
+left,Keep left
+right,Keep right
+speed,Speed limit
+jam,Traffic jam
+overtk,Overtaking prohibited
+NoAlertDelay,No alarm-horn delay time was indicated! 
+NoPriority,No priority was indicated! 
+AlertHornDPE,One or two fields in the window "DPE selection" were not correctly filled out!
+AlertHornWAV,One or two fields in the window "WAV File Parameter" were not correctly filled out!
+AlertHornBEEPER,One or more fields in the window "BEEPER Parameter" were not correctly filled out!
+AlarmHornTEST,In order to start the sound test, all necessary fields must be filled out 
+AlarmHornWAVFile,Please select first a wav- Sound File
+AlarmHornWAVFileWrong,In order to play sounds, the file of the type ".wav"  
+Values,values
+frequdist,Frequency distribution
+windProfile,Wind direction profile
+panelNotExisting,The selected panel does not exist
+InfoRestartHorn,In order to activate the new adjustments, the horn will be restartet now 
+noDollarParams,There are no dollar parameters
+leftClicked,Mouse-click left !!!
+rightClicked,Mouse-click right !!!
+dblClicked,Double-click !!!
+provideName&Number,Please enter name and phone number of the\nrecipient correctly.
+noMessage,You did not enter a message text.
+userNotSaved,Recipient has to be saved before messages can be sent.
+activatingSMSSend,Activating SMS transmission to:
+water_supply,Water_supply
+building_automation,Building_automation
+production,Production
+traffic,Traffic_control
+weather_station,Weather_station
+warning,Warning
+path_incorrect,The selected path is not correct \nor points to an invalid file (format)!
+ 
+language,en_US.iso88591
+timeRange,New time range...

@@ -1,0 +1,29 @@
+direct_op_on,Activate direct operation
+direct_op_off,Deactivate direct operation
+val_ref_off, Show process value
+val_ref_on, Hide process value
+reset_min_max_arrows, Reset min/max pointers
+controller_settings, Controller settings:
+mistyped,Type error
+dpenotexistent,Datapoint element does not exist !
+dpenotnumeric,Datapoint element is not numeric ! Use [float] or [int] types !
+setpoint_tooltip,Setpoint - 
+decrease_button,Decrease setpoint by
+increase_button,Increase setpoint by
+controller_loop,Controller Loop: 
+controller_loop_1,Controller Loop: 
+click_to_settings,(Click -> Details)
+control_off, Automatic control not active (manual operation)
+control_on,Automatic control active
+control_idle,Automatic control active but idle (value within tolerance)
+sim_settings,Sim settings
+no_conf_name,No name for these controller settings specified !
+no_conf_delete,No configuration selected for deletion !
+no_load_name,No loadable parameter set has been selected in the combobox !
+overwrite_conf,The configuration name allready exists !\nDo you want to save the current settings under this name ?
+wrong_load_name,The selected name does not exist as loadable parameter set !
+overwrite_settings,Do you want to replace the current controller\nsettings with the settings provided by the\nselected configuration ?
+really_delete,Do you really want to delete the selected\nparameter configuration ?
+really_distribute_settings_1,Do you really want to apply the current settings\nto 
+really_distribute_settings_2, controllers of current type 
+really_distribute_settings_3, ?

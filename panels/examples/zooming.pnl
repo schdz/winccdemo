@@ -1,0 +1,1061 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+E E E E E 1 -1 -1 0  956 51
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 44
+"Border3"
+""
+1 135 575 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 135 5 998 575
+2 45
+"Text1"
+""
+1 13 2 E E E 1 E 1 E N "HVAC_Text_active" E N "_Transparent" E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 15 4 119 33
+0 2 2 "0s" 0 0 0 192 0 0  15 4 1
+3
+LANG:10000 26 Arial,-1,25,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,25,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,25,5,75,0,0,0,0,0
+0 3
+LANG:10000 7 Zooming
+LANG:10001 7 Zooming
+LANG:10027 14 Масштаб
+2 54
+"ZoomStepText"
+""
+1 11 433 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 13 435 116 453
+0 2 0 "0s" 0 0 0 192 0 0  13 435 1
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Zoom Schritte
+LANG:10001 10 Zoom steps
+LANG:10027 22 Шаг масштаб.
+2 55
+"Text3"
+""
+1 12 192 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 14 194 108 212
+0 2 0 "0s" 0 0 0 192 0 0  14 194 1
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Zoom-Faktor
+LANG:10001 11 Zoom factor
+LANG:10027 14 Масштаб
+2 75
+"PanStepText"
+""
+1 12 489 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+74 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 14 491 76 509
+0 2 0 "0s" 0 0 0 192 0 0  14 491 1
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Panning
+LANG:10001 7 Panning
+LANG:10027 16 Панорама
+4 86
+"Line1"
+""
+1 12 320 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+84 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  12 320 122 320
+14 82
+"CurrentPanelFileBox"
+""
+1 12 410 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+80 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0  10 408 123 438
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  this.text = \"examples/ZoomWindow.pnl\";
+}" 0
+ E
+29 43
+"ZoomWindow"
+""
+1 95 -381 E E E 1 E 1 E N "_Window" E N {102,102,204} "main()
+{
+  string sPanel, sPanelName;
+  
+  // set the 'canvas class' object, that allows panel-in-panel displaying
+  // with it´s own module name \"ZoomWindow\"
+  propPut(\"\",\"ModuleName\",\"ZoomWindow\");
+  
+  // check if the specified panel still exists (readable) and if so
+  // open it, if not -> open a standard error dialog
+  if (access((PROJ_PATH+\"examples/zoomWindow.pnl\"),R_OK))
+  { 
+     RootPanelOnModule(\"examples/zoomWindow.pnl\",\"zoom\",\"ZoomWindow\",makeDynString(\"\"));
+  }
+  else
+  {
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",\"\",
+                             makeDynString((getCatStr(\"DemoApp\",\"panelNotFound\")+sPanel)));
+  }
+}" 0
+ E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  140 10 993 569
+15 Canvas.Canvas.1
+0
+E13 47
+"ZoomIn"
+""
+1 12 40 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+46 1 0 0 38 0
+E E E
+0
+3
+LANG:10000 22 Vergrößern (Ctrl Up)
+LANG:10001 17 Zoom In (Ctrl Up)
+LANG:10027 28 Увеличить (Ctrl Up)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,75,0,0,0,0,0
+0  10 38 64 82
+
+P 
+12632256
+"pictures/icons/z_zoom_in.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  float  zoomStep, currentFactor, minFactor, maxFactor;
+  string szoomStep = StepSelector.text;
+  
+  // cutoff unit and blanks, step is now e.g. 15
+  zoomStep = strrtrim(szoomStep,\" %\");
+  
+  // normalize step from +15% to 1.15 as factor
+  zoomStep = 1 + zoomStep / 100;
+  
+  getZoomFactor(currentFactor,\"ZoomWindow\");
+  getZoomRange(minFactor, maxFactor);
+  
+ 
+  if (currentFactor * zoomStep >= maxFactor)
+    zoomStep = (maxFactor-0.001) / currentFactor;
+    
+
+  panelZoomIn(\"ZoomWindow\",zoomStep);
+
+}" 0
+ E E E
+13 48
+"Button3"
+""
+1 72 40 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+47 1 0 0 40 0
+E E E
+0
+3
+LANG:10000 23 Verkleinern (Ctrl Down)
+LANG:10001 20 Zoom Out (Ctrl Down)
+LANG:10027 30 Уменьшить (Ctrl Down)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,75,0,0,0,0,0
+0  70 38 124 82
+
+P 
+12632256
+"pictures/icons/z_zoom_out.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  float  zoomStep, currentFactor, minFactor, maxFactor;
+  string szoomStep = StepSelector.text;
+  
+  // cutoff unit and blanks, step is now e.g. 15
+  zoomStep = strrtrim(szoomStep,\" %\");
+  
+  // normalize step from -15% to 1.15 as factor
+  zoomStep = 1 + zoomStep / 100;
+  
+  getZoomFactor(currentFactor,\"ZoomWindow\");
+  getZoomRange(minFactor, maxFactor);
+  
+ 
+  if (currentFactor / zoomStep <= minFactor)
+    zoomStep =  currentFactor / (minFactor+0.001);
+    
+
+  panelZoomOut(\"ZoomWindow\",zoomStep);
+}" 0
+ E E E
+13 50
+"Button4"
+""
+1 12 90 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+49 1 0 0 49 0
+E E E
+0
+3
+LANG:10000 24 Originalgröße (Ctrl 1)
+LANG:10001 17 Zoom 1:1 (Ctrl 1)
+LANG:10027 27 Масштаб 1:1 (Ctrl 1)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,75,0,0,0,0,0
+0  10 88 64 132
+
+P 
+12632256
+"pictures/icons/z_zoom_ori.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  moduleOriginalSize(\"ZoomWindow\");
+}" 0
+ E E E
+22 53
+"StepSelector"
+""
+1 13 454 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 42 Zoom Schrittweite für + / - Schalflächen
+LANG:10001 33 Zoom step width for + / - buttons
+LANG:10027 78 Ширина шага масштабирования для кнопок + / -
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,75,0,0,0,0,0
+0  11 452 123 482
+6
+3
+LANG:10000 6    5 %
+LANG:10001 7     5 %
+LANG:10027 7     5 %
+
+0
+3
+LANG:10000 6   10 %
+LANG:10001 6   10 %
+LANG:10027 6   10 %
+
+0
+3
+LANG:10000 6   15 %
+LANG:10001 6   15 %
+LANG:10027 6   15 %
+
+1
+3
+LANG:10000 6   25 %
+LANG:10001 6   25 %
+LANG:10027 6   25 %
+
+0
+3
+LANG:10000 6   50 %
+LANG:10001 5   50%
+LANG:10027 5   50%
+
+0
+3
+LANG:10000 5 100 %
+LANG:10001 5 100 %
+LANG:10027 5 100 %
+
+0
+
+E
+E
+E
+ 0 0
+22 56
+"ZoomCombo"
+""
+1 14 214 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+55 1 0 0 70 0
+E E E
+0
+3
+LANG:10000 15 Zoom Faktor [%]
+LANG:10001 15 Zoom factor [%]
+LANG:10027 18 Масштаб [%]
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,75,0,0,0,0,0
+0  12 212 126 242
+0
+
+"main()
+{
+  string     ModuleName = \"ZoomWindow\";
+
+  dpConnect(\"zoomWorkCB\",myUiDpName()+\".Zoom.ModuleName:_online.._value\",
+                           myUiDpName()+\".Zoom.Factor:_online.._value\",
+                           myUiDpName()+\".Zoom.Set:_online.._value\");
+                         
+  ZoomCombo.items = makeDynString(\"  50 %\", \"  75 %\", \"100 %\", \"115 %\", \"125 %\", \"150 %\", \"200 %\", \"400 %\");
+                        
+}
+zoomWorkCB(string dp1, string moduleName, string dp2, float factor, string dp3, int iSet)
+{
+  int    iFactor;
+  string sFactor;
+  
+  if (moduleName != \"ZoomWindow\") return;
+
+  // the module on the right side labled \"ZoomWindow\" is zoomed
+  factor *= 100; iFactor = factor + 0.5;
+  sprintf(sFactor,\"%d\",iFactor);
+  sFactor += \" %\";
+  this.text = sFactor;
+}" 0
+
+"main()
+{ 
+  string    sFactor = this.text;
+  float		fFactor, maxFactor, minFactor;
+  int		iFactor;
+  
+  
+  
+  // calculate numeric factor e.g. 1.15 out of user
+  // input e.g. 25%
+  strreplace(sFactor,\" %\",\"\");
+  fFactor = sFactor;
+  iFactor = fFactor + 0.5; if (iFactor <= 0) iFactor = 100;
+  sprintf(sFactor,\"%d\",iFactor); sFactor += \" %\";
+  this.text = sFactor;
+  fFactor = iFactor/100.0;
+  
+  getZoomRange(minFactor, maxFactor);
+  
+    if (fFactor > maxFactor)
+    fFactor = maxFactor;
+  else
+    if (fFactor < minFactor)
+      fFactor = minFactor;
+  
+  
+  // zoom module with name \"ZoomWindow\" by the factor fFactor
+  // and move it 0 points left and 0 points down (no panning)
+  ZoomModule(\"ZoomWindow\",fFactor,0,0);  
+  
+  
+}" 0
+
+E
+ 1 0
+13 58
+"Button5"
+""
+1 72 90 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+57 0 0 1 89 0
+E E E
+0
+3
+LANG:10000 31 Ausschnitt vergrößern (Alt Y)
+LANG:10001 23 Zoom with Mouse (Alt Y)
+LANG:10027 49 Масштабирование мышью (Alt Y)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,75,0,0,0,0,0
+0  70 88 124 132
+
+P 
+12632256
+"pictures/icons/z_zoom_mous.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  // set module to the operation mode \"zoom\"
+  // instead of SCALE_FIT_TO_SHORTEST or 
+  // SCALE_FIT_TO_MODULE
+  
+  setScaleStyle(SCALE_ZOOM, \"ZoomWindow\"); 
+
+  trackZoomMode(\"ZoomWindow\");
+}" 0
+ E E E
+13 59
+"Button1"
+""
+1 12 140 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+58 1 0 0 78 0
+E E E
+0
+3
+LANG:10000 25 Naviator öffnen (Ctrl N)
+LANG:10001 29 Zoom / Pan Navigator (Ctrl N)
+LANG:10027 91 Навигатор масштабирования / панорамирования (Ctrl N)
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  10 138 124 182
+
+P 
+12632256
+"pictures/icons/zoom_enabled.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  ChildPanelOnModule(\"vision/navigator.pnl\",
+      \"Navigator\",
+      //myModuleName(),
+      \"ZoomWindow\",
+      makeDynString(\"\"),
+      0, 0);
+}" 0
+ E E E
+13 63
+"PanLeft"
+""
+1 13 549 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+62 0 0 0 37 0
+E E E
+0
+3
+LANG:10000 29 Verschieben nach links (Left)
+LANG:10001 15 Pan left (Left)
+LANG:10027 48 Панорамирование влево (Left)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0  11 547 39 575
+
+P 
+12632256
+"pictures/icons/z_left.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string sPixels = PanSelector.text;
+  int Pixels;
+  
+  sPixels = strrtrim(sPixels,\" Pixel\");
+  Pixels = sPixels;
+  
+  ZoomModule(\"ZoomWindow\",0,-Pixels,0,true);
+}" 0
+ E E E
+22 74
+"PanSelector"
+""
+1 13 513 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+73 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 29 Schreitweite für Verschieben
+LANG:10001 22 Step widht for panning
+LANG:10027 52 Ширина шага панорамирования
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,75,0,0,0,0,0
+0  11 511 123 541
+5
+3
+LANG:10000 10   10 Pixel
+LANG:10001 10   10 Pixel
+LANG:10027 14   10 пикс.
+
+0
+3
+LANG:10000 10   25 Pixel
+LANG:10001 10   25 Pixel
+LANG:10027 14   25 пикс.
+
+0
+3
+LANG:10000 10   50 Pixel
+LANG:10001 10   50 Pixel
+LANG:10027 14   50 пикс.
+
+1
+3
+LANG:10000 9 100 Pixel
+LANG:10001 9 100 Pixel
+LANG:10027 13 100 пикс.
+
+0
+3
+LANG:10000 9 250 Pixel
+LANG:10001 9 250 Pixel
+LANG:10027 13 250 пикс.
+
+0
+
+E
+E
+E
+ 0 0
+13 78
+"Button2"
+""
+1 10 257 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+77 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 37 (De)Cluttering Einstellungen (global)
+LANG:10001 32 (De)Cluttering settings (global)
+LANG:10027 75 Настройки адаптивной детализации (общие)
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  10 257 63 309
+
+P 
+12632256
+"pictures/icons/zoom_NEW.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  ChildPanelOnCentralModal(\"vision/clutteringPara.pnl\",\"(De)Cluttering\", makeDynString());
+}" 0
+ E E E
+13 79
+"ShowDetailsButton"
+""
+1 70 257 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+78 1 0 0 72 0
+E E E
+0
+3
+LANG:10000 26 Details anzeigen/verbergen
+LANG:10001 17 Show/hide details
+LANG:10027 42 Показать/скрыть детали
+
+0
+3
+LANG:10000 26 Arial,-1,20,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,75,0,0,0,0,0
+0  70 257 123 309
+
+T 
+3
+LANG:10000 3 ...
+LANG:10001 3 ...
+LANG:10027 3 ...
+"main()
+{
+  bool visible;
+  
+  visible = ChangeRootPanelButton.visible;
+  
+  if(visible)
+    setMultiValue(\"ChangeRootPanelButton\",\"visible\",false,
+                  \"FitToModuleButton\",\"visible\",false,
+                  \"PanDown\",\"visible\",false,
+                  \"PanUp\",\"visible\",false,
+                  \"PanRight\",\"visible\",false,
+                  \"PanLeft\",\"visible\",false,
+                  \"PanSelector\",\"visible\",false,
+                  \"SetDefaultPanel\",\"visible\",false,
+                  \"ZoomStepText\",\"visible\",false,
+                  \"PanStepText\",\"visible\",false,
+                  \"StepSelector\",\"visible\",false);
+  else
+    setMultiValue(\"ChangeRootPanelButton\",\"visible\",true,
+                  \"FitToModuleButton\",\"visible\",true,
+                  \"PanDown\",\"visible\",true,
+                  \"PanUp\",\"visible\",true,
+                  \"PanRight\",\"visible\",true,
+                  \"PanLeft\",\"visible\",true,
+                  \"PanSelector\",\"visible\",true,
+                  \"SetDefaultPanel\",\"visible\",true,
+                  \"ZoomStepText\",\"visible\",true,
+                  \"PanStepText\",\"visible\",true,
+                  \"StepSelector\",\"visible\",true);
+  
+  
+}" 0
+ E E E
+13 80
+"ChangeRootPanelButton"
+""
+1 12 332 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+79 0 0 1 78 0
+E E E
+0
+3
+LANG:10000 48 Neues Panel zur Anzeige im Modul wählen (Alt N)
+LANG:10001 45 Select new panel to display in module (Alt N)
+LANG:10027 94 Выберите новую панель для отображения в модуле (Alt N)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0  10 330 64 382
+
+P 
+12632256
+"pictures/icons/z_open.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string panelpath;
+  
+  panelSelector(panelpath);
+  
+  if (panelpath != \"\")
+  {
+    CurrentPanelFileBox.text = panelpath;
+    RootPanelOnModule( panelpath,panelpath,\"ZoomWindow\",makeDynString());
+    SetDefaultPanel.state(0) = false;
+  }
+}" 0
+ E E E
+13 81
+"FitToModuleButton"
+""
+1 72 332 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+79 0 0 1 70 0
+E E E
+0
+3
+LANG:10000 32 An Modulgröße anpassen (Alt F)
+LANG:10001 21 Fit to module (Alt F)
+LANG:10027 38 По ширине модуля (Alt F)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0  70 330 123 382
+
+P 
+12632256
+"pictures/icons/z_fit_to_page.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"// This script allows \"fit to module\" zooming
+main()
+{
+  dyn_int pnlSize;
+  float   factor, xFactor, yFactor, 
+          mwidth = 854, mhight = 560;   // width and height of the module in pixels
+  float   maxFactor, minFactor;
+  
+  getZoomRange(minFactor, maxFactor);
+  
+  // read the pixel size of the panel
+  pnlSize = getPanelSize(CurrentPanelFileBox.text);
+  
+  // determine the factors for \"fit to module\"
+  xFactor = mwidth / pnlSize[1];
+  yFactor = mhight / pnlSize[2];
+  
+  
+  // if proportions of new panel and module do not fit,
+  // fit so that everything is visible...
+  factor = (xFactor < yFactor) ? xFactor : yFactor;
+  if (factor > maxFactor)
+    factor = maxFactor;
+  else
+    if (factor < minFactor)
+      factor = minFactor;
+
+  // Zoom the module by \"factor\" but do not pan: \"0,0\"
+  ZoomModule(\"ZoomWindow\",factor,0,0);
+
+}" 0
+ E E E
+13 83
+"PanUp"
+""
+1 41 549 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+81 0 0 0 38 0
+E E E
+0
+3
+LANG:10000 26 Verschieben nach oben (Up)
+LANG:10001 11 Pan up (Up)
+LANG:10027 46 Панорамирование вверх (Up)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0  39 547 67 575
+
+P 
+12632256
+"pictures/icons/z_up.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string sPixels = PanSelector.text;
+  int Pixels;
+  
+  sPixels = strrtrim(sPixels,\" Pixel\");
+  Pixels = sPixels;
+  
+  ZoomModule(\"ZoomWindow\",0,0,-Pixels,true);
+}" 0
+ E E E
+13 84
+"PanDown"
+""
+1 69 549 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+82 0 0 0 40 0
+E E E
+0
+3
+LANG:10000 29 Verschieben nach unten (Down)
+LANG:10001 15 Pan down (Down)
+LANG:10027 46 Панорамирование вниз (Down)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0  67 547 95 575
+
+P 
+12632256
+"pictures/icons/z_down.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string sPixels = PanSelector.text;
+  int Pixels;
+  
+  sPixels = strrtrim(sPixels,\" Pixel\");
+  Pixels = sPixels;
+  
+  ZoomModule(\"ZoomWindow\",0,0,Pixels,true);
+}" 0
+ E E E
+13 85
+"PanRight"
+""
+1 97 549 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+83 0 0 0 39 0
+E E E
+0
+3
+LANG:10000 31 Verschieben nach rechts (Right)
+LANG:10001 17 Pan right (Right)
+LANG:10027 51 Панорамирование вправо (Right)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0  95 547 123 575
+
+P 
+12632256
+"pictures/icons/z_right.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string sPixels = PanSelector.text;
+  int Pixels;
+  
+  sPixels = strrtrim(sPixels,\" Pixel\");
+  Pixels = sPixels;
+  
+  ZoomModule(\"ZoomWindow\",0,Pixels,0,true);
+}" 0
+ E E E
+20 88
+"SetDefaultPanel"
+""
+1 11 398 E E E 1 E 0 E N "_3DText" E N "_3DFace" E E
+ E E
+86 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 30 Rücksetzen auf Standard-Panel
+LANG:10001 22 Reset to default panel
+LANG:10027 57 Вернуться к стандартной панели
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0  9 396 133 430
+1
+T 
+3
+LANG:10000 13 Originalpanel
+LANG:10001 11 Set default
+LANG:10027 19 Исх.панель
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, bool state)
+{
+  if (state)
+  {
+    CurrentPanelFileBox.text = \"examples/ZoomWindow.pnl\";
+    RootPanelOnModule( \"examples/ZoomWindow.pnl\",\"Zoom\",\"ZoomWindow\",makeDynString()); 
+  }
+    
+    
+}" 0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

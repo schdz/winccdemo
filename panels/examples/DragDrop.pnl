@@ -1,0 +1,1183 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 1004 584 N "STD_panel_back" 1
+"$_javauiModuleId"
+E E E E E 1 -1 -1 0  65 70
+""0  1
+E E 3
+"CBRef" "1"
+"EClose" E
+"runtimeSelection" ""
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+29 75
+"TEXT_EDIT1"
+""
+1 540 360 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+113 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"acceptDrops" ""
+"bold" "bool FALSE"
+"italic" "bool FALSE"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  540 360 880 550
+15 PVSS.TextEdit.1
+0
+E14 4
+"timeText"
+""
+1 40 450 E E E 1 E 1 E N "_WindowText" E N "_3DFace" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  38 448 382 476
+3 "0s" 0 0 0 1 0 -1  E E E
+14 5
+"statusText"
+""
+1 40 480 E E E 1 E 1 E N "_WindowText" E N "_3DFace" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  38 478 382 506
+3 "0s" 0 0 0 1 0 -1  E E E
+6 0
+"RECTANGLE10"
+""
+1 15 25 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+68 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1.333333333333334 0 0.5128205128205127 460 127.1794871794872 1 E 15 25 390 415
+29 1
+"DP_TREE1"
+""
+1 39.99999999999999 160 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  40 160 380 380
+29 DatapointTree.DatapointTree.1
+0
+E14 2
+"dp"
+""
+1 40 390 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"acceptDrops" ""
+"DragDrop" "main(string information, int dragType)
+{
+ int lang;
+ dyn_string error; 
+
+ error[1]= \"Bitte nur ein Datenpunktelement einf�gen\";
+ error[2] = \"Please insert only a Datapointelement\";
+  valueText.text=\"\";
+ timeText.text=\"\";
+ statusText.text=\"\";
+ userText.text=\"\";
+
+ if (strpos(information,\".\")!=-1)
+ {
+   if((dpElementType(information)!=DPEL_STRUCT) && dpExists(information)&&(strpos(information,\":_\")<0)&&(strpos(information,\".\")!=-1))
+ {
+  
+  this.text=information;
+  dpConnect(\"work\",information,
+                   information+\":_online.._stime\",
+                   information+\":_online.._status\",
+                   information+\":_online.._manager\");
+   valueText.visible = true;
+   timeText.visible = true;
+   statusText.visible = true;
+   userText.visible = true;
+ }
+   else 
+   {lang = getActiveLang();
+   if (lang == 1)
+   this.text=error[1];
+   else this.text = error[2];
+   valueText.visible = false;
+   timeText.visible = false;
+   statusText.visible = false;
+   userText.visible = false;
+   }  
+ }
+ else
+ { 
+   lang = getActiveLang();
+   if (lang == 1)
+   this.text=error[1];
+   else this.text = error[2];
+   valueText.visible = false;
+   timeText.visible = false;
+   statusText.visible = false;
+   userText.visible = false;
+ }
+}
+
+work(string dp1, anytype value,string dp2, time stime,string dp3, bit32 status,string dp4, int iuser)
+{
+   
+string  manName;
+convManIntToName(iuser, manName);
+
+  
+ valueText.text=value;
+ timeText.text=stime;
+ statusText.text=status;
+ userText.text=manName;
+ 
+ 
+}"
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  38 388 382 416
+3 "0s" 0 0 0 0 0 -1  E E E
+14 3
+"valueText"
+""
+1 40 419.9999999999999 E E E 1 E 1 E N "_WindowText" E N "_3DFace" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  38 418 382 446
+3 "0s" 0 0 0 1 0 -1  E E E
+14 6
+"userText"
+""
+1 40 510 E E E 1 E 1 E N "_WindowText" E N "_3DFace" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  38 508 382 536
+3 "0s" 0 0 0 1 0 -1  E E E
+6 8
+"RECTANGLE"
+""
+1 15 25 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+13 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1.173333333333333 0 1.076923076923077 2.4 113.0769230769231 1 E 15 25 390 415
+6 9
+"RECTANGLE2"
+""
+1 25 445 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"draggable" ""
+"acceptDrops" ""
+"DragStart" "main(int keys)
+{
+ 
+  int iType; 
+  string bCol=this.backCol;
+  switch(keys)
+  {
+   case KEY_SHIFT:   this.backCol= \"_Window\" ; iType=DRAG_MOVE ;break;  
+   default:    iType=DRAG_COPY ;    
+   }
+
+  dragStart(bCol,\"Bild1.gif\",iType);
+}"
+"DragDrop" "main(string information, int dragType)
+{
+  this.backCol=information;
+}"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 1.076923076923077 515 -229.2307692307692 1 E 25 445 105 510
+6 10
+"RECTANGLE1"
+""
+1 25 445 E E E 1 E 1 E N {0,0,0} E N "_dpdoesnotexist" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"draggable" ""
+"acceptDrops" ""
+"DragStart" "main(int keys)
+{
+ 
+  int iType; 
+  string bCol=this.backCol;
+  switch(keys)
+  {
+   case KEY_SHIFT:   this.backCol= \"_Window\" ; iType=DRAG_MOVE ;break;  
+   default:    iType=DRAG_COPY ;    
+   }
+
+  dragStart(bCol,\"Bild1.gif\",iType);
+}"
+"DragDrop" "main(string information, int dragType)
+{
+  this.backCol=information;
+}"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 1.076923076923077 515 -319.2307692307692 1 E 25 445 105 510
+6 11
+"RECTANGLE4"
+""
+1 25 445 E E E 1 E 1 E N {0,0,0} E N "_3DText" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"draggable" ""
+"acceptDrops" ""
+"DragStart" "main(int keys)
+{
+ 
+  int iType; 
+  string bCol=this.backCol;
+  switch(keys)
+  {
+   case KEY_SHIFT:   this.backCol= \"_Window\" ; iType=DRAG_MOVE ;break;  
+   default:    iType=DRAG_COPY ;    
+   }
+
+  dragStart(bCol,\"Bild1.gif\",iType);
+}"
+"DragDrop" "main(string information, int dragType)
+{
+  this.backCol=information;
+}"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 1.076923076923077 645 -229.2307692307692 1 E 25 445 105 510
+6 12
+"RECTANGLE3"
+""
+1 25 445 E E E 1 E 1 E N {0,0,0} E N {55,125,255} E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"draggable" ""
+"acceptDrops" ""
+"DragStart" "main(int keys)
+{
+ 
+  int iType; 
+  string bCol=this.backCol;
+  switch(keys)
+  {
+   case KEY_SHIFT:   this.backCol= \"_Window\" ; iType=DRAG_MOVE ;break;  
+   default:    iType=DRAG_COPY ;    
+   }
+
+  dragStart(bCol,\"Bild1.gif\",iType);
+}"
+"DragDrop" "main(string information, int dragType)
+{
+  this.backCol=information;
+}"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 1.076923076923077 645 -319.2307692307692 1 E 25 445 105 510
+6 13
+"RECTANGLE5"
+""
+1 25 445 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"draggable" ""
+"acceptDrops" ""
+"DragStart" "main(int keys)
+{
+ 
+  int iType; 
+  string bCol=this.backCol;
+  switch(keys)
+  {
+   case KEY_SHIFT:   this.backCol= \"_Window\" ; iType=DRAG_MOVE ;break;  
+   default:    iType=DRAG_COPY ;    
+   }
+
+  dragStart(bCol,\"Bild1.gif\",iType);
+}"
+"DragDrop" "main(string information, int dragType)
+{
+  this.backCol=information;
+}"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 1.076923076923077 775 -319.2307692307692 1 E 25 445 105 510
+6 14
+"RECTANGLE6"
+""
+1 25 445 E E E 1 E 1 E N {0,0,0} E N "advanceAlarmCamAckn" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"draggable" ""
+"acceptDrops" ""
+"DragStart" "main(int keys)
+{
+ 
+  int iType; 
+  string bCol=this.backCol;
+  switch(keys)
+  {
+   case KEY_SHIFT:   this.backCol= \"_Window\" ; iType=DRAG_MOVE ;break;  
+   default:    iType=DRAG_COPY ;    
+   }
+
+  dragStart(bCol,\"Bild1.gif\",iType);
+}"
+"DragDrop" "main(string information, int dragType)
+{
+  this.backCol=information;
+}"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 1.076923076923077 775 -229.2307692307693 1 E 25 445 105 510
+13 16
+"Button6"
+""
+1 907.960674157303 438 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 19 Maschinenkarte Word
+LANG:10001 17 Maschin card word
+LANG:10027 83 Пример текста в редакторе для перетаскивания
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  908 438 947 468
+
+P 
+14215660
+"pictures/table.xpm"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+string datei,datei_en;
+int    i;
+int    rc;
+
+    datei = DATA_PATH+\"DRAG_DROP\"+\".txt\";
+    datei_en = DATA_PATH+\"DRAG_DROP_en\"+\".txt\";
+
+  if( datei == \"\" )
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",\"\",makeDynString(getCatStr(\"general\",\"file\")));
+  else
+  {
+    if((strpos(datei,\"/\") < 0) && (strpos(datei,\"\\\\\") < 0))
+      datei = getPath(DPLIST_REL_PATH,datei);
+
+    if (isJavaUI())
+    {
+      string content;
+      dyn_mixed dsResult;
+
+      fileToString(datei, content);
+      xmlrpcSendRequest(\"javaui.tableEditor\", 
+          makeDynMixed((int) $_javauiModuleId, content, true), dsResponse, \"\", false);
+    }
+    else if( _WIN32 )
+    {
+      strreplace( datei, \"/\", \"\\\\\" );  // Falls NT -> umwandeln
+      if (getActiveLang () == 1)
+        system(\"cmd /c start wordpad \\\"\" + datei+ \"\\\"\");
+      else
+        system(\"cmd /c start wordpad \\\"\" + datei_en+ \"\\\"\");
+    }
+    else if( !_WIN32 )
+    {
+      strreplace( datei, \"\\\\\", \"/\" );   
+  
+      // We cannot expect a specific distribution or desktop-environment.
+      // So we have to check, what's available. First come, first serve. 
+      if((rc = system(\"ls /usr/bin/kate\")) == 0)
+        if (getActiveLang () == 1)
+          system(\"/usr/bin/kate \" + datei + \" &\");
+        else
+          system(\"/usr/bin/kate \" + datei_en + \" &\");
+      else if((rc = system(\"ls /usr/bin/gedit\")) == 0)
+        if (getActiveLang () == 1)
+          system(\"/usr/bin/gedit \" + datei + \" &\");
+        else
+          system(\"/usr/bin/gedit \" + datei-en + \" &\");
+    }
+  }  
+}" 0
+ E E "main()
+{
+string datei = DATA_PATH+\"DRAG_DROP\"+\".txt\";
+
+this.enabled= (access(datei,F_OK)) ? 0:1;
+
+}" 0
+
+6 17
+"r1"
+""
+1 55 460 E E E 1 E 1 E N {0,0,0} E N "_Window" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"dashclr"N "_Transparent"
+"selectionChangedCB" "main()
+{
+  bool bSelected = this.selected;
+  this.backCol=(bSelected)?\"blau\":\"\";
+}"
+"selectable" ""
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.875 265 -378.5 1 E 55 460 135 540
+6 18
+"r2"
+""
+1 55 460 E E E 1 E 1 E N {0,0,0} E N "_Window" E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"dashclr"N "_Transparent"
+"selectionChangedCB" "main()
+{
+  bool bSelected = this.selected;
+  this.backCol=(bSelected)?\"blau\":\"\";
+}"
+"selectable" ""
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.875 375 -378.5 1 E 55 460 135 540
+13 19
+"PUSH_BUTTON1"
+""
+1 643.9999999999988 33 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  642 31 769 60
+
+T 
+3
+LANG:10000 16 alle selektieren
+LANG:10001 10 select all
+LANG:10027 21 выбрать все
+"main()
+{
+  r1.selected=1;
+  r2.selected=1;
+  r3.selected=1;
+}" 0
+ E E E
+13 20
+"PUSH_BUTTON2"
+""
+1 643.9999999999988 63 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+56 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  642 61 769 90
+
+T 
+3
+LANG:10000 18 Selektion aufheben
+LANG:10001 8 deselect
+LANG:10027 29 снять выделение
+"main()
+{
+  r1.selected=0;
+  r2.selected=0;
+  r3.selected=0;
+}" 0
+ E E E
+6 21
+"r3"
+""
+1 55 460 E E E 1 E 1 E N {0,0,0} E N "_Window" E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"dashclr"N "_Transparent"
+"selectionChangedCB" "main()
+{
+  bool bSelected = this.selected;
+  this.backCol=(bSelected)?\"blau\":\"\";
+}"
+"selectable" ""
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.875 485 -378.5 1 E 55 460 135 540
+13 22
+"PUSH_BUTTON4"
+""
+1 910 220 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  908 218 948 248
+
+P 
+4294967295
+"pictures/undo.png"
+3
+LANG:10000 12 PUSH_BUTTON4
+LANG:10001 12 PUSH_BUTTON4
+LANG:10027 12 PUSH_BUTTON4
+"main()
+{
+ RECTANGLE1.backCol = \"{153,0,204}\";
+ RECTANGLE2.backCol = \"{0,255,0}\";
+ RECTANGLE3.backCol = \"{55,125,255}\";
+ RECTANGLE4.backCol = \"{0,0,0}\";
+ RECTANGLE5.backCol = \"{255,0,153}\";
+ RECTANGLE6.backCol = \"{255,255,0}\";
+}" 0
+ E E "main()
+{
+ RECTANGLE1.backCol = \"{153,0,204}\";
+ RECTANGLE2.backCol = \"{0,255,0}\";
+ RECTANGLE3.backCol = \"{55,125,255}\";
+ RECTANGLE4.backCol = \"{0,0,0}\";
+ RECTANGLE5.backCol = \"{255,0,153}\";
+ RECTANGLE6.backCol = \"{255,255,0}\";
+    }" 0
+
+30 24
+"FRAME1"
+""
+1 297 4 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+65 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 0 1 0 1 E 1.02345415778252 0 1 -3.965884861408451 -4 0 E 297 4 767 115
+3
+LANG:10000 33 MS Shell Dlg,-1,13,5,50,0,0,0,0,0
+LANG:10001 33 MS Shell Dlg,-1,13,5,50,0,0,0,0,0
+LANG:10027 33 MS Shell Dlg,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 17 Mehrfachselektion
+LANG:10001 14 Multiselection
+LANG:10027 37 Множественный выбор
+6 25
+"RECTANGLE11"
+""
+1 15 25 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+70 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1.333333333333334 0 0.538461538461538 460 336.5384615384616 1 E 15 25 390 415
+30 26
+"FRAME2"
+""
+1 8 107 E E E 1 E 1 E N "_WindowText" E N {0,0,0} E E
+ E E
+71 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 0 1 0 1 E 1.220423412204232 0 0.9846827133479218 0.2366127023661417 14.63894967177237 0 E 8 107 812 565
+3
+LANG:10000 33 MS Shell Dlg,-1,13,5,50,0,0,0,0,0
+LANG:10001 33 MS Shell Dlg,-1,13,5,50,0,0,0,0,0
+LANG:10027 33 MS Shell Dlg,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Drag und Drop
+LANG:10001 13 Drag and Drop
+LANG:10027 45 Перетаскивание объектов
+6 27
+"RECTANGLE14"
+""
+1 375 533 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+81 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 38 Drop die Informationen in das Textfeld
+LANG:10001 37 Drop the Information to the textfield
+LANG:10027 66 Бросить информацию в текстовое поле
+
+3
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"rotatefill" "r"
+E E 0 1 1 2 1 E 0.0103213948718741 1.49996408217997 -1.45829841323052 0.0101496992873388 1203.402531174914 -180.8963205376404 2  1 0  "pictures/bottom.xpm" 4294967295 E 375 533 397 557
+6 28
+"RECTANGLE15"
+""
+1 375 533 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+83 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 46 Drag die DP-Informationen aus der Baumstruktur
+LANG:10001 35 Drag the DP-Information to the tree
+LANG:10027 83 Перетащить информацию точки данных из дерева
+
+3
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"rotatefill" "r"
+E E 0 1 1 2 1 E -0.0101690059052234 -1.49996512304153 1.45829943686369 -0.010001543346946 -381.461111579401 815.8160166262001 2  1 0  "pictures/bottom.xpm" 4294967295 E 375 533 397 557
+7 29
+"ELLIPSE1"
+""
+1 423 206 E E E 1 E 1 E N {0,0,0} E N "advanceAlarmCamAckn" E E
+ E E
+84 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.947046362214792 0 0.987018920407078 18.0348324365654 -0.170124648743005 1 E 423 206 12 12
+2 30
+"step3"
+""
+1 405 194 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 405 194 434 212
+0 5 2 "0s" 0 0 0 65 0 0  405 194 1
+3
+LANG:10000 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+LANG:10001 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+LANG:10027 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 1
+LANG:10001 1 1
+LANG:10027 1 1
+7 33
+"Step2"
+""
+1 423 206 E E E 1 E 1 E N {0,0,0} E N "advanceAlarmCamAckn" E E
+ E E
+91 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.947046362214792 0 0.987018920407078 19.39938878314296 170.6741023961419 1 E 423 206 12 12
+2 34
+"PRIMITIVE_TEXT6"
+""
+1 407 405.1785714285714 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+93 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1 0 0.8928571428571429 1 79.28571428571426 0 E 405 320 434 338
+0 5 2 "0s" 0 0 0 65 0 0  405 320 1
+3
+LANG:10000 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+LANG:10001 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+LANG:10027 33 MS Shell Dlg,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 2
+LANG:10001 1 2
+LANG:10027 1 2
+13 35
+"PUSH_BUTTON5"
+""
+1 400 510 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+103 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 33 MS Shell Dlg,-1,21,5,50,0,0,0,0,0
+LANG:10001 33 MS Shell Dlg,-1,21,5,50,0,0,0,0,0
+LANG:10027 33 MS Shell Dlg,-1,21,5,50,0,0,0,0,0
+0  398 508 434 536
+
+P 
+4294967295
+"pictures/help.xpm"
+3
+LANG:10000 12 PUSH_BUTTON5
+LANG:10001 12 PUSH_BUTTON5
+LANG:10027 12 PUSH_BUTTON5
+"main()
+{   Help_text2.visible = true;
+    Help_text3.visible = true;
+    this.enabled = false;
+    TEXT_EDIT1.italic = true;
+    if (getActiveLang () == 1) 
+      TEXT_EDIT1.text = \"Drücken Sie den Button und ziehen sie den Text aus dem externen Texeditor in dieses Textfeld\";
+    else
+      TEXT_EDIT1.text = \"Push the button and trag the text from the external Texteditor in the textfield\";
+    
+    delay (5);
+    Help_text2.visible = false;
+    Help_text3.visible = false;
+    this.enabled = true;
+    TEXT_EDIT1.text = \"\";
+    TEXT_EDIT1.italic = false;
+           
+}" 0
+ E E E
+2 72
+"Help_text3"
+""
+1 328.8454784899034 261.1111111111111 E E E 1 E 0 E N "_WindowText" E N {255,255,255} E E
+ E E
+107 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9117647058823533 0 0.8222222222222222 -23.66725197541716 80.22222222222223 1 E 450 170 610 250
+1 5 2 "0s" 0 0 0 65 0 0  450 170 7
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 33 1 Schritt : Öffnen sie den Tree 
+LANG:10001 19 1 Step : Expand the
+LANG:10027 26 Шаг 1: Раскрыть
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 29 bis zur Ebene der Datenpunkt-
+LANG:10001 16 DP-Tree and mark
+LANG:10027 33 дерево DP и указать
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 30 elemente.  Markieren sie einen
+LANG:10001 22 the desired Datapoint.
+LANG:10027 41 желаемую точку данных.
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 31  DPE und halten sie die rechte 
+LANG:10001 21 Hold the right mouse 
+LANG:10027 34 Удерживать правую 
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 19 Maustaste gedrückt
+LANG:10001 6 button
+LANG:10027 21 кнопку мыши
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+2 74
+"Help_text2"
+""
+1 648.8941176470588 683.6777777777777 E E E 1 E 0 E N "_WindowText" E N {255,255,255} E E
+ E E
+111 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9058823529411766 0 0.7888888888888889 297.4117647058823 375.2222222222222 1 E 100 20 260 100
+1 5 2 "0s" 0 0 0 65 0 0  100 20 7
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 28 2 Schritt : Mit gedrückter 
+LANG:10001 17 2 Step : Drop the
+LANG:10027 30 Шаг 2: Перетащить
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 18 rechter Maustaste 
+LANG:10001 19 Information to the 
+LANG:10027 26 информацию на 
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 ziehen sie die 
+LANG:10001 22 textfield by dragging.
+LANG:10027 28 текстовое поле.
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 20 Informationen in das
+LANG:10001 8  Release
+LANG:10027 19  Отпустить
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 oberste Textfeld
+LANG:10001 23 the right mouse button 
+LANG:10027 35 правую кнопку мыши 
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 2 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 3 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 4 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 5 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 6 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 7 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+0

@@ -1,0 +1,476 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 127 278 N "_3DFace" 1
+"$device"
+E E E E E 1 -1 -1 0  93 80
+""0  1
+E E 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 4
+"Text1"
+""
+1 93 80 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.text = dpGetUnit($device+\".state.value\");
+}" 0
+ E 0 1 1 0 1 E U  0 E 95 82 116 103
+0 2 0 "0s" 0 0 0 66 0 0  95 82 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 [ ]
+LANG:10001 3 [ ]
+LANG:10027 3 [ ]
+2 7
+"Text2"
+""
+1 10 81 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 83 93 99
+0 2 0 "0s" 0 0 0 64 0 0  12 83 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Sollwert
+LANG:10001 8 Setpoint
+LANG:10027 14 Уставка
+2 8
+"Text3"
+""
+1 10 5 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.text = $device;
+}" 0
+ E 0 1 1 0 1 E U  0 E 12 7 114 23
+1 2 0 "0s" 0 0 0 64 0 0  12 7 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 11 Gerätename
+LANG:10001 10 DeviceName
+LANG:10027 27 Имя устройства
+2 10
+"Text4"
+""
+1 93 30 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.text = dpGetUnit($device+\".state.value\");
+}" 0
+ E 0 1 1 0 1 E U  0 E 95 32 116 53
+0 2 0 "0s" 0 0 0 66 0 0  95 32 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 [ ]
+LANG:10001 3 [ ]
+LANG:10027 3 [ ]
+2 11
+"Text5"
+""
+1 10 31 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 33 93 49
+0 2 0 "0s" 0 0 0 64 0 0  12 33 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Istwert
+LANG:10001 5 Value
+LANG:10027 16 Значение
+13 0
+"Button1"
+""
+1 11 178 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  9 176 118 210
+
+T 
+3
+LANG:10000 4 Stop
+LANG:10001 4 Stop
+LANG:10027 18 Остановка
+"main()
+{
+  float min;
+  dpGet($device+\".state.value:_pv_range.._min\",min); 
+  dpSet($device+\".cmd.setpoint\",min);
+}" 0
+ E E E
+13 1
+"down"
+""
+1 12 138 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  10 136 63 170
+
+P 
+12632256
+"1.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E "main()
+{
+  float changeRatePU, min, max, value;
+  
+    dpGet(	$device+\".state.value:_pv_range.._min\",min,
+  			$device+\".state.value:_pv_range.._max\",max,
+  			$device+\".para.maxChangeRate\",changeRatePU);
+  	
+  	value = setpoint.text;
+  	
+   	value = value - changeRatePU*(max-min);
+  	dpSet(  $device+\".cmd.setpoint\",(value >= min)?value:min); 	
+  	
+  	delay(0,600);
+  	
+  	while(this.armed)
+  	{		
+  	  value = value - changeRatePU*(max-min);
+  	  dpSet(  $device+\".cmd.setpoint\",(value >= min)?value:min);
+  	  delay(0,100);
+  	}
+}" 0
+ E "main()
+{
+   if (getUserPermission(3))
+     this.enabled = true;
+   else
+     this.enabled = false;
+}" 0
+
+13 2
+"up"
+""
+1 67 138 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  65 136 118 170
+
+P 
+12632256
+"2.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E "main()
+{
+  float changeRatePU, min, max, value;
+  
+    dpGet(	$device+\".state.value:_pv_range.._min\",min,
+  			$device+\".state.value:_pv_range.._max\",max,
+  			$device+\".para.maxChangeRate\",changeRatePU);
+  		
+  	value = setpoint.text;	
+  			
+  	value = value + changeRatePU*(max-min);
+    dpSet(  $device+\".cmd.setpoint\",(value <= max)?value:max);
+
+  	delay(0,600);
+  	
+  	while(this.armed)
+  	{		
+  	  value = value + changeRatePU*(max-min);
+      dpSet(  $device+\".cmd.setpoint\",(value <= max)?value:max);
+  	  delay(0,100);
+  	}
+}" 0
+ E "main()
+{
+   if (getUserPermission(3))
+     this.enabled = true;
+   else
+     this.enabled = false;
+}" 0
+
+14 3
+"setpoint"
+""
+1 11 102 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,75,0,0,0,0,0
+0  9 100 118 130
+3 "0s" 0 0 0 2 0 -1  E "main()
+{
+  float min, max, changeRatePU;
+
+  if(dpConnect(\"showVal\",$device+\".cmd.setpoint\")==-1)
+    this.backCol = \"_dpdoesnotexist\";
+
+  dpGet($device+\".state.value:_pv_range.._min\",min,
+  	    $device+\".state.value:_pv_range.._max\",max,
+  	    $device+\".para.maxChangeRate\",changeRatePU);
+  
+  this.toolTipText = getCatStr(\"control\", \"setpoint_tooltip\")+\"MIN: \"+min+\"  MAX: \"+max;
+  down.toolTipText = getCatStr(\"control\",\"increase_button\") + (max-min)*changeRatePU;
+  up.toolTipText = getCatStr(\"control\",\"decrease_button\") + (max-min)*changeRatePU;
+  
+}
+showVal(string dp, float val)
+{
+  string valStr, format = dpGetFormat(dp);
+  sprintf(valStr,format, val);
+  this.text = valStr;
+}
+" 0
+ "main()
+{
+  float min, max, val, new_val = this.text; 
+  dpGet($device+\".state.value:_pv_range.._min\",min,
+        $device+\".state.value:_pv_range.._max\",max,
+  	    $device+\".state.value\",val);
+  
+  if(new_val > max)
+    new_val = max;
+  else if (new_val < min)
+    new_val = min;
+    
+  dpSet($device+\".cmd.setpoint\",new_val);
+}" 0
+
+13 5
+"Button2"
+""
+1 11 237 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  9 235 118 269
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E E
+14 12
+"TextField3"
+""
+1 11 52 E E E 1 E 1 E N "_WindowText" E N "_InputFieldBackground" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,75,0,0,0,0,0
+0  9 50 118 80
+3 "0s" 0 0 0 2 0 -1  E "main()
+{
+  if(dpConnect(\"showVal\",$device+\".state.value\")==-1)
+    this.backCol = \"_dpdoesnotexist\";
+}
+showVal(string dp, float val)
+{
+  string valStr, format = dpGetFormat(dp);
+  sprintf(valStr,format, val);
+  this.text = valStr;
+}
+" 0
+ E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

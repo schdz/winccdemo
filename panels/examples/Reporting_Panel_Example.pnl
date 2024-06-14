@@ -1,0 +1,1886 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 1178 712 N "WF_PanelBackground" 0
+"main()
+{
+  copyReportingFolder(); 
+
+  showStartPage();   
+  
+  initReportingDP();   
+  
+  generateSimulationValues();
+ 
+  if(checksettings(birtserverip,birtserverport))
+  {
+    sdVisibility(FALSE,6,\"Text_birt_serverip\",\"Text_birt_serverport\",\"PUSH_BUTTON11\",\"title_portnumber\",\"title_ipadress\");
+    sdVisibility(TRUE,2,\"combo1\",\"DP_TREE1\");
+    sdVisibility(FALSE,8,\"Text_info1\",\"Text_info2\",\"Text_info3\",\"Text_info4\",\"Help_info1\",\"Help_info2\",\"Help_info3\",\"Help_info4\");    
+  }  
+    
+}
+
+
+
+" 0
+ E E E E 1 -1 -1 0  90 50
+""0  1
+E "bool full;
+string birtserverip;
+int birtserverport;
+
+void generateSimulationValues()
+{
+  //Declare variables
+  dyn_errClass err; 
+  string dp1, dp2, dp3, dp4;
+  float val_1, val_2, val_3, val_4;
+  dp1=\"ExampleDP_Rpt1.:_original.._value\";
+  dp2=\"ExampleDP_Rpt2.:_original.._value\";
+  dp3=\"ExampleDP_Rpt3.:_original.._value\";
+  dp4=\"ExampleDP_Rpt4.:_original.._value\";
+  
+  if(dpExists(dp1) && dpExists(dp2) && dpExists(dp3) && dpExists(dp4))
+  {
+    for(int i=0; i<=3600; i+=180)
+    {
+      dpSetTimedWait(getCurrentTime()-3600+i, // this function set 20 values for all 4 dpes in the last hour
+                     dp1, rand()/300, // /300 generates a value between 0 and ~125
+                     dp2, rand()/300, 
+                     dp3, rand()/300,
+                     dp4, rand()/300);
+//       DebugTN(getCurrentTime()-3600+i);
+//       this.text = \"OK\";
+    }
+  }
+  else
+  {
+    throwError(makeError(\"\", PRIO_WARNING, ERR_CONTROL, 71, \"Example_Rpt?\"));
+  }  
+}
+
+bool initReportingDP()
+{
+  bool bRet;   
+  
+  if (!dpExists(\"_Birt\"))
+  {
+    int n;
+    dyn_dyn_string dtcs;
+    dyn_dyn_int dtci;
+ 
+    //Creating the internal DPT _Reporting
+    dtcs[1] = makeDynString (\"_Reporting\",\"\");
+    dtcs[2] = makeDynString (\"\",\"_serveripadress\");
+    dtcs[3] = makeDynString (\"\",\"_serverport\");
+
+    dtci[1] = makeDynInt (DPEL_STRUCT);
+    dtci[2] = makeDynInt (0,DPEL_STRING);
+    dtci[3] = makeDynInt (0,DPEL_INT);
+
+    n = dpTypeCreate(dtcs,dtci);
+//     DebugN (\"DPT _Reporting has been created: \",n);
+          
+    dpCreate (\"_Birt\",\"_Reporting\"); //Create DP for storing the IP/Port of the BIRT Server 
+
+    bRet = true;   
+  
+  }else 
+  {
+    bRet = false; 
+  }
+  return bRet; 
+}
+
+bool checksettings(string birtserverip, int birtserverport)
+{  
+  mapping m;
+
+  dpGet(\"_Birt._serveripadress:_original.._value\", birtserverip);
+  dpGet(\"_Birt._serverport:_original.._value\", birtserverport);
+//     DebugN(birtserverip, birtserverport);
+    
+  Text_birt_serverip.text(birtserverip);
+  if(birtserverport != 0)
+  {    
+    Text_birt_serverport.text(birtserverport);     
+  }  
+  
+  if (birtserverip == \"\" && birtserverport == 0)
+  {
+    showStartPage(); 
+    return false; 
+    
+  } else if (birtserverip == \"\" || birtserverport == 0)
+  {
+    showStartPage(); 
+    ChildPanelOnCentral(\"/examples/Reporting_Panel_Example_Message\",\"Warning\",makeDynString(\"$msgKey:rep_missing\"));
+    return false;
+  }    
+  else
+  {
+    int iRet = netHead(\"http://\" + birtserverip + \":\" + birtserverport +\"/viewer/frameset?\",m);
+    
+    if(iRet < 0)
+    {
+       showStartPage();
+       ChildPanelOnCentral(\"/examples/Reporting_Panel_Example_Message\",\"Warning\",makeDynString(\"$msgKey:rep_error\"));
+       return false;
+       
+    }else if(mappingHasKey(m,\"error\"))
+    {
+      
+     if(m[\"error\"] == \"ConnectionRefusedError\") // Wrong port number
+     {   
+       showStartPage(); 
+       ChildPanelOnCentral(\"/examples/Reporting_Panel_Example_Message\",\"Warning\",makeDynString(\"$msgKey:rep_port\"));
+       return false;
+     } 
+     else if(m[\"error\"] == \"HostNotFoundError\" ) // Server not active or wrong adress
+     {   
+       showStartPage(); 
+       ChildPanelOnCentral(\"/examples/Reporting_Panel_Example_Message\",\"Warning\",makeDynString(\"$msgKey:rep_connection\"));
+       return false;
+     }   
+     else 
+     {
+       showStartPage();
+       ChildPanelOnCentral(\"/examples/Reporting_Panel_Example_Message\",\"Warning\",makeDynString(\"$msgKey:rep_error\"));
+       return false;
+     }
+    }
+        
+   return true; 
+  }
+ }
+
+void copyReportingFolder()
+{
+  string versionPath_Reporting; 
+  string projectPath_Reporting; 
+  string versionPath_BIRT; 
+  string projectPath_BIRT;     
+  
+  if(_WIN32)
+  { 
+    versionPath_Reporting = makeNativePath(PVSS_PATH + \"data/Reporting\"); 
+    projectPath_Reporting = makeNativePath(PROJ_PATH + \"data/Reporting\"); 
+
+    versionPath_BIRT = makeNativePath(PVSS_PATH + \"data/Reporting/Templates/BIRT\"); 
+    projectPath_BIRT = makeNativePath(PROJ_PATH + \"data/Reporting/Templates/BIRT\");     
+    
+  }else if (_UNIX)
+  {
+    versionPath_Reporting = makeUnixPath(PVSS_PATH + \"data/Reporting\"); 
+    projectPaht_Reporting = makeUnixPath(PROJ_PATH + \"data/Reporting\"); 
+    
+    versionPath_BIRT = makeUnixPath(PVSS_PATH + \"data/Reporting/Templates/BIRT\"); 
+    projectPath_BIRT = makeUnixPath(PROJ_PATH + \"data/Reporting/Templates/BIRT\"); 
+    
+  }
+  
+  if (!isdir(projectPath_Reporting))
+  {
+    copyAllFiles(versionPath_Reporting, projectPath_Reporting);
+  }  
+  
+  if(!isdir(projectPath_BIRT))
+  {
+    copyAllFiles(versionPath_BIRT, projectPath_BIRT); 
+  }  
+  
+}
+
+void showStartPage()
+{
+  sdVisibility(FALSE,35,\"combo1\",\"DP_TREE1\",\"button_now\",\"Text_dp1\",
+             \"Date1\",\"Date2\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"Text_pattern\",
+             \"Text_dpt\",\"bild_alert_1dp\",\"bild_alert_query\",\"bild_chart_1dp\",
+             \"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",
+             \"bild_query_2D\",\"bild_query_3D\",\"bild_query_bar\",\"bild_top_alarms\",
+             \"title_dp1\",\"title_dp2\",\"title_dp3\",\"title_dp4\",\"title_dpPattern\",\"title_dpType\",
+             \"title_endDate\",\"title_startDate\",\"Text_birt_serverip\",\"Text_birt_serverport\",
+             \"PUSH_BUTTON11\",\"title_portnumber\",\"title_ipadress\");     
+
+  sdVisibility(TRUE,6,\"Text_birt_serverip\",\"Text_birt_serverport\",\"PUSH_BUTTON11\",\"title_portnumber\",\"title_ipadress\");    
+  sdVisibility(TRUE,8,\"Text_info1\",\"Text_info2\",\"Text_info3\",\"Text_info4\",\"Help_info1\",\"Help_info2\",\"Help_info3\",\"Help_info4\");
+} 
+
+void showTutorialVideo()
+{
+  int indexLang; 
+  string localLang; 
+  string videoAddress = \"https://support.industry.siemens.com/cs/document/88595345/wincc-oa-stories-%28videos%29?dti=0&lc=de-WW\";
+  
+  localLang = getLocale(getActiveLang()); 
+  
+  if(strpos(localLang,\"de\")==0)
+  {
+    openUrl(videoAddress);
+  
+  }else if(strpos(localLang,\"en\")==0)
+  {
+    strreplace(videoAddress, \"de-WW\", \"en-WW\"); 
+    openUrl(videoAddress);    
+  
+  }else if(strpos(localLang,\"fr\")==0) 
+  {
+    strreplace(videoAddress, \"de-WW\", \"fr-WW\");
+    openUrl(videoAddress); 
+  
+  }else if(strpos(localLang,\"it\")==0)
+  {
+    strreplace(videoAddress, \"de-WW\", \"it-WW\"); 
+    openUrl(videoAddress); 
+    
+  }else if(strpos(localLang,\"es\")==0)
+  {
+    strreplace(videoAddress, \"de-WW\", \"es-WW\"); 
+    openUrl(videoAddress); 
+    
+  }else if(strpos(localLang,\"zh\")==0)
+  {
+    strreplace(videoAddress, \"de-WW\", \"zh-CN\"); 
+    openUrl(videoAddress); 
+    
+  }else 
+  {
+    strreplace(videoAddress, \"de-WW\", \"en-WW\"); 
+    openUrl(videoAddress);        
+  }
+    
+}
+
+
+
+
+" 0
+ 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+2 1 0 0 0 0 1 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+29 2
+"WebView_ewo1"
+""
+1 342.9684931945113 74.90204300319817 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 35 MS Shell Dlg 2,-1,96,5,75,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,96,5,75,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,96,5,75,0,0,0,0,0
+0  343 75 1177 657
+11 WebView.ewo
+0
+E6 39
+"bild_alert_query"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7347658657189389 0 0.8170759603335506 124.1101100721006 -11.61005179535636 2  1 0  "pictures/alarms_query.jpg" 4294967295 E 299 106 1270 820
+6 40
+"bild_alert_1dp"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignTop"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7346969057238552 0 0.8170759603335506 124.1307958089422 -11.61005179535636 2  1 0  "pictures/alarms1dp.jpg" 4294967295 E 299 106 1270 820
+6 41
+"bild_chart_1dp"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7347658657189389 0 0.8170759603335506 124.1101100721006 -11.61005179535636 2  1 0  "pictures/chart1dp.jpg" 4294967295 E 299 106 1270 820
+6 42
+"bild_chart_2dp_3D"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7347658657189389 0 0.8170759603335506 124.1101100721006 -11.61005179535636 2  1 0  "pictures/chart2dp3D.jpg" 4294967295 E 299 106 1270 820
+6 43
+"bild_chart_4dp"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7347658657189389 0 0.8170759603335506 124.1101100721006 -11.61005179535636 2  1 0  "pictures/chart4dp.jpg" 4294967295 E 299 106 1270 820
+6 44
+"bild_query_2D"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7347658657189389 0 0.8170759603335506 124.1101100721006 -11.61005179535636 2  1 0  "pictures/query2D.jpg" 4294967295 E 299 106 1270 820
+6 45
+"bild_query_3D"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7347658657189389 0 0.8170759603335506 124.1101100721006 -11.61005179535636 2  1 0  "pictures/query3D.jpg" 4294967295 E 299 106 1270 820
+6 46
+"bild_query_bar"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7347658657189389 0 0.8170759603335506 124.1101100721006 -11.61005179535636 2  1 0  "pictures/querybar.jpg" 4294967295 E 299 106 1270 820
+6 47
+"bild_top_alarms"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7347658657189389 0 0.8170759603335506 124.1101100721006 -11.61005179535636 2  1 0  "pictures/topalarms.jpg" 4294967295 E 299 106 1270 820
+6 48
+"bild_chart_2dp_2D"
+""
+1 299 106 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+6
+"minimumSize" "967 567"
+"maximumSize" "967 567"
+"sizePolicy" "Fixed Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.7346920384486267 0 0.8170759603335506 123.3270805038606 -11.61005179535636 2  1 0  "pictures/chart2dp2D.jpg" 4294967295 E 299 106 1270 820
+6 24
+"background_trace"
+""
+1 -1 75.00000000000003 E E E 1 E 1 E N "NotificationBar_Background" E N "NotificationBar_Background" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+5
+"minimumSize" "-1 30"
+"maximumSize" "-1 30"
+"sizePolicy" "Expanding Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1.178178178178178 0 1.071428571428572 1.178178178178178 -37.35714285714288 1 E -1 75 998 103
+6 20
+"background"
+""
+1 0 0 E E E 1 E 1 E N "_Transparent" E N "WF_Head" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+5
+"maximumSize" "-1 48"
+"sizePolicy" "Expanding Fixed"
+"layoutAlignment" "AlignLeft|AlignLeading"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1.178178178178178 0 0.5675675675675675 0 0 1 E 0 0 999 74
+14 3
+"Text_dp1"
+""
+1 109.2722255953513 -5.082062303735224 E E E 1 E 1 E N "_WindowText" E N "white" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 59 Geben Sie hier bitte den/die gewünschten Datenpunkt(e) ein
+LANG:10001 30 Please insert a datapoint name
+LANG:10027 30 Please insert a datapoint name
+
+2
+"acceptDrops" ""
+"DragDrop" "main(string information, int dragType)
+{
+  this.text(information);
+}"
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  24 253 301 283
+3 "0s" 0 0 0 0 0 -1  E E E
+13 4
+"PUSH_BUTTON1"
+""
+1 -338.0101527772534 466.2955127337746 E E E 1 E 1 E N "_ButtonText" E N "_Transparent" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"minimumSize" "80 32"
+"sizePolicy" "Minimum Fixed"
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0  1082 668 1169 703
+
+T 
+3
+LANG:10000 16 Report erstellen
+LANG:10001 13 Create Report
+LANG:10027 25 Создать отчет
+"main()
+{
+  
+string dp1, dp2, dp3, dp4;
+string tpat, tdpt, format;
+string path, path1, path2, startd, endd;
+string combotxt, paramstr, birtserverip;
+int birtserverport;
+int idx;
+
+  
+  idx= combo1.selectedPos();
+  getValue(\"combo1\", \"text\", combotxt); 
+  
+  path = getPath(DATA_REL_PATH); 
+  path1 =(path + \"Reporting/Templates/BIRT/\" + combotxt + \".rptdesign\");
+  path2 = (path + \"Reporting/Templates/BIRT\");
+
+  getMultiValue(\"Text_dp1\", \"text\", dp1, \"Text_dp2\", \"text\", dp2, \"Text_dp3\", \"text\", dp3, 
+                \"Text_dp4\", \"text\", dp4, \"Date1\", \"text\", startd, \"Date2\", \"text\", endd,
+                \"Text_pattern\", \"text\", tpat, \"Text_dpt\", \"text\", tdpt); 
+
+  sdVisibility(TRUE,1,\"WebView_ewo1\");
+  
+  switch(idx)
+  {
+    case 2:   {paramstr = (\"&AlarmDP=\" + dp1 + \"&Start time=\" + startd + \"&End time=\" + endd); break;}
+    case 3:   {paramstr = (\"&DP=\" + dp1 + \"&Start time=\" + startd + \"&End time=\" + endd); break;}
+    case 4: case 5:  {paramstr = (\"&dpNames1=\" + dp1 + \"&dpNames2=\" + dp2 + \"&StartZeit=\" + startd + \"&EndZeit=\" + endd); break;}
+    case 6:   {paramstr = (\"&dpNames1=\" + dp1 + \"&dpNames2=\" + dp2 + \"&dpNames3=\" + dp3 + \"&dpNames4=\" + dp4 + \"&StartZeit=\" + startd + \"&EndZeit=\" + endd); break;}
+    case 7: case 8:  {
+        strreplace(startd, \"-\", \".\");
+        strreplace(startd, \"T\", \" \");
+        strreplace(endd, \"-\", \".\");
+        strreplace(endd, \"T\", \" \");
+        paramstr = (\"&Start time=\" + startd + \"&End time=\" + endd); break;}
+    case 9: case 10: case 11: {paramstr = (\"&dpPattern=\" + tpat + \"&Frome=\" + tdpt); break;}
+      
+  }
+
+  strreplace(path1, \":\", \"%3A\"); 
+  strreplace(path1, \"/\", \"%5C\"); 
+  strreplace(paramstr, \":\", \"%3A\"); 
+  strreplace(path2, \":\", \"%3A\"); 
+  strreplace(path2, \"/\", \"%5C\"); 
+  
+dpGet(\"_Birt._serveripadress:_original.._value\", birtserverip);
+dpGet(\"_Birt._serverport:_original.._value\", birtserverport);  
+  
+//Building the URL with parameters for the WebView EWO
+//Visit https://eclipse.org/birt/documentation/integrating/viewer-usage.php for more info
+
+WebView_ewo1.url(\"http://\" + birtserverip + \":\" + birtserverport + \"/viewer/preview?__report=\" + path1 + \"&__format=html\" + paramstr + \"&__locale=en_US&__timezone=Poland&__svg=false&__masterpage=true&__rtl=false&__resourceFolder=\" + path2 +\"&__cubememsize=10&__dpi=120&__parameterpage=false\");
+DebugN(WebView_ewo1.url);
+}
+
+
+
+
+" 0
+ E E E
+29 5
+"DP_TREE1"
+""
+1 15.00056774404822 484.7663815961889 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"acceptDrops" ""
+"minimumSize" "312 100"
+"sizePolicy" "Fixed Ignored"
+3
+LANG:10000 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 34 MS Shell Dlg 2,-1,9,5,50,0,0,0,0,0
+LANG:10027 34 MS Shell Dlg 2,-1,9,5,50,0,0,0,0,0
+0  15 454 326 644
+29 DatapointTree.DatapointTree.1
+0
+E14 9
+"Text_dp2"
+""
+1 121.784956272158 112.8311898651826 E E E 1 E 1 E N "_WindowText" E N "white" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 59 Geben Sie hier bitte den/die gewünschten Datenpunkt(e) ein
+LANG:10001 30 Please insert a datapoint name
+LANG:10027 30 Please insert a datapoint name
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  24 304 300 334
+3 "0s" 0 0 0 0 0 -1  E E E
+14 10
+"Text_dp3"
+""
+1 112.2493526516021 174.2698939683968 E E E 1 E 1 E N "_WindowText" E N "white" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 59 Geben Sie hier bitte den/die gewünschten Datenpunkt(e) ein
+LANG:10001 30 Please insert a datapoint name
+LANG:10027 30 Please insert a datapoint name
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  24 357 300 387
+3 "0s" 0 0 0 0 0 -1  E E E
+14 11
+"Text_dp4"
+""
+1 113.0254798044243 234.9968167333219 E E E 1 E 1 E N "_WindowText" E N "white" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 59 Geben Sie hier bitte den/die gewünschten Datenpunkt(e) ein
+LANG:10001 30 Please insert a datapoint name
+LANG:10027 30 Please insert a datapoint name
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  24 415 301 445
+3 "0s" 0 0 0 0 0 -1  E E E
+29 14
+"Date1"
+""
+1 36.37872341821812 153.7041546984191 E E E 1 E 1 E N "_3DText" E N "white" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 11 Start Datum
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"displayFormat" "string yyyy-MM-ddTHH:mm:ss"
+"calendarPopup" "bool TRUE"
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  26 143 299 169
+16 DateTimeEdit.ewo
+0
+E29 15
+"Date2"
+""
+1 36.3783393806026 207.3328539669851 E E E 1 E 1 E N "_3DText" E N "white" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"displayFormat" "string yyyy-MM-ddTHH:mm:ss"
+"calendarPopup" "bool TRUE"
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  26 200 243 226
+16 DateTimeEdit.ewo
+0
+E14 16
+"Text_pattern"
+""
+1 122.2026168254202 411.671644320774 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 30 DP Pattern (zb ExampleDP_Rpt*)
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  24 141 301 171
+3 "0s" 0 0 0 0 0 -1  E E E
+14 17
+"Text_dpt"
+""
+1 122.2433629370576 466.0302487616806 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 37 DPType (zb ExampleDP_Float)(optional)
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"acceptDrops" ""
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  24 198 253 228
+3 "0s" 0 0 0 0 0 -1  E E E
+32 23
+"SPACER5"
+""
+1 1 44 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"maximumSize" "-1 38"
+"sizePolicy" "Expanding Ignored"
+ 1 44 1146 72 1
+6 34
+"RECTANGLE1"
+""
+1 0 708.0000000000003 E E E 1 E 1 E N "_Transparent" E N "WF_Head" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"minimumSize" "-1 52"
+"sizePolicy" "Expanding Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1.16765873015873 0 1.307692307692308 0 -265.846153846154 1 E 0 708 1008 747
+32 36
+"SPACER2"
+""
+1 10 670 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"sizePolicy" "Expanding Fixed"
+ 10 670 1077 701 1
+13 38
+"PUSH_BUTTON10"
+"WF_Transparent"
+1 73.97229786577216 -116.1904758318643 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+38 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"minimumSize" "29 29"
+"maximumSize" "30 30"
+"sizePolicy" "Fixed Fixed"
+3
+LANG:10000 26 Arial,-1,19,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,19,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,19,5,75,0,0,0,0,0
+0  1145 42 1178 74
+
+P 
+4294967295
+"pictures/StandardIcons/maximize_32.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string fill;
+  
+  if (full)
+  {
+    moduleRestore(myModuleName());
+    full = false;
+    this.fill(\"[pattern,[tile,png,pictures/StandardIcons/maximize_32.png]]\");
+  }
+  else
+  {
+    moduleShowFullScreen(myModuleName());
+    full = true;
+    this.fill(\"[pattern,[tile,png,pictures/StandardIcons/minimize_32.png]]\");
+
+  }
+}" 0
+ E E E
+2 49
+"title_dp1"
+""
+1 42.28306374395754 37.72303545789949 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9624063670620174 0 1.015586795136303 14.12502406190956 -24.34067032149287 0 E 15 255 98 270
+0 2 2 "0s" 0 0 0 192 0 0  15 255 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 1. Datenpunkt
+LANG:10001 14 1st. Datapoint
+LANG:10027 28 1-я точка данных
+2 50
+"title_dp2"
+""
+1 42.28306374395743 81.60168768626875 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9624063670620215 0 1.015586795136299 14.12502406190956 -26.98057755127695 0 E 15 310 98 325
+0 2 2 "0s" 0 0 0 192 0 0  15 310 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 2. Datenpunkt
+LANG:10001 13 2nd Datapoint
+LANG:10027 28 2-я точка данных
+2 51
+"title_dp3"
+""
+1 42.28306374395743 134.8786355118871 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9624063670620215 0 1.015586795136315 14.12502406190956 -27.62288093830692 0 E 15 362.3187554073952 98 377
+0 2 2 "0s" 0 0 0 192 0 0  15 362.3187554073952 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 3. Datenpunkt
+LANG:10001 13 3rd Datapoint
+LANG:10027 28 3-я точка данных
+2 52
+"title_dp4"
+""
+1 42.28353328859245 185.0206058114667 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9624063670620184 0 1.015586795136314 14.12502406190956 -28.98928904737872 0 E 15.00051845437201 415.5 98 431
+0 2 2 "0s" 0 0 0 192 0 0  15.00051845437201 415.5 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 4. Datenpunkt
+LANG:10001 13 4th Datapoint
+LANG:10027 28 4-я точка данных
+2 53
+"title_startDate"
+""
+1 22.98203409843642 -201.927748093343 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9637453659672687 0 1.015586795136313 14.51055524889341 -21.80179409684504 0 E 15 145 87 160
+0 2 2 "0s" 0 0 0 192 0 0  15 145 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Start Datum
+LANG:10001 10 Start Date
+LANG:10027 27 Начальная дата
+2 54
+"title_endDate"
+""
+1 22.9820340984372 -135.8981727149257 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9637453659672678 0 1.015586795136306 14.51055524889353 -20.3635160621842 0 E 15 197 89 212
+0 2 2 "0s" 0 0 0 192 0 0  15 197 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Ende Datum
+LANG:10001 8 End Date
+LANG:10027 25 Конечная дата
+2 55
+"title_dpPattern"
+""
+1 21.93446358285942 -201.8719236287942 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+55 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.964864750053228 0 1.015586795136311 14.49600325577621 -21.80179409684479 0 E 14.99948154562798 145.0782054714532 80 160
+0 2 2 "0s" 0 0 0 192 0 0  14.99948154562798 145.0782054714532 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 DP Pattern
+LANG:10001 10 DP Pattern
+LANG:10027 15 Шаблон DP
+2 57
+"title_dpType"
+""
+1 18.36017327593833 -136.2550816594553 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+57 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9685085826726261 0 1.015586795136306 14.44863343172384 -20.3635160621842 0 E 15 196.5 63 212
+0 2 2 "0s" 0 0 0 192 0 0  15 196.5 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 DPType
+LANG:10001 6 DPType
+LANG:10027 9 Тип DP
+22 59
+"combo1"
+""
+1 7.198770489954385 100.4626873816562 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+59 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  24 87 301 117
+11
+3
+LANG:10000 35 Bitte wählen Sie einen Report aus:
+LANG:10001 32 Please select a report template:
+LANG:10027 43 Выберите шаблон отчета:
+
+0
+3
+LANG:10000 25 alertGetPeriod_1DPE_Table
+LANG:10001 25 alertGetPeriod_1DPE_Table
+LANG:10027 25 alertGetPeriod_1DPE_Table
+
+0
+3
+LANG:10000 24 dpGetPeriod_1DPE_Line_2D
+LANG:10001 24 dpGetPeriod_1DPE_Line_2D
+LANG:10027 24 dpGetPeriod_1DPE_Line_2D
+
+0
+3
+LANG:10000 23 dpGetPeriod_2DPE_Bar_2D
+LANG:10001 23 dpGetPeriod_2DPE_Bar_2D
+LANG:10027 23 dpGetPeriod_2DPE_Bar_2D
+
+0
+3
+LANG:10000 23 dpGetPeriod_2DPE_Bar_3D
+LANG:10001 23 dpGetPeriod_2DPE_Bar_3D
+LANG:10027 23 dpGetPeriod_2DPE_Bar_3D
+
+0
+3
+LANG:10000 23 dpGetPeriod_4DPE_Bar_2D
+LANG:10001 23 dpGetPeriod_4DPE_Bar_2D
+LANG:10027 23 dpGetPeriod_4DPE_Bar_2D
+
+0
+3
+LANG:10000 30 dpQuery_alarms_Timerange_Table
+LANG:10001 30 dpQuery_alarms_Timerange_Table
+LANG:10027 30 dpQuery_alarms_Timerange_Table
+
+0
+3
+LANG:10000 26 dpQuery_AlertsCount_Bar_2D
+LANG:10001 26 dpQuery_AlertsCount_Bar_2D
+LANG:10027 26 dpQuery_AlertsCount_Bar_2D
+
+0
+3
+LANG:10000 20 dpQuery_Value_Bar_2D
+LANG:10001 20 dpQuery_Value_Bar_2D
+LANG:10027 20 dpQuery_Value_Bar_2D
+
+0
+3
+LANG:10000 20 dpQuery_Value_Pie_2D
+LANG:10001 20 dpQuery_Value_Pie_2D
+LANG:10027 20 dpQuery_Value_Pie_2D
+
+0
+3
+LANG:10000 20 dpQuery_Value_Pie_3D
+LANG:10001 20 dpQuery_Value_Pie_3D
+LANG:10027 20 dpQuery_Value_Pie_3D
+
+0
+
+E
+"main()
+{
+
+int idx;
+
+  shape cb=getShape(\"combo1\");
+  idx=cb.selectedPos();
+          
+  if (idx == 2)
+{
+ sdVisibility(FALSE,20,\"WebView_ewo1\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"Text_pattern\",\"Text_dpt\",\"bild_alert_query\",\"bild_chart_1dp\",\"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",\"bild_query_2D\",\"bild_query_3D\",\"bild_query_bar\",\"bild_top_alarms\",\"title_dp2\",\"title_dp3\",\"title_dp4\",\"title_dpPattern\",\"title_dpType\");
+ sdVisibility(TRUE,8,\"button_now\",\"Text_dp1\",\"Date1\",\"Date2\",\"bild_alert_1dp\",\"title_dp1\",\"title_endDate\",\"title_startDate\");
+}
+
+else if (idx == 3)
+{
+  sdVisibility(FALSE,20,\"WebView_ewo1\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"Text_pattern\",\"Text_dpt\",\"bild_alert_1dp\",\"bild_alert_query\",\"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",\"bild_query_2D\",\"bild_query_3D\",\"bild_query_bar\",\"bild_top_alarms\",\"title_dp2\",\"title_dp3\",\"title_dp4\",\"title_dpPattern\",\"title_dpType\");
+ sdVisibility(TRUE,8,\"button_now\",\"Text_dp1\",\"Date1\",\"Date2\",\"bild_chart_1dp\",\"title_dp1\",\"title_endDate\",\"title_startDate\");
+}
+
+else if (idx == 4)
+{
+ sdVisibility(FALSE,18,\"WebView_ewo1\",\"Text_dp3\",\"Text_dp4\",\"Text_pattern\",\"Text_dpt\",\"bild_alert_1dp\",\"bild_alert_query\",\"bild_chart_1dp\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",\"bild_query_2D\",\"bild_query_3D\",\"bild_query_bar\",\"bild_top_alarms\",\"title_dp3\",\"title_dp4\",\"title_dpPattern\",\"title_dpType\");
+ sdVisibility(TRUE,10,\"button_now\",\"Text_dp1\",\"Text_dp2\",\"Date1\",\"Date2\",\"bild_chart_2dp_2D\",\"title_dp1\",\"title_dp2\",\"title_endDate\",\"title_startDate\");
+}
+
+else if (idx == 5)
+{
+ sdVisibility(FALSE,18,\"WebView_ewo1\",\"Text_dp3\",\"Text_dp4\",\"Text_pattern\",\"Text_dpt\",\"bild_alert_1dp\",\"bild_alert_query\",\"bild_chart_1dp\",\"bild_chart_2dp_2D\",\"bild_chart_4dp\",\"bild_query_2D\",\"bild_query_3D\",\"bild_query_bar\",\"bild_top_alarms\",\"title_dp3\",\"title_dp4\",\"title_dpPattern\",\"title_dpType\");
+ sdVisibility(TRUE,10,\"button_now\",\"Text_dp1\",\"Text_dp2\",\"Date1\",\"Date2\",\"bild_chart_2dp_3D\",\"title_dp1\",\"title_dp2\",\"title_endDate\",\"title_startDate\");
+}
+
+else if (idx == 6)
+{
+  sdVisibility(FALSE,14,\"WebView_ewo1\",\"Text_pattern\",\"Text_dpt\",\"bild_alert_1dp\",\"bild_alert_query\",\"bild_chart_1dp\",\"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_query_2D\",\"bild_query_3D\",\"bild_query_bar\",\"bild_top_alarms\",\"title_dpPattern\",\"title_dpType\");
+ sdVisibility(TRUE,14,\"button_now\",\"Text_dp1\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"Date1\",\"Date2\",\"bild_chart_4dp\",\"title_dp1\",\"title_dp2\",\"title_dp3\",\"title_dp4\",\"title_endDate\",\"title_startDate\");
+}
+
+else if (idx == 7)
+{
+  sdVisibility(FALSE,22,\"WebView_ewo1\",\"Text_dp1\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"Text_pattern\",\"Text_dpt\",\"bild_query_2D\",\"bild_chart_1dp\",\"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",\"bild_alert_1dp\",\"bild_query_3D\",\"bild_query_bar\",\"bild_top_alarms\",\"title_dp1\",\"title_dp2\",\"title_dp3\",\"title_dp4\",\"title_dpPattern\",\"title_dpType\");
+ sdVisibility(TRUE,6,\"button_now\",\"Date1\",\"Date2\",\"bild_alert_query\",\"title_endDate\",\"title_startDate\");
+}
+
+else if (idx == 8)
+{
+  sdVisibility(FALSE,22,\"WebView_ewo1\",\"Text_dp1\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"Text_pattern\",\"Text_dpt\",\"bild_alert_query\",\"bild_chart_1dp\",\"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",\"bild_alert_1dp\",\"bild_query_2D\",\"bild_query_bar\",\"bild_query_3D\",\"title_dp1\",\"title_dp2\",\"title_dp3\",\"title_dp4\",\"title_dpPattern\",\"title_dpType\");
+ sdVisibility(TRUE,6,\"button_now\",\"Date1\",\"Date2\",\"bild_top_alarms\",\"title_endDate\",\"title_startDate\");
+}
+
+else if (idx == 9)
+{
+   sdVisibility(FALSE,23,\"button_now\",\"WebView_ewo1\",\"title_endDate\",\"title_startDate\",\"Date1\",\"Date2\",\"Text_dp1\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"bild_alert_query\",\"bild_chart_1dp\",\"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",\"bild_alert_1dp\",\"bild_query_2D\",\"bild_query_3D\",\"bild_top_alarms\",\"title_dp1\",\"title_dp2\",\"title_dp3\",\"title_dp4\");
+ sdVisibility(TRUE,5,\"bild_query_bar\",\"title_dpPattern\",\"title_dpType\",\"Text_pattern\",\"Text_dpt\");
+}
+
+  else if (idx == 10)
+{
+   sdVisibility(FALSE,23,\"button_now\",\"WebView_ewo1\",\"title_endDate\",\"title_startDate\",\"Date1\",\"Date2\",\"Text_dp1\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"bild_alert_query\",\"bild_chart_1dp\",\"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",\"bild_query_bar\",\"bild_alert_1dp\",\"bild_query_3D\",\"bild_top_alarms\",\"title_dp1\",\"title_dp2\",\"title_dp3\",\"title_dp4\");
+ sdVisibility(TRUE,5,\"bild_query_2D\",\"title_dpPattern\",\"title_dpType\",\"Text_pattern\",\"Text_dpt\");
+}
+  else if (idx == 11)
+{
+   sdVisibility(FALSE,23,\"button_now\",\"WebView_ewo1\",\"title_endDate\",\"title_startDate\",\"Date1\",\"Date2\",\"Text_dp1\",\"Text_dp2\",\"Text_dp3\",\"Text_dp4\",\"bild_alert_query\",\"bild_query_bar\",\"bild_chart_1dp\",\"bild_chart_2dp_2D\",\"bild_chart_2dp_3D\",\"bild_chart_4dp\",\"bild_alert_1dp\",\"bild_query_2D\",\"bild_top_alarms\",\"title_dp1\",\"title_dp2\",\"title_dp3\",\"title_dp4\");
+ sdVisibility(TRUE,5,\"bild_query_3D\",\"title_dpPattern\",\"title_dpType\",\"Text_pattern\",\"Text_dpt\");
+}
+  
+}
+
+" 0
+
+E
+ 1 0
+13 60
+"button_now"
+""
+1 229.4782365576567 208.9051846591942 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0  243 195 301 232
+
+T 
+3
+LANG:10000 5 Jetzt
+LANG:10001 3 Now
+LANG:10027 12 Сейчас
+"main()
+{
+Date2.dateTime(getCurrentTime());
+}" 0
+ E E E
+14 61
+"Text_birt_serverip"
+""
+1 36.38010088250987 102.4829062541167 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+61 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  24 87 221 117
+3 "0s" 0 0 0 0 0 -1  E E E
+14 62
+"Text_birt_serverport"
+""
+1 240.3045627539688 105.5557278627338 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+62 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  229 87 314 117
+3 "0s" 0 0 0 0 0 -1  E E E
+2 64
+"title_ipadress"
+""
+1 16.84065897410343 -201.6712178595146 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+64 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9646884034136006 0 1.015586795136313 13.45905075562319 -21.80179409684504 0 E 15.47105463306798 145.3593777036976 81 160
+0 2 2 "0s" 0 0 0 192 0 0  15.47105463306798 145.3593777036976 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 IP Adresse
+LANG:10001 10 IP Adresse
+LANG:10027 13 IP-адрес
+2 65
+"title_portnumber"
+""
+1 109.0604007232061 -206.7624055482641 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+65 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 0.9633368273198109 0 1.01558679513631 4.104848549132417 -21.90067598436855 0 E 238.9837962962963 141.2398444259244 317 156
+0 2 2 "0s" 0 0 0 192 0 0  238.9837962962963 141.2398444259244 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Port Nummer
+LANG:10001 11 Port Nummer
+LANG:10027 21 Номер порта
+13 66
+"PUSH_BUTTON11"
+""
+1 144.6951552387785 -72.71790454347519 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+66 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0  231 143 317 180
+
+T 
+3
+LANG:10000 9 Speichern
+LANG:10001 4 Save
+LANG:10027 18 Сохранить
+"main()
+{
+  getValue(\"Text_birt_serverip\", \"text\", birtserverip); 
+  getValue(\"Text_birt_serverport\", \"text\", birtserverport); 
+
+  dpSet(\"_Birt._serveripadress:_original.._value\", birtserverip);
+  dpSet(\"_Birt._serverport:_original.._value\", birtserverport);
+
+  if(checksettings(birtserverip,birtserverport))
+  {
+    sdVisibility(FALSE,6,\"Text_birt_serverip\",\"Text_birt_serverport\",\"PUSH_BUTTON11\",\"title_portnumber\",\"title_ipadress\");
+    sdVisibility(TRUE,2,\"combo1\",\"DP_TREE1\");
+    sdVisibility(FALSE,8,\"Text_info1\",\"Text_info2\",\"Text_info3\",\"Text_info4\",\"Help_info1\",\"Help_info2\",\"Help_info3\",\"Help_info4\");    
+  }  
+}
+
+
+
+
+" 0
+ E E E
+32 69
+"SPACER7"
+""
+1 377 10 E E E 1 E 1 E N "_Transparent" E N "white" E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"sizePolicy" "Expanding Fixed"
+ 377 10 1176 41 1
+2 70
+"PRIMITIVE_TEXT1"
+""
+1 53.05427674350153 -43.29847389182996 E E E 1 E 1 E N "White" E N "_Window" E E
+ E E
+70 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"maximumSize" "-1 32"
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E 1.000167033260071 0 0.9540230138588955 -0.06280450578655532 -4.316093158297544 0 E 53.05427674350153 17.00602495991251 374 45.5
+0 2 2 "0s" 0 0 0 64 0 0  53.05427674350153 17.00602495991251 2
+3
+LANG:10000 26 Arial,-1,19,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,19,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,19,5,75,0,0,0,0,0
+0 3
+LANG:10000 25 WinCC OA Beispiel Reports
+LANG:10001 24 WinCC OA Example Reports
+LANG:10027 41 Примеры отчетов в WinCC OA
+3
+LANG:10000 26 Arial,-1,19,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,19,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,19,5,75,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+13 71
+"Help_info1"
+""
+1 899.6929846668082 207.8989379555815 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"sizePolicy" "Minimum Fixed"
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  898 198 934 226
+
+P 
+4294967295
+"pictures/help.xpm"
+3
+LANG:10000 13 PUSH_BUTTON13
+LANG:10001 13 PUSH_BUTTON13
+LANG:10027 13 PUSH_BUTTON13
+"main()
+{
+  openUrl(\"http://download.eclipse.org/birt/downloads/\");
+}" 0
+ E E E
+13 72
+"Help_info2"
+""
+1 899.6929846668082 257.8989379555815 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+72 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"sizePolicy" "Minimum Fixed"
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  898 248 934 276
+
+P 
+4294967295
+"pictures/help.xpm"
+3
+LANG:10000 13 PUSH_BUTTON13
+LANG:10001 13 PUSH_BUTTON13
+LANG:10027 13 PUSH_BUTTON13
+"main()
+{
+  showTutorialVideo(); 
+}" 0
+ E E E
+13 73
+"Help_info3"
+""
+1 899.6929846668082 307.3989379555816 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+73 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"sizePolicy" "Minimum Fixed"
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  898 298 934 326
+
+P 
+4294967295
+"pictures/help.xpm"
+3
+LANG:10000 13 PUSH_BUTTON13
+LANG:10001 13 PUSH_BUTTON13
+LANG:10027 13 PUSH_BUTTON13
+"main()
+{
+  std_help(\"reporting\");
+}" 0
+ E E E
+13 74
+"Help_info4"
+""
+1 899.6929846668082 357.3989379555816 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+74 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+1
+"sizePolicy" "Minimum Fixed"
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  898 348 934 376
+
+P 
+4294967295
+"pictures/help.xpm"
+3
+LANG:10000 13 PUSH_BUTTON13
+LANG:10001 13 PUSH_BUTTON13
+LANG:10027 13 PUSH_BUTTON13
+"main()
+{
+  showTutorialVideo(); 
+}" 0
+ E E E
+2 75
+"Text_info1"
+""
+1 399.6929846668082 199.8989379555815 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+75 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 399.6929846668082 199.8989379555815 662 215
+0 2 2 "0s" 0 0 0 192 0 0  399.6929846668082 199.8989379555815 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 46 Bitte installieren Sie das Eclipse BIRT Paket!
+LANG:10001 40 Please install the BIRT Eclipse package!
+LANG:10027 45 Установите пакет BIRT Eclipse!
+2 76
+"Text_info2"
+""
+1 399.6929846668082 249.8989379555815 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+76 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 399.6929846668082 249.8989379555815 810 283
+0 2 2 "0s" 0 0 0 192 0 0  399.6929846668082 249.8989379555815 2
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 69 Fixieren Sie den Port, unter dem der BIRT Web Viewer zu erreichen ist
+LANG:10001 47 Use a fixed port number for the BIRT Web Viewer
+LANG:10027 106 Задайте необходимые настройки, начиная с IP-адреса и порта,
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 70 und starten den Viewer mittels einmaligen Aufruf der Preview Funktion!
+LANG:10001 60 and start the web viewer once by using the preview function!
+LANG:10027 59 и нажмите кнопку "Создать отчет"!
+2 77
+"Text_info3"
+""
+1 399.6929846668082 299.8989379555815 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+77 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 399.6929846668082 299.8989379555815 791 333
+0 2 2 "0s" 0 0 0 192 0 0  399.6929846668082 299.8989379555815 2
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 68 Für Details zu den Beispielreports und den verfügbaren Funktionen 
+LANG:10001 65 You can find a detailed overview about the new reporting feature 
+LANG:10027 109 Дополнительная информация о примерах отчетов и о доступных
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 67 lesen Sie bitte das Kapitel Reporting in der WinCC OA Produkthilfe!
+LANG:10001 29 in our WinCC OA product help!
+LANG:10027 84 функциях приведена в справочной системе WinCC OA!
+2 78
+"Text_info4"
+""
+1 399.6929846668082 349.8989379555816 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E U  0 E 399.6929846668082 349.8989379555816 843 383
+0 2 2 "0s" 0 0 0 192 0 0  399.6929846668082 349.8989379555816 2
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 77 Einen schnellen Überblick über das neue Reporting Feature ermöglicht Ihnen
+LANG:10001 57 You can get a quick overview about our reporting feature 
+LANG:10027 106 Краткий обзор функциональности по подготовке отчетности 
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 27 auch unter Tutorial Video! 
+LANG:10001 25 with our tutorial video! 
+LANG:10027 66 представлен в обзорном видеоролике!
+0
+LAYER, 1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 2 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 3 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 4 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 5 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 6 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+LAYER, 7 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+4 1 "LAYOUT_GROUP1" -1
+3 0 
+24 23 38 
+
+"" ""
+1 1 1 0 0 0 0 1 0
+4 3 "LAYOUT_GROUP3" -1
+3 0 
+34 4 36 
+
+"" ""
+1 1 0 0
+4 6 "LAYOUT_GROUP6" -1
+3 0 
+20 69 70 
+
+"" ""
+1 1 1 50 0 9 0 1 0
+1 9 "SHAPE_GROUP9" 16
+11 0 
+2 39 40 41 42 43 44 45 46 47 48 
+
+"sizePolicy" "Ignored Ignored"
+"layoutAlignment" "AlignTop"
+"" ""
+1 13 "SHAPE_GROUP13" 14
+23 0 
+3 9 10 11 14 15 16 17 49 50 51 52 53 54 55 57 59 60 61 62 64 65 66 
+
+"sizePolicy" "Fixed Fixed"
+"" ""
+4 14 "LAYOUT_GROUP14" 17
+1 1 
+5 
+13 
+"" ""
+0 2 1 15 0 15 15 1 10
+4 16 "LAYOUT_GROUP16" 17
+0 1 
+
+9 
+"" ""
+0 1 0 0
+4 17 "LAYOUT_GROUP17" -1
+0 2 
+
+14 16 
+"" ""
+0 1 0 1 15
+0

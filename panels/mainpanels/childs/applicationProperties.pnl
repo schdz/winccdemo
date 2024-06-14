@@ -1,0 +1,276 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 670 662 N "STD_panel_back" 2
+"$b_close"
+"$visReg"
+E E E E E 1 -1 -1 0  11 292
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 8
+"Border3"
+""
+1 11 474 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 11 661 621
+6 9
+"Border2"
+""
+1 10 620 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 10 660 620
+2 10
+"Filter"
+""
+1 19 2 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 21 2 311 17
+0 2 2 "0s" 0 0 0 192 0 0  21 2 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 44 Eigenschaften von "WinCC OA_DemoApplication"
+LANG:10001 40 Properties of "WinCC OA_DemoApplication"
+LANG:10027 45 Настройки "WinCC OA_DemoApplication"
+28 12
+"TabPage"
+""
+1 85 467 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  18 18 652 612
+"main()
+{
+ if($visReg!=\"\")
+ {
+   //only one Register with the number visReg 
+   //should be in the Tab visible
+   int iVisReg=$visReg;   
+   int i;   
+   
+//DebugTN(\"iVisReg\",iVisReg);   
+       
+       setValue(\"TabPage\",\"registerVisible\",0,(iVisReg == 0)?1:0,
+       						\"registerVisible\",1,(iVisReg == 1)?1:0,
+       						\"registerVisible\",2,(iVisReg == 2)?1:0,
+       						\"registerVisible\",3,(iVisReg == 3)?1:0,
+       						\"registerVisible\",4,(iVisReg == 4)?1:0,
+       						\"registerVisible\",5,(iVisReg == 5)?1:0,
+      						\"registerVisible\",6,(iVisReg == 6)?1:0);
+      						//\"registerVisible\",7,(iVisReg == 7)?1:0);
+ }
+}" 0
+7 "common" 3
+LANG:10000 9 Allgemein
+LANG:10001 6 Common
+LANG:10027 10 Общее
+1 "mainpanels\\childs\\About.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1
+"$b_close""$b_close"
+
+"logos" 3
+LANG:10000 5 Logos
+LANG:10001 5 Logos
+LANG:10027 12 Значки
+1 "mainpanels\\childs\\applicationProperties_logos.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+"sound" 3
+LANG:10000 7 Klänge
+LANG:10001 6 Sounds
+LANG:10027 10 Звуки
+1 "mainpanels\\childs\\applicationProperties_sound.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+"simulation" 3
+LANG:10000 10 Simulation
+LANG:10001 10 Simulation
+LANG:10027 18 Симуляция
+1 "mainpanels\\childs\\sim_properties.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+"alerthorn" 3
+LANG:10000 9 Alarmhupe
+LANG:10001 10 Alert horn
+LANG:10027 12 Сирена
+1 "vision\\alertHornProps.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+"xtensions" 3
+LANG:10000 13 Erweiterungen
+LANG:10001 10 Extensions
+LANG:10027 20 Расширения
+1 "mainpanels\\childs\\applicationProperties_extensions.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+"misc" 3
+LANG:10000 9 Sonstiges
+LANG:10001 4 Misc
+LANG:10027 12 Прочее
+1 "mainpanels\\childs\\applicationProperties_misc.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+
+13 15
+"cmdOK"
+""
+1 568 628 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+16 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  568 628 662 655
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main() 
+{ 
+  PanelOff();
+} 
+" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 16 0 "" 2
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 360 635 T 17 1 0 1 -300 95
+1
+"$hlp_keyword""da_props"
+0

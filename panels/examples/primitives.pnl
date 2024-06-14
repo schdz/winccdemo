@@ -1,0 +1,2732 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+E E E E E 1 -1 -1 0  413 578
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 477
+"Border5"
+""
+1 38 178 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+395 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 38 60 964 186
+6 478
+"Border6"
+""
+1 39 179 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+396 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 39 61 965 187
+6 479
+"Border1"
+""
+1 38 263 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+397 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 38 206 964 265
+6 480
+"Border2"
+""
+1 39 264 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+398 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 39 207 965 266
+4 482
+"Line1"
+""
+1 192 226 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+400 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 16 1 0 1 E  312 226 192 226
+4 483
+"Line2"
+""
+1 342 226 E E E 1 E 1 E N {102,204,255} E N {255,255,255} E E
+ E E
+401 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 14 1 0 1 E  462 226 342 226
+4 484
+"Line3"
+""
+1 492 226 E E E 1 E 1 E N {0,153,51} E N {255,255,255} E E
+ E E
+402 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 1 12 1 0 1 E  612 226 492 226
+4 485
+"Line4"
+""
+1 642 226 E E E 1 E 1 E N "BA_Sattdampf" E N {255,255,255} E E
+ E E
+403 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 2 10 1 0 1 E  762 226 642 226
+4 486
+"Line5"
+""
+1 782 226 E E E 1 E 1 E N "BA_Handbetrieb" E N {255,255,255} E E
+ E E
+404 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 3 8 1 0 1 E  902 226 782 226
+4 488
+"Line7"
+""
+1 202 246 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+406 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  322 246 202 246
+4 489
+"Line8"
+""
+1 352 246 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+407 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E  472 246 352 246
+4 490
+"Line9"
+""
+1 502 246 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+408 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 1 1 1 0 1 E  622 246 502 246
+4 491
+"Line10"
+""
+1 652 246 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+409 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 2 2 1 0 1 E  772 246 652 246
+4 492
+"Line11"
+""
+1 802 246 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+410 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 3 2 1 0 1 E  922 246 802 246
+6 494
+"Border3"
+""
+1 38 371 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+412 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 38 285 964 375
+6 495
+"Border4"
+""
+1 39 370 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+413 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 39 286 965 376
+10 506
+"Polyline1"
+""
+1 411 320 E E E 1 E 1 E N {0,0,0} E N {51,102,102} E E
+ E E
+424 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  1 E 8 412 322
+424 295
+431 322
+451 332
+431 340
+424 367
+412 340
+385 332
+ 1
+10 515
+"Polyline2"
+""
+1 482 299 E E E 1 E 1 E N {0,0,0} E N "yellow" E E
+ E E
+433 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 3 1 1 E U  3 0 8 1 E 8 482 299
+550 299
+550 321
+496 321
+496 343
+522 343
+522 365
+482 365
+ 1
+10 523
+"Polyline3"
+""
+1 652 295 E E E 1 E 1 E N {0,0,0} E N {153,204,255} E E
+ E E
+441 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 1 2 1 0 1 E U  1 E 8 652 295
+720 295
+721 321
+669 316
+669 344
+721 331
+720 365
+652 365
+ 0
+10 527
+"Polyline5"
+""
+1 899 364 E E E 1 E 1 E N {0,0,0} E N {204,204,102} E E
+ E E
+445 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "527.bmp" 4294967295 E 103 899 362
+897 362
+897 362
+897 360
+897 352
+895 352
+895 351
+897 351
+897 349
+897 349
+897 347
+903 347
+903 349
+903 349
+903 351
+905 351
+905 351
+907 351
+907 354
+909 356
+911 356
+911 365
+911 363
+913 362
+913 360
+916 360
+916 356
+920 356
+920 354
+922 354
+922 352
+927 352
+927 351
+929 351
+929 351
+933 351
+933 365
+929 365
+929 367
+927 367
+933 367
+933 365
+940 365
+940 362
+942 362
+942 360
+942 360
+942 343
+944 343
+944 334
+942 332
+942 331
+942 331
+940 328
+940 326
+935 324
+935 322
+933 322
+933 321
+929 319
+922 311
+920 311
+920 310
+916 306
+913 306
+909 302
+907 300
+903 300
+901 297
+895 297
+893 295
+879 295
+877 297
+871 297
+871 300
+871 300
+871 302
+869 306
+866 308
+866 310
+864 311
+864 313
+864 321
+862 322
+862 330
+864 331
+864 338
+864 340
+869 340
+871 343
+873 347
+875 347
+877 349
+877 351
+877 351
+882 352
+884 352
+888 356
+890 356
+893 360
+897 360
+899 362
+899 365
+ 1
+6 528
+"Border7"
+""
+1 38 463 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+446 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 38 395 964 469
+6 529
+"Border8"
+""
+1 39 464 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+447 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 39 396 965 470
+6 531
+"Border9"
+""
+1 52 446 E E E 1 E 1 E N {0,0,0} E N {204,255,255} E E
+ E E
+449 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 52 426 142 446
+6 532
+"Border10"
+""
+1 160 456 E E E 1 E 1 E N {0,0,0} E N {153,204,255} E E
+ E E
+450 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 160 416 170 456
+6 533
+"Border11"
+""
+1 189 446 E E E 1 E 1 E N {0,0,0} E N {51,255,51} E E
+ E E
+451 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 189 426 279 446
+6 534
+"Border12"
+""
+1 38 551 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+452 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 38 489 964 557
+6 535
+"Border13"
+""
+1 39 555 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+453 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 39 490 965 558
+7 538
+"Ellipse2"
+""
+1 102 524 E E E 1 E 1 E N {0,0,0} E N {51,102,102} E E
+ E E
+456 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 102 524 20 20
+7 540
+"Ellipse3"
+""
+1 202 524 E E E 1 E 1 E N {0,0,0} E N {102,255,102} E E
+ E E
+458 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 202 524 20 10
+9 542
+"Arc1"
+""
+1 307 519 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+460 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 292 534 30 30
+ 0 322 534 292 504 0
+9 544
+"Arc2"
+""
+1 372 524 E E E 1 E 1 E N {0,0,0} E N {0,153,255} E E
+ E E
+462 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 412 544 80 40
+ 0 412 504 332 544 0
+6 545
+"Border14"
+""
+1 372 454 E E E 1 E 1 E N {255,0,0} E N {0,51,255} E E
+ E E
+463 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 0 8 1 E 372 424 462 454
+6 546
+"Border15"
+""
+1 561 454 E E E 1 E 1 E N {255,102,0} E N {0,51,255} E E
+ E E
+464 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 0 8 3 E 561 424 651 454
+6 547
+"Border16"
+""
+1 491 463 E E E 1 E 1 E N {255,102,0} E N {0,51,255} E E
+ E E
+465 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 1 8 0 E 491 423 531 463
+2 553
+"Text19"
+""
+1 650 120 E E E 1 E 1 E N {153,102,0} E N "_Transparent" E E
+ E E
+471 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 652 122 804 139
+0 2 0 "0s" 0 0 0 192 0 0  652 122 1
+3
+LANG:10000 28 Courier,-1,16,5,69,0,0,0,0,0
+LANG:10001 28 Courier,-1,16,5,69,0,0,0,0,0
+LANG:10027 28 Courier,-1,16,5,69,0,0,0,0,0
+0 3
+LANG:10000 15 Courier 10 fett
+LANG:10001 15 Courier 10 bold
+LANG:10027 20 Courier 10 жирн.
+2 555
+"Text21"
+""
+1 390 70 E E E 1 E 1 E N {51,153,51} E N "_Transparent" E E
+ E E
+473 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 392 72 670 94
+0 2 0 "0s" 0 0 0 192 0 0  392 72 1
+3
+LANG:10000 28 Courier,-1,20,5,69,1,0,0,0,0
+LANG:10001 28 Courier,-1,20,5,69,1,0,0,0,0
+LANG:10027 28 Courier,-1,20,5,69,1,0,0,0,0
+0 3
+LANG:10000 23 Courier 15 fett kursiv 
+LANG:10001 24 Courier 14 bold italic  
+LANG:10027 36 Courier 14 жирный курсив
+2 556
+"Text22"
+""
+1 50 90 E E E 1 E 1 E N {0,0,0} E N {204,255,102} E E
+ E E
+474 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 2 0 1 E U  1 E 52 92 377 108
+0 2 0 "0s" 0 0 0 192 0 0  52 92 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 50 Textobjekte mit unterschiedlicher Hintergrundfarbe
+LANG:10001 44 Textobjects with different background colors
+LANG:10027 77 Текстовые объекты с различным цветом фона
+2 557
+"Text23"
+""
+1 50 120 E E E 1 E 1 E N "STD_dp_not_existing" E N {204,255,255} E E
+ E E
+475 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 2 0 1 E U  1 E 52 122 377 138
+1 2 0 "0s" 0 0 0 192 0 0  52 122 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 46 Textobjekte mit eigenem Rahmen und Hintergrund
+LANG:10001 37 Textobjects with frame and background
+LANG:10027 63 Текстовые объекты с рамкой и фоном
+2 558
+"Text24"
+""
+1 400 110 E E E 1 E 1 E N {0,0,0} E N "STD_background" E E
+ E E
+476 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 2 0 1 E U  2  0 3  "558.bmp" 4294967295 E 410 120 574 155
+0 10 0 "0s" 0 0 0 192 0 0  410 120 2
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 22 Textobjekte mit Bitmap
+LANG:10001 17 Textobjects using
+LANG:10027 34 Текстовый объект с
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 15 als Hintergrund
+LANG:10001 23  bitmaps for background
+LANG:10027 39 фоновым изображением
+2 559
+"Text25"
+""
+1 750 150 E E E 1 E 1 E N <{0,51,255},4,{204,255,0},4,{204,51,51},4,{0,0,0},0,{0,0,0},0,{0,0,0},0> E N "_Transparent" E E
+ E E
+477 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 752 152 898 174
+0 2 0 "0s" 0 0 0 192 0 0  752 152 1
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 17 Arial 16 blinkend
+LANG:10001 17 Arial 16 flashing
+LANG:10027 22 Arial 16 мигающ.
+10 579
+"Polyline4"
+""
+1 72 306 E E E 1 E 1 E N {102,153,255} E N {255,255,204} E E
+ E E
+497 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  3 1 8 0 E 17 72 306
+72 366
+99 366
+112 335
+141 335
+154 366
+184 366
+193 334
+228 334
+236 366
+268 366
+280 334
+312 334
+324 365
+352 365
+352 305
+222 298
+ 1
+6 580
+"Border17"
+""
+1 311 458 E E E 1 E 1 E N {255,0,0} E N {255,255,255} E E
+ E E
+498 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  2  0 3  "580.bmp" 4294967295 E 311 424 343 458
+6 581
+"Border18"
+""
+1 691 454 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+499 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 691 414 731 454
+6 583
+"Border20"
+""
+1 698 447 E E E 1 E 1 E N {0,0,0} E N {0,0,255} E E
+ E E
+501 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 698 421 724 447
+6 584
+"Border21"
+""
+1 705 440 E E E 1 E 1 E N {0,0,0} E N {255,255,0} E E
+ E E
+502 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 705 428 718 440
+6 585
+"Border22"
+""
+1 698 429 E E E 1 E 1 E N {0,0,0} E N {0,153,0} E E
+ E E
+503 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 698 421 706 429
+6 586
+"Border23"
+""
+1 751 425 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+504 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 751 415 761 425
+6 587
+"Border24"
+""
+1 761 435 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+505 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 761 425 771 435
+6 588
+"Border25"
+""
+1 771 445 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+506 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 771 435 781 445
+6 589
+"Border26"
+""
+1 781 455 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+507 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 781 445 791 455
+6 590
+"Border27"
+""
+1 761 425 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+508 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 761 415 771 425
+6 591
+"Border28"
+""
+1 771 435 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+509 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 771 425 781 435
+6 592
+"Border29"
+""
+1 781 445 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+510 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 781 435 791 445
+6 593
+"Border30"
+""
+1 791 455 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+511 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 791 445 801 455
+6 594
+"Border31"
+""
+1 771 425 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+512 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 771 415 781 425
+6 595
+"Border32"
+""
+1 781 435 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+513 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 781 425 791 435
+6 596
+"Border33"
+""
+1 791 445 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+514 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 791 435 801 445
+6 597
+"Border34"
+""
+1 801 455 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+515 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 801 445 811 455
+6 598
+"Border35"
+""
+1 781 425 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+516 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 781 415 791 425
+6 599
+"Border36"
+""
+1 791 435 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+517 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 791 425 801 435
+6 600
+"Border37"
+""
+1 801 445 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+518 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 801 435 811 445
+6 601
+"Border38"
+""
+1 811 455 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+519 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 811 445 821 455
+6 602
+"Border39"
+""
+1 791 425 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+520 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 791 415 801 425
+6 603
+"Border40"
+""
+1 801 435 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+521 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 801 425 811 435
+6 604
+"Border41"
+""
+1 811 445 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+522 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 811 435 821 445
+6 605
+"Border42"
+""
+1 821 455 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+523 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 821 445 831 455
+6 606
+"Border43"
+""
+1 801 425 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+524 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 801 415 811 425
+6 607
+"Border44"
+""
+1 811 435 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+525 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 811 425 821 435
+6 608
+"Border45"
+""
+1 821 445 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+526 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 821 435 831 445
+6 609
+"Border46"
+""
+1 831 455 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+527 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 831 445 841 455
+6 610
+"Border47"
+""
+1 811 425 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+528 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 811 415 821 425
+6 611
+"Border48"
+""
+1 821 435 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+529 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 821 425 831 435
+6 612
+"Border49"
+""
+1 831 445 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+530 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 831 435 841 445
+6 613
+"Border50"
+""
+1 841 455 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+531 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 841 445 851 455
+7 627
+"Ellipse5"
+""
+1 152 524 E E E 1 E 1 E N {0,0,0} E N {204,102,0} E E
+ E E
+545 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  1 E 152 524 15 15
+7 628
+"Ellipse6"
+""
+1 152 524 E E E 1 E 1 E N {0,0,0} E N {0,204,255} E E
+ E E
+546 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 152 524 10 10
+9 629
+"Arc3"
+""
+1 442 514 E E E 1 E 1 E N {0,0,0} E N "_ETM" E E
+ E E
+547 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 432 524 20 20
+ 0 452 524 432 504 1
+9 630
+"Arc4"
+""
+1 492 524 E E E 1 E 1 E N {0,0,0} E N {102,255,51} E E
+ E E
+548 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 492 524 20 20
+ 0 512 524 492 544 1
+9 631
+"Arc5"
+""
+1 552 524 E E E 1 E 1 E N {0,0,0} E N {204,255,153} E E
+ E E
+549 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 552 524 20 20
+ 0 569.321 514 552 544 1
+9 632
+"Arc6"
+""
+1 612 524 E E E 1 E 1 E N {0,0,0} E N {0,153,255} E E
+ E E
+550 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 612 524 20 20
+ 0 629.321 514 612 544 2
+9 634
+"Arc7"
+""
+1 677 514 E E E 1 E 1 E N {0,0,0} E N "_ETM" E E
+ E E
+552 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 662 524 30 20
+ 0 692 524 662 504 1
+9 635
+"Arc8"
+""
+1 752 524 E E E 1 E 1 E N {0,0,0} E N {51,255,51} E E
+ E E
+553 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 752 524 30 20
+ 0 782 524 752 544 1
+9 636
+"Arc9"
+""
+1 842 524 E E E 1 E 1 E N {0,0,0} E N {51,204,255} E E
+ E E
+554 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 842 524 30 20
+ 0 864.678 510.907 842 544 1
+9 637
+"Arc10"
+""
+1 912 523 E E E 1 E 1 E N {0,0,0} E N {204,255,153} E E
+ E E
+555 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 912 523 30 20
+ 0 934.678 509.907 912 543 2
+10 639
+"Polyline11"
+""
+1 930 421 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+557 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 930 421
+930 431
+910 431
+ 1
+10 640
+"Polyline12"
+""
+1 910 431 E E E 1 E 1 E N {255,0,0} E N {255,0,0} E E
+ E E
+558 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 4 910 431
+930 431
+930 441
+890 441
+ 1
+10 641
+"Polyline13"
+""
+1 890 441 E E E 1 E 1 E N {255,153,0} E N {255,153,0} E E
+ E E
+559 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 4 890 441
+930 441
+930 451
+870 451
+ 1
+10 642
+"Polyline14"
+""
+1 930 421 E E E 1 E 1 E N {255,0,0} E N {255,0,0} E E
+ E E
+560 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 4 930 421
+870 421
+870 431
+910 431
+ 1
+10 643
+"Polyline15"
+""
+1 870 431 E E E 1 E 1 E N {255,255,255} E N {255,255,255} E E
+ E E
+561 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 4 870 431
+910 431
+890 441
+870 441
+ 1
+10 644
+"Polyline16"
+""
+1 870 441 E E E 1 E 1 E N {255,0,0} E N {255,0,0} E E
+ E E
+562 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 870 441
+890 441
+870 451
+ 1
+10 685
+"Polyline18"
+""
+1 353 10 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+602 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 8 356 10
+346 20
+346 30
+356 40
+432 40
+442 30
+442 20
+432 10
+ 1
+7 686
+"Ellipse7"
+""
+1 353.033 20 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+603 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -25.25 0 1 E 353.5 20 7 10
+7 687
+"Ellipse8"
+""
+1 353.03333 30 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+604 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -25.25 0 1 E 353.5 30 7 10
+7 688
+"Ellipse9"
+""
+1 434.03333 20 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+605 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -31.0357142857143 0 1 E 434.5 20 7 10
+7 689
+"Ellipse10"
+""
+1 434.03333 30 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+606 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -31.0357142857143 0 1 E 434.5 30 7 10
+10 690
+"Polyline19"
+""
+1 568 10 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+607 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 8 571 10
+561 20
+561 30
+571 40
+647 40
+657 30
+657 20
+647 10
+ 1
+7 691
+"Ellipse11"
+""
+1 568.03333 20 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+608 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -40.6071428571428 0 1 E 568.5 20 7 10
+7 692
+"Ellipse12"
+""
+1 568.03333 30 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+609 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -40.6071428571428 0 1 E 568.5 30 7 10
+7 693
+"Ellipse13"
+""
+1 649.03333 20 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+610 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -46.3928571428571 0 1 E 649.5 20 7 10
+7 694
+"Ellipse14"
+""
+1 649.03333 30 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+611 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -46.3928571428571 0 1 E 649.5 30 7 10
+6 695
+"Border57"
+""
+1 380 40 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+612 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 380 10 620 40
+2 470
+"Text1"
+""
+1 422 14 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+388 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 358 16 646 34
+0 2 0 "0s" 0 0 0 193 0 0  502 16 1
+3
+LANG:10000 26 Arial,-1,17,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,69,0,0,0,0,0
+0 3
+LANG:10000 38 E I N I G E  G R A F I K O B J E K T E
+LANG:10001 19 P R I M I T I V E S
+LANG:10027 52 Простые графические объекты
+10 696
+"Polyline20"
+""
+1 52 48 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+613 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 52 48
+136 48
+150 60
+136 72
+52 72
+ 1
+6 654
+"Border60"
+""
+1 55 71 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+572 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"hoverbclr" "N \"_Transparent\""
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.2 -12 -13.2 2  0 0  "pictures/textfield.png" 4294967295 E 55 51 75 71
+2 560
+"Text26"
+""
+1 77 49 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+478 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 79 51 121 68
+0 2 0 "0s" 0 0 0 192 0 0  79 51 1
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 5 Texte
+LANG:10001 4 Text
+LANG:10027 10 Текст
+10 697
+"Polyline21"
+""
+1 52 193 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+614 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 52 193
+144 193
+160 206
+144 219
+52 219
+ 1
+6 659
+"Border61"
+""
+1 55 217 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+577 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.25 0 1.19047619047619 -15.75 -39.3333333333333 2  0 3  "pictures/line.png" 4294967295 E 55 196 75 217
+2 481
+"Text8"
+""
+1 79 194 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+399 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 81 196 127 213
+0 2 0 "0s" 0 0 0 192 0 0  81 196 1
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 6 Linien
+LANG:10001 10 Linestyles
+LANG:10027 10 Линии
+10 698
+"Polyline22"
+""
+1 52 273 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+615 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 52 273
+161 273
+180 285
+161 297
+52 297
+ 1
+6 661
+"Border62"
+""
+1 55 296 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+579 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.3 -13 -85.8000000000001 2  0 3  "pictures/polygon.png" 4294967295 E 55 276 75 296
+2 496
+"Text9"
+""
+1 78 273 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+414 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 80 275 151 292
+0 2 0 "0s" 0 0 0 192 0 0  80 275 1
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 10 Polylinien
+LANG:10001 9 Polylines
+LANG:10027 14 Ломаные
+6 700
+"Border58"
+""
+1 320 294 E E E 1 E 1 E N {255,255,204} E N "_3DFace" E E
+ E E
+617 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 320 277 400 294
+2 699
+"Text2"
+""
+1 323 274 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+616 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 322 276 396 291
+0 2 0 "0s" 0 0 0 193 0 0  359 276 1
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10000 11 geschlossen
+LANG:10001 6 closed
+LANG:10027 16 закрытые
+6 701
+"Border59"
+""
+1 560 294 E E E 1 E 1 E N {255,255,204} E N "_3DFace" E E
+ E E
+618 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 560 276 648 294
+2 524
+"Text10"
+""
+1 563 274 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+442 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 577 276 633 291
+0 2 0 "0s" 0 0 0 193 0 0  605 276 1
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10000 10 oder offen
+LANG:10001 10 open ended
+LANG:10027 16 открытые
+6 702
+"Border67"
+""
+1 756 293 E E E 1 E 1 E N {255,255,204} E N "_3DFace" E E
+ E E
+619 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 756 275 876 293
+2 525
+"Text11"
+""
+1 762 274 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+443 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 764 276 871 291
+0 2 0 "0s" 0 0 0 192 0 0  764 276 1
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10000 17 auch von Freihand
+LANG:10001 11 or freehand
+LANG:10027 31 или произвольные
+6 667
+"Border65"
+""
+1 740 295 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+585 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1 0 1.15 2.00000000000003 -43.2500000000001 2  0 3  "pictures/edit_shape.png" 4294967295 E 740 275 760 295
+10 703
+"Polyline23"
+""
+1 50 384 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+620 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 50 384
+263 384
+283 396
+263 408
+50 408
+ 1
+6 663
+"Border63"
+""
+1 53 407 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+581 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.2 -10.6 -79.40000000000001 2  0 3  "pictures/rectangle.png" 4294967295 E 53 387 73 407
+2 530
+"Text12"
+""
+1 77 384 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+448 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 79 386 258 403
+0 2 0 "0s" 0 0 0 192 0 0  79 386 1
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 22 Rechtecke und Quadrate
+LANG:10001 22 Rectangles and squares
+LANG:10027 45 Прямоугольники,квадраты
+6 705
+"Border68"
+""
+1 704 404 E E E 1 E 1 E N {255,255,204} E N "_3DFace" E E
+ E E
+622 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 704 385 879 404
+2 614
+"Text27"
+""
+1 715 385 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+532 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 708 387 872 402
+0 2 0 "0s" 0 0 0 193 0 0  790 387 1
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10000 24 zusammengesetzte Objekte
+LANG:10001 16 Combined objects
+LANG:10027 45 комбинированные объекты
+10 706
+"Polyline24"
+""
+1 50 477 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+623 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 50 477
+263 477
+283 489
+263 501
+50 501
+ 1
+6 665
+"Border64"
+""
+1 53 500 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+583 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.1 0 1.2 -5.30000000000001 -99 2  0 3  "pictures/circle.png" 4294967295 E 53 480 73 500
+2 536
+"Text13"
+""
+1 102 479 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+454 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 104 481 245 498
+0 2 0 "0s" 0 0 0 192 0 0  104 481 1
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 19 Kreise und Ellipsen
+LANG:10001 20 Circles and ellipses
+LANG:10027 35 Окружности,эллипсы
+6 707
+"Border69"
+""
+1 314 499 E E E 1 E 1 E N {255,255,204} E N "_3DFace" E E
+ E E
+624 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 314 479 481 499
+2 543
+"Text15"
+""
+1 321 479 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+461 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 321 481 475 496
+0 2 0 "0s" 0 0 0 193 0 0  398 481 1
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0 3
+LANG:10000 24 Kreissegmente und Bögen
+LANG:10001 17 Arcs and segments
+LANG:10027 28 дуги и сегменты
+6 669
+"Border66"
+""
+1 77 500 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+587 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.15 -15.4 -74 2  0 3  "pictures/ellipse.png" 4294967295 E 77 480 97 500
+2 708
+"Text3"
+""
+1 50 150 E E E 1 E 1 E N {255,255,255} E N {51,102,153} E E
+ E E
+625 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 55  Tooltips eignen sich um Objekte näher zu beschreiben 
+LANG:10001 56  Tool tips are perfect to describe objects more exactly 
+LANG:10027 96 Подсказки удобны для более точного описания объекта
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 2 0 1 E U  1 E 52 152 195 168
+1 2 0 "0s" 0 0 0 192 0 0  52 152 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 23 Textobjekte mit Tooltip
+LANG:10001 25 Textobjects with tool tip
+LANG:10027 57 Текстовые объекты с подсказкой
+30 710
+"Frame1"
+""
+1 640 150 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+627 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 640 100 830 150
+3
+LANG:10000 26 Arial,-1,13,5,69,1,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,1,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,1,0,0,0,0
+0 3
+LANG:10000 15  Standardframe 
+LANG:10001 16  Standard frame 
+LANG:10027 33 Стандартная рамка
+2 715
+"PRIMITIVE_TEXT5"
+""
+1 807.9999999999998 181.9999999999998 E E E 1 E 1 E N {0,128,128} E N {192,192,192} E E
+ E E
+632 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 2 1 E -1.83697019872103e-016 1 -1 -1.83697019872103e-016 1022 -716 1 E 797 90 883 106
+0 13 2 "0s" 0 0 0 193 0 0  840 90 1
+3
+LANG:10000 36 Times New Roman,11,-1,5,75,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Rotated Text
+LANG:10001 12 Rotated Text
+LANG:10027 29 Вращаемый текст
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

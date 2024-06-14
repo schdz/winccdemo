@@ -1,0 +1,309 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 92 75 N "_3DFace" 1
+"$dpe"
+E E E E E 1 -1 -1 0  47 44
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+6 11
+"hand"
+""
+1 20 10 E E E 1 E 0 E N "_Transparent" E N "_InputFieldBackground" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  string dpe=dpeName.text;
+ 
+  ChildPanelOnCentralModal(\"objects_parts/TRAFFIC/tc_sub_traffic_light.pnl\",getCatStr(\"DemoApp\",\"traffic\"), makeDynString(dpe));
+}" 0
+ 0 1 1 0 1 E U  2  0 3  "11.bmp" 4294967295 E 20 10 48 35
+2 12
+"dpeName"
+""
+1 25 40 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  string dpe=dpeName.text;
+ 
+  ChildPanelOnCentralModal(\"objects_parts/TRAFFIC/tc_sub_traffic_light.pnl\",getCatStr(\"DemoApp\",\"traffic\"), makeDynString(dpe));
+}" 0
+ 0 1 1 0 1 E U  0 E 27 42 53 58
+0 2 0 "0s" 0 0 0 64 0 0  27 42 1
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 dpe
+LANG:10001 5 Text1
+LANG:10027 5 Text1
+6 13
+"lightBorder"
+""
+1 48 59 E E E 1 E 1 E N {0,0,0} E N {0,0,0} E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  string dpe = $dpe;
+  if (dpe != \"\")
+  {  
+    dpe=dpSubStr(dpe,DPSUB_DP);
+    if(strpos(dpe,getSystemName())>=0)    
+	  strreplace (dpe, getSystemName(), \"\");
+  }
+  
+  if(dpExists(dpe+\".state.manual\")) 
+  { 
+    dpConnect(\"workTrafficLight\",dpe+\".state.manual:_online.._value\"
+                               ,dpe+\".state.off:_online.._value\"
+                               ,dpe+\".state.red:_online.._value\"
+                               ,dpe+\".state.red-yellow:_online.._value\"
+                               ,dpe+\".state.yellow:_online.._value\"
+                               ,dpe+\".state.flashing_yellow:_online.._value\"
+                               ,dpe+\".state.green:_online.._value\"
+                               ,dpe+\".state.flashing_green:_online.._value\");
+    dpeName.text=dpe;
+  }
+  else
+  {
+    redLight.color=\"STD_dp_not_existing\";
+    yellowLight.color=\"STD_dp_not_existing\";
+    greenLight.color=\"STD_dp_not_existing\";
+    redLight.enabled = 0;
+    yellowLight.enabled = 0;
+    greenLight.enabled = 0;
+    lightBorder.enabled = 0;
+  }
+}
+workTrafficLight(string dp1,bool boManual,
+                string dp2,bool boOff,
+                string dp3,bool boRed,
+                string dp4,bool boRedYellow,
+                string dp5,bool boYellow,
+                string dp6,bool boFlashYellow,
+                string dp7,bool boGreen,
+                string dp8,bool boFlashGreen)
+{
+  
+  if(boOff)
+  {
+    redLight.color=\"_3DFace\";
+    yellowLight.color=\"_3DFace\";
+    greenLight.color=\"_3DFace\"; 
+  }
+  else if(boRed)
+  {
+    redLight.color=\"red\";
+    yellowLight.color=\"_3DFace\";
+    greenLight.color=\"_3DFace\";  
+  }
+  else if(boRedYellow)
+  {
+    redLight.color=\"red\";
+    yellowLight.color=\"yellow\";
+    greenLight.color=\"_3DFace\";  
+  }
+  else if(boYellow)
+  {
+    redLight.color=\"_3DFace\";
+    yellowLight.color=\"yellow\";
+    greenLight.color=\"_3DFace\";  
+  }
+  else if(boFlashYellow)
+  {
+    redLight.color=\"_3DFace\";
+    yellowLight.color=\"<[100,80,20],4,_3DFace,3,[0,0,0],0,[0,0,0],0,[0,0,0],0,[0,0,0],0>\";
+    greenLight.color=\"_3DFace\";  
+  }
+  else if(boGreen)
+  {
+    redLight.color=\"_3DFace\";
+    yellowLight.color=\"_3DFace\";
+    greenLight.color=\"green\";  
+  }
+  else if(boFlashGreen)
+  {
+    redLight.color=\"_3DFace\";
+    yellowLight.color=\"_3DFace\";
+    greenLight.color=\"<green,4,_3DFace,3,[0,0,0],0,[0,0,0],0,[0,0,0],0,[0,0,0],0>\";  
+  }
+  else //Default
+  {
+    redLight.color=\"_3DFace\";
+    yellowLight.color=\"_3DFace\";
+    greenLight.color=\"green\";  
+  }
+  if(boManual && !boOff)
+   hand.visible=1;
+  else
+   hand.visible=0;
+    
+}" 0
+ "main()
+{
+  string dpe=dpeName.text;
+ 
+  ChildPanelOnCentralModal(\"objects_parts/TRAFFIC/tc_sub_traffic_light.pnl\",getCatStr(\"DemoApp\",\"traffic\"), makeDynString(dpe));
+}" 0
+ 0 1 1 0 1 E U  1 E 48 11 67 59
+7 14
+"redLight"
+""
+1 55.2273 16.2273 E E E 1 E 1 E N "_Transparent" E N "red" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  string dpe=dpeName.text;
+ 
+  ChildPanelOnCentralModal(\"objects_parts/TRAFFIC/tc_sub_traffic_light.pnl\",getCatStr(\"DemoApp\",\"traffic\"), makeDynString(dpe));
+}" 0
+ 0 1 1 0 1 E 1.1 0 1.1 -5.750000000000005 -1.850000000000002 1 E 57.5 18.5 5 5
+7 15
+"yellowLight"
+""
+1 66.136364 39.5 E E E 1 E 1 E N "_Transparent" E N "yellow" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  string dpe=dpeName.text;
+ 
+  ChildPanelOnCentralModal(\"objects_parts/TRAFFIC/tc_sub_traffic_light.pnl\",getCatStr(\"DemoApp\",\"traffic\"), makeDynString(dpe));
+}" 0
+ 0 1 1 0 1 E 1.1 0 1.1 -5.750000000000005 -3.450000000000003 1 E 57.5 34.5 5 5
+7 16
+"greenLight"
+""
+1 77.045455 78.227273 E E E 1 E 1 E N "_Transparent" E N "green" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  string dpe=dpeName.text;
+ 
+  ChildPanelOnCentralModal(\"objects_parts/TRAFFIC/tc_sub_traffic_light.pnl\",getCatStr(\"DemoApp\",\"traffic\"), makeDynString(dpe));
+}" 0
+ 0 1 1 0 1 E 1.1 0 1.1 -5.750000000000005 -5.050000000000004 1 E 57.5 50.5 5 5
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

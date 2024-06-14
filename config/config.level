@@ -1,0 +1,7 @@
+[ctrl]
+LoadCtrlLibs = "pt.ctl"
+
+[ui]
+LoadCtrlLibs = "DemoApp.ctl"
+LoadCtrlLibs = "sched.ctl"
+LoadCtrlLibs = "wh_sc.ctc"

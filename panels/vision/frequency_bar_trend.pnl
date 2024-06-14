@@ -1,0 +1,2860 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 8 (NoName)
+PANEL,-1 -1 809 561 N "STD_panel_back" 1
+"$DPE"
+"main()
+{
+}" 0
+ E E E E 1 -1 -1 0  569 703
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 47
+"Border5"
+""
+1 10 417 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 360 789 419
+6 48
+"Border6"
+""
+1 11 418 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 361 790 420
+6 5
+"Border2"
+""
+1 569 514 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 569 430 789 514
+6 6
+"Border1"
+""
+1 570 515 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 570 431 790 515
+2 2
+"Text5"
+""
+1 578 425 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 580 425 647 440
+0 2 2 "0s" 0 0 0 192 0 0  580 425 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Darstellung
+LANG:10001 14 Representation
+LANG:10027 26 Представление
+2 7
+"Hdr_text"
+""
+1 9 7 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 8 187 29
+0 2 2 "0s" 0 0 0 192 0 0  11 8 1
+3
+LANG:10000 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,19,5,50,0,0,0,0,0
+0 3
+LANG:10000 22 Häufigkeitsverteilung
+LANG:10001 22 Frequency distribution
+LANG:10027 45 Плотность распределения
+6 25
+"Border3"
+""
+1 10 514 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 430 558 514
+6 26
+"Border4"
+""
+1 11 515 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 431 559 515
+2 27
+"Text1"
+""
+1 17 425 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 19 425 134 440
+0 2 2 "0s" 0 0 0 192 0 0  19 425 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 17 Datenpunktauswahl
+LANG:10001 19 Datapoint Selection
+LANG:10027 34 Выбор точки данных
+2 32
+"Text2"
+""
+1 16 448 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 18 448 51 463
+0 2 2 "0s" 0 0 0 192 0 0  18 448 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 DPE:
+LANG:10001 4 DPE:
+LANG:10027 4 DPE:
+2 33
+"Text3"
+""
+1 16 483 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 18 483 103 498
+0 2 2 "0s" 0 0 0 192 0 0  18 483 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Beschreibung:
+LANG:10001 12 Description:
+LANG:10027 17 Описание:
+2 34
+"Text4"
+""
+1 458 484 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 434 484 478 499
+0 2 2 "0s" 0 0 0 194 0 0  478 484 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Einheit:
+LANG:10001 5 Unit:
+LANG:10027 6 Ед.:
+2 41
+"Text6"
+""
+1 347 382 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 349 382 446 397
+0 2 2 "0s" 0 0 0 192 0 0  349 382 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 Anzahl Klassen:
+LANG:10001 17    No. of classes
+LANG:10027 26 Кол-во классов
+2 49
+"Text7"
+""
+1 17 352 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 19 352 72 367
+0 2 2 "0s" 0 0 0 192 0 0  19 352 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Bereiche
+LANG:10001 6 Ranges
+LANG:10027 18 Диапазоны
+2 60
+"Text8"
+""
+1 27 365 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 29 367 117 382
+0 2 0 "0s" 0 0 0 192 0 0  29 367 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 Zeitbereich von
+LANG:10001 14 Timerange from
+LANG:10027 21 Диапазон от
+2 61
+"Text9"
+""
+1 190 365 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 192 367 211 382
+0 2 0 "0s" 0 0 0 192 0 0  192 367 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 bis
+LANG:10001 2 to
+LANG:10027 4 до
+2 62
+"Text10"
+""
+1 9 30 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 32 100 47
+0 2 0 "0s" 0 0 0 192 0 0  11 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Häufigkeit in %
+LANG:10001 14 Frequency in %
+LANG:10027 38 Частота появления в %
+2 63
+"valueUnitText"
+""
+1 334 338 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 280 340 505 355
+0 2 0 "0s" 0 0 0 194 0 0  505 340 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 35 Wertebereich des Datenpunktelements
+LANG:10001 33 Value range of data point element
+LANG:10027 74 Диапазон значений элемента точки данных
+2 64
+"valueUnit"
+""
+1 520 338 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 522 340 524 355
+0 2 0 "0s" 0 0 0 192 0 0  522 340 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+2 65
+"Text11"
+""
+1 737 461 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 739 463 753 478
+0 2 0 "0s" 0 0 0 192 0 0  739 463 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 %
+LANG:10001 1 %
+LANG:10027 1 %
+2 68
+"numberValues"
+""
+1 718 30 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 724 32 791 47
+0 2 0 "0s" 0 0 0 194 0 0  791 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 nnnn Werte
+LANG:10001 11 nnnn Values
+LANG:10027 21 nnnn Значений
+2 69
+"readData"
+""
+1 360 20 E E E 1 E 0 E N "Rot" E N "_Transparent" E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 362 22 541 40
+0 2 0 "0s" 0 0 0 192 0 0  362 22 1
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0 3
+LANG:10000 23 Daten werden gelesen...
+LANG:10001 15 Reading data...
+LANG:10027 28 Чтение данных...
+14 58
+"timeFrom"
+""
+1 26 383 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  24 381 182 408
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  time t;
+  unsigned year, month, day, hour, minute, second; 
+  
+  t = getCurrentTime();
+  
+  year   = year(t);
+  month  = month(t);
+  day    = day(t);
+  hour   = hour(t);
+  minute = minute(t);
+  second = second(t);
+  
+  this.text( makeTime(year,month,day,hour-1,minute,second) );
+}" 0
+ E
+14 59
+"timeTo"
+""
+1 190 383 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  188 381 347 408
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  this.text( getCurrentTime() );
+}" 0
+ E
+20 67
+"CheckButton1"
+""
+1 579 486 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  577 484 761 508
+1
+T 
+3
+LANG:10000 29 Markierung über            %
+LANG:10001 27 Mark exceeding            %
+LANG:10027 37 Разм.превыш.              %
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int position, int state)
+{
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+  string dpElement       = dpe_comboBox.text;
+  
+  if(state)
+  {
+    MarkPerc.enabled = TRUE;
+    if(MarkPerc.text > 0.0)
+      if(dpElement != \"\")
+      {
+        readData.visible = TRUE;
+        //This makes the calculations for frequency, distribution, etc...
+        frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+        readData.visible = FALSE;
+      }
+  }
+  else
+  {
+    MarkPerc.enabled = FALSE;
+    dpElement        = dpe_comboBox.text;
+
+    if(dpElement != \"\")
+    {
+      readData.visible = TRUE;
+      //This makes the calculations for frequency, distribution, etc...
+      frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+      readData.visible = FALSE;
+    }
+  }
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange, 
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+  
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC Types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition of xArray entries
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  				                     
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+
+" 0
+19 44
+"scaleSelect"
+""
+1 578 440 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  576 438 734 485
+2
+T 
+3
+LANG:10000 17 Skalierung 0-100%
+LANG:10001 20 Scale from 0 to 100%
+LANG:10027 31 Масштаб.от 0 до 100%
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 16 Skalierung 0 bis
+LANG:10001 15 Scale from 0 to
+LANG:10027 27 Масштаб. от 0 до
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  this.number(0);
+}" 0
+ "main()
+{
+  string dpElement       = dpe_comboBox.text;
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  
+  if(this.number() == 1)
+  {
+    setValue(\"maxPerc\",\"enabled\",TRUE);
+    if(dpElement != \"\")
+    {
+      readData.visible = TRUE;
+      frequencyBarTrend(dpElement,numberOfClasses,useValRange,FALSE);
+      readData.visible = FALSE;
+    }
+  }
+  else
+  {
+    setValue(\"maxPerc\",\"enabled\",FALSE);
+    if(dpElement != \"\")
+    {
+      readData.visible = TRUE;
+      frequencyBarTrend(dpElement,numberOfClasses,useValRange,TRUE);
+      readData.visible = FALSE;
+    }
+  }
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange,
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+                  
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition at left end of class
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  if(!scaleFrom0To100)
+    maxPerc.text = ceil(dynMax(classFrequency));
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+   
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+" 0
+
+13 11
+"cmd_close"
+""
+1 676 524 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+14 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  676 524 790 554
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E E
+13 15
+"timeRange"
+""
+1 567 1204 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  557 524 671 554
+
+T 
+3
+LANG:10000 14 Zeitbereich...
+LANG:10001 13 Time range...
+LANG:10027 19 Диапазон...
+"main()
+{
+  // Function for setting the time-period
+  dyn_float df;
+  dyn_time 	Time;
+  
+  string dpElement       = dpe_comboBox.text;
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+
+  ChildPanelOnCentralModalReturn(\"vision/trend/TC_timerange.pnl\",getCatStr(\"demoApp\",\"timeRange\"),makeDynString(\"\"), df, Time);
+ 
+  if (dynlen(Time) != 0)
+  {
+    setMultiValue(\"timeFrom\",\"text\",Time[1],
+                  \"timeTo\"  ,\"text\",Time[2]);
+  
+    if(dpElement != \"\")
+    {
+      readData.visible = TRUE;
+      //This makes the calculations for frequency, distribution, etc...
+      frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+      readData.visible = FALSE;
+    }
+  }
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange,
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",\"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+                  
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition at left end of class
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+   
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+" 0
+ E E E
+13 70
+"Button2"
+""
+1 430 526 E E E 1 E 0 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  428 524 552 554
+
+T 
+3
+LANG:10000 17 Demo- Zeitbereich
+LANG:10001 15 Demo time range
+LANG:10027 25 Демо-диапазон
+"main()
+{
+  // Function for setting the time-period
+  dyn_float df;
+  dyn_time 	Time;
+  
+  string dpElement       = dpe_comboBox.text;
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+  
+  int  iRange = 86400;	// show 1 day (=default time range sumation-trend)
+  time demoDataStart, demoDataEnd; 
+ 
+  dpGet(\"ApplicationProperties.demoDataStart:_online.._value\", demoDataStart,
+  		\"ApplicationProperties.demoDataEnd:_online.._value\", demoDataEnd);
+ 
+  setMultiValue(\"timeFrom\",\"text\",demoDataStart,
+                  \"timeTo\"  ,\"text\",demoDataEnd);
+  
+  if(dpElement != \"\")
+  {
+    readData.visible = TRUE;
+    //This makes the calculations for frequency, distribution, etc...
+    frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+    readData.visible = FALSE;
+  }
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange,
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",\"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+                  
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition at left end of class
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+   
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}" 0
+ E E "main()
+{
+  time demoDataEnd;
+  
+  dpGet(\"ApplicationProperties.demoDataEnd:_online.._value\", demoDataEnd);
+    
+  if (demoDataEnd == makeTime(1970,01,01)) this.visible = FALSE;
+  else this.visible = TRUE;
+}" 0
+
+14 66
+"MarkPerc"
+""
+1 695 486 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  693 484 737 510
+3 "2.1f" 4 0 0 0 0 -1  E "main()
+{
+  setValue(\"\",\"enabled\",FALSE);
+}" 0
+ "main()
+{
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+  string dpElement       = dpe_comboBox.text;
+
+  if(dpElement != \"\")
+  {
+    readData.visible = TRUE;
+    //This makes the calculations for frequency, distribution, etc...
+    frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+    readData.visible = FALSE;
+  }
+
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange, 
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+  
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC Types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition of xArray entries
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  				                     
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+" 0
+
+14 45
+"maxPerc"
+""
+1 695 457 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  693 455 737 481
+3 "3.0f" 4 0 0 0 0 -1  E "main()
+{
+  setValue(\"\",\"enabled\",FALSE);
+}" 0
+ "main()
+{
+  string dpElement       = dpe_comboBox.text;
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  
+  if(this.text() > 0)
+  {
+    if(dpElement != \"\")
+    {
+      readData.visible = TRUE;
+      frequencyBarTrend(dpElement,numberOfClasses,useValRange);
+      readData.visible = FALSE;
+    }
+  }
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange)
+{
+  int        i;
+  float	     maxVal, minVal, xRange,
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+                  
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition at left end of class
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = this.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+   
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+" 0
+
+19 43
+"classTypeSel"
+""
+1 490 371 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  488 369 782 413
+2
+T 
+3
+LANG:10000 48 Klassen gleichverteilt  im WinCC OA Wertebereich
+LANG:10001 34 Classes adjusted to WinCC OA Range
+LANG:10027 68 Классы адаптированы к диап.знач. WinCC OA
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 48 Klassen gleichverteilt im aktuellen Wertebereich
+LANG:10001 38 Classes adjusted to actual value range
+LANG:10027 78 Классы адаптированы к текущ.диап. значений
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  this.number = 0;
+}" 0
+ "main()
+{
+  string dpElement       = dpe_comboBox.text;
+  int    numberOfClasses = classNumbers.text;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+  
+  if(dpElement != \"\")
+  {
+    //This makes the calculations for frequency, distribution, etc...
+    readData.visible = TRUE;
+    frequencyBarTrend(dpElement,numberOfClasses,this.number,scaleFrom0To100);
+    readData.visible = FALSE;
+  }
+
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange,
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+  //check WinCC OA range
+  dpGet(dpe+\":_pv_range.._max\",maxVal,
+        dpe+\":_pv_range.._min\",minVal);
+  if((maxVal == 0) && (minVal == 0))
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"PVSSVRangeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    this.number(1); //set to alternative
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC Types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+                  
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition at left end of class
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+   
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+" 0
+
+21 46
+"classNumbers"
+""
+1 447 378 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  445 376 488 403
+0
+
+E
+"main()
+{
+  string dpElement       = dpe_comboBox.text;
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+  
+  if(dpElement != \"\")
+  {
+    //This makes the calculations for frequency, distribution, etc...
+    readData.visible = TRUE;
+    frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+    readData.visible = FALSE;
+  }
+
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange,
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC Types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+                  
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition at left end of class
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+   
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+" 0
+
+E
+
+N 1 99 1 10 1 1
+14 36
+"unitBox"
+""
+1 484 480 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  482 478 550 505
+2 "0s" 0 0 0 0 0 -1  E E E
+14 30
+"commentBox"
+""
+1 109 480 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  107 478 420 505
+2 "0s" 0 0 0 0 0 -1  E E E
+13 31
+"Button3"
+""
+1 519 443 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  517 441 550 470
+
+P 
+13421721
+"pictures/info_en.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  ChildPanelOnCentralModal(\"vision/dpe_info.pnl\",
+    					    getCatStr(\"DemoApp\",\"title_of_dpe_info\"),
+    					    makeDynString(\"$dpe:\"+dpe_comboBox.text,\"$b_editable:\"+\"0\"));
+}" 0
+ E E E
+13 4
+"dpsel"
+""
+1 484 443 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  482 441 515 470
+
+P 
+10862530
+"pictures/dpeMon_tree.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+  string dpElement, sUnit;
+  
+  dpSelector(dpElement);
+  
+  dpe_comboBox.text = dpElement;
+
+  if(dpElement != \"\")
+  {
+    valueUnit.text = \" [ \" + dpGetUnit(dpElement) + \" ]\";
+    setMultiValue(\"unitBox\",   \"text\",dpGetUnit(dpElement),
+                  \"commentBox\",\"text\",dpGetComment(dpElement),
+                  \"valueUnit\", \"text\",sUnit);    
+    readData.visible = TRUE;
+    //This makes the calculations for frequency, distribution, etc...
+    frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+    readData.visible = FALSE;
+  }
+
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange, 
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+  
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC Types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition of xArray entries
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  				                     
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+" 0
+ E E E
+22 3
+"dpe_comboBox"
+""
+1 109 445 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  107 443 481 470
+0
+
+"main()
+{
+  dyn_string dpRecent;
+  string     dpElement;
+
+  if(isDollarDefined(\"$DPE\") && $DPE != \"\")
+  {
+    dpElement = $DPE;
+    setMultiValue(\"dpsel\",\"visible\", FALSE,
+                  \"\"     ,\"backCol\", \"STD_textfield_back\",
+                  \"\"     ,\"editable\",FALSE,
+                  \"\"     ,\"enabled\", FALSE,
+                  \"\"     ,\"text\"    ,$DPE);
+    frequencyBarTrend_forDPE();                  
+  }
+  else
+  {
+    dpElement = \"\";
+    dpGet(\"ApplicationProperties.datapoint.recent:_online.._value\",dpRecent);
+    this.items = dpRecent;
+  }
+  
+}
+
+frequencyBarTrend_forDPE()
+{
+  string dpElement       = this.text;
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+  string sUnit;
+  
+  if(dpElement != \"\")
+  {
+    valueUnit.text = \" [ \" + dpGetUnit(dpElement) + \" ]\";
+    setMultiValue(\"unitBox\",   \"text\",dpGetUnit(dpElement),
+                  \"commentBox\",\"text\",dpGetComment(dpElement),
+                  \"valueUnit\", \"text\",sUnit);    
+    //This makes the calculations for frequency, distribution, etc...
+    readData.visible = TRUE;
+    frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+    readData.visible = FALSE;
+  }
+
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange,
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC Types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition of xArray entries
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+
+" 0
+
+"main()
+{
+  string dpElement       = this.text;
+  int    numberOfClasses = classNumbers.text;
+  bool   useValRange     = classTypeSel.number;
+  bool   scaleFrom0To100 = (scaleSelect.number == 0) ? TRUE : FALSE;
+  string sUnit;
+  
+  if(dpElement != \"\")
+  {
+    valueUnit.text = \" [ \" + dpGetUnit(dpElement) + \" ]\";
+    setMultiValue(\"unitBox\",   \"text\",dpGetUnit(dpElement),
+                  \"commentBox\",\"text\",dpGetComment(dpElement),
+                  \"valueUnit\", \"text\",sUnit);    
+    //This makes the calculations for frequency, distribution, etc...
+    readData.visible = TRUE;
+    frequencyBarTrend(dpElement,numberOfClasses,useValRange,scaleFrom0To100);
+    readData.visible = FALSE;
+  }
+
+}
+
+frequencyBarTrend(string dpe, int numberOfClasses, bool useValRange, bool scaleFrom0To100)
+{
+  int        i;
+  float	     maxVal, minVal, xRange,
+             yRangeMax = (MarkPerc.enabled == TRUE) ? MarkPerc.text : 0.0;
+  time 		 tstart, tend;
+  bool       archive = FALSE;
+
+  dyn_float  values, classRange_min, classRange_max, classFrequency, indicators, xArrayPos;
+  dyn_string barColor, indColor, xArrayText;
+  dyn_time	 times, classSum;
+
+  dyn_string dps, intervals,  strSplit,
+             dpSplit = strsplit(dpe,\".\");
+  string     dpName  = dpSubStr(dpe,DPSUB_DP),
+             dpType, numVal;
+  int        slope   = 0;
+  dyn_int    seconds;
+
+  // if DPE does not exist
+  if(!dpExists(dpe+\":_original.._value\") || dpElementType(dpe)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return; //do nothing
+  }
+  //if no archive config
+  dpGet(dpe+\":_archive.._archive\",archive);
+  if(!archive)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"no_archiv\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+    return;
+  }
+
+  //Check for AC Types    
+  acGetAllAcDps(dps);
+  if(dynContains(dps,dpName))
+  {
+    dpType = dpTypeName (dpName);
+    acGetIntervals(dpType,seconds,intervals);
+    for(i=1;i<=dynlen(seconds);i++)
+    {
+      if(dynContains(dpSplit,\"C\"+i))
+      {
+        slope = seconds[i];
+        break;
+      }
+    }
+  }
+
+  getMultiValue(\"timeFrom\",\"text\",tstart,
+                \"timeTo\",  \"text\",tend);
+  
+  dpGetPeriod(tstart, tend, 1, dpe+\":_online.._value\", values, times);
+
+  // determine the classes/criterias for the frequency distribution
+  
+  if(useValRange)
+  {
+    maxVal = dynMax(values);
+    minVal = dynMin(values);
+  }
+  else 
+  { 
+    dpGet(dpe+\":_pv_range.._max\",maxVal,
+          dpe+\":_pv_range.._min\",minVal);
+    //if pv_range not defined
+    if((maxVal == 0) && (minVal == 0))
+    {
+      maxVal = dynMax(values);
+      minVal = dynMin(values);
+      classTypeSel.number = 1;
+    }
+  }
+  
+  if(maxVal == minVal)
+  {
+    maxVal = ceil(maxVal);
+    minVal = floor(minVal);
+  }
+  //Make the statistical calculations
+  da_CalcBarStatistics(//Inputs
+                           tend,            //time of end
+                           tstart,          //time of begin
+                           numberOfClasses, //number of classes
+                           values,          //the set of values to be evaluated
+                           times,           //the set of timestamps of values
+                           minVal,          //minimum
+                           maxVal,          //maximum
+                           slope,           //for AC Types
+                           //Outputs
+                           classRange_min, //the lower limit of each class
+                           classRange_max, //the upper limit of each class
+                           classFrequency, //percentage of classSum of each class
+                           classSum        //the total time summation of each class
+                           );
+
+  //set some additional attributes
+  for (i = 1; i <= numberOfClasses; i++)
+  {
+    xArrayPos[i]  = classRange_max[i]; //textposition of xArray entries
+    sprintf( xArrayText[i],\"%3.1f%\",classFrequency[i]);
+    barColor[i]   = (yRangeMax > 0.0) ? ((classFrequency[i] <= yRangeMax) ? \"STD_trend_pen2\" : \"STD_trend_pen1\") : \"STD_trend_pen2\";
+    indColor[i]   = \"_Window\";
+    indicators[i] = 0;
+  }
+
+  //show it
+  yRangeMax = scaleFrom0To100 ? 100.0 : maxPerc.text;
+  xRange    = (maxVal - minVal) ? (maxVal - minVal) : ((maxVal != 0) ? ceil(maxVal) : 100);
+
+  setValue(\"bar_trend\",\"yRange\",     ( (yRangeMax > 0.0) ? yRangeMax : 100.0),
+                       \"xRange\",     (maxVal - minVal) ? (xRange) : 100 ,
+                       \"xPrec\",      (xRange < 101) ? (((xRange / 10) < 1.0) ? 3 : ((xRange / 10) < 10.0) ? 2 : 1) : 0,
+                       \"xCenter\",    minVal ,
+                       \"xOrigin\",    BAR_LEFT ,
+                       \"xStep\",      (maxVal-minVal) ? ((maxVal - minVal) / numberOfClasses) : numberOfClasses,
+                       \"xArray\",     xArrayPos, indColor, xArrayText,
+			           \"xArrayShow\", (numberOfClasses <= 25) ? TRUE : FALSE,
+			           \"data\",       classRange_min,classRange_max,
+			                         classFrequency,indicators,
+  				                     barColor,barColor );
+  //redraw bar trend with attributes from above
+  setValue(\"bar_trend\",\"flush\");
+
+  numVal   = numberValues.text;
+  strSplit = strsplit(numVal,\" \");
+  numberValues.text = dynlen(values) + \" \" + strSplit[2];
+}
+
+" 0
+
+E
+ 1 0
+27 40
+"bar_trend"
+""
+1 -776 -397 E E E 1 E 1 E N "STD_text" E N "STD_trend_back" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  8 48 792 340
+2 -40 100 5 2 "%H:%M" 1 3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  0 0 1 1 0 1 N {204,204,204}
+0 0 100 5 0 "%H:%M" 1 3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  0 0 1 1 0 1 N {204,204,204}
+1 1 0 20 3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  3 1 1 0 1 N {255,255,153}
+0 1 1 0 1 N {0,0,0} 1 0 0 10 0 N "STD_trend_pen1" N "STD_trend_pen2" N "STD_trend_pen2" 1 
+E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 71 0 "" 2
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 57 534 T 40 1 0 1 3 92
+1
+"$hlp_keyword""da_frequ_trend"
+0

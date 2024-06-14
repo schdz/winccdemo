@@ -1,0 +1,541 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 415 222 N "STD_panel_back" 1
+"$DP"
+E E E E E 1 -1 -1 0  0 0
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 2
+"Border1"
+""
+1 13 18 E E E 1 E 1 E N "Weiss" E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 13 18 404 175
+6 3
+"Border2"
+""
+1 12 17 E E E 1 E 1 E N "Dunkelgrau" E N "_Transparent" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 17 403 174
+2 7
+"Anlagenname"
+""
+1 22 8 E E E 1 E 1 E N {0,0,0} E N "STD_panel_back" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dyn_string dpSplit = strsplit($DP,\".\");
+  string     dpName  = dpSplit[1];
+  string     dpAlias;
+  int        i;
+
+  if(dynlen(dpSplit) > 1)
+    for(i = 2; i <= dynlen(dpSplit); i++)
+      dpName += \".\"+dpSplit[i];
+  else
+    dpName = $DP;
+  //display either alias or datapoint name
+  dpAlias = dpGetAlias(dpName);
+  setValue(\"Anlagenname\",\"text\",(dpAlias != \"\") ? dpAlias : $DP);
+}
+" 0
+ E 0 1 1 0 1 E U  1 E 24 8 66 23
+0 5 2 "0s" 0 0 0 192 0 0  24 8 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Anlage
+LANG:10001 6 Device
+LANG:10027 20 Устройство
+2 16
+"unitSetpoint"
+""
+1 371 45 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  string     einh    = dpGetUnit($DP+\"cmd.open:_online.._value\");
+
+  setValue( \"\", \"text\", einh );  
+}" 0
+ E 0 5 1 0 1 E U  0 E 373 45 391 60
+0 2 2 "0s" 0 0 0 192 0 0  373 45 1
+3
+LANG:10000 26 arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 3 (E)
+LANG:10001 3 (E)
+LANG:10027 3 (E)
+2 35
+"Text4"
+""
+1 258 40 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 260 42 316 58
+0 2 0 "0s" 0 0 0 66 0 0  260 42 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Stellgrad
+LANG:10001 8 Setpoint
+LANG:10027 14 Уставка
+1 69 4 "" 28
+0
+4 63
+"Line1"
+""
+1 50 72 E E E 1 E 1 E N "HVAC_Object_foregnd" E N {255,255,255} E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  50 72 60 72
+2 66
+"unitState"
+""
+1 369 82 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  string einh = dpGetUnit($DP+\"state.open:_online.._value\");
+
+  setValue( \"\", \"text\", einh );  
+}" 0
+ E 0 5 1 0 1 E U  0 E 371 82 389 97
+0 2 2 "0s" 0 0 0 192 0 0  371 82 1
+3
+LANG:10000 26 arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 3 (E)
+LANG:10001 3 (E)
+LANG:10027 3 (E)
+2 67
+"Text5"
+""
+1 219 80 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 221 82 317 98
+0 2 0 "0s" 0 0 0 66 0 0  221 82 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Rückmeldung
+LANG:10001 8 Feedback
+LANG:10027 17 Обр.связь
+19 59
+"bef"
+""
+1 99 39 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  98 38 198 110
+3
+T 
+3
+LANG:10000 3 Auf
+LANG:10001 4 Open
+LANG:10027 12 Открыт
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 2 Zu
+LANG:10001 5 Close
+LANG:10027 12 Закрыт
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 9 Automatik
+LANG:10001 9 Automatic
+LANG:10027 15 Автомат.
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  bool       on,off,manual;
+
+  dpGet($DP+\"state.closed:_online.._value\",on,
+        $DP+\"state.open:_online.._value\",off,
+        $DP+\"state.manual:_online.._value\",manual);
+
+  if(!manual)
+    this.number(2);
+  else
+    if(off)
+      this.number(0);
+    else
+      if(on)
+        this.number(1);
+}" 0
+ "main()
+{
+  int betriebsart; 
+  getValue(\"\",\"number\",betriebsart);
+
+  switch(betriebsart)
+  {
+    case (0): dpSet($DP+\"cmd.close:_original.._value\", FALSE,
+                    $DP+\"cmd.manual:_original.._value\",TRUE,
+                    $DP+\"cmd.open:_original.._value\",  TRUE,
+                    $DP+\"cmd.setpoint:_original.._value\",100);
+              break;
+              
+    case (1): dpSet($DP+\"cmd.close:_original.._value\", TRUE,
+                    $DP+\"cmd.manual:_original.._value\",TRUE,
+                    $DP+\"cmd.open:_original.._value\",  FALSE,
+                    $DP+\"cmd.setpoint:_original.._value\",0);                    
+              break;
+    case (2): dpSet($DP+\"cmd.close:_original.._value\", FALSE,
+                    $DP+\"cmd.manual:_original.._value\",FALSE,
+                    $DP+\"cmd.open:_original.._value\",  FALSE);
+              break;
+  }
+}" 0
+
+14 10
+"setpoint"
+""
+1 317 38 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+2 0 0 0 0 0
+E "main()
+{
+  float      value = this.text();
+  bool		 open  = FALSE,
+             close = FALSE;
+  
+  if(value <= 0)
+  {
+    close = TRUE;
+    bef.number(1);
+  }
+  else
+  {
+    open = TRUE;
+    bef.number(0);
+  }
+
+  dpSet($DP+\"cmd.setpoint:_original.._value\",value,
+        $DP+\"cmd.open:_original.._value\"    ,open,
+        $DP+\"cmd.close:_original.._value\"   ,close,
+        $DP+\"cmd.manual:_original.._value\"  ,TRUE);
+}
+" 0
+ E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  317 38 369 67
+3 "3.1f" 5 0 0 2 0 -1  E "main()
+{
+  float open;
+  
+  if(dpConnect( \"work\",0,$DP + \"value.position:_online.._value\",
+                         $DP + \"cmd.setpoint:_online.._value\") == -1)
+    setMultiValue(\"state\", \"backCol\", \"_dpdoesnotexist\",
+                  \"\", \"backCol\", \"_dpdoesnotexist\");
+ 
+  if(dpGet($DP+\"value.position:_online.._value\",open) == -1)
+    setValue(\"\", \"backCol\", \"_dpdoesnotexist\");
+  else
+    setMultiValue(\"\",\"text\",open,
+                  \"state\", \"text\",open);
+}
+//show state of feedback
+work(string dp1, float open ,
+     string dp2, float cmdOpen )
+{
+  setMultiValue( \"state\", \"text\",open,
+                 \"\", \"text\",cmdOpen);
+}
+" 0
+ "main()
+{
+  float      value = this.text();
+  bool		 open  = FALSE,
+             close = FALSE;
+  
+  if(value <= 0)
+  {
+    close = TRUE;
+    bef.number(1);
+  }
+  else
+  {
+    open = TRUE;
+    bef.number(0);
+  }
+
+  dpSet($DP+\"cmd.setpoint:_original.._value\",value,
+        $DP+\"cmd.open:_original.._value\"    ,open,
+        $DP+\"cmd.close:_original.._value\"   ,close,
+        $DP+\"cmd.manual:_original.._value\"  ,TRUE);
+  
+}
+" 0
+
+13 4
+"Close"
+""
+1 315 185 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+3 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  315 185 405 215
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E E
+14 68
+"state"
+""
+1 317 78 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_textfield_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  317 78 369 107
+2 "3.1f" 5 0 0 2 0 -1  E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+1 70 5 "" 0
+0
+1 72 6 "" 0
+0
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 4 "" -1
+"" ""
+"objects/HVAC/HVAC_servovalve_passive.pnl" 50 70 T 10 1 0 1 19 18
+1
+"$DP""$DP"
+3 5 "" -1
+"" ""
+"objects/HVAC/HVAC_servomotor.pnl" 90 70 T 11 1 0 1 -62 -24
+0
+3 6 "" -1
+"" ""
+"objects/HVAC/HVAC_handsymbol.pnl" 50 110 T 13 1 0 1 13 -55
+1
+"$DP""$DP"
+0

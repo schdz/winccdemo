@@ -1,0 +1,178 @@
+V 13
+3
+LANG:10000 15 DemoApplication
+LANG:10001 15 DemoApplication
+LANG:10027 29 Демо-приложение
+PANEL,-1 -1 1020 744 N "_3DFace" 3
+"$Node"
+"$Number"
+"$Screen"
+"main()
+{
+  //Function for user defined initialation Functions
+  ptms_UserDefinedInitFunctions();  
+  
+  if(!isDollarDefined(\"$Screen\") || !isDollarDefined(\"$Number\"))
+  {
+    pt_openBasePanel(\"3_1\");
+  }
+  else
+  {
+  // Set the appropriate module names      
+  naviModule.ModuleName = ptms_BuildModuleName(\"naviModule\",$Screen);
+  mainModule.ModuleName = ptms_BuildModuleName(\"mainModule\",$Screen);
+  infoModule.ModuleName = ptms_BuildModuleName(\"infoModule\",$Screen);
+  
+  ptms_LoadInitPanel($Number,$Screen, isDollarDefined(\"$Node\") ? $Node : 0);
+  }
+}
+
+" 0
+ E E E E 1 -1 -1 0  10 100
+""0  1
+E E 3
+"CBRef" "0"
+"EClose" E
+"LangSwitchMode" "1"
+0 0 0
+""
+NC
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 9 Слой1
+30 20
+"Frame1"
+""
+1 6 651 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+18 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 6 57 1014 651
+3
+LANG:10000 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,40,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+29 1
+"mainModule"
+""
+1 8 64 E E E 1 E 1 E N "_3DText" E N {255,255,255} E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  8 64 1011 647
+15 Canvas.Canvas.1
+0
+E29 5
+"naviModule"
+""
+1 6 4 E E E 1 E 1 E N "_3DText" E N {255,255,255} E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  6 4 1012 58
+15 Canvas.Canvas.1
+0
+E29 19
+"infoModule"
+""
+1 -176 283 E E E 1 E 1 E N "_3DText" E N {255,255,255} E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  6 656 1014 738
+15 Canvas.Canvas.1
+0
+E0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 9 Слой2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 9 Слой3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 9 Слой4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 9 Слой5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 9 Слой6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 9 Слой7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 9 Слой8
+0
+0

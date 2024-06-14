@@ -1,0 +1,2616 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+"main()
+{
+
+}" 0
+ E E E E 1 -1 -1 0  956 51
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 434
+"Border5"
+""
+1 10 248 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 40 496 260
+6 435
+"Border6"
+""
+1 11 249 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 41 497 261
+6 562
+"Border16"
+""
+1 680 547 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+57 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 680 490 984 552
+6 563
+"Border17"
+""
+1 681 548 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 681 491 985 553
+6 560
+"Border3"
+""
+1 780 480 E E E 1 E 1 E N {255,153,0} E N {204,204,255} E E
+ E E
+56 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E U  1 E 780 390 980 480
+6 437
+"Border10"
+""
+1 508 248 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 508 40 994 260
+6 438
+"Border11"
+""
+1 509 249 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 509 41 995 261
+6 521
+"Border12"
+""
+1 10 546 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 280 994 562
+6 522
+"Border15"
+""
+1 11 547 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 281 995 563
+7 514
+"Ellipse3"
+""
+1 215 368 E E E 1 E 1 E N {255,255,0} E N {204,102,204} E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E U  1 E 215 368 64 64
+6 384
+"foreGnd"
+""
+1 20 85 E E E 1 E 0 E N {0,0,0} E N {0,0,255} E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  if(value == 1) //make visible
+    setValue(\"\",\"visible\",TRUE);
+  else
+    setValue(\"\",\"visible\",FALSE);
+}
+" 0
+ "main()
+{
+  string color;
+  
+  colorEditor(color);
+  setMultiValue(\"\"        ,\"backCol\",color,
+                \"Ellipse1\",\"foreCol\",color,
+                \"Border8\" ,\"foreCol\",color,
+                \"Border2\" ,\"foreCol\",color);
+}" 0
+ 0 1 1 0 1 E U  1 E 20 64 83 85
+6 385
+"backGnd"
+""
+1 20 84 E E E 1 E 0 E N {0,0,0} E N {255,204,255} E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  if(value == 2) //make visible
+    setValue(\"\",\"visible\",TRUE);
+  else
+    setValue(\"\",\"visible\",FALSE);
+}
+" 0
+ "main()
+{
+  string color;
+  
+  colorEditor(color);
+  setMultiValue(\"\"        ,\"backCol\",color,
+                \"Ellipse1\",\"backCol\",color,
+                \"Border8\" ,\"backCol\",color,
+                \"Border2\" ,\"backCol\",color);
+}" 0
+ 0 1 1 0 1 E U  1 E 20 63 83 84
+6 415
+"foreGndbl"
+""
+1 20 83 E E E 1 E 0 E N {0,0,0} E N <{0,0,255},4,{204,204,204},4,{0,0,0},0,{0,0,0},0,{0,0,0},0,{0,0,0},0> E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  if(value == 3) //make visible
+    setValue(\"\",\"visible\",TRUE);
+  else
+    setValue(\"\",\"visible\",FALSE);
+}
+" 0
+ "main()
+{
+  string color;
+  
+  colorEditor(color);
+  setMultiValue(\"\"        ,\"backCol\",color,
+                \"Ellipse1\",\"foreCol\",color,
+                \"Border8\" ,\"foreCol\",color,
+                \"Border2\" ,\"foreCol\",color);
+}" 0
+ 0 1 1 0 1 E U  1 E 20 63 82 83
+6 416
+"backGndbl"
+""
+1 20 83 E E E 1 E 0 E N {0,0,0} E N <{255,204,255},4,{204,204,204},4,{0,0,0},0,{0,0,0},0,{0,0,0},0,{0,0,0},0> E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  if(value == 4) //make visible
+    setValue(\"\",\"visible\",TRUE);
+  else
+    setValue(\"\",\"visible\",FALSE);
+}
+" 0
+ "main()
+{
+  string color;
+  
+  colorEditor(color);
+  setMultiValue(\"\"        ,\"backCol\",color,
+                \"Ellipse1\",\"backCol\",color,
+                \"Border8\" ,\"backCol\",color,
+                \"Border2\" ,\"backCol\",color);
+}" 0
+ 0 1 1 0 1 E U  1 E 20 64 81 83
+6 417
+"hatched"
+""
+1 19 82 E E E 1 E 0 E N {0,0,0} E N {0,0,0} E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  if(value == 5) //make visible
+    setValue(\"\",\"visible\",TRUE);
+  else
+    setValue(\"\",\"visible\",FALSE);
+}
+" 0
+ "main()
+{
+  string style;
+  
+  fillSelector(style);
+  setMultiValue(\"Ellipse1\",\"fill\",style,
+                \"Border8\" ,\"fill\",style,
+                \"Border2\" ,\"fill\",style,
+                \"\"        ,\"fill\",style);
+}" 0
+ 0 1 1 0 1 E U  3 0 8 1 E 19 63 82 82
+6 418
+"trans"
+""
+1 20 81 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  if(value == 6) //make visible
+    setValue(\"\",\"visible\",TRUE);
+  else
+    setValue(\"\",\"visible\",FALSE);
+}
+" 0
+ E 0 1 1 0 1 E U  0 E 20 63 82 81
+6 419
+"lineStyle"
+""
+1 20 80 E E E 1 E 0 E N {0,0,0} E N {0,0,0} E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  if(value == 7) //make visible
+    setValue(\"\",\"visible\",TRUE);
+  else
+    setValue(\"\",\"visible\",FALSE);
+}
+" 0
+ "main()
+{
+  string linestyle;
+  
+  lineSelector(linestyle);
+  setMultiValue(\"Ellipse1\",\"border\",linestyle,
+                \"Border8\" ,\"border\",linestyle,
+                \"Border2\" ,\"border\",linestyle,
+                \"\"        ,\"border\",linestyle);
+}
+" 0
+ 0 1 1 0 1 E U  1 E 20 63 82 80
+6 428
+"Border8"
+""
+1 333 229 E E E 1 E 1 E N {255,0,0} E N {153,255,255} E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  string fgColor     = \"[100,0,0]\",
+         bgColor     = \"[60,100,100]\",
+         hatch       = \"[solid]\",
+         linestyle   = \"[solid,oneColor,JoinMiter,CapButt,4]\";
+  bool   isVisible   = TRUE;
+         
+  if(value == 1) //change forecol static
+  {
+    getValue(\"foreGnd\",\"backCol\",fgColor);
+  }
+  else if(value == 2) //change backcol static
+  {
+    getValue(\"backGnd\",\"backCol\",bgColor);
+  }
+  else if(value == 3) //change forecol animated
+  {
+    getValue(\"foreGndbl\",\"backCol\",fgColor);
+  }
+  else if(value == 4) //change backcol animated
+  {
+    getValue(\"backGndbl\",\"backCol\",bgColor);
+  }
+  else if(value == 5) //change hatch style
+  {
+    getValue(\"hatched\",\"fill\",hatch);
+    bgColor = \"[0,0,0]\";
+  }
+  else if(value == 6) //transparent
+  {
+    hatch = \"[outline]\";
+  }
+  else if(value == 7) //set linestyle
+  {
+    getValue(\"lineStyle\",\"border\",linestyle);
+  }
+  else if(value == 8) //visibility
+  {
+    isVisible = FALSE;
+  }
+
+  //set attributes
+  setValue(\"\",\"foreCol\",fgColor,
+              \"backCol\",bgColor,
+              \"visible\",isVisible,
+              \"border\" ,linestyle,
+              \"fill\"   ,hatch);
+ 
+}" 0
+ E 0 4 1 0 1 E U  1 E 333 179 383 229
+7 429
+"Ellipse1"
+""
+1 441 206 E E E 1 E 1 E N {51,102,255} E N {153,204,102} E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  string fgColor     = \"[20,60,100]\",
+         bgColor     = \"[60,80,40]\",
+         hatch       = \"[solid]\",
+         linestyle   = \"[solid,oneColor,JoinMiter,CapButt,4]\";
+  bool   isVisible   = TRUE;
+         
+  if(value == 1) //change forecol static
+  {
+    getValue(\"foreGnd\",\"backCol\",fgColor);
+  }
+  else if(value == 2) //change backcol static
+  {
+    getValue(\"backGnd\",\"backCol\",bgColor);
+  }
+  else if(value == 3) //change forecol animated
+  {
+    getValue(\"foreGndbl\",\"backCol\",fgColor);
+  }
+  else if(value == 4) //change backcol animated
+  {
+    getValue(\"backGndbl\",\"backCol\",bgColor);
+  }
+  else if(value == 5) //change hatch style
+  {
+    getValue(\"hatched\",\"fill\",hatch);
+    bgColor = \"[0,0,0]\";
+  }
+  else if(value == 6) //transparent
+  {
+    hatch = \"[outline]\";
+  }
+  else if(value == 7) //set linestyle
+  {
+    getValue(\"lineStyle\",\"border\",linestyle);
+  }
+  else if(value == 8) //visibility
+  {
+    isVisible = FALSE;
+  }
+
+  //set attributes
+  setValue(\"\",\"foreCol\",fgColor,
+              \"backCol\",bgColor,
+              \"visible\",isVisible,
+              \"border\" ,linestyle,
+              \"fill\"   ,hatch);
+ 
+}" 0
+ E 0 4 1 0 1 E 1 0 1 -1 0 1 E 441 206 35 25
+6 441
+"Border13"
+""
+1 780 73 E E E 1 E 1 E N {0,0,0} E N {0,255,0} E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 780 61 981 73
+6 442
+"Border14"
+""
+1 939 231 E E E 1 E 1 E N {0,0,0} E N {255,204,0} E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 939 80 982 231
+6 443
+"horiSlide"
+""
+1 780 73 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Scale.:_online.._value\"))
+    setValue(\"horiSlide\",\"backCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Scale.:_online.._value\");
+}
+
+work(string dp1, int value)
+{
+  float scaleX = ((value <= 0) ? 0.0 : ((value >= 100) ? 1.0 : value / 100.0));
+  
+  setValue(\"horiSlide\",\"scale\",scaleX,1.0);
+}
+" 0
+ E 0 1 1 0 1 E U  1 E 780 61 982 73
+6 444
+"Border18"
+""
+1 780 230 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Scale.:_online.._value\"))
+    setValue(\"Border18\",\"backCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Scale.:_online.._value\");
+}
+
+work(string dp1, int value)
+{
+  float scale = ((value <= 0) ? 0.0 : ((value >= 100) ? 1.0 : value / 100.0));
+  
+  setMultiValue(\"Border18\",\"scale\",scale,scale,
+                \"Border20\",\"scale\",scale,scale,
+                \"Border22\",\"scale\",scale,scale,
+                \"Border21\",\"scale\",scale,scale);
+
+}
+" 0
+ E 0 1 1 0 1 E U  1 E 780 80 930 230
+6 445
+"Border20"
+""
+1 780 230 E E E 1 E 1 E N {0,0,0} E N {0,0,255} E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 806 106 904 204
+6 446
+"Border21"
+""
+1 780 230 E E E 1 E 1 E N {0,0,0} E N {255,255,0} E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 833 133 881 178
+6 447
+"Border22"
+""
+1 780 230 E E E 1 E 1 E N {0,0,0} E N {0,153,0} E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 806 106 834 134
+6 449
+"vertSlide"
+""
+1 939 231 E E E 1 E 1 E N {0,0,0} E N {102,102,255} E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Scale.:_online.._value\"))
+    setValue(\"vertSlide\",\"backCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Scale.:_online.._value\");
+}
+
+work(string dp1, int value)
+{
+  float scaleY = ((value <= 0) ? 0.0 : ((value >= 100) ? 1.0 : value / 100.0));
+  
+  setValue(\"vertSlide\",\"scale\",1.0,scaleY);
+}
+" 0
+ E 0 1 1 0 1 E U  1 E 939 80 982 231
+6 450
+"Border1"
+""
+1 520 250 E E E 1 E 1 E N {255,153,0} E N {204,204,255} E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E U  1 E 520 160 710 250
+2 451
+"Text8"
+""
+1 542 175 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 527 177 697 230
+0 2 0 "0s" 0 0 0 193 0 0  612 177 3
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 22 Skalierungsänderungen
+LANG:10001 15 Different scale
+LANG:10027 33 Различный масштаб
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 16 in Abhängigkeit
+LANG:10001 13 depending on 
+LANG:10027 36 в зависимости от по-
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 19 der Sliderstellung
+LANG:10001 18 position of slider
+LANG:10027 35 положения слайдера
+10 484
+"Polyline1"
+""
+1 734 71 E E E 1 E 1 E N {0,0,0} E N {153,153,153} E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 9 733 73
+710 90
+687 72
+705 96
+687 120
+710 102
+733 121
+715 96
+733 73
+ 1
+7 485
+"Ellipse2"
+""
+1 710 96.0059 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 3 1 0 1 E 1 0 1.01190476190476 0 -1.14880952380952 0 E 711 96.5 41 42
+10 486
+"Polyline2"
+""
+1 710 52 E E E 1 E 1 E N {51,51,51} E N {102,102,102} E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 9 710 52
+706 91
+668 96
+706 101
+710 140
+714 101
+752 96
+714 91
+710 52
+ 1
+10 495
+"direction_indicator"
+""
+1 710 96 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Scale.:_online.._value\"))
+    setMultiValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                  \"value_display\",\"backCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Scale.:_online.._value\");
+}
+
+work(string dp1, int value)
+{
+  string direction_text;
+  float  posX,posY;
+  int    direction = value * 3.6;
+  
+  getValue(\"value_display\",\"position\",posX, posY);
+  sprintf(direction_text, \"%3.0f\", direction);
+  
+  if (direction > 10)
+  {
+    setValue(\"value_display\",\"position\",posX,posY);    
+    setMultiValue(\"\",\"rotation\", direction,
+                  \"value_display\",\"text\",direction_text+\"°\");
+  }
+  else
+  {
+    setValue(\"value_display\",\"position\",posX,posY);
+    setMultiValue(\"\",\"rotation\", direction,
+                  \"value_display\",\"text\",direction_text+\"°\");
+    
+  }
+}
+" 0
+ E 0 1 1 0 1 E U  1 E 4 710 54
+728 132
+710 98
+692 132
+ 1
+7 496
+"red_circle"
+""
+1 707 94 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 711 97 14 15
+2 497
+"value_display"
+""
+1 696 88 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 3 1 0 1 E U  0 E 698 90 726 104
+0 2 0 "0s" 0 0 0 65 0 0  698 90 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 5 360°
+LANG:10001 5 360°
+LANG:10027 5 360°
+7 508
+"circle"
+""
+1 98 368 E E E 1 E 1 E N {255,255,0} E N {204,102,204} E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E U  1 E 98 368 64 64
+10 513
+"Polyline3"
+""
+1 98 368 E E E 1 E 1 E N {0,0,0} E N {0,255,255} E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"rotate\",\"ExampleDP_Move.:_online.._value\");
+}
+rotate(string dp1, int value)
+{
+  this.rotation = value;
+}
+
+" 0
+ E 0 3 1 0 1 E U  1 E 3 128 394
+157 342
+186 394
+ 1
+10 515
+"Polyline4"
+""
+1 215 368 E E E 1 E 1 E N {0,0,0} E N {0,255,255} E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"rotate\",\"ExampleDP_Move.:_online.._value\");
+}
+rotate(string dp1, int value)
+{
+  this.rotation = value;
+}
+
+" 0
+ E 0 3 1 0 1 E U  1 E 3 128 394
+157 342
+186 394
+ 1
+7 516
+"Ellipse4"
+""
+1 384.004 335 E E E 1 E 1 E N {0,0,0} E N {255,255,204} E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+dpConnect(\"rotate\",\"ExampleDP_Move.:_online.._value\");
+}
+rotate(string dp1, int value)
+{
+  string color,
+         color1 = \"_ETM\",
+         color2 = \"AESfgPending\";
+  float  scaleX = (value <= 180) ? 1.0 - (value / 180.0) : (value / 180.0) - 1.0;
+   if(value == 180 ) //change color after 1/2 round
+  {
+    getValue(\"\",\"backCol\",color);
+    if(color == color1)
+      {color = color2;
+      }
+    else
+      color = color1;  
+    setValue(\"\",\"backCol\",color);
+    }
+     
+
+  setValue(\"\",\"scale\",scaleX,1.0);
+}
+
+" 0
+ E 0 1 1 0 1 E 1.00806451612903 0 1 -3.1008064516129 0 1 E 384.5 335 62 30
+4 517
+"Line2"
+""
+1 531 360 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 20 2 1 1 E  531 360 977 360
+6 518
+"Border4"
+""
+1 537 349 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"Move\",\"ExampleDP_Move.:_online.._value\");
+}
+
+Move(string dp1, int value)
+{
+  long  posX,posY;
+  float newX = 556 + value;
+  
+  getValue(\"\",\"position\",posX,posY);
+  if((newX > 556) && (newX < 916)) 
+  {
+    posX = newX;
+    setValue(\"\",\"position\",posX,posY);
+  }
+  else
+    setValue(\"\",\"position\",537,349);
+}
+
+" 0
+ E 0 1 1 0 1 E U  2  0 3  "518.bmp" 4294967295 E 537 301 585 349
+6 519
+"Border7"
+""
+1 528 351 E E E 1 E 1 E N {0,0,0} E N {51,102,102} E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 528 297 595 351
+6 520
+"Border9"
+""
+1 913 350 E E E 1 E 1 E N {0,0,0} E N {51,102,102} E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 913 296 980 350
+2 552
+"Text37"
+""
+1 795 495 E E E 1 E 1 E N {0,102,51} E N "_Transparent" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"bool On;
+
+main()
+{
+  if(!dpExists(\"ExampleDP_OnOff.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_OnOff.:_online.._value\");
+
+  if(!dpExists(\"ExampleDP_Knob.:_online.._value\"))
+    setValue(\"horiSlide\",\"backCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"Knob\",\"ExampleDP_Knob.:_online.._value\");
+
+  DoSimulation();
+}
+
+work(string dp1, int value)
+{
+  On = (value != 0) ? TRUE : FALSE;
+}
+
+Knob(string dp1, int value)
+{
+  dpSet(\"ExampleDP_Scale.:_original.._value\",value);
+}
+
+DoSimulation()
+{
+  int  j,k;
+  bool wasActive = FALSE;
+  
+  j = k = 0;
+  while(TRUE)
+  {
+    if(On)
+    {
+      wasActive = TRUE;
+      (j <100) ? j++ : (j = 0);
+      (k <360) ? (k += 5) : (k = 0);     
+      dpSet(\"ExampleDP_Scale.:_original.._value\",  j,
+            \"ExampleDP_Move.:_original.._value\",  k);
+      delay(0,70);
+    }
+    else
+    {
+      if(wasActive)
+      {
+        j = k = 0;
+        dpSet(\"ExampleDP_Scale.:_original.._value\",  j,
+              \"ExampleDP_Move.:_original.._value\",  k,
+              \"ExampleDP_Knob.:_original.._value\",  0);
+        wasActive = FALSE;
+      }
+      delay(1,500);
+    }
+  }
+}
+" 0
+ E 0 1 1 0 1 E U  0 E 797 497 934 520
+0 2 0 "0s" 0 0 0 192 0 0  797 497 1
+3
+LANG:10000 26 Arial,-1,20,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,69,0,0,0,0,0
+0 3
+LANG:10000 14 Simulation Ein
+LANG:10001 13 Simulation ON
+LANG:10027 22       Включить
+2 553
+"Text12"
+""
+1 795 521 E E E 1 E 1 E N {255,51,51} E N "_Transparent" E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 797 523 939 546
+0 2 0 "0s" 0 0 0 192 0 0  797 523 1
+3
+LANG:10000 26 Arial,-1,20,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,69,0,0,0,0,0
+0 3
+LANG:10000 14 Simulation Aus
+LANG:10001 14 Simulation OFF
+LANG:10027 21    Выключить
+6 554
+"Border2"
+""
+1 325 142 E E E 1 E 1 E N {255,153,0} E N {204,204,255} E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  string fgColor     = \"[100,60,0]]\",
+         bgColor     = \"[80,80,100]\",
+         hatch       = \"[solid]\",
+         linestyle   = \"[solid,oneColor,JoinRound,CapRound,10]\";
+  bool   isVisible   = TRUE;
+         
+  if(value == 1) //change forecol static
+  {
+    getValue(\"foreGnd\",\"backCol\",fgColor);
+  }
+  else if(value == 2) //change backcol static
+  {
+    getValue(\"backGnd\",\"backCol\",bgColor);
+  }
+  else if(value == 3) //change forecol animated
+  {
+    getValue(\"foreGndbl\",\"backCol\",fgColor);
+  }
+  else if(value == 4) //change backcol animated
+  {
+    getValue(\"backGndbl\",\"backCol\",bgColor);
+  }
+  else if(value == 5) //change hatch style
+  {
+    getValue(\"hatched\",\"fill\",hatch);
+    bgColor = \"[0,0,0]\";
+  }
+  else if(value == 6) //transparent
+  {
+    hatch = \"[outline]\";
+  }
+  else if(value == 7) //set linestyle
+  {
+    getValue(\"lineStyle\",\"border\",linestyle);
+  }
+  else if(value == 8) //visibility
+  {
+    isVisible = FALSE;
+  }
+
+  //set attributes
+  setValue(\"\",\"foreCol\",fgColor,
+              \"backCol\",bgColor,
+              \"visible\",isVisible,
+              \"border\" ,linestyle,
+              \"fill\"   ,hatch);
+ 
+}" 0
+ E 0 10 1 1 1 E U  1 E 325 52 485 142
+2 555
+"Text13"
+""
+1 343 67 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 336 69 474 122
+0 2 0 "0s" 0 0 0 193 0 0  405 69 3
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 19 Attributänderungen
+LANG:10001 20 Different attributes
+LANG:10027 32 Различн. атрибуты
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 16 in Abhängigkeit
+LANG:10001 13 depending on 
+LANG:10027 36 в зависимости от по-
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 18 der Sliderstellung
+LANG:10001 18 position of slider
+LANG:10027 31 ложения слайдера
+2 556
+"Text16"
+""
+1 88 62 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(!dpExists(\"ExampleDP_Switch.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_Switch.:_online.._value\");
+}
+
+work(string dp, int value)
+{
+  switch(value)
+  {
+    case 1 :
+    case 2 :
+    case 3 :
+    case 4 :
+    case 5 :
+    case 7 :  //make visible
+              setValue(\"\",\"visible\",TRUE);
+           break;
+
+    default:  setValue(\"\",\"visible\",FALSE);
+           break;
+  }
+}" 0
+ E 0 1 1 0 1 E U  0 E 90 64 298 79
+0 2 0 "0s" 0 0 0 192 0 0  90 64 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 34 << Hier klicken für Einstellungen
+LANG:10001 28 << Click here for properties
+LANG:10027 50 << Нажать для вывода свойств
+2 559
+"Text17"
+""
+1 798 396 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+55 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 788 398 978 469
+0 2 0 "0s" 0 0 0 193 0 0  883 398 4
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 24 Simulation von Bewegung 
+LANG:10001 23 Simulation of movements
+LANG:10027 33 Эмуляция движения
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 20 durch Änderung von 
+LANG:10001 22 by changing position, 
+LANG:10027 41 изменением положения, 
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 23 Position, Rotation und 
+LANG:10001 20 rotation and scaling
+LANG:10027 39 вращением и масштаби-
+3
+LANG:10000 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,69,0,0,0,0,0
+0 3
+LANG:10000 10 Skalierung
+LANG:10001 10 of objects
+LANG:10027 33 рованием объектов
+10 591
+"Polyline5"
+""
+1 52 545 E E E 1 E 1 E N {0,0,0} E N {153,204,153} E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E U  1 E 380 54 550
+56 550
+59 551
+63 552
+68 552
+94 550
+132 550
+142 550
+150 550
+170 550
+187 551
+309 551
+310 550
+326 547
+332 547
+340 545
+450 550
+461 547
+545 547
+562 547
+565 547
+569 547
+571 545
+577 543
+577 542
+579 541
+581 540
+583 538
+584 537
+586 536
+586 535
+586 534
+589 532
+593 527
+598 525
+600 522
+601 521
+603 516
+607 508
+607 506
+608 504
+608 501
+608 494
+614 479
+614 464
+612 461
+612 460
+610 458
+610 453
+608 450
+608 447
+607 446
+607 443
+605 442
+601 440
+601 438
+598 435
+593 434
+591 431
+588 430
+584 428
+583 427
+571 422
+567 422
+565 421
+562 420
+557 420
+557 421
+555 421
+552 423
+540 425
+536 425
+534 426
+534 426
+534 427
+533 427
+533 429
+528 430
+528 432
+526 434
+524 435
+522 437
+521 438
+521 440
+519 440
+517 442
+517 443
+516 445
+514 447
+512 448
+512 450
+510 451
+509 455
+509 456
+507 461
+505 464
+505 465
+504 467
+504 468
+502 469
+502 469
+502 471
+500 472
+498 473
+497 474
+497 476
+493 479
+493 481
+491 482
+490 482
+490 484
+488 484
+488 486
+486 486
+486 486
+485 488
+483 490
+483 490
+483 491
+479 493
+479 493
+479 494
+478 494
+478 495
+476 496
+474 498
+474 499
+471 501
+469 503
+467 503
+459 503
+459 503
+455 503
+454 502
+452 502
+450 501
+447 501
+445 500
+445 499
+443 499
+442 498
+440 497
+438 496
+436 494
+435 493
+431 492
+430 490
+428 489
+424 486
+421 486
+419 483
+418 481
+416 479
+412 478
+412 475
+411 473
+411 471
+409 468
+409 466
+407 463
+406 461
+406 457
+404 455
+404 453
+404 451
+402 447
+402 443
+397 438
+397 437
+397 436
+395 435
+394 434
+392 432
+390 432
+390 431
+390 430
+388 430
+387 429
+387 429
+373 429
+369 429
+359 434
+352 440
+352 441
+351 442
+349 443
+349 443
+347 445
+347 447
+344 451
+340 458
+340 460
+339 463
+337 464
+337 466
+337 466
+337 469
+335 470
+335 472
+333 473
+332 474
+332 476
+328 481
+327 484
+327 486
+324 488
+324 490
+322 490
+319 492
+319 494
+315 495
+314 498
+312 499
+309 501
+309 503
+307 505
+305 506
+297 506
+295 505
+290 503
+285 498
+283 496
+281 494
+281 494
+281 492
+278 490
+278 488
+274 482
+269 479
+269 478
+267 476
+267 476
+266 474
+264 473
+262 473
+262 471
+259 471
+257 470
+250 470
+250 471
+248 471
+247 473
+245 473
+243 474
+243 476
+240 478
+238 480
+235 482
+231 484
+231 486
+230 486
+228 490
+226 491
+224 494
+224 495
+218 502
+218 503
+216 504
+216 506
+214 506
+214 508
+212 508
+212 509
+212 510
+211 511
+209 512
+207 514
+205 516
+204 516
+204 516
+195 516
+193 516
+193 516
+185 509
+185 508
+181 505
+181 504
+178 501
+178 500
+176 499
+176 498
+175 496
+175 494
+171 494
+171 492
+169 491
+169 490
+166 488
+164 486
+163 486
+163 486
+156 486
+154 486
+150 486
+147 487
+147 488
+147 489
+145 490
+144 493
+142 495
+140 498
+138 506
+137 508
+135 511
+135 523
+133 525
+132 527
+128 530
+126 531
+125 531
+125 530
+116 527
+114 525
+113 525
+109 522
+109 521
+104 517
+104 516
+102 513
+101 511
+99 508
+97 507
+95 503
+94 502
+94 499
+92 498
+90 496
+89 495
+89 493
+87 491
+87 490
+85 490
+85 487
+83 486
+82 486
+82 484
+80 482
+78 482
+78 481
+77 481
+75 479
+73 479
+71 478
+70 478
+61 478
+59 478
+59 479
+58 479
+56 480
+56 481
+53 482
+51 484
+47 486
+40 490
+40 508
+44 511
+44 512
+44 513
+44 515
+46 517
+46 524
+46 525
+46 525
+47 527
+47 529
+47 530
+47 530
+49 530
+49 534
+51 535
+51 538
+51 540
+51 545
+53 545
+53 547
+53 547
+53 548
+54 549
+54 550
+56 550
+ 1
+7 558
+"Ellipse5"
+""
+1 57 545 E E E 1 E 1 E N {0,0,0} E N {0,204,255} E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"move\",\"ExampleDP_Move.:_online.._value\");
+}
+
+move(string dp1, int value)
+{
+  float  percentage = (value >= 360) ? 0.0 : (value / 360.0 * 100.0),
+         x, y, angle;
+ 
+  getValue(\"Polyline5\",\"positionOnPath\", percentage, x, y, angle ); 
+  setMultiValue(\"Ellipse5\",  \"position\", x, y,
+   			    \"Ellipse5\",  \"rotation\", angle,
+   			    \"Polyline7\", \"position\", x, y,
+   			    \"Polyline7\",  \"rotation\", angle);
+}
+" 0
+ E 0 1 1 0 1 E U  1 E 57 545 15 15
+10 590
+"Polyline7"
+""
+1 57 545 E E E 1 E 1 E N {255,0,0} E N {255,0,0} E E
+ E E
+59 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  1 E 6 46 545
+56 545
+56 535
+66 545
+56 555
+56 545
+ 1
+10 600
+"Polyline21"
+""
+1 20 28 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 20 28
+198 28
+220 40
+198 54
+20 54
+ 1
+2 436
+"Text14"
+""
+1 20 32 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 22 34 200 49
+0 2 0 "0s" 0 0 0 192 0 0  22 34 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 27 Farben, Linienarten, Muster
+LANG:10001 28 Colors, Linestyles, Patterns
+LANG:10027 47 Цвета,стили линий,заливки
+10 602
+"Polyline8"
+""
+1 770 28 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+70 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 984 28
+796 28
+770 40
+796 54
+984 54
+ 1
+2 439
+"Text15"
+""
+1 813 30 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 783 32 981 47
+0 2 0 "0s" 0 0 0 194 0 0  981 32 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 31 Drehen, strecken, positionieren
+LANG:10001 26 Rotate, scale and position
+LANG:10027 50 Вращение,масштаб,положение
+10 603
+"Polyline9"
+""
+1 20 268 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 20 268
+135 268
+160 280
+135 294
+20 294
+ 1
+2 523
+"Text30"
+""
+1 23 269 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 25 271 111 286
+0 2 0 "0s" 0 0 0 192 0 0  25 271 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 10 Bewegungen
+LANG:10001 6 Motion
+LANG:10027 16 Движение
+10 604
+"Polyline18"
+""
+1 430 4 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+72 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 8 433 4
+423 14
+423 24
+433 34
+509 34
+519 24
+519 14
+509 4
+ 1
+7 605
+"Ellipse7"
+""
+1 430.03333 14 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+73 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -30.75 0 1 E 430.5 14 7 10
+7 606
+"Ellipse8"
+""
+1 430.03333 24 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+74 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -30.75 0 1 E 430.5 24 7 10
+7 607
+"Ellipse9"
+""
+1 511.03333 14 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+75 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -36.5357142857143 0 1 E 511.5 14 7 10
+7 608
+"Ellipse10"
+""
+1 511.03333 24 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+76 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -36.5357142857143 0 1 E 511.5 24 7 10
+10 609
+"Polyline10"
+""
+1 498 4 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+77 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 8 501 4
+491 14
+491 24
+501 34
+577 34
+587 24
+587 14
+577 4
+ 1
+7 610
+"Ellipse6"
+""
+1 498.03333 14 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -35.6071428571428 0 1 E 498.5 14 7 10
+7 611
+"Ellipse11"
+""
+1 498.03333 24 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+79 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -35.6071428571428 0 1 E 498.5 24 7 10
+7 612
+"Ellipse12"
+""
+1 579.03333 14 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+80 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -41.3928571428571 0 1 E 579.5 14 7 10
+7 613
+"Ellipse13"
+""
+1 579.03333 24 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+81 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.07142857142857 0 1 -41.3928571428571 0 1 E 579.5 24 7 10
+2 372
+"Text1"
+""
+1 427 8 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 430 10 576 28
+0 2 0 "0s" 0 0 0 193 0 0  503 10 1
+3
+LANG:10000 26 Arial,-1,17,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,69,0,0,0,0,0
+0 3
+LANG:10000 21 A N I M A T I O N  II
+LANG:10001 21 A N I M A T I O N  II
+LANG:10027 27 А Н И М А Ц И Я  II
+13 507
+"Button1"
+""
+1 690 505 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  688 503 777 540
+
+T 
+3
+LANG:10000 13 Einzelschritt
+LANG:10001 10 Singlestep
+LANG:10027 16 Пошагово
+"main()
+{
+  int i;
+  this.enabled = FALSE;
+  for(i=0;i<=360;i=i+5)
+  {
+    dpSet(\"ExampleDP_Move.:_original.._value\",i);
+    delay(0,50);
+  }
+  this.enabled = TRUE;
+}" 0
+ E E "main()
+{
+
+  if(!dpExists(\"ExampleDP_OnOff.:_online.._value\"))
+    setValue(\"\",\"backCol\",\"STD_dp_not_existing\",
+                \"foreCol\",\"STD_dp_not_existing\");
+  else
+    dpConnect(\"work\",\"ExampleDP_OnOff.:_online.._value\");
+}
+
+work(string dp1, int value)
+{
+  //disable button during simulation is ON
+  if(value)
+    this.enabled = FALSE;
+  else
+    this.enabled = TRUE;
+}" 0
+
+29 631
+"SLIDER1"
+""
+1 210 99 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+82 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+9
+"minValue" "int 1"
+"backgroundOrigin" "enum 0"
+"orientation" "enum 1"
+"value" "int 1"
+"tracking" "bool TRUE"
+"tickPosition" "enum 1"
+"pageStep" "int 1"
+"maxValue" "int 8"
+"invertedAppearance" "bool TRUE"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  210 99 271 220
+12 SliderWidget
+1
+0 "Change" "(int value)"
+"  int Zahl;
+  if (!isJavaUI()) 
+  {Zahl = 9-value; }
+  else  
+  {Zahl = value;}
+  
+  dpSet(\"ExampleDP_Switch.\", Zahl);"
+"main()
+{
+  if (!isJavaUI ())
+  {this.value = 8;}
+  else 
+    {
+       this.maxValue = 8;
+       this.minValue = 1;
+     }
+    
+}" 0
+1 659 15 "" 0
+0
+29 643
+"SLIDER2"
+""
+1 521 70 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"lineStep" "int 10"
+"maxValue" "int 100"
+"tickPosition" "enum 3"
+"orientation" "enum 0"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  521 70 655 120
+12 SliderWidget
+1
+0 "Change" "(int value)"
+"  dpSet(\"ExampleDP_Knob.\",value);"
+E0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+1 644 9 "" 0
+0
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 658 11 "" 1
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 9 "" -1
+"" ""
+"objects/STD_SWITCHES/switch_1.pnl" 745 479 T 3 1 0 1 192 7
+5
+"$b_IBit""FALSE"
+"$b_Toggle""TRUE"
+"$dpe_value_Off""ExampleDP_OnOff."
+"$dpe_value_On""ExampleDP_OnOff."
+"$dpe_value_Rm""ExampleDP_OnOff."
+3 11 "" -1
+"" ""
+"objects/help_button_large.pnl" 482 432 T 82 1 0 1 208 8
+1
+"$hlp_keyword""da_animation2"
+3 15 "PANEL_REF16" -1
+"" ""
+"examples/animations_ref1.pnl" 73 314 T 87 1 0 1 -35 -150
+0
+0

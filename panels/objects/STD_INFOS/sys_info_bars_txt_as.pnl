@@ -1,0 +1,272 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 190 51 N "STD_panel_back" 0
+E E E E E 1 -1 -1 0  166 21
+""0  1
+E E 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+10 25
+"avail11"
+""
+1 170 12 E E E 1 E 1 E N "STD_border_dark" E N "STD_available" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Aktuell freie Systemresoucen
+LANG:10001 36 Currently available system resources
+LANG:10027 52 Доступные системные ресурсы
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  float x,y;
+  
+  getValue(\"\",\"position\",x,y);
+  addSymbol(myModuleName(), myPanelName(), \"objects/STD_INFOS/minitext_t_r.pnl\",\"RAMavail\",makeDynString(),x+1,y,0,1,1);
+}" 0
+ E 0 1 1 0 1 E U  1 E 4 10 12
+10 22
+170 22
+170 12
+ 0
+10 26
+"avail12"
+""
+1 170 22 E E E 1 E 1 E N "STD_border_light" E N "STD_available" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Aktuell freie Systemresoucen
+LANG:10001 36 Currently available system resources
+LANG:10027 52 Доступные системные ресурсы
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 10 22
+10 12
+170 12
+ 0
+10 27
+"avail21"
+""
+1 170 23 E E E 1 E 1 E N "STD_border_dark" E N "STD_available" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Aktuell freie Systemresoucen
+LANG:10001 36 Currently available system resources
+LANG:10027 52 Доступные системные ресурсы
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  float x,y;
+  
+  getValue(\"\",\"position\",x,y);
+  addSymbol(myModuleName(), myPanelName(), \"objects/STD_INFOS/minitext_t_r.pnl\",\"HDDavail\",makeDynString(),x+1,y,0,1,1);
+}" 0
+ E 0 1 1 0 1 E U  1 E 4 10 23
+10 33
+170 33
+170 23
+ 0
+10 28
+"avail22"
+""
+1 170 33 E E E 1 E 1 E N "STD_border_light" E N "STD_available" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Aktuell freie Systemresoucen
+LANG:10001 36 Currently available system resources
+LANG:10027 52 Доступные системные ресурсы
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 10 33
+10 23
+170 23
+ 0
+10 18
+"used11"
+""
+1 10 12 E E E 1 E 1 E N "STD_border_dark" E N "STD_used" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Aktuell freie Systemresoucen
+LANG:10001 36 Currently available system resources
+LANG:10027 52 Доступные системные ресурсы
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  float x,y;
+  
+  getValue(\"\",\"position\",x,y);
+  addSymbol(myModuleName(), myPanelName(), \"objects/STD_INFOS/minitext_t_l.pnl\",\"mt1\",makeDynString(\"$s_txt:\"+\"RAM\"),x,y,0,1,1);
+
+  dpConnect(\"display\",true,\"_MemoryCheck.AvailPerc:_online.._value\",
+  					       \"_ArchivDisk.AvailPerc:_online.._value\");
+}
+
+display(string dp1, int MemAvail, string dp2, int HDDAvail)
+{
+  setMultiValue(\"avail11\",\"scale\",MemAvail/100.0,1,
+  				\"avail12\",\"scale\",MemAvail/100.0,1,
+				\"avail21\",\"scale\",HDDAvail/100.0,1,
+  				\"avail22\",\"scale\",HDDAvail/100.0,1,
+  				\"used11\",\"scale\",1-MemAvail/100.0,1,
+  				\"used12\",\"scale\",1-MemAvail/100.0,1,
+				\"used21\",\"scale\",1-HDDAvail/100.0,1,
+  				\"used22\",\"scale\",1-HDDAvail/100.0,1,
+  				\"RAMavail.RAMavail\",\"text\",MemAvail+\"%\",
+  				\"HDDavail.RAMavail\",\"text\",HDDAvail+\"%\");
+}" 0
+ E 0 1 1 0 1 E U  1 E 4 10 12
+10 22
+170 22
+170 12
+ 0
+10 22
+"used12"
+""
+1 10 22 E E E 1 E 1 E N "STD_border_light" E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Aktuell freie Systemresoucen
+LANG:10001 36 Currently available system resources
+LANG:10027 52 Доступные системные ресурсы
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 10 22
+10 12
+170 12
+ 0
+10 23
+"used21"
+""
+1 10 23 E E E 1 E 1 E N "STD_border_dark" E N "STD_used" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Aktuell freie Systemresoucen
+LANG:10001 36 Currently available system resources
+LANG:10027 52 Доступные системные ресурсы
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  float x,y;
+  
+  getValue(\"\",\"position\",x,y);
+  addSymbol(myModuleName(), myPanelName(), \"objects/STD_INFOS/minitext_t_l.pnl\",\"mt1\",makeDynString(\"$s_txt:\"+\"HDD\"),x,y,0,1,1);
+}" 0
+ E 0 1 1 0 1 E U  1 E 4 10 23
+10 33
+170 33
+170 23
+ 0
+10 24
+"used22"
+""
+1 10 33 E E E 1 E 1 E N "STD_border_light" E N "_Transparent" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Aktuell freie Systemresoucen
+LANG:10001 36 Currently available system resources
+LANG:10027 52 Доступные системные ресурсы
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 10 33
+10 23
+170 23
+ 0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

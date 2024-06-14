@@ -1,0 +1,165 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 380 380 N "HVAC_Background" 1
+"$DP"
+E E E E E 1 -1 -1 0  19 29
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+4 7
+"Line2"
+""
+1 103 161 E E E 1 E 1 E N "HVAC_Coolant" E N "STD_panel_back" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 3 1 0 1 E  103 161 103 110
+1 9 8 "" 28
+0
+1 10 9 "" 0
+0
+1 12 13 "" 0
+0
+4 6
+"Line1"
+""
+1 79 161 E E E 1 E 1 E N "HVAC_Coolant" E N "STD_panel_back" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 3 1 0 1 E  79 161 79 110
+4 8
+"Line3"
+""
+1 102 137 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "STD_panel_back" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  102 137 120 137
+1 14 10 "" 0
+0
+1 15 11 "" 0
+0
+1 16 14 "" 0
+0
+1 18 15 "" 0
+0
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 8 "" -1
+"" ""
+"objects/HVAC/HVAC_servovalve_active.pnl" 190 120 T 10 1 0 1 -67 32
+1
+"$DP""$DP+valve."
+3 9 "" -1
+"" ""
+"objects/HVAC/HVAC_servomotor.pnl" 210 138 T 11 1 0 1 -122 -26
+0
+3 10 "" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_90.pnl" 254 151 T 12 1 0 1 -185 -4
+1
+"$farbe""HVAC_Coolant"
+3 11 "" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_270.pnl" 267 129 T 13 1 0 1 -174 28
+1
+"$farbe""HVAC_Coolant_return"
+3 13 "" -1
+"" ""
+"objects/HVAC/HVAC_handsymbol.pnl" 200 70 T 15 1 0 1 -67 -4
+1
+"$DP""$DP+valve."
+3 14 "" -1
+"" ""
+"objects/HVAC/HVAC_value.pnl" 240 160 T 15 1 0 1 -239 -2
+3
+"$DPE""$DP+valve.value.position"
+"$DP_OperatingPanel""$DP+valve."
+"$OperatingPanel""objects_parts/HVAC/HVAC_operate_valve.pnl"
+3 15 "" -1
+"" ""
+"objects/HVAC/HVAC_cooler.pnl" 220 80 T 16 1 0 1 -152 -52
+1
+"$DPE""$DP+valve."
+0

@@ -1,0 +1,29 @@
+direct_op_on,Direktbedienung aktivieren
+direct_op_off,Direktbedienung deaktivieren
+val_ref_off, Istwert verbergen
+val_ref_on, Istwert anzeigen
+reset_min_max_arrows,Schleppzeiger rücksetzen
+controller_settings,Reglereinstellungen:
+mistyped,Fehleingabe
+dpenotexistent,Datenpunktelement existiert nicht !
+dpenotnumeric,Datanpunktelement ist nicht numerisch !\nVerwenden Sie [FLOAT] oder [INT] Typen !
+setpoint_tooltip,Sollwert - 
+increase_button,Sollwert erhöhen um 
+decrease_button,Sollwert verringern um 
+controller_loop,Regelkreis:
+controller_loop_1,Regelkreis:    
+click_to_settings,(Klick -> Details)
+control_off, Regelung deaktiviert (Manueller Betrieb)
+control_on,Regelung aktiv 
+control_idle,Regelung aktiv, keine Stelleingriffe notwendig (Wert im Toleranzbereich)
+sim_settings,Sim Einstellungen
+no_conf_name,Es wurde kein Name für die zu speichernden \nEinstellungen angegeben !
+no_conf_delete,Es wurde kein Name für die zu löschenden \nEinstellungen angegeben !
+no_load_name,Es wurde kein gespeicherter Parametersatz in der \nCombobox ausgewählt!
+overwrite_conf,Name bereits vorhanden ! Möchten Sie die neuen\nEinstellungen unter dem angegebenen\nNamen speichern ?
+wrong_load_name,Der angegebene Name existiert nicht als\ngepeicherte Reglereinstellung !
+overwrite_settings,Möchten Sie die aktuellen Reglereinstellungen durch\njene aus der gespeicherten Konfiguration ersetzen ?
+really_delete,Möchten Sie die angegbenen gespeicherte\nKonfiguration wirklich löschen ?
+really_distribute_settings_1,Möchten Sie die aktuellen Einstellungen wirklich auf\n 
+really_distribute_settings_2, Regler vom Typ 
+really_distribute_settings_3, übertragen ?

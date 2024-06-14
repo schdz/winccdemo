@@ -1,0 +1,1282 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 277 314 N "STD_panel_back" 0
+"main()
+{
+  iModuleNumber = strsplit(myModuleName(), \"_\")[2];
+  
+  currentPanelName.text = rootPanel(\"mainModule_\"+iModuleNumber);
+}" 0
+ E E E E 1 -1 -1 0  20 110
+""0  1
+E "int iModuleNumber=0;
+
+changeLayerVisibility(int iLayer)
+{
+  bool state;
+  getValue(\"vis\"+iLayer, \"visible\", state);
+  
+  if(state)
+    da_LayerOffPanelInModule(iLayer, currentPanelName.text, \"mainModule_\"+iModuleNumber);
+  else
+    da_LayerOnPanelInModule(iLayer, currentPanelName.text, \"mainModule_\"+iModuleNumber);
+  
+  dpSet(\"ApplicationProperties.panels.mainpanel.layer_\"+iLayer+\"_visible:_original.._value\", !state);
+}" 0
+ 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 2
+"currentPanelName"
+""
+1 10 280 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 282 198 298
+0 2 0 "0s" 0 0 0 64 0 0  12 282 1
+3
+LANG:10000 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,69,0,0,0,0,0
+0 3
+LANG:10000 5 Text1
+LANG:10001 5 Text1
+LANG:10027 5 Text1
+6 23
+"vis1"
+""
+1 11 37 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "pictures/icons/visible_eye_large.gif" 12632256 E 11 10 45 37
+10 30
+"Polyline1"
+""
+1 11 38 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 11 38
+11 12
+45 12
+ 0
+10 31
+"Polyline2"
+""
+1 11 38 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 45 12
+45 38
+11 38
+ 0
+10 32
+"Polyline3"
+""
+1 12 37 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 44 13
+44 37
+12 37
+ 0
+6 33
+"clickshape1"
+""
+1 14 37 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  setValue(\"\",\"fill\",\"[solid]\");
+}" 0
+ "main()
+{
+  changeLayerVisibility(1);
+}" 0
+ 0 1 1 0 1 E U  0 E 14 12 43 37
+6 34
+"vis2"
+""
+1 11 69 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "pictures/icons/visible_eye_large.gif" 12632256 E 11 42 45 69
+10 35
+"Polyline4"
+""
+1 11 70 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 11 70
+11 44
+45 44
+ 0
+10 36
+"Polyline5"
+""
+1 11 70 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 45 44
+45 70
+11 70
+ 0
+10 37
+"Polyline6"
+""
+1 12 69 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 44 45
+44 69
+12 69
+ 0
+6 38
+"clickshape2"
+""
+1 14 69 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  setValue(\"\",\"fill\",\"[solid]\");
+}" 0
+ "main()
+{
+  changeLayerVisibility(2);
+}" 0
+ 0 1 1 0 1 E U  0 E 14 44 43 69
+6 40
+"vis3"
+""
+1 11 101 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "pictures/icons/visible_eye_large.gif" 12632256 E 11 74 45 101
+10 41
+"Polyline7"
+""
+1 11 102 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 11 102
+11 76
+45 76
+ 0
+10 42
+"Polyline8"
+""
+1 11 102 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 45 76
+45 102
+11 102
+ 0
+10 43
+"Polyline9"
+""
+1 12 101 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 44 77
+44 101
+12 101
+ 0
+6 44
+"clickshape3"
+""
+1 14 101 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  setValue(\"\",\"fill\",\"[solid]\");
+}" 0
+ "main()
+{
+  changeLayerVisibility(3);
+}" 0
+ 0 1 1 0 1 E U  0 E 14 76 43 101
+6 46
+"vis4"
+""
+1 11 133 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "pictures/icons/visible_eye_large.gif" 12632256 E 11 106 45 133
+10 47
+"Polyline10"
+""
+1 11 134 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 11 134
+11 108
+45 108
+ 0
+10 48
+"Polyline11"
+""
+1 11 134 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 45 108
+45 134
+11 134
+ 0
+10 49
+"Polyline12"
+""
+1 12 133 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 44 109
+44 133
+12 133
+ 0
+6 50
+"clickshape4"
+""
+1 14 133 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  setValue(\"\",\"fill\",\"[solid]\");
+}" 0
+ "main()
+{
+  changeLayerVisibility(4);
+}" 0
+ 0 1 1 0 1 E U  0 E 14 108 43 133
+6 52
+"vis5"
+""
+1 11 164 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "pictures/icons/visible_eye_large.gif" 12632256 E 11 137 45 164
+10 53
+"Polyline13"
+""
+1 11 165 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 11 165
+11 139
+45 139
+ 0
+10 54
+"Polyline14"
+""
+1 11 165 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 45 139
+45 165
+11 165
+ 0
+10 55
+"Polyline15"
+""
+1 12 164 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 44 140
+44 164
+12 164
+ 0
+6 56
+"clickshape5"
+""
+1 14 164 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+55 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  setValue(\"\",\"fill\",\"[solid]\");
+}" 0
+ "main()
+{
+  changeLayerVisibility(5);
+}" 0
+ 0 1 1 0 1 E U  0 E 14 139 43 164
+6 58
+"vis6"
+""
+1 11 196 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+57 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "pictures/icons/visible_eye_large.gif" 12632256 E 11 169 45 196
+10 59
+"Polyline16"
+""
+1 11 197 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 11 197
+11 171
+45 171
+ 0
+10 60
+"Polyline17"
+""
+1 11 197 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+59 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 45 171
+45 197
+11 197
+ 0
+10 61
+"Polyline18"
+""
+1 12 196 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 44 172
+44 196
+12 196
+ 0
+6 62
+"clickshape6"
+""
+1 14 196 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+61 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  setValue(\"\",\"fill\",\"[solid]\");
+}" 0
+ "main()
+{
+  changeLayerVisibility(6);
+}" 0
+ 0 1 1 0 1 E U  0 E 14 171 43 196
+6 64
+"vis7"
+""
+1 11 228 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+63 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "pictures/icons/visible_eye_large.gif" 12632256 E 11 201 45 228
+10 65
+"Polyline19"
+""
+1 11 229 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+64 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 11 229
+11 203
+45 203
+ 0
+10 66
+"Polyline20"
+""
+1 11 229 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+65 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 45 203
+45 229
+11 229
+ 0
+10 67
+"Polyline21"
+""
+1 12 228 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+66 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 44 204
+44 228
+12 228
+ 0
+6 68
+"clickshape7"
+""
+1 14 228 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+67 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  setValue(\"\",\"fill\",\"[solid]\");
+}" 0
+ "main()
+{
+  changeLayerVisibility(7);
+}" 0
+ 0 1 1 0 1 E U  0 E 14 203 43 228
+6 70
+"vis8"
+""
+1 11 260 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "pictures/icons/visible_eye_large.gif" 12632256 E 11 233 45 260
+10 71
+"Polyline22"
+""
+1 11 261 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+70 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 11 261
+11 235
+45 235
+ 0
+10 72
+"Polyline23"
+""
+1 11 261 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 45 235
+45 261
+11 261
+ 0
+10 73
+"Polyline24"
+""
+1 12 260 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+72 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 44 236
+44 260
+12 260
+ 0
+6 74
+"clickshape8"
+""
+1 14 260 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+73 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  setValue(\"\",\"fill\",\"[solid]\");
+}" 0
+ "main()
+{
+  changeLayerVisibility(8);
+}" 0
+ 0 1 1 0 1 E U  0 E 14 235 43 260
+13 20
+"Button17"
+""
+1 100 277 E E E 1 E 1 E N "STD_text" E N "STD_pushbutton_back" E E
+ E E
+21 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  98 275 202 305
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E E
+13 25
+"LayerButton1"
+""
+1 50 12 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+25 0 0 1 49 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  48 10 268 40
+
+T 
+3
+LANG:10000 7 Layer 1
+LANG:10001 7 Layer 1
+LANG:10027 10 Слой 1
+"main()
+{
+  changeLayerVisibility(1);
+}" 0
+ E E "main()
+{
+  time mainPanelOpened, lastLayerOperation;
+  
+  // if the last display time in the _Ui_. datapoint is the same than in the ApplicationProps
+  // the same mainpanel is still in use as it was the last time, the layer control was opened
+  // if not, a new panel was opened with default operations what leads to visibility of all
+  // existing layers - if a strict layer control is needed for all mainpanels, this can be 
+  // implemented by applying the visible-states for all layers same time with the opening
+ 
+  dpGet(myUiDpName()+\".RootPanelOrigOn.PanelName:_online.._stime\",mainPanelOpened,
+  		\"ApplicationProperties.panels.mainpanel.layer_lastpanel_time:_online.._value\",lastLayerOperation);
+  
+  
+  
+  if(mainPanelOpened != lastLayerOperation)
+  {
+    dpSet(\"ApplicationProperties.panels.mainpanel.layer_lastpanel_time:_original.._value\",mainPanelOpened,
+    	  \"ApplicationProperties.panels.mainpanel.layer_1_visible:_original.._value\",TRUE,
+  		  \"ApplicationProperties.panels.mainpanel.layer_2_visible:_original.._value\",TRUE,
+  		  \"ApplicationProperties.panels.mainpanel.layer_3_visible:_original.._value\",TRUE,
+  		  \"ApplicationProperties.panels.mainpanel.layer_4_visible:_original.._value\",TRUE,
+  		  \"ApplicationProperties.panels.mainpanel.layer_5_visible:_original.._value\",TRUE,
+  		  \"ApplicationProperties.panels.mainpanel.layer_6_visible:_original.._value\",TRUE,
+  		  \"ApplicationProperties.panels.mainpanel.layer_7_visible:_original.._value\",TRUE,
+  		  \"ApplicationProperties.panels.mainpanel.layer_8_visible:_original.._value\",TRUE);   
+  }  
+
+  dpConnect(\"showActiveLayers\", \"ApplicationProperties.panels.mainpanel.layer_1_visible:_online.._value\",
+  								\"ApplicationProperties.panels.mainpanel.layer_2_visible:_online.._value\",
+  								\"ApplicationProperties.panels.mainpanel.layer_3_visible:_online.._value\",
+  								\"ApplicationProperties.panels.mainpanel.layer_4_visible:_online.._value\",
+  								\"ApplicationProperties.panels.mainpanel.layer_5_visible:_online.._value\",
+  								\"ApplicationProperties.panels.mainpanel.layer_6_visible:_online.._value\",
+  								\"ApplicationProperties.panels.mainpanel.layer_7_visible:_online.._value\",
+  								\"ApplicationProperties.panels.mainpanel.layer_8_visible:_online.._value\",
+  								\"ApplicationProperties.panels.mainpanel.layer_names:_online.._value\");
+}
+
+showActiveLayers(string dp1, bool L1,
+                 string dp2, bool L2,
+                 string dp3, bool L3,
+                 string dp4, bool L4,
+                 string dp5, bool L5,
+                 string dp6, bool L6,
+                 string dp7, bool L7,
+                 string dp8, bool L8,
+                 string dp9, dyn_string names)
+{
+  setMultiValue(\"vis1\",\"visible\",L1,
+  				\"vis2\",\"visible\",L2,
+  				\"vis3\",\"visible\",L3,
+  				\"vis4\",\"visible\",L4,
+  				\"vis5\",\"visible\",L5,
+  				\"vis6\",\"visible\",L6,
+  				\"vis7\",\"visible\",L7,
+  				\"vis8\",\"visible\",L8,
+  				\"LayerButton1\",\"text\",\"Layer &1  \"+names[1],
+  				\"LayerButton2\",\"text\",\"Layer &2  \"+names[2],
+  				\"LayerButton3\",\"text\",\"Layer &3  \"+names[3],
+  				\"LayerButton4\",\"text\",\"Layer &4  \"+names[4],
+  				\"LayerButton5\",\"text\",\"Layer &5  \"+names[5],
+  				\"LayerButton6\",\"text\",\"Layer &6  \"+names[6],
+  				\"LayerButton7\",\"text\",\"Layer &7  \"+names[7],
+  				\"LayerButton8\",\"text\",\"Layer &8  \"+names[8]);
+}" 0
+
+13 39
+"LayerButton2"
+""
+1 50 44 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+38 0 0 1 50 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  48 42 268 72
+
+T 
+3
+LANG:10000 7 Layer 2
+LANG:10001 7 Layer 2
+LANG:10027 10 Слой 2
+"main()
+{
+  changeLayerVisibility(2);
+}" 0
+ E E E
+13 45
+"LayerButton3"
+""
+1 50 76 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+44 0 0 1 51 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  48 74 268 104
+
+T 
+3
+LANG:10000 7 Layer 3
+LANG:10001 7 Layer 3
+LANG:10027 10 Слой 3
+"main()
+{
+  changeLayerVisibility(3);
+}" 0
+ E E E
+13 51
+"LayerButton4"
+""
+1 50 108 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+50 0 0 1 52 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  48 106 268 136
+
+T 
+3
+LANG:10000 7 Layer 4
+LANG:10001 7 Layer 4
+LANG:10027 10 Слой 4
+"main()
+{
+  changeLayerVisibility(4);
+}" 0
+ E E E
+13 57
+"LayerButton5"
+""
+1 50 139 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+56 0 0 1 53 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  48 137 268 167
+
+T 
+3
+LANG:10000 7 Layer 5
+LANG:10001 7 Layer 5
+LANG:10027 10 Слой 5
+"main()
+{
+  changeLayerVisibility(5);
+}" 0
+ E E E
+13 63
+"LayerButton6"
+""
+1 50 171 E E E 1 E 1 E N "STD_text" E N "STD_pushbutton_back" E E
+ E E
+62 0 0 1 54 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  48 169 268 199
+
+T 
+3
+LANG:10000 7 Layer 6
+LANG:10001 7 Layer 6
+LANG:10027 10 Слой 6
+"main()
+{
+  changeLayerVisibility(6);
+}" 0
+ E E E
+13 69
+"LayerButton7"
+""
+1 50 203 E E E 1 E 1 E N "STD_text" E N "STD_pushbutton_back" E E
+ E E
+68 0 0 1 55 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  48 201 268 231
+
+T 
+3
+LANG:10000 7 Layer 7
+LANG:10001 7 Layer 7
+LANG:10027 10 Слой 7
+"main()
+{
+  changeLayerVisibility(7);
+}" 0
+ E E E
+13 75
+"LayerButton8"
+""
+1 50 235 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+74 0 0 1 56 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  48 233 268 263
+
+T 
+3
+LANG:10000 7 Layer 8
+LANG:10001 7 Layer 8
+LANG:10027 10 Слой 8
+"main()
+{
+  changeLayerVisibility(8);
+}" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 76 0 "" 2
+1 "leftClick" 1 1 "main()
+{
+  std_help($hlp_keyword);
+}" 0
+ 
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 232 284 T 74 1 0 1 58 93
+1
+"$hlp_keyword""da_layer_control"
+0

@@ -1,0 +1,490 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 376 181 N "STD_panel_back" 0
+"main()
+{
+}" 0
+ E E E E 1 -1 -1 0  10 99
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 0
+"Border6"
+""
+1 10 99 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 10 366 138
+2 1
+"Text19"
+""
+1 18 30 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 32 85 49
+0 2 2 "0s" 0 0 0 192 0 0  20 32 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Zeitpunkt
+LANG:10001 12 Readings for
+LANG:10027 17 Данные от
+6 3
+"Border7"
+""
+1 11 75 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 11 367 137
+2 4
+"Text22"
+""
+1 20 1 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 22 2 203 20
+0 2 2 "0s" 0 0 0 192 0 0  22 2 1
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0 3
+LANG:10000 22 Handeingabe Bewölkung
+LANG:10001 21 Clouds - manual input
+LANG:10027 44 Облачность - ручной ввод
+2 7
+"Text1"
+""
+1 20 70 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 22 72 144 89
+0 2 2 "0s" 0 0 0 192 0 0  22 72 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Bewölkungsgrad:
+LANG:10001 8 Coverage
+LANG:10027 16 Покрытие
+2 8
+"Text2"
+""
+1 20 105 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 22 107 121 124
+0 2 2 "0s" 0 0 0 192 0 0  22 107 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 Klassifikation:
+LANG:10001 14 Classification
+LANG:10027 11 Шкала:
+2 15
+"Text3"
+""
+1 331 69 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 333 71 349 88
+0 2 2 "0s" 0 0 0 192 0 0  333 71 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 %
+LANG:10001 1 %
+LANG:10027 1 %
+22 5
+"timeSelector"
+""
+1 150 30 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  148 28 322 57
+4
+3
+LANG:10000 13 aktuelle Zeit
+LANG:10001 12 current time
+LANG:10027 25 текущее время
+
+1
+3
+LANG:10000 12 heute   6:00
+LANG:10001 15 today   6:00 am
+LANG:10027 24 сегодня   6:00 am
+
+0
+3
+LANG:10000 11 heute 12:00
+LANG:10001 14 today 12:00 am
+LANG:10027 23 сегодня 12:00 am
+
+0
+3
+LANG:10000 11 heute 18:00
+LANG:10001 16 today    6:00 pm
+LANG:10027 25 сегодня    6:00 pm
+
+0
+
+E
+E
+E
+ 0 0
+22 9
+"coverageSelector"
+""
+1 150 65 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  148 63 322 92
+0
+
+"main()
+{
+  this.items = makeDynString(\"0\",\"10\",\"20\",\"30\",\"40\",\"50\",\"60\",\"70\",\"80\",\"90\",\"100\");
+  this.text = \"0\";
+  this.selectedPos = 1;
+}" 0
+
+E
+E
+ 0 1
+22 10
+"classificationSelector"
+""
+1 150 101 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  148 99 322 128
+0
+
+"main()
+{
+  this.items = makeDynString(\"Cirrus (Ci)\", \"Cirrocumulus (Cc)\", \"Cirrostratus (Cs)\", 
+  							 \"Altocumulus (Ac)\", \"Altostratus (As)\", \"Stratocumulus (Sc)\",
+  							 \"Stratus (St)\", \"Nimbostratus (Ns)\", \"Cumulus (Cu)\",\"Cumulonimbus (Cb)\"); 
+
+}
+" 0
+
+E
+E
+ 0 1
+13 14
+"Button4"
+""
+1 328 30 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  326 28 358 58
+
+T 
+3
+LANG:10000 3 ...
+LANG:10001 3 ...
+LANG:10027 3 ...
+"main()
+{
+  ChildPanelOnCentralModal(\"vision/MessageDeadEnd.pnl\",
+    					    getCatStr(\"sc\",\"attention\"),makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"deadEnd\")));
+}" 0
+ E E E
+13 12
+"Button2"
+""
+1 136 147 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  134 145 249 175
+
+T 
+3
+LANG:10000 2 OK
+LANG:10001 2 OK
+LANG:10027 2 OK
+"main()
+{
+  int 	coverage, timeSelection;
+  time 	readingTime, tsTime;
+  
+  
+  // read the selected coverage (percentage) of
+  // the sky from the selector,
+  // assign it to an integer  
+  coverage = coverageSelector.text;
+  
+  timeSelection = timeSelector.selectedPos;
+  
+  switch(timeSelection)
+  {
+    case(1):	readingTime = getCurrentTime();
+    			break;
+    case(2):	readingTime = makeTime(year(getCurrentTime()),month(getCurrentTime()),day(getCurrentTime()),6,0,0);
+    			break;
+    case(3):	readingTime = makeTime(year(getCurrentTime()),month(getCurrentTime()),day(getCurrentTime()),12,0,0);
+    			break;
+    case(4):	readingTime = makeTime(year(getCurrentTime()),month(getCurrentTime()),day(getCurrentTime()),18,0,0);
+    			break;
+  }
+  
+  dpGet(\"WS1.value.clouds.coverage:_online.._stime\", tsTime);
+  
+  if (readingTime > getCurrentTime())
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"timeVal\");
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText));
+    return;
+  }
+  
+  if (readingTime <  tsTime)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"timeValPast\");
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText));
+    return;
+  }
+  
+  if (classificationSelector.text == \"\")
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"ChooseCloud\");
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText));
+    return;
+  }
+  
+  
+  if (classificationSelector.text != \"\")
+  dpSetTimed(readingTime,\"WS1.value.clouds.coverage:_original.._value\",coverage,
+  						 \"WS1.value.clouds.classification:_original.._value\",classificationSelector.text); 
+  PanelOff();						 
+}" 0
+ E E E
+13 11
+"Button1"
+""
+1 256 147 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+6 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  254 145 369 175
+
+T 
+3
+LANG:10000 7 Abbruch
+LANG:10001 6 Cancel
+LANG:10027 16 Отменить
+"main()
+{
+  PanelOff();
+}
+" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

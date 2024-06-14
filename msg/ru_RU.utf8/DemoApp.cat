@@ -1,0 +1,94 @@
+tank,Резерв.
+production_id,Комп.
+reaction_tank,Химический реактор
+instExt1,Установка
+instExt2,Установка завершена\nуспешно.\nПожалуйста, перезапустите ваш проект!
+title_of_dpeMonitor,Монитор DPE
+title_of_xy_trend,XY-тренд
+title_of_groups,Группы
+title_of_measurements,Обзор "Измерения"
+title_of_counters,Обзор "Счетчики"
+title_of_target_values,Обзор "Целевые значения"
+setpoints,Уставки
+title_of_binary_commands,Обзор "Бинарные команды"
+binarycommands,Бинарные_команды
+title_of_userdefined,Обзор "Пользовательские значения"
+userdefined,Определяемые_пользователем
+title_of_login_list,Отчет "Журнал использования системы"
+title_of_dpe_info_editable,Прямой запрос - Установить значения
+title_of_dpe_info,Прямой запрос
+title_of_bar_trend,Столбчатый тренд
+title_of_summation_trend,Cводный тренд
+title_of_tc_trend,Тренд со сравнением временных интервалов
+panelNotFound,Указанная панель не существует\nв данном каталоге: 
+not_defined,не определено
+no_archiv,Значение не архивируется
+last5minutes,последние 5 мин
+last15minutes,последние 15 мин
+last1hour,последний час
+last24hours,последние 24 ч
+StatisticTimePeriod,Выберите период времени
+loginAs,Войти как...
+logout,Выход
+userC,Управление пользователями
+loginT,Время входа
+userP,Журнал использования системы
+visC,Закрыть просмотр
+valSmall, Время начала должно быть раньше время окончания! 
+NoArchiv, Эта точка данных не архивируется! 
+timeVal, Временной интервал не может располагаться в будущем времени! 
+title_of_tc_comparison, Тренд сравнения по времени
+counters,Счетчики
+values,Значения
+measurements,Измеренные значения
+commands,Команды
+properties,Свойства
+deadEnd,Требуемая функциональность недоступна\nв данном демонстрационном приложении.
+DpeNotExisting,Выбранное не является полным элементом точки данных
+veryMuch,Выбранное может вызвать переполнение данных
+userNotAllowed,Недостаточно полномочий !
+PVSSVRangeNotExisting, Диапазон значений WinCC OA не содержит допустимых значений !
+SelectDp, Пожалуйста, сначала выберите допустимую точку данных
+WrongType,Тип DP-элемент должен быть DYN_BOOL, DYN_INT, DYN_UNIT или DYN_FLOAT!
+WrongTypeGen,Тип DP-элемена неверен!
+reallyClose,Вы действительно хотите закрыть текущий \nпользовательский интерфейс ? \n(SCADA-система продолжит работу)
+timeValPast,Уже имеется более актуальное значение! 
+ChooseCloud,Пожалуйста, сначала выберите тип облачности 
+title_of_man_input,Ручной ввод
+rdworks,Дорожные работы
+danger,Опасность
+left,Держаться левее
+right,Держаться правее
+speed,Ограничение скорости
+jam,Дорожный затор
+overtk,Обгон запрещен
+NoAlertDelay,Не указано время задержки сирены! 
+NoPriority,Не указан приоритет! 
+AlertHornDPE,Одно или более полей окна "Выбор DPE" заполнены некорректно!
+AlertHornWAV,Одно или более полей окна "Параметры WAV-файла" заполнены некорректно!
+AlertHornBEEPER,Одно или более полей окна "Параметры ЗУММЕРА" заполнены некорректно!
+AlarmHornTEST,Для запуска звукового теста необходимо заполнить все обязательные поля 
+AlarmHornWAVFile,Пожалуйста, сначала выберите звуковой wav-файл
+AlarmHornWAVFileWrong,Для возможности воспроизведения звуков тип файла должен быть ".wav"  
+Values,Значения
+frequdist,Частота распределения
+windProfile,Диаграмма направлений ветра
+panelNotExisting,Указанная панель не существует
+InfoRestartHorn,Для активации новых настроек, необходимо перезапустить сирену 
+noDollarParams,Отсутствуют $-параметры
+leftClicked,Щелчок левой кнопкой мыши !!!
+rightClicked,Щелчок правой кнопкой мыши !!!
+dblClicked,Двойной щелчок !!!
+provideName&Number,Пожалуйста, введите имя и тел. номер \nполучателя корректно.
+noMessage,Вы не ввели текст сообщения.
+userNotSaved,Для отправки сообщений необходимо сначала сохранить получателя.
+activatingSMSSend,Активация передачи SMS на:
+water_supply,Водоснабжение
+building_automation,Автоматизация здания
+production,Производство
+traffic,Управление движением
+weather_station,Метеостанция
+warning,Предупреждение
+path_incorrect,Указанный путь неверен \nили указывает на недопустимый файл (формат)!
+language,en_US.iso88591
+timeRange,Новый временной диапазон...

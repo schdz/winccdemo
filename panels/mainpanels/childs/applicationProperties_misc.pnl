@@ -1,0 +1,309 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 732 521 N "STD_panel_back" 0
+"main()
+{
+
+}" 0
+ E E E E 1 -1 -1 0  20 200
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 48
+"Border6"
+""
+1 21 91 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 31 601 91
+6 47
+"Border5"
+""
+1 20 90 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 30 600 90
+2 17
+"Text2"
+""
+1 30 20 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 22 155 37
+0 2 0 "0s" 0 0 0 192 0 0  32 22 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 21   Alarmeinstellungen 
+LANG:10001 18  Alert properties 
+LANG:10027 33  Свойства алармов 
+6 49
+"Border1"
+""
+1 21 171 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 111 601 171
+6 50
+"Border2"
+""
+1 20 170 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 110 600 170
+2 51
+"Text1"
+""
+1 30 100 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 102 192 117
+0 2 0 "0s" 0 0 0 192 0 0  32 102 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 27   LogViewer- Einstellungen 
+LANG:10001 22  LogViewer properties 
+LANG:10027 69  Свойства средства просмотра журнала 
+20 53
+"CheckButton2"
+""
+1 50 130 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  48 128 312 152
+1
+T 
+3
+LANG:10000 37 Anmeldeversuche im LogViewer anzeigen
+LANG:10001 40 Show all login try-outs in the LogViewer
+LANG:10027 53 Показывать все попытки входа
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+"main()
+{
+  bool dbgOn;
+
+  dpGet(\"ApplicationProperties.errorhandling.enableDebugs:_online.._value\",dbgOn);  
+  
+  setValue(\"\",\"state\",0,dbgOn);
+}" 0
+"main(int number, bool state)
+{
+  switch(number)
+  {
+  dpGet(\"ApplicationProperties.errorhandling.enableDebugs:_online.._value\",state); 
+  
+      case(0):	{
+    			  dpSet(\"ApplicationProperties.errorhandling.enableDebugs:_original.._value\",state);
+                  setValue(\"\",\"state\",0,state);
+                  break;
+                }
+  }
+}" 0
+20 62
+"CheckButton1"
+""
+1 50 50 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  48 48 402 72
+1
+T 
+3
+LANG:10000 41 Summenalarme in der Alarmzeile darstellen
+LANG:10001 30 Sumalerts visible in alert row
+LANG:10027 83 Показывать групповые алармы в панели алармов
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+"main()
+{
+  int iState;
+  bool dbgOn;
+  string propDpName = \"_AESPropertiesRTRow_\"+myUiNumber()+\"_infoModule_Top\";
+	dpGet(propDpName+\".Alerts.FilterTypes.AlertSummary:_original.._value\",iState); 
+ 
+	if (iState == 0)
+	  dbgOn = FALSE;
+	else
+  	dbgOn = TRUE;
+ 
+  
+  setValue(\"\",\"state\",0,dbgOn);
+}" 0
+"main(int number, bool state)
+{
+  int iState;
+  string propDpName = \"_AESPropertiesRTRow_\"+myUiNumber()+\"_infoModule_Top\";
+
+	if (!state )
+   	iState = 0;
+	else
+  	iState = 2;
+ 
+ 	dpSet(propDpName+\".Alerts.FilterTypes.AlertSummary:_original.._value\",iState);         // 
+ 	dpSet(\"_AESProperties_0003.Alerts.FilterTypes.AlertSummary:_original.._value\",iState); // defaultwert
+	aes_doRestart( propDpName );
+}" 0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

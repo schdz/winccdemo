@@ -1,0 +1,1243 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 8 (NoName)
+PANEL,-1 -1 790 574 N "STD_panel_back" 2
+"$color"
+"$dpe"
+"main()
+{
+  addGlobal(\"highVal\", INT_VAR);
+  addGlobal(\"lowVal\",  INT_VAR);
+  addGlobal(\"colHigh\", STRING_VAR);
+  addGlobal(\"colLow\",  STRING_VAR);
+  addGlobal(\"colOk\",   STRING_VAR);
+  
+  
+  colHigh = \"STD_trend_pen1\";
+  colLow  = \"green\"; 
+  colOk   =\"STD_trend_pen2\";
+  
+  highVal = 0;
+  lowVal = 0;
+}" 0
+ E E E E 1 -1 -1 0  569 703
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 7
+"Text6"
+""
+1 10 1 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 2 126 23
+0 2 2 "0s" 0 0 0 192 0 0  12 2 1
+3
+LANG:10000 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,19,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Balken-Trend
+LANG:10001 9 Bar trend
+LANG:10027 31 Столбчатый тренд
+6 25
+"Border3"
+""
+1 10 530 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 420 570 530
+6 26
+"Border4"
+""
+1 11 531 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 421 571 531
+2 27
+"Text4"
+""
+1 20 412 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 22 412 105 427
+0 2 2 "0s" 0 0 0 192 0 0  22 412 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Datenauswahl
+LANG:10001 14 Data selection
+LANG:10027 23 Выбор данных
+2 32
+"Text5"
+""
+1 20 432 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 22 432 55 447
+0 2 2 "0s" 0 0 0 192 0 0  22 432 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 DPE:
+LANG:10001 4 DPE:
+LANG:10027 4 DPE:
+2 33
+"Text7"
+""
+1 20 462 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 22 462 107 477
+0 2 2 "0s" 0 0 0 192 0 0  22 462 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Beschreibung:
+LANG:10001 12 Description:
+LANG:10027 17 Описание:
+2 34
+"Text8"
+""
+1 430 464 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 432 464 478 479
+0 2 2 "0s" 0 0 0 192 0 0  432 464 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Einheit:
+LANG:10001 5 Unit:
+LANG:10027 6 Ед.:
+2 44
+"txtUnit"
+""
+1 10 30 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 12 32 68 48
+0 2 0 "0s" 0 0 0 64 0 0  12 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Einheit
+LANG:10001 5 Units
+LANG:10027 5 Ед.
+2 45
+"txtValues"
+""
+1 732 30 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 734 32 780 47
+0 2 0 "0s" 0 0 0 194 0 0  780 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 n Werte
+LANG:10001 8 n Values
+LANG:10027 18 n Значения
+2 48
+"Text3"
+""
+1 20 492 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 22 494 91 509
+0 2 0 "0s" 0 0 0 192 0 0  22 494 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Zeitstempel
+LANG:10001 11 Time stamp:
+LANG:10027 20 Врем.метка:
+6 51
+"Border1"
+""
+1 580 530 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 580 420 780 530
+6 53
+"Border5"
+""
+1 581 531 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 581 421 781 531
+2 54
+"Text1"
+""
+1 630 412 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 632 412 712 427
+0 2 2 "0s" 0 0 0 192 0 0  632 412 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Markierungen
+LANG:10001 5 Marks
+LANG:10027 16 Разметка
+2 55
+"Mark2"
+""
+1 608 480 E E E 0 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 610 482 709 497
+0 2 0 "0s" 0 0 0 192 0 0  610 482 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Markierung unter
+LANG:10001 10 Mark lower
+LANG:10027 25 Разметка ниже
+13 31
+"Button3"
+""
+1 530 432 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  528 430 561 457
+
+P 
+4294967295
+"31.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  ChildPanelOnCentralModal(\"vision/dpe_info.pnl\",
+    					    getCatStr(\"DemoApp\",\"title_of_dpe_info\"),
+    					    makeDynString(\"$dpe:\"+dpe_comboBox.text,\"$b_editable:\"+\"0\"));
+}" 0
+ E E E
+14 30
+"commentBox"
+""
+1 110 462 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  108 460 421 486
+2 "0s" 0 0 0 0 0 -1  E E E
+14 36
+"unitBox"
+""
+1 490 462 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  488 460 562 486
+2 "0s" 0 0 0 0 0 -1  E E E
+13 11
+"cmd_close"
+""
+1 668 538 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+6 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  668 538 782 568
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  removeGlobal(\"Exporting\");
+  removeGlobal(\"TrendType\");
+  removeGlobal(\"TrendName\");
+  removeGlobal(\"FileName\");
+  removeGlobal(\"StartTime\");
+  removeGlobal(\"EndTime\");
+  removeGlobal(\"DP\");
+  removeGlobal(\"name\");
+  removeGlobal(\"unit\");
+//  removeGlobal(\"ddt\");
+//  removeGlobal(\"ddf\");
+  dpSet(\"_VarTrendOpen.UiNumber:_original.._value\",0,
+        \"_VarTrendOpen.PanelName:_original.._value\",\"\",
+        \"_VarTrendOpen.TrendData:_original.._value\",\"\");
+  PanelOff();
+}" 0
+ E E E
+13 4
+"dpsel"
+""
+1 490 432 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  488 430 521 457
+
+P 
+4294967295
+"4.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string dp;
+
+  dpSelector(dp);
+
+  dpSet(\"ApplicationProperties.datapoint.current_dpe:_original.._value\",dpSubStr(dp,DPSUB_DP_EL));
+}" 0
+ E E E
+22 41
+"dpe_comboBox"
+""
+1 110 432 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  108 430 482 457
+0
+
+"string 		g_old_dpe;
+int    		g_iaction=1;
+dyn_string 	g_asdpeRecent;
+
+
+main()
+{
+  string 	 dpe=$dpe;
+  int 	 	 i;
+  dyn_string filterRecentDpe;
+ 
+ 
+  commentBox.text = \"\";
+  unitBox.text	  = \"\"; 
+ 
+  dpGet(\"ApplicationProperties.datapoint.recent:_online.._value\",g_asdpeRecent);
+  
+  for (i=1; i<=dynlen(g_asdpeRecent); i++)  // just show the possible types
+  {  
+    if (dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_BOOL_VAR || 
+  	    dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_INT_VAR  ||
+  	    dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_UINT_VAR ||
+  	    dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_FLOAT_VAR) dynAppend(filterRecentDpe, g_asdpeRecent[i]);
+  }
+  
+  this.items = filterRecentDpe;
+  
+  if (dpe != \"\")
+  {
+    this.text =dpe;
+    this.enabled=0;
+    dpsel.visible = FALSE;
+  }
+  else this.enabled=1;
+  dpSet(\"ApplicationProperties.datapoint.current_dpe:_original.._value\",dpe);
+  dpConnect(\"workCurrentDpe\",1,\"ApplicationProperties.datapoint.current_dpe:_online.._value\");
+}
+
+workCurrentDpe(string dp1,string dpe_string)
+{
+  int 		 i,imaxComboList = 20, yRange;
+  bool		 allright = TRUE;
+  dyn_float	 values;
+  string 	 color = $color, sValue;
+  float 	 fVal, fBgVal;
+  time 		 sourceTime;
+  dyn_string filterRecentDpe;
+  
+  
+  if (color == \"\")
+  {
+    color = \"[0,0,0]\";
+  }
+  
+  this.text = dpe_string;
+  
+  // Case - empty string
+  if(dpe_string == \"\") 
+  {
+    return;
+  }
+  
+  // Case DP does not exist
+  if(!dpExists(dpe_string+\":_original.._value\") || dpElementType(dpe_string)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+      txtValues.text = \"0 \"+getCatStr(\"DemoApp\",\"Values\");
+      BarTrend.colorTolHigh 	= \"[100,100,100]\";
+      BarTrend.colorTolLow  	= \"[100,100,100]\";
+      BarTrend.colorTolOK 		= \"[100,100,100]\";
+      BarTrend.data = makeDynFloat(0);
+      BarTrend.flush;
+    allright = FALSE;  
+  }
+  
+  // Case - wrong Type
+  if (allright == TRUE)
+  {
+    if (dpAttributeType (dpe_string+\":_online.._value\") != DYN_BOOL_VAR && 
+  	    dpAttributeType (dpe_string+\":_online.._value\") != DYN_INT_VAR  &&
+  	    dpAttributeType (dpe_string+\":_online.._value\") != DYN_UINT_VAR &&
+  	    dpAttributeType (dpe_string+\":_online.._value\") != DYN_FLOAT_VAR)
+    {
+      string sMessageText=getCatStr(\"DemoApp\",\"WrongType\");
+      ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+      txtValues.text = \"0 \"+getCatStr(\"DemoApp\",\"Values\");
+      BarTrend.colorTolHigh 	= \"[100,100,100]\";
+      BarTrend.colorTolLow  	= \"[100,100,100]\";
+      BarTrend.colorTolOK 		= \"[100,100,100]\";
+      BarTrend.data = makeDynFloat(0);
+      BarTrend.flush;
+      allright = FALSE;
+    }
+  }
+  
+  // Case allright
+  if (allright == TRUE)
+  {
+    dpGet(dpe_string+\":_online.._value\", values);
+    
+    if (dynlen(values) != 0)
+    {
+      fVal = dynMin(values);
+    
+      if (dynMin(values) < 0)
+      {
+        fVal = -dynMin(values);
+      } 
+    
+      if (fVal > dynMax(values))
+      {
+        fBgVal = fVal;
+      }
+    
+      if (fVal <= dynMax(values))
+      {
+        fBgVal = dynMax(values);
+      } 
+      BarTrend.refOrigin = BAR_CENTER;
+      BarTrend.refValue = 0;
+      BarTrend.colorTolHigh = color;
+      BarTrend.colorTolLow  = color;
+      BarTrend.colorTolOK 	= color;
+      BarTrend.yRange 		= fBgVal*2 +5;
+      BarTrend.xRange 		= dynlen(values);
+      BarTrend.data 		= values;
+      if(CheckButton1.state(0))
+  	  {
+  	    if (MarkPerc.text != \"\")
+  	    {
+          getValue(\"MarkPerc\",\"text\",sValue);
+        
+		  BarTrend.colorTolHigh=\"STD_trend_pen1\";
+		  BarTrend.colorTolLow=\"green\"; 
+		  BarTrend.colorTolOK=\"STD_trend_pen2\";
+ 	
+ 	      highVal = sValue;
+ 	      if (MarkPerc2.text == \"\") 
+ 	      {
+ 	        lowVal = (BarTrend.yRange)/2;
+ 	        BarTrend.colorTolLow=\"STD_trend_pen2\";
+ 	      }
+ 	      
+		  BarTrend.tolHigh=highVal;
+		  BarTrend.tolLow=lowVal;
+ 
+		  BarTrend.colorChange=BAR_FRACTION;
+		}
+  	    if (MarkPerc2.text != \"\")
+  	    {
+          getValue(\"MarkPerc2\",\"text\",sValue);
+        
+		  BarTrend.colorTolHigh=\"STD_trend_pen1\";
+		  BarTrend.colorTolLow=\"green\"; 
+		  BarTrend.colorTolOK=\"STD_trend_pen2\";
+ 	
+ 		  if (MarkPerc.text == \"\")
+ 		  { 
+ 		    highVal = (BarTrend.yRange)/2;
+ 		    BarTrend.colorTolHigh=\"STD_trend_pen2\";
+ 		  }
+ 	      lowVal = sValue;
+ 	      
+		  BarTrend.tolHigh=highVal;
+		  BarTrend.tolLow=lowVal;
+ 
+		  BarTrend.colorChange=BAR_FRACTION;
+		}		
+      }
+      BarTrend.flush;
+      txtValues.text = dynlen(values) +\" \"+getCatStr(\"DemoApp\",\"Values\");
+    }
+    if (dynlen(values) == 0)
+    {
+      txtValues.text = \"0 \"+getCatStr(\"DemoApp\",\"Values\");
+      BarTrend.colorTolHigh 	= \"[100,100,100]\";
+      BarTrend.colorTolLow  	= \"[100,100,100]\";
+      BarTrend.colorTolOK 		= \"[100,100,100]\";
+      BarTrend.data = makeDynFloat(0);
+      BarTrend.flush;
+    }
+  }
+  
+  if (allright == TRUE)
+  {
+    // get dpe-time stamp
+    dpGet(dpe_string+\":_online.._stime\",sourceTime);
+    timeStampBox.text = formatTime(\"%c\",sourceTime,\"   (%03d)\");  
+  
+    //get dpe-comment
+    commentBox.text = dpGetComment(dpe_string);
+  
+    //get dpe-unit
+    unitBox.text=dpGetUnit(dpe_string);
+    txtUnit.text=dpGetUnit(dpe_string);
+   
+    if(dynContains(g_asdpeRecent,dpe_string)<0)
+    dynInsertAt(g_asdpeRecent,dpe_string,1);
+    else
+    {
+      dynRemove(g_asdpeRecent,dynContains(g_asdpeRecent,dpe_string));
+      dynInsertAt(g_asdpeRecent,dpe_string,1);
+    }
+    if(dynlen(g_asdpeRecent)>imaxComboList)
+      dynRemove(g_asdpeRecent,imaxComboList+1);
+
+  
+  for (i=1; i<=dynlen(g_asdpeRecent); i++)  // just show the possible types
+  {  
+    if (dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_BOOL_VAR || 
+  	    dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_INT_VAR  ||
+  	    dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_UINT_VAR ||
+  	    dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_FLOAT_VAR) dynAppend(filterRecentDpe, g_asdpeRecent[i]);
+  }
+  
+  this.items = filterRecentDpe;
+ 
+    dpSet(\"ApplicationProperties.datapoint.recent:_original.._value\",g_asdpeRecent);
+  }
+}" 0
+
+"main()
+{
+  int 			i,imaxComboList = 20, yRange;
+  bool			allright = TRUE;
+  dyn_float		values;
+  string		dpe_string, color = $color, sValue;
+  dyn_anytype 	g_asdpeRecent;
+  float			fVal,fBgVal;
+  time			sourceTime;
+  dyn_string	filterRecentDpe;
+  
+  dpGet(\"ApplicationProperties.datapoint.recent:_online.._value\",g_asdpeRecent);
+  
+  dpe_string = this.text;
+  
+  if (color == \"\")
+  {
+    color = \"[0,0,0]\";
+  }
+  
+  // Case - empty string
+  if(dpe_string == \"\") 
+  {
+    return;
+  }
+  
+  // Case DP does not exist
+  if(!dpExists(dpe_string+\":_original.._value\") || dpElementType(dpe_string)==1)
+  {
+    string sMessageText=getCatStr(\"DemoApp\",\"DpeNotExisting\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+      txtValues.text = \"0 \"+getCatStr(\"DemoApp\",\"Values\");
+      BarTrend.colorTolHigh 	= \"[100,100,100]\";
+      BarTrend.colorTolLow  	= \"[100,100,100]\";
+      BarTrend.colorTolOK 		= \"[100,100,100]\";
+      BarTrend.data = makeDynFloat(0);
+      BarTrend.flush;
+    allright = FALSE;  
+  }
+  
+  // Case - wrong Type
+  if (allright == TRUE)
+  {
+    if (dpAttributeType (dpe_string+\":_online.._value\") != DYN_BOOL_VAR && 
+  	    dpAttributeType (dpe_string+\":_online.._value\") != DYN_INT_VAR  &&
+  	    dpAttributeType (dpe_string+\":_online.._value\") != DYN_UINT_VAR &&
+  	    dpAttributeType (dpe_string+\":_online.._value\") != DYN_FLOAT_VAR)
+    {
+      string sMessageText=getCatStr(\"DemoApp\",\"WrongType\");
+      ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),300,300);
+      txtValues.text = \"0 \"+getCatStr(\"DemoApp\",\"Values\");
+      BarTrend.colorTolHigh 	= \"[100,100,100]\";
+      BarTrend.colorTolLow  	= \"[100,100,100]\";
+      BarTrend.colorTolOK 		= \"[100,100,100]\";
+      BarTrend.data = makeDynFloat(0);
+      BarTrend.flush;
+      allright = FALSE;
+    }
+  }
+  
+  // Case allright
+  if (allright == TRUE)
+  {
+    dpGet(dpe_string+\":_online.._value\", values);
+    
+    if (dynlen(values) != 0)
+    {
+      fVal = dynMin(values);
+    
+      if (dynMin(values) < 0)
+      {
+        fVal = -dynMin(values);
+      }
+    
+      if (fVal > dynMax(values))
+      {
+        fBgVal = fVal;
+      }
+    
+      if (fVal <= dynMax(values))
+      {
+        fBgVal = dynMax(values);
+      }
+      BarTrend.refOrigin = BAR_CENTER;
+      BarTrend.refValue = 0;
+      BarTrend.colorTolHigh 	= color;
+      BarTrend.colorTolLow  	= color;
+      BarTrend.colorTolOK 		= color;
+      BarTrend.yRange 		= fBgVal*2 +5;
+      BarTrend.xRange 		= dynlen(values);
+      BarTrend.data 		= values;
+      if(CheckButton1.state(0))
+  	  {
+  	    if (MarkPerc.text != \"\")
+  	    {
+          getValue(\"MarkPerc\",\"text\",sValue);
+        
+		  BarTrend.colorTolHigh=\"STD_trend_pen1\";
+		  BarTrend.colorTolLow=\"green\"; 
+		  BarTrend.colorTolOK=\"STD_trend_pen2\";
+ 	
+ 	      highVal = sValue;
+ 	      if (MarkPerc2.text == \"\") 
+ 	      {
+ 	        lowVal = (BarTrend.yRange)/2;
+ 	        BarTrend.colorTolLow=\"STD_trend_pen2\";
+ 	      }
+ 	      
+		  BarTrend.tolHigh=highVal;
+		  BarTrend.tolLow=lowVal;
+ 
+		  BarTrend.colorChange=BAR_FRACTION;
+		}
+  	    if (MarkPerc2.text != \"\")
+  	    {
+          getValue(\"MarkPerc2\",\"text\",sValue);
+        
+		  BarTrend.colorTolHigh=\"STD_trend_pen1\";
+		  BarTrend.colorTolLow=\"green\"; 
+		  BarTrend.colorTolOK=\"STD_trend_pen2\";
+ 	
+ 	      if (MarkPerc.text == \"\") 
+ 	      {  
+ 	        highVal = (BarTrend.yRange)/2;
+ 	        BarTrend.colorTolHigh=\"STD_trend_pen2\";
+ 	      }
+ 	      lowVal = sValue;
+ 	      
+		  BarTrend.tolHigh=highVal;
+		  BarTrend.tolLow=lowVal;
+ 
+		  BarTrend.colorChange=BAR_FRACTION;
+		}		
+      }
+      BarTrend.flush;
+      txtValues.text = dynlen(values) +\" \"+getCatStr(\"DemoApp\",\"Values\");
+    }
+    if (dynlen(values) == 0)
+    {
+      txtValues.text = \"0 \"+getCatStr(\"DemoApp\",\"Values\");
+      BarTrend.colorTolHigh 	= \"[100,100,100]\";
+      BarTrend.colorTolLow  	= \"[100,100,100]\";
+      BarTrend.colorTolOK 		= \"[100,100,100]\";
+      BarTrend.data = makeDynFloat(0);
+      BarTrend.flush;
+    }
+  }
+  
+  if (allright == TRUE)
+  {
+    // get dpe-time stamp
+    dpGet(dpe_string+\":_online.._stime\",sourceTime);
+    timeStampBox.text = formatTime(\"%c\",sourceTime,\"   (%03d)\");
+  
+    //get dpe-comment
+    commentBox.text = dpGetComment(dpe_string);
+  
+    //get dpe-unit
+    unitBox.text=dpGetUnit(dpe_string);
+    txtUnit.text=dpGetUnit(dpe_string);
+  
+   
+    if(dynContains(g_asdpeRecent,dpe_string)<0)
+    dynInsertAt(g_asdpeRecent,dpe_string,1);
+    else
+    {
+      dynRemove(g_asdpeRecent,dynContains(g_asdpeRecent,dpe_string));
+      dynInsertAt(g_asdpeRecent,dpe_string,1);
+    }
+    if(dynlen(g_asdpeRecent)>imaxComboList)
+      dynRemove(g_asdpeRecent,imaxComboList+1);
+    
+    for (i=1; i<=dynlen(g_asdpeRecent); i++)  // just show the possible types
+    {  
+      if (dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_BOOL_VAR || 
+  	      dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_INT_VAR  ||
+  	      dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_UINT_VAR ||
+  	      dpAttributeType (g_asdpeRecent[i]+\":_online.._value\") == DYN_FLOAT_VAR) dynAppend(filterRecentDpe, g_asdpeRecent[i]);
+    }
+  
+    this.items = filterRecentDpe;
+    
+    dpSet(\"ApplicationProperties.datapoint.recent:_original.._value\",g_asdpeRecent);
+  }
+}" 0
+
+E
+ 1 0
+27 40
+"BarTrend"
+""
+1 10 50 E E E 1 E 1 E N "STD_text" E N "STD_trend_back" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  8 48 782 402
+2 0 32 1 0 "%H:%M" 1 3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  0 2 1 1 0 1 N {0,0,0}
+4 0 50 1 0 "%H:%M" 0 3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  0 3 1 1 0 1 N {0,0,0}
+1 0 0 20 3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  3 1 1 0 1 N {0,0,0}
+0 1 1 0 1 N {0,0,0} 2 5 0 20 20 N {0,0,0} N {0,0,0} N {0,0,0} 1 0 1
+E
+20 42
+"CheckButton1"
+""
+1 590 440 E E E 1 E 1 E N "_3DText" E N "STD_panel_back" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  588 438 712 462
+1
+T 
+3
+LANG:10000 16 Markierung über
+LANG:10001 9 Mark over
+LANG:10027 25 Разметка выше
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int position, int state)
+{
+  int value, yRange;
+
+  if(state)
+  {
+    MarkPerc.enabled  = TRUE;
+    Mark2.enabled	  = TRUE;
+    MarkPerc2.enabled = TRUE;    
+  }
+
+  else
+  {
+    MarkPerc.enabled = 	FALSE;
+    Mark2.enabled	 = 	FALSE;
+    MarkPerc2.enabled= 	FALSE;
+	MarkPerc.text=		\"0\";
+	MarkPerc2.text= 	\"0\";
+    BarTrend.colorTolHigh=$color;
+	BarTrend.colorTolLow=$color; 
+	BarTrend.colorTolOK=$color;	
+	BarTrend.refOrigin= BAR_CENTER;
+	BarTrend.refValue=0;
+    highVal = 0;
+    lowVal = 0;
+	BarTrend.tolHigh=highVal;
+	BarTrend.tolLow=lowVal;
+	BarTrend.colorChange=BAR_FRACTION;
+	BarTrend.flush();
+	
+  }
+}
+" 0
+14 43
+"MarkPerc"
+""
+1 720 440 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  718 438 762 464
+3 "3.0f" 4 0 0 0 0 -1  E "main()
+{
+  setValue(\"\",\"enabled\",FALSE);
+}" 0
+ "main()
+{
+int value, yRange;
+
+	// Neuer Referenzwert
+    getValue(\"\",\"text\",value);
+ 
+	BarTrend.refOrigin= BAR_CENTER;
+ 
+	BarTrend.refValue=0;
+ 
+	BarTrend.colorTolHigh=\"STD_trend_pen1\";
+	BarTrend.colorTolLow=\"green\"; 
+	BarTrend.colorTolOK=\"STD_trend_pen2\";
+
+    highVal = value;
+    if (MarkPerc2.text == \"\") 
+    {
+      lowVal = (BarTrend.yRange)/2;
+      BarTrend.colorTolLow=\"STD_trend_pen2\";
+    }
+    if (this.text == \"\") BarTrend.colorTolHigh=\"STD_trend_pen2\";
+    
+	BarTrend.tolHigh=highVal;
+	BarTrend.tolLow=lowVal;
+ 
+	BarTrend.colorChange=BAR_FRACTION;
+	BarTrend.flush();
+}" 0
+
+14 47
+"timeStampBox"
+""
+1 110 492 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  108 490 421 516
+2 "0s" 0 0 0 0 0 -1  E E E
+14 50
+"MarkPerc2"
+""
+1 720 480 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  718 478 762 504
+3 "3.0f" 4 0 0 0 0 -1  E "main()
+{
+  setValue(\"\",\"enabled\",FALSE);
+}" 0
+ "main()
+{
+int value, yRange;
+
+	// Neuer Referenzwert
+    getValue(\"\",\"text\",value);
+    
+    value = value * (-1);
+ 
+	BarTrend.refOrigin= BAR_CENTER;
+ 
+	BarTrend.refValue=0;
+ 
+	BarTrend.colorTolHigh=\"STD_trend_pen1\";
+	BarTrend.colorTolLow=\"green\"; 
+	BarTrend.colorTolOK=\"STD_trend_pen2\";
+ 
+    if (MarkPerc.text == \"\") 
+    {
+      highVal = (BarTrend.yRange)/2;
+      BarTrend.colorTolHigh=\"STD_trend_pen2\";
+    }
+    if (this.text == \"\") BarTrend.colorTolLow=\"STD_trend_pen2\";
+    lowVal = value;
+    
+	BarTrend.tolHigh=highVal;
+	BarTrend.tolLow=lowVal;
+ 
+	BarTrend.colorChange=BAR_FRACTION;
+	BarTrend.flush();
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 56 0 "" 2
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 70 531 T 26 1 0 1 -10 109
+1
+"$hlp_keyword""da_bar_trend"
+0

@@ -1,0 +1,191 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 120 72 N "_3DFace" 0
+"main()
+{
+}" 0
+ E E E E 1 -1 -1 0  10 10
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+26 7
+"casPanelOn"
+""
+1 10 10 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 25 Arial,9,-1,5,50,0,0,0,0,0
+LANG:10001 25 Arial,9,-1,5,50,0,0,0,0,0
+LANG:10027 25 Arial,9,-1,5,50,0,0,0,0,0
+0  8 8 57 54
+ 0 3
+LANG:10000 7   Start
+LANG:10001 7   Start
+LANG:10027 12   Старт
+"" 0 0 0 0 0
+ 0 "main()
+{
+  pt_init_PT_cascade0_1();
+}" 0
+ "main(string ID)
+{
+  int  pos=ID;
+  
+  pt_panelOn3(pos,myModuleName());
+}" 0
+0 
+13 4
+"sum1"
+""
+1 10 53 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  8 51 25 64
+
+T 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E E "main()
+{
+  pt_init_sumX_PT_cascade0_1(1);
+}" 0
+
+13 5
+"sum2"
+""
+1 26 53 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  24 51 41 64
+
+T 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E E "main()
+{
+  pt_init_sumX_PT_cascade0_1(2);
+}" 0
+
+13 6
+"sum3"
+""
+1 42 53 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,40,0,0,0,0,0
+0  40 51 57 64
+
+T 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E E "main()
+{
+  pt_init_sumX_PT_cascade0_1(3);
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

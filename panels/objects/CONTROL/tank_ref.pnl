@@ -1,0 +1,440 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 277 307 N "_3DFace" 3
+"$dp_tank"
+"$maxfilloverflowpix"
+"$s_color"
+E E E E E 1 -1 -1 0  130 222
+""0  1
+E E 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+7 1
+"bottom"
+""
+1 130 222 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 135 243 105 45
+7 3
+"top"
+""
+1 130 45 E E E 1 E 1 E N {0,0,0} E N {204,153,0} E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 135 66 105 45
+6 0
+"tank"
+""
+1 30 244 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 30 64 240 244
+6 6
+"heat_exchange"
+""
+1 10 244 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 10 64 260 244
+9 2
+"bottom_fill"
+""
+1 135 258 E E E 1 E 1 E N {0,0,0} E N {204,153,0} E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 135 244 105 45
+ 0 30 244 240 244 2
+9 5
+"top_fill"
+""
+1 135 21 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 135 66 105 45
+ 0 240 66 30 66 2
+6 4
+"tank_fill"
+""
+1 30 243 E E E 1 E 1 E N {0,0,0} E N {204,153,0} E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  int x1,y1,x2,y2;
+  int maxLine = $maxfilloverflowpix;
+  
+
+  if(dpConnect(\"showLevel\",$dp_tank+\".state.value\",
+  						   $dp_tank+\".state.value:_pv_range.._min\",
+  						   $dp_tank+\".state.value:_pv_range.._max\") == -1)
+    setMultiValue(\"tank_fill\",\"backCol\",\"_dpdoesnotexist\",
+    			  \"bottom_fill\",\"backCol\",\"_dpdoesnotexist\",
+    			  \"top_fill\",\"backCol\",\"_dpdoesnotexist\");
+  else
+    setMultiValue(\"tank_fill\",\"backCol\",$s_color,
+    			  \"bottom_fill\",\"backCol\",$s_color,
+    			  \"top\",\"backCol\",$s_color);  
+/*    			  
+  getMultiValue(\"maxlevel\",\"position\",x1,y1,
+                \"maxline\",\"position\",x2,y2);
+  setMultiValue(\"maxlevel\",\"position\",x1,y1+maxLine,
+                \"maxline\",\"position\",x2,y2+maxLine);
+*/
+}
+
+showLevel(string dp1, float level, string dp2, float min, string dp3, float max)
+{    
+  float maxfill = $maxfilloverflowpix,
+  		totalheightpix,levelpix, height_tank, width_tank,
+  		level_bottom, level_tank, level_top, tank_scale_y;
+ 
+  float h0, h, ang1, ang2, ang1t, ang2t, ang1t_old, ang2t_old, width, width_corr, height;
+  
+  getMultiValue(\"bottom\",\"size\",width, height,
+  				\"tank\",\"size\",width_tank, height_tank);
+  
+  totalheightpix = height_tank + height;
+  height = height /2;
+  width = width /2;
+  
+  levelpix = ((totalheightpix - maxfill) * level)/(max - min);
+ 
+  if(levelpix >= height)
+    level_bottom = height;
+  else
+    level_bottom = levelpix;
+ 
+  levelpix = levelpix - level_bottom;
+
+  if(levelpix >= height_tank)
+    level_tank = height_tank;
+  else
+    level_tank = levelpix;
+    
+  level_top = levelpix - level_tank;
+
+  // bottom fill calc
+  width_corr = width - (width-height)*(height-level_bottom)/height;
+  
+  ang2 = -rad2deg(asin((height-level_bottom)/(width_corr)));
+  ang1 = 180 - ang2;
+  
+  if(ang2 <= -90)
+    ang2 = -89;
+  if(ang1 >= 270)
+    ang1 = 269;
+
+  // top fill calc  
+  width_corr = width - (width-height)*(level_top)/height;
+  
+  ang1t = rad2deg(asin((level_top)/(width_corr)));
+  ang2t = 180 - ang1t;
+ 
+  if(ang1t >= 90)
+    ang1t = 89;
+  if(ang2t <= 90)
+    ang2t = 91;
+  
+  // tank fill calc
+  tank_scale_y = level_tank/height_tank;
+  
+  getValue(\"top_fill\",\"angle1\",ang1t_old,
+                     \"angle2\",ang2t_old);
+  
+  if((ang1t > 0) || (ang1t_old > 0)) 
+    setMultiValue(\"bottom_fill\",\"angle1\",ang1,
+                  \"bottom_fill\",\"angle2\",ang2,
+                  \"top_fill\",\"angle1\",ang1t,
+                  \"top_fill\",\"angle2\",ang2t,
+                  \"tank_fill\",\"scale\",1,tank_scale_y);
+  else
+    setMultiValue(\"bottom_fill\",\"angle1\",ang1,
+                  \"bottom_fill\",\"angle2\",ang2,
+                  \"tank_fill\",\"scale\",1,tank_scale_y);    
+}" 0
+ E 0 1 1 0 1 E U  1 E 30 63 240 243
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+4 7
+"maxline"
+""
+1 30 20 E E E 1 E 0 E N {0,0,0} E N {255,255,255} E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 1 1 1 0 1 E  30 20 240 20
+10 16
+"maxlevel"
+""
+1 215 20 E E E 1 E 0 E N {0,0,0} E N {255,255,255} E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 225 20
+215 10
+235 10
+ 1
+10 22
+"high"
+""
+1 231 26 E E E 1 E 1 E N {0,0,0} E N "_3DFace" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 231 26
+226 36
+236 36
+ 1
+10 23
+"low"
+""
+1 231 285 E E E 1 E 1 E N {0,0,0} E N "_3DFace" E "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+  dyn_errClass err;
+
+  int          i, iReturnValue = 1, iDpCount = 1;
+  dyn_int      diType = makeDynInt();
+  dyn_string   dsDps;
+
+  dsDps[1] = $dp_tank+\".state.value\" + \":_alert_hdl.._ack\";
+
+  if ( isFunctionDefined(\"isAckable\") )
+  {
+    isAckable( iType, dsDps, iReturnValue );
+    if ( iReturnValue == 0 || dynlen (dsDps ) < 1 ) return;
+  }
+
+  for ( i = 1; i <= dynlen(dsDps); i++ )
+    diType[i] = iType;
+
+  dpSetWait( dsDps, diType );
+
+  err = getLastError();
+  if ( dynlen(err) > 0 )
+    DebugN(err);
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dp_tank+\".state.value\"}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  int ranges;
+  if(dpConnect(\"showAlarm\",$dp_tank+\".state.value:_alert_hdl.._act_range\",
+                           $dp_tank+\".state.value:_alert_hdl.._act_state_color\",
+                           $dp_tank+\".state.value:_alert_hdl.._act_text\",
+                           $dp_tank+\".state.value:_alert_hdl.._num_ranges\") == -1)
+      setMultiValue(\"high\",\"backCol\",\"_dpdoesnotexist\",
+                    \"low\",\"backCol\",\"_dpdoesnotexist\");
+}
+
+showAlarm(string dp, int range, string dp2, string acol, string dp3, string atext, string dp4, int ranges)
+{
+  string aclass, col;
+  int    state, goodRange;
+  
+  goodRange = ranges/2 + 1;
+  
+  dpGet($dp_tank+\".state.value:_alert_hdl.\"+range+\"._class\",aclass,
+        $dp_tank+\".state.value:_alert_hdl.\"+range+\"._act_state\",state);     
+
+  if (state == 1)
+    dpGet(aclass+\":_alert_class.._color_c_nack\", col);
+  else if (state == 2)
+    dpGet(aclass+\":_alert_class.._color_c_ack\", col);
+  else
+  {
+    col = \"_3DFace\";
+  }
+   
+  setMultiValue(\"low\",\"backCol\",\"_3DFace\",
+  				\"low\",\"toolTipText\",\"\",
+                \"high\",\"backCol\",\"_3DFace\",
+                \"high\",\"toolTipText\",\"\");
+
+  if (range > goodRange)
+    setMultiValue(\"high\",\"backCol\", col,
+                  \"high\",\"toolTipText\",atext,
+                  \"low\",\"backCol\",\"_3DFace\",
+                  \"low\",\"toolTipText\",\"\"); 
+  else if (range < goodRange)   
+    setMultiValue(\"low\",\"backCol\", col,
+                  \"low\",\"toolTipText\",atext,
+                  \"high\",\"backCol\",\"_3DFace\",
+                  \"high\",\"toolTipText\",\"\"); 
+  else  
+    setMultiValue(\"low\",\"backCol\", \"_3DFace\",
+                  \"low\",\"toolTipText\",\"\",
+                  \"high\",\"backCol\",\"_3DFace\",
+                  \"high\",\"toolTipText\",\"\"); 
+}" 0
+ E 0 1 1 0 1 E U  1 E 3 231 285
+236 275
+226 275
+ 1
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

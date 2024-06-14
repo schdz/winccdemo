@@ -1,0 +1,167 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 266 177 N "STD_panel_back" 0
+E E E E E 1 -1 -1 0  10 10
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+21 9
+"SpinButton1"
+""
+1 130 70 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  128 68 181 95
+0
+
+E
+"main()
+{
+  int speed = this.text;
+  
+  max_speed.text = speed;
+}
+" 0
+
+E
+
+N 30 130 10 30 1 1
+6 6
+"trafficSign"
+""
+1 40 115 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "6.bmp" 4294967295 E 40 61 95 115
+2 7
+"max_speed"
+""
+1 54 75 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 56 77 78 99
+0 2 0 "0s" 0 0 0 193 0 0  67 77 1
+3
+LANG:10000 26 Arial,-1,20,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 30
+LANG:10001 2 30
+LANG:10027 2 30
+2 10
+"Text1"
+""
+1 30 30 E E E 1 E 1 E N {0,0,255} E N {255,255,204} E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 35 35 185 50
+1 5 0 "0s" 0 0 0 192 0 0  35 35 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 23 Auswahl Geschwindigkeit
+LANG:10001 18 Select speed limit
+LANG:10027 56 Выберите ограничение скорости
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

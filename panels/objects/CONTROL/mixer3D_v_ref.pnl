@@ -1,0 +1,378 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 117 304 N "_3DFace" 1
+"$device"
+E E E E E 1 -1 -1 0  40 40
+""0  1
+E E 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 45
+"MixerBladeStatic"
+""
+1 0 286 E E E 1 E 0 E N "_Transparent" E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "45.bmp" 1649628 E 0 256 97 286
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+4 35
+"shaft"
+""
+1 49 105 E E E 1 E 0 E N {51,51,51} E N {255,255,255} E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  49 262 49 105
+6 43
+"MixerShaft"
+""
+1 46 245 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "43.wmf" 4294967295 E 46 90 53 263
+7 24
+"alert_back"
+""
+1 46 75 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 14 1 0 1 E U  1 E 48 75 30 30
+7 0
+"back"
+""
+1 46 75 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  1 E 48 75 30 30
+6 15
+"localoperation"
+""
+1 69 61 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  1 4  "pictures/Misc/manual_mode_operation_red.wmf" 4294967295 E 69 34 96 61
+10 34
+"Polyline1"
+""
+1 37 72 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 5 1 0 1 E U  0 E 6 37 77
+37 88
+37 66
+48 77
+59 66
+59 88
+ 0
+6 13
+"fraClickBox"
+""
+1 17 110 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ "main()
+{
+  int		 asciiVal;
+  int 		 answer;
+  string 	 text;
+  dyn_string popUpItems;
+  
+  if(getUserPermission(3))
+  {
+  if (up.visible)
+    text = getCatStr(\"control\",\"direct_op_off\");
+  else
+    text = getCatStr(\"control\",\"direct_op_on\");
+  
+  popUpItems = makeDynString(\"PUSH_BUTTON, \"+text+\",1,1\");
+
+  // open the popup with given parametrisation and the returnvalue int 'answer'
+  popupMenu(popUpItems,answer);
+  
+  // open the selected panel in the module \"panel\" an answer was given (answer not 0)
+  if (answer ==1)
+    setMultiValue(\"up\",\"visible\",!up.visible,
+    			  \"down\",\"visible\",!down.visible);
+  }
+}
+//Function LayersButton_EventRightClick()" 0
+ E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(dpConnect(\"showState\",	$device+\".state.on\",
+  							$device+\".state.transition\",
+  							$device+\".state.local\",
+  							$device+\".alarm.temp:_alert_hdl.._act_state_color\",
+  							$device+\".alarm.torque:_alert_hdl.._act_state_color\") == -1)
+  	back.backCol = \"_dpdoesnotexist\";
+	this.fill = \"[solid]\";
+	this.toolTipText = dpGetDescription($device+\".\")+\" [\"+$device+\"]\";
+
+    setValue(\"MixerBlade\",\"fill\",\"[pattern,[tile,gif,Animation/mixer_b.gif]]\");
+
+}
+
+showState(	string dp1, bool on, 
+			string dp2, bool transition,
+			string dp3, bool local,
+			string dp4, string acol_temp,
+			string dp5, string acol_torque)
+{
+string col;
+
+  if(transition)
+    col = \"STD_device_transition\";
+  else
+  {
+    if(on)
+    {
+      col = \"STD_device_on\";
+    }
+    else
+    
+      col = \"STD_device_off\";
+   }
+   
+   setMultiValue(\"back\",\"backCol\",col,
+                 \"alert_back\",\"foreCol\",acol_temp,
+                 \"shaft\",\"foreCol\",acol_torque,
+                 \"shaft\",\"visible\",(acol_torque==\"\")?false:true,
+                 \"MixerBladeStatic\",\"visible\",!on,
+                 \"MixerBlade\",\"visible\",on);
+   localoperation.visible = local;
+}
+" 0
+ "main()
+{
+  if(getUserPermission(3))
+  {
+    ChildPanelOnRelativ(\"objects_parts/CONTROL/motor_n1_operation_cp_ref.pnl\",$device,makeDynString(\"$device:\"+$device),50,-20);
+  }
+}" 0
+ 0 1 1 0 1 E U  0 E 17 44 82 110
+6 46
+"MixerBlade"
+""
+1 0 285 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 1  "46.gif" 1649628 E 0 255 97 285
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+13 27
+"down"
+""
+1 17 14 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 3 Aus
+LANG:10001 3 Off
+LANG:10027 8 Выкл
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  15 12 48 34
+
+P 
+12632256
+"27.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+    dpSet(  $device+\".cmd.on\",false);
+}" 0
+ E E "main()
+{
+   if (getUserPermission(3))
+     this.enabled = true;
+   else
+     this.enabled = false;
+}" 0
+
+13 28
+"up"
+""
+1 49 14 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 3 Ein
+LANG:10001 2 On
+LANG:10027 6 Вкл
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  47 12 80 34
+
+P 
+12632256
+"28.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+    dpSet(  $device+\".cmd.on\",true);}" 0
+ E E "main()
+{
+   if (getUserPermission(3))
+     this.enabled = true;
+   else
+     this.enabled = false;
+}" 0
+
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

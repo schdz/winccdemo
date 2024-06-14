@@ -1,0 +1,2289 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+E E E E E 1 -1 -1 0  956 51
+""0  1
+E "// ===============================================
+// Panel locale library definition (private)
+// ===============================================
+
+// Defintion of constants (for this panel only)
+// ===============================================
+int xmin = 30, xmax = 410, ymin = 60, ymax = 420;
+int xstep = 30, ystep = 30, origwidth = 189, origheight = 179;
+
+// definition of functions
+// ===============================================
+loadPicture(string filename, string path, bool showdebugs = false)
+{
+  bool fit = true;
+  int  size;
+  string filetype;
+
+  filetype = getFileExtension(filename);
+  
+  if (filetype == \"emf\")
+    filetype = \"wmf\";
+    
+  if (filetype == \"xbm\")
+    return;
+  
+  fit = fit_selector.number;
+  fit = !fit;
+  
+
+  if (access(filename + path,R_OK))
+  {
+    size = getFileSize(path + filename);
+    FileSize.text = byteSizeToString(size);
+    if(InclRectangle.state(0))
+    {
+      PictureRectangle.fill = \"[solid]\";
+      if(showdebugs)      
+        DebugN(\"CMD=> PictureRectangle.fill = \"+\"[pattern,[\"+ ((fit)?\"fit\":\"tile\")+\",\"+filetype+\",\" + path + filename +\"]]\");
+      PictureRectangle.fill = \"[pattern,[\"+ ((fit)?\"fit\":\"tile\")+\",\"+filetype+\",\" + path + filename +\"]]\";
+    }
+    
+    if(InclPushbutton.state(0))
+    {
+      //PicturePushbutton.fill = \"[solid]\";  // never set pushbuttons to \"solid\" !!!
+      if (filetype == \"wmf\" || filetype == \"emf\")
+        PicturePushbutton.text = \"NOT SUPPORTED\";
+      else
+      {
+        if(showdebugs)      
+          DebugN(\"CMD=> PicturePushbutton.fill = \"+\"[pattern,[\"+ ((fit)?\"fit\":\"tile\")+\",\"+filetype+\",\" + path + filename +\"]]\");
+        PicturePushbutton.fill = \"[pattern,[\"+ ((fit)?\"fit\":\"tile\")+\",\"+filetype+\",\" + path + filename +\"]]\";
+      }
+    }
+    
+    if(InclPolyline.state(0))
+    {
+      PicturePolyLine.fill = \"[solid]\";
+      if(showdebugs)      
+        DebugN(\"CMD=> PicturePolyLine.fill = \"+\"[pattern,[\"+ ((fit)?\"fit\":\"tile\")+\",\"+filetype+\",\" + path + filename +\"]]\");
+      PicturePolyLine.fill = \"[pattern,[\"+ ((fit)?\"fit\":\"tile\")+\",\"+filetype+\",\" + path + filename +\"]]\";
+    }
+
+    if(InclCircle.state(0))
+    {
+      PictureCircle.fill = \"[solid]\";
+      if(showdebugs)      
+        DebugN(\"CMD=> PictureCircle.fill = \"+\"[pattern,[\"+ ((fit)?\"fit\":\"tile\")+\",\"+filetype+\",\" + path + filename +\"]]\");
+      PictureCircle.fill = \"[pattern,[\"+ ((fit)?\"fit\":\"tile\")+\",\"+filetype+\",\" + path + filename +\"]]\";
+    }
+
+  }
+}
+
+string getFileExtension(string fileOrPath)
+{
+  dyn_string splitString;
+  
+  if(fileOrPath != \"\")
+  {
+   splitString = strsplit(fileOrPath,\".\");
+   return strtolower(splitString[dynlen(splitString)]);
+  }
+  else
+    return \"-1\";
+}
+
+enableAllShapes(bool all)
+{
+  if(all)
+    setMultiValue(	\"InclCircle\",\"enabled\",true,
+    				\"InclPolyline\",\"enabled\",true,
+    				\"InclPushbutton\",\"enabled\",true,
+    				\"InclRectangle\",\"enabled\",true);
+  else
+    setMultiValue(	\"InclCircle\",\"enabled\",false,
+			        \"InclCircle\",\"state\",0,false,
+    				\"InclPolyline\",\"enabled\",false,
+    				\"InclPolyline\",\"state\",0,false,
+    				\"InclPushbutton\",\"enabled\",false,
+    				\"InclPushbutton\",\"state\",0,false,
+    				\"InclRectangle\",\"enabled\",true);
+}
+
+enablePictureSelection(bool enable)
+{
+  if(enable)
+    setMultiValue( \"Input_File\",\"enabled\",true,
+                   \"Input_Path\",\"enabled\",true,
+                   \"Input_Type\",\"enabled\",true,
+                   \"OpenFileSelector\",\"enabled\",true);
+  else
+    setMultiValue( \"Input_File\",\"enabled\",false,
+                   \"Input_Path\",\"enabled\",false,
+                   \"Input_Type\",\"enabled\",false,
+                   \"OpenFileSelector\",\"enabled\",false);      
+}
+
+// scale functions for the rectangular picture shape
+// default parameters = \"-1\" means: \"read values from 
+// input-boxes !
+scaleShape(float xpercent, float ypercent = -1)
+{
+  bool prop;
+  string xstr, ystr;   
+  
+  getMultiValue(\"ScaleProp\",\"state\",0,prop,
+                \"xscale\",\"text\",xstr,
+                \"yscale\",\"text\",ystr);
+
+  if(xpercent == -1)
+  {
+    xstr = strrtrim(xstr,\" %\");
+    xpercent = xstr;
+  }
+  if(ypercent == -1)
+  {
+    ystr = strrtrim(ystr,\" %\");
+    ypercent = ystr;
+  }
+
+  xpercent = xpercent/100.0;
+  ypercent = ypercent/100.0;
+     
+  if(prop)
+    setValue(\"PictureRectangle\",\"scale\", xpercent, xpercent); 
+  else
+    setValue(\"PictureRectangle\",\"scale\", xpercent, ypercent); 
+    
+}
+
+// moves the specified shape inside the through xmin,xmax,ymin,ymax
+// defined bounding box...
+int moveShape(int xmove, int ymove, string shapename = \"PictureRectangle\", int steps = 3)
+{
+   float x,y, width, height, xnew, ynew;
+   bool  xcollision, ycollision;
+   int   i;
+   
+   getValue(shapename,\"position\",x,y,
+                      \"size\",width,height);
+   
+   if (xmove < 0)
+   {   
+     if ((x + xmove) < xmin)
+     {
+       xnew = xmin;
+       xcollision = true;       
+     }
+     else
+       xnew = x + xmove;
+   }
+   else
+   {
+     if ((x + xmove + width) > xmax)
+     {
+       xnew = xmax - width;
+       xcollision = true;       
+     }
+     else
+       xnew = x + xmove;   
+   }  
+
+   if (ymove > 0)
+   {   
+     if ((y + ymove) > ymax)
+     {
+       ynew = ymax;
+       ycollision = true;       
+     }
+     else
+       ynew = y + ymove;
+   }
+   else
+   {
+     if ((y + ymove - height) < ymin)
+     {
+       ynew = ymin + height;
+       ycollision = true;       
+     }
+     else
+       ynew = y + ymove;   
+   }  
+   
+   if (steps <= 1)
+     setValue(shapename,\"position\",xnew,ynew);
+   else
+   {
+     for(i = steps+1; i > 1; i--)
+     {
+       setValue(shapename,\"position\",x + ((xnew-x)/i),y + ((ynew-y)/i));
+       delay(0,40);
+     }    
+   }  
+   return xcollision;
+}
+
+// limit resize-operation when not in original position
+limitScaling(int &xs, int &ys, string shapename = \"PictureRectangle\")
+{
+   float x,y, xscale = xs/100.0, yscale = ys/100.0;
+   
+   getValue(shapename,\"position\",x,y);
+   
+   if ((x + origwidth*xscale) > xmax)                   
+     xscale = 100.0 * ((xmax - x)/origwidth);
+   else
+     xscale = xscale * 100.0;
+   if ((y - origheight*yscale) < ymin)
+     yscale = 100.0 * ((y - ymin)/origheight);
+   else
+     yscale = yscale * 100.0;
+
+   xs = xscale;
+   ys = yscale;
+}
+
+autoMove(int maxSpeed, bool accl, string shapename = \"PictureRectangle\", float startangle = 45.0)
+{
+  float xcoll, ycoll; // coordinates of collisions
+
+  if (shapeExist(shapename))
+  {
+    // to be completed
+  }     
+}
+
+//********************************
+OpenFileSelector()
+{
+  string     filestr, 
+             dirstr, 
+             pattern, 
+             ext,
+             filename, 
+             dirname;
+  dyn_string pathparts;
+  
+  // determine which filetype (bmp, xpm, wmf,...) is selected
+  if(Input_Type.selectedPos == 1)
+    pattern = \"*.*\";
+  else
+    pattern = \"*.\"+strtolower(Input_Type.text); // create search pattern for directory scan
+  
+  // if nothing else is specified, set current directory to currents project /pictures/ path
+  dirstr = (Input_Path.text == \"\") ? PROJ_PATH+\"pictures\" : Input_Path.text;
+ 
+  strreplace(dirstr,\"\\\\\",\"/\");
+  
+  // open a fileselector 
+  fileSelector (filestr, dirstr, false, pattern);
+  
+  // if fileselector is canceled do nothing (leave old settings)
+  if(filestr == \"\"  || filestr == \"\")
+    return;
+
+
+  // split full file and pathstring in all sections separated by delimiter \"/\" 
+  pathparts = strsplit(filestr, \"/\");
+  
+  // filename is the last section
+  filename = pathparts[dynlen(pathparts)];
+  // directory is the whole filestr if file itself is cut off at the end
+  dirname = strrtrim(filestr, pathparts[dynlen(pathparts)]);
+
+  ext = strtoupper( substr(filename, strlen(filename)-3, 3));
+  
+  if ( ext == \"WMF\" ||  ext == \"EMF\" || ext == \"XPM\" ||  ext == \"BMP\" ||  ext == \"GIF\" )
+  {
+    // write file and path selections to the text-/inputfields
+    Input_Path.text = dirname;
+    Input_File.items = getFileNames(dirname,pattern);
+    Input_File.text = filename;
+  
+    // load selceted graphics file / picture
+    // load operation is a \"panel local library function\" - this
+    // can be found in the \"General\" section of the \"Events\" tab in the 
+    // panels property sheet (Edit -> Properties)
+    loadPicture(filename, dirname);
+  }
+  else
+  {
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",getCatStr(\"DemoApp\",\"warning\"),makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"path_incorrect\")));
+  }
+}
+" 0
+ 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+4 110
+"Line1"
+""
+1 190 240 E E E 1 E 1 E N {153,153,153} E N "_Transparent" E E
+ E E
+105 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  250 240 190 240
+4 111
+"Line2"
+""
+1 220 210 E E E 1 E 1 E N {153,153,153} E N "_Transparent" E E
+ E E
+106 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  220 210 220 270
+2 14
+"Text1"
+""
+1 16 7 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 18 9 984 45
+0 2 0 "0s" 0 0 0 64 0 0  18 9 1
+3
+LANG:10000 26 Arial,-1,29,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,29,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,29,5,40,0,0,0,0,0
+0 3
+LANG:10000 61 Einbindung externer Grafik-Dateien / Animationsmöglichkeiten
+LANG:10001 57 Integration of external graphics / animation capabilities
+LANG:10027 115 Внедрение внешних графических объектов / возможности анимации
+6 16
+"PictureRectangle"
+""
+1 31 419 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 8 Rechteck
+LANG:10001 9 Rectangle
+LANG:10027 26 Прямоугольник
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  getValue(\"\",\"size\",origwidth, origheight);
+}" 0
+ E 0 1 1 0 1 E U  0 E 31 240 220 419
+2 23
+"Text4"
+""
+1 480 71 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 482 73 563 89
+0 2 0 "0s" 0 0 0 192 0 0  482 73 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 12 Verzeichnis:
+LANG:10001 9 Directory
+LANG:10027 20 Директория
+30 25
+"Frame1"
+""
+1 470 174 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+24 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 470 54 994 174
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 37  Laden von Bild-Dateien zur Laufzeit 
+LANG:10001 35 Loading of graphic files at runtime
+LANG:10027 80 Загрузка графических файлов при выполнении
+7 27
+"PictureCircle"
+""
+1 391 519 E E E 1 E 1 E N "STD_border_dark" E N "_3DFace" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 5 Kreis
+LANG:10001 6 Circle
+LANG:10027 8 Круг
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 391 519 52 49
+10 36
+"PicturePolyLine"
+""
+1 185 470 E E E 1 E 1 E N "STD_border_dark" E N "_3DFace" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 7 Polygon
+LANG:10001 7 Polygon
+LANG:10027 14 Полигон
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 8 185 470
+350 470
+329 496
+329 544
+350 570
+20 570
+20 536
+185 536
+ 1
+2 38
+"Text5"
+""
+1 480 119 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 482 121 555 137
+0 2 0 "0s" 0 0 0 192 0 0  482 121 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 9 Dateiname
+LANG:10001 8 Filename
+LANG:10027 17 Имя файла
+2 39
+"Text6"
+""
+1 913 119 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 915 121 944 137
+0 2 0 "0s" 0 0 0 192 0 0  915 121 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 4 Typ:
+LANG:10001 3 Typ
+LANG:10027 6 Тип
+30 41
+"Frame2"
+""
+1 470 490 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+39 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 470 270 994 490
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 71  Ändern von Darstellungs-Attributen zur Laufzeit (nur Rechteck links) 
+LANG:10001 62 Changing of diplay properties at runtime (left rectangle only)
+LANG:10027 122 Изменение свойств отображения при выполн. (в левом прямоугольнике)
+30 42
+"Frame3"
+""
+1 470 569 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+40 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 470 509 994 569
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 39  Betroffene Objekte (statische Anzeige)
+LANG:10001 31  Apply picture-change commands 
+LANG:10027 85  Затронутые объекты (статическое отображение) 
+10 54
+"Polyline2"
+""
+1 407 60 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 408 60
+30 60
+30 422
+ 0
+10 55
+"Polyline3"
+""
+1 408 58 E E E 1 E 1 E N "STD_border_light" E N "_Transparent" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 29 420
+409 420
+409 58
+ 0
+10 56
+"Polyline4"
+""
+1 421 50 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 20 430
+420 430
+420 50
+ 0
+10 73
+"Polyline5"
+""
+1 883 354 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+70 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 4 883 354
+893 354
+893 388
+883 388
+ 0
+30 78
+"Frame4"
+""
+1 470 253 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+75 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 470 191 994 253
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 72  Automatisches Anzeigen aller Bilder im Verzeichnis (nur Rechteck links)
+LANG:10001 53 Slideshow of selected directory (left rectangle only)
+LANG:10027 122 Слайд-шоу для выбранной директории (только в левом прямоугольнике)
+2 81
+"Text3"
+""
+1 812 220 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 854 222 908 238
+0 2 0 "0s" 0 0 0 194 0 0  908 222 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 9 Zeitfolge
+LANG:10001 9 Loop time
+LANG:10027 21 Время цикла
+10 87
+"Polyline6"
+""
+1 483 241 E E E 1 E 1 E N "STD_border_med" E N "_Transparent" E E
+ E E
+84 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 483 241
+483 215
+509 215
+ 0
+10 88
+"Polyline7"
+""
+1 483 245 E E E 1 E 1 E N "STD_border_light" E N "_Transparent" E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 509 215
+509 241
+483 241
+ 0
+6 89
+"LoopLED"
+""
+1 483 241 E E E 1 E 1 E N "_Transparent" E N "STD_led_Off" E E
+ E E
+86 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  bool 	      loopOn;
+  int		  i = 1, loopTime;
+  string      filepath;
+  dyn_string  fileList;
+
+  // wait until input section elements are ready initialized
+  delay(0,500);
+  
+  // get on-state form backCol of the \"LED\" shape... line **
+  if(LoopLED.backCol == \"STD_led_On\")
+    loopOn = true;
+  else
+    loopOn = false;
+    
+  filepath = Input_Path.text;
+  
+  while(true)  // endless loop - poll on-state for slideshow
+  {  
+    if(loopOn)
+    {
+      if(filepath != \"\")
+      {
+        fileList = Input_File.items;
+        if (dynlen(fileList) > 1)
+        {
+          enablePictureSelection(false);
+          enableAllShapes(false);
+          filepath = Input_Path.text;
+          
+          while(true)	// inner loop - if slideshow is on, loop all pictures in directory
+          {			    // which apply to the current file type filter
+            loopTime = strrtrim(LoopTime.text,\" s\");
+       
+            if(i > dynlen(fileList))  // loop endless - begin again when reached the end
+              i = 1; 
+
+            if (LoopLED.backCol == \"STD_led_Off\")
+            {
+              break;  // leave immediately inner loop if slideshow is switched off
+            }
+            Input_File.text = fileList[i];  // show current filename in combobox
+            loadPicture(fileList[i],filepath);  // display the picture file
+            delay(loopTime);
+            
+            i++;
+          }
+        }
+        else
+          enablePictureSelection(true);
+          enableAllShapes(true);
+      }
+    }
+    else
+    {
+      loopOn = (LoopLED.backCol == \"STD_led_On\")?true:false;  // short version of line **
+    } 
+    loopOn = (LoopLED.backCol == \"STD_led_On\")?true:false;
+    delay(1);
+  }  
+}" 0
+ E 0 1 1 0 1 E U  1 E 483 215 509 241
+10 53
+"Polyline1"
+""
+1 420 50 E E E 1 E 1 E N "STD_border_light" E N "_Transparent" E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 420 50
+20 50
+20 430
+ 0
+2 108
+"Text2"
+""
+1 788 296 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+103 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 790 298 940 314
+0 2 0 "0s" 0 0 0 192 0 0  790 298 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 25 Skalierung (Bildgröße):
+LANG:10001 15 Scaling (size):
+LANG:10027 46 Масштабирование (размер):
+2 109
+"Text7"
+""
+1 480 296 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+104 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 482 298 540 314
+0 2 0 "0s" 0 0 0 192 0 0  482 298 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 9 Position:
+LANG:10001 16 Position (move):
+LANG:10027 34 Позиция (движение):
+2 113
+"Text8"
+""
+1 789 348 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+106 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 791 350 806 366
+0 2 0 "0s" 0 0 0 192 0 0  791 350 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 2 X:
+LANG:10001 2 X:
+LANG:10027 2 X:
+2 114
+"Text9"
+""
+1 789 378 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+107 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 791 380 805 396
+0 2 0 "0s" 0 0 0 192 0 0  791 380 1
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0 3
+LANG:10000 2 Y:
+LANG:10001 2 Y:
+LANG:10027 2 Y:
+29 101
+"GSLIDER1"
+""
+1 -120 141 E E E 1 E 1 E N "STD_border_dark" E N "_3DFace" E E
+ E E
+96 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"value" "int 100"
+"minValue" "int 1"
+"maxValue" "int 200"
+"orientation" "enum 0"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  30 431 409 460
+12 SliderWidget
+2
+0 "Slide" "()"
+"  int val = this.Value;
+  xscale.text = val + \" %\";"
+0 "Change" "()"
+"  int x_scale = this.Value, y_scale;
+    
+  if(ScaleProp.state(0))
+  {
+    // both axis are scaled with this slider
+    limitScaling(x_scale, x_scale);
+    scaleShape(x_scale, x_scale);
+    GSLIDER1.Value = x_scale;
+    GSLIDER2.Value = x_scale;    
+    yscale.text = x_scale + \" %\";
+  }
+  else
+  {
+    // only this x-axis is scaled
+    y_scale = strrtrim(yscale.text,\" %\");
+    limitScaling(x_scale,y_scale);        
+    scaleShape(x_scale, y_scale);
+  }
+    
+  this.Value = x_scale;"
+"main()
+{
+  this.BackColor = OLEColor(\"_3DFace\");
+  this.BorderWidth = 0;
+}" 0
+22 17
+"Input_File"
+""
+1 481 139 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 35 Dateiname der angezeigten Bilddatei
+LANG:10001 28 Filename of selected graphic
+LANG:10027 78 Имя файла выбранного графического объекта
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  479 137 792 165
+0
+
+E
+"main()
+{
+  loadPicture(this.text, Input_Path.text);
+}" 0
+
+E
+ 0 0
+13 21
+"OpenFileSelector"
+""
+1 915 92 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 37 Auswahl von Verzeichnis und Bilddatei
+LANG:10001 34 Select directory and graphics file
+LANG:10027 72 Выберите директорию и графический файл
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  913 90 981 119
+
+P 
+14215660
+"21.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  OpenFileSelector();
+}" 0
+ E E "main()
+{
+  string filestr, dirstr, pattern,
+         filename, dirname;
+  dyn_string pathparts, fileList;
+  
+  if(Input_Type.selectedPos == 1)
+    pattern = \"*.*\";
+  else
+    pattern = \"*.\"+strtolower(Input_Type.text);
+    
+  fileList = getFileNames(PVSS_PATH+\"pictures\",\"*.gif\");  
+  filename = \"warning_nt.xpm\"; 
+
+  dirname = PVSS_PATH+\"pictures/\";
+  
+  Input_Path.text = dirname;
+  Input_File.items = getFileNames(dirname,pattern);
+  Input_File.text = filename;
+  
+  loadPicture(filename, dirname);
+}" 0
+
+14 24
+"Input_Path"
+""
+1 481 92 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_panel_back" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 43 Verzeichnis der anzuzeigenden Grafikdateien
+LANG:10001 33 Source directory of graphic files
+LANG:10027 73 Исходная директория графических файлов
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  479 90 902 118
+3 "0s" 0 0 0 0 0 -1  "main()
+{
+  OpenFileSelector();
+}" 0
+ E E
+13 26
+"PicturePushbutton"
+""
+1 20 470 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 13 Schaltfläche
+LANG:10001 10 Pushbutton
+LANG:10027 12 Кнопка
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  18 468 162 522
+
+T 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E E E
+22 37
+"Input_Type"
+""
+1 915 139 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 48 Auswahl der gewünschten Dateitypen (Bitmap,...)
+LANG:10001 42 Select type of graphics file (Bitmap, ...)
+LANG:10027 101 Выберите тип графического файла (растр. изображения, ...)
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  913 137 982 165
+6
+3
+LANG:10000 6 (Alle)
+LANG:10001 5 (all)
+LANG:10027 8 (все)
+
+0
+3
+LANG:10000 3 BMP
+LANG:10001 3 BMP
+LANG:10027 3 BMP
+
+0
+3
+LANG:10000 3 XPM
+LANG:10001 3 XPM
+LANG:10027 3 XPM
+
+0
+3
+LANG:10000 3 GIF
+LANG:10001 3 GIF
+LANG:10027 3 GIF
+
+0
+3
+LANG:10000 3 WMF
+LANG:10001 3 WMF
+LANG:10027 3 WMF
+
+0
+3
+LANG:10000 3 EMF
+LANG:10001 3 EMF
+LANG:10027 3 EMF
+
+0
+
+E
+"main()
+{
+  string       path = Input_Path.text, pattern, lastFile, lastFileType;
+  dyn_string   fileListFull;
+  
+  if(path != \"\")
+  {
+    if(this.selectedPos == 1)
+    {
+      dyn_string ds2, ds = getFileNames(path,\"*.*\");
+      
+      for (int i = 1; i <= dynlen(ds); i++)
+      {
+        dyn_string ds3 = strsplit(ds[i], \".\");
+        if (ds3[dynlen(ds3)] != \"xbm\")
+          dynAppend(ds2, ds[i]);
+      }
+      Input_File.items = ds2;
+      
+      if (dynlen(ds2) <= 0)
+        Input_File.text = \"NONE\";
+      else
+        Input_File.text = ds2[1];
+    }
+    else
+    {
+      // if a specific file type has been chosen
+      pattern = \"*.\"+strtolower(this.text);
+      fileListFull = getFileNames(path,pattern);
+      
+      if (dynlen(fileListFull) <= 0)
+      { 
+        dyn_string ds;
+        Input_File.items = ds;
+        Input_File.text = \"NONE\";
+      }
+      else
+      {
+        Input_File.items = fileListFull;
+      
+        lastFile = Input_File.text;
+        if(lastFile != \"\")
+        {
+          // if new file type selection matches to the
+          // currently diplayed picutre - don´t change
+          lastFileType = getFileExtension(lastFile);
+        
+          // if filetypes do not match, display first 
+          // picture in the new selection list...
+          if (lastFileType != strtolower(this.text))
+          {
+            Input_File.text = fileListFull[1];
+            loadPicture(fileListFull[1],Input_Path.text);
+          } 
+        }
+      }
+    }
+    
+    // WMF and EMF files can not be displayed in pushbuttons !
+    if(this.text == \"WMF\" || this.text == \"EMF\")
+      setMultiValue(\"InclPushbutton\",\"enabled\",false,
+                    \"InclPushbutton\",\"state\",0,false,
+                    \"PicturePushbutton\",\"text\",\"NOT SUPPORTED\");
+    else
+      setMultiValue(\"InclPushbutton\",\"enabled\",true);            
+  }
+}" 0
+
+E
+ 0 0
+19 40
+"fit_selector"
+""
+1 480 440 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 39 Bild innhalb des Objektrahmens anpassen
+LANG:10001 37 Fit image into bounding box of object
+LANG:10027 66 Вписать изображение в рамку объекта
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  478 438 682 482
+2
+T 
+3
+LANG:10000 21 Bild-Größe anpassen
+LANG:10001 18 Fit to BoundingBox
+LANG:10027 28 Вписать в рамку
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 27 Originalgröße (gekachelt)
+LANG:10001 21 Original size (tiled)
+LANG:10027 43 Исходн. размер (мозаика)
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E "main(int button)
+{
+  bool origSize = this.number;
+
+  PictureRectangle.fill = \"[solid]\";
+  PictureRectangle.fill = \"[pattern,[\"+ ((origSize)?\"tile\":\"fit\")+\",\"
+                           + getFileExtension(Input_File.text) +\",\"+ Input_Path.text + Input_File.text +\"]]\";
+                           
+// Minimum Version does not work !!!! This is a bug !  Workaround with cleaning the shape via [solid]
+// and applying the full fill-descriptor is coded above
+//  PictureRectangle.fill = \"[pattern,[\"+ ((origSize)?\"tile\":\"fit\")+\",,]]\";
+//DebugN(\"CMD=> PictureRectangle.fill = \"+\"[pattern,[\"+ ((origSize)?\"tile\":\"fit\")+\",,]]\");
+
+
+  
+}" 0
+
+20 43
+"InclRectangle"
+""
+1 481 526 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 40 Bilddatei auf Objekt "Rechteck" anzeigen
+LANG:10001 36 Display graphics file on "Rectangle"
+LANG:10027 86 Отображать графический файл в "Прямоугольнике"
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  479 524 583 568
+1
+T 
+3
+LANG:10000 8 Rechteck
+LANG:10001 9 Rectangle
+LANG:10027 19 Прямоугол.
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, bool state)
+{
+  string filename, pathname, ext;
+
+  if(this.state(0))
+  {
+    filename = Input_File.text;
+    if (filename != \"\")
+    {
+      pathname = Input_Path.text;
+      loadPicture(filename,pathname);
+    }
+    else
+      this.state(0) = false;
+  }
+  else
+    PictureRectangle.fill = \"[solid]\";
+}" 0
+20 44
+"InclPushbutton"
+""
+1 621 526 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 45 Bilddatei auf Objekt "Schaltfläche" anzeigen
+LANG:10001 37 Display graphics file on "Pushbutton"
+LANG:10027 72 Отображать графический файл на "Кнопке"
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  619 524 725 568
+1
+T 
+3
+LANG:10000 13 Schaltfläche
+LANG:10001 10 Pushbutton
+LANG:10027 12 Кнопка
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, bool state)
+{
+  string filename, pathname, ext;
+
+
+  if(this.state(0))
+  {
+    filename = Input_File.text;
+    if (filename != \"\")
+    {
+      ext = getFileExtension(filename);
+      if(ext == \"wmf\" || ext == \"emf\")
+      {
+      
+      }
+      else
+      {
+        pathname = Input_Path.text;
+        loadPicture(filename,pathname);
+      }
+    }
+    else
+      this.state(0) = false;
+  }
+  else
+   PicturePushbutton.text = \" \";
+}" 0
+20 45
+"InclPolyline"
+""
+1 781 526 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 39 Bilddatei auf Objekt "Polygon" anzeigen
+LANG:10001 34 Display graphics file on "Polygon"
+LANG:10027 74 Отображать графический файл в "Полигоне"
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  779 524 883 568
+1
+T 
+3
+LANG:10000 7 Polygon
+LANG:10001 7 Polygon
+LANG:10027 14 Полигон
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, bool state)
+{
+  string filename, pathname, ext;
+
+  if(this.state(0))
+  {
+    filename = Input_File.text;
+    if (filename != \"\")
+    {
+      pathname = Input_Path.text;
+      loadPicture(filename,pathname);
+    }
+    else
+      this.state(0) = false;
+  }
+  else
+   PicturePolyLine.fill = \"[solid]\";
+}" 0
+20 46
+"InclCircle"
+""
+1 909 526 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 37 Bilddatei auf Objekt "Kreis" anzeigen
+LANG:10001 33 Display graphics file on "Circle"
+LANG:10027 68 Отображать графический файл в "Круге"
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  907 524 981 568
+1
+T 
+3
+LANG:10000 5 Kreis
+LANG:10001 6 Circle
+LANG:10027 8 Круг
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, bool state)
+{
+  string filename, pathname, ext;
+
+  if(this.state(0))
+  {
+    filename = Input_File.text;
+    if (filename != \"\")
+    {
+      pathname = Input_Path.text;
+      loadPicture(filename,pathname);
+    }
+    else
+      this.state(0) = false;
+  }
+  else
+   PictureCircle.fill = \"[solid]\";
+}" 0
+14 47
+"FileSize"
+""
+1 800 139 E E E 0 E 1 E N "STD_inputfield_text" E N "STD_panel_back" E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 33 Größe der angezeigten Bilddatei
+LANG:10001 32 Size of currently displayed file
+LANG:10027 50 Размер отображаемого файла
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  798 137 902 165
+3 "0s" 0 0 0 0 0 -1  E E E
+20 49
+"CheckButton1"
+""
+1 791 443 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 34 Rahmen des Bildobjektes ausblenden
+LANG:10001 29 Hide border of object (shape)
+LANG:10027 63 Скрыть рамку графического объекта
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  789 441 953 475
+1
+T 
+3
+LANG:10000 17 Rahmen ausblenden
+LANG:10001 11 Hide border
+LANG:10027 23 Скрыть рамку
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, bool state)
+{
+  if (this.state(0))
+    PictureRectangle.foreCol = \"_Transparent\";
+  else
+    PictureRectangle.foreCol = \"STD_border_dark\";
+}" 0
+22 61
+"xscale"
+""
+1 808 344 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 59 Skalierung der Bilddatei in horizontaler Richtung (x-Achse)
+LANG:10001 60 Scaling of selected graphic in horizontal direction (x-axis)
+LANG:10027 136 Горизонтальное масштабирование выбранного графического объекта (по оси X)
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  806 342 880 370
+5
+3
+LANG:10000 5  25 %
+LANG:10001 5  25 %
+LANG:10027 5  25 %
+
+0
+3
+LANG:10000 5  50 %
+LANG:10001 5  50 %
+LANG:10027 5  50 %
+
+0
+3
+LANG:10000 4 100%
+LANG:10001 4 100%
+LANG:10027 4 100%
+
+1
+3
+LANG:10000 4 150%
+LANG:10001 4 150%
+LANG:10027 4 150%
+
+0
+3
+LANG:10000 4 200%
+LANG:10001 4 200%
+LANG:10027 4 200%
+
+0
+
+E
+"main()
+{
+  int x_scale = strrtrim(this.text, \" %\"), y_scale;
+    
+  if(ScaleProp.state(0))
+  {
+    // both axis are scaled with this slider
+    y_scale = x_scale;
+    limitScaling(x_scale, y_scale);
+    scaleShape(x_scale, y_scale);
+    GSLIDER1.Value = x_scale;
+    GSLIDER2.Value = (y_scale-100)*-1+100;
+    xscale.text = x_scale + \" %\";   
+    yscale.text = y_scale + \" %\";
+  }
+  else
+  {
+    // only this x-axis is scaled
+    y_scale = strrtrim(yscale.text,\" %\");
+    limitScaling(x_scale,y_scale); 
+    xscale.text = x_scale + \" %\";        
+    scaleShape(x_scale, y_scale);
+  }
+    
+  GSLIDER1.Value = x_scale;
+}" 0
+
+E
+ 0 0
+22 63
+"yscale"
+""
+1 808 374 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 57 Skalierung der Bilddatei in vertikaler Richtung (y-Achse)
+LANG:10001 58 Scaling of selected graphic in vertical direction (y-axis)
+LANG:10027 132 Вертикальное масштабирование выбранного графического объекта (по оси Y)
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  806 372 880 400
+5
+3
+LANG:10000 5  25 %
+LANG:10001 5  25 %
+LANG:10027 5  25 %
+
+0
+3
+LANG:10000 5  50 %
+LANG:10001 5  50 %
+LANG:10027 5  50 %
+
+0
+3
+LANG:10000 4 100%
+LANG:10001 4 100%
+LANG:10027 4 100%
+
+1
+3
+LANG:10000 4 150%
+LANG:10001 4 150%
+LANG:10027 4 150%
+
+0
+3
+LANG:10000 4 200%
+LANG:10001 4 200%
+LANG:10027 4 200%
+
+0
+
+E
+"main()
+{
+  int y_scale = strrtrim(this.text, \" %\"), x_scale;
+    
+  if(ScaleProp.state(0))
+  {
+    // both axis are scaled with this slider
+    x_scale = y_scale;
+    limitScaling(x_scale, y_scale);
+    scaleShape(x_scale, y_scale);
+    GSLIDER1.Value = x_scale;
+    GSLIDER2.Value = (y_scale-100)*-1+100;
+    xscale.text = x_scale + \" %\";  
+    yscale.text = y_scale + \" %\";      
+  }
+  else
+  {
+    // only this x-axis is scaled
+    x_scale = strrtrim(xscale.text,\" %\");
+    limitScaling(x_scale,y_scale);        
+    scaleShape(x_scale, y_scale);
+    yscale.text = y_scale + \" %\";  
+  }
+    
+  GSLIDER2.Value = (y_scale-100)*-1+100;
+}" 0
+
+E
+ 0 0
+20 74
+"ScaleProp"
+""
+1 886 361 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 35 Beide Achsen gleichzeitig skalieren
+LANG:10001 23 Scale both axis at once
+LANG:10027 78 Масштабировать по обеим осям одновременно
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  884 359 947 381
+1
+T 
+3
+LANG:10000 5 beide
+LANG:10001 5  both
+LANG:10027 11 синхр.
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main(int button, bool state)
+{
+  int x_scale = strrtrim(xscale.text, \" %\"), y_scale = strrtrim(yscale.text, \" %\");
+
+  if(this.state(0))
+  {
+    // both axis are scaled with this slider
+    setValue(\"yscale\",\"enabled\",false);
+    y_scale = x_scale;
+    limitScaling(x_scale, y_scale);
+    scaleShape(x_scale, y_scale);
+    GSLIDER1.Value = x_scale;
+    GSLIDER2.Value = y_scale; 
+    xscale.text = x_scale + \" %\";   
+    yscale.text = y_scale + \" %\";
+  }
+  else
+  {
+    // do not scale anything but remove the lock from the x-scaling combo
+    setValue(\"yscale\",\"enabled\",true);
+  }
+}" 0
+22 80
+"LoopTime"
+""
+1 915 216 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+77 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  913 214 982 242
+4
+3
+LANG:10000 3  1s
+LANG:10001 4  1 s
+LANG:10027 5  1 с
+
+0
+3
+LANG:10000 3  2s
+LANG:10001 4  2 s
+LANG:10027 5  2 с
+
+1
+3
+LANG:10000 3  5s
+LANG:10001 4  5 s
+LANG:10027 5  5 с
+
+0
+3
+LANG:10000 3 10s
+LANG:10001 4 10 s
+LANG:10027 5 10 с
+
+0
+
+E
+E
+E
+ 0 0
+13 82
+"Button5"
+""
+1 520 213 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+79 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  518 211 612 245
+
+T 
+3
+LANG:10000 5 Start
+LANG:10001 5 Start
+LANG:10027 12 Запуск
+"main()
+{
+    LoopLED.backCol = \"STD_led_On\";
+    InclRectangle.state(0) = true;
+
+    PictureCircle.fill = \"[solid]\";
+	PicturePolyLine.fill = \"[solid]\";
+    PicturePushbutton.text = \"\";
+}" 0
+ E E E
+13 90
+"Button6"
+""
+1 620 213 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+87 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,40,0,0,0,0,0
+0  618 211 712 245
+
+T 
+3
+LANG:10000 4 Stop
+LANG:10001 4 Stop
+LANG:10027 18 Остановка
+"main()
+{
+  LoopLED.backCol = \"STD_led_Off\";
+  enablePictureSelection(true);
+  enableAllShapes(true);
+}" 0
+ E E E
+29 102
+"GSLIDER2"
+""
+1 430 60 E E E 1 E 1 E N "STD_border_dark" E N "_3DFace" E E
+ E E
+97 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"minValue" "int 1"
+"value" "int 100"
+"maxValue" "int 200"
+"invertedAppearance" "bool TRUE"
+3
+LANG:10000 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10001 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+LANG:10027 37 MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0
+0  430 60 449 419
+12 SliderWidget
+2
+0 "Slide" "()"
+"  int val = (this.Value - 100)*(-1)+100;
+  yscale.text = val + \" %\";"
+0 "Change" "()"
+"  int y_scale = (this.Value - 100)*(-1)+100, x_scale;
+    
+  if(ScaleProp.state(0))
+  {
+    // both axis are scaled with this slider
+    limitScaling(y_scale, y_scale);
+    scaleShape(y_scale, y_scale);
+    GSLIDER1.Value = y_scale;
+    GSLIDER2.Value = (y_scale-100)*-1+100;    
+    xscale.text = y_scale + \" %\";
+  }
+  else
+  {
+    // only this y-axis is scaled
+    x_scale = strrtrim(xscale.text,\" %\");
+    limitScaling(x_scale,y_scale);        
+    scaleShape(x_scale, y_scale);
+  }
+    
+  this.Value = (y_scale-100)*-1+100;"
+"main()
+{
+  this.BackColor = OLEColor(\"_3DFace\");
+  this.BorderWidth = 0;
+}" 0
+13 103
+"MoveLeft"
+""
+1 560 360 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+98 1 0 0 37 0
+E E E
+0
+3
+LANG:10000 46 Verschieben nach links (Strg+Pfeil nach links)
+LANG:10001 26 Pan left (Ctrl+arrow left)
+LANG:10027 59 Панорамирование влево (Ctrl+arrow left)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,40,0,0,0,0,0
+0  558 358 586 386
+
+P 
+12632256
+"pictures/z_left.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  moveShape(-xstep,0);
+}" 0
+ E E E
+13 104
+"MoveUp"
+""
+1 590 330 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+99 1 0 0 38 0
+E E E
+0
+3
+LANG:10000 44 Verschieben nach oben (Strg+Pfeil nach oben)
+LANG:10001 22 Pan up (Ctrl+arrow up)
+LANG:10027 57 Панорамирование вверх (Ctrl+arrow up)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,40,0,0,0,0,0
+0  588 328 616 356
+
+P 
+12632256
+"pictures/z_up.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  moveShape(0, -ystep);
+}" 0
+ E E E
+13 105
+"MoveDown"
+""
+1 590 390 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+100 1 0 0 40 0
+E E E
+0
+3
+LANG:10000 46 Verschieben nach unten (Strg+Pfeil nach unten)
+LANG:10001 26 Pan down (Ctrl+arrow down)
+LANG:10027 57 Панорамирование вниз (Ctrl+arrow down)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,40,0,0,0,0,0
+0  588 388 616 416
+
+P 
+12632256
+"pictures/z_down.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  moveShape(0, ystep);
+}" 0
+ E E E
+13 106
+"MoveRight"
+""
+1 620 360 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+101 1 0 0 39 0
+E E E
+0
+3
+LANG:10000 48 Verschieben nach rechts (Strg+Pfeil nach rechts)
+LANG:10001 28 Pan right (Ctrl+arrow right)
+LANG:10027 62 Панорамирование вправо (Ctrl+arrow right)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,40,0,0,0,0,0
+0  618 358 646 386
+
+P 
+12632256
+"pictures/z_right.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  moveShape(xstep, 0);
+}" 0
+ E E E
+13 107
+"MoveCenter"
+""
+1 590 360 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+102 1 0 1 38 0
+E E E
+0
+3
+LANG:10000 21 Verschieben zur Mitte
+LANG:10001 14 Move to center
+LANG:10027 36 Переместить в центр
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,40,0,0,0,0,0
+0  588 358 616 386
+
+P 
+12632256
+"107.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  float xcenter,ycenter, xmove, ymove, x, y, width, height;
+  
+  xcenter = xmin + (xmax-xmin)/2.0;
+  ycenter = ymin + (ymax-ymin)/2.0;
+  
+  getValue(\"PictureRectangle\",\"position\",x,y,
+                              \"size\",width,height);
+ 
+  if (xcenter > (x + width/2.0))
+    xmove = xcenter - (x + width/2.0);
+  else
+    xmove = xcenter - (x + width/2.0);
+    
+  if (ycenter > (y - height/2.0))
+    ymove = ycenter - (y - height/2.0); 
+  else
+    ymove = ycenter - (y - height/2.0); 
+   
+  moveShape(xmove, ymove, \"PictureRectangle\", 0);
+}" 0
+ E E E
+13 112
+"Button1"
+""
+1 560 390 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+106 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 46 Verschieben zur Ausgangsposition (links unten)
+LANG:10001 39 Move to original position (bottom left)
+LANG:10027 71 Переместить в исходную позицию (bottom left)
+
+0
+3
+LANG:10000 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,40,0,0,0,0,0
+0  558 388 586 416
+
+P 
+12632256
+"112.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  setValue(\"PictureRectangle\",\"position\",xmin, ymax);
+}" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

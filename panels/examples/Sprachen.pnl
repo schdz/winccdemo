@@ -1,0 +1,1328 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 938 584 N "STD_panel_back" 0
+E E E E E 1 0 0 0  70 10
+""0  1
+E E 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 0
+"Text1"
+""
+1 95 7.395730208633239 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.044897959183674 0 -0.3591836734693885 0 E 97 10 414 495.6975450770986
+0 2 0 "0s" 0 0 0 64 0 0  97 10 25
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 24 0  German, Austria utf8 
+LANG:10001 24 0  German, Austria utf8 
+LANG:10027 39 0 Немецкий, Австрия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 20 1  English, US utf8 
+LANG:10001 20 1  English, US utf8 
+LANG:10027 35 1 Английский, США utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 27 2  Hungarian, Hungary utf8 
+LANG:10001 27 2  Hungarian, Hungary utf8 
+LANG:10027 43 2 Венгерский, Венгрия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 23 3  Japanese, Japan utf8
+LANG:10001 23 3  Japanese, Japan utf8
+LANG:10027 37 3 Японский, Япония utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 30 4  Smplfd.Chinese, China utf8 
+LANG:10001 30 4  Smplfd.Chinese, China utf8 
+LANG:10027 49 4 Упрощ. Китайский, Китай utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 31 5  English, Great Britain utf8 
+LANG:10001 31 5  English, Great Britain utf8 
+LANG:10027 41 5 Английский, Англия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 27 6  Dutch, Netherlands utf8 
+LANG:10001 27 6  Dutch, Netherlands utf8 
+LANG:10027 51 6 Голландский, Нидерланды utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 23 7  Turkish, Turkey utf8
+LANG:10001 23 7  Turkish, Turkey utf8
+LANG:10027 37 7 Турецкий, Турция utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 23 8  Italian, Italy utf8 
+LANG:10001 23 8  Italian, Italy utf8 
+LANG:10027 43 8 Итальянский, Италия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 23 9  French, France utf8 
+LANG:10001 23 9  French, France utf8 
+LANG:10027 45 9 Французский, Франция utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 24 10  Spanish, Spain utf8 
+LANG:10001 24 10  Spanish, Spain utf8 
+LANG:10027 42 10 Испанский, Испания utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 25 11  German, Germany utf8 
+LANG:10001 25 11  German, Germany utf8 
+LANG:10027 42 11 Немецкий, Германия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 23 12  Greek, Greece utf8 
+LANG:10001 23 12  Greek, Greece utf8 
+LANG:10027 40 12 Греческий, Греция utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 24 13  Hebrew, Israel utf8 
+LANG:10001 24 13  Hebrew, Israel utf8 
+LANG:10027 34 13 Иврит, Израиль utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 26 14  French, Canadian utf8 
+LANG:10001 26 14  French, Canadian utf8 
+LANG:10027 44 14 Французский, Канада utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 24 15  Danish, Denmark utf8
+LANG:10001 24 15  Danish, Denmark utf8
+LANG:10027 34 15 Датский, Дания utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 26 16  Finnish, Finland utf8 
+LANG:10001 26 16  Finnish, Finland utf8 
+LANG:10027 42 16 Финский, Финляндия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 27 17  Norwegian, Norway utf8 
+LANG:10001 27 17  Norwegian, Norway utf8 
+LANG:10027 46 17 Норвежский, Норвегия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 29 18  Portuguese, Portugal utf8
+LANG:10001 29 18  Portuguese, Portugal utf8
+LANG:10027 56 18 Португальский, Португалия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 25 19  Swedish, Sweden utf8 
+LANG:10001 25 19  Swedish, Sweden utf8 
+LANG:10027 38 19 Шведский, Швеция utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+2 1
+"Text2"
+""
+1 494.7053698435278 6.607568189949855 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.045098039215686 0 -0.3156862745098044 0 E 497.0000000000001 9 928.3904694167852 515.2586168746062
+0 2 0 "0s" 0 0 0 64 0 0  497.0000000000001 9 33
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 28 20  Icelandic, Iceland utf8 
+LANG:10001 28 20  Icelandic, Iceland utf8 
+LANG:10027 46 20 Исландский, Исландия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 31 21  Czech, Czech Republic utf8 
+LANG:10001 31 21  Czech, Czech Republic utf8 
+LANG:10027 59 21 Чешский, Чешская Республика utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 24 22  Polish, Poland utf8 
+LANG:10001 24 22  Polish, Poland utf8 
+LANG:10027 38 22 Польский, Польша utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 27 23  Rumanian, Romania utf8 
+LANG:10001 27 23  Rumanian, Romania utf8 
+LANG:10027 42 23 Румынский, Румыния utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 27 24  Croatian, Croatia utf8 
+LANG:10001 27 24  Croatian, Croatia utf8 
+LANG:10027 46 24 Хорватский, Хорватия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 29 25  Slovakian, Slovakia utf8 
+LANG:10001 29 25  Slovakian, Slovakia utf8 
+LANG:10027 44 25 Словацкий- Словакия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 29 26  Slovenian, Slovenia utf8 
+LANG:10001 29 26  Slovenian, Slovenia utf8 
+LANG:10027 46 26 Словенский, Словения utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 37 27  Russian, Russian Federation utf8 
+LANG:10001 37 27  Russian, Russian Federation utf8 
+LANG:10027 36 27 Русский, Россия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 29 28  Bulgarian, Bulgaria utf8 
+LANG:10001 29 28  Bulgarian, Bulgaria utf8 
+LANG:10027 46 28 Болгарский, Болгария utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 30 29  Arabic, Saudi Arabia utf8 
+LANG:10001 30 29  Arabic, Saudi Arabia utf8 
+LANG:10027 59 29 Арабский, Саудовская Аравия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 30 30  Trad.Chinese, Taiwan utf8 
+LANG:10001 30 30  Trad.Chinese, Taiwan utf8 
+LANG:10027 56 30 Традиц. Китайский, Тайвань utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 23 31  Korean, Korea utf8 
+LANG:10001 23 31  Korean, Korea utf8 
+LANG:10027 38 31 Корейский, Корея utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 25 32  Japanese, Japan utf8 
+LANG:10001 25 32  Japanese, Japan utf8 
+LANG:10027 38 32 Японский, Япония utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 25 33  Thai, Thailand, utf8 
+LANG:10001 25 33  Thai, Thailand, utf8 
+LANG:10027 38 33 Тайский, Таиланд utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 22 34  German, Swiss utf8
+LANG:10001 22 34  German, Swiss utf8
+LANG:10027 44 34 Немецкий, Швейцария utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 22 35  French, Swiss utf8
+LANG:10001 22 35  French, Swiss utf8
+LANG:10027 50 35 Французский, Швейцария utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 23 36  Italian, Swiss utf8
+LANG:10001 23 36  Italian, Swiss utf8
+LANG:10027 50 36 Итальянский, Швейцария utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 22 37  Persian, Iran utf8
+LANG:10001 22 37  Persian, Iran utf8
+LANG:10027 38 37 Персидский, Иран utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 43 38  Vietnamese, Vietnam (window-1258), utf8
+LANG:10001 43 38  Vietnamese, Vietnam (window-1258), utf8
+LANG:10027 46 38 Вьетнамский, Вьетнам utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 30 39  Indonesian, Indonesia utf8
+LANG:10001 30 39  Indonesian, Indonesia utf8
+LANG:10027 54 39 Индонезийский, Индонезия utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 30 40  Lithuanian, Lithuania utf8
+LANG:10001 30 40  Lithuanian, Lithuania utf8
+LANG:10027 38 40 Литовский, Литва utf8
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,40,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,40,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+6 3
+"Border1"
+""
+1 55 136 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -9.999999999999998 2  1 1  "pictures/flags/zh_CN.gb2312-1.gif" 4294967295 E 55 116 85 136
+6 4
+"Border2"
+""
+1 55 205 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -6.999999999999996 2  1 1  "pictures/flags/tr_TR.iso88599.gif" 4294967295 E 55 185 85 205
+6 5
+"Border3"
+""
+1 455 433 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -91.00000000000006 2  1 1  "pictures/flags/th_TH.CP874.gif" 4294967295 E 455 413 485 433
+6 6
+"Border4"
+""
+1 455 111 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 -400 379.0000000000001 2  1 1  "pictures/flags/sv_SE.iso88591.gif" 4294967295 E 455 91 485 111
+6 7
+"Border5"
+""
+1 455 272 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -94.00000000000003 2  1 1  "pictures/flags/sl_SI.iso88592.gif" 4294967295 E 455 252 485 272
+6 8
+"Border6"
+""
+1 455 249 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -98.00000000000001 2  1 1  "pictures/flags/sk_SK.iso88592.gif" 4294967295 E 455 229 485 249
+6 9
+"Border7"
+""
+1 455 295 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -94.00000000000003 2  1 1  "pictures/flags/ru_RU.iso88595.gif" 4294967295 E 455 275 485 295
+6 10
+"Border8"
+""
+1 455 203 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -98.00000000000001 2  1 1  "pictures/flags/ro_RO.iso88592.gif" 4294967295 E 455 183 485 203
+6 11
+"Border9"
+""
+1 455 88 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 -399.6666666666667 379.6666666666668 2  1 1  "pictures/flags/pt_PT.iso88591.gif" 4294967295 E 455 68 485 88
+6 12
+"Border10"
+""
+1 455 180 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -100.0000000000001 2  1 1  "pictures/flags/pl_PL.iso88592.gif" 4294967295 E 455 160 485 180
+6 13
+"Border11"
+""
+1 455 65 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 -399.6666666666667 378.6666666666667 2  1 1  "pictures/flags/no_NO.iso88591.gif" 4294967295 E 455 45 485 65
+6 14
+"Border12"
+""
+1 55 182 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333357 -5.666666666666657 2  1 1  "pictures/flags/nl_NL.iso88591.gif" 4294967295 E 55 162 85 182
+6 15
+"Border13"
+""
+1 455 387 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -90.00000000000004 2  1 1  "pictures/flags/ko_KR.CP949.gif" 4294967295 E 455 367 485 387
+6 16
+"Border14"
+""
+1 55 113 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -11 2  1 1  "pictures/flags/jp_JP.euc.gif" 4294967295 E 55 93 85 113
+6 17
+"Border15"
+""
+1 455 410 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -90.00000000000004 2  1 1  "pictures/flags/ja_JP.sjis.gif" 4294967295 E 455 390 485 410
+6 18
+"Border16"
+""
+1 55 343 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -0.9999999999999982 2  1 1  "pictures/flags/iw_IL.iso88598.gif" 4294967295 E 55 323 85 343
+6 19
+"Border17"
+""
+1 55 228 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -5.999999999999997 2  1 1  "pictures/flags/it_IT.iso88591.gif" 4294967295 E 55 208 85 228
+6 20
+"Border18"
+""
+1 455 134 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -103 2  1 1  "pictures/flags/is_IS.iso88591.gif" 4294967295 E 455 114 485 134
+6 21
+"Border19"
+""
+1 55 90 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -12 2  1 1  "pictures/flags/hu_HU.iso88592.gif" 4294967295 E 55 70 85 90
+6 22
+"Border20"
+""
+1 455 226 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -98.00000000000001 2  1 1  "pictures/flags/hr_HR.iso88592.gif" 4294967295 E 455 206 485 226
+6 23
+"Border21"
+""
+1 55 251 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -2.999999999999998 2  1 1  "pictures/flags/fr_FR.iso88591.gif" 4294967295 E 55 231 85 251
+6 24
+"Border22"
+""
+1 55 366 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 1 2  1 1  "pictures/flags/fr_CA.iso88591.gif" 4294967295 E 55 346 85 366
+6 25
+"Border23"
+""
+1 455 42 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 -399.6666666666667 377.6666666666668 2  1 1  "pictures/flags/fi_FI.iso88591.gif" 4294967295 E 455 22 485 42
+6 26
+"Border24"
+""
+1 55 274 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333357 -0.3333333333333126 2  1 1  "pictures/flags/es_ES.iso88591.gif" 4294967295 E 55 254 85 274
+6 27
+"Border25"
+""
+1 55 67 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -11 2  1 1  "pictures/flags/en_US.iso88591.gif" 4294967295 E 55 47 85 67
+6 28
+"Border26"
+""
+1 55 159 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -8.999999999999988 2  1 1  "pictures/flags/en_GB.iso88591.gif" 4294967295 E 55 139 85 159
+6 29
+"Border27"
+""
+1 55 320 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -1.999999999999998 2  1 1  "pictures/flags/el_GR.iso88597.gif" 4294967295 E 55 300 85 320
+6 30
+"Border28"
+""
+1 55 297 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -1.999999999999998 2  1 1  "pictures/flags/de_DE.iso88591.gif" 4294967295 E 55 277 85 297
+6 31
+"Border29"
+""
+1 55 44 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -12 2  1 1  "pictures/flags/de_AT.iso88591.gif" 4294967295 E 55 24 85 44
+6 32
+"Border30"
+""
+1 55 389 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 3 2  1 1  "pictures/flags/da_DK.iso88591.gif" 4294967295 E 55 369 85 389
+6 33
+"Border31"
+""
+1 455 157 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -101 2  1 1  "pictures/flags/cs_CZ.iso88592.gif" 4294967295 E 455 137 485 157
+6 34
+"Border32"
+""
+1 455 318 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -93.00000000000004 2  1 1  "pictures/flags/bg_BG.iso88595.gif" 4294967295 E 455 298 485 318
+6 35
+"Border33"
+""
+1 455 341 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -92.00000000000007 2  1 1  "pictures/flags/ar_SA.iso88596.gif" 4294967295 E 455 321 485 341
+6 36
+"Border34"
+""
+1 455 364 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0.3333333333333144 -91.00000000000006 2  1 1  "pictures/flags/zh_TW.big5.gif" 4294967295 E 455 344 485 364
+6 37
+"Border35"
+""
+1 30 450 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 3 1 0 1 E 1 0 1.170454545454545 5 -6.704545454545453 0 E 30 10 900 450
+13 2
+"Button1"
+""
+1 35 527 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,20,5,69,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,69,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,69,0,0,0,0,0
+0  33 525 337 579
+
+T 
+3
+LANG:10000 25 PVSS II Übersetzungstool
+LANG:10001 18 PVSS II Translator
+LANG:10027 29 Транслятор WinCC OA
+"// SimpleCtrlScriptStart {valid}
+main()
+{
+  EP_childPanelOn();
+}
+
+EP_childPanelOn()
+{
+  ChildPanelOnCentral(\"vision/trans/translator_main.pnl\",
+      \"Translator\",
+      makeDynString(\"\"));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentral}
+// File {vision/trans/translator_main.pnl}
+// Panel {Translator}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+" 0
+ E E E
+6 38
+"RECTANGLE1"
+""
+1 455 410 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -45.00000000000001 2  1 1  "pictures/flags/de_CH.iso88591.gif" 4294967295 E 455 390 485 410
+6 39
+"RECTANGLE2"
+""
+1 455 410 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 -21 2  1 1  "pictures/flags/fr_CH.iso88591.gif" 4294967295 E 455 390 485 410
+6 40
+"RECTANGLE3"
+""
+1 455 410 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 4.000000000000005 2  1 1  "pictures/flags/it_CH.iso88591.gif" 4294967295 E 455 390 485 410
+6 41
+"RECTANGLE4"
+""
+1 455 410 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 29.00000000000001 2  1 1  "pictures/flags/fa_IR.utf8.gif" 4294967295 E 455 390 485 410
+6 42
+"RECTANGLE5"
+""
+1 455 410 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 53 2  1 1  "pictures/flags/vi_VN.tcvn.gif" 4294967295 E 455 390 485 410
+6 43
+"RECTANGLE6"
+""
+1 455 410 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 78 2  1 1  "pictures/flags/id_ID.iso88591.gif" 4294967295 E 455 390 485 410
+6 44
+"RECTANGLE7"
+""
+1 455 410 E E E 1 E 1 E N "_WindowText" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1 0 103 2  1 1  "pictures/flags/lt_LT.iso885913.gif" 4294967295 E 455 390 485 410
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

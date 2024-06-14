@@ -1,0 +1,397 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 413 109 N "_3DFace" 3
+"$DpNameTrafficAccident"
+"$DpNameTrafficJam"
+"$directionName"
+"main()
+{
+}" 0
+ E E E E 1 -1 -1 0  11 60
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 48
+"title"
+""
+1 210 10 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 212 12 288 28
+0 2 0 "0s" 0 0 0 64 0 0  212 12 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 25 Verkehrsmeldungen Richt. 
+LANG:10001 22 Traffic alert in dir. 
+LANG:10027 30 Алармы для напр. 
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+6 41
+"Border1"
+""
+1 13 91 E E E 1 E 1 E N {0,102,51} E N "_Transparent" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 13 32 293 91
+2 42
+"dpeComment_2"
+""
+1 155 34 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 157 36 242 58
+0 2 0 "0s" 0 0 0 64 0 0  157 36 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Unfall
+LANG:10001 8 Accident
+LANG:10027 12 Авария
+2 43
+"dpeComment_1"
+""
+1 19 34 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 36 117 52
+0 2 0 "0s" 0 0 0 64 0 0  21 36 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Stau
+LANG:10001 12 Traffic jam:
+LANG:10027 10 Затор
+2 44
+"alertTitel"
+""
+1 14 11 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  EP_setBackColor();
+}
+
+EP_setBackColor()
+{
+  dyn_errClass err;
+  string  sDpName_1=$DpNameTrafficJam,
+          sDpName_2=$DpNameTrafficAccident;
+  
+  if( dpSubStr(sDpName_1+\"state.alert:_alert_hdl.._act_state_color\", DPSUB_DP_EL ) == \"\" ||
+      dpSubStr(sDpName_2+\"state.alert:_alert_hdl.._act_state_color\", DPSUB_DP_EL ) == \"\" )
+  {
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+    return;
+  }
+  
+  this.text=title.text+$directionName;
+  dpeComment_1.text=dpGetComment(sDpName_1+\"state.alert\");
+  dpeComment_2.text=dpGetComment(sDpName_2+\"state.alert\");
+  dpeComment_1.visible=1;
+  dpeComment_2.visible=1;
+
+  dpConnect(\"EP_setBackColorCB\",sDpName_1+\"state.alert:_alert_hdl.._act_state_color\",
+                                sDpName_2+\"state.alert:_alert_hdl.._act_state_color\",
+                                sDpName_1+\"state.alert:_online.._value\",
+                                sDpName_2+\"state.alert:_online.._value\",
+                                sDpName_1+\"state.alert:_online.._text\",
+                                sDpName_2+\"state.alert:_online.._text\");
+  err = getLastError();
+  if (dynlen(err) > 0)
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+
+}
+EP_setBackColorCB(string dpe_1,string sColor_1,
+                  string dpe_2,string sColor_2,
+                  string dpe_3,bool boAlert_1,
+                  string dpe_4,bool boAlert_2,
+                  string dpe_5,langString sAlertText_1,
+                  string dpe_6,langString sAlertText_2)
+{
+  alertState_1.text=sAlertText_1;
+  alertState_2.text=sAlertText_2;
+  
+  alertState_1.backCol=sColor_1;
+  alertState_2.backCol=sColor_2;
+  
+  /*if(boAlert_1 || boAlert_2)
+    Acknowledge.enabled=1;
+  else
+    Acknowledge.enabled=0;*/
+}" 0
+ E 0 1 1 0 1 E U  0 E 16 13 171 27
+0 2 0 "0s" 0 0 0 192 0 0  16 13 1
+3
+LANG:10000 26 Arial,-1,12,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,75,0,0,0,0,0
+0 3
+LANG:10000 25 Verkehrsmeldungen Richt. 
+LANG:10001 21 Traffic alert in dir.
+LANG:10027 30 Алармы для напр. 
+13 46
+"Acknowledge"
+""
+1 296 60 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  296 59 400 93
+
+T 
+3
+LANG:10000 10 Quittieren
+LANG:10001 11 Acknowledge
+LANG:10027 22 Квитировать
+"main()
+{
+  if (!getUserPermission(5))     
+  {
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",getCatStr(\"sc\",\"attention\"),makeDynString(\"$1:\"+getCatStr(\"sc\",\"no_ack_perm_1\")
+                        +getCatStr(\"sc\",\"no_ack_perm_2\")+getCatStr(\"sc\",\"no_ack_perm_3\")));
+    return;
+  }
+  dpSetWait($DpNameTrafficJam + \"state.alert:_alert_hdl.._ack\",2);
+  dpSetWait($DpNameTrafficAccident + \"state.alert:_alert_hdl.._ack\",2);
+}" 0
+ E E E
+14 47
+"alertState_2"
+""
+1 153 53 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+dyn_errClass err;
+
+  dpSetWait(\"TC_traffic_accident_1.state.alert\"+\":_alert_hdl.._ack\", iType,
+            \"TC_traffic_accident_2.state.alert\"+\":_alert_hdl.._ack\", iType);
+  err = getLastError();
+  if (dynlen(err) > 0)
+    DebugN(err);
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {2}
+// dp1 {TC_traffic_accident_1.state.alert}
+// dp2 {TC_traffic_accident_2.state.alert}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  153 52 287 78
+2 "0s" 0 0 0 0 0 -1  E E E
+14 45
+"alertState_1"
+""
+1 17 53 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+dyn_errClass err;
+
+  dpSetWait(\"TC_traffic_jam_1.state.alert\"+\":_alert_hdl.._ack\", iType,
+            \"TC_traffic_jam_2.state.alert\"+\":_alert_hdl.._ack\", iType);
+  err = getLastError();
+  if (dynlen(err) > 0)
+    DebugN(err);
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {2}
+// dp1 {TC_traffic_jam_1.state.alert}
+// dp2 {TC_traffic_jam_2.state.alert}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  17 52 151 78
+2 "0s" 0 0 0 0 0 -1  E "// SimpleCtrlScriptStart {invalid}
+main()
+{
+  EP_setBackColor();
+}
+
+EP_setBackColor()
+{
+dyn_errClass err;
+					   
+  if( dpSubStr( $DpNameTrafficJam+\"state.alert:_alert_hdl.._act_state_color\", DPSUB_DP_EL ) == \"\" )
+  {
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+    return;
+  }
+
+  dpConnect(\"EP_setBackColorCB\", 
+            $DpNameTrafficJam+\"state.alert:_alert_hdl.._act_state_color\");
+  err = getLastError();
+  if (dynlen(err) > 0)
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+
+}
+
+
+EP_setBackColorCB(string dpSource, string sNewColor)
+{
+  setValue(\"\", \"backCol\", sNewColor);
+}
+
+// SimpleCtrlScript {EP_setBackColor}
+// DP {TC_traffic_accident_1.state.alert}
+// DPConfig {:_alert_hdl.._act_state_color}
+// DPType {string}
+// AlertHdl {TRUE}
+// DPEInvalid {}
+// DPEConfigInvalid {}
+// SimpleCtrlScriptEnd {EP_setBackColor}
+" 0
+ E
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

@@ -1,0 +1,2822 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+"main()
+{
+
+}" 0
+ E E E E 1 -1 -1 0  413 578
+""0  1
+E E 3
+"CBRef" "0"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+10 732
+"Polyline6"
+""
+1 688 774 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+94 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 796 125
+822 92
+796 146
+ 1
+10 728
+"Polyline3"
+""
+1 244 100 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+92 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 244 100
+252 122
+234 122
+ 1
+10 724
+"Polyline2"
+""
+1 1050 669 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+91 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 231 123
+197 100
+231 146
+ 1
+6 563
+"Border5"
+""
+1 39 144 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 39 46 958 149
+6 564
+"Border6"
+""
+1 40 145 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 40 47 959 150
+10 723
+"Polyline4"
+""
+1 50 35 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+90 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 50 35
+170 35
+190 47
+170 59
+50 59
+ 1
+10 718
+"Polyline1"
+""
+1 464 10 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 8 466 10
+454 20
+454 30
+466 40
+572 40
+584 30
+584 20
+572 10
+ 1
+7 719
+"Ellipse1"
+""
+1 464.024 20 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+86 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.05 0 1 -23.225 0 1 E 464.5 20 10 10
+7 720
+"Ellipse2"
+""
+1 464.02381 30 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+87 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.05 0 1 -23.225 0 1 E 464.5 30 10 10
+7 721
+"Ellipse3"
+""
+1 573.02381 20 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+88 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.05 0 1 -28.675 0 1 E 573.5 20 10 10
+7 722
+"Ellipse4"
+""
+1 573.02381 30 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+89 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.05 0 1 -28.675 0 1 E 573.5 30 10 10
+6 669
+"Border25"
+""
+1 497 301 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 497 278 521 302
+2 548
+"Text16"
+""
+1 462 14 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 464 16 580 34
+0 2 0 "0s" 0 0 0 192 0 0  464 16 1
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 W I D G E T S
+LANG:10001 13 W I D G E T S
+LANG:10027 20 В И Д Ж Е Т Ы
+2 565
+"Text18"
+""
+1 52 37 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 54 39 181 54
+0 2 0 "0s" 0 0 0 192 0 0  54 39 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 18 Einzeilige Objekte
+LANG:10001 19 Single line objects
+LANG:10027 35 Однострочн.объекты
+2 569
+"Text20"
+""
+1 82 196 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 84 198 187 213
+0 2 0 "0s" 0 0 0 192 0 0  84 198 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 Mehrfachauswahl
+LANG:10001 18 Multiple selection
+LANG:10027 27 Множеств.выбор
+2 570
+"Text21"
+""
+1 202 196 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 204 198 311 213
+0 2 0 "0s" 0 0 0 192 0 0  204 198 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 14 Einfachauswahl
+LANG:10001 16 Single selection
+LANG:10027 29 Однократн.выбор
+2 571
+"Text22"
+""
+1 358 197 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 360 199 454 214
+0 2 0 "0s" 0 0 0 192 0 0  360 199 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Auswahlliste
+LANG:10001 14 Selection list
+LANG:10027 25 Список выбора
+6 573
+"Border19"
+""
+1 39 336 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 39 176 958 336
+6 574
+"Border20"
+""
+1 40 337 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 40 177 959 337
+2 578
+"Text25"
+""
+1 801 375 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 769 377 859 392
+0 2 0 "0s" 0 0 0 194 0 0  859 377 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Registerkarte
+LANG:10001 11 Tab control
+LANG:10027 25 Набор вкладок
+2 579
+"Text26"
+""
+1 496 376 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 498 378 536 393
+0 2 0 "0s" 0 0 0 192 0 0  498 378 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 Trend
+LANG:10001 5 Trend
+LANG:10027 10 Тренд
+2 580
+"Text27"
+""
+1 163 376 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 165 378 274 393
+0 2 0 "0s" 0 0 0 192 0 0  165 378 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Balkentrend
+LANG:10001 9 Bar Trend
+LANG:10027 31 Столбчатый тренд
+6 583
+"Border1"
+""
+1 39 569 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 39 360 958 569
+6 584
+"Border2"
+""
+1 40 570 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 40 361 959 570
+2 589
+"Text2"
+""
+1 820 46 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 822 48 957 63
+0 2 0 "0s" 0 0 0 192 0 0  822 48 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 20 Standard Eingabefeld
+LANG:10001 19 Standard inputfield
+LANG:10027 38 Стандартн.поле ввода
+6 634
+"i32_1"
+""
+1 147 136 E E E 1 E 0 E N "_Transparent" E N {255,255,255} E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "634.bmp" 4294967295 E 147 106 177 136
+6 635
+"i32_2"
+""
+1 147 136 E E E 1 E 0 E N "_Transparent" E N {255,255,255} E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "635.bmp" 4294967295 E 147 106 177 136
+6 636
+"i32_6"
+""
+1 147 136 E E E 1 E 0 E N "_Transparent" E N {255,255,255} E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "636.bmp" 4294967295 E 147 106 177 136
+6 637
+"i32_7"
+""
+1 147 142 E E E 1 E 0 E N "_Transparent" E N {255,255,255} E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "637.bmp" 4294967295 E 147 111 179 142
+6 638
+"i32_5"
+""
+1 148 143 E E E 1 E 0 E N "_Transparent" E N {255,255,255} E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "638.bmp" 4294967295 E 148 111 180 143
+7 639
+"i32_3"
+""
+1 162.04545 126.01515 E E E 1 E 0 E N "_Transparent" E N {255,255,255} E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.03125 0 1.03125 -5.109375 -3.953125 2  0 3  "639.bmp" 4294967295 E 163.5 126.5 16 16
+7 640
+"i32_4"
+""
+1 162.04545 126.01515 E E E 1 E 0 E N "_Transparent" E N {255,255,255} E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.03125 0 1.03125 -5.109375 -3.953125 2  0 3  "640.bmp" 4294967295 E 163.5 126.5 16 16
+2 654
+"Text4"
+""
+1 743 314 E E E 1 E 1 E N "STD_device_uncertain" E N "_ETM" E E
+ E E
+55 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 732 316 839 331
+1 2 0 "0s" 0 0 0 194 0 0  839 316 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 25 nicht editierbare Spalten
+LANG:10001 19 not editable column
+LANG:10027 30 нередактируемые
+2 656
+"Text5"
+""
+1 865 314 E E E 1 E 1 E N "STD_device_uncertain" E N "_ETM" E E
+ E E
+56 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 858 316 951 331
+1 2 0 "0s" 0 0 0 194 0 0  951 316 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 18 editierbare Spalte
+LANG:10001 15 editable column
+LANG:10027 26 редактируемый
+6 670
+"Border26"
+""
+1 284 387 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+61 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 284 364 308 388
+6 675
+"Border28"
+""
+1 693 210 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+62 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 693 187 717 211
+6 650
+"Border13"
+""
+1 695 209 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.1 -139 -18.9 2  0 3  "pictures/table.png" 4294967295 E 695 189 715 209
+6 677
+"Border29"
+""
+1 773 147 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+63 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 773 124 797 148
+6 679
+"Border30"
+""
+1 498 146 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+64 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 498 123 522 147
+10 680
+"Polyline26"
+""
+1 524 122 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+65 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 524 120
+538 95
+524 145
+ 1
+10 681
+"Polyline27"
+""
+1 -53 17 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+66 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 522 121
+660 92
+522 146
+ 1
+6 612
+"Border7"
+""
+1 500 145 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.15 -100 -19.75 2  0 3  "pictures/combobox.png" 4294967295 E 500 125 520 145
+10 682
+"Polyline28"
+""
+1 349 773 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+67 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 417 119
+433 91
+417 145
+ 1
+6 683
+"Border31"
+""
+1 392 145 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+68 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 392 122 416 146
+6 607
+"Border4"
+""
+1 394 144 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.3 0 1.25 -119.2 -32 2  0 3  "pictures/spinbutton.png" 4294967295 E 394 124 414 144
+10 684
+"Polyline29"
+""
+1 1108 669 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 255 123
+289 100
+255 146
+ 1
+6 685
+"Border32"
+""
+1 232 145 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+70 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 232 122 256 146
+6 603
+"Border3"
+""
+1 234 144 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.35 0 1.3 -83.90000000000001 -38.2 2  0 3  "pictures/pushbutton.png" 4294967295 E 234 124 254 144
+6 689
+"Border33"
+""
+1 71 147 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 71 124 95 148
+10 690
+"Polyline33"
+""
+1 240 570 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+72 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 74 241
+79 255
+52 241
+ 1
+6 691
+"Border34"
+""
+1 50 239 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+73 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 50 216 74 240
+6 641
+"Border9"
+""
+1 52 238 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.2 -10.4 -43.6 2  0 3  "pictures/checkbox.png" 4294967295 E 52 218 72 238
+6 693
+"Border35"
+""
+1 309 240 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+74 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 309 217 333 241
+10 694
+"Polyline35"
+""
+1 782 635 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+75 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 497 212
+475 230
+519 212
+ 1
+6 695
+"Border36"
+""
+1 498 210 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+76 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 498 187 522 211
+6 696
+"Border37"
+""
+1 913 387 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+77 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 913 364 937 388
+6 646
+"Border11"
+""
+1 500 209 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.2 -100 -37.8 2  0 3  "pictures/list.png" 4294967295 E 500 189 520 209
+6 657
+"Border14"
+""
+1 286 386 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+57 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.15 0 1.15 -42.9 -54.9 2  0 3  "pictures/bartrend.png" 4294967295 E 286 366 306 386
+6 699
+"Border38"
+""
+1 606 387 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 606 364 630 388
+6 659
+"Border15"
+""
+1 608 386 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.1 -121.6 -36.6 2  0 3  "pictures/trend.png" 4294967295 E 608 366 628 386
+6 661
+"Border16"
+""
+1 915 386 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+59 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.1 0 1.2 -91.5000000000001 -73.2 2  0 3  "pictures/tab.png" 4294967295 E 915 366 935 386
+7 701
+"Led1"
+""
+1 188 225 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+79 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 188 225 5 5
+7 702
+"Led2"
+""
+1 188 241 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+80 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 188 241 5 5
+7 703
+"Led3"
+""
+1 188 258 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+81 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 188 258 5 5
+7 704
+"Led4"
+""
+1 188 276 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+82 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 188 276 5 5
+7 705
+"Led5"
+""
+1 188 293 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+83 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 188 293 5 5
+7 706
+"Led6"
+""
+1 188 310 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+84 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 188 310 5 5
+10 729
+"Polyline5"
+""
+1 83 101 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+93 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 84 101
+93 127
+73 127
+ 1
+6 601
+"Border60"
+""
+1 73 146 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.25 0 1.25 -19.25 -31.5 2  0 3  "pictures/cascade.png" 4294967295 E 73 126 93 146
+10 734
+"Polyline8"
+""
+1 50 164 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+96 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 50 164
+170 164
+190 176
+170 188
+50 188
+ 1
+10 733
+"Polyline7"
+""
+1 697 448 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+95 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 796 125
+820 120
+796 146
+ 1
+2 568
+"Text19"
+""
+1 52 166 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 54 168 186 183
+0 2 0 "0s" 0 0 0 192 0 0  54 168 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 19 Mehrzeilige Objekte
+LANG:10001 18 Multi line objects
+LANG:10027 37 Многострочн.объекты
+6 735
+"Border22"
+""
+1 546 188 E E E 1 E 1 E N {255,255,204} E N "STD_panel_back" E E
+ E E
+97 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 546 167 588 188
+2 585
+"Text1"
+""
+1 548 167 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 550 169 584 184
+0 2 0 "0s" 0 0 0 192 0 0  550 169 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 Uhr
+LANG:10001 5 Clock
+LANG:10027 8 Часы
+6 736
+"Border23"
+""
+1 732 187 E E E 1 E 1 E N {255,255,204} E N "STD_panel_back" E E
+ E E
+98 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 732 167 785 187
+2 572
+"Text23"
+""
+1 736 167 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 738 169 788 184
+0 2 0 "0s" 0 0 0 192 0 0  738 169 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Tabelle
+LANG:10001 5 Table
+LANG:10027 14 Таблица
+10 737
+"Polyline9"
+""
+1 1047 677 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+99 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 522 278
+543 267
+522 301
+ 1
+10 738
+"Polyline10"
+""
+1 946 634 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+100 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 718 212
+731 230
+695 212
+ 1
+10 739
+"Polyline11"
+""
+1 773 303 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+101 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 771 303
+781 313
+763 313
+ 1
+10 740
+"Polyline12"
+""
+1 832 303 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+102 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 830 303
+840 313
+822 313
+ 1
+10 741
+"Polyline13"
+""
+1 911 303 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+103 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 909 303
+919 313
+901 313
+ 1
+10 742
+"Polyline14"
+""
+1 493 570 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+104 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 309 241
+304 255
+331 241
+ 1
+10 744
+"Polyline15"
+""
+1 50 348 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+105 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 5 50 348
+170 348
+190 360
+170 372
+50 372
+ 1
+2 577
+"Text24"
+""
+1 52 350 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 54 352 190 367
+0 2 0 "0s" 0 0 0 192 0 0  54 352 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Komplexe Objekte
+LANG:10001 15 Complex objects
+LANG:10027 37 Комплексные объекты
+10 745
+"Polyline16"
+""
+1 790 824 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+106 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 283 389
+270 395
+283 366
+ 1
+10 746
+"Polyline17"
+""
+1 1151 840 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+107 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 605 389
+591 396
+605 366
+ 1
+10 747
+"Polyline18"
+""
+1 1419 808 E E E 1 E 1 E N {255,255,204} E N {255,255,204} E E
+ E E
+108 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 912 389
+899 394
+912 366
+ 1
+2 590
+"Text3"
+""
+1 401 46 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 403 48 453 63
+0 2 0 "0s" 0 0 0 192 0 0  403 48 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Spin Button
+LANG:10001 11 Spin Button
+LANG:10027 14 Счётчик
+26 549
+"CascadeButton1"
+""
+1 52 64 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  50 62 124 102
+ 0 3
+LANG:10000 8  Kaskade
+LANG:10001 8  Cascade
+LANG:10027 13  Каскад
+"" 0 0 0 0 0
+ 2 0 3
+LANG:10000 16 Nächste Kaskade
+LANG:10001 10 Next popup
+LANG:10027 27 Следующее меню
+"popup_1" 0 0 0 0 0
+ 2 1 3
+LANG:10000 20 Zeige ACHTUNG Button
+LANG:10001 18 Show Danger Button
+LANG:10027 48 Показать аварийную кнопку
+"item_1" 0 0 0 0 0
+ 0 3
+LANG:10000 16 Nächste Kaskade
+LANG:10001 10 Next popup
+LANG:10027 27 Следующее меню
+"popup_2" 0 0 0 0 0
+ 2 1 3
+LANG:10000 26 Aktiviere Abbrechen Button
+LANG:10001 20 Enable Cancel Button
+LANG:10027 48 Включить кнопку "Отменить"
+"item_3" 0 0 0 0 0
+ 1 3
+LANG:10000 28 Deaktiviere Abbrechen Button
+LANG:10001 21 Disable Cancel Button
+LANG:10027 50 Отключить кнопку "Отменить"
+"item_4" 0 0 0 0 0
+ 1 3
+LANG:10000 24 Verstecke ACHTUNG Button
+LANG:10001 18 Hide Danger Button
+LANG:10027 44 Скрыть аварийную кнопку
+"item_2" 0 0 0 0 0
+ E "main(string id)
+{
+  switch(id)
+  {
+    case \"item_1\" : Button2.visible = TRUE;
+                    this.enableItem(\"1\")   = TRUE;
+                    this.enableItem(\"0.0\") = FALSE;
+                    break;
+    case \"item_2\" : Button2.visible = FALSE;
+                    this.enableItem(\"1\")   = FALSE;
+                    this.enableItem(\"0.0\") = TRUE;
+                    break;
+    case \"item_3\" : Button3.enabled = TRUE;
+                    break;
+    case \"item_4\" : Button3.enabled = FALSE;
+                    break;
+  }
+}" 0
+0 
+13 587
+"Button2"
+""
+1 130 63 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  128 61 202 102
+
+P 
+4294967295
+"XmUNSPECIFIED_PIXMAP"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  int 		 i, answer;
+  dyn_string popUpItems;
+  dyn_string entryList = makeDynString(getCatStr(\"DemoApp\",\"rdworks\"),
+                                       getCatStr(\"DemoApp\",\"danger\"),
+                                       getCatStr(\"DemoApp\",\"left\"),
+                                       getCatStr(\"DemoApp\",\"right\"),
+                                       getCatStr(\"DemoApp\",\"speed\"),
+                                       getCatStr(\"DemoApp\",\"jam\"),
+                                       getCatStr(\"DemoApp\",\"overtk\"));
+
+  // the popupMenu() (=context menue) can get its selectable items
+  // in an another array of strings (dyn_strings) - here it is build
+  // together in a loop. Syntax for each entry is \"TYPE,text,answerValue,enabled\"
+  // for details please see the \"PVSS Online Help\" for popupMenu() 
+  // the +i+((i<=9)?\"    \":\"  \") means: \"set the number in front of 
+  // the filename and for the numbers less or equal than 9 make add more spaces
+  for(i=1;i<=dynlen(entryList); i++)
+  {
+    shape hideIt   = getShape(\"i32_\"+i);
+    hideIt.visible = FALSE;
+    dynAppend(popUpItems,\"PUSH_BUTTON, \"+i+((i<=9)?\"    \":\"  \")+entryList[i]+\", \"+i+\", 1\");
+  }
+  
+  // open the popup with given parametrisation and the returnvalue int 'answer'
+  popupMenu(popUpItems,answer);
+  
+  // open the selected panel in the module \"panel\" an answer was given (answer not 0)
+  if (answer)
+  {
+    shape showIt   = getShape(\"i32_\"+answer);
+    showIt.visible = TRUE;
+  }
+}
+" 0
+ E E E
+13 550
+"Button1"
+""
+1 208 63 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+3 0 0 1 79 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  206 61 280 102
+
+T 
+3
+LANG:10000 3 &OK
+LANG:10001 3 &OK
+LANG:10027 3 &OK
+"main()
+{
+  Button3.enabled = FALSE;
+  Button2.visible = TRUE;
+  CascadeButton1.enableItem(1)   = TRUE;
+  CascadeButton1.enableItem(0.0) = TRUE;
+  beep();
+}" 0
+ E E E
+13 588
+"Button3"
+""
+1 287 63 E E E 0 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  285 61 402 102
+
+T 
+3
+LANG:10000 9 Abbrechen
+LANG:10001 6 Cancel
+LANG:10027 16 Отменить
+"main()
+{
+  this.enabled = FALSE;
+}" 0
+ E E E
+21 560
+"SpinButton1"
+""
+1 409 66 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  407 64 451 91
+0
+
+E
+"main()
+{
+  TextField1.text = this.text;
+}" 0
+
+E
+
+N 0 100 1 0 1 1
+22 556
+"ComboBox2"
+""
+1 461 67 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,0,0,0,0,0
+0  459 65 616 92
+5
+3
+LANG:10000 19 ComboBox editierbar
+LANG:10001 17 Combobox editable
+LANG:10027 39 Редактируемый список
+
+0
+3
+LANG:10000 9 Auswahl 1
+LANG:10001 11 Selection 1
+LANG:10027 12 Выбор 1
+
+0
+3
+LANG:10000 19 ...................
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0
+3
+LANG:10000 19 ...................
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0
+3
+LANG:10000 9 Auswahl n
+LANG:10001 11 Selection n
+LANG:10027 12 Выбор n
+
+0
+
+E
+"main()
+{
+  string     content  = this.text;
+  dyn_string allItems = this.items;
+  int        i;
+  
+  TextField1.text = content;
+  for(i = 1; i <= dynlen(allItems); i++)
+    //avoid identical entries
+    if(content == allItems[i])
+      return;
+  this.appendItem(content);
+}" 0
+
+E
+ 1 0
+22 555
+"ComboBox1"
+""
+1 623 67 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  621 65 814 92
+5
+3
+LANG:10000 25 ComboBox nicht editierbar
+LANG:10001 21 Combobox not editable
+LANG:10027 43 Нередактируемый список
+
+0
+3
+LANG:10000 9 Auswahl 1
+LANG:10001 11 Selection 1
+LANG:10027 12 Выбор 1
+
+0
+3
+LANG:10000 19 ...................
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0
+3
+LANG:10000 19 ...................
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0
+3
+LANG:10000 9 Auswahl n
+LANG:10001 11 Selection n
+LANG:10027 12 Выбор n
+
+0
+
+E
+"main()
+{
+  TextField2.text = this.text;
+}" 0
+
+E
+ 0 0
+14 558
+"TextField1"
+""
+1 820 67 E E E 1 E 1 E N {0,0,255} E N "STD_inputfield_back" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  818 65 952 92
+3 "0s" 0 0 0 0 0 -1  E E "main()
+{
+  SpinButton1.text = this.text;
+}" 0
+
+14 591
+"TextField2"
+""
+1 820 100 E E E 0 E 1 E N {255,0,0} E N "STD_inputfield_back" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  818 98 952 125
+3 "0s" 0 0 0 0 0 -1  E E E
+20 552
+"CheckButton2"
+""
+1 82 216 E E E 1 E 1 E N "_3DText" E N "STD_panel_back" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  80 214 184 323
+6
+T 
+3
+LANG:10000 9 Auswahl 1
+LANG:10001 11 Selection 1
+LANG:10027 12 Выбор 1
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 9 Auswahl 2
+LANG:10001 11 Selection 2
+LANG:10027 12 Выбор 2
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 15 ...............
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 15 ...............
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 15 ...............
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 9 Auswahl n
+LANG:10001 11 Selection n
+LANG:10027 12 Выбор n
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+6
+E E
+E E
+E E
+E E
+E E
+E E
+E"main(int position, int state)
+{
+  if(state)
+  {
+    setValue(\"Led\"+(position+1),\"backCol\",\"STD_device_on\");
+  }
+  else
+  {
+    setValue(\"Led\"+(position+1),\"backCol\",\"STD_value_not_ok\");
+  }
+}
+" 0
+19 554
+"RadioButton2"
+""
+1 202 218 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_panel_back" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  200 216 304 323
+6
+T 
+3
+LANG:10000 13 Alternative 1
+LANG:10001 13 Alternative 1
+LANG:10027 16 Вариант 1
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 13 Alternative 2
+LANG:10001 13 Alternative 2
+LANG:10027 16 Вариант 2
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 23 .......................
+LANG:10001 23 .......................
+LANG:10027 23 .......................
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 23 .......................
+LANG:10001 23 .......................
+LANG:10027 23 .......................
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 23 .......................
+LANG:10001 23 .......................
+LANG:10027 23 .......................
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 13 Alternative n
+LANG:10001 13 Alternative n
+LANG:10027 16 Вариант n
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E "main()
+{
+  switch(this.number)
+  {
+    case 0 : this.backCol(\"_3DFace\");
+             break;
+    case 1 : this.backCol(\"[40,40,60]\");
+             break;
+    case 2 : this.backCol(\"[60,60,80]\");
+             break;
+    case 3 : this.backCol(\"[80,80,100]\");
+             break;
+    case 4 : this.backCol(\"[60,100,100]\");
+             break;
+    case 5 : this.backCol(\"[80,100,0]\");
+             break;
+  }
+}" 0
+
+17 557
+"SelectionList1"
+""
+1 348 228 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  346 226 472 320
+4
+3
+LANG:10000 9 Auswahl 1
+LANG:10001 11 Selection 1
+LANG:10027 12 Выбор 1
+
+0
+3
+LANG:10000 19 ...................
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0
+3
+LANG:10000 19 ...................
+LANG:10001 21 .....................
+LANG:10027 21 .....................
+
+0
+3
+LANG:10000 9 Auswahl n
+LANG:10001 11 Selection n
+LANG:10027 12 Выбор n
+
+0
+
+E
+E
+E
+
+0 0
+25 561
+"Table1"
+""
+1 730 190 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  728 188 952 299
+"main()
+{
+  int i;
+  anytype content;
+  
+  this.stop = TRUE;
+  for(i=1; i<11; i++)
+  {
+    setValue(\"\",\"appendLine\",\"#3\",i,\"#2\",(i*10),\"#1\",(i*100+1));
+    setValue(\"\",\"cellBackColRC\",i-1,\"#2\",\"[40,100,80]\");
+    setValue(\"\",\"cellBackColRC\",i-1,\"#1\",\"[100,100,100]\");
+  }
+  this.stop = FALSE;
+
+  setValue(\"\",\"lineVisible\",0);
+ }" 0
+E 1 0 1 3 1 "#3" 5 1 0 "s" 3
+LANG:10000 2 Nr
+LANG:10001 3 No.
+LANG:10027 3 №
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+70 "#2" 5 1 0 "s" 3
+LANG:10000 8 Spalte 1
+LANG:10001 8 Column 1
+LANG:10027 16 Столбец 1
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+70 "#1" 5 1 1 "s" 3
+LANG:10000 8 Spalte 2
+LANG:10001 8 Column 2
+LANG:10027 16 Столбец 2
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+70 
+26 26 "" 1 3
+LANG:10000 5 00000
+LANG:10001 6 Rank 2
+LANG:10027 6 Rank 2
+8 53
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 0 2 0 1 7
+1 0
+27 582
+"BarTrend1"
+""
+1 55 400 E E E 1 E 1 E N "STD_text" E N "STD_trend_back" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  53 398 355 562
+4 0 22 5 0 "%H:%M" 1 3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  0 0 1 1 0 1 N {0,0,0}
+0 0 10 2 0 "%H:%M" 1 3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  0 0 1 1 0 1 N {0,0,0}
+1 0 1 20 3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  0 1 1 0 1 N {0,0,0}
+0 1 1 0 1 N {0,0,0} 1 5 0 50 50 N "STD_trend_pen1" N "STD_trend_pen6" N "STD_trend_pen3" 0 
+"main()
+{
+  shape      bt=getShape(\"BarTrend1\");
+  dyn_float  dx1,dx2,dy1,dy2;
+  dyn_string c1,c2;
+
+// X-Values
+  dx1=makeDynFloat(-10,-5,0,5);
+  dx2=makeDynFloat(-5,0,5,10);
+ 
+// Y-Values
+  dy1=makeDynFloat(1,4,7,10);
+  dy2=makeDynFloat(5,5,5,5);
+ 
+// Colors
+  c1=makeDynString(\"\",\"\",\"\",\"\"); //use default for bars
+  c2=makeDynString(\"[0,0,0]\",\"[0,0,0]\",\"[0,0,0]\",\"[0,0,0]\"); //user defined for lines
+ 
+// set Values
+  setValue(bt,\"refValue\",5.0,
+              \"data\",dx1,dx2,dy1,dy2,c1,c2);
+}
+" 0
+
+23 581
+"Trend1"
+""
+1 372 397 E E E 1 E 1 E N "STD_text" E N "STD_trend_back" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  370 395 674 564
+5 "main()
+{
+  float fVal;
+  
+  while(TRUE) //endless loop
+  {
+    fVal = fmod(rand(),100.0);
+    dpSet(\"ExampleDP_Trend1.:_original.._value\",fVal);
+    delay(1); 
+  }
+}" 0
+ E E 1 299 N {0,51,255} 0 0 1 0 1 0 1 0 "Verlauf" "ExampleDP_Trend1." 0 2 0 0 1 "3 0 0.0" "%x" 0 0 2 0 E
+E
+0 0 0 3 0
+3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 100 0 1 1 0 1 N {0,0,255}
+0 0 0 0 0 0 0 0
+1 1 "%X" "%x" 0 1 0 0 
+E 1 0 1 0 90 0 2 10
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  100 
+N {0,0,0} 0 0 1 0 1 150 0 5 5 1 2
+0
+28 562
+"Tab1"
+""
+1 3253 5000 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  688 393 951 563
+E3 "#A" 3
+LANG:10000 8 Kartei 1
+LANG:10001 9 Tabpage 1
+LANG:10027 16 Вкладка 1
+1 "examples\\Ref_1.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+"#B" 3
+LANG:10000 8 Kartei 2
+LANG:10001 9 Tabpage 2
+LANG:10027 16 Вкладка 2
+1 "examples\\Ref_2.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+"#C" 3
+LANG:10000 8 Kartei 3
+LANG:10001 9 Tabpage 3
+LANG:10027 16 Вкладка 3
+1 "examples\\Ref_3.pnl" 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+0
+
+
+15 586
+"Clock1"
+""
+1 545 196 E E E 1 E 1 E N {204,204,102} E N {102,102,102} E E
+ E E
+35 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  543 194 681 304
+E 0 1 "%X" "%x"
+1 0 1 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 
+6 615
+"Border8"
+""
+1 775 146 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.1 -156 -12.6 2  0 3  "pictures/textfield.png" 4294967295 E 775 126 795 146
+6 644
+"Border10"
+""
+1 311 239 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.2 0 1.2 -62.2 -43.8 2  0 3  "pictures/rbox.png" 4294967295 E 311 219 331 239
+6 648
+"Border12"
+""
+1 499 300 E E E 1 E 1 E N {0,0,0} E N {102,102,102} E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E 1.25 0 1.15 -124.75 -42 2  0 3  "pictures/clock.png" 4294967295 E 499 280 519 300
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

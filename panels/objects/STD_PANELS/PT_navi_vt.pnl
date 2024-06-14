@@ -1,0 +1,159 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 120 91 N "_3DFace" 0
+E E E E E 1 -1 -1 0  10 10
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+13 0
+"VarTrendButton"
+""
+1 10 10 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  dyn_string popup;
+  int answer;
+  string DPE = \"\";  //Hier nicht wichtig
+  string DPT = \"\";  //Hier nicht wichtig
+  
+  //   Trend-Popup
+  dynAppend(popup, makeDynString(\"CASCADE_BUTTON, \" +getCatStr(\"STD_Symbols\",\"trendbuffer\")+\", \"  +(getUserPermission(2)?\"1\":\"0\")));  
+  
+  // build subpopups
+   symb_buildPopUpTrendbuffer(popup, true);
+  
+  //  show popup
+  if (dynlen(popup) > 0)
+  {
+     popupMenu(popup, answer);
+     symb_EvaluatePopup(popup, answer, DPE, DPT);
+  }
+}" 0
+ E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 15 Variabler Trend
+LANG:10001 14 Variable trend
+LANG:10027 41 Конфигурируемый тренд
+
+3
+"acceptDrops" ""
+"DragEnter" "main(string information, int dragType)
+{
+  string dpe = dpSubStr(information, DPSUB_DP);
+  
+  dropAccept((dpExists(information) && symb_isDptTrendable(dpTypeName(dpe)))); 
+}"
+"DragDrop" "main(string information, int dragType)
+{
+  string dpe = dpSubStr(information, DPSUB_DP), dpt;
+  int action;
+  
+  //DebugN(dpe, dragType);
+  
+  if (!dpExists(dpe))
+    return;
+  
+  dpt = dpTypeName(dpe);
+  
+  switch (dragType)
+  {
+    case DRAG_COPY:
+      symb_EvaluatePopup(makeDynString(), 2000, dpe, dpt);  //Hinzuf�gen
+      break;
+    case DRAG_MOVE: 
+      symb_EvaluatePopup(makeDynString(), 2999, dpe, dpt);  //L�schen
+      symb_EvaluatePopup(makeDynString(), 2000, dpe, dpt);  //Hinzuf�gen
+      break;
+    default: break;
+  }
+}"
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  8 8 57 64
+
+P 
+12632256
+"pictures/icons/trend_enabled.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  if (getUserPermission(2))
+  {
+	  openTrend(\"\",-1);
+  }
+
+
+  // open a new module for the 'variable trend' panels with the name \"PVSS\"
+  // at the position (4,4) with the dimensions 500x500 pixels
+ // ModuleOn(\"PVSS\",4,14,500,500,1,1,\"None\");
+ // RootPanelOnModule(\"vision/trend/VT_trend.pnl\",\"\",\"PVSS\",makeDynString());
+}" 0
+ E E "main()
+{
+  pt_init_PT_navi_vt();            
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

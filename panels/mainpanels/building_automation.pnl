@@ -1,0 +1,1187 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+E E E E E 1 -1 -1 0  413 578
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+4 0
+"Line1"
+""
+1 909 182 E E E 1 E 1 E N "HVAC_Fresh_air" E N "GLT_Hintergrund" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  909 182 707 182
+4 3
+"Line4"
+""
+1 680 540 E E E 1 E 1 E N "HVAC_Exhaust_air" E N "GLT_Hintergrund" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  909 540 680 540
+4 4
+"Line5"
+""
+1 909 381 E E E 1 E 1 E N "HVAC_Fresh_air" E N "GLT_Hintergrund" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  909 381 703 381
+4 5
+"Line6"
+""
+1 685 307 E E E 1 E 1 E N "HVAC_Exhaust_air" E N "GLT_Hintergrund" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  685 307 909 307
+4 6
+"Line7"
+""
+1 103 204 E E E 1 E 1 E N "HVAC_Circulating_air" E N "GLT_Hintergrund" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  103 204 103 85
+4 7
+"Line8"
+""
+1 90 209 E E E 1 E 1 E N "HVAC_Outside_air" E N "GLT_Hintergrund" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  90 209 45 209
+4 8
+"Line9"
+""
+1 685 536 E E E 1 E 1 E N "HVAC_Exhaust_air" E N "GLT_Hintergrund" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  685 536 685 54
+4 9
+"Line10"
+""
+1 41 84 E E E 1 E 1 E N "GLT_Fortluft" E N "GLT_Hintergrund" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  41 84 92 84
+4 10
+"Line11"
+""
+1 91 84 E E E 1 E 1 E N "HVAC_Exhaust_air" E N "GLT_Hintergrund" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  91 84 681 84
+4 12
+"Line12"
+""
+1 704 209 E E E 1 E 1 E N "HVAC_Fresh_air" E N "GLT_Hintergrund" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  704 209 90 209
+4 82
+"Line14"
+""
+1 909 336 E E E 1 E 1 E N "HVAC_Fresh_air" E N "GLT_Hintergrund" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  909 336 705 336
+4 186
+"Line19"
+""
+1 909 72 E E E 1 E 1 E N "HVAC_Fresh_air" E N "GLT_Hintergrund" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  909 72 701 72
+4 233
+"Line25"
+""
+1 680 51 E E E 1 E 1 E N "HVAC_Exhaust_air" E N "GLT_Hintergrund" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  909 51 680 51
+4 256
+"Line29"
+""
+1 683 132 E E E 1 E 1 E N "HVAC_Exhaust_air" E N "GLT_Hintergrund" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  683 132 909 132
+4 261
+"Line31"
+""
+1 706 74 E E E 1 E 1 E N "HVAC_Fresh_air" E N "GLT_Hintergrund" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 10 1 1 1 E  706 384 706 74
+6 79
+"Border2"
+""
+1 896 112 E E E 1 E 1 E N "GLT_Objektvordergrund" E N "_Transparent" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 2 1 1 0 1 E U  0 E 896 112 990 210
+6 104
+"Border3"
+""
+1 896 210 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 2 1 1 0 1 E U  0 E 896 210 990 361
+6 184
+"Border4"
+""
+1 896 34 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 2 1 1 0 1 E U  0 E 896 34 990 112
+6 190
+"Border5"
+""
+1 896 361 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 2 1 1 0 1 E U  0 E 896 361 990 554
+1 1336 472 "" 0
+0
+1 1337 471 "" 0
+0
+1 1338 470 "" 0
+0
+1 1339 469 "" 0
+0
+1 1340 468 "" 0
+0
+1 1341 467 "" 0
+0
+1 1342 466 "" 0
+0
+1 1343 465 "" 0
+0
+1 1344 464 "" 0
+0
+1 1345 463 "" 0
+0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+4 973
+"Line15"
+""
+1 629 220 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "GLT_Hintergrund" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  629 220 629 200
+4 932
+"Line13"
+""
+1 372 218 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "GLT_Hintergrund" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  372 218 372 164
+4 1003
+"Line16"
+""
+1 848 191 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "GLT_Hintergrund" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  848 191 848 166
+4 1006
+"Line30"
+""
+1 807 145 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "GLT_Hintergrund" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  807 145 807 117
+4 1011
+"Line21"
+""
+1 847 391 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "GLT_Hintergrund" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  847 391 847 370
+4 1014
+"Line28"
+""
+1 806 346 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "GLT_Hintergrund" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  806 346 806 284
+4 1045
+"Line22"
+""
+1 745 551 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "GLT_Hintergrund" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  745 551 745 531
+1 1346 438 "" 5
+0
+1 1348 437 "" 0
+0
+1 1354 425 "" 0
+0
+1 1357 419 "" 0
+0
+1 1360 416 "" 1
+0
+2 1061
+"Text10"
+""
+1 772 545 E E E 1 E 1 E N "HVAC_Text_active" E N "_Transparent" E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 774 545 792 562
+0 2 2 "0s" 0 0 0 192 0 0  774 545 1
+3
+LANG:10000 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,75,0,0,0,0,0
+0 3
+LANG:10000 2 1x
+LANG:10001 2 1x
+LANG:10027 2 1x
+1 1369 412 "" 37
+0
+1 1377 414 "" 0
+0
+1 1385 417 "" 4
+0
+1 1396 418 "" 37
+0
+1 1404 420 "17" 15
+0
+1 1440 422 "0" 0
+0
+1 1448 426 "" 1
+0
+1 1466 427 "17" 0
+0
+1 1483 473 "" 0
+0
+1 1485 462 "" 7
+0
+1 1491 461 "" 0
+0
+1 1493 460 "" 0
+0
+1 1495 459 "" 0
+0
+1 1497 458 "" 0
+0
+1 1499 457 "" 11
+0
+1 1504 456 "" 0
+0
+1 1506 455 "" 0
+0
+1 1508 454 "" 0
+0
+1 1510 449 "" 7
+0
+1 1528 446 "" 0
+0
+1 1530 444 "5" 0
+0
+1 1541 443 "" 0
+0
+1 1543 441 "" 1
+0
+1 1561 440 "" 0
+0
+1 1563 439 "" 0
+0
+1 1565 435 "" 0
+0
+1 1567 434 "" 0
+0
+1 1569 431 "" 1
+0
+1 1587 429 "" 0
+0
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+1 1589 453 "" 0
+0
+13 1328
+"Button1"
+""
+1 170 510 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  168 508 212 552
+
+P 
+12632256
+"pictures/icons/thermometer.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+   // Open dead-end warning dialog - PVSS Report (Excel) 
+   // ist not included in this demo
+   ChildPanelOnCentralModal(\"vision/MessageDeadEnd.pnl\",getCatStr(\"sc\",\"attention\"),
+                            makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"deadEnd\")));
+ 
+}" 0
+ E E E
+13 1329
+"Button2"
+""
+1 214 510 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  212 508 256 552
+
+P 
+12632256
+"pictures/icons/switch.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+   // Open dead-end warning dialog - PVSS Report (Excel) 
+   // ist not included in this demo
+   ChildPanelOnCentralModal(\"vision/MessageDeadEnd.pnl\",getCatStr(\"sc\",\"attention\"),
+                            makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"deadEnd\")));
+ 
+}" 0
+ E E E
+13 1330
+"Button3"
+""
+1 258 510 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  256 508 300 552
+
+P 
+12632256
+"pictures/icons/time_enabled.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+   // Open dead-end warning dialog - PVSS Report (Excel) 
+   // ist not included in this demo
+   ChildPanelOnCentralModal(\"vision/MessageDeadEnd.pnl\",getCatStr(\"sc\",\"attention\"),
+                            makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"deadEnd\")));
+ 
+}" 0
+ E E E
+13 1331
+"Button4"
+""
+1 301 510 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  299 508 343 552
+
+P 
+12632256
+"pictures/icons/01_switch.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+   // Open dead-end warning dialog - PVSS Report (Excel) 
+   // ist not included in this demo
+   ChildPanelOnCentralModal(\"vision/MessageDeadEnd.pnl\",getCatStr(\"sc\",\"attention\"),
+                            makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"deadEnd\")));
+ 
+}" 0
+ E E E
+13 1332
+"Button5"
+""
+1 344 510 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  342 508 386 552
+
+P 
+12632256
+"pictures/icons/trend.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+   // Open dead-end warning dialog - PVSS Report (Excel) 
+   // ist not included in this demo
+   ChildPanelOnCentralModal(\"vision/MessageDeadEnd.pnl\",getCatStr(\"sc\",\"attention\"),
+                            makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"deadEnd\")));
+ 
+}" 0
+ E E E
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+2 806
+"Text1"
+""
+1 310 12 E E E 1 E 1 E N "HVAC_Text_active" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 312 12 715 37
+0 2 2 "0s" 0 0 0 192 0 0  312 12 1
+3
+LANG:10000 26 Arial,-1,22,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,22,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,22,5,75,0,0,0,0,0
+0 3
+LANG:10000 31 GEBÄUDETECHNIK EBENE 1  ZONE 1
+LANG:10001 35 BUILDING AUTOMATION FLOOR 1  ZONE 1
+LANG:10027 62 АВТОМАТИЗАЦИЯ ЗДАНИЯ ЭТАЖ 1  ЗОНА 1
+2 808
+"Text5"
+""
+1 920 36 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 922 36 961 51
+0 2 2 "0s" 0 0 0 192 0 0  922 36 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 BÜRO
+LANG:10001 6 OFFICE
+LANG:10027 8 ОФИС
+2 809
+"Text2"
+""
+1 916 116 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 918 116 964 131
+0 2 2 "0s" 0 0 0 192 0 0  918 116 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 LAGER
+LANG:10001 7 STORAGE
+LANG:10027 10 СКЛАД
+2 810
+"Text3"
+""
+1 917 216 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 919 216 969 231
+0 2 2 "0s" 0 0 0 192 0 0  919 216 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 PROD-1
+LANG:10001 6 PROD-1
+LANG:10027 10 ПРОД-1
+2 811
+"Text4"
+""
+1 917 367 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 919 367 969 382
+0 2 2 "0s" 0 0 0 192 0 0  919 367 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 PROD-2
+LANG:10001 6 PROD-2
+LANG:10027 10 ПРОД-2
+2 1335
+"Text6"
+""
+1 101 424 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 103 426 220 441
+0 2 0 "0s" 0 0 0 192 0 0  103 426 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 16 Aussentemperatur
+LANG:10001 15 Air temperature
+LANG:10027 37 Температура воздуха
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 1594 475 "" 1
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 412 "Group56" -1
+"" ""
+"objects/HVAC/HVAC_servoflap_active.pnl" 65 39 T 40 1 0 1 36 15
+1
+"$DP""Exhaust_Flap."
+3 414 "Group60" -1
+"" ""
+"objects/HVAC/HVAC_fan_2n_active_left.pnl" 184 36 T 41 1 0 1 -5 -31
+2
+"$DP""Exhaust_Fan."
+"$type""vent_typ_axial"
+3 416 "Group64" -1
+"" ""
+"objects/HVAC/HVAC_blinds_passive_HD.pnl" 280 71 T 42 1 0 1 -4 -20
+0
+3 417 "Group66" -1
+"" ""
+"objects/HVAC/HVAC_servoflap_active_value.pnl" 10 122 T 43 1 0 1 14 -25
+1
+"$DP""Mixing_Flap."
+3 418 "Group68" -1
+"" ""
+"objects/HVAC/HVAC_servoflap_active.pnl" 65 166 T 44 1 0 1 36 14
+1
+"$DP""Freshair_Flap."
+3 419 "Group70" -1
+"" ""
+"objects/HVAC/hvac_airfilter_2_right.pnl" 115 176 T 45 1 0 1 9 -7
+0
+3 420 "Group72" -1
+"" ""
+"objects/HVAC/HVAC_preheater_complete.pnl" 125 176 T 46 1 0 1 -35 -13
+1
+"$DP""PreHeater."
+3 422 "Group76" -1
+"" ""
+"objects/HVAC/HVAC_fan_2n_active_right.pnl" 300 163 T 47 1 0 1 -5 -23
+2
+"$DP""Inlet_Fan."
+"$type""vent_typ_radial"
+3 425 "Group82" -1
+"" ""
+"objects/HVAC/hvac_airfilter_2_right.pnl" 410 177 T 48 1 0 1 9 -7
+0
+3 426 "Group84" -1
+"" ""
+"objects/HVAC/HVAC_reheater_complete.pnl" 443 177 T 49 1 0 1 -53 -12
+1
+"$DP""ReHeater."
+3 427 "Group86" -1
+"" ""
+"objects/HVAC/HVAC_evaporator_complete.pnl" 536 176 T 50 1 0 1 -48 -11
+1
+"$DP""Evaporator."
+3 429 "Group91" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 601 150 T 51 1 0 1 -57 -18
+1
+"$DPE""Temperature_2.value"
+3 431 "Group94" -1
+"" ""
+"objects/HVAC/HVAC_reheater_complete.pnl" 714 147 T 52 1 0 1 -53 -12
+1
+"$DP""ReHeater_2."
+3 434 "Group101" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 780 99 T 53 1 0 1 -56 -18
+1
+"$DPE""Temperature_3.value"
+3 435 "Group102" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 822 150 T 54 1 0 1 -56 -18
+1
+"$DPE""Temperature_4.value"
+3 437 "Group109" -1
+"" ""
+"objects/HVAC/HVAC_blinds_passive.pnl" 795 294 T 55 1 0 1 -4 -9
+0
+3 438 "Group110" -1
+"" ""
+"objects/HVAC/HVAC_airchange_monitoring.pnl" 797 351 T 56 1 0 1 40 -5
+1
+"$DPE""AirStream.value"
+3 439 "Group111" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 822 350 T 57 1 0 1 -56 -18
+1
+"$DPE""Temperature_5.value"
+3 440 "Group112" -1
+"" ""
+"objects/HVAC/HVAC_servomotor.pnl" 795 267 T 58 1 0 1 -32 -20
+0
+3 441 "Group114" -1
+"" ""
+"objects/HVAC/HVAC_reheater_complete.pnl" 713 348 T 59 1 0 1 -53 -12
+1
+"$DP""ReHeater_3."
+3 443 "Group118" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 713 506 T 60 1 0 1 -53 -14
+1
+"$DPE""Temperature_6.value"
+3 444 "Group120" -1
+"" ""
+"objects/HVAC/HVAC_blinds_passive_value.pnl" 794 486 T 61 1 0 1 -4 30
+1
+"$DPE""Blinds_Flap.state.open"
+3 446 "Group124" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 901 422 T 62 1 0 1 -56 -18
+1
+"$DPE""Pressure.value"
+3 449 "Group130" -1
+"" ""
+"objects/HVAC/HVAC_cooler_complete.pnl" 237 176 T 63 1 0 1 -40 -7
+1
+"$DP""Cooler."
+3 453 "" -1
+"" ""
+"objects/HVAC/HVAC_Man0Auto_Switch_active.pnl" 70 450 T 1 1 0 1 -33 28
+1
+"$DP""All_Devices."
+3 454 "" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 450 130 T 64 1 0 1 -164 -4
+1
+"$DPE""Temperature_1.value"
+3 455 "Group92" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 510 110 T 65 1 0 1 34 52
+1
+"$DPE""Humidity_1.value"
+3 456 "" -1
+"" ""
+"objects/HVAC/HVAC_temperature_sensor.pnl" 370 240 T 66 1 0 1 -41 -36
+0
+3 457 "" -1
+"" ""
+"objects/HVAC/HVAC_sensor_TH.pnl" 630 230 T 67 1 0 1 -17 -4
+0
+3 458 "" -1
+"" ""
+"objects/HVAC/HVAC_temperature_sensor.pnl" 810 160 T 68 1 0 1 -46 -29
+0
+3 459 "" -1
+"" ""
+"objects/HVAC/HVAC_temperature_sensor.pnl" 850 210 T 69 1 0 1 -45 -34
+0
+3 460 "" -1
+"" ""
+"objects/HVAC/HVAC_temperature_sensor.pnl" 850 410 T 70 1 0 1 -46 -33
+0
+3 461 "" -1
+"" ""
+"objects/HVAC/HVAC_temperature_sensor.pnl" 740 570 T 71 1 0 1 -37 -34
+0
+3 462 "" -1
+"" ""
+"objects/HVAC/HVAC_sensor_P.pnl" 930 460 T 72 1 0 1 -13 -4
+0
+3 463 "" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_180.pnl" 30 80 T 73 1 0 1 -21 -15
+1
+"$farbe""HVAC_Exhaust_air"
+3 464 "" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_0.pnl" 30 210 T 74 1 0 1 0 -21
+1
+"$farbe""HVAC_Outside_air"
+3 465 "" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_180.pnl" 910 50 T 75 1 0 1 -16 -9
+1
+"$farbe""HVAC_Exhaust_air"
+3 466 "Group56" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_180.pnl" 904 41 T 76 1 0 1 -11 81
+1
+"$farbe""HVAC_Exhaust_air"
+3 467 "Group58" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_180.pnl" 900 122 T 77 1 0 1 -7 175
+1
+"$farbe""HVAC_Exhaust_air"
+3 468 "Group60" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_180.pnl" 903 297 T 78 1 0 1 -10 233
+1
+"$farbe""HVAC_Exhaust_air"
+3 469 "" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_0.pnl" 910 180 T 79 1 0 1 -5 -8
+1
+"$farbe""HVAC_Fresh_air"
+3 470 "Group63" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_0.pnl" 905 172 T 80 1 0 1 0 -110
+1
+"$farbe""HVAC_Fresh_air"
+3 471 "Group65" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_0.pnl" 905 172 T 81 1 0 1 0 154
+1
+"$farbe""HVAC_Fresh_air"
+3 472 "Group67" -1
+"" ""
+"objects/HVAC/HVAC_arrow_passive_lt_0.pnl" 905 326 T 82 1 0 1 1 45
+1
+"$farbe""HVAC_Fresh_air"
+3 473 "" -1
+"" ""
+"objects/HVAC/HVAC_value_display.pnl" 272 417 T 83 1 0 1 -308 -9
+1
+"$DPE""WS1.value.air.temperature"
+3 475 "" -1
+"" ""
+"objects/help_button_large.pnl" 519 511 T 83 1 0 1 -79 -1
+1
+"$hlp_keyword""da_hvac"
+0

@@ -1,0 +1,281 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 414 253 N "STD_panel_back" 1
+"$DP"
+E E E E E 1 -1 -1 0  0 0
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 3
+"Border1"
+""
+1 13 18 E E E 1 E 1 E N "Weiss" E N "_Transparent" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 13 18 404 208
+6 4
+"Border2"
+""
+1 12 17 E E E 1 E 1 E N "Dunkelgrau" E N "_Transparent" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 17 403 207
+2 8
+"Anlagenname"
+""
+1 23 8 E E E 1 E 1 E N {0,0,0} E N "STD_panel_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dyn_string dpSplit = strsplit($DP,\".\");
+  string     dpName  = dpSplit[1];
+  string     dpAlias;
+  int        i;
+
+  if(dynlen(dpSplit) > 1)
+    for(i = 2; i <= dynlen(dpSplit); i++)
+      dpName += \".\"+dpSplit[i];
+  else
+    dpName = $DP;
+  //display either alias or datapoint name
+  dpAlias = dpGetAlias(dpName);
+  setValue(\"Anlagenname\",\"text\",(dpAlias != \"\") ? dpAlias : $DP);
+}
+" 0
+ E 0 1 1 0 1 E U  1 E 24 8 66 23
+0 5 2 "0s" 0 0 0 192 0 0  24 8 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Anlage
+LANG:10001 6 Device
+LANG:10027 20 Устройство
+1 9 1 "" 3
+0
+13 5
+"Button1"
+""
+1 315 216 E E E 1 E 1 E N {0,0,0} E N "STD_panel_back" E E
+ E E
+2 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  315 216 405 246
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E E
+19 0
+"bef"
+""
+1 122 30 E E E 1 E 1 E N "_3DText" E N "STD_panel_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  122 30 255 149
+3
+T 
+3
+LANG:10000 3 Aus
+LANG:10001 3 Off
+LANG:10027 8 Выкл
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 3 Ein
+LANG:10001 2 On
+LANG:10027 6 Вкл
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 9 Automatik
+LANG:10001 9 Automatic
+LANG:10027 26 Автоматически
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  bool       on,off,manual;
+
+  dpGet($DP+\"state.on:_online.._value\",on,
+        $DP+\"state.off:_online.._value\",off,
+        $DP+\"state.manual:_online.._value\",manual);
+
+  if(!manual)
+    this.number(2);
+  else
+    if(off)
+      this.number(0);
+    else
+      if(on)
+        this.number(1);
+}" 0
+ "main()
+{
+  int mode; 
+  getValue(\"\",\"number\",mode);
+
+  switch(mode)
+  {
+    case (0): dpSet($DP+\"cmd.on:_original.._value\",FALSE,
+                    $DP+\"cmd.manual:_original.._value\",TRUE,
+                    $DP+\"cmd.off:_original.._value\",TRUE);
+              break;
+              
+    case (1): dpSet($DP+\"cmd.on:_original.._value\",TRUE,
+                    $DP+\"cmd.manual:_original.._value\",TRUE,
+                    $DP+\"cmd.off:_original.._value\",FALSE);
+              break;
+    case (2): dpSet($DP+\"cmd.on:_original.._value\",FALSE,
+                    $DP+\"cmd.manual:_original.._value\",FALSE,
+                    $DP+\"cmd.off:_original.._value\",FALSE);
+              break;
+  }
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+1 12 1 "0" 0
+0
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 1 "" -1
+"" ""
+"objects/HVAC/HVAC_pump.pnl" 50 80 T 6 1 0 1 -12 0
+1
+"$DP""$DP"
+0

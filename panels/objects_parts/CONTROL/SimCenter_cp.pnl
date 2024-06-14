@@ -1,0 +1,555 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 221 299 N "_3DFace" 0
+E E E E E 1 -1 -1 0  10 11
+""0  1
+E E 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 0
+"Text1"
+""
+1 10 11 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 13 208 33
+1 2 0 "0s" 0 0 0 64 0 0  12 13 1
+3
+LANG:10000 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,75,0,0,0,0,0
+0 3
+LANG:10000 24 Simulationseinstellungen
+LANG:10001 19 Simulation settings
+LANG:10027 37 Настройки симуляции
+30 1
+"Frame1"
+""
+1 10 285 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+2 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 200 210 285
+3
+LANG:10000 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,75,0,0,0,0,0
+0 3
+LANG:10000 16 Modellsimulation
+LANG:10001 16 Model simulation
+LANG:10027 31 Модель симуляции
+30 2
+"Frame2"
+""
+1 10 186 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+3 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 50 210 186
+3
+LANG:10000 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,75,0,0,0,0,0
+0 3
+LANG:10000 17 Gerätesimulation
+LANG:10001 17 Device simulation
+LANG:10027 39 Симуляция устройства
+2 4
+"Text2"
+""
+1 110 226 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 112 228 178 244
+0 2 0 "0s" 0 0 0 192 0 0  112 228 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Zykluszeit
+LANG:10001 9 Loop time
+LANG:10027 21 Время цикла
+2 5
+"Text3"
+""
+1 180 99 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 182 101 205 117
+0 2 0 "0s" 0 0 0 192 0 0  182 101 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 ms
+LANG:10001 2 ms
+LANG:10027 4 мс
+2 9
+"Text4"
+""
+1 110 77 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 112 79 178 95
+0 2 0 "0s" 0 0 0 192 0 0  112 79 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Zykluszeit
+LANG:10001 9 Loop time
+LANG:10027 21 Время цикла
+2 11
+"Text5"
+""
+1 179 153 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 181 155 207 171
+0 2 0 "0s" 0 0 0 192 0 0  181 155 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 p.u.
+LANG:10001 4 p.u.
+LANG:10027 6 н.е.
+2 12
+"Text6"
+""
+1 18 132 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 134 102 178
+0 2 0 "0s" 0 0 0 192 0 0  20 134 3
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 14 Max. Änderung
+LANG:10001 11 Max. change
+LANG:10027 27 Макс.изменение
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 14 des Istwertes 
+LANG:10001 13 rate of value
+LANG:10027 22 частоты зна-
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 pro Zyklus
+LANG:10001 9 per cycle
+LANG:10027 24 чений за цикл
+2 16
+"Text8"
+""
+1 179 249 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 181 251 204 267
+0 2 0 "0s" 0 0 0 192 0 0  181 251 1
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0 3
+LANG:10000 2 ms
+LANG:10001 2 ms
+LANG:10027 4 мс
+19 3
+"simon"
+""
+1 20 227 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,75,0,0,0,0,0
+0  18 225 77 276
+2
+T 
+3
+LANG:10000 3 AUS
+LANG:10001 3 Off
+LANG:10027 8 Выкл
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 3 EIN
+LANG:10001 2 On
+LANG:10027 6 Вкл
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  dpConnect(\"showState\",\"SimCenter.modelSimOn\");
+}
+showState(string dp, bool on)
+{
+  this.number = on;
+}" 0
+ "main(int button)
+{
+  dpSet(\"SimCenter.modelSimOn\",button);
+}" 0
+
+14 6
+"msec"
+""
+1 113 247 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,75,0,0,0,0,0
+0  111 245 176 274
+3 "4d" 4 0 0 2 0 -1  E "main()
+{
+  dpConnect(\"showState\",\"SimCenter.modelLoopTime\");
+}
+showState(string dp, int loopTime)
+{
+  this.text = loopTime;
+}" 0
+ "main()
+{
+  int loopTime = this.text;
+  
+  if(loopTime < 250)
+    loopTime = 250;
+  
+  dpSet(\"SimCenter.modelLoopTime\",loopTime);
+}" 0
+
+19 10
+"RadioButton1"
+""
+1 20 77 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,75,0,0,0,0,0
+0  18 75 77 126
+2
+T 
+3
+LANG:10000 3 AUS
+LANG:10001 3 Off
+LANG:10027 8 Выкл
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 3 EIN
+LANG:10001 2 On
+LANG:10027 6 Вкл
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  dpConnect(\"showState\",\"SimCenter.devicesSimOn\");
+}
+showState(string dp, bool on)
+{
+  this.number = on;
+}" 0
+ "main(int button)
+{
+  dpSet(\"SimCenter.devicesSimOn\",button);
+}" 0
+
+14 13
+"TextField2"
+""
+1 113 150 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,75,0,0,0,0,0
+0  111 148 176 177
+3 "1.2f" 4 0 0 0 0 -1  E "main()
+{
+  dyn_string devices = dpNames(\"*\",\"Device\");
+  
+  dpConnect(\"showVal\",devices[1]+\".para.maxChangeRate\");
+}
+
+showVal(string dpe, float changeRate)
+{
+  this.text = changeRate;
+
+}" 0
+ "main()
+{
+  int 			i;
+  dyn_string 	devices = dpNames(\"*\",\"Device\");
+  float 		changeRatePU = this.text;
+  
+    for (i=1; i <= dynlen(devices); i++)
+    {
+      dpSet(devices[i]+\".para.maxChangeRate\",changeRatePU);
+    }
+}" 0
+
+14 15
+"TextField3"
+""
+1 113 98 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,75,0,0,0,0,0
+0  111 96 176 125
+3 "4d" 4 0 0 2 0 -1  E "main()
+{
+  dpConnect(\"showState\",\"SimCenter.devicesLoopTime\");
+}
+showState(string dp, int loopTime)
+{
+  this.text = loopTime;
+}" 0
+ "main()
+{
+  int loopTime = this.text;
+  
+  if(loopTime < 250)
+    loopTime = 250;
+  
+  dpSet(\"SimCenter.devicesLoopTime\",loopTime);
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

@@ -1,0 +1,402 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 619 560 N "STD_panel_back" 0
+"  //gTcpFileDescriptor  = -1;
+  
+main()
+{
+  initTab();
+}
+" 0
+ E E E E 1 -1 -1 0  40 140
+""0  1
+E "
+  dyn_string p_dsCmdFiles,
+             p_dsCmdFiles_sel;
+  string     p_sPath;
+  
+//*******
+initTab()
+{
+  int 		  	i;											                    //loop variable
+  string		extListText, versionText, installedText, formatInstalledText; 	//dummy for text assembling
+  bool			extInstalled;
+  time			instTime;
+  float			versionNumber;
+  dyn_string	extList;									                    //list of all extension data points
+  
+  SelectionList1.deleteAllItems();
+  
+  extList = dpNames(\"*\",\"ApplicationExtensions\");
+  
+  for (i=1; i<= dynlen(extList); i++)
+  {
+    dpGet(extList[i]+\".installed:_online.._value\",extInstalled,
+    	  extList[i]+\".installed:_online.._stime\",instTime,
+          extList[i]+\".version:_online.._value\",versionNumber);
+          
+    sprintf(versionText,\"%2.1f\",versionNumber);
+    
+    if(extInstalled)
+    {
+      installedText = dpGetComment(extList[i]+\".installed\");
+      sprintf(formatInstalledText,\"%-30.30s\",installedText);
+      extListText = \" \" + formatInstalledText + \"                 [V\" + versionText + \" / \" + formatTime(\"%x\",instTime) + \"]\";
+     //DebugN(extListText);
+/*    setValue(\"chkBoxExt\"+i,\"text\",0,chkBoxText,
+      		                 \"state\",0,true,
+      		                 \"visible\",true);
+*/
+      SelectionList1.appendItem = extListText;
+    }
+  }
+}
+  " 0
+ 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+30 42
+"Frame1"
+""
+1 10 478 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 10 610 480
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 26 Installierte Erweiterungen
+LANG:10001 22  Installed Extensions 
+LANG:10027 48  Установленные расширения
+30 43
+"Frame2"
+""
+1 10 548 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+44 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 490 610 550
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Quellverzeichnis
+LANG:10001 22 Installation directory
+LANG:10027 39 Директория установки
+17 41
+"SelectionList1"
+""
+1 20 30 E E E 1 E 1 E N "_WindowText" E N "_3DFace" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,13,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,13,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,13,5,50,0,0,0,0,0
+0  18 28 602 442
+0
+
+E
+E
+E
+
+0 0
+13 48
+"cmdPath"
+""
+1 458 510 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 27 Quellverzeichnis auswählen
+LANG:10001 29 Choose installation directory
+LANG:10027 60 Выберите директорию инсталляции
+
+1
+"hoverbclr" "N \"STD_hover\""
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  456 508 486 538
+
+P 
+13434828
+"pictures/folderSelector_small.bmp"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  folderSelector(p_sPath);
+  p_sPath = strrtrim(strltrim(p_sPath));
+  bu_dir.text = p_sPath;
+  
+  p_dsCmdFiles =getFileNames(p_sPath, \"*.bat\");
+  dyn_string s2 =getFileNames(p_sPath, \"*.cmd\");
+  
+  dynAppend(p_dsCmdFiles, s2);
+}" 0
+ E E E
+14 51
+"bu_dir"
+""
+1 20 512 E E E 0 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  18 510 452 537
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  this.text(p_sPath);
+}" 0
+ E
+13 56
+"Button6"
+""
+1 500 510 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+57 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Installationsvorgang starten
+LANG:10001 28 Start installation procedure
+LANG:10027 54 Начать процедуру инсталляции
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  498 508 602 538
+
+T 
+3
+LANG:10000 8 Weiter >
+LANG:10001 6 Next >
+LANG:10027 12 Далее >
+"main()
+{
+  string     sProjPath;
+  string     sProjPathCC  = getPath(CONFIG_REL_PATH);
+  dyn_string dsProjPathCC = strsplit (sProjPathCC, \"/\\\\\");
+  dyn_string ds;
+  dyn_float  df;
+
+  // show the user the extension packages that have been found
+  // and ask for a selection
+  string sCmdFiles     = p_dsCmdFiles;
+  
+  ChildPanelOnCentralModalReturn(\"mainpanels/childs/instExtPack.pnl\", getCatStr(\"DemoApp\",\"instExt1\"),
+                                                                      makeDynString(sCmdFiles),
+                                                                      df,ds);
+  if (dynlen(df) >= 1)
+  {
+    if (df[1] == 1)
+      p_dsCmdFiles_sel = ds;
+    else
+      return;
+  }
+  else  
+    return; 
+    
+  // create the paths needed for the installation and go
+  if (dynlen(dsProjPathCC) >= 1)
+  {
+    for (int i=1; i <= dynlen(dsProjPathCC) - 1 ; i++)
+      sProjPath = sProjPath + dsProjPathCC[i] + \"\\\\\";
+      strrtrim(sProjPath, \"\\\\\");
+  }
+  strreplace(p_sPath, \"/\", \"\\\\\");
+  
+//DebugTN(\"p_dsCmdFiles_sel\",p_dsCmdFiles_sel);
+ 
+  if (dynlen(p_dsCmdFiles_sel) >= 1)
+  {
+    for(int i = 1; i <= dynlen(p_dsCmdFiles_sel); i++)
+    {
+       system(\"start /WAIT cmd /c \"+p_sPath+\"\\\\\"+p_dsCmdFiles_sel[i]+\" \"+p_sPath+\" \"+sProjPath); // GUT!
+      //system(\"start /MIN /WAIT cmd /c \"+p_sPath+\"\\\\startExtInternet.bat \"+p_sPath+\" \"+sProjPath); // GUT!
+      //system(p_sPath+\"\\\\startExtInternet.bat \"+p_sPath+\" \"+sProjPath); //NICHT GUT!! 
+      
+      //if (p_dsCmdFiles_sel[i] == \"startWirelessCompanionSetup_DE.bat\")
+      //  system(\"start \"+p_sPath+\"\\\\\"+\"Ext_Internet\"+\"\\\\\"+\"WirelessCompanion2.63\"+\"\\\\\"+\"WirelessCompanionDE.exe\");
+    }
+  }
+  
+  // determine if the packages selected has been installed completely
+  if (dynlen(p_dsCmdFiles_sel) >= 1)
+  {
+    for(int i = 1; i <= dynlen(p_dsCmdFiles_sel); i++)
+    {
+      switch(p_dsCmdFiles_sel[i])
+      {
+        case \"startExtInternet.bat\" :
+        while (!dpExists(\"ExtensionPackage04\") || !dpExists(\"ExtensionPackage05\"))
+          delay(0,10);
+                   break;
+        case \"startExtPvssReport.bat\" :
+        while (!dpExists(\"ExtensionPackage01\"))
+          delay(0,10);
+                   break;
+        case \"startExtRezepte.bat\" :
+        while (!dpExists(\"ExtensionPackage03\"))
+          delay(0,10);
+                   break;
+        case \"startExtSprachausgabe.bat\" :
+        while (!dpExists(\"ExtensionPackage02\"))
+          delay(0,10);
+                   break;
+        case \"startExtMisc.bat\" :   
+        while (!dpExists(\"ExtensionPackage08\") || !dpExists(\"ExtensionPackage06\") || !dpExists(\"ExtensionPackage07\") || !dpExists(\"ExtensionPackage09\"))
+          delay(0,10);
+                   break;
+        default  :
+                   break;                   
+      }
+    }
+    
+    //if ( gTcpFileDescriptor == -1 ) return;
+
+    // warning
+    string s = getCatStr(\"DemoApp\",\"instExt2\");
+    ChildPanelOnCentralModal(\"vision/MessageInfo1\", getCatStr(\"general\", \"information\"), makeDynString(s));  //MessageInfo
+                                                                      
+    // kill pvss
+//    int err;
+//    pmonStopAllManager(err, \"DemoApplication_3.0\", gUserName, gPassword);
+  }
+}" 0
+ E E E
+13 57
+"actualizeTable"
+""
+1 574 446 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 21 Tabelle aktualisieren
+LANG:10001 12 Update table
+LANG:10027 31 Обновить таблицу
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  572 444 602 474
+
+P 
+10862530
+"pictures/dpeMon_refresh.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  initTab();
+}" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

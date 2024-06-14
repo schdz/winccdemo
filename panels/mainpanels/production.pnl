@@ -1,0 +1,3988 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+"main()
+{
+noFlickerRedraw(TRUE);
+}" 0
+ E E E E 1 -1 -1 0  956 51
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+NC
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 19
+"Border4"
+""
+1 280 450 E E E 1 E 1 E N "STD_border_dark" E N {102,102,102} E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 0 8 2 E 280 350 906 450
+6 218
+"Border41"
+""
+1 370 360 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+203 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 370 350 890 360
+6 17
+"Border2"
+""
+1 110 150 E E E 1 E 1 E N "STD_border_dark" E N {102,102,102} E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 0 8 2 E 110 50 270 150
+6 18
+"Border3"
+""
+1 280 340 E E E 1 E 1 E N "STD_border_dark" E N {102,102,102} E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 0 8 0 E 280 50 380 340
+6 64
+"Border13"
+""
+1 110 340 E E E 1 E 1 E N "STD_border_dark" E N {102,102,102} E E
+ E E
+63 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 0 8 2 E 110 240 270 340
+10 77
+"prodPath1"
+""
+1 60 100 E E E 1 E 0 E N {255,0,0} E N "_Transparent" E E
+ E E
+76 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 4 60 100
+291 100
+330 140
+330 290
+ 0
+10 93
+"prodPath2"
+""
+1 330 290 E E E 1 E 0 E N {255,0,0} E N "_Transparent" E E
+ E E
+92 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 330 290
+330 400
+928 400
+ 0
+6 97
+"Border5"
+""
+1 702 154 E E E 1 E 1 E N "STD_border_dark" E N {102,102,102} E E
+ E E
+95 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 0 8 2 E 702 54 965 154
+10 116
+"Polyline1"
+""
+1 10 575 E E E 1 E 1 E N "STD_border_light" E N "_Transparent" E E
+ E E
+101 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 10 574
+10 490
+992 490
+ 0
+10 119
+"Polyline2"
+""
+1 10 575 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+104 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 10 574
+992 574
+992 492
+ 0
+6 136
+"Border6"
+""
+1 702 64 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+121 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 702 53 965 64
+6 137
+"Border7"
+""
+1 702 155 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+122 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 702 144 965 155
+6 139
+"Border16"
+""
+1 592 223 E E E 1 E 1 E N "STD_border_dark" E N {102,102,102} E E
+ E E
+124 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  3 0 8 0 E 592 54 692 223
+6 141
+"Border18"
+""
+1 592 223 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+126 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 592 54 602 223
+6 142
+"Border19"
+""
+1 682 223 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+127 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 682 144 692 223
+6 143
+"Border20"
+""
+1 602 64 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+128 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 602 54 692 64
+6 209
+"Border32"
+""
+1 110 61 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+194 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 110 50 270 61
+6 210
+"Border33"
+""
+1 110 150 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+195 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 110 139 270 150
+6 211
+"Border34"
+""
+1 110 251 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+196 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 110 240 270 251
+6 212
+"Border35"
+""
+1 110 340 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+197 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 110 329 270 340
+6 213
+"Border36"
+""
+1 370 340 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+198 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 370 50 380 340
+6 214
+"Border37"
+""
+1 280 250 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+199 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 280 140 290 250
+6 215
+"Border38"
+""
+1 280 60 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+200 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 280 50 370 60
+6 216
+"Border39"
+""
+1 280 450 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+201 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 280 350 290 450
+6 217
+"Border40"
+""
+1 290 450 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+202 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 290 440 890 450
+7 241
+"object_7"
+""
+1 666 166.033 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+219 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -11.8928571428571 1 E 666 166.5 8 7
+7 242
+"object_8"
+""
+1 642 166.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+220 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -11.8928571428571 1 E 642 166.5 8 7
+7 243
+"object_9"
+""
+1 618 166.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+221 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -11.8928571428571 1 E 618 166.5 8 7
+7 244
+"object_4"
+""
+1 666 190.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+222 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -13.6071428571429 1 E 666 190.5 8 7
+7 245
+"object_5"
+""
+1 642 190.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+223 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -13.6071428571429 1 E 642 190.5 8 7
+7 246
+"object_6"
+""
+1 618 190.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+224 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -13.6071428571429 1 E 618 190.5 8 7
+7 247
+"object_1"
+""
+1 666 214.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+225 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -15.3214285714286 1 E 666 214.5 8 7
+7 248
+"object_2"
+""
+1 642 214.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+226 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -15.3214285714286 1 E 642 214.5 8 7
+7 249
+"object_3"
+""
+1 618 214.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+227 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -15.3214285714286 1 E 618 214.5 8 7
+1 626 15 "" 0
+0
+10 275
+"prodPath3"
+""
+1 330 291 E E E 1 E 0 E N {255,0,0} E N "_Transparent" E E
+ E E
+240 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 330 291
+90 291
+90 251
+70 251
+70 341
+50 341
+50 251
+30 251
+30 341
+70 341
+ 0
+7 276
+"Ellipse1_1"
+""
+1 31 89 E E E 1 E 1 E N {0,0,0} E N {0,204,255} E E
+ E E
+241 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "276.bmp" 4294967295 E 31 89 20 20
+7 277
+"Ellipse1_2"
+""
+1 31 87.033333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+242 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -6.25 1 E 31 87.5 8 7
+7 278
+"Ellipse2_1"
+""
+1 86 46 E E E 1 E 1 E N {0,0,0} E N {0,204,255} E E
+ E E
+243 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "278.bmp" 4294967295 E 86 46 20 20
+7 279
+"Ellipse2_2"
+""
+1 86 44.033333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+244 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -3.17857142857143 1 E 86 44.5 8 7
+7 280
+"Ellipse3_1"
+""
+1 32 46 E E E 1 E 1 E N {0,0,0} E N {0,204,255} E E
+ E E
+245 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "280.bmp" 4294967295 E 32 46 20 20
+7 281
+"Ellipse3_2"
+""
+1 32 44.033333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+246 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -3.17857142857143 1 E 32 44.5 8 7
+7 286
+"Ellipse4_1"
+""
+1 84 129 E E E 1 E 1 E N {0,0,0} E N {0,204,255} E E
+ E E
+251 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "286.bmp" 4294967295 E 84 129 20 20
+7 287
+"Ellipse4_2"
+""
+1 84 127.03333 E E E 1 E 0 E N {0,0,0} E N "red" E E
+ E E
+252 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -9.107142857142851 1 E 84 127.5 8 7
+6 65
+"Border14"
+""
+1 10 370 E E E 1 E 1 E N "STD_border_dark" E N {0,153,153} E E
+ E E
+64 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 10 210 110 370
+6 240
+"Border42"
+""
+1 12 258 E E E 1 E 1 E N "_Transparent" E N "STD_device_body" E E
+ E E
+216 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 2  "240.xpm" 13160660 E 12 212 59 258
+7 250
+"maxRadius"
+""
+1 782.00137 222.00137 E E E 1 E 0 E N {255,0,0} E N "_Transparent" E E
+ E E
+228 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.00274725274725 0 1.00274725274725 -2.14972527472527 -0.611263736263734 0 E 782.5 222.5 182 182
+7 316
+"Ellipse5_1"
+""
+1 30 130 E E E 1 E 1 E N {0,0,0} E N {0,204,255} E E
+ E E
+259 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "316.bmp" 4294967295 E 30 130 20 20
+7 317
+"Ellipse5_2"
+""
+1 30 128.03333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+260 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -9.178571428571431 1 E 30 128.5 8 7
+7 318
+"Ellipse6_1"
+""
+1 80 90 E E E 1 E 1 E N {0,0,0} E N {0,204,255} E E
+ E E
+261 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "318.bmp" 4294967295 E 80 90 20 20
+7 319
+"Ellipse6_2"
+""
+1 80 88.033333 E E E 1 E 1 E N {0,0,0} E N {102,51,51} E E
+ E E
+262 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -6.32142857142857 1 E 80 88.5 8 7
+6 59
+"Border8"
+""
+1 885 480 E E E 1 E 1 E N "STD_border_dark" E N {0,153,153} E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 885 320 988 480
+6 16
+"Border1"
+""
+1 10 180 E E E 1 E 1 E N "STD_border_dark" E N {0,153,153} E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 10 20 110 180
+10 409
+"prodPath4"
+""
+1 960 100 E E E 1 E 0 E N {255,0,0} E N "_Transparent" E E
+ E E
+311 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 3 960 100
+640 100
+640 190
+ 0
+1 647 29 "4.7" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 648 29 "5.7" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 659 30 "4.7" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 660 30 "5.7" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 675 32 "7" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 681 33 "7" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+6 563
+"Border17"
+""
+1 178 -602 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+403 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 6.12303176911189e-017 1 -1 6.12303176911189e-017 756 -422 1 E 584 154 594 181
+10 564
+"Polyline15"
+""
+1 603 167 E E E 1 E 1 E N {0,0,0} E N {255,255,0} E E
+ E E
+404 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 603 167
+593 162
+593 172
+ 1
+7 565
+"Ellipse29"
+""
+1 596.1 166.16667 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+405 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.25 0 1.5 -149.125 -83.25 1 E 596.5 166.5 2 1
+6 567
+"Border10"
+""
+1 769 467 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+407 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 769 440 779 467
+7 569
+"Ellipse28"
+""
+1 773.1 446.16667 E E E 1 E 1 E N {0,0,0} E N {255,0,0} E E
+ E E
+409 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.25 0 1.5 -193.375 -223.25 1 E 773.5 446.5 2 1
+1 687 35 "" 22
+0
+1 688 35 "" 16
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 689 35 "" 17
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 690 35 "" 18
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+6 570
+"Border11"
+""
+1 768 363 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+410 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 768 350 779 363
+6 566
+"Border21"
+""
+1 171 -704 E E E 1 E 1 E N {0,0,0} E N {255,255,255} E E
+ E E
+406 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 6.12303176911189e-017 1 -1 6.12303176911189e-017 855 -521 1 E 683 161 694 174
+1 617 5 "" 1
+0
+1 618 9 "" 1
+0
+1 619 11 "" 1
+0
+13 302
+"Button2"
+""
+1 60 414 E E E 0 E 0 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+256 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  58 412 158 442
+
+T 
+3
+LANG:10000 10 Sim-Script
+LANG:10001 7 Button2
+LANG:10027 7 Button2
+E E E "int iTotalProduction,iTotalLoss;
+bool boProduction=1;
+bool boWaitNewParts = false;
+bool boWaitRobot = false;
+bool boLEDSensor = false;
+main()
+{
+  int j;
+  float x,y;
+  
+  for(j=1;j<10;j++)
+          setValue(\"object_\"+j,\"visible\",1); 
+  setValue(\"object_0\",\"visible\",0);
+  for(j=1;j<6;j++)
+  {
+    moveParts(0,1,j);
+    getValue(\"Ellipse\"+j+\"_1\",  \"position\",x,y);
+    setValue(\"Ellipse\"+j+\"_2\",  \"position\",x,y);
+  }
+  
+  dpGet(\"PC_Production_Control.total_production:_online.._value\",iTotalProduction,
+        \"PC_Production_Control.total_loss:_online.._value\",iTotalLoss);
+  
+  if(iTotalProduction>=999999) 
+  {
+    iTotalProduction=0;
+    iTotalLoss=0;
+    dpSet(\"PC_Production_Control.total_production:_original.._value\",iTotalProduction,
+          \"PC_Production_Control.total_loss:_original.._value\",iTotalLoss);
+ 
+  }
+
+  dpSet(\"PC_Production_Control.Robot_Control.start_Simulation:_original.._value\",1,
+        \"PC_Production_Control.Robot_Control.move_parts:_original.._value\",0);
+
+  dpConnect(\"workProduction\",\"PC_Production_Control.production_on:_online.._value\");
+  dpConnect(\"moveRoboter\",\"PC_Production_Control.Robot_Control.start_Simulation:_online.._value\");
+  dpConnect(\"workNewParts\",0,\"PC_Production_Control.Robot_Control.move_parts:_online.._value\");
+  dpConnect(\"simValues\",\"PC_Production_Control.Robot_Control.start_Simulation:_online.._value\");  
+  dpConnect(\"waitRobot\", \"ScaraRobot.move:_online.._value\",  
+                           \"PC_Production_Control.Robot_Control.LED_Sensor:_online.._value\");
+  startProduction();
+}
+
+waitRobot(string dp1, bool b1, string dp2, bool b2)
+{
+  boWaitRobot = b1;
+  boLEDSensor = b2;
+}
+
+workProduction(string dp1,bool boOn)
+{
+  boProduction=boOn;
+}  
+
+startProduction()
+{
+  int value;
+  int iLauf1=1,iLauf2=-10,iLauf3=-20,iLauf4=-30,iLauf5=-40,iLauf6=-50;
+  int i,iObject;
+  int iProdPath,iProdPath1=1,iProdPath2=1,iProdPath3=1,iProdPath4=1,iProdPath5=1,iProdPath6=1;
+  bool bOk=1;
+  
+  
+  while(1)
+  {
+    if(!boProduction)
+    {
+      delay(0,500);
+    }
+    else
+    {
+      iLauf1++;
+      iLauf2++;
+      iLauf3++;
+      iLauf4++;
+      iLauf5++;
+      iLauf6++;
+    
+      for(iObject=1;iObject<=6;iObject++)
+      {
+        if(iObject==1) 
+        { 
+          i=iLauf1;
+          iProdPath=iProdPath1;       
+        } 
+        else if(iObject==2) 
+        { 
+          i=iLauf2;
+          iProdPath=iProdPath2;       
+        }
+        else if(iObject==3) 
+        { 
+          i=iLauf3;
+          iProdPath=iProdPath3;       
+        } 
+        else if(iObject==4) 
+        { 
+          i=iLauf4;
+          iProdPath=iProdPath4;       
+        }
+        else if(iObject==5) 
+        { 
+          i=iLauf5;
+          iProdPath=iProdPath5;       
+        } 
+        else if(iObject==6) 
+        { 
+          i=iLauf6;
+          iProdPath=iProdPath6;       
+        }  
+      
+        value=i*10;
+        if(value<0) value=0;
+        else if(value==270)
+        { 
+          //the scanner detect a bad part. It activate the shuter
+          if(iProdPath == 1)
+          { 
+            if (iObject == 4)
+              dpSet(\"PC_Production_Control.LED_Scanner.green:_original.._value\",0,
+                    \"PC_Production_Control.LED_Scanner.red:_original.._value\",1);
+            else if (iObject == 5)
+              dpSet(\"PC_Production_Control.LED_Scanner.green:_original.._value\",1,
+                    \"PC_Production_Control.LED_Scanner.red:_original.._value\",0);
+          }
+        }
+        else if(value==280 && iProdPath == 2) //now will the scaraRobot open the claw
+        {
+          dpSet(\"PC_Production_Control.Robot_Control.LED_Sensor:_original.._value\",1);
+          //setValue(\"Ellipse\"+iObject+\"_2\",\"visible\",1);
+        }
+        else if(value>=140 && value<360 && iProdPath == 3)
+          setValue(\"Ellipse\"+iObject+\"_1\",  \"visible\",0);
+        
+        else if(value>=340 && value<360 && iProdPath == 2)
+          setMultiValue(\"Ellipse\"+iObject+\"_1\",  \"visible\",0,
+                        \"Ellipse\"+iObject+\"_2\",  \"visible\",0);
+        else if(value>=360)
+        {   
+          if(iProdPath==1 && iObject != 4)
+            iProdPath=2;
+          else if(iProdPath==1 && iObject == 4) //this part is bad, activate the pusher
+          {
+            iProdPath=3;            
+            iTotalLoss++;
+            dpSet(\"PC_Production_Control.pusher.on:_original.._value\",1,
+                  \"PC_Production_Control.pusher.LED_red:_original.._value\",1,
+                  \"PC_Production_Control.pusher.LED_green:_original.._value\",0,
+                  \"PC_Production_Control.total_loss:_original.._value\",iTotalLoss);
+          }
+          else
+          {
+            if(iProdPath==2)
+            {
+              iTotalProduction++;
+              if(iTotalProduction>=999999) 
+              {
+                iTotalProduction=0;
+                iTotalLoss=0;
+                dpSet(\"PC_Production_Control.total_production:_original.._value\",iTotalProduction,
+                      \"PC_Production_Control.total_loss:_original.._value\",iTotalLoss);
+               }
+               else
+                 dpSet(\"PC_Production_Control.total_production:_original.._value\",iTotalProduction);
+            }
+            iProdPath=1;
+          }
+          if(iObject==1) 
+          {  
+             iProdPath1=iProdPath;
+             iLauf1=1;
+          }
+          else if(iObject==2) 
+          {  
+             iProdPath2=iProdPath;       
+             iLauf2=1;
+          } 
+           else if(iObject==3) 
+          {  
+             iProdPath3=iProdPath;       
+             iLauf3=1;
+          }
+          else if(iObject==4) 
+          {  
+             iProdPath4=iProdPath;       
+             iLauf4=1;
+          } 
+          else if(iObject==5) 
+          {  
+             iProdPath5=iProdPath;       
+             iLauf5=1;
+          }
+          else if(iObject==6) 
+          {  
+             iProdPath6=iProdPath;       
+             iLauf6=1;
+          }
+        }
+        moveParts(value,iProdPath,iObject);
+        if(iObject!=4 && value==20 && iProdPath==1)
+          setMultiValue(\"Ellipse\"+iObject+\"_1\",  \"visible\",1,
+                        \"Ellipse\"+iObject+\"_2\",  \"visible\",1);
+         else if(iObject==4 && value==20 && iProdPath==1) 
+            setValue(\"Ellipse\"+iObject+\"_1\",  \"visible\",1);
+
+        delay(0,050);
+      }//end of for(...)
+    }
+  }//end of while(1)
+}
+
+moveParts(int value,int iProdPath,int iObject)
+{
+  float  percentage = (value >= 360) ? 0.0 : (value / 360.0 * 100.0),
+         x, y, angle;
+
+  getMultiValue(\"prodPath\"+iProdPath,\"positionOnPath\", percentage, x, y, angle);
+
+  if(iProdPath==2 && value >= 280 && value < 360)
+    setMultiValue(\"Ellipse\"+iObject+\"_1\",  \"position\", x, y,
+   	              \"Ellipse\"+iObject+\"_1\",  \"rotation\", angle,
+   			      \"Ellipse\"+iObject+\"_2\", \"position\", x, y,
+   			      \"Ellipse\"+iObject+\"_2\",  \"rotation\", angle);
+  else
+    setMultiValue(\"Ellipse\"+iObject+\"_1\",  \"position\", x, y,
+   	              \"Ellipse\"+iObject+\"_1\",  \"rotation\", angle);
+}
+
+moveRoboter(string dp1, bool boStart)
+{
+  bool boMove,boWait;
+  int iObject=1;
+  float x,y,refPosX, refPosY;
+  
+  getValue(\"scaraLink0\",\"position\",refPosX, refPosY); 
+  
+  while(boStart)
+  {
+    if(!boProduction)
+    {
+      delay(0,500);
+    }
+    else
+    {
+      dyn_anytype daResponse;
+   
+      boWaitRobot = true;
+      dpSetWait(\"ScaraRobot.clawopen:_original.._value\",1);
+      dpSet(\"ScaraRobot.move:_original.._value\",1);
+     
+      while (boWaitRobot)
+        delay(0, 100);
+
+      getMultiValue(\"object_\"+iObject,\"position\",x,y);
+      x=x-refPosX;
+      y=-refPosY+y;
+    
+      setValue(\"object_0\",\"visible\",0);
+
+      boWaitRobot = true;
+      dpSet(\"ScaraRobot.xpos:_original.._value\",x,
+            \"ScaraRobot.ypos:_original.._value\",y,
+            \"ScaraRobot.move:_original.._value\",1);
+
+      while (boWaitRobot)
+        delay(0, 100);
+
+      dpSetWait(\"ScaraRobot.clawopen:_original.._value\",0);
+
+      while (boWaitNewParts)
+        delay(0, 100);
+
+      boWaitRobot = true;
+      dpSet(\"ScaraRobot.move:_original.._value\",1);
+
+      while (boWaitRobot)
+        delay(0, 100);
+
+      boWaitRobot = true;
+      dpSet(\"ScaraRobot.xpos:_original.._value\",-10,
+            \"ScaraRobot.ypos:_original.._value\",180,
+            \"ScaraRobot.move:_original.._value\",1);
+
+      setMultiValue(\"object_0\",\"visible\",1,
+                    \"object_\"+iObject,\"visible\",0);
+    
+      if(iObject == 9)
+      {
+        dpSet(\"PC_Production_Control.Robot_Control.move_parts:_original.._value\",1);
+        boWaitNewParts = true;
+      }
+      
+      while (boWaitRobot || !boLEDSensor)
+        delay(0, 100);
+     
+      setValue(\"object_0\",\"visible\",0);
+
+      boWaitRobot = true;
+      dpSet(\"ScaraRobot.clawopen:_original.._value\",1,
+            \"PC_Production_Control.Robot_Control.LED_Sensor:_original.._value\",0,
+            \"ScaraRobot.move:_original.._value\",1);
+      
+      while (boWaitRobot)
+        delay(0, 100);
+
+      iObject++;    
+      if(iObject==10)
+        iObject=1;
+    }
+  }
+}
+
+workNewParts(string dp1,bool boMove)
+{
+  int i,j;
+  int value,iLauf1=22,iLauf2=4;
+  int iObject;
+  bool bOk;
+
+  boWaitNewParts = boMove;
+ 
+  if(!boMove)
+    return;
+ 
+  moveParts2(220,4,1);
+  moveParts2(40,4,2);
+  
+  while(1)
+  {
+  
+    for(iObject=1;iObject<=2;iObject++)
+    {
+      if(iObject==1) 
+      { 
+        i=iLauf1;
+      } 
+      else if(iObject==2) 
+      { 
+        i=iLauf2;       
+      }
+      
+      
+      value=i*10;
+      if(value>360)
+      {
+      
+        if(iObject==1) 
+        { 
+          i=iLauf1=1;
+        } 
+        else if(iObject==2) 
+        { 
+          i=iLauf2=1;       
+        }
+        
+      }
+      if(iObject==1 && value==40)
+      {
+        return; 
+      }
+      else if(iObject==1 && value==360)
+      {
+        setValue(\"PartsGroup_1\",\"visible\",0);
+        for(j=1;j<10;j++)
+          setValue(\"object_\"+j,\"visible\",1); 
+        dpSet(\"PC_Production_Control.Robot_Control.move_parts:_original.._value\",0);
+      }
+      moveParts2( value,4,iObject);
+      if(iObject==1 && value>360)
+        setValue(\"PartsGroup_1\",\"visible\",1);
+      delay(0,100);
+    }
+    iLauf1++;
+    iLauf2++;
+
+  }
+  
+}
+moveParts2(int value,int iProdPath,int iObject)
+{
+  float  percentage = (value >= 360) ? 0.0 : (value / 360.0 * 100.0),
+         x, y, angle;
+  float  xRobot,yRobot;
+ 
+  getValue(\"prodPath\"+iProdPath,\"positionOnPath\", percentage, x, y, angle);
+                   
+  setValue(\"PartsGroup_\"+iObject,  \"position\", x, y);
+}
+
+simValues(string dp1,bool boOn)
+{
+  while(1)
+  { 
+    if(!boProduction)
+    {
+      delay(0,500);
+    }
+    else
+    {
+      dpSet(\"PC_Production_Control.oven_temperature:_original.._value\",850,
+            \"PC_Production_Control.coolant_level:_original.._value\",80,
+            \"PC_Production_Control.output_per_hour:_original.._value\",90,
+            \"PC_Production_Control.production_quality:_original.._value\",85);
+      delay(1);
+      dpSet(\"PC_Production_Control.oven_temperature:_original.._value\",750,
+            \"PC_Production_Control.coolant_level:_original.._value\",75);
+      delay(2);
+      dpSet(\"PC_Production_Control.oven_temperature:_original.._value\",900,
+            \"PC_Production_Control.coolant_level:_original.._value\",73,
+            \"PC_Production_Control.output_per_hour:_original.._value\",85,
+            \"PC_Production_Control.production_quality:_original.._value\",83);
+      delay(1);      
+       
+    }
+  }
+}" 0
+
+1 693 38 "" 1
+0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+2 579
+"Text20"
+""
+1 753 160 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+415 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 755 162 812 175
+0 2 0 "0s" 0 0 0 192 0 0  755 162 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 7 ROBOTER
+LANG:10001 5 ROBOT
+LANG:10027 10 РОБОТ
+1 638 26 "" 0
+0
+1 629 25 "" 0
+0
+1 620 12 "" 18
+0
+1 603 0 "" 0
+0
+6 461
+"Border9"
+""
+1 230 214 E E E 1 E 1 E N "STD_border_dark" E N {0,153,153} E E
+ E E
+341 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 230 174 450 214
+6 462
+"Border22"
+""
+1 234 210 E E E 1 E 1 E N "_Transparent" E N {0,153,153} E E
+ E E
+342 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "462.bmp" 12632256 E 234 178 271 210
+6 477
+"pushArm_1"
+""
+1 394 316 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+346 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpSet(\"PC_Production_Control.pusher.LED_red:_original.._value\",0,
+        \"PC_Production_Control.pusher.LED_green:_original.._value\",1);
+  dpConnect(\"workPusher\",\"PC_Production_Control.pusher.on:_online.._value\");
+}
+
+workPusher(string dp1,bool boMove)
+{
+ if(boMove)
+ {
+   float x1,y1,x2,y2;
+   int iStep=10;  
+   getMultiValue(\"pushArm_1\",\"position\",x1,y1,
+                 \"pushArm_2\",\"position\",x2,y2);
+   while(iStep<50)
+   {              
+     iStep=iStep+10;
+     setMultiValue(\"pushArm_1\",\"position\",x1-iStep,y1,
+                   \"pushArm_2\",\"position\",x2-iStep,y2);
+     delay(0,005);
+   }
+   dpSet(\"PC_Production_Control.pusher.LED_red:_original.._value\",0,
+         \"PC_Production_Control.pusher.LED_green:_original.._value\",1);
+   delay(0,010);
+   while(iStep>=0)
+   {              
+     iStep=iStep-10;
+     setMultiValue(\"pushArm_1\",\"position\",x1-iStep,y1,
+                   \"pushArm_2\",\"position\",x2-iStep,y2);
+     if(iStep==0) break;
+      delay(0,005);
+   }
+   dpSet(\"PC_Production_Control.pusher.on:_original.._value\",0);
+ }
+}" 0
+ E 0 1 1 0 1 E U  1 E 394 266 404 316
+6 478
+"pushArm_2"
+""
+1 404 295 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+347 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 404 285 460 295
+6 479
+"Border12"
+""
+1 411 316 E E E 1 E 1 E N "STD_border_dark" E N {0,153,153} E E
+ E E
+348 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 411 266 487 316
+6 553
+"Border30"
+""
+1 79 566 E E E 1 E 1 E N "STD_border_dark" E N {255,0,0} E E
+ E E
+393 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 79 550 337 566
+6 554
+"Border31"
+""
+1 79 566 E E E 1 E 1 E N "STD_border_dark" E N "STD_device_on" E E
+ E E
+394 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  EP_setScale();
+}
+
+EP_setScale()
+{
+dyn_errClass err;
+
+  if( dpSubStr( \"PC_Production_Control.production_quality:_online.._value\", DPSUB_DP_EL ) == \"\" )
+  {
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+    return;
+  }
+
+  dpConnect(\"EP_setScaleCB\",
+            \"PC_Production_Control.production_quality:_online.._value\");
+  err = getLastError();
+  if (dynlen(err) > 0)
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+
+}
+
+
+EP_setScaleCB(string dp1, float fNewValueX)
+{
+float X_MIN = 0;
+float X_MAX = 100;
+float X_MIN_SCALE = 0.01 * 0;
+float X_MAX_SCALE = 0.01 * 100;
+
+float fXScale;
+float fYScale;
+
+  getValue(\"\", \"scale\", fXScale, fYScale);
+  fXScale = ( 1.0 * (X_MAX_SCALE - X_MIN_SCALE) / (X_MAX - X_MIN)) * 
+            (fNewValueX - X_MIN) + X_MIN_SCALE;
+  if (fXScale > X_MAX_SCALE) fXScale = X_MAX_SCALE;
+  else if (fXScale < X_MIN_SCALE) fXScale = X_MIN_SCALE;
+
+  setValue(\"\", \"scale\", fXScale, fYScale);
+}" 0
+ E 0 1 1 0 1 E U  1 E 79 550 338 566
+10 555
+"Polyline11"
+""
+1 77 570 E E E 1 E 1 E N {102,102,102} E N "_Transparent" E E
+ E E
+395 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 3 77 570
+77 548
+339 548
+ 0
+10 556
+"Polyline12"
+""
+1 78 570 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+396 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 3 340 547
+340 569
+78 569
+ 0
+2 557
+"Text21"
+""
+1 82 550 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+397 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"disp\",1,\"PC_Production_Control.production_quality:_online.._value\");
+}
+disp(string dp, float value)
+{
+  this.text = value + \" %\";
+}" 0
+ E 0 1 1 0 1 E U  0 E 84 552 97 566
+0 2 0 "0s" 0 0 0 192 0 0  84 552 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 %
+LANG:10001 1 %
+LANG:10027 1 %
+6 558
+"Border24"
+""
+1 79 529 E E E 1 E 1 E N "STD_border_dark" E N {255,0,0} E E
+ E E
+398 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 79 513 337 529
+6 559
+"Border26"
+""
+1 79 529 E E E 1 E 1 E N "STD_border_dark" E N "STD_device_on" E E
+ E E
+399 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"// SimpleCtrlScriptStart {invalid}
+main()
+{
+  EP_setScale();
+}
+
+EP_setScale()
+{
+dyn_errClass err;
+
+  if( dpSubStr( \"PC_Production_Control.output_per_hour:_online.._value\", DPSUB_DP_EL ) == \"\" )
+  {
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+    return;
+  }
+
+  dpConnect(\"EP_setScaleCB\",
+            \"PC_Production_Control.output_per_hour:_online.._value\");
+  err = getLastError();
+  if (dynlen(err) > 0)
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+
+}
+
+
+EP_setScaleCB(string dp1, float fNewValueX)
+{
+float X_MIN = 0;
+float X_MAX = 100;
+float X_MIN_SCALE = 0.01 * 0;
+float X_MAX_SCALE = 0.01 * 100;
+
+float fXScale;
+float fYScale;
+
+  getValue(\"\", \"scale\", fXScale, fYScale);
+  fXScale = ( 1.0 * (X_MAX_SCALE - X_MIN_SCALE) / (X_MAX - X_MIN)) * 
+            (fNewValueX - X_MIN) + X_MIN_SCALE;
+  if (fXScale > X_MAX_SCALE) fXScale = X_MAX_SCALE;
+  else if (fXScale < X_MIN_SCALE) fXScale = X_MIN_SCALE;
+
+  setValue(\"\", \"scale\", fXScale, fYScale);
+}
+
+" 0
+ E 0 1 1 0 1 E U  1 E 79 513 337 529
+10 560
+"Polyline9"
+""
+1 77 533 E E E 1 E 1 E N {102,102,102} E N "_Transparent" E E
+ E E
+400 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 3 77 533
+77 511
+339 511
+ 0
+10 561
+"Polyline10"
+""
+1 78 533 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+401 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 3 340 510
+340 532
+78 532
+ 0
+2 562
+"Text19"
+""
+1 83 512 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+402 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"disp\",1,\"PC_Production_Control.output_per_hour:_online.._value\");
+}
+disp(string dp, float value)
+{
+  this.text = value + \" %\";
+}" 0
+ E 0 1 1 0 1 E U  0 E 85 514 98 528
+0 2 0 "0s" 0 0 0 192 0 0  85 514 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 %
+LANG:10001 1 %
+LANG:10027 1 %
+2 493
+"lastSolution"
+""
+1 740 180 E E E 1 E 0 E N {0,0,0} E N {255,255,255} E E
+ E E
+351 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.text=0;
+}" 0
+ E 0 1 1 0 1 E U  1 E 742 182 758 198
+1 2 0 "1d" 1 0 0 64 0 0  742 182 1
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 1
+LANG:10001 5 Text5
+LANG:10027 5 Text5
+6 494
+"scaraBase"
+""
+1 782 223 E E E 1 E 1 E N "STD_border_dark" E N {0,153,153} E E
+ E "main()
+{
+  bool boVisible;
+  boVisible=maxRadius.visible;
+  maxRadius.visible=!boVisible;
+  //getValue(\"posInd\",\"visible\",boVisible);
+  setValue(\"posInd\",\"visible\",!boVisible);
+}" 0
+
+352 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"float alpha;		// angle between arm1 (r1) and arm2 (r2)
+float arm1Length, arm2Length, refPosX, refPosY;
+
+main()
+{
+  int ldummy;
+
+  setValue(\"posInd\",\"visible\",0);
+  
+  // Reference position for the robot ist the center link element
+  // Length of both arms is read from helper shapes (lines)
+  getMultiValue(\"armLength1\",\"size\",arm1Length,ldummy,
+  				      \"armLength2\",\"size\",arm2Length,ldummy,
+    			      \"scaraLink0\",\"position\",refPosX, refPosY); 
+    
+   dpSet(\"ScaraRobot.xpos:_original.._value\",-90, 
+        \"ScaraRobot.ypos:_original.._value\",90,
+        \"ScaraRobot.clawopen:_original.._value\",1,
+        \"ScaraRobot.move:_original.._value\",1,
+        \"PC_Production_Control.Robot_Control.LED_Sensor:_original.._value\",0);
+  dpConnect(\"workRobot\",\"ScaraRobot.move:_online.._value\");
+}
+
+workRobot(string dp1,bool boMoveRobot)
+{
+  // ToDo. alle potentiellen div/0 rausschmeissen !!! Q3 und Q4 unterstützen
+  // optimal kurzen weg wählen, 
+  if(!boMoveRobot)
+    return;
+  else
+  {
+    float angle1, 
+    	  angle2, 
+  		  angle1a,	// complimentary angle of the 2nd solution
+  		  angle2a,    // complimentary angle of the 2nd solution
+          angleOpt1,  // optimate angle betwen angle1 and angle1a for the robot-trajectory
+          angleOpt2,  // optimate angle betwen angle2 and angle2a for the robot-trajectory
+  		  oldangle1,
+  		  oldangle2,
+  		  posArmX, posArmY, refPosX, refPosY,
+  		  pi = 3.14159265359,
+  		  arm1Length,		//length of inner robot arm
+  		  arm2Length, 	//length of outer robot arm
+          ldummy,
+  		  zeroAngle = 0,
+          a1,a2,
+  		  diff1, diff2,
+  		  x ,xr,
+  		  y ,yr;
+  		
+    bool  claw, clawOpen,cl;
+    int	i, 
+  		del, 
+  		steps;
+  		
+    int iAction=1; 
+    
+    dpGet(\"ScaraRobot.xpos:_online.._value\",x,
+          \"ScaraRobot.ypos:_online.._value\",y,
+          \"ScaraRobot.steps:_online.._value\",steps,
+          \"ScaraRobot.stepdelay:_online.._value\",del,
+          \"ScaraRobot.clawopen:_online.._value\",clawOpen);
+          
+       
+    getMultiValue(\"armLength1\",\"size\",arm1Length,ldummy,
+                  \"armLength2\",\"size\",arm2Length,ldummy,
+  				  \"scaraLink0\",\"position\",refPosX, refPosY,
+  				  \"scaraBase\",\"position\",xr,yr);
+
+    setValue(\"posInd\",\"position\",xr+x,yr+y);  				
+
+    currentPosition(angle1, angle2, claw);
+  
+    oldangle1 = angle1;
+    oldangle2 = angle2;
+
+    do
+    {
+      calcAngles(x, y, arm1Length, arm2Length, angle1, angle2, angle1a, angle2a); 
+    
+      //optimize the robot-trajectory
+      if(iAction==1)
+      {
+        float rinit, ainit; //initial position
+        float rtarget,atarget; //target position
+        float xinit,yinit;
+        int iSolution, //the optimal soltuion for the robot-trajectory
+            iLastSolution; //the last optimal soltuion for the robot-trajectory
+        string s;
+ 
+        iAction++;
+      
+        //target-position
+        r2p(x,y,rtarget,atarget);
+      
+        //initial-position
+        xinit = arm1Length*cos(deg2rad(oldangle1)) + arm2Length*cos(deg2rad(oldangle2));
+        yinit = arm1Length*sin(deg2rad(oldangle1)) + arm2Length*sin(deg2rad(oldangle2));
+        yinit=-yinit;
+        r2p(xinit,yinit,rinit,ainit);
+ 
+        sprintf(s,\"%5.2f\",ainit);
+        ainit=s;
+        sprintf(s,\"%5.2f\",atarget);
+        atarget=s;
+        sprintf(s,\"%5.2f\",rinit);
+        rinit=s;
+        sprintf(s,\"%5.2f\",rtarget);
+        rtarget=s;
+        
+        //if the same Position then not move
+        if(ainit==atarget && rinit == rtarget && clawOpen==claw)
+        {
+          dpSet(\"ScaraRobot.move:_original.._value\",0);
+          break;
+        }
+        else if(ainit==atarget && rinit == rtarget && clawOpen!=claw)
+        {
+          moveRobot(oldangle1, oldangle2, clawOpen);
+          dpSet(\"ScaraRobot.move:_original.._value\",0);
+          break;
+        }
+      
+        if(ainit>-180 && ainit<0 ) ainit=180+ainit;
+        else if(ainit<-180 ) ainit=360+ainit;
+      
+        getValue(\"lastSolution\",\"text\",iLastSolution);      
+        if(iLastSolution!=0 && ((-90 < alpha && alpha < 90) || 270 < alpha  || alpha < -270))     // angle between arm1 (r1) and arm2 (r2))
+          iSolution=iLastSolution;             
+        else if((ainit-180 < atarget && atarget < ainit) || (ainit+180 < atarget && atarget < 360))  
+        {
+          //the second solution is better
+          iSolution=2;
+        }
+        else
+        {
+          //the first solution is better
+          iSolution=1;
+        }
+      
+        if(iSolution==1)
+        {
+          angleOpt1=angle1;
+          angleOpt2=angle2;
+        }
+        else
+        {
+          angleOpt1=angle1a;
+          angleOpt2=angle2a;      
+        }
+        setValue(\"lastSolution\",\"text\",iSolution);
+      }
+      if ( (oldangle1 != angleOpt1) ||  (oldangle2 != angleOpt2) || (clawOpen!=claw)) 
+      {
+          diff1 = angleOpt1 - oldangle1;
+          diff2 = angleOpt2 - oldangle2;
+          if(diff1 > 180)
+            diff1 = diff1 - 360;
+          else if(diff1 < - 180)
+            diff1 = diff1 + 360;
+      
+          if(diff2 > 180)
+            diff2 = diff2 - 360;
+          else if(diff2 < - 180)
+            diff2 = diff2 + 360;
+          for( i=1 ; i <= steps ; i++)
+          {
+            angleOpt1 = oldangle1 + i*(diff1)/steps;
+            angleOpt2 = oldangle2 + i*(diff2)/steps;
+            moveRobot(angleOpt1, angleOpt2, clawOpen);
+            currentPosition(a1,a2,cl);
+            delay(0,del);
+          }
+      }    
+      oldangle1 = angleOpt2;
+      oldangle2 = angleOpt2;
+      dpSet(\"ScaraRobot.move:_original.._value\",0);
+      break;
+    }while(true);
+  }//end else
+}//end work-function
+
+moveRobot(float angle1, float angle2, bool clawOpen)
+{
+  // refPosX/Y, arm1/2Length are read in main
+  float posArmX, posArmY, // refPosX, refPosY,
+  		// arm1Length,  		//length of inner robot arm
+  		// arm2Length, 	    //length of outer robot arm
+  		zeroAngle = 0,
+  		maxAngleDiff = 115,
+  		AngleDiff,
+		  x,y;  
+  
+ 				
+  // Convert all angles into 0-360°  
+  angle1 = baseAngle(angle1);
+  angle2 = baseAngle(angle2);
+  
+  posArmX = refPosX + arm1Length*cos(deg2rad(angle1 + zeroAngle));
+  posArmY = refPosY - arm1Length*sin(deg2rad(angle1 + zeroAngle));
+
+  AngleDiff = (fabs(angle2-angle1) <= 180) ? fabs(angle2-angle1) : 360 - fabs(angle2-angle1);    
+  if ( AngleDiff <= maxAngleDiff)     
+    setMultiValue(\"scaraArm1\",\"rotation\",angle1,
+  				  \"Arm.scaraArm2\",\"rotation\",angle2,
+  				  \"Arm.scaraClamb1\",\"rotation\",clawOpen?angle2:angle2+2,
+  				  \"Arm.scaraClamb2\",\"rotation\",clawOpen?angle2:angle2-2,
+  				  \"Arm\",\"position\",posArmX, posArmY,
+  				  //\"scaraArm1\",\"backCol\",\"grey\",
+  				  //\"object_0\",\"visible\",clawOpen?0:1,   //the last two lign are only for the Demo
+  				  \"object_0\",\"position\",posArmX+arm2Length*cos(deg2rad(angle2)),
+  				                        posArmY-arm2Length*sin(deg2rad(angle2))); 
+  else
+    setMultiValue(\"scaraArm1\",\"rotation\",angle1,
+  				  \"Arm.scaraArm2\",\"rotation\",angle2,
+  				  \"Arm.scaraClamb1\",\"rotation\",clawOpen?angle2:angle2+2,
+  				  \"Arm.scaraClamb2\",\"rotation\",clawOpen?angle2:angle2-2,
+  				  \"Arm\",\"position\",posArmX, posArmY,
+  				  \"scaraArm1\",\"backCol\",\"red\",
+  				  //\"object_0\",\"visible\",clawOpen?0:1,   //the last two lign are only for the Demo
+  				  \"object_0\",\"position\",posArmX+arm2Length*cos(deg2rad(angle2)),
+  				                        posArmY-arm2Length*sin(deg2rad(angle2))); //the last lign is only for the Demo
+			  
+    				  
+  				  
+  // getMultiValue(\"scaraArm1\",\"rotation\",angle1,
+  //        	   	 \"Arm.scaraArm2\",\"rotation\",angle2);
+
+  x = arm1Length*cos(deg2rad(angle1)) + arm2Length*cos(deg2rad(angle2));
+  y = arm1Length*sin(deg2rad(angle1)) + arm2Length*sin(deg2rad(angle2));
+}//end moveRobot()
+
+calcAngles(float x, float y, float r1, float r2, float &angle1, float &angle2, float &angle1a, float &angle2a)
+{
+  float r0, a0,
+        gamma,		// angle between arm1 (r1) and target arm (r0)
+    	pi = 3.14159265359;
+  
+  r2p(x,y,r0,a0);
+  
+  y = -y; //conversion from panelcoordinates to mathematical coordinates
+  
+  // Take care of rounding errors
+  if (r0 > r1 + r2)
+    r0 = r1 + r2;  
+  if (r2 > r0 + r1)
+    r2 = r0 + r1;
+  
+  alpha = rad2deg (acos(( (pow(r1,2) + pow(r2,2) - pow(r0,2)) / (2*r1*r2)) ) );
+  
+  if (r0 != 0)
+    gamma = rad2deg (acos(( (pow(r1,2) + pow(r0,2) - pow(r2,2)) / (2*r1*r0)) ) );
+  else
+    gamma = 0;
+  angle1 = a0 - gamma;
+  angle1a = a0 + gamma;
+  
+  angle2 = 180 - (alpha-angle1);
+  angle2a =-180+ (alpha + angle1a);
+}//end calcAngles()
+
+currentPosition(float &angle1, float &angle2, bool &claw)
+{
+  float clawRot,angle;
+  string s;
+  getMultiValue(\"scaraArm1\",\"rotation\",angle1,
+  				\"Arm.scaraArm2\",\"rotation\",angle2,
+  				\"Arm.scaraClamb1\",\"rotation\",clawRot);
+
+  sprintf(s,\"%5.2f\",angle2);
+  angle=s;
+  sprintf(s,\"%5.2f\",clawRot);
+  clawRot=s;
+  if(angle == clawRot)
+    claw = 1;
+  else
+    claw=0;
+}//end currentPosition
+
+
+// converts any angle into the interval [0..360]
+float baseAngle(float angle)
+{
+  if (angle>0)
+    angle = fmod(angle,360);
+  else
+    angle = 360+fmod(angle,360);
+  return(angle);
+}//end baseAngle
+
+// converts cartesian (x,y) coordinates into
+// polarcoordinates (r,a); caution! positiv 
+// y axis points downwards like in panel coordinates
+r2p(float x, float y, float &r, float &a)
+{
+  r = sqrt(pow(x,2)+pow(y,2));
+  
+  if (x > 0)
+    a = -rad2deg(atan(y/x));
+  else if (x < 0)
+    a = 180 - rad2deg(atan(y/x));
+  else if (x == 0)
+    a = (y <= 0) ? 90 : 270;
+}//end r2p()
+   
+// converts polar coordinates (r,a) into cartesian
+// (x,y) coordinates; caution! positiv y axis 
+// points downwards like in panel coordinates
+p2r(float &x, float &y, float r, float a)
+{	
+  x = r*cos(deg2rad(-a));
+  y = r*sin(deg2rad(-a));
+}" 0
+ E 0 1 1 0 1 E U  1 E 738 179 828 269
+10 495
+"scaraArm1"
+""
+1 782 222 E E E 1 E 1 E N "STD_border_dark" E N {204,153,51} E E
+ E E
+353 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 4 783 257
+896 247
+896 197
+783 187
+ 0
+4 500
+"armLength1"
+""
+1 782 222 E E E 1 E 0 E N {255,0,0} E N {255,255,255} E E
+ E E
+354 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  868 222 782 222
+4 501
+"armLength2"
+""
+1 868 222 E E E 1 E 0 E N {51,255,0} E N {255,255,255} E E
+ E E
+355 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  963 222 868 222
+7 502
+"object_0"
+""
+1 963 221.03333 E E E 1 E 0 E N {0,0,0} E N {102,51,51} E E
+ E E
+356 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1 0 1.07142857142857 0 -15.8214285714286 1 E 963 221.5 8 7
+7 503
+"scaraLink0"
+""
+1 781 222 E E E 1 E 1 E N "STD_border_dark" E N {204,153,51} E E
+ E E
+357 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 782 222 35 35
+1 671 31 "" 8
+0
+10 568
+"Polyline3"
+""
+1 774 440 E E E 1 E 1 E N {0,0,0} E N {255,255,0} E E
+ E E
+408 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 774 440
+769 450
+779 450
+ 1
+6 602
+"Border15"
+""
+1 939 179 E E E 1 E 1 E N "STD_border_dark" E N {0,153,153} E E
+ E E
+416 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 939 19 988 179
+1 649 29 "4" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 650 29 "4" 1
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 651 29 "4" 2
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 652 29 "4" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 653 29 "4" 4
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 654 29 "5" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 655 29 "5" 1
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 656 29 "5" 2
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 657 29 "5" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 658 29 "5" 4
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 661 30 "4" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 662 30 "4" 1
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 663 30 "4" 2
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 664 30 "4" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 665 30 "4" 4
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 666 30 "5" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 667 30 "5" 1
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 668 30 "5" 2
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 669 30 "5" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 670 30 "5" 4
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 676 32 "" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 677 32 "" 1
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 678 32 "" 2
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 679 32 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 680 32 "" 4
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 682 33 "" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 683 33 "" 1
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+// SimpleCtrlScript {EP_confirm}
+main(int iType)
+{
+
+}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 684 33 "" 2
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 685 33 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 686 33 "" 4
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+13 571
+"Button1"
+""
+1 860 510 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+411 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  858 508 983 538
+
+T 
+3
+LANG:10000 10 Verpackung
+LANG:10001 9 Packaging
+LANG:10027 16 Упаковка
+"main()
+{
+   ChildPanelOnCentralModal(\"vision/MessageDeadEnd.pnl\",getCatStr(\"sc\",\"attention\"),
+                            makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"deadEnd\")));
+}" 0
+ E E E
+13 572
+"Button3"
+""
+1 860 540 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+412 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  858 538 983 568
+
+T 
+3
+LANG:10000 9 Rohstoffe
+LANG:10001 13 Raw materials
+LANG:10027 10 Сырьё
+"main()
+{
+   ChildPanelOnCentralModal(\"vision/MessageDeadEnd.pnl\",getCatStr(\"sc\",\"attention\"),
+                            makeDynString(\"$1:\"+getCatStr(\"DemoApp\",\"deadEnd\")));
+}" 0
+ E E E
+13 476
+"Button4"
+""
+1 457 174 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+344 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  455 172 489 216
+
+T 
+3
+LANG:10000 3 ...
+LANG:10001 3 ...
+LANG:10027 3 ...
+"main()
+{
+  ChildPanelOnRelativModal(\"mainpanels/childs/production_scanner_bar.pnl\",\"SCANNER\",makeDynString(),34,-209);
+}" 0
+ E E "bool bOk;
+main()
+{
+  dyn_float sValues;
+  dynClear(sValues);
+  bOk=1;
+  dpSet(\"PC_Production_Control.LED_Scanner.green:_original.._value\",1,
+        \"PC_Production_Control.LED_Scanner.red:_original.._value\",0,
+        \"PC_Production_Control.LED_Scanner.value_scanner:_original.._value\",sValues);
+  dpConnect(\"workLEDScanner\",0,\"PC_Production_Control.LED_Scanner.red:_online.._value\");
+}
+workLEDScanner(string dp1,bool boRed)
+{
+  float value;
+  dyn_float sValues;
+  int i , iLenMax=10;
+ 
+  dynClear(sValues); 
+  if(boRed)
+  {
+    for(i=1;i<=iLenMax;i++)
+    {
+      value=-1.7+3.4*(rand())/32767.0;
+      if(value>-1.0 && value<1.0 && i==5)
+        value=1+(rand())/(2*32767.0);
+      dynAppend(sValues,value);
+    } 
+    delay(0,500);
+    bOk=0;
+    dpSet(\"PC_Production_Control.LED_Scanner.green:_original.._value\",1,
+          \"PC_Production_Control.LED_Scanner.red:_original.._value\",0,
+          \"PC_Production_Control.LED_Scanner.value_scanner:_original.._value\",sValues);
+  }
+  else if(bOk)
+  {
+    for(i=1;i<=iLenMax;i++)
+    {
+      value=-1.7+3.4*(rand())/32767.0;
+      if(value<-1.0 || value>1.0)
+        value=-1+(rand())/(32767.0);
+      dynAppend(sValues,value);
+    } 
+    dpSet(\"PC_Production_Control.LED_Scanner.value_scanner:_original.._value\",sValues);
+  }
+  else
+    bOk=1;
+  
+    
+}" 0
+
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+2 530
+"Text1"
+""
+1 501 492 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+370 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 503 494 612 508
+0 2 0 "0s" 0 0 0 192 0 0  503 494 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Ausschuss gesamt
+LANG:10001 10 Total loss
+LANG:10027 23 Общие потери
+2 531
+"Text2"
+""
+1 350 491 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+371 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 352 493 458 507
+0 2 0 "0s" 0 0 0 192 0 0  352 493 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 17 Produktion gesamt
+LANG:10001 16 Total production
+LANG:10027 29 Общая продукция
+2 532
+"Text3"
+""
+1 652 492 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+372 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 654 494 743 508
+0 2 0 "0s" 0 0 0 192 0 0  654 494 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 Produktionsrate
+LANG:10001 15 Production rate
+LANG:10027 36 Производительность
+2 533
+"Text4"
+""
+1 15 492 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+373 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 17 494 66 508
+0 2 0 "0s" 0 0 0 192 0 0  17 494 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Ein / Aus
+LANG:10001 8 On / Off
+LANG:10027 15 Вкл/Выкл
+2 534
+"Text5"
+""
+1 75 492 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+374 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 77 494 234 508
+0 2 0 "0s" 0 0 0 192 0 0  77 494 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 26 Produktionsgeschwindigkeit
+LANG:10001 15 Output per hour
+LANG:10027 22 Выход за час
+2 535
+"Text13"
+""
+1 112 34 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+375 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 114 36 155 49
+0 2 0 "0s" 0 0 0 192 0 0  114 36 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 6 BAND 1
+LANG:10001 10 CONVEYOR 1
+LANG:10027 18 КОНВЕЙЕР 1
+2 536
+"Text14"
+""
+1 112 224 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+376 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 114 226 155 239
+0 2 0 "0s" 0 0 0 192 0 0  114 226 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 6 BAND 4
+LANG:10001 10 CONVEYOR 4
+LANG:10027 18 КОНВЕЙЕР 4
+2 537
+"Text15"
+""
+1 277 34 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+377 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 279 36 320 49
+0 2 0 "0s" 0 0 0 192 0 0  279 36 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 6 BAND 2
+LANG:10001 10 CONVEYOR 2
+LANG:10027 18 КОНВЕЙЕР 2
+2 538
+"Text16"
+""
+1 277 451 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+378 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 279 453 320 466
+0 2 0 "0s" 0 0 0 192 0 0  279 453 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 6 BAND 3
+LANG:10001 10 CONVEYOR 3
+LANG:10027 18 КОНВЕЙЕР 3
+2 539
+"Text17"
+""
+1 589 37 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+379 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 591 39 632 52
+0 2 0 "0s" 0 0 0 192 0 0  591 39 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 6 BAND 6
+LANG:10001 10 CONVEYOR 6
+LANG:10027 18 КОНВЕЙЕР 6
+2 540
+"Text18"
+""
+1 699 37 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+380 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 701 39 742 52
+0 2 0 "0s" 0 0 0 192 0 0  701 39 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 6 BAND 5
+LANG:10001 10 CONVEYOR 5
+LANG:10027 18 КОНВЕЙЕР 5
+2 541
+"Text24"
+""
+1 857 492 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+381 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 859 494 919 508
+0 2 0 "0s" 0 0 0 192 0 0  859 494 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Navigation
+LANG:10001 10 Navigation
+LANG:10027 18 Навигация
+2 542
+"Text10"
+""
+1 41 353 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+382 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 44 355 108 368
+0 2 0 "0s" 0 0 0 194 0 0  108 355 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 9 RECYCLING
+LANG:10001 9 RECYCLING
+LANG:10027 22 ПЕРЕРАБОТКА
+2 543
+"Text12"
+""
+1 929 463 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+383 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 940 465 983 478
+0 2 0 "0s" 0 0 0 194 0 0  983 465 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 7 KÜHLER
+LANG:10001 6 COOLER
+LANG:10027 10 КУЛЕР
+2 544
+"Text22"
+""
+1 893 302 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+384 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 897 304 971 317
+0 2 0 "0s" 0 0 0 194 0 0  971 304 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 10 VERPACKUNG
+LANG:10001 12 To Packaging
+LANG:10027 19 К упаковке
+2 545
+"Text25"
+""
+1 891 324 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+385 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 893 326 981 340
+0 2 0 "0s" 0 0 0 192 0 0  893 326 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Kühlmittelstand
+LANG:10001 13 Cooling agent
+LANG:10027 18 Хладагент
+2 547
+"Text27"
+""
+1 15 23 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+387 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 17 25 82 39
+0 2 0 "0s" 0 0 0 192 0 0  17 25 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Temperatur
+LANG:10001 11 Temperature
+LANG:10027 22 Температура
+2 548
+"Text11"
+""
+1 74 163 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+388 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 75 165 107 178
+0 2 0 "0s" 0 0 0 194 0 0  107 165 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 4 OFEN
+LANG:10001 4 OVEN
+LANG:10027 8 ПЕЧЬ
+2 550
+"Text8"
+""
+1 391 197 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+390 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 394 199 447 212
+0 2 0 "0s" 0 0 0 194 0 0  447 199 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 7 SCANNER
+LANG:10001 7 SCANNER
+LANG:10027 12 СКАНЕР
+2 551
+"Text7"
+""
+1 435 299 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+391 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 439 301 483 314
+0 2 0 "0s" 0 0 0 194 0 0  483 301 1
+3
+LANG:10000 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10001 26 Arial,-1,11,5,50,1,0,0,0,0
+LANG:10027 26 Arial,-1,11,5,50,1,0,0,0,0
+0 3
+LANG:10000 6 PUSHER
+LANG:10001 6 PUSHER
+LANG:10027 18 ТОЛКАТЕЛЬ
+2 578
+"Text26"
+""
+1 901 344 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+414 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  dpConnect(\"disp\",1,\"PC_Production_Control.coolant_level:_online.._value\");
+}
+disp(string dp, float value)
+{
+  this.text = value + \" %\";
+}" 0
+ E 0 1 1 0 1 E U  0 E 903 346 916 360
+0 2 0 "0s" 0 0 0 192 0 0  903 346 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 %
+LANG:10001 1 %
+LANG:10027 1 %
+10 191
+"Polyline6"
+""
+1 975 316 E E E 1 E 1 E N "STD_border_dark" E N {153,153,153} E E
+ E E
+176 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 975 316
+975 304
+983 310
+ 1
+2 157
+"Text6"
+""
+1 75 531 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+142 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 77 533 121 547
+0 2 0 "0s" 0 0 0 192 0 0  77 533 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Qualität
+LANG:10001 7 Quality
+LANG:10027 16 Качество
+20 552
+"CheckButton1"
+""
+1 10 451 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+392 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  8 449 182 483
+1
+T 
+3
+LANG:10000 20 zeige Bewegungspfade
+LANG:10001 10 Show paths
+LANG:10027 37 Показать траектории
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main()
+{
+  bool boVisible;
+  getValue(\"prodPath1\",\"visible\",boVisible);
+  setMultiValue(\"prodPath1\",\"visible\",!boVisible,
+                \"prodPath2\",\"visible\",!boVisible,
+                \"prodPath3\",\"visible\",!boVisible,
+                \"prodPath4\",\"visible\",!boVisible);
+
+}" 0
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 692 36 "" 1
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/STD_SWITCHES/switch_1.pnl" 33 511 T 98 1.26666666666667 0 1.09803921568627 -33.4666666666666 -61.0784313725492
+5
+"$b_IBit""FALSE"
+"$b_Toggle""TRUE"
+"$dpe_value_Off""PC_Production_Control.production_on"
+"$dpe_value_On""PC_Production_Control.production_on"
+"$dpe_value_Rm""PC_Production_Control.production_on"
+3 5 "" -1
+"" ""
+"objects/STD_ACTIVEX/NumericLED_6.pnl" 521 500 T 111 1.03571428571429 0 1.425 -1108.53571428571 -849.875
+7
+"$b_IBit""FALSE"
+"$dpe_value""PC_Production_Control.total_loss"
+"$i_Col""0"
+"$i_Decimals""0"
+"$s_BackCol""[0,0,0]"
+"$s_ColOff""[20,0,0]"
+"$s_ColOn""[100,0,0]"
+3 9 "Group9" -1
+"" ""
+"objects/STD_ACTIVEX/NumericLED_6.pnl" 840 510 T 116 1.02142857142857 0 1.425 -1561.32142857143 -863.875
+7
+"$b_IBit""FALSE"
+"$dpe_value""PC_Production_Control.total_production"
+"$i_Col""1"
+"$i_Decimals""0"
+"$s_BackCol""[0,0,0]"
+"$s_ColOff""[0,20,0]"
+"$s_ColOn""[0,100,0]"
+3 11 "" -1
+"" ""
+"objects/STD_ACTIVEX/NumericLED_4.pnl" 126 400 T 193 1.08 0 1.4 -598.8 -686
+7
+"$b_IBit""FALSE"
+"$dpe_value""PC_Production_Control.production_rate"
+"$i_Col""2"
+"$i_Decimals""2"
+"$s_BackCol""[0,0,0]"
+"$s_ColOff""[20,20,20]"
+"$s_ColOn""[100,100,100]"
+3 12 "" -1
+"" ""
+"objects/STD_INDICATORS/3D_pie_chart.pnl" 76 427 T 204 0.5901639344262291 0 0.597938144329897 909.688524590164 391.20618556701
+6
+"$b_pvssRange""FALSE"
+"$dpe_percentage1""PC_Production_Control.production_rate"
+"$f_max""100"
+"$f_min""0"
+"$s_col1""[60,60,60]"
+"$s_col2""[100,100,100]"
+3 15 "posInd" -1
+"" ""
+"objects/posIndicator.pnl" 627 288 T 216 1 0 1 24 18
+0
+3 25 "PartsGroup_1" -1
+"" ""
+"objects_parts/PC_parts.pnl" 880 30 T 313 1 0 1 -8 71
+0
+3 26 "PartsGroup_2" -1
+"" ""
+"objects_parts/PC_parts.pnl" 550 210 T 314 1 0 1 182 -109
+0
+3 29 "Group16" -1
+"" ""
+"objects/STD_LEDS/Led_OnOff_1.pnl" 409 175 T 340 0.442622950819672 0 0.442622950819672 238.223910435826 99.593762495002
+8
+"$b_IBit""FALSE"
+"$b_ShowAlert""TRUE"
+"$dpe_value_0""PC_Production_Control.LED_Scanner.red"
+"$dpe_value_1""PC_Production_Control.LED_Scanner.green"
+"$s_ColOff_0""STD_led_Off"
+"$s_ColOff_1""STD_led_Off"
+"$s_ColOn_0""STD_alert"
+"$s_ColOn_1""STD_led_On"
+3 30 "Group18" -1
+"" ""
+"objects/STD_LEDS/Led_OnOff_1.pnl" 450 270 T 345 0.442622950819672 0 0.442622950819672 258.223910435826 150.593762495002
+8
+"$b_IBit""FALSE"
+"$b_ShowAlert""TRUE"
+"$dpe_value_0""PC_Production_Control.pusher.LED_red"
+"$dpe_value_1""PC_Production_Control.pusher.LED_green"
+"$s_ColOff_0""STD_led_Off"
+"$s_ColOff_1""STD_led_Off"
+"$s_ColOn_0""STD_alert"
+"$s_ColOn_1""STD_led_On"
+3 31 "Arm" -1
+"" ""
+"objects_parts/scaraArm.pnl" 845 198 T 350 1 0 1 23 24
+0
+3 32 "Group22" -1
+"" ""
+"objects/STD_LEDS/Led_1.pnl" 576 160 T 358 0.354838709677419 0 0.354838709677419 369.06699751861 101.02729528536
+5
+"$b_IBit""TRUE"
+"$b_ShowAlert""TRUE"
+"$dpe_value""PC_Production_Control.Robot_Control.move_parts"
+"$s_ColOff""STD_led_Off"
+"$s_ColOn""STD_led_On"
+3 33 "Group24" -1
+"" ""
+"objects/STD_LEDS/Led_1.pnl" 768 454 T 363 0.354838709677419 0 0.354838709677419 493.06699751861 291.02729528536
+5
+"$b_IBit""TRUE"
+"$b_ShowAlert""TRUE"
+"$dpe_value""PC_Production_Control.Robot_Control.LED_Sensor"
+"$s_ColOff""STD_led_Off"
+"$s_ColOn""STD_led_On"
+3 35 "Group28" -1
+"" ""
+"objects/STD_INDICATORS/Pillar_transparent.pnl" 940 347 T 413 0.571428571428571 0 0.6875 417 202.8125
+7
+"$b_IBit""FALSE"
+"$b_PvRange""FALSE"
+"$b_showAlert""FALSE"
+"$dpe_value""PC_Production_Control.coolant_level"
+"$f_Max""100"
+"$f_Min""0"
+"$s_Col""STD_bar"
+3 36 "" -1
+"" ""
+"objects/help_button_large.pnl" 35 426 T 416 1 0 1 -25 -26
+1
+"$hlp_keyword""da_production"
+3 38 "PANEL_REF39" -1
+"" ""
+"objects/STD_ACTIVEX/NumericLED_6.pnl" -996 -381 T 422 0.654676258992806 0 1.1031339031339 -10.8776978417266 -22.6319088319088
+7
+"$b_IBit""TRUE"
+"$dpe_value""PC_Production_Control.oven_temperature"
+"$i_Col""3"
+"$i_Decimals""0"
+"$s_BackCol""{0,0,0}"
+"$s_ColOff""{0,0,0}"
+"$s_ColOn""{0,0,255}"
+0

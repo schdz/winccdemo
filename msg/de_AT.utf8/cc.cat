@@ -1,0 +1,251 @@
+deviceType1,SMS (GSM)
+deviceType2,Sprachausgabe
+deviceType3,Pager
+deviceType4,SMS (Analog)
+deviceType5,Email
+deviceType6,Fax
+
+ccCallingList,Anruflistenverwaltung
+ccDataset,Alarmgruppenverwaltung
+ccGeneral,Allgemeine Einstellungen
+ccSchedulerDays,Verwaltung der Sondertage
+ccOverPara,Terminplan-Überparametrierung
+ccPara,Communication Center Parametrierung
+ccCyclicDataset,Zyklische Datensätze
+
+datasetinuse,Diese Alarmgruppe wird verwendet (%1 %2), kann nicht gelöscht werden!
+callinglistinuse,Die Anrufliste wird verwendet (%1 %2), kann nicht gelöscht werden!
+invalidMail,Die Email-Adresse hat einen ungültigen Format!
+invalidNumber,Die Nummer enthält ungültige Zeichen (gültig sind '+' und '0'-'9')!
+invalidPIN,PIN ist ungültig (sie soll aus vier Ziffern bestehen)!
+deviceEmpty,Füllen Sie bitte alle Felder richtig aus!
+recipientUsed,Dieser Benutzer wird verwendet (%1 %2), kann nicht gelöscht werden!
+deviceUsed,Dieses Gerät wird verwendet (%1 %2), kann nicht gelöscht werden!
+devicetypeUsed,Dieser Gerätetyp wird verwendet (%1 %2), kann nicht gelöscht werden!
+deviceNotUsed,Dieses Gerät wird nicht verwendet, soll nicht freigegeben werden.
+confirmRelease,Möchten Sie dieses Gerät wirklich freigeben?
+shiftNameEmpty,Der Schichtname darf nicht leer sein!
+userChanged,Die Benutzerdaten wurden geändert! Möchten Sie sie speichern?
+userNotInDomain,Einige Benutzer dieser Anrufliste gehören nicht zu der aktuellen Branche! Soll die Anrufliste trotzdem verwendet werden?
+use,Verwenden
+dontuse,Nicht verwenden
+deviceTypeNameEmpty,Der Gerätetypname darf nicht leer sein!
+callingListNameEmpty,Der Anruflistenname darf nicht leer sein!
+domainNameEmpty,Der Branchenname darf nicht leer sein!
+shiftSetNameEmpty,Der Schichtabfolgename darf nicht leer sein!
+shiftNameEmpty,Der Schichtname darf nicht leer sein!
+changeTopLevel?,Möchten Sie wirklich diese Schichtabfolge als Hauptschichtabfolge verwenden? ACHTUNG: alle Überparametrierungen der Branche werden gelöscht!
+change,Ändern
+deviceExists,Gerät mit diesem Namen oder mit dieser Nummer existiert schon!
+errorConnectAlertGroup,Fehler beim Lesen der Alarmgruppe!
+alertGroupEmpty,Die Branche kann noch nicht verwendet werden, da ihre Alarmgruppe noch nicht parametriert ist!
+confirmPin,Der PIN-Code und die PIN-Code-Bestätigung sind unterschiedlich!
+confirmPassword,Das Passwort und die Passwort-Bestätigung sind unterschiedlich!
+newProvider,Neuer Provider
+modifyProvider,Provider ändern
+deleteProvider?,Möchten Sie den Provider wirklich löschen?
+providerUsed,Provider darf nicht gelöscht werden, er wird verwendet (%1)!
+wrongSplitTime,Der Zeitpunkt der Aufteilung soll zwischen dem Beginn und dem Ende des ausgewählten Intervalls sein!
+
+devicetype,Gerätetyp
+device,Gerät
+callingList,Anrufliste
+user,Benutzer
+User,Benutzer
+Substitute,Vertreter
+FallbackPerson,Ersatzliste
+domain,Branche
+shift,Schicht
+Shift,Schicht
+cyclicDataset,Zykl.Datensatz
+allocate,Belegen
+specialDays,Sondertage
+timeChart,Terminplan der Branche 
+start,Beginn
+end,Ende
+name,Name:
+deviceTypeName,Gerätetypname
+domainName,Branchenname
+shiftName,Schichtname
+shiftSetName,Schichtabfolgenname
+input, eingeben
+reachability,Erreichbarkeit
+printedOn,Gedruckt am:
+newUser,Neuer Benutzer
+
+shiftPanel,Schichtverwaltung
+shiftAggregationPanel,Schichtabfolgenverwaltung
+dpGroups,DP-Gruppen
+newCyclic,Zyklischer Datensatz anlegen
+changeCyclic,Zyklischer Datensatz ändern
+splitInterval,Zeitintervall aufteilen
+
+noSubstitute,Keine Vertretung
+allocatedTimeTooLongNotAllowed,Belegter Zeitraum für einen Benutzer darf nicht länger als %1 Stunden sein!
+allocatedTimeTooLong,Belegter Zeitraum länger als %1 Stunden gefunden! Möchten Sie troztdem belegen?
+multipleAllocatedNotAllowed,Der Benutzer darf nicht in mehreren Schichten belegt werden (gefunden auch in %1)!
+multipleAllocated,Der Benutzer wird in mehreren Schichten belegt (gefunden auch in %1)! Möchten Sie troztdem belegen?
+inDomainUsed,Branche '%1' darf nicht entfernt werden, der Benutzer wird verwendet (%2 %3)!
+noFallOutSubstitute,Keine Vertretung für die ausgefallene Person definiert!
+
+overlappedPeriods,Sie haben überlappende Zeitbereiche angegeben! Definieren Sie die Periode erneut!
+operationOverlapped,Überlappende Zeitbereiche angegeben!
+durationTooLong,Die von Ihnen definierte Periode ist zu lang!
+noUserSelected,Wählen Sie erst bitte einen Benutzer!
+fromBiggerThenTo,Die Startzeit(Von) muß kleiner sein als die Endzeit(Bis)!
+operationAdded,Neue Betriebszeitraum wurde angefügt.
+operationModified,Betriebszeitraum wurde geändert.
+usedAsTopLevel,Schichtabfolge wird als Hauptschichtabfolge in der Branche '%1' verwendet, kann nicht gelöscht werden!
+noMixedShiftsAllowed,Tag-abhängige und -unabhängige Schichten dürfen in einer Schichtabfolge gleichzeitig nicht verwendet werden!
+notMonday,Startdatum der Hauptschichtabfolge darf nur ein Montag sein!
+
+cannotBeChanged,Zeitbereich darf nur in der Schichtverwaltung geändert werden!
+cannotBeShifted,Zeitbereich darf nur in der Schichtverwaltung verschoben werden!
+noUserFound,Benutzer nicht gefunden!
+substituteUser(s)?,Soll(en) der (die) Benutzer durch den Benutzer '%1' ersetzt werden?
+substitute,Ersetzen
+substituteUser,Benutzer ersetzen
+noGapAllowed,Sie dürfen keine Lücken definieren!
+cannotBeAdded,Neue Zeitbereiche dürfen nur in der Schichtverwaltung definiert werden!
+pastNotAllowed,Einstellungen in der Vergangenheit sind nicht mehr änderbar!
+removeOverPara,Überparametrierung entfernen
+removeOverPara?,Möchten Sie die Überparametrierung von %1 wirklich entfernen?
+remove,Entfernen
+selectUser,Benutzer auswählen
+changeWithLeft,Benutzer mit dem linken vertauschen
+changeWithRight,Benutzer mit dem rechten vertauschen
+startOutOfDay,Der Zeitbereich darf nicht vor dem Tagesbegin angefangen werden!
+endOutOfDay,Der Zeitbereich darf nicht nach dem Tagesende beendet werden!
+leftGap,Der Anfang des Zeitbereiches darf nicht in einer Lücke liegen!
+rightGap,Das Ende des Zeitbereiches darf nicht in einer Lücke liegen!
+overGap,Der Zeitbereich darf nicht über eine Lücke liegen!
+removeMessages,Nachricht entfernen
+removeMessages?,Möchten Sie die ausgewählte(n) Nachricht(en) wirklich entfernen?
+removeAllMessages?,Möchten Sie wirklich alle Nachrichten der Queue löschen?
+messageDeletedBy,Nachricht wurde entfernt vom WinCC OA-Benutzer 
+noDomainWithShiftPlan,Es wurde keine Branche gefunden, die mit Hauptschichtabfolge parametriert ist!
+queueEmpty,Die Queue ist leer.
+noDomainSelected,Wählen Sie erst eine Branche aus!
+invalidID,Die ID ist ungültig! Sie darf '|', '<>' und '°' nicht enthalten!
+deleteBarWithButton,Zum Löschen eines Intervals verwenden Sie bitte die Löschen-Taste (links neben der Zeitleiste)!
+notAllUsersInDomain,Die ausgewählte Anrufliste kann hier nicht verwendet werden, sie enthält Benutzer die nicht zu dieser Branche gehören!
+duplicatedPin,Diese PIN wurde schon einem anderen Benutzer zugewiesen!
+noCLswitchOut,Es wurde keine Anrufliste definiert! Die Branche '%1' wird auf "Aus" gesetzt!
+noCLswitchedOut,Es wurde keine Anrufliste definiert! Die Branche '%1' wurde auf "Aus" gesetzt!
+
+usedWithEmptyGroup,Branche mit leerer Alarmgruppe kann nicht verwendet werden! Klicken Sie bitte auf 'Bearbeiten' um die Alarmgruppe zu bearbeiten!
+editGroup,Bearbeiten
+restartCtrl,Starten Sie bitte die Ctrl-Manager mit dem Skript ccController.ctl neu, wenn Sie die Einstellungen geändert haben!
+
+#ts := telScript - Texte für das Telefonat
+
+
+#MAIN
+tsHello,Guten Tag
+tsIntro,Hier ist das Communication Center.
+tsCompanie,EH TEE EM.
+
+#LOGIN
+tsLogin,Bitte geben Sie ihre PIN Nummer ein.
+tsLoginNoDtmf,Ich habe noch keine DTMF Töne erkennen können! Bitte versuchen Sie es noch einmal.
+tsLoginWrong,Die eingegebene PIN Nummer ist mir nicht bekannt! Bitte versuchen sie es noch einmal.
+
+#MNU_MAIN
+tsMnuMain,Hauptmenü
+tsMnuMain1,Mit der 1 können Sie aktuelle Alarme anhören.
+tsMnuMain2,Mit der 2 können Sie Nachrichten bestätigen.
+tsMnuMain3,Mit der 3 kommen Sie zur Alarmübersicht.
+tsMnuMain4,Mit der 4 können Sie sich die Alarmübersicht zustellen lassen.
+tsMnuMain5,Mit der 5 können Sie Datensätze abhören.
+tsMnuMain#,Mit der # Taste beenden Sie die Verbindung.
+tsMnuMainRetour,Mit der # Taste kommen Sie wieder in das Hauptmenü.
+
+#ALERT
+tsAlert,Alarm Menü
+tsAlertCount,Es sind [AlertCount] Alarme vorhanden.
+tsNoAlerts,Es sind keine aktuellen Alarme vorhanden.
+tsFirstAlert,Das war der erste Alarm
+tsLastAlert,Das war der letzte Alarm
+tsAlertTextError,Interner Fehler! Der Text des Alarms konnte nicht erstellt werden!
+
+#CONFIRM
+tsAlertSessionId,Bitte geben Sie den vier stelligen Bestätigungscode ein, der Ihnen per SMS oder EMAIL zugesandt wurde.
+tsConfirmAlertCount,Es sind [AlertCount] Alarme vorhanden.
+tsConfirmNoAlerts,Der Bestätigungscode ist nicht richtig oder die Alarme sind nicht mehr relevant.
+tsAlertNotify,Der Alarm wurde bestätigt
+tsAlertNotifyError,Der Alarm konnte nicht bestätigt werden.
+tsAlertNotifyAll,Es wurden [AlertCount] Alarme bestätigt.
+
+#ALERTOVERVIEW
+tsAlertOverview,Alarm Übersicht
+
+#OVERVIEW
+tsOverview,Abruf der Alarm Übersicht
+tsOverview1,Für EMAIL Abruf drücken Sie die 1
+tsOverview2,Für FAX Abruf drücken Sie die 2
+tsAskForDomain,Bitte wählen Sie eine ihrer Branchen aus.
+tsNotUsersDomain,Der Branche mit der Nummer [DomainIdx] sind Sie nicht zugeordnet
+tsNoMailAddress,Ich kenne leider Ihre EMAIL Adresse nicht.
+tsMailSent,Ich habe die Übersicht abgeschickt.
+tsMailNoAlerts,Es sind keine Alarme vorhanden, daher habe ich keine Übersicht abgeschickt.
+tsMailError,Es ist der Fehler mit der Nummer [ErrorNumber] aufgetretten.
+
+#MNU_ALERT
+tsMnuAlert4,Mit der 4
+tsMnuAlert5,5 und
+tsMnuAlert6,6 können Sie durch die Alarme navigieren.
+tsMnuAlert*,Mit der Sternchen Taste können Sie einen Alarm bestätigen.
+tsMnuAlert0,Mit der Null können Sie alle Alarme auf einmal bestätigen.
+
+#DO_ALERT
+
+#DATASET
+tsEnterDataSetID,Welchen Datensatz möchten Sie hören?
+tsMnuDataSet4,Mit der 4
+tsMnuDataSet5,5 und
+tsMnuDataSet6,6 können Sie durch den Datensatz navigieren.
+
+tsNoDataSet,Ich habe den Datensatz nicht gefunden!
+tsDataSetNoDps,Es sind keine Daten für diesen Datensatz vorhanden!
+tsFirstDataSet,Das war der erste Eintrag
+tsLastDataSet,Das war der letzte Eintrag
+#TIMEOUT_RETRY
+tsTimeOutRetry,Hallo? Sind Sie noch da?
+
+#TIMEOUT_QUIT
+tsTimeOutQuit,Ich beende jetzt die Verbindung.
+
+#END
+tsEnd,Ich wünsche Ihnen noch einen schönen Tag.
+tsNZD,Diese Funktion ist noch nicht implementiert
+
+#gsm - Texte für GSM Modem
+gsmWrongPIN,Die PIN [PIN] ist nicht korrekt!
+gsmWrongSessionId,Der Bestätigungscode [SessionId] ist nicht korrekt!
+gsmNoAlerts,Tut mir leid, aber fuer den Bestätigungscode [SessionId] gibt es keine Alarme!
+gsmConfirm,Danke, ich habe [AlertCount] Alarme bestätigt.
+
+MsgState_1,Nachricht ist aufgenommen.
+MsgState_2,Nachricht wird geblockt.
+MsgState_3,Nachricht wurde geblockt.
+#MsgState_4,Nachricht wird Versendet.
+MsgState_4,
+MsgState_5,Nachricht wurde um [MsgTime] an [MsgUserName] gesendet.
+MsgState_6,Nachricht konnte nicht an [MsgUserName] gesendet werden.
+MsgState_7,Nachricht wurde um [MsgTime] von [MsgUserName] bestätigt.
+MsgState_8,Nachricht wurde nicht von [MsgUserName] bestätigt.
+MsgState_9,Nachricht wurde um [AlertAckTime] quittiert.
+MsgState_10,Nachricht wurde noch nicht quittiert.
+MsgState_11,Nachricht ist abgeschlossen.
+MsgState_12,Nachricht wurde um [MsgTime] gelöscht.
+
+AlertState_1,kam
+AlertState_2,kam quittiert
+AlertState_3,ging
+AlertState_4,kam und ging unquittiert
+
+MsgTemplate,[AlertDescription] [AlertText] [AlertState] um [AlertTime], Wert ist [AlertValue]. [MsgState]
+#MsgTemplate_Tel,
+MsgTemplate_Sms,([MsgSessionId]) [AlertDescription] [AlertText] [AlertState] um [AlertTime]. Wert: [AlertValue]. [MsgState]
+MsgTemplate_Gsm,[AlertDescription] [AlertText] [AlertState] um [AlertTime]. Wert: [AlertValue]. [MsgState]
+#MsgTemplate_EMail,

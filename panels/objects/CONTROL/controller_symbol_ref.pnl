@@ -1,0 +1,217 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 323 230 N "_3DFace" 1
+"$controller"
+E E E E E 1 -1 -1 0  42 17
+""0  1
+E E 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+2 25
+"Text1"
+""
+1 42 17 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.text = dpGetDescription($controller+\".\");
+  this.toolTipText = getCatStr(\"control\",\"controller_loop\") + $controller + \" \" + getCatStr(\"control\",\"click_to_settings\"); 
+}" 0
+ "main()
+{
+  if(getUserPermission(2))
+  {
+    ChildPanelOnCentral(\"objects/CONTROL/controller_faceplate_ref.pnl\",dpGetDescription($controller+\".\"),makeDynString(\"$controller:\"+$controller));
+  
+  }
+}" 0
+ 0 1 1 0 1 E U  0 E 44 19 113 37
+0 2 0 "0s" 0 0 0 64 0 0  44 19 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 Text1
+LANG:10001 5 Text1
+LANG:10027 5 Text1
+6 23
+"border_3d"
+""
+1 14 40 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+2
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 14 14 41 40
+6 7
+"pic"
+""
+1 15 39 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  dpConnect(\"manageAccess\",myUiDpName()+\".UserName\",
+  			               $controller+\".cmd.on\",
+  			               $controller+\".parameters.scanrate\");
+}
+
+manageAccess(string dp1, string UserName, string dp2, bool on, string dp3, int rate)
+{
+
+ if (getUserPermission(2))
+ {
+   if(on && (rate > 0))
+     setMultiValue(\"\",\"fill\",\"[pattern,[fit,wmf,Misc/auto_mode_loop_green.wmf]]\",
+   			       \"\",\"enabled\", true,
+   			       \"border_3d\",\"borderStyle\", 2,
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_on\"));
+   else
+     setMultiValue(\"\",\"fill\",\"[pattern,[fit,wmf,Misc/manual_mode_operation_red.wmf]]\",
+   			       \"\",\"enabled\", true,
+   			       \"border_3d\",\"borderStyle\", 4,
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_off\"));   
+ }
+ else
+ {
+   if(on && (rate > 0))
+     setMultiValue(\"\",\"fill\",\"[pattern,[fit,wmf,Misc/auto_mode_loop_grey.wmf]]\",
+   			       \"\",\"enabled\", false,
+   			       \"border_3d\",\"borderStyle\", 2,
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_on\"));
+   else
+     setMultiValue(\"\",\"fill\",\"[pattern,[fit,wmf,Misc/manual_mode_operation_grey.wmf]]\",
+   			       \"\",\"enabled\", false,
+   			       \"border_3d\",\"borderStyle\", 4,
+   			       \"\",\"toolTipText\",getCatStr(\"control\",\"control_off\"));   
+ }
+}" 0
+ "main()
+{
+  bool state;
+  
+  if(getUserPermission(3))
+  {
+    dpGet($controller+\".cmd.on\",state);
+    dpSet($controller+\".cmd.on\",!state);
+  }
+
+}" 0
+ 0 1 1 0 1 E U  0 E 15 15 40 39
+6 8
+"Border6"
+""
+1 10 45 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  this.fill = \"[solid]\";
+  this.toolTipText = getCatStr(\"control\",\"controller_loop\") + $controller + \" \" + getCatStr(\"control\",\"click_to_settings\");
+}" 0
+ "main()
+{
+  if(getUserPermission(2))
+  {
+    ChildPanelOnCentral(\"objects/CONTROL/controller_faceplate_ref.pnl\",dpGetDescription($controller+\".\"),makeDynString(\"$controller:\"+$controller));
+  
+  }
+}" 0
+ 0 1 1 0 1 E U  0 E 10 10 120 45
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

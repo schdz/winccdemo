@@ -1,0 +1,634 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 265 146 N "_3DFace" 4
+"$Direction_Name_1"
+"$Direction_Name_2"
+"$Dp_Name_1"
+"$Dp_Name_2"
+"main()
+{
+
+}" 0
+ E E E E 1 -1 -1 0  11 60
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+2 31
+"Text2"
+""
+1 14 59 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 61 72 83
+0 2 0 "0s" 0 0 0 64 0 0  16 61 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 PKW. :
+LANG:10001 10 Motor car:
+LANG:10027 10 Легк.:
+2 32
+"Text3"
+""
+1 14 80 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 82 62 98
+0 2 0 "0s" 0 0 0 64 0 0  16 82 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 LKW. :
+LANG:10001 4 HGV:
+LANG:10027 10 Груз.:
+2 33
+"Text4"
+""
+1 14 101 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 103 65 122
+0 2 0 "0s" 0 0 0 64 0 0  16 103 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Gesamt :
+LANG:10001 6 total:
+LANG:10027 11 Всего:
+2 34
+"direction_2"
+""
+1 137 37 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 139 39 226 55
+0 2 0 "0s" 0 0 0 64 0 0  139 39 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Mustertal
+LANG:10001 9 Mustertal
+LANG:10027 15 Мустерт.
+2 35
+"Text6"
+""
+1 198 37 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 200 39 245 55
+0 2 0 "0s" 0 0 0 64 0 0  200 39 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Gesamt
+LANG:10001 5 total
+LANG:10027 10 Всего
+2 36
+"Car_count_1"
+""
+1 76 59 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 78 61 124 83
+0 2 0 "0s" 0 0 0 66 0 0  78 61 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 37
+"HGV_count_1"
+""
+1 76 80 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+38 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 78 82 124 98
+0 2 0 "0s" 0 0 0 66 0 0  78 82 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 38
+"total_1"
+""
+1 76 101 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 78 103 124 122
+0 2 0 "0s" 0 0 0 66 0 0  78 103 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 39
+"Car_count_2"
+""
+1 136 59 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+40 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 138 61 185 83
+0 2 0 "0s" 0 0 0 66 0 0  138 61 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 40
+"HGV_count_2"
+""
+1 136 80 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 138 82 185 98
+0 2 0 "0s" 0 0 0 66 0 0  138 82 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 41
+"total_2"
+""
+1 136 101 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 138 103 185 122
+0 2 0 "0s" 0 0 0 66 0 0  138 103 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 42
+"Car_count_3"
+""
+1 196 59 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 198 61 246 83
+0 2 0 "0s" 0 0 0 66 0 0  198 61 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 43
+"HGV_count_3"
+""
+1 196 80 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 198 82 246 98
+0 2 0 "0s" 0 0 0 66 0 0  198 82 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 44
+"total_3"
+""
+1 196 101 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 198 103 246 122
+0 2 0 "0s" 0 0 0 66 0 0  198 103 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 0
+LANG:10027 1 0
+2 45
+"Text16"
+""
+1 14 37 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 39 112 55
+0 2 0 "0s" 0 0 0 64 0 0  16 39 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Richtung:
+LANG:10001 10 Direction:
+LANG:10027 16 Направл.:
+2 46
+"direction_1"
+""
+1 78 37 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 80 39 126 55
+0 2 0 "0s" 0 0 0 64 0 0  80 39 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Neudorf
+LANG:10001 7 Neudorf
+LANG:10027 9 Нойд.
+4 47
+"Line2"
+""
+1 72 32 E E E 1 E 1 E N {0,102,51} E N {255,255,255} E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E  72 126 72 32
+4 48
+"Line10"
+""
+1 133 32 E E E 1 E 1 E N {0,102,51} E N {255,255,255} E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E  133 125 133 32
+4 49
+"Line11"
+""
+1 193 32 E E E 1 E 1 E N {0,102,51} E N {255,255,255} E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E  193 126 193 32
+6 50
+"Border1"
+""
+1 13 125 E E E 1 E 1 E N {0,102,51} E N "_Transparent" E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 13 32 253 125
+2 51
+"Text7"
+""
+1 13 11 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  string  sDpeName_1=$Dp_Name_1,
+          sDpeName_2=$Dp_Name_2;  
+   
+  //sDirection_1=$Direction_Name_1,
+  //sDirection_2=$Direction_Name_2,
+  
+  direction_1.text=$Direction_Name_1;
+  direction_2.text=$Direction_Name_2;
+  direction_1.visible=1;
+  direction_2.visible=1;
+  
+  dpConnect(\"workTrafficCount\",sDpeName_1+\"motor_car:_online.._value\",
+                               sDpeName_1+\"HGV:_online.._value\",
+                               sDpeName_2+\"motor_car:_online.._value\",
+                               sDpeName_2+\"HGV:_online.._value\");
+  
+}  
+workTrafficCount(string dpe_1,int iCar_1,
+                 string dpe_2,int iHGV_1,
+                 string dpe_3,int iCar_2,
+                 string dpe_4,int iHGV_2)
+{
+
+  Car_count_1.text = iCar_1;
+  HGV_count_1.text = iHGV_1;
+  Car_count_2.text = iCar_2;
+  HGV_count_2.text = iHGV_2;
+  Car_count_3.text = iCar_1 + iCar_2;
+  HGV_count_3.text = iHGV_1 + iHGV_2;
+  total_1.text = iCar_1 + iHGV_1;
+  total_2.text = iCar_2 + iHGV_2;
+  total_3.text = iCar_1 + iHGV_1 + iCar_2 + iHGV_2;
+
+}" 0
+ E 0 1 1 0 1 E U  0 E 15 13 127 27
+0 2 0 "0s" 0 0 0 192 0 0  15 13 1
+3
+LANG:10000 26 Arial,-1,12,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,75,0,0,0,0,0
+0 3
+LANG:10000 18 Verkehrszählungen
+LANG:10001 13 Traffic count
+LANG:10027 22 Кол-во машин
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

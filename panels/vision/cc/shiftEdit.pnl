@@ -1,0 +1,3546 @@
+V 13
+3
+LANG:10000 12 Edit Schicht
+LANG:10001 10 Edit Shift
+LANG:10027 39 Редактирование смены
+PANEL,-1 -1 1010 577 N "_3DFace" 6
+"$1"
+"$2"
+"$3"
+"$4"
+"$5"
+"$aut"
+"void main()
+{
+  string         dayString, domain, strText;
+  langString     shiftName;
+  bool           daybound;
+  time           begin;
+  dyn_string     recipient, agency, color, pNumber, name, addressingText,
+                 addressField1, addressField2, callingList, remoteAlert, password, language;
+  dyn_string     domains, user, substPerson;
+  int            err, i, j, beginIndex, iTime, iLen, iWeekDay;
+  dyn_dyn_string isMember;
+  dyn_uint       workLoadLevel, fallOut;
+  dyn_bool       ackPermission;
+  
+  ccSimulateValues();  
+  
+  ccDefineColors();
+  if ( isMotif() )
+  {
+//    panelSize(myPanelName(), 710, 596);
+    LayerOff(2);
+    LayerOn(3);
+  }
+  else
+  {
+    LayerOff(3);
+    LayerOn(2);
+  }
+
+  if ( isDollarDefined(\"$aut\") && $aut == \"1\" )
+  {
+    PanelOffPanel(getCatStr(\"CommunicationCenter\", \"shiftEntry\"));
+  }
+
+  cmdShowIndex.visible = (isMotif());
+  cmdNewShiftEntry.toolTipText = getCatStr(\"CommunicationCenter\",\"noDurOrPersonnel\");
+  cmdChangeShiftEntry.toolTipText = getCatStr(\"CommunicationCenter\",\"noTimeDurOrPersonnel\");
+  cmdDeleteShiftEntry.toolTipText = getCatStr(\"CommunicationCenter\",\"noTimeOrDuration\");
+
+  addGlobal(\"days\",DYN_DYN_INT_VAR);  //per day a line, per quarter a column, 
+                                      //includes the indizess of the recipient or -1 for invalid and 0 for empty
+  addGlobal(\"showIndex\",BOOL_VAR);    //switch if the index should be shown or not
+  addGlobal(\"selTimeIndex\",INT_VAR);  //selected column in tblShiftHalfDays (column+line*4)
+  addGlobal(\"shiftDP\",STRING_VAR);
+  addGlobal(\"itemIndex\",INT_VAR);
+  itemIndex = 0;
+  addGlobal(\"barIndex\",INT_VAR);
+  barIndex = 0;
+  addGlobal(\"oldTimeStart\",INT_VAR);
+  oldTimeStart = 0;
+  addGlobal(\"oldTimeEnd\",INT_VAR);
+  oldTimeEnd = 0;
+  shiftDP = $1;
+  
+  selTimeIndex = -1;  //no selection
+  
+  while (dynlen(days) > 0) //remove every day    //mtrummer: besser dynClear(days);
+    dynRemove(days,1);
+  
+  showIndex = false;  //defaultvalue
+  cmdShowIndex.text = (showIndex)?getCatStr(\"CommunicationCenter\",\"hideIndex\"):getCatStr(\"CommunicationCenter\",\"showIndex\");
+  
+  //Tablesettings
+  setValue(\"tblPersonnel\", \"selectByClick\", TABLE_SELECT_LINE);
+  setValue(\"tblPersonnel\", \"tableMode\", TABLE_SELECT_BROWSE);
+
+  tblPersonnel.sortOnClick = false;
+
+  tblPersonnel.selectColors(\"_ButtonShadow\", \"_Window\");
+  
+  dpGet(\"_CommCenter.Configuration.MaxTimeForRecipient:_online.._value\", iTime);
+/*
+  if ( iTime > 0 )
+  {
+    spnDurencyHour.sbMaximum = iTime;
+  }
+*/    
+  txtDomain.text = $2;
+  dayString = ($3 == \"\")?(\"\"):($3+\" \"+getCatStr(\"CommunicationCenter\",\"at\")+\" \");
+  dayString += ($5 < 10)?($4+\":0\"+$5):($4+\":\"+$5);
+  txtFrom.text = dayString;
+  
+  domains = dpNames(\"*\",\"_CommCenterDomains\");
+  for ( i = 1; i <= dynlen(domains); i++)
+    domains[i] = dpGetComment(domains[i]+\".\");
+    
+  ccGetRecipients(pNumber, name, isMember, workLoadLevel, addressingText, addressField1, addressField2, 
+                  callingList, remoteAlert, password, language, ackPermission, user, fallOut, substPerson);
+                  
+  //fill cboRecipient
+  // IM119273
+  cboRecipient.deleteAllItems();
+  for (i = 1; i <= dynlen(pNumber); i++)
+      cboRecipient.appendItem(name[i]+\" (\"+pNumber[i]+\")\");
+  
+  i = $4;
+  j = $5;
+  beginIndex = (i*60+j)/15+1; //convert hours to minutes, add to minutes; 15min per Index, indexbegin 1
+  
+  if (dpExists(shiftDP)) //Edit an existing Shift -> get existing datas
+  {
+    int i;
+    dyn_string aggs, ds;
+    
+    ccGetShift(shiftDP, shiftName, domain,daybound,begin,days,recipient,agency,color,err);  //read saved Data
+    ds = shiftName;
+    dsName.items = ds;
+    txtShiftName.text = shiftName;
+    txtShiftName.editable = (getNoOfLangs() < 2);
+    cmd1lang.visible = (getNoOfLangs() < 2);
+    cmd2lang.visible = (getNoOfLangs() > 1);
+    tblPersonnel.deleteAllLines();
+    for (i = 1; i <= dynlen(recipient); i++)
+    {
+      tblPersonnel.appendLine(\"Index\",i,
+                              \"Recipient\",name[dynContains(pNumber,recipient[i])],
+                              \"RecPNr\",recipient[i],
+                              \"Agency\",(agency[i] == \"\")?\"\":name[dynContains(pNumber,agency[i])],
+                              \"AgePNr\",agency[i]);
+      tblPersonnel.cellValueRC(i-1,\"Color\",makeDynString(color[i],color[i],color[i]));
+      if ( i > cboColor.itemCount )
+      {
+        cboColor.appendItem(color[i]);
+      }
+    }
+    ccUsedInAggs(shiftDP,aggs);
+    if (dynlen(aggs) > 0)
+    {
+      cmdDeleteShiftEntry.visible = false;
+      cmdNewShiftEntry.visible = false;       
+    }
+  }
+  
+  iLen = dynlen(days);
+  for (i = 1; i < beginIndex; i++) //fill from 0.00 to beginindex with value -1 (invalid)
+    days[1][i] = -1;
+  if ( dynlen(days) > 0 && dynlen(days[1]) < beginIndex )
+    days[1][beginIndex]=0;  //end with 0 IM 80106
+  
+  if (cboColor.text != \"\")
+    cboColor.backCol = cboColor.text;
+
+  //draw ctSchedule
+  cc_ewoSettings(true);
+  cc_displayBarsFromDynDynInt(days);
+  cc_changeAgency();
+}" 0
+ E E E E 1 -1 -1 0  410 260
+""0  1
+E "#uses \"CommunicationCenter.ctl\"
+#uses \"ccSimulation.ctl\"
+
+/////////////////////////////////////////////////////////////////////////
+// global variables
+// MISC
+// ----
+  int              p_iChanges,
+                   p_iDay,
+                   p_iSpFromH,
+                   p_iSpFromM,
+                   p_iSpFromS,
+                   p_iSpToH,
+                   p_iSpToM,
+                   p_iI,
+                   p_iSelBarTimeStart, 
+                   p_iSelBarTimeEnd,
+                   p_iSelBarTimeStartSec, 
+                   p_iSelBarTimeEndSec,
+                   p_iChange,
+                   p_iDpeType;
+  bool             p_bManEn,
+                   p_bCancel = FALSE;
+  string           p_sSelBarKeyID,
+                   p_sSystemBez = getSystemName(),
+                   p_sNewDP = \"\";
+  dyn_langString   p_dlsSpecDayList; 
+  int              p_iIdx, p_jIdx;
+// ActiveX Global Variables
+// ------------------------
+  long              p_lDayStart, 
+                    p_lDayEnd,
+                    p_lCuBarTimeEnd,
+                    p_lCuBarTimeStart,
+                    p_iIndex,
+                    p_iBar ;                 //Selected BAR
+  string            p_sSystemBez = getSystemName(),
+                    p_sType;
+  dyn_string        p_sSecTeile;
+  bool              p_bBarDel,
+                    p_bBarSel,
+                    p_bAdd,
+                    p_bBarChanged,
+                    p_bBarSelected = FALSE,
+                    p_bBarDeleted = FALSE;
+  string            p_sNewBarColor = \"\";
+  
+  dyn_string        weekDays;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+ccSetShiftDp()  //save the Shift Plan
+{
+  days=cc_convertBarsToDynDynInt();
+  dyn_string recipients, agencies, colors, line, domains, ds = dsName.items;
+  langString ls = ds;
+  string     sSet;
+  int        err, i;
+  for ( i = 0; i < tblPersonnel.lineCount; i++)
+  //get Personnel Datas
+  {
+    line = tblPersonnel.getLineN(i);
+    recipients[line[1]] = line[3];
+    agencies[line[1]] = line[5];
+    colors[line[1]] = line[6];
+  }
+  
+  //Save in DPs
+  domains = dpNames(\"*\",\"_CommCenterDomains\");
+  for ( i = 1; i <= dynlen(domains); i++)
+    domains[i] = dpGetComment(domains[i]+\".\");
+
+  if ( getNoOfLangs() < 2 )
+    ls = txtShiftName.text;
+
+  ccCreateOrEditShift(shiftDP, ls, dynContains(domains,$2), ($3 != \"\"), makeTime(1970,1,dynContains(weekDays,$3)+4,$4,$5,0), 
+                      days, recipients, agencies, colors, err);
+
+    dpSet(\"Domain\" + dynContains(domains,$2) + \".Changed:_original.._value\", true);
+
+  //actualizing shift sets
+  {
+    int        i, domain, err;
+    bool       blanks, check;
+    time       begin, end;
+    langString name;
+    dyn_int    minDuration;
+    dyn_string dsAggs = dpNames(\"*\", \"_CommCenterShiftAggregation\"),
+               parts, dsShifts;
+    
+    for ( i = 1; i <= dynlen(dsAggs); i++ )
+    {
+      ccGetShiftAggregation(dsAggs[i], name, domain, parts, minDuration, begin, end, blanks, err);
+      ccGetAggregationShifts(\"\", parts, dsShifts);
+      if ( dynContains(dsShifts, dpSubStr(shiftDP,DPSUB_SYS)+shiftDP) > 0 )
+      {
+        ccGetShiftAggregationCalculation(dsAggs[i], parts, minDuration, begin, end, blanks);    
+        ccCreateOrEditShiftAggregation(dsAggs[i], name, domain, 
+                                       parts, minDuration, begin, end, blanks, err);
+      }
+    }
+  }
+}
+
+dyn_dyn_int cc_convertBarsToDynDynInt()
+{
+  dyn_dyn_int myDays;
+  dynClear(myDays);
+  int barDay;
+  int start, end;
+  string text;
+  
+  for (int i = 0; i<Scheduler_ewo.numRanges(); i++)  //for all bars
+  {
+    barDay=Scheduler_ewo.getRangeDay(i);
+    if(dynlen(myDays)<barDay)
+    {
+      for(int k = dynlen(myDays)+1; k<=barDay; k++)
+      {
+        myDays[k][96]=0;  //initialize day with 0
+      }
+    }  
+     getStartAndEnd(i, start, end);
+     
+     text=Scheduler_ewo.getRangeText(i); 
+     if (text == \"- - -\")
+       text = -1;
+     if (text != \"- -\")
+     {
+       for (int j = (start/15); j<((end+1)/15); j++)
+       {
+         myDays[barDay][j+1]=text;
+       }
+     }
+  }
+  return (myDays);
+}
+
+void cc_displayBarsFromDynDynInt(dyn_dyn_int myDays)
+{
+  int user=-2;
+  int toDel=Scheduler_ewo.numRanges();
+  time start, end;
+  int endOfDay;
+
+  for (int i = toDel-1; i>=0; i--)  
+  {
+    Scheduler_ewo.removeRange(i); 
+  }
+
+  for( int i = 1; i <= dynlen(myDays); i++ )//pro Tag
+  {
+    user = -2;
+    for (int j = 1; j <= dynlen(myDays[i]); j++)  //pro Balken
+    {
+       if (user!=myDays[i][j] || j==dynlen(myDays[i]))  //on first -> get StartTime for new Bar
+       {
+         if(user != -2)
+         {
+           int id;
+           if(user != 0)
+           {             
+             if (j==dynlen(myDays[i]) && myDays[i][j]!=0 && myDays[i][j]!=-1)  //if bar is on end of day
+               end = makeTime(1970,1,1,23,59,59);
+             else
+               end = getTimeFromInt((j-1)*15);
+             
+             id=Scheduler_ewo.addRange(i, start, end, (user!=-1?barColor[user]:shiftStartEndColor), (user!=-1 ? user : \"- - -\"));
+
+             if (user==-1)  //if shift-start -> create a shift-end
+             {
+               Scheduler_ewo.setRangeReadOnly(id,true);  //set Readonly
+               id=Scheduler_ewo.addRange(8, getTimeFromInt((j-1)*15), makeTime(1970,1,1,23,59,59), shiftStartEndColor, \"- -\");
+               Scheduler_ewo.setRangeReadOnly(id,true);  //set Readonly             
+             }
+           }
+         }
+
+         user = myDays[i][j];
+         start = getTimeFromInt((j-1)*15);
+
+         if(j>1 && j==dynlen(myDays[i]) && myDays[i][j]!=myDays[i][j-1] && myDays[i][j]!=0)
+         {
+           end=getTimeFromInt((j)*15);
+           Scheduler_ewo.addRange(i,start,end,(user>0?barColor[user]:emptyColor), (user>0?user:\"\"));
+         }
+       }
+    }
+  }
+}
+
+void cc_changeAgency()
+{
+  dyn_string recipients, line;
+  string     sSubs = cboAgency.text;
+  int        i;
+    
+  //cboAgency is every recipient except the recipient in cboRecipient
+  cboAgency.deleteAllItems();
+  recipients = cboRecipient.items;
+  cboAgency.items = makeDynString(getCatStr(\"cc\", \"noSubstitute\")); //\"\" for no Agency
+  for (i = 1; i <= dynlen(recipients); i++)
+  {
+    if (recipients[i] != cboRecipient.text)
+    {
+      cboAgency.appendItem(recipients[i]);
+    }
+  }
+   
+  for ( i = 0; i < tblPersonnel.lineCount; i++)
+  //if choosen recipient has already a color then suggest this color
+  {
+    line = tblPersonnel.getLineN(i);
+    if (line[3] == cboRecipient.text)
+    {
+      cboColor.text = line[6];
+      cboColor.backCol = line[6];
+    }
+  }
+}
+int getPosFromPerson(dyn_string persons, string pers)
+{
+  dyn_string tmp;
+  for (int i=1; i<=dynlen(persons); i++)
+  {
+    tmp = strsplit(persons[i],\" (\");
+    if (dynlen(tmp)>=1)
+      if (tmp[1] == pers)
+        return (i);
+  }
+  return(1);   
+}
+
+
+" 0
+ 3
+"CBRef" "1"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+NC
+DISPLAY_LAYER, 1 0 1 0 0 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 16
+"Text5"
+""
+1 550 43 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 552 45 610 60
+0 2 0 "0s" 0 0 0 192 0 0  552 45 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Benutzer:
+LANG:10001 10 Recipient:
+LANG:10027 25 Пользователь:
+2 66
+"Text11"
+""
+1 304 10 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 302 12 354 27
+0 2 0 "0s" 0 0 0 194 0 0  354 12 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Branche:
+LANG:10001 7 Domain:
+LANG:10027 15 Область:
+2 67
+"Text6"
+""
+1 530 10 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 502 12 588 27
+0 2 0 "0s" 0 0 0 194 0 0  588 12 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 14 Schichtbeginn:
+LANG:10001 11 Shiftstart:
+LANG:10027 24 Начало смены:
+2 89
+"Text1"
+""
+1 550 88 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 552 90 618 105
+0 2 0 "0s" 0 0 0 192 0 0  552 90 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Vertretung:
+LANG:10001 11 Substitute:
+LANG:10027 23 Заместитель:
+2 92
+"Text2"
+""
+1 550 135 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 552 137 591 152
+0 2 0 "0s" 0 0 0 192 0 0  552 137 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Farbe:
+LANG:10001 6 Color:
+LANG:10027 9 Цвет:
+30 124
+"Frame1"
+""
+1 10 190 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.029027576197388 0 1 -0.290275761973875 0 0 E 10 30 700 190
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+2 125
+"Text3"
+""
+1 10 10 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 12 94 27
+0 2 0 "0s" 0 0 0 192 0 0  12 12 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Schichtname:
+LANG:10001 11 Shift name:
+LANG:10027 18 Имя смены:
+2 167
+"Text9"
+""
+1 200 0 E E E 1 E 0 E N {255,0,0} E N {255,255,255} E E
+ E E
+75 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 202 2 314 17
+1 2 0 "0s" 0 0 0 192 0 0  202 2 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 18 Two buttons below!
+LANG:10001 5 Text4
+LANG:10027 5 Text4
+2 171
+"txtSelected"
+""
+1 80 540 E E E 1 E 1 E N "white" E N {8,36,107} E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 81 541 149 559
+1 1 0 "0s" 0 0 0 65 0 0  81 541 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Selektiert
+LANG:10001 8 Selected
+LANG:10027 14 Выбрано
+2 172
+"Text10"
+""
+1 6 540 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+79 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 540 75 555
+0 0 0 "0s" 0 0 0 192 0 0  20 540 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Legende:
+LANG:10001 7 Legend:
+LANG:10027 15 Легенда:
+17 127
+"dsName"
+""
+1 100 10 E E E 1 E 0 E N "_WindowText" E N "_3DFace" E E
+ E E
+37 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  98 8 162 32
+0
+
+E
+E
+E
+
+0 0
+13 123
+"cmdShowIndex"
+""
+1 400 540 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  398 538 512 568
+
+T 
+3
+LANG:10000 16 Index verstecken
+LANG:10001 10 Hide Index
+LANG:10027 25 Скрыть индекс
+"void main()
+{
+  string strText;
+  dyn_string color;
+  dyn_dyn_string line;
+  int i,j;
+  
+  string shiftName, domain;
+  time begin;
+  bool daybound;
+  dyn_string recipient, agency, colorS;
+  dyn_dyn_string daysS;
+  int err;
+
+  ccGetShift(shiftDP, shiftName, domain,daybound,begin,daysS,recipient,agency,colorS,err);
+
+  showIndex = !showIndex;
+  
+  //change ButtonText
+  if (showIndex)
+    this.text = getCatStr(\"CommunicationCenter\",\"hideIndex\");
+  else
+    this.text = getCatStr(\"CommunicationCenter\",\"showIndex\");
+  
+  for (i = 0; i < tblPersonnel.lineCount; i++)
+  {
+    line[i+1] = tblPersonnel.getLineN(i);
+    color[i+1] = line [i+1][6];
+  }
+  
+  for ( i = 0; i < tblShiftHalfDay.lineCount; i++)
+  {
+    tblShiftHalfDay.cellValueRC(i,\"#0\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+    tblShiftHalfDay.cellValueRC(i,\"#1\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+    tblShiftHalfDay.cellValueRC(i,\"#2\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+    tblShiftHalfDay.cellValueRC(i,\"#3\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+  }
+  
+  selTimeIndex = -1;
+  
+  //refresh table  (like in the EventInitialize of the Panel)
+  tblShiftDays.deleteAllLines();
+  for ( i = 1; i <= dynlen(days); i++)
+  {
+    tblShiftDays.appendLine(\"Day\",($3 != \"\")?(weekDays[(weekDay(begin)+i-2)%7+1]):(getCatStr(\"CommunicationCenter\",\"Day\")+i),
+                            \"AmPm\",\"AM\");
+    tblShiftDays.cellBackColRC(2*i-2,\"Day\",\"_3DFace\");
+    tblShiftDays.cellBackColRC(2*i-2,\"AmPm\",\"_3DFace\");
+    for ( j = 1;j <= 48; j++)
+    {
+      if (j%4 == 1)
+      {
+        strText = \"\";
+        if((j+1 > dynlen(days[i]) || days[i][j] != days[i][j+1])|| 
+           (j+2 > dynlen(days[i]) || days[i][j] != days[i][j+2])|| 
+           (j+3 > dynlen(days[i]) || days[i][j] != days[i][j+3]))
+          strText = \"||||\";
+        
+        if (j > dynlen(days[i]))
+          tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                makeDynString(\"\",\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+        else
+        {
+          if (days[i][j] == -1)
+            tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                  makeDynString(strText,\"_3DFace\",(strText != \"\")?\"black\":\"_3DFace\")); 
+          else
+          {
+            if (days[i][j] == 0)
+              tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                  makeDynString(strText,\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+            else
+            {
+              if (strText == \"\")
+                strText = days[i][j];
+              tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                  makeDynString(strText,color[days[i][j]],(showIndex||strText == \"||||\")?\"black\":color[days[i][j]]));
+            }
+          }
+        }
+      }
+    }
+    tblShiftDays.appendLine(\"Day\",($3 != \"\")?(weekDays[(weekDay(begin)+i-2)%7+1]):(getCatStr(\"CommunicationCenter\",\"Day\")+i),
+                            \"AmPm\",\"PM\");
+    tblShiftDays.cellBackColRC(2*i-1,\"Day\",\"_3DFace\");
+    tblShiftDays.cellBackColRC(2*i-1,\"AmPm\",\"_3DFace\");
+    for ( j = 49; j <= 96; j++)
+    {
+      if (j%4 == 1)
+      {
+        strText = \"\";
+        if((j+1 > dynlen(days[i]) || days[i][j] != days[i][j+1])|| 
+           (j+2 > dynlen(days[i]) || days[i][j] != days[i][j+2])|| 
+           (j+3 > dynlen(days[i]) || days[i][j] != days[i][j+3]))
+          strText = \"||||\";
+          
+        if (j > dynlen(days[i]))
+          tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                makeDynString(\"\",\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+        else
+        {
+          if (days[i][j] == -1)
+            tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                  makeDynString(strText,\"_3DFace\",(strText != \"\")?\"black\":\"_3DFace\")); 
+          else
+          {
+            if (days[i][j] == 0)
+              tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                  makeDynString(strText,\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+            else
+            {
+              if (strText == \"\")
+                strText = days[i][j];
+              tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                  makeDynString(strText,color[days[i][j]],(showIndex || strText == \"||||\")?\"black\":color[days[i][j]]));
+            }
+          }
+        }
+      }
+    }
+  }
+}" 0
+ E E E
+13 94
+"cmdOK"
+""
+1 600 540 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  598 538 692 568
+
+T 
+3
+LANG:10000 2 OK
+LANG:10001 2 OK
+LANG:10027 2 OK
+"void main()
+{
+  ccSetShiftDp();
+  PanelOffReturn(makeDynFloat(1),makeDynString(txtShiftName.text));
+}
+" 0
+ E E E
+13 96
+"cmdApply"
+""
+1 700 540 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  698 538 792 568
+
+T 
+3
+LANG:10000 11 Übernehmen
+LANG:10001 5 Apply
+LANG:10027 18 Применить
+"void main()
+{
+  ccSetShiftDp();
+}                      " 0
+ E E E
+13 95
+"cmdCancel"
+""
+1 800 540 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  798 538 892 568
+
+T 
+3
+LANG:10000 9 Abbrechen
+LANG:10001 6 Cancel
+LANG:10027 16 Отменить
+"void main()
+{
+  PanelOffReturn(makeDynFloat(-1),makeDynString(\"\"));
+}
+" 0
+ E E E
+13 121
+"cmdNewColor"
+""
+1 683 152 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  683 151 713 178
+
+T 
+3
+LANG:10000 3 ...
+LANG:10001 3 ...
+LANG:10027 3 ...
+"void main()
+{
+  string defineColor;
+  
+  defineColor = cboColor.text;
+  
+  colorEditor(defineColor);
+   
+  cboColor.text = defineColor;
+  cboColor.backCol = defineColor;
+}" 0
+ E E E
+22 93
+"cboColor"
+""
+1 730 110 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  728 108 862 135
+8
+3
+LANG:10000 14 STD_trend_pen1
+LANG:10001 14 STD_trend_pen1
+LANG:10027 14 STD_trend_pen1
+
+0
+3
+LANG:10000 14 STD_trend_pen2
+LANG:10001 14 STD_trend_pen2
+LANG:10027 14 STD_trend_pen2
+
+0
+3
+LANG:10000 14 STD_trend_pen3
+LANG:10001 14 STD_trend_pen3
+LANG:10027 14 STD_trend_pen3
+
+0
+3
+LANG:10000 14 STD_trend_pen4
+LANG:10001 14 STD_trend_pen4
+LANG:10027 14 STD_trend_pen4
+
+0
+3
+LANG:10000 14 STD_trend_pen5
+LANG:10001 14 STD_trend_pen5
+LANG:10027 14 STD_trend_pen5
+
+0
+3
+LANG:10000 14 STD_trend_pen6
+LANG:10001 14 STD_trend_pen6
+LANG:10027 14 STD_trend_pen6
+
+0
+3
+LANG:10000 14 STD_trend_pen7
+LANG:10001 14 STD_trend_pen7
+LANG:10027 14 STD_trend_pen7
+
+0
+3
+LANG:10000 14 STD_trend_pen8
+LANG:10001 14 STD_trend_pen8
+LANG:10027 14 STD_trend_pen8
+
+0
+
+E
+"void main()
+{
+  //set Color of cboColor
+  this.backCol = this.text;
+}
+" 0
+
+E
+ 0 0
+22 86
+"cboAgency"
+""
+1 550 108 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  548 106 712 133
+0
+
+E
+"void main()
+{
+}" 0
+
+E
+ 0 0
+22 8
+"cboRecipient"
+""
+1 550 60 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  548 58 712 85
+0
+
+E
+"void main()
+{
+  cc_changeAgency();
+}" 0
+
+E
+ 0 0
+25 47
+"tblPersonnel"
+""
+1 20 50 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  18 48 547 175
+E"void main()
+{
+  dyn_int selLines;
+
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selLines);
+
+  if (dynlen(selLines) > 0 && selLines[1] >= 0 ) 	// if a line is selected
+  {
+    dyn_string recipients, line, ds;
+    int i;
+
+    //fill ComboBoxes with actual Data    
+    line = tblPersonnel.getLineN(selLines[1]);
+
+    dyn_string pers = cboRecipient.items();
+    cboRecipient.selectedPos(getPosFromPerson(pers, line[2]));
+    
+    cboColor.text = line[6];
+    cboColor.backCol = line[6];
+    cc_changeAgency();  
+
+    p_sNewBarColor = cboColor.text;
+  }
+  else
+  {
+    p_sNewBarColor = \"\";
+  }
+}" 0
+ 1 0 1 6 5 "Index" 4 1 0 "s" 3
+LANG:10000 5 Index
+LANG:10001 5 Index
+LANG:10027 12 Индекс
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+61 "Recipient" 14 1 0 "s" 3
+LANG:10000 8 Benutzer
+LANG:10001 9 Recipient
+LANG:10027 24 Пользователь
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+167 "RecPNr" 5 0 0 "s" 3
+LANG:10000 3 PNr
+LANG:10001 3 PNr
+LANG:10027 3 PNr
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+70 "Agency" 14 1 0 "s" 3
+LANG:10000 10 Vertretung
+LANG:10001 10 Substitute
+LANG:10027 22 Заместитель
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+167 "AgePNr" 5 0 0 "s" 3
+LANG:10000 3 PNr
+LANG:10001 3 PNr
+LANG:10027 3 PNr
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+70 "Color" 9 1 0 "s" 3
+LANG:10000 5 Farbe
+LANG:10001 5 Color
+LANG:10027 8 Цвет
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+110 
+20 20 "" 1 3
+LANG:10000 2 #1
+LANG:10001 2 #1
+LANG:10027 2 #1
+"" 1 3
+LANG:10000 2 #2
+LANG:10001 2 #2
+LANG:10027 2 #2
+"" 1 3
+LANG:10000 2 #3
+LANG:10001 2 #3
+LANG:10027 2 #3
+"" 1 3
+LANG:10000 2 #4
+LANG:10001 2 #4
+LANG:10027 2 #4
+"" 1 3
+LANG:10000 2 #5
+LANG:10001 2 #5
+LANG:10027 2 #5
+8 30
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 0 2 0 1 7
+1 0
+14 74
+"txtFrom"
+""
+1 590 10 E E E 0 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  588 8 722 35
+3 "0s" 0 0 0 0 0 -1  E E E
+14 90
+"txtDomain"
+""
+1 360 10 E E E 0 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  358 8 492 35
+3 "0s" 0 0 0 0 0 -1  E E E
+14 126
+"txtShiftName"
+""
+1 120 10 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  118 8 262 35
+2 "0s" 0 0 0 0 0 -1  "main()
+{
+  int        i;
+  string     s;
+  langString ls;
+  dyn_string ds;
+
+  if ( getNoOfLangs() < 2 ) return;
+
+  ds = dsName.items;
+  ls=ds;
+  langEditor(ls);
+  ds = ls;
+
+  s = \"\";
+  for ( i = 1; i <= getNoOfLangs(); i++ )
+  {
+    if ( ds[i] != \"\" && s == \"\" )
+      s = ds[i];
+  }
+
+  if ( s == \"\" )
+  {
+    ChildPanelOnCentralModal(\"vision/MessageWarning\", getCatStr(\"para\", \"warning\"),
+      makeDynString(getCatStr(\"cc\", \"shiftNameEmpty\")));
+    return;
+  }
+
+  for ( i = 1; i <= getNoOfLangs(); i++ )
+  {
+    if ( ds[i] == \"\" )
+      ds[i] = s;
+  }
+  ls = ds;
+
+  setMultiValue(\"txtShiftName\",\"text\",ls,
+                \"dsName\",\"items\", ds);  
+}" 0
+ E E
+13 99
+"cmdDeleteRecipient"
+""
+1 628 148 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  628 147 658 175
+
+P 
+12303291
+"pictures/del2_en.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"void main()
+{
+  dyn_int selLines;
+
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selLines);
+  
+  if ( dynlen(selLines) > 0  && selLines[1] > -1 )   // if a line is selected
+  {
+    int i,j, iDeletedUser;
+    string strText;
+    dyn_dyn_string line;
+    dyn_string color;
+
+    string shiftName, domain;
+    time begin;
+    bool daybound, used;
+    dyn_string recipient, agency, colorS, aggs;
+    dyn_dyn_string daysS;
+    int err;
+    
+    used = false;
+    ccUsedInAggs(shiftDP,aggs);
+    days=cc_convertBarsToDynDynInt();
+//    if (dynlen(aggs) > 0)
+    if (true)
+    {
+      for (i = dynlen(days); i >= 1; i--)
+      {
+        for (j = dynlen(days[i]); j >= 1; j--)
+        {
+          if (days[i][j] == selLines[1]+1)
+            used = true;
+        }
+      }
+    }
+    
+    if ( used )
+    {
+      string s = getCatStr(\"cc\", \"recipientUsed\");
+      strreplace(s, \" (%1 %2)\", \"\");
+      ChildPanelOnCentralModal(\"vision/MessageWarning\", getCatStr(\"para\", \"warning\"),
+        makeDynString(s));
+      return;
+    }
+    
+    if (!used)
+    {
+      for (i = dynlen(days); i >= 1; i--)
+      //delete this index in days and decrease indizess that are bigger than this index 
+      {
+        for (j = dynlen(days[i]); j >= 1; j--)
+        {
+          if (days[i][j] == selLines[1]+1)
+            days[i][j] = 0;
+          if (days[i][j] > selLines[1]+1)
+            days[i][j] = days[i][j] - 1;
+        }
+      }
+      while (dynlen(days)>0 && dynlen(days[dynlen(days)])>0 && days[dynlen(days)][dynlen(days[dynlen(days)])] == 0)
+      //remove every 0 at the end of days
+      {
+        if (dynlen(days[dynlen(days)]) == 1)
+          dynRemove(days,dynlen(days)); //remove day
+        else
+          dynRemove(days[dynlen(days)],dynlen(days[dynlen(days)])); //remove it from dyn
+      }
+
+      iDeletedUser = selLines[1] + 1;
+      tblPersonnel.deleteLineN(selLines[1]);
+      for ( i = 0; i < tblPersonnel.lineCount; i++)
+      {
+        cboColor.selectedPos = i+1;
+        tblPersonnel.cellValueRC(i,\"Index\",
+                                   makeDynString(i+1,\"white\",\"black\")); 
+        tblPersonnel.cellValueRC(i,\"Color\",
+                                   makeDynString(cboColor.text,cboColor.text,cboColor.text)); 
+      }
+    }
+    
+    //refresh table  (like in the EventInitialize of the Panel)
+
+    if ( !isMotif() )
+    {
+       int i, j, iOldUser;
+       string sColor;
+       
+
+         for ( j = 1; j <= Scheduler_ewo.numRanges(); j++ )
+         {
+           iOldUser = Scheduler_ewo.getRangeText(j);
+           if ( Scheduler_ewo.getRangeColor(j) != OLEColor(\"_3DFace\") && iOldUser > iDeletedUser )
+           {
+             Scheduler_ewo.setRangeText(j, iOldUser - 1);
+             sColor = sColor = \"STD_trend_pen\" + Scheduler_ewo.getRangeText(j);
+             Scheduler_ewo.setRangeColor(j,barColor[substr(sColor,strpos(sColor,\"_pen\")+4)]);
+           }
+         }
+
+    }
+
+    ccGetShift(shiftDP, shiftName, domain,daybound,begin,daysS,recipient,agency,colorS,err);
+   
+    for (i = 0; i < tblPersonnel.lineCount; i++)
+    {
+      line[i+1] = tblPersonnel.getLineN(i);
+      color[i+1] = line [i+1][6];
+    }
+          
+    selTimeIndex = -1;
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",
+      getCatStr(\"para\",\"warning\"),
+      makeDynString(getCatStr(\"sc\",\"noSel\")));
+}
+
+" 0
+ E E E
+13 100
+"cmdChangeRecipient"
+""
+1 588 148 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  588 147 618 175
+
+P 
+12632256
+"pictures/apply_en.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"void main()
+{
+  dyn_int selLines;
+  dyn_dyn_string lines;
+
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selLines);
+
+  if (dynlen(selLines) > 0 && selLines[1] > -1) 	// if a line is selected
+  {
+    lines[1] = tblPersonnel.getLineN(selLines[1]);
+    cboColor.selectedPos = selLines[1] + 1;
+//    cboRecipient.text = lines[1][2];
+    if (removeIdOfPerson(cboRecipient.selectedText()) != \"\" && cboColor.selectedText() != \"\") //color and recipient entered
+    {
+      bool bNew, colorUsed;
+      int i, j;
+    
+      bNew = true;
+      colorUsed = false;
+
+      for ( i = 0; i < tblPersonnel.lineCount; i++)
+      {
+        lines[2] = tblPersonnel.getLineN(i);
+        if (selLines[1] != i && lines[2][2] == removeIdOfPerson(cboRecipient.selectedText()) )//&& lines[2][4] == cboAgency.text)
+          bNew = false; //entry already exists
+//        if (lines[2][6] == cboColor.text && lines[2][2] != cboRecipient.text)
+//          colorUsed = true; //color used from another recipient
+      }
+      if (bNew)
+      {
+        if(!colorUsed)
+        {
+          dyn_string recipients;
+          dyn_string rLine, aLine;
+          bool rFound, aFound;
+          
+          string strText;
+          dyn_string color;
+          
+          string shiftName, domain;
+          time begin;
+          bool daybound;
+          dyn_string recipient, agency, colorS;
+          dyn_dyn_string daysS;
+          int err;
+    
+          rFound = false;
+          aFound = false;
+    
+          recipients = cboRecipient.items;
+          for ( i = 1; i <= dynlen(recipients); i++)
+          //get recipient and agency Datas
+          {
+            if (!rFound)
+            {
+              rLine = strsplit(recipients[i],\"(\");
+              rLine[1] = strrtrim(rLine[1]);
+              if (rLine[1] == removeIdOfPerson(cboRecipient.selectedText()))
+              {
+                rFound = true;
+                strreplace(rLine[2], \")\", \"\");
+              }
+            }
+            if (!aFound)
+            {
+              aLine = strsplit(recipients[i],\"(\");
+              aLine[1] = strrtrim(aLine[1]);
+              if (aLine[1] == removeIdOfPerson(cboAgency.selectedText()))
+              {
+                aFound = true;  
+                strreplace(aLine[2], \")\", \"\");
+              }
+            }
+          }
+          if (!aFound)
+            aLine[1] = aLine[2] = \"\";
+
+          tblPersonnel.cellValueRC(selLines[1],\"Recipient\", makeDynString(rLine[1],\"white\",\"black\"));
+          tblPersonnel.cellValueRC(selLines[1],\"RecPNr\",    makeDynString(rLine[2],\"white\",\"black\"));
+          tblPersonnel.cellValueRC(selLines[1],\"Agency\",    makeDynString(aLine[1],\"white\",\"black\"));
+          tblPersonnel.cellValueRC(selLines[1],\"AgePNr\",    makeDynString(aLine[2],\"white\",\"black\"));
+          for ( i = 0; i < tblPersonnel.lineCount; i++)
+          //change color in every line with this recipient
+          {
+            lines[2] = tblPersonnel.getLineN(i);
+            if (lines[2][2] == removeIdOfPerson(cboRecipient.selectedText()))
+              tblPersonnel.cellValueRC(i,\"Color\",
+                           makeDynString(removeIdOfPerson(cboColor.selectedText()),cboColor.selectedText(),cboColor.selectedText()));       
+          }
+          
+          //refresh table
+          ccGetShift(shiftDP, shiftName, domain,daybound,begin,daysS,recipient,agency,colorS,err);
+           
+          for (i = 0; i < tblPersonnel.lineCount; i++)
+          {
+            lines[2] = tblPersonnel.getLineN(i);
+            color[i+1] = lines [2][6];
+          }
+        }
+        else
+          ChildPanelOnCentralModal(\"vision/MessageWarning\",
+            getCatStr(\"para\",\"warning\"),
+//            makeDynString(getCatStr(\"CommunicationCenter\",\"colorUsed\")));
+            makeDynString(getCatStr(\"CommunicationCenter\",\"entryExists\")));
+      }
+      else
+        ChildPanelOnCentralModal(\"vision/MessageWarning\",
+          getCatStr(\"para\",\"warning\"),
+          makeDynString(getCatStr(\"CommunicationCenter\",\"entryExists\")));
+    }
+    else
+      ChildPanelOnCentralModal(\"vision/MessageWarning\",
+        getCatStr(\"para\",\"warning\"),
+        makeDynString(getCatStr(\"CommunicationCenter\",\"defMissing\")));
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",
+      getCatStr(\"para\",\"warning\"),
+      makeDynString(getCatStr(\"sc\",\"noSel\")));
+}
+string removeIdOfPerson(string personWithId)
+{
+  return(strrtrim(strsplit(personWithId,\"(\")[1]));
+}
+" 0
+ E E E
+13 98
+"cmdNewRecipient"
+""
+1 550 149 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  548 147 578 175
+
+P 
+10862530
+"pictures/dpeMon_ins.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"void main()
+{
+  string Person = removeIdOfPerson(cboRecipient.text);
+  if (Person != \"\" && cboColor.text != \"\")
+  {
+    dyn_string line;
+    bool bNew, colorUsed, colorChanged;
+    int i;
+    string saveColor;
+    
+    bNew = true;
+    colorUsed = false;
+    colorChanged = false;
+
+    if ( cboColor.itemCount < tblPersonnel.lineCount + 1 )
+    {
+      string sCol;
+      
+      if ( colorEditor(sCol) == 0 && sCol != \"\" )
+      {
+        if ( dynContains(cboColor.items, sCol) > 0 )
+        {
+          ChildPanelOnCentralModal(\"vision/MessageWarning\",
+            getCatStr(\"para\",\"warning\"),
+            makeDynString(getCatStr(\"CommunicationCenter\",\"colorUsed\")));
+          return;
+        }
+        else
+          cboColor.appendItem(sCol);
+      }
+      else
+        return;
+    }
+
+
+    cboColor.selectedPos = tblPersonnel.lineCount + 1;
+    for ( i = 0; i < tblPersonnel.lineCount; i++)
+    {
+      line = tblPersonnel.getLineN(i);
+      if (strrtrim(line[2]) == Person)// && strrtrim(line[4]) == cboAgency.text)
+        bNew = false; //entry already exists
+      if (line[6] == cboColor.text && line[3] != Person)
+        colorUsed = true; //color used from another recipient
+      if (strrtrim(line[2]) == Person && line[6] != cboColor.text)
+      {
+        colorChanged = true;
+        saveColor = line[6];
+      }
+    }
+    if (bNew)
+    {
+      if(!colorUsed)
+      {
+        if (!colorChanged)
+        {
+          dyn_string recipients;
+          dyn_string rLine, aLine;
+          bool rFound, aFound;
+      
+          rFound = false;
+          aFound = false;
+     
+          recipients = cboRecipient.items;
+          for ( i = 1; i <= dynlen(recipients); i++)
+          //getRecipient and Agency - Data
+          {
+            if (!rFound)
+            {
+               rLine = strsplit(recipients[i],\"(\");
+            }
+            if (strrtrim(rLine[1]) == Person)
+            {
+              rFound = true;
+              strreplace(rLine[2], \")\", \"\");
+            }
+            if (!aFound)
+            {
+              aLine = strsplit(recipients[i],\"(\");
+            }
+            if (strrtrim(aLine[1]) == substr(cboAgency.text, 0, strpos(cboAgency.text,\" (\") ) )
+            {
+              aFound = true;  
+              strreplace(aLine[2], \")\", \"\");
+            }
+          }
+          if (!aFound)
+            aLine[1] = aLine[2] = \"\";
+          tblPersonnel.appendLine(\"Index\",tblPersonnel.lineCount + 1,
+                                  \"Recipient\",strrtrim(rLine[1]),
+                                  \"RecPNr\",rLine[2],
+                                  \"Agency\",aLine[1],
+                                  \"AgePNr\",aLine[2]);
+          cboColor.selectedPos = tblPersonnel.lineCount;
+          tblPersonnel.cellValueRC(tblPersonnel.lineCount-1,\"Color\",
+                                   makeDynString(cboColor.text,cboColor.text,cboColor.text)); 
+          tblPersonnel.selectLineN(tblPersonnel.lineCount-1);
+        }
+        else
+        {
+          ChildPanelOnCentralModal(\"vision/MessageWarning\",
+            getCatStr(\"para\",\"warning\"),
+            makeDynString(getCatStr(\"CommunicationCenter\",\"colorFailure\")));
+          cboColor.text = saveColor;
+          cboColor.backCol = saveColor;
+        } 
+      }
+      else
+        ChildPanelOnCentralModal(\"vision/MessageWarning\",
+          getCatStr(\"para\",\"warning\"),
+          makeDynString(getCatStr(\"CommunicationCenter\",\"colorUsed\")));
+    }
+    else
+      ChildPanelOnCentralModal(\"vision/MessageWarning\",
+        getCatStr(\"para\",\"warning\"),
+        makeDynString(getCatStr(\"CommunicationCenter\",\"entryExists\")));
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",
+      getCatStr(\"para\",\"warning\"),
+      makeDynString(getCatStr(\"CommunicationCenter\",\"defMissing\")));
+}
+string removeIdOfPerson(string personWithId)
+{
+  return(strrtrim(strsplit(personWithId,\"(\")[1]));
+}" 0
+ E E E
+13 169
+"cmd2lang"
+""
+1 643 316 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+77 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  263 8 293 35
+
+P 
+12303291
+"pictures/langsEnDe_en.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  int        i;
+  string     s;
+  langString ls;
+  dyn_string ds;
+
+  ds = dsName.items;
+  ls=ds;
+  langEditor(ls);
+  ds = ls;
+
+  s = \"\";
+  for ( i = 1; i <= getNoOfLangs(); i++ )
+  {
+    if ( ds[i] != \"\" && s == \"\" )
+      s = ds[i];
+  }
+
+  if ( s == \"\" )
+  {
+    ChildPanelOnCentralModal(\"vision/MessageWarning\", getCatStr(\"para\", \"warning\"),
+      makeDynString(getCatStr(\"cc\", \"shiftNameEmpty\")));
+    return;
+  }
+
+  for ( i = 1; i <= getNoOfLangs(); i++ )
+  {
+    if ( ds[i] == \"\" )
+      ds[i] = s;
+  }
+  ls = ds;
+
+  setMultiValue(\"txtShiftName\",\"text\",ls,
+                \"dsName\",\"items\", ds);  
+}" 0
+ E E E
+13 170
+"cmd1lang"
+""
+1 643 316 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  263 8 293 35
+
+P 
+12303291
+"pictures/edit_en.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string     s = txtShiftName.text, sNew;
+  dyn_float  dfReturn;
+  dyn_string dsReturn;
+  langString ls;
+  dyn_string ds;
+
+  ChildPanelOnCentralModalReturn(
+    \"vision/MessageInput\",getCatStr(\"cc\",\"shiftName\")+getCatStr(\"cc\",\"input\"),
+    makeDynString(getCatStr(\"cc\", \"name\"), \"%s\", s),
+    dfReturn,dsReturn);
+
+  if ( dynlen(dsReturn) > 0 )
+  {
+    sNew = strrtrim(strltrim(dsReturn[1]));
+    if ( sNew == \"\" )
+    {
+      ChildPanelOnCentralModal(\"vision/MessageWarning\", getCatStr(\"para\", \"warning\"),
+        makeDynString(getCatStr(\"cc\", \"shiftNameEmpty\")));
+      return;
+    }
+
+    ds = makeDynString(sNew);
+    ls=ds;
+    setMultiValue(\"txtShiftName\",\"text\",ls,
+                  \"dsName\",\"items\", ds);  
+  }
+}
+" 0
+ E E E
+13 173
+"cmdHelp"
+""
+1 900 540 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+79 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  898 538 992 568
+
+T 
+3
+LANG:10000 5 Hilfe
+LANG:10001 4 Help
+LANG:10027 14 Справка
+"main()
+{
+  std_help(\"shiftEdit\");
+}
+
+" 0
+ E E E
+29 174
+"Scheduler_ewo"
+""
+1 20 280 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+80 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+4
+"header" "string "
+"numDays" "int 7"
+"inhibitOverlap" "bool TRUE"
+"snapMinutes" "int 15"
+3
+LANG:10000 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10001 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+LANG:10027 35 MS Shell Dlg 2,-1,11,5,50,0,0,0,0,0
+0  20 280 990 530
+13 Scheduler.ewo
+1
+0 "rangeSelected" "(int idx, bool isNew)"
+"  int start, end;
+  dyn_int selLines;
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selLines);
+
+
+  getStartAndEnd(idx, start, end);
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selLines);
+
+  if (idx==-1 || start == end)  //if no bar selected
+  {
+    cmdDeleteBar.enabled(false);
+    setSpinbuttonsEnable(false);
+    return;
+  }
+  cc_BarSelect_ChangeSpinButtons(idx);
+
+  for (int i= 1; i<= dynlen(   selLines); i++)
+    setValue( \"tblPersonnel\", \"selectLineN\", selLines[i]);
+
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selLines);
+
+  if (isNew)  // if new bar added
+  {
+ 
+      
+    if ( dynlen(selLines) < 1 || selLines[1] < 0 )
+    {
+      this.removeRange(idx);      
+      dyn_float dfReturn;
+      dyn_string dsReturn;
+      ChildPanelOnCentralModalReturn(\"vision/MessageWarning\", getCatStr(\"para\", \"warning\"),
+        makeDynString(getCatStr(\"cc\", \"noUserSelected\")), dfReturn, dsReturn);
+      return;
+    }
+    else
+    {
+      dyn_anytype line;
+      line = tblPersonnel.getLineN(selLines[1]);
+      p_sNewBarColor = line[6];    
+      this.setRangeColor(idx, p_sNewBarColor);
+      this.setRangeText(idx, line[1]);
+    }
+  }
+  cmdDeleteAllBars.enabled(true);  //one bar is selected -> enable Deletebars and Spinbuttons
+  setSpinbuttonsEnable(true);
+  cmdDeleteBar.enabled(true);"
+"main()
+{
+}" 0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+30 129
+"fraBarDetail"
+""
+1 140 253 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+38 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 140 203 300 253
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+2 130
+"fMinute"
+""
+1 242 202 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+39 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 244 202 285 217
+0 2 2 "0s" 0 0 0 192 0 0  244 202 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Minute
+LANG:10001 6 Minute
+LANG:10027 12 Минута
+2 132
+"txtBarDetailsFrom"
+""
+1 138 225 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 155 225 182 240
+0 2 2 "0s" 0 0 0 194 0 0  182 225 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Von:
+LANG:10001 5 From:
+LANG:10027 5 От:
+2 133
+"fHour"
+""
+1 188 202 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 190 202 233 217
+0 2 2 "0s" 0 0 0 192 0 0  190 202 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Stunde
+LANG:10001 4 Hour
+LANG:10027 6 Час
+30 134
+"Frame2"
+""
+1 310 253 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 310 203 460 253
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+2 135
+"tMinute"
+""
+1 398 202 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+44 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 400 202 441 217
+0 2 2 "0s" 0 0 0 192 0 0  400 202 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Minute
+LANG:10001 6 Minute
+LANG:10027 12 Минута
+2 137
+"txtBarDetailsTo"
+""
+1 321 225 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 318 225 341 240
+0 2 2 "0s" 0 0 0 194 0 0  341 225 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Bis:
+LANG:10001 3 To:
+LANG:10027 5 До:
+2 138
+"tHour"
+""
+1 345 202 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 347 202 390 217
+0 2 2 "0s" 0 0 0 192 0 0  347 202 1
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Stunde
+LANG:10001 4 Hour
+LANG:10027 6 Час
+30 139
+"Frame3"
+""
+1 10 547 E E E 1 E 1 E N "_3DText" E N "_Transparent" E E
+ E E
+48 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+
+}" 0
+ E 0 1 1 0 1 E 1 0 0.9291553133514973 0 20.89373297002694 0 E 10 182 1000 550
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 15  Aktive Zeiten 
+LANG:10001 14  Active times 
+LANG:10027 29  Активное время 
+2 160
+"Text4"
+""
+1 510 220 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+68 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 512 222 552 237
+0 2 0 "0s" 0 0 0 192 0 0  512 222 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Dauer:
+LANG:10001 9 Duration:
+LANG:10027 16 Длитель.:
+2 161
+"Text7"
+""
+1 620 220 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 622 222 631 237
+0 2 0 "0s" 0 0 0 192 0 0  622 222 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 h
+LANG:10001 1 h
+LANG:10027 2 ч
+2 162
+"Text8"
+""
+1 683 220 E E E 1 E 0 E N {0,0,0} E N "_Transparent" E E
+ E E
+70 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 685 222 708 237
+0 2 0 "0s" 0 0 0 192 0 0  685 222 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 min
+LANG:10001 3 min
+LANG:10027 6 мин
+30 166
+"Frame5"
+""
+1 500 253 E E E 1 E 0 E N "_3DText" E N "_Transparent" E E
+ E E
+74 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 500 203 820 253
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+21 144
+"spFromH"
+""
+1 188 222 E E E 0 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+53 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  187 221 239 248
+0
+
+"main()
+{
+  this.sbMaximum(23);
+  this.sbMinimum(0);
+}" 0
+
+"main()
+{
+  ccSetBarWithSpinbuttons();
+}" 0
+
+E
+
+N 0 24 1 0 1 1
+21 145
+"spFromM"
+""
+1 241 222 E E E 0 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  240 221 292 248
+0
+
+"main()
+{
+  this.sbMaximum(59);
+  this.sbMinimum(0);
+
+}" 0
+
+"main()
+{
+  ccSetBarWithSpinbuttons();
+}" 0
+
+E
+
+N 0 59 15 0 1 1
+21 147
+"spToH"
+""
+1 345 222 E E E 0 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+56 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  344 221 396 248
+0
+
+"main()
+{
+  this.sbMaximum(23);
+  this.sbMinimum(0);
+}" 0
+
+"main()
+{
+  ccSetBarWithSpinbuttons();  
+}" 0
+
+E
+
+N 0 24 1 0 1 1
+21 148
+"spToM"
+""
+1 398 222 E E E 0 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+57 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  397 221 449 248
+0
+
+"main()
+{
+  this.sbMaximum(59);
+  this.sbMinimum(0);
+}" 0
+
+"main()
+{
+  ccSetBarWithSpinbuttons();
+}" 0
+
+E
+
+N 0 59 15 0 1 1
+13 151
+"cmdDeleteBar"
+""
+1 20 240 E E E 0 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 15 Balken löschen
+LANG:10001 10 Delete bar
+LANG:10027 27 Удалить строку
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  18 238 54 266
+
+P 
+12369084
+"pictures/del_en.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  ct_deleteTimeBarFromDays(Scheduler_ewo.selectedRange());
+  p_iBar = 0;
+  p_bBarDel = TRUE;  
+  
+  spToH.text = \"0\";  spToM.text = \"0\"; 
+  spFromH.text = \"0\";  spFromM.text = \"0\";
+  itemIndex = 0;
+  barIndex = 0;
+  oldTimeStart = 0;
+  oldTimeEnd = 0;
+}" 0
+ E E E
+13 152
+"cmdDeleteAllBars"
+""
+1 60 240 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+61 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 20 Alle Balken löschen
+LANG:10001 15 Delete all bars
+LANG:10027 34 Удалить все строки
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  58 238 94 267
+
+P 
+13421721
+"pictures/delAll_en.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  ct_deleteTimeBarFromDays(-1);
+  this.enabled(false);
+  cmdDeleteBar.enabled(false);
+  setSpinbuttonsEnable(false);
+}" 0
+ E E E
+13 159
+"cmdAppendTimeBar"
+""
+1 714 219 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+67 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  718 218 812 248
+
+T 
+3
+LANG:10000 9 Anhängen
+LANG:10001 6 Append
+LANG:10027 16 Добавить
+"void main()
+{
+  int            iItem, iTimeStart, iTimeEnd, iDateStart, iDateEnd, iUser, iIdx, jIdx;
+  string         sColor;
+  dyn_int        selLines;
+  string         strText, shiftName, domain, pNr, s;
+  dyn_dyn_string line, daysS;
+  dyn_string     color, recipient, agency, colorS, dsR;
+  int            i, j, duration, err, iPnr, iErr;
+  time           begin;
+  bool           daybound, bErrAlloc;
+  dyn_dyn_int    daysBack, daysR;
+
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selLines);
+  
+  if ( dynlen(selLines) > 0 && selLines[1] >= 0  && (spbDurH.text != 0 || spbDurQ.text != 0) ) 	// if a Recipient and a duration is selected
+  {
+    ccGetShift(shiftDP, shiftName, domain,daybound,begin,daysR,recipient,agency,colorS,err);
+
+    line[1] = tblPersonnel.getLineN(selLines[1]);
+    pNr  = line[1][3];
+    iPnr = selLines[1] + 1;
+    sColor = line[1][6];
+    iUser = line[1][1];
+
+    duration = spbDurH.text*4 + spbDurQ.text/15;
+    daysBack = days;
+    for (i = 0; i < tblPersonnel.lineCount; i++)
+    //get actual colors
+    {
+      line[i+1] = tblPersonnel.getLineN(i);
+      color[i+1] = line [i+1][6];
+      dsR[i+1] = line[i+1][3];
+    }
+    
+    ct_getLastTimeInDays(iIdx, jIdx);
+
+    if ( iIdx == 0 )
+    {
+      iIdx = 1;
+      days[1] = makeDynInt();
+      for ( i = 1; i <= (hour(begin)-1) * 4 + 1; i++ )
+      {
+        days[1][i] = -1;
+        jIdx = i;
+      }
+    }
+    for ( i = 1; i <= duration; i++)
+    //append index
+    {
+      jIdx++;
+      if ( jIdx <= 96 )
+        days[iIdx][jIdx] = line[selLines[1]+1][1];
+      else
+      {
+        iIdx++;
+        jIdx = 1;
+        days[iIdx][1] = line[selLines[1]+1][1];
+      }
+    }
+/*
+    ccCheckAllocationTimeAndMultiple(shiftDP, pNr, iPnr, days, begin, dsR, true, bErrAlloc);
+    if ( bErrAlloc )
+    {
+      days = daysBack;
+      return;
+    }
+*/
+    //refresh table  (like in the EventInitialize of the Panel)
+    ct_getLastBarTime(iItem, iTimeEnd);
+//    if ( iItem > 0 )
+    {
+      iTimeStart = iTimeEnd;
+      iTimeEnd   = iTimeStart + duration * 15;
+      iDateStart = iItem;
+      iDateEnd   = iItem;
+      iErr = ct_setTimeBar(iItem, iTimeStart, iTimeEnd, iDateStart, iDateEnd, sColor, iUser);
+      if ( iErr < 0 )
+      {
+        ChildPanelOnCentralModal(\"vision/MessageWarning\",
+          getCatStr(\"para\",\"warning\"),
+          makeDynString(getCatStr(\"cc\", \"durationTooLong\")));
+      }
+      else
+      {
+        int iItemBar = ctSchedule.BarCount(iItem);
+        ccCheckAllocationTimeAndMultiple(shiftDP, pNr, iPnr, days, begin, dsR, true, bErrAlloc, iItem, iItemBar);
+        if ( bErrAlloc )
+        {
+          for ( i = 1; i <= iErr; i++ )
+            ctSchedule.Undo();
+          days = daysBack;
+          return;
+        }
+      }
+    }
+   
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",
+      getCatStr(\"para\",\"warning\"),
+      makeDynString(getCatStr(\"CommunicationCenter\",\"noDurOrPersonnel\")));
+}
+" 0
+ E E E
+21 163
+"spbDurQ"
+""
+1 640 219 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  638 218 682 245
+0
+
+E
+E
+E
+
+N 0 45 15 0 1 1
+21 164
+"spbDurH"
+""
+1 570 219 E E E 1 E 0 E N "_WindowText" E N "_Window" E E
+ E E
+72 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  568 218 618 245
+0
+
+E
+E
+E
+
+N 0 168 1 0 1 1
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+2 105
+"dur1"
+""
+1 10 210 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 12 212 52 227
+0 2 0 "0s" 0 0 0 192 0 0  12 212 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Dauer:
+LANG:10001 9 Duration:
+LANG:10027 16 Длитель.:
+2 117
+"dur2"
+""
+1 120 210 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 122 212 131 227
+0 2 0 "0s" 0 0 0 192 0 0  122 212 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 h
+LANG:10001 1 h
+LANG:10027 2 ч
+2 118
+"dur3"
+""
+1 183 210 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 185 212 208 227
+0 2 0 "0s" 0 0 0 192 0 0  185 212 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 min
+LANG:10001 3 min
+LANG:10027 6 мин
+21 104
+"spnDurencyMinute"
+""
+1 140 209 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  138 208 182 235
+0
+
+E
+E
+E
+
+N 0 45 15 0 1 1
+13 106
+"cmdNewShiftEntry"
+""
+1 213 209 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  218 208 322 235
+
+T 
+3
+LANG:10000 9 Anhängen
+LANG:10001 6 Append
+LANG:10027 16 Добавить
+"void main()
+{
+  dyn_int selLines;
+
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selLines);
+  
+  if (dynlen(selLines) > 0 && selLines[1] >= 0  && (spnDurencyHour.text != 0 || spnDurencyMinute.text != 0)) 	// if a Recipient and a duration is selected
+  {
+    string         strText, shiftName, domain, pNr, s;
+    dyn_dyn_string line, daysS;
+    dyn_string     color, recipient, agency, colorS, dsR;
+    int            i, j, duration, err, iPnr;
+    time           begin;
+    bool           daybound, bErrAlloc;
+    dyn_dyn_int    daysBack;
+
+    ccGetShift(shiftDP, shiftName, domain,daybound,begin,daysS,recipient,agency,colorS,err);
+
+    line[1] = tblPersonnel.getLineN(selLines[1]);
+    pNr  = line[1][3];
+    iPnr = selLines[1] + 1;
+
+    duration = spnDurencyHour.text*4 + spnDurencyMinute.text/15;
+   
+    daysBack = days;
+    for (i = 0; i < tblPersonnel.lineCount; i++)
+    //get actual colors
+    {
+      line[i+1] = tblPersonnel.getLineN(i);
+      color[i+1] = line [i+1][6];
+      dsR[i+1] = line[i+1][3];
+    }
+    
+    for ( i = 1; i <= duration; i++)
+    //append index
+    {
+      if (dynlen(days) == 0)
+        days[1][1] = line[selLines[1]+1][1];
+      else
+      {
+        if (dynlen(days[dynlen(days)])+1 <= 96)
+          days[dynlen(days)][dynlen(days[dynlen(days)])+1] = line[selLines[1]+1][1];
+        else
+          days[dynlen(days)+1][1] = line[selLines[1]+1][1];
+      }
+    }
+
+    ccCheckAllocationTimeAndMultiple(shiftDP, pNr, iPnr, days, begin, dsR, false, bErrAlloc);
+    if ( bErrAlloc )
+    {
+      days = daysBack;
+      return;
+    }
+
+    for ( i = 0; i < tblShiftHalfDay.lineCount; i++)
+    {
+      tblShiftHalfDay.cellValueRC(i,\"#0\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#1\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#2\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#3\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+    }
+    
+    selTimeIndex = -1;
+
+    //refresh table  (like in the EventInitialize of the Panel)
+    tblShiftDays.deleteAllLines();
+    for ( i = 1; i <= dynlen(days); i++)
+    {
+      tblShiftDays.appendLine(\"Day\",($3 != \"\")?(weekDays[(weekDay(begin)+i-2)%7+1]):(getCatStr(\"CommunicationCenter\",\"Day\")+i),
+                              \"AmPm\",\"AM\");
+      tblShiftDays.cellBackColRC(2*i-2,\"Day\",\"_3DFace\");
+      tblShiftDays.cellBackColRC(2*i-2,\"AmPm\",\"_3DFace\");
+      for ( j = 1;j <= 48; j++)
+      {
+        if (j%4 == 1)
+        {
+          strText = \"\";
+          if((j+1 > dynlen(days[i]) || days[i][j] != days[i][j+1])|| 
+             (j+2 > dynlen(days[i]) || days[i][j] != days[i][j+2])|| 
+             (j+3 > dynlen(days[i]) || days[i][j] != days[i][j+3]))
+            strText = \"||||\";
+        
+          if (j > dynlen(days[i]))
+            tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                  makeDynString(\"\",\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+          else
+          {
+            if (days[i][j] == -1)
+              tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,\"_3DFace\",(strText != \"\")?\"black\":\"_3DFace\")); 
+            else
+            {
+              if (days[i][j] == 0)
+                tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+              else
+              {
+                if (strText == \"\")
+                  strText = days[i][j];
+                tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,color[days[i][j]],(showIndex||strText == \"||||\")?\"black\":color[days[i][j]]));
+              }
+            }
+          }
+        }
+      }
+      tblShiftDays.appendLine(\"Day\",($3 != \"\")?(weekDays[(weekDay(begin)+i-2)%7+1]):(getCatStr(\"CommunicationCenter\",\"Day\")+i),
+                              \"AmPm\",\"PM\");
+      tblShiftDays.cellBackColRC(2*i-1,\"Day\",\"_3DFace\");
+      tblShiftDays.cellBackColRC(2*i-1,\"AmPm\",\"_3DFace\");
+      for ( j = 49; j <= 96; j++)
+      {
+        if (j%4 == 1)
+        {
+          strText = \"\";
+          if((j+1 > dynlen(days[i]) || days[i][j] != days[i][j+1])|| 
+             (j+2 > dynlen(days[i]) || days[i][j] != days[i][j+2])|| 
+             (j+3 > dynlen(days[i]) || days[i][j] != days[i][j+3]))
+            strText = \"||||\";
+            
+          if (j > dynlen(days[i]))
+            tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                  makeDynString(\"\",\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+          else
+          {
+            if (days[i][j] == -1)
+              tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,\"_3DFace\",(strText != \"\")?\"black\":\"_3DFace\")); 
+            else
+            {
+              if (days[i][j] == 0)
+                tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+              else
+              {
+                if (strText == \"\")
+                  strText = days[i][j];
+                tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,color[days[i][j]],(showIndex || strText == \"||||\")?\"black\":color[days[i][j]]));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",
+      getCatStr(\"para\",\"warning\"),
+      makeDynString(getCatStr(\"CommunicationCenter\",\"noDurOrPersonnel\")));
+}
+" 0
+ E E E
+13 108
+"cmdChangeShiftEntry"
+""
+1 323 209 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  328 208 432 235
+
+T 
+3
+LANG:10000 7 Ändern
+LANG:10001 6 Change
+LANG:10027 16 Изменить
+"void main()
+{
+  dyn_int selPers, selDays;
+
+  getValue(\"tblPersonnel\", \"getSelectedLines\", selPers);
+  getValue(\"tblShiftDays\", \"getSelectedLines\", selDays);
+  
+  if (dynlen(selPers) > 0 && selPers[1] >= 0 &&
+      dynlen(selDays) > 0 && selDays[1] >= 0 &&
+      selTimeIndex != -1 &&
+     (spnDurencyHour.text != 0 || spnDurencyMinute.text != 0)) 	// time, duration and personnel choosen
+  {
+    string         strText, pNr;
+    dyn_int        selLines;
+    dyn_dyn_string line;
+    int            i, j, duration, curDay, curQuarter, iPnr;
+    dyn_string     color, dsR;
+
+    string         shiftName, domain;
+    time           begin;
+    bool           daybound, append, bErrAlloc;
+    dyn_string     recipient, agency, colorS, aggs;
+    dyn_dyn_string daysS;
+    dyn_dyn_int    daysBack;
+    int            err;
+    
+    append = true;
+
+    ccGetShift(shiftDP, shiftName, domain,daybound,begin,daysS,recipient,agency,colorS,err);
+    
+    line[1] = tblPersonnel.getLineN(selPers[1]);
+    pNr  = line[1][3];
+    iPnr = selPers[1] + 1;
+
+    duration = spnDurencyHour.text*4 + spnDurencyMinute.text/15;
+   
+    daysBack = days;
+   
+    for (i = 0; i < tblPersonnel.lineCount; i++)
+    //get table personell and color;
+    {
+      line[i+1] = tblPersonnel.getLineN(i);
+      color[i+1] = line [i+1][6];
+      dsR[i+1] = line[i+1][3];
+    }
+    
+    //calculate index of days
+    curDay = selDays[1]/2+1;
+    curQuarter = (selDays[1]%2)*48+selTimeIndex;
+    
+    ccUsedInAggs(shiftDP,aggs);
+    if (dynlen(aggs) > 0)
+      append = false;
+    
+    //Change
+    for ( i = 1; i <= duration; i++)
+    {
+      if (curQuarter+i > 96)
+      //next halfDay
+      {
+        curDay++;
+        curQuarter = 1 - i;
+      }
+
+      if (append || //not used in Aggs
+          (dynlen(days) >= curDay && dynlen(days[curDay]) >= curQuarter+i)) //used in Aggs but a valid index 
+        days[curDay][curQuarter+i] = line[selPers[1]+1][1];
+    }
+
+    ccCheckAllocationTimeAndMultiple(shiftDP, pNr, iPnr, days, begin, dsR, false, bErrAlloc);
+    if ( bErrAlloc )
+    {
+      days = daysBack;
+      return;
+    }
+      
+    for ( i = 0; i < tblShiftHalfDay.lineCount; i++)
+    //no halfDay selected
+    {
+      tblShiftHalfDay.cellValueRC(i,\"#0\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#1\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#2\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#3\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+    }
+    
+    selTimeIndex = -1;
+
+    // refresh Table with days (like EventInitialize of Panel)
+    tblShiftDays.deleteAllLines();
+    for ( i = 1; i <= dynlen(days); i++)
+    {
+      tblShiftDays.appendLine(\"Day\",($3 != \"\")?(weekDays[(weekDay(begin)+i-2)%7+1]):(getCatStr(\"CommunicationCenter\",\"Day\")+i),
+                              \"AmPm\",\"AM\");
+      tblShiftDays.cellBackColRC(2*i-2,\"Day\",\"_3DFace\");
+      tblShiftDays.cellBackColRC(2*i-2,\"AmPm\",\"_3DFace\");
+      for ( j = 1;j <= 48; j++)
+      {
+        if (j%4 == 1)
+        {
+          strText = \"\";
+          if((j+1 > dynlen(days[i]) || days[i][j] != days[i][j+1])|| 
+             (j+2 > dynlen(days[i]) || days[i][j] != days[i][j+2])|| 
+             (j+3 > dynlen(days[i]) || days[i][j] != days[i][j+3]))
+            strText = \"||||\";
+        
+          if (j > dynlen(days[i]))
+            tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                  makeDynString(\"\",\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+          else
+          {
+            if (days[i][j] == -1)
+              tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,\"_3DFace\",(strText != \"\")?\"black\":\"_3DFace\")); 
+            else
+            {
+              if (days[i][j] == 0)
+                tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+              else
+              {
+                if (strText == \"\")
+                  strText = days[i][j];
+                tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,color[days[i][j]],(showIndex||strText == \"||||\")?\"black\":color[days[i][j]]));
+              }
+            }
+          }
+        }
+      }
+      tblShiftDays.appendLine(\"Day\",($3 != \"\")?(weekDays[(weekDay(begin)+i-2)%7+1]):(getCatStr(\"CommunicationCenter\",\"Day\")+i),
+                              \"AmPm\",\"PM\");
+      tblShiftDays.cellBackColRC(2*i-1,\"Day\",\"_3DFace\");
+      tblShiftDays.cellBackColRC(2*i-1,\"AmPm\",\"_3DFace\");
+      for ( j = 49; j <= 96; j++)
+      {
+        if (j%4 == 1)
+        {
+          strText = \"\";
+          if((j+1 > dynlen(days[i]) || days[i][j] != days[i][j+1])|| 
+             (j+2 > dynlen(days[i]) || days[i][j] != days[i][j+2])|| 
+             (j+3 > dynlen(days[i]) || days[i][j] != days[i][j+3]))
+            strText = \"||||\";
+            
+          if (j > dynlen(days[i]))
+            tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                  makeDynString(\"\",\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+          else
+          {
+            if (days[i][j] == -1)
+              tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,\"_3DFace\",(strText != \"\")?\"black\":\"_3DFace\")); 
+            else
+            {
+              if (days[i][j] == 0)
+                tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+              else
+              {
+                if (strText == \"\")
+                  strText = days[i][j];
+                tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,color[days[i][j]],(showIndex || strText == \"||||\")?\"black\":color[days[i][j]]));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",
+      getCatStr(\"para\",\"warning\"),
+      makeDynString(getCatStr(\"CommunicationCenter\",\"noTimeDurOrPersonnel\")));
+}" 0
+ E E E
+13 107
+"cmdDeleteShiftEntry"
+""
+1 433 209 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  438 208 542 235
+
+T 
+3
+LANG:10000 8 Löschen
+LANG:10001 6 Delete
+LANG:10027 14 Удалить
+"void main()
+{
+  dyn_int selDays;
+
+  getValue(\"tblShiftDays\", \"getSelectedLines\", selDays);
+  
+  if (dynlen(selDays) > 0 && selDays[1] >= 0  && selTimeIndex != -1 && 
+     (spnDurencyHour.text != 0 || spnDurencyMinute.text != 0)) 	// if a time and duration is selected
+  {
+    string strText;
+    dyn_dyn_string line;
+    dyn_string     color;
+    int            i, j, duration, endDay, endQuarter, durAll;
+    
+    string         shiftName, domain;
+    time           begin;
+    bool           daybound, daysEmpty;
+    dyn_string     recipient, agency, colorS;
+    dyn_dyn_string daysS;
+    int            err;
+
+    ccGetShift(shiftDP, shiftName, domain, daybound, begin, daysS, recipient, agency, colorS, err);
+    
+    duration = spnDurencyHour.text*4 + spnDurencyMinute.text/15;
+    // !!!
+    durAll = 0;
+    for ( i = 1; i <= dynlen(days); i++ )
+    {
+      durAll += dynlen(days[i]);
+    }
+    i = (selDays[1]%2)*48 + selTimeIndex;
+    durAll -= i;
+    if ( duration > durAll ) duration = durAll;
+    
+    for (i = 0; i < tblPersonnel.lineCount; i++)
+    {
+      line[i+1] = tblPersonnel.getLineN(i);
+      color[i+1] = line [i+1][6];
+    }
+
+    //calculate end (start + duration)    
+    endDay = selDays[1]/2+1;
+    endQuarter = (selDays[1]%2)*48+selTimeIndex+duration;
+    if (endQuarter > 96)
+    {
+      endQuarter--;
+      endDay+=endQuarter/96;
+      endQuarter = endQuarter%96+1;
+    }
+
+    //Delete
+    for ( i = 0; i < duration; i++)
+    {
+      if (endQuarter-i == 0)
+      {
+        endDay--;
+        endQuarter = 96+i;
+      }
+      if (endDay <= dynlen(days) && endQuarter-i <= dynlen(days[endDay]))
+      //existing Field
+        days[endDay][endQuarter - i] = 0; //set field empty
+    }
+
+    while ( dynlen(days) && days[dynlen(days)][dynlen(days[dynlen(days)])] == 0 )
+    //remove every 0 at the end of days
+    {
+      if (dynlen(days[dynlen(days)]) == 1)
+        dynRemove(days,dynlen(days)); //remove day
+      else
+        dynRemove(days[dynlen(days)],dynlen(days[dynlen(days)])); //remove it from dyn
+    }
+    daysEmpty = true;
+    for ( i = 1; i <= dynlen(days); i++ )
+    {
+      for ( j = 1; j <= dynlen(days[i]); j++ )
+      {
+        if ( days[i][j] > -1 )
+        {
+          daysEmpty = false;
+          break;
+        }
+      }
+      if ( !daysEmpty )
+        break;
+    }
+    if ( daysEmpty )
+      dynClear(days);
+      
+    for ( i = 0; i < tblShiftHalfDay.lineCount; i++)
+    {
+      tblShiftHalfDay.cellValueRC(i,\"#0\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#1\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#2\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+      tblShiftHalfDay.cellValueRC(i,\"#3\",makeDynString(\"\",\"_3DFace\",\"_3DFace\")); 
+    }
+    
+    selTimeIndex = -1;
+
+    //refresh table  (like in the EventInitialize of the Panel)
+    tblShiftDays.deleteAllLines();
+    for ( i = 1; i <= dynlen(days); i++)
+    {
+      tblShiftDays.appendLine(\"Day\",($3 != \"\")?(weekDays[(weekDay(begin)+i-2)%7+1]):(getCatStr(\"CommunicationCenter\",\"Day\")+i),
+                              \"AmPm\",\"AM\");
+      tblShiftDays.cellBackColRC(2*i-2,\"Day\",\"_3DFace\");
+      tblShiftDays.cellBackColRC(2*i-2,\"AmPm\",\"_3DFace\");
+      for ( j = 1;j <= 48; j++)
+      {
+        if (j%4 == 1)
+        {
+          strText = \"\";
+          if((j+1 > dynlen(days[i]) || days[i][j] != days[i][j+1])|| 
+             (j+2 > dynlen(days[i]) || days[i][j] != days[i][j+2])|| 
+             (j+3 > dynlen(days[i]) || days[i][j] != days[i][j+3]))
+            strText = \"||||\";
+        
+          if (j > dynlen(days[i]))
+            tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                  makeDynString(\"\",\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+          else
+          {
+            if (days[i][j] == -1)
+              tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,\"_3DFace\",(strText != \"\")?\"black\":\"_3DFace\")); 
+            else
+            {
+              if (days[i][j] == 0)
+                tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+              else
+              {
+                if (strText == \"\")
+                  strText = days[i][j];
+                tblShiftDays.cellValueRC(2*i-2,\"#\"+((j-1)/4),
+                    makeDynString(strText,color[days[i][j]],(showIndex||strText == \"||||\")?\"black\":color[days[i][j]]));
+              }
+            }
+          }
+        }
+      }
+      tblShiftDays.appendLine(\"Day\",($3 != \"\")?(weekDays[(weekDay(begin)+i-2)%7+1]):(getCatStr(\"CommunicationCenter\",\"Day\")+i),
+                              \"AmPm\",\"PM\");
+      tblShiftDays.cellBackColRC(2*i-1,\"Day\",\"_3DFace\");
+      tblShiftDays.cellBackColRC(2*i-1,\"AmPm\",\"_3DFace\");
+      for ( j = 49; j <= 96; j++)
+      {
+        if (j%4 == 1)
+        {
+          strText = \"\";
+          if((j+1 > dynlen(days[i]) || days[i][j] != days[i][j+1])|| 
+             (j+2 > dynlen(days[i]) || days[i][j] != days[i][j+2])|| 
+             (j+3 > dynlen(days[i]) || days[i][j] != days[i][j+3]))
+            strText = \"||||\";
+            
+          if (j > dynlen(days[i]))
+            tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                  makeDynString(\"\",\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+          else
+          {
+            if (days[i][j] == -1)
+              tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,\"_3DFace\",(strText != \"\")?\"black\":\"_3DFace\")); 
+            else
+            {
+              if (days[i][j] == 0)
+                tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,\"_Window\",(strText != \"\")?\"black\":\"_Window\")); 
+              else
+              {
+                if (strText == \"\")
+                  strText = days[i][j];
+                tblShiftDays.cellValueRC(2*i-1,\"#\"+((j-49)/4),
+                    makeDynString(strText,color[days[i][j]],(showIndex || strText == \"||||\")?\"black\":color[days[i][j]]));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/MessageWarning\",
+      getCatStr(\"para\",\"warning\"),
+      makeDynString(getCatStr(\"CommunicationCenter\",\"noTimeOrDuration\")));
+}
+
+" 0
+ E E E
+21 103
+"spnDurencyHour"
+""
+1 70 209 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  68 208 118 235
+0
+
+E
+E
+E
+
+N 0 168 1 0 1 1
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

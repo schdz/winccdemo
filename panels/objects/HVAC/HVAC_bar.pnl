@@ -1,0 +1,122 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 219 279 N "HVAC_Background" 2
+"$DPE"
+"$Farbe"
+E E E E E 1 -1 -1 0  34 29
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+6 0
+"Border1"
+""
+1 34 165 E E E 1 E 1 E N "HVAC_Backgnd_dark" E N "HVAC_Background" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 34 60 63 165
+6 1
+"Border2"
+""
+1 34 165 E E "main()
+{
+   setValue(\"\",\"backCol\",$Farbe); //$Farbe contains colour of bar
+   
+   if(dpConnect(\"work\",$DPE+\"value.position:_online.._value\",
+                       $DPE+\"value.position:_pv_range.._min\",
+                       $DPE+\"value.position:_pv_range.._max\")==-1)
+       setValue(\"\",\"backCol\",\"_dpdoesnotexist\",\"foreCol\",\"_dpdoesnotexist\");   
+}
+//Calculate length of bar and display it
+work(string dp1,float werty,string dp2,float minwerty,string dp3,float maxwerty)
+{
+   float x,y;
+   getValue(\"\",\"scale\",x,y);
+   
+   maxwerty = (maxwerty > 0) ? maxwerty : 100;
+   
+   y=((100.000000/100.0-(0.000000)/100.0)/(maxwerty-minwerty))*(werty-minwerty)+(0.000000)/100.0;
+   if(y>100.000000/100.0) y=100.000000/100.0;
+   if(y<0.000000/100.0) y=0.000000/100.0;
+   setValue(\"\",\"scale\",x,y);
+}
+" 0
+ 1 E 1 E N "HVAC_Object_foregnd" E N "HVAC_Background" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 34 60 63 165
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

@@ -1,0 +1,251 @@
+deviceType1,СМС (GSM)
+deviceType2,Речь
+deviceType3,Пейджер
+deviceType4,СМС (Аналог)
+deviceType5,E-mail
+deviceType6,Факс
+
+ccCallingList,Управление списком вызовов
+ccDataset,Управление группами алармов
+ccGeneral,Общие настройки
+ccSchedulerDays,Управление особыми днями
+ccOverPara,График перегрузок
+ccPara,Настройка Центра Коммуникаций
+ccCyclicDataset,Циклические наборы данных
+
+datasetinuse,Эта группа алармов используется (%1 %2), удаление невозможно!
+callinglistinuse,Список вызовов используется (%1 %2), удаление невозможно!
+invalidMail, Неверный формат адреса E-mail!
+invalidNumber,Число содержит недопустимые символы (допустимыми являются '+' и '0'-'9')!
+invalidPIN,Неверный ПИН (должно быть 4 цифры)!
+deviceEmpty,Пожалуйста, заполните все поля корректно!
+recipientUsed,Этот пользователь активен (%1 %2), удаление невозможно!
+deviceUsed,Это устройство используется (%1 %2), удаление невозможно!
+devicetypeUsed,Этот тип устройства используется (%1 %2), удаление невозможно!
+deviceNotUsed,Это устройство не используется, отключение не требуется.
+confirmRelease,Вы уверены что хотите отключить это устройство?
+shiftNameEmpty,Имя смены не должно быть пустым!
+userChanged,Пользователь был изменен! Сохранить изменения?
+userNotInDomain,Некоторые пользователи этого списка вызовов не принадлежат к текущей области! Использовать этот список вызовов несмотря на это?
+use,Использовать
+dontuse,Не использовать
+deviceTypeNameEmpty,Имя типа устройства не должно быть пустым!
+callingListNameEmpty,Имя списка вызовов не должно быть пустым!
+domainNameEmpty,Имя области не должно быть пустым!
+shiftSetNameEmpty,Имя набора смен не должно быть пустым!
+shiftNameEmpty,Shift name must not be empty!
+changeTopLevel?,Вы действительно хотите изменить основной набор смен на этот набор? ВНИМАНИЕ: все перегрузки для этой области будут удалены!
+change,Изменить
+deviceExists,Устройство с таким именем или номером уже существует!
+errorConnectAlertGroup,Ошибка при чтении группы алармов!
+alertGroupEmpty,Область пока не может использоваться, т.к. её группы алармов еще не параметризованы!
+confirmPin,ПИН-код и подтверждение ПИН-кода различаются!
+confirmPassword,Пароль и подтверждение пароля различаются!
+newProvider,Создать провайдера
+modifyProvider,Изменить провайдера
+deleteProvider?,Вы действительно хотите удалить этого провайдера?
+providerUsed,Провайдер используется (%1), удаление невозможно!
+wrongSplitTime,Время перерыва должно быть определено внутри интервала!
+
+devicetype,тип устройства
+device,устройство
+callingList,список вызовов
+user,пользователь
+User,Пользователь
+Substitute,Заместитель
+FallbackPerson,Список заместителей
+domain,область
+shift,смена
+Shift,Смена
+cyclicDataset,Циклический набор данных
+allocate,Выделить
+specialDays,Особые дни
+timeChart,График для области 
+start,Начало
+end,Окончание
+name,Имя:
+deviceTypeName,Имя типа устройства
+domainName,Имя области
+shiftName,Имя смены
+shiftSetName,Имя набора смен
+input, ввод
+reachability,Доступность
+printedOn,Напечатано:
+newUser,Новый пользователь
+
+shiftPanel,Управление сменами
+shiftAggregationPanel,Управление наборами смен
+dpGroups,Группы DP
+newCyclic,Определить новый циклический набор данных
+changeCyclic,Изменить циклический набор данных
+splitInterval,Интервал перерыва
+
+noSubstitute,Без замещения
+allocatedTimeTooLongNotAllowed,Назначенный временной интервал не должен быть более %1 ч!
+allocatedTimeTooLong,Имеются назначенные временные интервалы, которые более %1 ч! Вы хотите продолжить назначение?
+multipleAllocatedNotAllowed,Пользователю не может быть назначено более одной смены (найден в %1)!
+multipleAllocated,Пользователю будет назначено более одной смены (найден в %1)! Вы хотите продолжить назначение?
+inDomainUsed,Область '%1' не может быть очищена, имеются активные пользователи (%2 %3)!
+noFallOutSubstitute,Не назначен заместитель для недоступного пользователя!
+
+overlappedPeriods,Вы назначили перекрывающиеся временные периоды! Пожалуйста, определите период заново!
+operationOverlapped,Назначенные временные периоды перекрываются!
+durationTooLong,Назначенный временной период слишком большой!
+noUserSelected,Пожалуйста, сначала выберите пользователя!
+fromBiggerThenTo,Время начала (От) должно быть меньше времени окончания (До)!
+operationAdded,Новый период добавлен.
+operationModified,Период изменен.
+usedAsTopLevel,Набор смен является основным для области '%1', удаление невозможно!
+noMixedShiftsAllowed,Зависимые и независимые от дня недели смены не могут использоваться совместно в одном наборе смен!
+notMonday,Днем начала основного набора смен должен быть понедельник!
+
+cannotBeChanged,Временной интервал может быть изменен только в интерфейсе управления сменами!
+cannotBeShifted,Временной интервал может быть перемещен только в интерфейсе управления сменами!
+noUserFound,Пользователи не найдены!
+substituteUser(s)?,Должен(-ны) ли пользователь(-ли) замещаться пользователем'%1' ?
+substitute,Заместить
+substituteUser,Пользователь замещает
+noGapAllowed,Определение разрывов недопустимо!
+cannotBeAdded,Новые временные интервалы могут быть определены только в интерфейсе управления сменами!
+pastNotAllowed,Прошлые настройки не могут быть изменены!
+removeOverPara,Удалить перегрузку
+removeOverPara?,Вы действительно хотите удалить перегрузку для дня %1?
+remove,Удалить
+selectUser,Выбрать пользователя
+changeWithLeft,Поменять пользователя с левым
+changeWithRight,Поменять пользователя с правым
+startOutOfDay,Интервал не должен быть определен до начала дня!
+endOutOfDay,Интервал не должен быть определен после окончания дня!
+leftGap,Интервал не должен начинаться разрывом!
+rightGap,Интервал не должен оканчиваться разрывом!
+overGap,Интервал не должен располагаться на разрыве!
+removeMessages,Удалить сообщение
+removeMessages?,Вы действительно хотите удалить все выбранные сообщения?
+removeAllMessages?,Вы действительно хотите удалить все сообщения в очереди?
+messageDeletedBy,Сообщение удалено пользователем WinCC OA 
+noDomainWithShiftPlan,Нет областей с настроенным основным набором смен!
+queueEmpty,Очередь пуста.
+noDomainSelected,Пожалуйста, выберите область!
+invalidID,Недопустимый ИД! Обозначение ИД не должно содержать символы '|', '<>' or '°'!
+deleteBarWithButton,Пожалуйста, используйте кнопку Удалить (слева от временной шкалы) для удаления интервала!
+notAllUsersInDomain,Выбранный список вызовов не может быть использован здесь, т.к. содержит не принадлежащих этой области пользователей!
+duplicatedPin,Такой PIN уже назначен другому пользователю!
+noCLswitchOut,Нет определенных списков вызова! Область '%1' будет установлена как "Выкл"!
+noCLswitchedOut,Нет определенных списков вызова! Область '%1' установлена как "Выкл"!
+
+usedWithEmptyGroup,Область с пустой группой алармов не может использоваться! Пожалуйста, нажмите 'Изменить группу' для редактирования группы алармов!
+editGroup,Изм. группу
+restartCtrl,Пожалуйста, перезапустите ctrl-менеджеры со скриптом ccController.ctl, если вы изменили настройки!
+
+#ts := telScript - Texte für das Telefonat
+
+
+#MAIN
+tsHello,Привет!
+tsIntro,Это Центр Коммуникаций.
+tsCompanie,E T M.
+
+#LOGIN
+tsLogin,Пожалуйста, введите ваш ПИН для авторизации.
+tsLoginNoDtmf,Я не идентифицировал тоны DTMF, пожалуйста, попробуйте заново!
+tsLoginWrong,Этот ПИН неверен, пожалуйста, попробуйте заново!
+
+#MNU_MAIN
+tsMnuMain,Основное меню
+tsMnuMain1,Нажмите 1 для прослушивания актуальных алармов
+tsMnuMain2,Нажмите 2 для подтверждения сообщений, полученных по СМС или E-MAIL.
+tsMnuMain3,Нажмите 3 для обзора алармов.
+tsMnuMain4,Нажмите 4 для разрешения доставки алармов.
+tsMnuMain5,Нажмите 5 для получения актуальных данных.
+tsMnuMain#,Нажмите # для завершения подключения
+tsMnuMainRetour,Нажмите # для возвращения в основное меню.
+
+#ALERT
+tsAlert,Меню алармов
+tsAlertCount,Доступно [AlertCount] алармов.
+tsNoAlerts,Отсутствуют текущие алармы.
+tsFirstAlert,Это был первый аларм.
+tsLastAlert,Это был последний аларм.
+tsAlertTextError,Внутренняя ошибка, отсутствует текст для этого аларма.
+
+#CONFIRM
+tsAlertSessionId,Пожалуйста, введите 4-х символьный цифровой код-подтверждение, отправленный вам по СМС или E-MAIL.
+tsConfirmAlertCount,Доступно [AlertCount] алармов.
+tsConfirmNoAlerts,Код подтверждения неверен или алармы более нерелевантны.
+tsAlertNotify,Аларм подтвержден.
+tsAlertNotifyError,Аларм не может быть подтвержден.
+tsAlertNotifyAll,[AlertCount] алармов подтверждено.
+
+#ALERTOVERVIEW
+tsAlertOverview,Обзор алармов
+
+#OVERVIEW
+tsOverview,Запрос обзора алармов
+tsOverview1,Пожалуйста, нажмите 1 для запроса E-MAIL
+tsOverview2,Пожалуйста, нажмите 2 для запроса факса
+tsAskForDomain,Пожалуйста, выберите одну из областей, к которой вы принадлежите.
+tsNotUsersDomain,Вы не принадлежите к области [DomainIdx]
+tsNoMailAddress,Извините, у меня нет допустимого адреса E-MAIL для отправки вам данных.
+tsMailSent,Сообщение отправлено.
+tsMailNoAlerts,Отсутствуют алармы, обзор не отправлен.
+tsMailError,Произошла ошибка с номером [ErrorNumber].
+
+#MNU_ALERT
+tsMnuAlert4,С помощью нажатия 4
+tsMnuAlert5,5 и
+tsMnuAlert6,6 вы можете перемещаться по алармам.
+tsMnuAlert*,Вы можете подтвердить аларм нажатием *
+tsMnuAlert0,С помощью Нуля вы можете подтвердить все алармы.
+
+#DO_ALERT
+
+#DATASET
+tsEnterDataSetID,Какой набор данных вы хотите получить?
+tsMnuDataSet4,С помощью нажатия 4
+tsMnuDataSet5,5 и
+tsMnuDataSet6,6 вы можете перемещаться по наборам данных.
+
+tsNoDataSet,Я не нашел этот набор данных.
+tsDataSetNoDps,Нет доступных данных в этом наборе данных.
+tsFirstDataSet,Это была первая запись.
+tsLastDataSet,Это была последняя запись.
+#TIMEOUT_RETRY
+tsTimeOutRetry,Привет? Вы еще на линии?
+
+#TIMEOUT_QUIT
+tsTimeOutQuit,Я закрываю подключение.
+
+#END
+tsEnd,Желаю вым приятного дня!
+tsNZD,Эта функциональность еще не реализована.
+
+#gsm - Texte für GSM Modem
+gsmWrongPIN,Извините, ваш ПИН [PIN] неверен!
+gsmWrongSessionId,Извините, ИД вашей сессии [SessionId] неверен!
+gsmNoAlerts,Извините, но я не могу найти алармы с ИД сессии [SessionId]!
+gsmConfirm,Спасибо, я подтверждаю [AlertCount] алармов с [SessionId].
+
+MsgState_1,Сообщение записано.
+MsgState_2,Сообщение будет заблокировано.
+MsgState_3,Сообщение заблокировано.
+#MsgState_4,Сообщение отправляется.
+MsgState_4,
+MsgState_5,Сообщение отправлено в [MsgTime] для [MsgUserName].
+MsgState_6,Сообщение для [MsgUserName] не может быть отправлено.
+MsgState_7,Сообщение подтверждено в [MsgTime] пользователем [MsgUserName].
+MsgState_8,Сообщение не подтверждено пользователем [MsgUserName].
+MsgState_9,Сообщение квитировано в [AlertAckTime].
+MsgState_10,Сообщение еще не квитировано.
+MsgState_11,Сообщение отработано.
+MsgState_12,Сообщение удалено в [MsgTime].
+
+AlertState_1,установлено
+AlertState_2,установлено, неквитировано
+AlertState_3,снято
+AlertState_4,установлено и снято, неквитировано
+
+MsgTemplate,[AlertDescription] [AlertText] [AlertState] в [AlertTime], Значение: [AlertValue]. [MsgState]
+#MsgTemplate_Tel,
+MsgTemplate_Sms,([MsgSessionId]) [AlertDescription] [AlertText] [AlertState] в [AlertTime]. Значение: [AlertValue]. [MsgState]
+MsgTemplate_Gsm,[AlertDescription] [AlertText] [AlertState] в [AlertTime]. Значение: [AlertValue]. [MsgState]
+#MsgTemplate_EMail,

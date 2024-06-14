@@ -1,0 +1,1679 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+"main()
+{
+noFlickerRedraw(true);
+}" 0
+ E E E E 1 -1 -1 0  956 51
+""0  1
+E E 3
+"CBRef" "0"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+NC
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+1 1159 25 "" 0
+0
+1 1164 26 "" 0
+0
+1 1169 27 "" 0
+0
+1 1174 28 "" 0
+0
+10 410
+"Polyline2"
+""
+1 60 60 E E E 1 E 1 E N "ws_water_usable" E N "_Transparent" E E
+ E E
+147 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E U  0 E 4 60 60
+60 90
+300 90
+300 270
+ 0
+4 417
+"Line1"
+""
+1 180 60 E E E 1 E 1 E N "ws_water_usable" E N {255,255,255} E E
+ E E
+154 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  180 90 180 60
+4 418
+"Line2"
+""
+1 300 60 E E E 1 E 1 E N "ws_water_usable" E N {255,255,255} E E
+ E E
+155 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  300 90 300 60
+1 1187 35 "" 0
+0
+4 510
+"Line3"
+""
+1 530 60 E E E 1 E 1 E N "ws_water_usable" E N {255,255,255} E E
+ E E
+168 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  530 252 530 60
+1 1224 44 "" 0
+0
+1 1246 49 "" 0
+0
+10 578
+"Polyline1"
+""
+1 880 199 E E E 1 E 1 E N "ws_water_usable" E N "_Transparent" E E
+ E E
+187 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E U  0 E 5 880 200
+880 210
+800 210
+800 90
+540 90
+ 0
+1 1254 52 "" 0
+0
+1 1257 55 "" 1
+0
+1 1263 59 "" 0
+0
+4 662
+"Line4"
+""
+1 20 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+222 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  390 500 20 500
+4 663
+"Line5"
+""
+1 430 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+223 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  430 500 820 500
+4 668
+"Line6"
+""
+1 40 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+228 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  40 520 40 500
+10 688
+"Polyline4"
+""
+1 40 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+236 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 40 531
+44 519
+36 519
+ 1
+4 712
+"Line8"
+""
+1 300 362 E E E 1 E 1 E N "ws_water_usable" E N "_Transparent" E E
+ E E
+241 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  300 500 300 362
+10 743
+"Polyline3"
+""
+1 940 500 E E E 1 E 1 E N "ws_water_usable" E N "_Transparent" E E
+ E E
+251 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E U  0 E 4 940 500
+940 430
+800 430
+800 500
+ 0
+4 754
+"Line11"
+""
+1 530 362 E E E 1 E 1 E N "ws_water_usable" E N "_Transparent" E E
+ E E
+259 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  530 500 530 362
+1 1316 79 "" 0
+0
+4 809
+"Line7"
+""
+1 120 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+280 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  120 520 120 500
+4 812
+"Line12"
+""
+1 200 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+283 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  200 520 200 500
+4 815
+"Line15"
+""
+1 280 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+286 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  280 520 280 500
+4 818
+"Line16"
+""
+1 370 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+289 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  370 520 370 500
+4 822
+"Line18"
+""
+1 450 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+293 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  450 520 450 500
+4 825
+"Line19"
+""
+1 530 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+296 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  530 520 530 500
+4 828
+"Line20"
+""
+1 610 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+299 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  610 520 610 500
+4 831
+"Line21"
+""
+1 690 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+302 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  690 520 690 500
+4 834
+"Line22"
+""
+1 780 500 E E E 1 E 1 E N "ws_water_usable" E N "STD_device_body" E E
+ E E
+305 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 4 1 0 1 E  780 520 780 500
+10 811
+"Polyline6"
+""
+1 120 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+282 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 120 531
+124 519
+116 519
+ 1
+10 814
+"Polyline7"
+""
+1 200 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+285 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 200 531
+204 519
+196 519
+ 1
+10 817
+"Polyline8"
+""
+1 280 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+288 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 280 531
+284 519
+276 519
+ 1
+10 820
+"Polyline9"
+""
+1 370 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+291 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 370 531
+374 519
+366 519
+ 1
+10 824
+"Polyline10"
+""
+1 450 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+295 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 450 531
+454 519
+446 519
+ 1
+10 827
+"Polyline11"
+""
+1 530 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+298 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 530 531
+534 519
+526 519
+ 1
+10 830
+"Polyline12"
+""
+1 610 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+301 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 610 531
+614 519
+606 519
+ 1
+10 833
+"Polyline13"
+""
+1 690 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+304 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 690 531
+694 519
+686 519
+ 1
+10 836
+"Polyline14"
+""
+1 780 531 E E E 1 E 1 E N "ws_water_usable" E N "ws_water_usable" E E
+ E E
+307 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 3 0 1 E U  1 E 3 780 531
+784 519
+776 519
+ 1
+10 801
+"Polyline5"
+""
+1 380 500 E E E 1 E 1 E N "ws_water_usable" E N "_Transparent" E E
+ E E
+277 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 2 4 1 0 1 E U  0 E 4 380 500
+380 480
+440 480
+440 500
+ 0
+4 933
+"Line13"
+""
+1 942 488 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+332 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  942 501 942 488
+4 934
+"Line14"
+""
+1 938 488 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+333 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  938 501 938 488
+1 1343 103 "" 0
+0
+1 1346 104 "" 0
+0
+1 1349 105 "" 0
+0
+1 1352 106 "" 0
+0
+13 1158
+"PUSH_BUTTON1"
+""
+1 391 400 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+352 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 16 Alarm  Reduction
+LANG:10001 15 Alarm Reduktion
+LANG:10027 35 Сокращение алармов
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  389 398 433 442
+
+P 
+12632256
+"pictures/AESRow.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  if(getUserPermission(2))
+  EP_childPanelOn();
+   else
+    ChildPanelOnCentral(\"vision/MessageWarning\",getCatStr(\"va\",\"headerPanelhost\"),
+                        makeDynString(getCatStr(\"general\",\"permission\"),getCatStr(\"general\",\"cancel\")));
+}
+EP_childPanelOn()
+{
+  ChildPanelOnCentral(\"mainpanels/childs/alarmfilter.pnl\",
+      \"ALarmreduction\",
+      makeDynString(\"\"));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentral}
+// File {mainpanels/childs/alarmfilter.pnl}
+// Panel {ALarmreduction}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+1 1341 98 "" 2
+0
+1 1339 95 "" 2
+0
+1 1337 94 "" 2
+0
+1 1179 34 "" 54
+0
+1 1200 36 "" 54
+0
+1 1208 42 "" 54
+0
+1 1216 43 "" 54
+0
+1 1266 65 "" 1
+0
+1 1273 68 "" 54
+0
+1 1281 69 "" 1
+0
+1 1288 70 "" 1
+0
+1 1295 75 "" 1
+0
+1 1302 76 "" 54
+0
+1 1310 78 "" 25
+0
+1 1319 85 "" 9
+0
+1 1325 86 "" 9
+0
+1 1331 92 "" 5
+0
+6 939
+"Border2"
+""
+1 820 439 E E E 1 E 1 E N "STD_border_dark" E N "STD_device_body" E E
+ E E
+338 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 820 419 880 439
+4 944
+"Line9"
+""
+1 820 429 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+339 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  820 429 880 419
+4 945
+"Line10"
+""
+1 820 429 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+340 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  880 439 820 429
+1 1355 107 "" 25
+0
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+13 954
+"Button1"
+""
+1 390 349 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+346 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  388 347 432 391
+
+P 
+12632256
+"pictures/icons/sum_trend_enabled.gif"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  if(getUserPermission(2))
+      ChildPanelOnCentralModal(\"vision/summation_trend.pnl\", getCatStr(\"DemoApp\",\"title_of_summation_trend\"), 
+                                makeDynString(\"$dpe_1:\"+\"Zone_1_flow.C1.AVG_WT0\",
+    								          \"$dpe_2:\"+\"Zone_2_flow.C1.AVG_WT0\",
+    								          \"$dpe_3:\"+\"\", 
+    								          \"$dpe_4:\"+\"\",
+    								          \"$dpe_5:\"+\"\",	
+    								          \"$dpe_6:\"+\"\",
+    								          \"$dpe_7:\"+\"\",
+    								          \"$dpe_8:\"+\"\"));
+  else
+    ChildPanelOnCentral(\"vision/MessageWarning\",getCatStr(\"va\",\"headerPanelhost\"),
+                        makeDynString(getCatStr(\"general\",\"permission\"),getCatStr(\"general\",\"cancel\")));
+}" 0
+ E E E
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+2 411
+"Text1"
+""
+1 650 8 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+148 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 652 10 924 76
+0 2 0 "0s" 0 0 0 66 0 0  652 10 2
+3
+LANG:10000 26 Arial,-1,29,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,29,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,29,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Wasserversorgung
+LANG:10001 19 Water supply system
+LANG:10027 26 Водоснабжение
+3
+LANG:10000 26 Arial,-1,29,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,29,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,29,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Mustertal
+LANG:10001 9 Mustertal
+LANG:10027 20 Мустерталь
+6 412
+"Border1"
+""
+1 937 70 E E E 1 E 1 E N "_Transparent" E N {255,255,255} E E
+ E E
+149 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "412.bmp" 4294967295 E 937 16 991 70
+2 413
+"Text2"
+""
+1 16 11 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+150 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 13 110 28
+0 2 0 "0s" 0 0 0 193 0 0  63 13 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 Quelle Urgen 1 
+LANG:10001 14 Source Urgen 1
+LANG:10027 26 Источн. Урген 1
+2 414
+"Text3"
+""
+1 135 11 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+151 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 135 13 229 28
+0 2 0 "0s" 0 0 0 193 0 0  182 13 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 Quelle Urgen 2 
+LANG:10001 14 Source Urgen 2
+LANG:10027 26 Источн. Урген 2
+2 415
+"Text4"
+""
+1 264 11 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+152 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 264 13 342 28
+0 2 0 "0s" 0 0 0 193 0 0  303 13 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Quelle Reith 
+LANG:10001 12 Source Reith
+LANG:10027 22 Источн. Рейт
+2 416
+"Text5"
+""
+1 475 11 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+153 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 477 13 587 28
+0 2 0 "0s" 0 0 0 193 0 0  532 13 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 18 Quelle Schweighof 
+LANG:10001 17 Source Schweighof
+LANG:10027 30 Источн. Швайгхоф
+2 791
+"Text8"
+""
+1 801 394 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+268 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 808 396 932 411
+0 2 0 "0s" 0 0 0 193 0 0  870 396 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 21 Notversorgung Brunnen
+LANG:10001 21 Emergency supply well
+LANG:10027 35 Аварийный источник
+2 808
+"Text11"
+""
+1 370 448 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+279 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 337 450 485 465
+0 2 0 "0s" 0 0 0 193 0 0  411 450 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Zonen Verbindung
+LANG:10001 15 Zone connection
+LANG:10027 41 Зональное подключение
+2 837
+"Text7"
+""
+1 23 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+308 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 25 535 59 550
+0 2 0 "0s" 0 0 0 193 0 0  42 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 Urgen
+LANG:10001 5 Urgen
+LANG:10027 10 Урген
+2 838
+"Text9"
+""
+1 587 556 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+309 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 550 558 682 575
+0 2 0 "0s" 0 0 0 193 0 0  616 558 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 18 Versorgungszone 2 
+LANG:10001 13 Supply zone 2
+LANG:10027 29 Зона снабжения 2
+2 839
+"Text10"
+""
+1 196 556 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+310 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 160 558 292 575
+0 2 0 "0s" 0 0 0 193 0 0  226 558 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 17 Versorgungszone 1
+LANG:10001 13 Supply zone 1
+LANG:10027 29 Зона снабжения 1
+2 840
+"Text12"
+""
+1 97 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+311 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 96 535 148 550
+0 2 0 "0s" 0 0 0 193 0 0  122 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Perlfuchs
+LANG:10001 8 Perfuchs
+LANG:10027 14 Перфукс
+2 841
+"Text13"
+""
+1 186 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+312 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 184 535 220 550
+0 2 0 "0s" 0 0 0 193 0 0  202 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Zentrum
+LANG:10001 6 Center
+LANG:10027 10 Центр
+2 842
+"Text14"
+""
+1 214 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+313 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 224 535 338 550
+0 2 0 "0s" 0 0 0 193 0 0  281 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Textilfabrik
+LANG:10001 15 Textile factory
+LANG:10027 33 Текстильн.фабрика
+2 843
+"Text15"
+""
+1 315 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+314 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 346 535 398 550
+0 2 0 "0s" 0 0 0 193 0 0  372 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Schwimmbad
+LANG:10001 13 Swimming pool
+LANG:10027 14 Бассейн
+2 844
+"Text16"
+""
+1 434 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+315 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 435 535 469 550
+0 2 0 "0s" 0 0 0 193 0 0  452 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Zams
+LANG:10001 4 Zams
+LANG:10027 8 Цамс
+2 845
+"Text17"
+""
+1 509 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+316 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 499 535 565 550
+0 2 0 "0s" 0 0 0 193 0 0  532 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Rifental
+LANG:10001 8 Rifental
+LANG:10027 18 Рифенталь
+2 846
+"Text18"
+""
+1 484 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+317 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 570 535 654 550
+0 2 0 "0s" 0 0 0 193 0 0  612 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Betonwerk
+LANG:10001 16 Concrete factory
+LANG:10027 23 Цемент.завод
+2 847
+"Text19"
+""
+1 683 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+318 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 663 535 723 550
+0 2 0 "0s" 0 0 0 193 0 0  693 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Krankenhaus
+LANG:10001 8 Hospital
+LANG:10027 18 Госпиталь
+2 848
+"Text20"
+""
+1 736 533 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+319 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 732 535 828 550
+0 2 0 "0s" 0 0 0 193 0 0  780 535 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 14 Hinterstrengen
+LANG:10001 14 Hinterstrengen
+LANG:10027 28 Хинтерштренген
+2 579
+"Text6"
+""
+1 870 141 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+188 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 835 143 925 158
+0 2 0 "0s" 0 0 0 193 0 0  880 143 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 14 Quelle Fliess 
+LANG:10001 13 Source Fliess
+LANG:10027 24 Источн. Флисс
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+1 1237 46 "" 3
+0
+1 1239 46 "" 5
+20 "primitiveText" 0 0 1
+3
+LANG:10000 6 1141 m
+LANG:10001 4 1141
+LANG:10027 4 1141
+
+0
+1 1240 47 "" 3
+0
+1 1242 47 "" 5
+20 "primitiveText" 0 0 1
+3
+LANG:10000 5 912 m
+LANG:10001 5 912 m
+LANG:10027 6 912 м
+
+0
+1 1243 48 "" 3
+0
+1 1245 48 "" 5
+20 "primitiveText" 0 0 1
+3
+LANG:10000 6 1153 m
+LANG:10001 6 1153 m
+LANG:10027 7 1153 м
+
+0
+1 1251 50 "" 3
+0
+1 1253 50 "" 5
+20 "primitiveText" 0 0 1
+3
+LANG:10000 6 1019 m
+LANG:10001 4 1019
+LANG:10027 4 1019
+
+0
+1 1191 35 "" 50
+0
+1 1228 44 "" 50
+0
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 1361 108 "" 1
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 25 "" -1
+"" ""
+"objects/WATER/ws_water_chamber.pnl" 39 34 T 141 1 0 1 2 18
+0
+3 26 "" -1
+"" ""
+"objects/WATER/ws_water_chamber.pnl" 154 34 T 142 1 0 1 6 18
+0
+3 27 "" -1
+"" ""
+"objects/WATER/ws_water_chamber.pnl" 267 46 T 143 1 0 1 14 6
+0
+3 28 "" -1
+"" ""
+"objects/WATER/ws_water_chamber.pnl" 337 41 T 144 1 0 1 173 11
+0
+3 34 "" -1
+"" ""
+"objects/STD_OBJECTS/ANALOG1.pnl" 91 173 T 163 1 0 1 149 129
+1
+"$dpe""Sources_1_flow"
+3 35 "" -1
+"" ""
+"objects/WATER/ws_reservoir.pnl" 202 249 T 164 1 0 0.833333333333333 97 178.333333333333
+2
+"$dpe_level""Reservoir_1_level.value"
+"$f_reserved_water_percentage""20"
+3 36 "" -1
+"" ""
+"objects/STD_OBJECTS/ANALOG1.pnl" 203 280 T 165 1 0 1 -23 125
+1
+"$dpe""Reservoir_1_level"
+3 42 "" -1
+"" ""
+"objects/STD_OBJECTS/ANALOG1.pnl" 354 167 T 174 1 0 1 332 135
+1
+"$dpe""Sources_2_flow"
+3 43 "" -1
+"" ""
+"objects/STD_OBJECTS/ANALOG1.pnl" 283 384 T 175 1 0 1 460 21
+1
+"$dpe""Reservoir_2_level"
+3 44 "" -1
+"" ""
+"objects/WATER/ws_reservoir.pnl" 245 254 T 176 1 0 1 285 135
+2
+"$dpe_level""Reservoir_2_level.value"
+"$f_reserved_water_percentage""10"
+3 46 "" -1
+"" ""
+"objects/WATER/ws_elevation.pnl" 364 239 T 178 1 0 1 241 21
+0
+3 47 "" -1
+"" ""
+"objects/WATER/ws_elevation.pnl" 147 260 T 179 1 0 1 227 20
+0
+3 48 "" -1
+"" ""
+"objects/WATER/ws_elevation.pnl" 598 69 T 179 1 0 1 -32 -9
+0
+3 49 "" -1
+"" ""
+"objects/WATER/ws_water_chamber.pnl" 887 167 T 180 1 0 1 -27 15
+0
+3 50 "" -1
+"" ""
+"objects/WATER/ws_elevation.pnl" 947 189 T 181 1 0 1 -30 1
+0
+3 52 "" -1
+"" ""
+"objects/WATER/ws_collector_shaft.pnl" 578 99 T 188 0.725 0 0.725 96.95 37.225
+0
+3 55 "" -1
+"" ""
+"objects/WATER/ws_well_shaft.pnl" 592 460 T 216 1 0 1.16981132075472 328 0.792452830188743
+0
+3 59 "" -1
+"" ""
+"objects/WATER/ws_swing_check_valve.pnl" 787 113 T 219 1 0 1 3 43
+0
+3 65 "" -1
+"" ""
+"objects/STD_OBJECTS/FLAP.pnl" 357 97 T 239 -1.83690953073357e-016 -1 1 -1.83690953073357e-016 233 484
+1
+"$dpe""Reservoir_1_inflow_valve"
+3 68 "Group35" -1
+"" ""
+"objects/STD_OBJECTS/ANALOG1.pnl" 143 180 T 244 1 0 1 96 336
+1
+"$dpe""Zone_1_flow"
+3 69 "Group36" -1
+"" ""
+"objects/STD_OBJECTS/FLAP.pnl" 320 100 T 245 -1.83690953073357e-016 -1 1 -1.83690953073357e-016 230 712
+1
+"$dpe""Reservoir_1_outflow_valve"
+3 70 "Group38" -1
+"" ""
+"objects/STD_OBJECTS/FLAP.pnl" 320 106 T 246 -1.83690953073357e-016 -1 1 -1.83690953073357e-016 454 447
+1
+"$dpe""Reservoir_2_inflow_valve"
+3 75 "Group49" -1
+"" ""
+"objects/STD_OBJECTS/FLAP.pnl" 320 377 T 258 -1.83690953073357e-016 -1 1 -1.83690953073357e-016 183 712
+1
+"$dpe""Reservoir_2_outflow_valve"
+3 76 "Group51" -1
+"" ""
+"objects/STD_OBJECTS/ANALOG1.pnl" 139 416 T 260 1 0 1 546 100
+1
+"$dpe""Zone_2_flow"
+3 78 "Group54" -1
+"" ""
+"objects/STD_OBJECTS/COUNTER1.pnl" 139 460 T 264 1 0 1 436 109
+1
+"$dpe""Zone_2_consumption"
+3 79 "Group40" -1
+"" ""
+"objects/WATER/ws_swing_check_valve.pnl" 904 418 T 266 0.999998344614928 -0.00181955142943513 0.00181955142943513 0.999998344614928 25.24608506812 71.6735391923081
+0
+3 85 "" -1
+"" ""
+"objects/STD_OBJECTS/PUMP.pnl" 466 157 T 325 1 0 1 340 32
+1
+"$dpe""Sources_2_pump"
+3 86 "" -1
+"" ""
+"objects/STD_OBJECTS/PUMP.pnl" 606 492 T 326 1 0 1 340 32
+1
+"$dpe""Well_2_pump"
+3 92 "Group45" -1
+"" ""
+"objects/STD_OBJECTS/FLAP_HAND_1.pnl" 253 199 T 331 1 0 1 137 291
+1
+"$dpe""Zones_connection_valve"
+3 94 "Group51" -1
+"" ""
+"objects/WATER/ws_uv_treatment.pnl" 516 159 T 335 1 0 1 0 30
+0
+3 95 "Group52" -1
+"" ""
+"objects/WATER/ws_uv_treatment.pnl" 890 415 T 336 1 0 1 0 30
+0
+3 98 "Group59" -1
+"" ""
+"objects/WATER/ws_uv_treatment.pnl" 285 159 T 342 1 0 1 0 30
+0
+3 103 "Group43" -1
+"" ""
+"objects/WATER/ws_flow_meter_v.pnl" 285 202 T 348 1 0 1 30 30
+1
+"$dpe""Sources_1_flow.C1.AVG_WT0"
+3 104 "Group44" -1
+"" ""
+"objects/WATER/ws_flow_meter_v.pnl" 516 202 T 349 1 0 1 30 30
+1
+"$dpe""Sources_2_flow.C1.AVG_WT0"
+3 105 "Group45" -1
+"" ""
+"objects/WATER/ws_flow_meter_v.pnl" 285 419 T 350 1 0 1 30 30
+1
+"$dpe""Zone_1_flow.C1.AVG_WT0"
+3 106 "Group46" -1
+"" ""
+"objects/WATER/ws_flow_meter_v.pnl" 516 419 T 351 1 0 1 30 30
+1
+"$dpe""Zone_2_flow.C1.AVG_WT0"
+3 107 "Group39" -1
+"" ""
+"objects/STD_OBJECTS/COUNTER1.pnl" 109 460 T 351 1 0 1 20 109
+1
+"$dpe""Zone_1_consumption"
+3 108 "" -1
+"" ""
+"objects/help_button_large.pnl" 415 335 T 351 1 0 1 -23 -37
+1
+"$hlp_keyword""da_water_supply"
+0

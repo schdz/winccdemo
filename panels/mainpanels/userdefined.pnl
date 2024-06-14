@@ -1,0 +1,126 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "_3DFace" 0
+E E E E E 1 -1 -1 0  956 51
+""0  1
+E E 3
+"CBRef" "0"
+"EClose" E
+"dpi" "96"
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+2 14
+"Text1"
+""
+1 30 30 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 32 32 727 68
+0 2 0 "0s" 0 0 0 64 0 0  32 32 1
+3
+LANG:10000 26 Arial,-1,29,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,29,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,29,5,50,0,0,0,0,0
+0 3
+LANG:10000 43 Testpanel für erste selbsterstellte Panels
+LANG:10001 35 Testpanel for first selfmade panels
+LANG:10027 32 Панель для тестов
+2 15
+"Text2"
+""
+1 30 64 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 32 66 658 118
+0 2 0 "0s" 0 0 0 64 0 0  32 66 2
+3
+LANG:10000 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,19,5,50,0,0,0,0,0
+0 3
+LANG:10000 41 Datei: /panels/mainpanels/userdefined.pnl
+LANG:10001 40 File: /panels/mainpanels/userdefined.pnl
+LANG:10027 44 Файл: /panels/mainpanels/userdefined.pnl
+3
+LANG:10000 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,19,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,19,5,50,0,0,0,0,0
+0 3
+LANG:10000 26 Größe: 1004 x 584 Punkte
+LANG:10001 22 Size: 1004 x 584 pixel
+LANG:10027 41 Размер: 1004 x 584 пикселей
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

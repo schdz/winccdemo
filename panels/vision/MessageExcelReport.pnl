@@ -1,0 +1,209 @@
+V 13
+3
+LANG:10000 7 Warnung
+LANG:10001 7 Warning
+LANG:10027 28 Предупреждение
+PANEL,-1 -1 401 156 N "STD_panel_back" 0
+"main()
+{
+  bool   onStartEnabled;
+  string soundfile;
+
+  setInputFocus(myModuleName(),myPanelName(), \"cmdOK\");
+  
+  dpGet(\"ApplicationProperties.sound.onInternalErrorEnabled:_online.._value\", onStartEnabled,
+  		\"ApplicationProperties.sound.onInternalError:_online.._value\", soundfile);
+  
+  if (onStartEnabled == 1) da_startSound(soundfile,FALSE);
+}" 0
+ E E E E 1 -1 -1 0  251 55
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+7 14
+"Ellipse3"
+""
+1 36 37 E E E 1 E 1 E N "_Transparent" E N {153,153,153} E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 41 40 18 18
+2 10
+"text"
+""
+1 73 15 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 73 15 385 94
+0 0 0 "0s" 0 0 0 192 0 0  73 15 5
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 55 Die angeforderte Funktion ist für die Demo Applikation
+LANG:10001 47 The requested functionality is not available in
+LANG:10027 72 Требуемая функциональность недоступна
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 17 nicht verfügbar.
+LANG:10001 22 this demo application.
+LANG:10027 70 в данном демонстрационном приложении.
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 51 Ausführliche Informationen zum Thema Excel Report 
+LANG:10001 52 For further information about Excel reporting please
+LANG:10027 83 Для более подробной информации об отчетности
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 46 erhalten Sie durch Klick auf den Hilfe Button.
+LANG:10001 22 click the help button.
+LANG:10027 71 в Excel, пожалуйста, обратитесь к Справке.
+7 13
+"Ellipse2"
+""
+1 19.5 23 E E E 1 E 1 E N "_Transparent" E N {153,153,153} E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.027777777777778 0 1 -1.041666666666663 0 2  0 3  "13.bmp" 4294967295 E 37.5 37 18 18
+13 8
+"cmdOK"
+""
+1 158 120 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  158 118 256 147
+
+T 
+3
+LANG:10000 2 OK
+LANG:10001 2 OK
+LANG:10027 2 OK
+"// SimpleCtrlScriptStart {valid}
+// SimpleCtrlScript {PanelOff}
+// SimpleCtrlScriptEnd
+main()
+{
+  PanelOff();
+}
+" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 15 0 "" 2
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 279 113 T 15 1 0 1 131 106
+1
+"$hlp_keyword""excel_report"
+0

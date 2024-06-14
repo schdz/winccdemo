@@ -1,0 +1,179 @@
+V 13
+3
+LANG:10000 7 Warnung
+LANG:10001 7 Warning
+LANG:10027 28 Предупреждение
+PANEL,-1 -1 404 105 N "STD_panel_back" 1
+"$1"
+"main()
+{
+  bool   onStartEnabled;
+  string soundfile;
+
+  setInputFocus(myModuleName(),myPanelName(), \"cmdOK\");
+  
+  dpGet(\"ApplicationProperties.sound.onInternalErrorEnabled:_online.._value\", onStartEnabled,
+  		\"ApplicationProperties.sound.onInternalError:_online.._value\", soundfile);
+  
+  if (onStartEnabled == 1) da_startSound(soundfile,FALSE);
+}" 0
+ E E E E 1 -1 -1 0  251 55
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+7 14
+"Ellipse3"
+""
+1 36 37 E E E 1 E 1 E N "_Transparent" E N {153,153,153} E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 41 40 18 18
+2 10
+"text"
+""
+1 73 15 E E E 1 E 0 E N "STD_text" E N "_Transparent" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  int w,h;
+
+  getValue(\"\",\"size\",w,h);
+  setValue(\"\",\"text\",makeCR($1,w),
+              \"visible\",true);
+}" 0
+ E 0 1 1 0 1 E U  0 E 73 15 398 30
+0 0 0 "0s" 0 0 0 192 0 0  73 15 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 47 Fehlermeldungxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+LANG:10001 47 Error messagexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+LANG:10027 70 Сообщение об ошибкеxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+7 13
+"Ellipse2"
+""
+1 19.5 23 E E E 1 E 1 E N "_Transparent" E N {153,153,153} E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E 1.027777777777778 0 1 -1.041666666666663 0 2  0 3  "13.bmp" 4294967295 E 37.5 37 18 18
+13 8
+"cmdOK"
+""
+1 160 70 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  160 70 258 98
+
+T 
+3
+LANG:10000 2 OK
+LANG:10001 2 OK
+LANG:10027 2 OK
+"// SimpleCtrlScriptStart {valid}
+// SimpleCtrlScript {PanelOff}
+// SimpleCtrlScriptEnd
+main()
+{
+  PanelOff();
+}
+" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

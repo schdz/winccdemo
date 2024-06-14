@@ -1,0 +1,4 @@
+* text=auto
+*.pnl -text
+*.pnl -merge
+*.ctc -diff

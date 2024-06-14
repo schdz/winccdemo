@@ -1,0 +1,2060 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 18 (БезИмени)
+PANEL,-1 -1 608 617 N "_3DFace" 2
+"$child"
+"$controller"
+E E E E E 1 -1 -1 0  0 0
+""0  1
+E "int g_scaleMode = 0,
+    g_devZoomMode = 1;
+" 0
+ 2
+"CBRef" "1"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 105
+"Border1"
+""
+1 9 560 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+77 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 9 310 597 560
+2 60
+"Text5"
+""
+1 14 410 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 412 128 428
+0 2 0 "0s" 0 0 0 64 0 0  16 412 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 15 Verstärkung kR
+LANG:10001 7 Gain KR
+LANG:10027 19 Усиление KR
+2 61
+"Text1"
+""
+1 14 438 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 440 142 456
+0 2 0 "0s" 0 0 0 64 0 0  16 440 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 17 Nachtstellzeit TN
+LANG:10001 16 Integral time TN
+LANG:10027 26 Интегр.время TN
+2 67
+"Text4"
+""
+1 390 418 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 392 420 523 441
+0 2 0 "0s" 0 0 0 64 0 0  392 420 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 18 Abtastrate Ts [ms]
+LANG:10001 18 Sampling rate [ms]
+LANG:10027 29 Частота изм. [мс]
+2 70
+"Text7"
+""
+1 14 472 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 474 142 490
+0 2 0 "0s" 0 0 0 64 0 0  16 474 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 15 Vorhaltezeit TV
+LANG:10001 18 Derivative time TV
+LANG:10027 27 Производн.вр. TV
+2 72
+"Text8"
+""
+1 390 480 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+47 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 392 482 505 498
+0 2 0 "0s" 0 0 0 64 0 0  392 482 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 17 Max. Stellgröße
+LANG:10001 11 Max. output
+LANG:10027 25 Макс.значение
+2 74
+"Text9"
+""
+1 390 449 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+49 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 392 451 509 467
+0 2 0 "0s" 0 0 0 64 0 0  392 451 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 18 Min. Stellgröße 
+LANG:10001 11 Min. output
+LANG:10027 23 Мин.значение
+2 76
+"Text10"
+""
+1 14 534 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+51 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 536 172 552
+0 2 0 "0s" 0 0 0 64 0 0  16 536 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 12 Skalierung u
+LANG:10001 17 Output scalefact.
+LANG:10027 30 Масштабирование
+2 79
+"Text11"
+""
+1 14 503 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 505 142 521
+0 2 0 "0s" 0 0 0 64 0 0  16 505 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 14 Toleranz e_max
+LANG:10001 9 Tolerance
+LANG:10027 30 Допустимое откл.
+2 88
+"Text3"
+""
+1 14 320 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+61 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 322 169 344
+0 2 0 "0s" 0 0 0 64 0 0  16 322 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 15 Istwert-DPE (x)
+LANG:10001 13 Value DPE (x)
+LANG:10027 25 Значение, DPE (x)
+2 91
+"Text6"
+""
+1 14 348 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+64 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 350 165 372
+0 2 0 "0s" 0 0 0 64 0 0  16 350 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 16 Sollwert-DPE (w)
+LANG:10001 16 Setpoint DPE (w)
+LANG:10027 23 Уставка, DPE (w)
+2 94
+"Text12"
+""
+1 14 375 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+67 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 16 377 168 399
+0 2 0 "0s" 0 0 0 64 0 0  16 377 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 21 Stellgrößen-DPE (u)
+LANG:10001 14 Output DPE (u)
+LANG:10027 19 Вывод, DPE (u)
+2 115
+"Text2"
+""
+1 228 437 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 230 439 297 455
+0 2 0 "0s" 0 0 0 64 0 0  230 439 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 8 KI=Ts/TN
+LANG:10001 8 KI=Ts/TN
+LANG:10027 8 KI=Ts/TN
+2 116
+"Text13"
+""
+1 228 469 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+86 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 230 471 299 487
+0 2 0 "0s" 0 0 0 64 0 0  230 471 1
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0 3
+LANG:10000 10 KD = TV/Ts
+LANG:10001 10 KD = TV/Ts
+LANG:10027 10 KD = TV/Ts
+6 118
+"Border2"
+""
+1 339 560 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+88 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 339 515 597 560
+1 129 1 "" 1
+0
+1 130 2 "" 1
+0
+1 131 4 "" 1
+0
+1 132 5 "" 1
+0
+1 133 6 "" 1
+0
+1 134 7 "" 1
+0
+1 135 8 "" 1
+0
+19 78
+"antiWindup"
+""
+1 229 519 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+52 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0  227 517 337 559
+2
+T 
+3
+LANG:10000 9 Begrenzer
+LANG:10001 6 Limter
+LANG:10027 22 Ограничение
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 12 Anti-Wind-Up
+LANG:10001 12 Anti-wind-up
+LANG:10027 22 Запр.перегр.
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  dpConnect(\"showState\",$controller+\".parameters.antiwindup\");
+}
+showState(string dp, bool on)
+{
+  this.number = on;
+}" 0
+ "main(int button)
+{
+  dpSet(\"SimCenter.modelSimOn\",button);
+}" 0
+
+1 136 9 "" 1
+0
+19 81
+"RadioButton1"
+""
+1 547 315 E E E 1 E 1 E N "_3DText" E N "_3DFace" E E
+ E E
+55 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 28 Auswahl des Regelalgorithmus
+LANG:10001 30 Choosing the control algorithm
+LANG:10027 46 Выбор алгоритма контроля
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0  545 313 592 400
+4
+T 
+3
+LANG:10000 3 PID
+LANG:10001 3 PID
+LANG:10027 3 PID
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 1 P
+LANG:10001 1 P
+LANG:10027 1 P
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 2 PD
+LANG:10001 2 PD
+LANG:10027 2 PD
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 2 PI
+LANG:10001 2 PI
+LANG:10027 2 PI
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+"main()
+{
+  dpConnect(\"showState\",$controller+\".parameters.mode\");
+}
+showState(string dp, int mode)
+{
+  this.number = mode;
+}" 0
+ "main(int button)
+{
+  dpSet($controller+\".parameters.mode\", button);
+}" 0
+
+13 87
+"distributeSettings"
+""
+1 565 570 E E E 1 E 0 E N "_ButtonText" E N "_Button" E E
+ E E
+61 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 62 Aktuelle Einstellungen auf alle Regler gleichen Typs speichern
+LANG:10001 54 Apply current settings to all controllers of same type
+LANG:10027 111 Применить текущие настройки ко всем контроллерам этого типа
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  563 568 599 602
+
+P 
+12632256
+"87.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  float     kR, TN, TV, u_min, u_max, antiwindup, tolerance, scale;
+  int	    mode, scanrate, i;
+  string    w, u, x, w_, u_, x_, sys, thisType = substr(dpSubStr($controller,DPSUB_DP), 4, strlen(dpSubStr($controller,DPSUB_DP))-4),
+            thisSys = substr(dpSubStr($controller,DPSUB_DP), 0, 4);
+  dyn_float fanswer;
+  dyn_string reactors = dpNames(\"*LICA*\",\"PID_Control\"), sanswer;
+
+  for(i=1; i<=dynlen(reactors); i++)
+  {
+    sprintf(sys,\"R%02d_\",i);
+    reactors[i] = sys;
+  }
+  
+  if(dynlen(reactors) > 1)
+  {
+    ChildPanelOnCentralModalReturn(\"vision/messageWarning2\",getCatStr(\"general\",\"warning\"), 
+         makeDynString(\"$1:\"+getCatStr(\"control\",\"really_distribute_settings_1\")+dynlen(reactors)+
+         +getCatStr(\"control\",\"really_distribute_settings_2\")+ thisType + getCatStr(\"control\",\"really_distribute_settings_3\"),
+         \"$2:\"+getCatStr(\"general\",\"OK\"),\"$3:\"+getCatStr(\"general\",\"cancel\")),
+         fanswer, sanswer);
+  }
+  else
+    return;
+    
+
+  if(fanswer[1] != 0)
+  {
+    dpGet( 	$controller+\".parameters.kR\",kR,
+  			$controller+\".parameters.TN\",TN,
+  			$controller+\".parameters.TV\",TV,
+  			$controller+\".parameters.u_min\",u_min,
+  			$controller+\".parameters.u_max\",u_max,
+  			$controller+\".parameters.antiwindup\",antiwindup,
+  			$controller+\".parameters.tolerance\",tolerance,
+  			$controller+\".parameters.scale\",scale,
+  			$controller+\".parameters.mode\",mode,
+  			$controller+\".parameters.scanrate\",scanrate,
+  			$controller+\".input.w\",w,	
+  			$controller+\".input.x\",x,
+  			$controller+\".output.u\",u);	
+  				
+    for(i=1; i<=dynlen(reactors); i++)
+    {
+      w_ = w;
+      x_ = x;
+      u_ = u;
+  
+      strreplace(w_,thisSys,reactors[i]);
+      strreplace(x_,thisSys,reactors[i]);
+      strreplace(u_,thisSys,reactors[i]);
+     
+      dpSet(reactors[i]+thisType+\".parameters.kR\",kR,
+  			reactors[i]+thisType+\".parameters.TN\",TN,
+  			reactors[i]+thisType+\".parameters.TV\",TV,
+  			reactors[i]+thisType+\".parameters.u_min\",u_min,
+  			reactors[i]+thisType+\".parameters.u_max\",u_max,
+  			reactors[i]+thisType+\".parameters.antiwindup\",antiwindup,
+  			reactors[i]+thisType+\".parameters.tolerance\",tolerance,
+  			reactors[i]+thisType+\".parameters.scale\",scale,
+  			reactors[i]+thisType+\".parameters.mode\",mode,
+  			reactors[i]+thisType+\".parameters.scanrate\",scanrate,
+  			reactors[i]+thisType+\".input.w\",w_,	
+  			reactors[i]+thisType+\".input.x\",x_,
+  			reactors[i]+thisType+\".output.u\",u_);	
+    }
+  }  
+}" 0
+ E E "main()
+{
+  dpConnect(\"manageAccess\",myUiDpName()+\".UserName:_online.._value\");
+}
+
+manageAccess(string dp1, string UserName)
+{
+ if (getUserPermission(5))
+   this.visible = false; // false only for demo application; = true;
+ else
+   this.visible = false;
+}" 0
+
+14 89
+"x_dpe_text"
+""
+1 145 316 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+62 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0  143 314 502 341
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  dpConnect(\"showDP\",$controller+\".input.x\");
+}
+showDP(string dp, string x_dpe)
+{
+  if(dpSubStr(x_dpe, DPSUB_SYS) == getSystemName())
+    this.text =  dpSubStr(x_dpe,DPSUB_DP_EL);
+  else
+    this.text =  x_dpe;      
+}" 0
+ "main()
+{
+  string dpe = this.text;
+  
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".input.x\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+}" 0
+
+13 90
+"dpsel"
+""
+1 508 316 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  string dpe;
+
+  dpSelector(dpe, false, \"ALL_SYSTEM_NAME_SYS\", x_dpe_text.text, \"Control_Var\");
+
+  if (dpe != \"\")
+  {
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".input.x\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+  } 
+}" 0
+ E
+63 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  506 314 539 341
+
+P 
+12632256
+"90.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string dpe;
+
+  dpSelector(dpe, false, \"ALL_SYSTEM_NAME_SYS\");
+
+  if (dpe != \"\")
+  {
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".input.x\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+  } 
+}" 0
+ E E E
+14 99
+"w_dpe_txt"
+""
+1 145 344 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+72 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0  143 342 502 369
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  dpConnect(\"showDP\",$controller+\".input.w\");
+}
+showDP(string dp, string w_dpe)
+{
+  if(dpSubStr(w_dpe, DPSUB_SYS) == getSystemName())
+    this.text =  dpSubStr(w_dpe,DPSUB_DP_EL);
+  else
+    this.text =  w_dpe;      
+}" 0
+ "main()
+{
+  string dpe = this.text;
+  
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".input.w\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+}" 0
+
+13 100
+"Button6"
+""
+1 508 345 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  string dpe;
+
+  dpSelector(dpe, false, \"ALL_SYSTEM_NAME_SYS\", x_dpe_text.text, \"Control_Var\");
+
+  if (dpe != \"\")
+  {
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".input.w\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+  } 
+}" 0
+ E
+73 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  506 343 539 369
+
+P 
+12632256
+"100.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string dpe;
+
+  dpSelector(dpe, false, \"ALL_SYSTEM_NAME_SYS\");
+
+  if (dpe != \"\")
+  {
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".input.w\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+  } 
+}" 0
+ E E E
+14 101
+"u_dpe_txt"
+""
+1 145 372 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+74 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,75,0,0,0,0,0
+0  143 370 502 397
+3 "0s" 0 0 0 0 0 -1  E "main()
+{
+  dpConnect(\"showDP\",$controller+\".output.u\");
+}
+showDP(string dp, string u_dpe)
+{
+  if(dpSubStr(u_dpe, DPSUB_SYS) == getSystemName())
+    this.text =  dpSubStr(u_dpe,DPSUB_DP_EL);
+  else
+    this.text =  u_dpe;      
+}" 0
+ "main()
+{
+  string dpe = this.text;
+  
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".output.u\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+}" 0
+
+13 102
+"Button7"
+""
+1 508 373 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ "main()
+{
+  string dpe;
+
+  dpSelector(dpe, false, \"ALL_SYSTEM_NAME_SYS\", x_dpe_text.text, \"Control_Var\");
+
+  if (dpe != \"\")
+  {
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".output.u\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+  } 
+}" 0
+ E
+75 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  506 371 539 397
+
+P 
+12632256
+"102.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  string dpe;
+
+  dpSelector(dpe, false, \"ALL_SYSTEM_NAME_SYS\");
+
+  if (dpe != \"\")
+  {
+  if (dpExists(dpe))
+  {
+    if ((dpElementType(dpe) == 21) || (dpElementType(dpe) == 22))
+      dpSet($controller+\".output.u\",dpe);
+    else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotnumeric\")));    
+  }
+  else
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"control\",\"mistyped\"),makeDynString(\"$1:\"+getCatStr(\"control\",\"dpenotexistent\")));
+  } 
+}" 0
+ E E E
+13 104
+"Button2"
+""
+1 230 570 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+76 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 16 Panel schließen
+LANG:10001 11 Close Panel
+LANG:10027 27 Закрыть панель
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  228 568 352 602
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E "main()
+{
+  if($child)
+    this.visible = true;
+  else
+    this.visible = false;
+}" 0
+
+22 106
+"storedSettingsCombo"
+""
+1 349 526 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 53 Auswahl/Eingabe einer gespeicherten Reglereinstellung
+LANG:10001 52 Selection/Input of a stored controller parameter set
+LANG:10027 93 Выбор/Ввод набора хранимых параметров контроллера
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,50,0,0,0,0,0
+0  347 524 482 553
+0
+
+"main()
+{
+  if(dpConnect(\"listConfs\",\"PID_Control_Config.confName\") == -1)
+    this.backCol = \"_dpdoesnotexist\";
+}
+listConfs(string dp, dyn_string confs)
+{
+  this.items = confs;
+}" 0
+
+E
+E
+ 1 0
+13 111
+"saveSettings"
+""
+1 486 525 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+83 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 63 Speichern der aktuellen Einstellungen als ladbare Konfiguration
+LANG:10001 49 Save current settings as reloadable configuration
+LANG:10027 49 Save current settings as reloadable configuration
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  484 523 518 552
+
+P 
+13434828
+"111.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  bool       antiwindup;
+  float      kR, TN, TV, u_max, u_min, scale, tolerance;
+  int        scanrate;
+  string     u_dpe, x_dpe, w_dpe, paramStr, currentName = storedSettingsCombo.text;
+  dyn_string names, confs, resultStr;
+  dyn_float  resultf;
+
+  if(currentName == \"\")
+  {
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"general\",\"warning\"), makeDynString(\"$1:\"+getCatStr(\"control\",\"no_conf_name\")));
+    return; 
+  }
+ 
+  dpGet($controller+\".parameters.kR\", kR,
+  		$controller+\".parameters.TN\", TN,
+  		$controller+\".parameters.TV\", TV,
+  		$controller+\".parameters.u_max\", u_max,
+  		$controller+\".parameters.u_min\", u_min,
+  		$controller+\".parameters.tolerance\", tolerance,
+  		$controller+\".parameters.scale\", scale,
+  		$controller+\".parameters.scanrate\", scanrate,
+  		$controller+\".parameters.antiwindup\", antiwindup);
+  		
+  paramStr = kR + \"|\" + TN + \"|\" + TV + \"|\" + u_max + \"|\" + u_min + \"|\" + tolerance + \"|\" + scale + \"|\" + scanrate + \"|\" + antiwindup;
+  
+  dpGet(\"PID_Control_Config.confName\",names,
+        \"PID_Control_Config.confStr\",confs);
+        
+  if(dynContains(names, currentName))
+  {
+    ChildPanelOnCentralModalReturn(\"vision/messageWarning2\",getCatStr(\"general\",\"warning\"), 
+                                   makeDynString(\"$1:\"+getCatStr(\"control\",\"overwrite_conf\"),\"$2:\"+getCatStr(\"general\",\"OK\"),\"$3:\"+getCatStr(\"general\",\"cancel\")),
+                                   resultf, resultStr);
+
+    if(resultf[1] != 0)
+    {
+      dynRemove(confs, dynContains(names, currentName));
+      dynRemove(names, dynContains(names, currentName));
+      dynInsertAt(confs,paramStr,1);
+      dynInsertAt(names,currentName,1);
+      dpSet(\"PID_Control_Config.confName\",names,
+            \"PID_Control_Config.confStr\",confs);
+    }
+  }
+  else
+  {
+      dynInsertAt(confs,paramStr,1);
+      dynInsertAt(names,currentName,1); 
+      dpSet(\"PID_Control_Config.confName\",names,
+            \"PID_Control_Config.confStr\",confs); 
+  }
+}" 0
+ E E E
+13 112
+"laodSettings"
+""
+1 520 524 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+84 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  519 523 553 552
+
+P 
+13434828
+"112.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  bool       antiwindup;
+  float      kR, TN, TV, u_max, u_min, scale, tolerance;
+  int        scanrate;
+  string     u_dpe, x_dpe, w_dpe, parmStr, currentName = storedSettingsCombo.text;
+  dyn_string names, confs, resultStr, currentSet;
+  dyn_float  resultf;
+
+  if(currentName == \"\")
+  {
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"general\",\"warning\"), makeDynString(\"$1:\"+getCatStr(\"control\",\"no_load_name\")));
+    return; 
+  }
+
+  dpGet(\"PID_Control_Config.confName\",names,
+        \"PID_Control_Config.confStr\",confs);
+
+  if(dynContains(names, currentName) < 1)
+  {
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"general\",\"warning\"), makeDynString(\"$1:\"+getCatStr(\"control\",\"wrong_load_name\")));
+    return; 
+  }
+
+  ChildPanelOnCentralModalReturn(\"vision/messageWarning2\",getCatStr(\"general\",\"warning\"), 
+                                   makeDynString(\"$1:\"+getCatStr(\"control\",\"overwrite_settings\"),\"$2:\"+getCatStr(\"general\",\"OK\"),\"$3:\"+getCatStr(\"general\",\"cancel\")),
+                                   resultf, resultStr);
+  if(resultf[1] != 0)
+  {
+    currentSet = strsplit(confs[dynContains(names,currentName)], \"|\");  
+    dpSet($controller+\".parameters.kR\", currentSet[1],
+  		  $controller+\".parameters.TN\", currentSet[2],
+  		  $controller+\".parameters.TV\", currentSet[3],
+  		  $controller+\".parameters.u_max\", currentSet[4],
+  		  $controller+\".parameters.u_min\", currentSet[5],
+  		  $controller+\".parameters.tolerance\", currentSet[6],
+  		  $controller+\".parameters.scale\", currentSet[7],
+  		  $controller+\".parameters.scanrate\", currentSet[8],
+  		  $controller+\".parameters.antiwindup\", currentSet[9]);  
+  }
+}" 0
+ E E E
+13 113
+"deleteSettings"
+""
+1 555 524 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  554 523 588 552
+
+P 
+13434828
+"113.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  bool       antiwindup;
+  float      kR, TN, TV, u_max, u_min, scale, tolerance;
+  int        scanrate;
+  string     u_dpe, x_dpe, w_dpe, parmStr, currentName = storedSettingsCombo.text;
+  dyn_string names, confs, resultStr;
+  dyn_float  resultf;
+
+  if(currentName == \"\")
+  {
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"general\",\"warning\"), makeDynString(\"$1:\"+getCatStr(\"control\",\"no_conf_delete\")));
+    return; 
+  } 
+   
+  dpGet(\"PID_Control_Config.confName\",names,
+        \"PID_Control_Config.confStr\",confs);
+        
+  if(dynContains(names, currentName) < 1)
+  {
+    ChildPanelOnCentralModal(\"vision/messageWarning\",getCatStr(\"general\",\"warning\"), makeDynString(\"$1:\"+getCatStr(\"control\",\"wrong_load_name\")));
+    return; 
+  } 
+        
+  if(dynContains(names, currentName) >= 1)
+  {
+    ChildPanelOnCentralModalReturn(\"vision/messageWarning2\",getCatStr(\"general\",\"warning\"), 
+                                   makeDynString(\"$1:\"+getCatStr(\"control\",\"really_delete\"),\"$2:\"+getCatStr(\"general\",\"OK\"),\"$3:\"+getCatStr(\"general\",\"cancel\")),
+                                   resultf, resultStr);
+    if(resultf[1] != 0)
+    {
+      dynRemove(confs, dynContains(names, currentName));
+      dynRemove(names, dynContains(names, currentName));
+      storedSettingsCombo.text = \"\";
+      dpSet(\"PID_Control_Config.confName\",names,
+            \"PID_Control_Config.confStr\",confs);
+    }
+  }
+}" 0
+ E E E
+14 114
+"TextField1"
+""
+1 301 434 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,75,0,0,0,0,0
+0  299 432 373 461
+3 "3.4f" 8 0 0 2 0 -1  E "main()
+{
+  dpConnect(\"showVal\",$controller+\".parameters.TN\",
+                      $controller+\".parameters.scanrate\");
+}
+showVal(string dp1, float TN, string dp2, int scanrate)
+{
+  this.text = scanrate/(TN*1000);
+}" 0
+ "main()
+{
+  float TN, KI = this.text;
+  int   scanrate;
+ 
+  dpGet($controller+\".parameters.scanrate\",scanrate);
+  
+  TN = scanrate/(KI*1000); 
+  
+  dpSet($controller+\".parameters.TN\",TN);
+}" 0
+
+14 117
+"TextField2"
+""
+1 301 465 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+87 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,15,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,15,5,75,0,0,0,0,0
+0  299 463 373 492
+3 "3.4f" 8 0 0 2 0 -1  E "main()
+{
+  dpConnect(\"showVal\",$controller+\".parameters.TV\",
+                      $controller+\".parameters.scanrate\");
+}
+showVal(string dp1, float TV, string dp2, int scanrate)
+{
+  float scan = scanrate;
+  this.text = TV/(scan/1000);
+}" 0
+ "main()
+{
+  float TV, KD = this.text, scan;
+  int   scanrate;
+ 
+  dpGet($controller+\".parameters.scanrate\",scanrate);
+  
+  scan = scanrate;
+  
+  TV = scan*KD/1000; 
+  
+  dpSet($controller+\".parameters.TV\",TV);
+}" 0
+
+23 86
+"cTrend"
+""
+1 7 8 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+60 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  5 6 601 305
+5 "bool initial = true;
+
+main()
+{
+  string w_dpe;
+  float  min, max;
+
+ 
+  if(dpConnect(\"updateConnections\",$controller+\".input.w\",
+  								   $controller+\".output.u\",
+  								   $controller+\".input.x\",
+  								   $controller+\".parameters.u_min\",
+  								   $controller+\".parameters.u_max\") == -1)
+  	this.backCol = \"_dpdoesnotexist\";
+  								
+  								
+  //dpConnect(\"updateScales\",
+
+  dpGet($controller+\".input.w\",w_dpe);
+  dpGet(w_dpe+\":_pv_range.._min\",min,
+        w_dpe+\":_pv_range.._max\",max);
+
+  setValue(\"cTrend\",\"connectDirectly\", \"#1_4\", $controller+\".state.e:_online.._value\");
+  cTrend.curveMax(\"#1_4\") = max-min;
+  cTrend.curveMin(\"#1_4\") = 0-(max-min);
+}
+
+updateConnections(string dp1, string w_dpe, string dp2, string u_dpe, string dp3, string x_dpe,
+                  string dp4, float u_min, string dp5, float u_max)
+{
+  float x_min, x_max, w_min, w_max;
+
+  if(!initial)
+  {
+    setValue(\"cTrend\", \"disconnectDirectly\", \"#1_1\",
+                       \"disconnectDirectly\", \"#1_2\",
+                       \"disconnectDirectly\", \"#1_3\");
+    initial = false;
+  }
+  
+  dpGet(x_dpe+\":_pv_range.._min\",x_min,
+        x_dpe+\":_pv_range.._max\",x_max,
+        w_dpe+\":_pv_range.._min\",w_min,
+        w_dpe+\":_pv_range.._max\",w_max);
+
+
+  setMultiValue(\"cTrend\", \"connectDirectly\", \"#1_1\",w_dpe+\":_online.._value\",
+                \"cTrend\", \"connectDirectly\", \"#1_2\",x_dpe+\":_online.._value\",
+                \"cTrend\", \"connectDirectly\", \"#1_3\",u_dpe+\":_online.._value\",
+                \"cTrend\", \"curveMax\",\"#1_1\",w_max,
+                \"cTrend\", \"curveMin\",\"#1_1\",w_min,
+                \"cTrend\", \"curveMax\",\"#1_2\",x_max,
+                \"cTrend\", \"curveMin\",\"#1_2\",x_min,
+                \"cTrend\", \"curveMax\",\"#1_3\",u_max,
+                \"cTrend\", \"curveMin\",\"#1_3\",u_min,
+                \"scaleText1\",\"text\",\"w [\"+dpGetUnit(w_dpe)+\"]\",
+                \"scaleText2\",\"text\",\"x [\"+dpGetUnit(x_dpe)+\"]\",
+                \"scaleText3\",\"text\",\"u [\"+dpGetUnit(u_dpe)+\"]\",
+                \"scaleText4\",\"text\",\"e [\"+dpGetUnit(x_dpe)+\"]\");
+}
+
+
+" 0
+ E E 1 -1 N {0,0,0} 0 0 1 0 1 0 4 0 "#1_1" "" 0 1 0 0 1 "3 1 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 4 #1_1
+LANG:10001 1 0
+LANG:10027 1 0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 100 0 2 1 0 1 N "SP_setpoint"
+0 0 0 0 0 0 0 0
+0 "#1_2" "" 0 2 0 0 1 "3 1 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 4 #1_2
+LANG:10001 1 0
+LANG:10027 1 0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 2 1 0 1 N "PV_value"
+0 0 0 0 0 0 0 0
+0 "#1_3" "" 0 1 0 0 1 "3 1 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 4 #1_3
+LANG:10001 1 1
+LANG:10027 1 1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 2 1 0 1 N "OP_output"
+0 0 0 0 0 0 0 0
+0 "#1_4" "" 0 2 0 0 1 "3 0 0.0" "%x" 0 0 3 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 4 #1_4
+LANG:10001 1 2
+LANG:10027 1 2
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+1 "" ""  0 0 1 0 1 1 0 1 N "DEV_error"
+0 0 0 0 0 0 0 0
+1 1 "%X" "%x" 0 1 0 0 
+E 1 0 1 0 1 1 5 30
+3
+LANG:10000 32 Courier New,-1,11,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,11,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,11,5,50,0,0,0,0,0
+0  3
+LANG:10000 32 Courier New,-1,11,5,75,0,0,0,0,0
+LANG:10001 32 Courier New,-1,11,5,75,0,0,0,0,0
+LANG:10027 32 Courier New,-1,11,5,75,0,0,0,0,0
+0  3
+LANG:10000 32 Courier New,-1,11,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,11,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,11,5,50,0,0,0,0,0
+0  100 
+N {0,0,0} 0 0 1 0 1 150 1 5 5 1 2
+0
+13 103
+"expandTrend"
+""
+1 575 13 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+75 0 0 1 69 0
+E E E
+0
+3
+LANG:10000 25 Trend expandieren [ALT+E]
+LANG:10001 20 Expand trend [ALT+E]
+LANG:10027 39 Развернуть тренд [ALT+E]
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  573 11 599 36
+
+P 
+12632256
+"103.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"main()
+{
+  float x,y, tx1, ty1, tx2, ty2, tx3, ty3, tx4, ty4, offset = 260;
+  getValue(\"cTrend\",\"scale\",x,y);
+  getMultiValue(\"scaleText1\",\"position\",tx1,ty1,
+  				\"scaleText2\",\"position\",tx2,ty2,
+  				\"scaleText3\",\"position\",tx3,ty3,
+  				\"scaleText4\",\"position\",tx4,ty4);
+  
+  
+  if(y > 1)
+  {
+   setMultiValue(\"cTrend\",\"scale\",x,1,
+                 \"scaleText1\",\"position\", tx1,ty1-offset,
+                 \"scaleText2\",\"position\", tx2,ty2-offset,
+                 \"scaleText3\",\"position\", tx3,ty3-offset,
+                 \"scaleText4\",\"position\", tx4,ty4-offset, 
+                 \"\",\"fill\",\"[pattern,[tile,gif,icons/expand_trend_en.gif]]\");   
+  }
+  else
+  {
+   setMultiValue(\"cTrend\",\"scale\",x,1.87,
+                 \"scaleText1\",\"position\", tx1,ty1+offset,
+                 \"scaleText2\",\"position\", tx2,ty2+offset,
+                 \"scaleText3\",\"position\", tx3,ty3+offset,
+                 \"scaleText4\",\"position\", tx4,ty4+offset, 
+                 \"\",\"fill\",\"[pattern,[tile,gif,icons/collapse_trend_en.gif]]\");     
+  }
+}" 0
+ E E E
+13 119
+"ScaleToggle"
+""
+1 549 13 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+89 0 0 1 83 0
+E E E
+0
+3
+LANG:10000 35 Sichtbare Skalen umschalten [ALT+S]
+LANG:10001 29 Toggle visible scales [ALT+S]
+LANG:10027 41 Переключить шкалы [ALT+S]
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  547 11 573 36
+
+P 
+12632256
+"119.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"//Function cTrend_EventInitialize()
+main()
+{  
+  string w_dpe, x_dpe, u_dpe;
+  
+  dpGet($controller+\".input.w\",w_dpe,
+  		$controller+\".output.u\",u_dpe,
+  		$controller+\".input.x\",x_dpe);
+  
+
+    
+  switch(g_scaleMode)
+  {
+    case 0: {   setMultiValue(\"cTrend\", \"curveScaleVisibility\", \"#1_1\", 1,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_2\", 0,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_3\", 0,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_4\", 1,
+  	                          \"scaleText1\",\"visible\",true,
+  	                          \"scaleText2\",\"visible\",false,
+  	                          \"scaleText3\",\"visible\",false,
+  	                          \"scaleText1\",\"text\",\"w [\"+dpGetUnit(w_dpe)+\"]\",
+  	                          \"scaleText1\",\"foreCol\",\"SP_setpoint\");
+  	            break;
+  	        }
+    case 1: {   setMultiValue(\"cTrend\", \"curveScaleVisibility\", \"#1_1\", 0,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_2\", 1,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_3\", 0,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_4\", 1,
+  	                          \"scaleText1\",\"visible\",true,
+  	                          \"scaleText2\",\"visible\",false,
+  	                          \"scaleText3\",\"visible\",false,
+  	                          \"scaleText1\",\"text\",\"x [\"+dpGetUnit(x_dpe)+\"]\",
+  	                          \"scaleText1\",\"foreCol\",\"PV_value\");
+  	            break;
+  	        }  
+    case 2: {   setMultiValue(\"cTrend\", \"curveScaleVisibility\", \"#1_1\", 0,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_2\", 0,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_3\", 1,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_4\", 1,
+  	                          \"scaleText1\",\"visible\",true,
+  	                          \"scaleText2\",\"visible\",false,
+  	                          \"scaleText3\",\"visible\",false,
+  	                          \"scaleText1\",\"text\",\"u [\"+dpGetUnit(u_dpe)+\"]\",
+  	                          \"scaleText1\",\"foreCol\",\"OP_output\");
+  	            break;
+  	        }   
+    case 3: {   setValue(\"cTrend\", \"curveScaleVisibility\", \"#1_3\", 0);
+                setMultiValue(\"cTrend\", \"curveScaleVisibility\", \"#1_1\", 1,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_2\", 1,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_3\", 1,
+  	                          \"cTrend\", \"curveScaleVisibility\", \"#1_4\", 1,
+  	                          \"scaleText1\",\"visible\",true,
+  	                          \"scaleText2\",\"visible\",true,
+  	                          \"scaleText3\",\"visible\",true,
+  	                          \"scaleText1\",\"text\",\"w [\"+dpGetUnit(w_dpe)+\"]\",
+  	                          \"scaleText1\",\"foreCol\",\"SP_setpoint\",
+  	                          \"scaleText2\",\"text\",\"x [\"+dpGetUnit(x_dpe)+\"]\",
+  	                          \"scaleText2\",\"foreCol\",\"PV_value\",
+  	                          \"scaleText3\",\"text\",\"u [\"+dpGetUnit(u_dpe)+\"]\",
+  	                          \"scaleText3\",\"foreCol\",\"OP_output\");
+  	            break;
+  	        }   
+  	default: break;
+  	}
+  	
+  	g_scaleMode++;
+  	if(g_scaleMode >3)
+  	  g_scaleMode = 0;
+}" 0
+ E E E
+13 120
+"Button3"
+""
+1 523 13 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+89 0 0 1 90 0
+E E E
+0
+3
+LANG:10000 46 Skalierung der Regelabweichung ändern [ALT+Z]
+LANG:10001 33 Zoom deviation axis scale [ALT+Z]
+LANG:10027 70 Масштабирование шкалы отклонений [ALT+Z]
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  521 11 547 36
+
+P 
+12632256
+"120.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"//Function cTrend_EventInitialize()
+main()
+{  
+  string w_dpe;
+  float  min, max;
+
+  dpGet($controller+\".input.w\",w_dpe);
+  dpGet(w_dpe+\":_pv_range.._min\",min,
+        w_dpe+\":_pv_range.._max\",max);
+
+
+  switch(g_devZoomMode)
+  {
+    case(1): {	max = max - (max-min)*0.5;
+                break;
+             }
+    case(2): {	max = max - (max-min)*0.8;
+                break;
+             }
+    case(3): {	max = max - (max-min)*0.95;
+                break;
+             }  
+    default:  break;
+  }
+  g_devZoomMode++;
+  
+  if (g_devZoomMode > 3)
+     g_devZoomMode = 0;   
+
+  cTrend.curveMax(\"#1_4\") = max-min;
+  cTrend.curveMin(\"#1_4\") = 0-(max-min);
+}" 0
+ E E E
+13 121
+"scaleText4"
+""
+1 553 253 E E E 1 E 1 E N "DEV_error" E N {255,255,255} E E
+ E E
+90 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+LANG:10001 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+LANG:10027 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+0  551 251 596 272
+
+T 
+3
+LANG:10000 1 e
+LANG:10001 1 e
+LANG:10027 1 e
+E E E E
+13 122
+"scaleText1"
+""
+1 15 253 E E E 1 E 1 E N "SP_setpoint" E N {255,255,255} E E
+ E E
+91 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+LANG:10001 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+LANG:10027 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+0  13 251 57 272
+
+T 
+3
+LANG:10000 1 w
+LANG:10001 1 w
+LANG:10027 1 w
+E E E E
+13 123
+"scaleText2"
+""
+1 68 253 E E E 1 E 1 E N "PV_value" E N {255,255,255} E E
+ E E
+92 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+LANG:10001 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+LANG:10027 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+0  66 251 110 272
+
+T 
+3
+LANG:10000 1 x
+LANG:10001 1 x
+LANG:10027 1 x
+E E E E
+13 124
+"scaleText3"
+""
+1 120 253 E E E 1 E 1 E N "OP_output" E N {255,255,255} E E
+ E E
+93 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+LANG:10001 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+LANG:10027 33 Arial Narrow,-1,12,5,50,0,0,0,0,0
+0  118 251 162 272
+
+T 
+3
+LANG:10000 1 u
+LANG:10001 1 u
+LANG:10027 1 u
+E E E E
+22 127
+"ComboBox1"
+""
+1 449 13 E E E 1 E 1 E N "_WindowText" E N "_Window" E E
+ E E
+96 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 29 Online Zeitbereich auswählen
+LANG:10001 23 Select online timerange
+LANG:10027 42 Задайте текущий период
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  447 11 520 37
+5
+3
+LANG:10000 6 10 sec
+LANG:10001 6 10 sec
+LANG:10027 9 10 сек
+
+0
+3
+LANG:10000 6 30 sec
+LANG:10001 6 30 sec
+LANG:10027 9 30 сек
+
+1
+3
+LANG:10000 6  1 min
+LANG:10001 6  1 min
+LANG:10027 9  1 мин
+
+0
+3
+LANG:10000 6  3 min
+LANG:10001 6  3 min
+LANG:10027 9  3 мин
+
+0
+3
+LANG:10000 6 10 min
+LANG:10001 6 10 min
+LANG:10027 9 10 мин
+
+0
+
+"main()
+{
+  this.selectedPos = 2;
+}" 0
+
+"main()
+{
+  int choice = this.selectedPos;
+  time interval; 
+  
+  switch(choice)
+  {
+    case (1): {	interval = makeTime(1970,1,1,1,0,10);
+                break;}
+    case (2): {	interval = makeTime(1970,1,1,1,0,30);
+                break;}
+    case (3): {	interval = makeTime(1970,1,1,1,1,0);
+                break;}
+    case (4): {	interval = makeTime(1970,1,1,1,3,0);
+                break;}
+    case (5): {	interval = makeTime(1970,1,1,1,10,0);
+                break;}  
+    default:   interval = makeTime(1970,1,1,1,0,10);
+  }
+  cTrend.timeInterval = interval;                                            
+}" 0
+
+E
+ 0 0
+13 128
+"Button11"
+""
+1 338 13 E E E 1 E 1 E N "_ButtonText" E N "_Button" E E
+ E E
+97 0 0 0 0 0
+E E E
+1
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  336 11 450 38
+
+T 
+3
+LANG:10000 19 Online Zeitbereich:
+LANG:10001 17 Online Timerange:
+LANG:10027 28 Текущий период:
+E E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 1 "" -1
+"" ""
+"objects/CONTROL/value_parameter.pnl" 266 11 T 33 1 0 1 -121 392
+3
+"$controller""$controller"
+"$element"".parameters.kR"
+"$format""\"%3.3f\""
+3 2 "Gruppe4" -1
+"" ""
+"objects/CONTROL/value_parameter.pnl" 275 275 T 35 1 0 1 -130 160
+3
+"$controller""$controller"
+"$element"".parameters.TN"
+"$format""\"%3.3f\""
+3 4 "Gruppe8" -1
+"" ""
+"objects/CONTROL/value_parameter.pnl" 295 275 T 41 1 0 1 220 138
+3
+"$controller""$controller"
+"$element"".parameters.scanrate"
+"$format""\"%4d\""
+3 5 "Gruppe10" -1
+"" ""
+"objects/CONTROL/value_parameter.pnl" 295 315 T 44 1 0 1 -150 151
+3
+"$controller""$controller"
+"$element"".parameters.TV"
+"$format""\"%3.3f\""
+3 6 "Gruppe12" -1
+"" ""
+"objects/CONTROL/value_parameter.pnl" 295 350 T 46 1 0 1 220 125
+3
+"$controller""$controller"
+"$element"".parameters.u_max"
+"$format""\"%3.1f\""
+3 7 "Gruppe14" -1
+"" ""
+"objects/CONTROL/value_parameter.pnl" 295 385 T 48 1 0 1 220 59
+3
+"$controller""$controller"
+"$element"".parameters.u_min"
+"$format""\"%3.1f\""
+3 8 "Gruppe16" -1
+"" ""
+"objects/CONTROL/value_parameter.pnl" 295 415 T 50 1 0 1 -150 113
+3
+"$controller""$controller"
+"$element"".parameters.scale"
+"$format""\"%3.2f\""
+3 9 "Gruppe18" -1
+"" ""
+"objects/CONTROL/value_parameter.pnl" 320 415 T 53 1 0 1 -175 82
+3
+"$controller""$controller"
+"$element"".parameters.tolerance"
+"$format""\"%3.4f\""
+0

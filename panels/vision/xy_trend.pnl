@@ -1,0 +1,557 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 8 (NoName)
+PANEL,-1 -1 521 655 N "STD_panel_back" 0
+"main()
+{
+
+}" 0
+ E E E E 1 -1 -1 0  288 158
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 14
+"Border3"
+""
+1 20 604 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 530 498 605
+6 15
+"Border4"
+""
+1 21 605 E E E 1 E 1 E N {255,255,255} E N "_Transparent" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 531 499 606
+2 110
+"numTxt"
+""
+1 414 30 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+43 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 434 32 501 47
+0 2 0 "0s" 0 0 0 194 0 0  501 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 nnnn Werte
+LANG:10001 12 (nnn) Values
+LANG:10027 22 (nnn) Значений
+2 112
+"Text1"
+""
+1 21 15 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 23 17 409 43
+0 2 0 "0s" 0 0 0 64 0 0  23 17 1
+3
+LANG:10000 26 Arial,-1,20,5,75,0,0,0,0,0
+LANG:10001 26 Arial,-1,20,5,75,0,0,0,0,0
+LANG:10027 26 Arial,-1,20,5,75,0,0,0,0,0
+0 3
+LANG:10000 19 Windrichtungsprofil
+LANG:10001 22 Wind direction profile
+LANG:10027 21 Роза ветров
+2 9
+"Text2"
+""
+1 30 520 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 522 120 537
+0 2 0 "0s" 0 0 0 192 0 0  32 522 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Anzeigemodus
+LANG:10001 12 Display mode
+LANG:10027 33 Режим отображения
+2 113
+"readData"
+""
+1 373 20 E E E 1 E 0 E N "Rot" E N "_Transparent" E E
+ E E
+46 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 243 22 420 40
+0 2 0 "0s" 0 0 0 194 0 0  420 22 1
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0 3
+LANG:10000 23 Daten werden gelesen...
+LANG:10001 15 Reading data...
+LANG:10027 28 Чтение данных...
+27 3
+"XYTrend"
+""
+1 20 50 E E E 1 E 1 E N "STD_text" E N "STD_trend_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  18 48 502 512
+4 0 80 10 0 "%H:%M" 1 3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  0 3 1 1 0 1 N {0,0,0}
+4 0 80 10 0 "%H:%M" 1 3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  0 3 1 1 0 1 N {0,0,0}
+1 0 1 20 3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  3 1 1 0 1 N {0,0,0}
+2 1 1 0 1 N "STD_trend_pen2" 5 4 0 20 20 N {0,0,0} N {0,0,0} N {0,0,0} 1 1 0 1 1 0 1 N "STD_trend_pen2" 0
+"main()
+{
+  dpConnect(\"WS_CB\", TRUE,  \"WS1.value.wind.speed:_online.._value\", 
+                            \"WS1.value.wind.direction:_online.._value\");
+} 
+                        
+//WS_CB()**************************************
+WS_CB(string dp1, float a, string dp2, float b)
+{    
+
+  dyn_float  xValues, yValues, speeds, directions, dirSpeed;
+  dyn_time   times;
+  dyn_string splitStr;
+  string     numStr = numTxt.text;
+  float      radiant;
+  int        i, iCount;                  
+  
+  readData.visible = TRUE;
+  //get values from last 6 hours
+  dpGetPeriod(getCurrentTime()-21600, getCurrentTime(), 1, \"WS1.value.wind.speed:_online.._value\", speeds, times);
+  dpGetPeriod(getCurrentTime()-21600, getCurrentTime(), 1, \"WS1.value.wind.direction:_online.._value\", directions, times);
+  iCount = (dynlen(speeds) < dynlen(directions)) ? dynlen(speeds) : dynlen(directions);
+  
+  //cut first and last value
+  for(i=2; i < iCount; i++)
+  {
+    if(dynlen(directions) < i)
+      break;
+    //cut post decimal positions eg. 261,65 -> 261
+    directions[i] = directions[i] - fmod(directions[i],1.0);
+    //combine directions and speeds to one float value
+    dirSpeed[i-1]   = directions[i] * 1000.0 + speeds[i];
+  }
+  
+  dynSortAsc(dirSpeed); //sort by directions
+  for(i=1; i <= dynlen(dirSpeed); i++)
+  {
+    //extract speeds from float value
+    speeds[i]     = fmod(dirSpeed[i],1000.0);
+    //extract directions from float value
+    dirSpeed[i]   = dirSpeed[i] - fmod(dirSpeed[i],1000.0);
+    directions[i] = dirSpeed[i] / 1000.0;
+    //make calculations
+    radiant = deg2rad(directions[i]+90.0);
+    xValues[i] = speeds[i] * sin(radiant);    
+    yValues[i] = speeds[i] * cos(radiant);
+  }
+
+  if(i == 1)
+  {
+    xValues[1] = 0.0; yValues[1] = 0.0;
+  }
+  setValue(\"XYTrend\",\"data\",xValues,yValues);
+  setValue(\"XYTrend\",\"flush\");
+
+  splitStr = strsplit (numStr,\" \");
+  numTxt.text = dynlen(dirSpeed) + \" \" + splitStr[2];
+  readData.visible = FALSE;
+}" 0
+
+19 8
+"displayRange"
+""
+1 30 540 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  28 538 162 602
+3
+T 
+3
+LANG:10000 17 Die letzten 6 Std
+LANG:10001 12 Last 6 hours
+LANG:10027 23 Последние 6ч.
+
+1 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 18 Die letzten 12 Std
+LANG:10001 13 Last 12 hours
+LANG:10027 24 Последние 12ч.
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+T 
+3
+LANG:10000 18 Die letzten 24 Std
+LANG:10001 13 Last 24 hours
+LANG:10027 24 Последние 24ч.
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E "main()
+{
+  dyn_float  xValues, yValues, speeds, directions, dirSpeed;
+  dyn_time   times;
+  dyn_string splitStr;
+  string     numStr = numTxt.text;
+  float      radiant;
+  int        i, iCount,
+             iRange = this.number;
+  
+  readData.visible = TRUE;
+  switch(iRange)
+  {
+    case 0 : iRange = 21600; //6h
+             break;
+    case 1 : iRange = 43200; //12h
+             break;
+    case 2 : iRange = 86400; //24h
+             break;
+    default: return;
+  }
+  dpGetPeriod(getCurrentTime()-iRange, getCurrentTime(), 1, \"WS1.value.wind.speed:_online.._value\", speeds, times);
+  dpGetPeriod(getCurrentTime()-iRange, getCurrentTime(), 1, \"WS1.value.wind.direction:_online.._value\", directions, times);
+  iCount = (dynlen(speeds) < dynlen(directions)) ? dynlen(speeds) : dynlen(directions);
+
+  //cut first and last value
+  for(i=2; i < iCount; i++)
+  {
+    if(dynlen(directions) < i)
+      break;
+    //cut post decimal positions eg. 261,65 -> 261
+    directions[i] = directions[i] - fmod(directions[i],1.0);
+    //combine directions and speeds to one float value
+    dirSpeed[i-1]   = directions[i] * 1000.0 + speeds[i]; 
+  }
+
+  dynSortAsc(dirSpeed); //sort by directions
+  for(i=1; i <= dynlen(dirSpeed); i++)
+  {
+    //extract speeds from float value
+    speeds[i]     = fmod(dirSpeed[i],1000.0);
+    //extract directions from float value
+    dirSpeed[i]   = dirSpeed[i] - fmod(dirSpeed[i],1000.0);
+    directions[i] = dirSpeed[i] / 1000.0;
+    //make calculations
+    radiant = deg2rad(directions[i]+90.0);
+    xValues[i] = speeds[i] * sin(radiant);
+    yValues[i] = speeds[i] * cos(radiant);
+  }
+
+  if(i == 1)
+  {
+    xValues[1] = 0.0; yValues[1] = 0.0;
+  }
+  setValue(\"XYTrend\",\"data\",xValues,yValues);
+  setValue(\"XYTrend\",\"flush\");
+
+  splitStr = strsplit (numStr,\" \");
+  numTxt.text = dynlen(dirSpeed) + \" \" + splitStr[2];
+  readData.visible = FALSE;
+}
+" 0
+
+13 111
+"cmd_close"
+""
+1 387 616 E E E 1 E 1 E N "STD_text" E N "STD_pushbutton_back" E E
+ E E
+44 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  387 616 501 646
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  PanelOff();
+}" 0
+ E E E
+13 116
+"Button2"
+""
+1 370 540 E E E 1 E 0 E N "STD_text" E N "STD_pushbutton_back" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  368 538 492 568
+
+T 
+3
+LANG:10000 17 Demo- Zeitbereich
+LANG:10001 15 Demo time range
+LANG:10027 25 Демо-диапазон
+"main()
+{
+  dyn_float  xValues, yValues, speeds, directions, dirSpeed;
+  dyn_time   times;
+  dyn_string splitStr;
+  
+  string     numStr = numTxt.text;
+  float      radiant;
+  int        i, iCount,
+             iRange = 21600;	// show 6 hours (= default time range xy-trend)
+  
+  time demoDataStart, demoDataEnd; 
+ 
+  dpGet(\"ApplicationProperties.demoDataStart:_online.._value\", demoDataStart,
+  		\"ApplicationProperties.demoDataEnd:_online.._value\", demoDataEnd);
+  
+  readData.visible = TRUE;
+
+  dpGetPeriod(demoDataEnd-iRange, demoDataEnd, 1, \"WS1.value.wind.speed:_online.._value\", speeds, times);
+  dpGetPeriod(demoDataEnd-iRange, demoDataEnd, 1, \"WS1.value.wind.direction:_online.._value\", directions, times);
+  iCount = (dynlen(speeds) < dynlen(directions)) ? dynlen(speeds) : dynlen(directions);
+
+  //cut first and last value
+  for(i=2; i < iCount; i++)
+  {
+    if(dynlen(directions) < i)
+      break;
+    //cut post decimal positions eg. 261,65 -> 261
+    directions[i] = directions[i] - fmod(directions[i],1.0);
+    //combine directions and speeds to one float value
+    dirSpeed[i-1]   = directions[i] * 1000.0 + speeds[i]; 
+  }
+  
+  dynSortAsc(dirSpeed); //sort by directions
+  for(i=1; i <= dynlen(dirSpeed); i++)
+  {
+    //extract speeds from float value
+    speeds[i]     = fmod(dirSpeed[i],1000.0);
+    //extract directions from float value
+    dirSpeed[i]   = dirSpeed[i] - fmod(dirSpeed[i],1000.0);
+    directions[i] = dirSpeed[i] / 1000.0;
+    //make calculations
+    radiant = deg2rad(directions[i]+90.0);
+    xValues[i] = speeds[i] * sin(radiant);
+    yValues[i] = speeds[i] * cos(radiant);
+  }
+
+  if(i == 1)
+  {
+    xValues[1] = 0.0; yValues[1] = 0.0;
+  }
+  setValue(\"XYTrend\",\"data\",xValues,yValues);
+  setValue(\"XYTrend\",\"flush\");
+
+  splitStr = strsplit (numStr,\" \");
+  numTxt.text = dynlen(dirSpeed) + \" \" + splitStr[2];
+  readData.visible = FALSE;
+}" 0
+ E E "main()
+{
+  time demoDataEnd;
+  
+  dpGet(\"ApplicationProperties.demoDataEnd:_online.._value\", demoDataEnd);
+    
+  if (demoDataEnd == makeTime(1970,01,01)) this.visible = FALSE;
+  else this.visible = TRUE;
+}" 0
+
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 117 0 "" 2
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 0 "" -1
+"" ""
+"objects/help_button_small.pnl" 334 625 T 49 1 0 1 -264 93
+1
+"$hlp_keyword""da_xy_trend"
+0

@@ -1,0 +1,158 @@
+V 13
+3
+LANG:10000 9 InfoPanel
+LANG:10001 9 infoPanel
+LANG:10027 21 Инфо-панель
+PANEL,-1 -1 1009 83 N "_3DFace" 0
+"main()
+{
+}" 0
+ E E E E 1 -1 -1 0  350 60
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+NC
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 9 Слой1
+4 78
+"Line3"
+""
+1 1070 0 E E E 1 E 1 E N "STD_panel_back" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  1070 80 1070 0
+1 81 17 "" 25
+0
+1 89 19 "" 18
+31 "transform" 0 0 1 0 1 -267 -131
+0
+1 90 19 "" 19
+31 "transform" 0 0 1 0 1 -268 -131
+0
+1 91 19 "" 24
+31 "transform" 0 0 1 0 1 -267 -131
+0
+1 92 19 "" 8
+31 "transform" 0 0 1 0 1 141 -131
+0
+1 93 19 "" 9
+31 "transform" 0 0 1 0 1 160 -127
+0
+1 94 19 "" 16
+31 "transform" 0 0 1 0 1 106 -140
+0
+1 95 19 "" 12
+31 "transform" 0 0 1 0 1 117 -142
+0
+1 96 19 "" 14
+31 "transform" 0 0 1 0 1 148 -127
+0
+1 97 19 "" 17
+31 "transform" 0 0 1 0 1 127 -132
+0
+1 98 19 "" 25
+31 "transform" 0 0 1 0 1 137 -139
+0
+1 99 19 "" 15
+31 "transform" 0 0 1 0 1 107 -143
+0
+1 100 19 "" 21
+31 "transform" 0 0 1 0 1 -313 -140
+0
+1 101 19 "" 22
+31 "transform" 0 0 1 0 1 -314 -117
+0
+1 102 19 "" 0
+31 "transform" 0 0 1 0 1 96 -136
+0
+1 103 19 "" 1
+31 "transform" 0 0 0.8089870315134224 0 2.892857142857142 -64.71896252107379 -405
+14 "backCol" 0 0 N "_3DFace"
+16 "fill" 0 0 1
+0
+1 79 16 "" 0
+31 "transform" 0 0 0.5022429261559696 0 1 418.0935127674258 0
+0
+1 80 16 "" 1
+31 "transform" 0 0 1 0 1 -5 0
+0
+1 104 20 "" 0
+0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 9 Слой2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 9 Слой3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 9 Слой4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 9 Слой5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 9 Слой6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 9 Слой7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 9 Слой8
+0
+3 16 "" -1
+"" ""
+"objects/STD_INFOS/currentUser_text_time.pnl" 68 68 T 16 1 0 1 892 397
+0
+3 17 "" -1
+"" ""
+"objects/STD_INFOS/sys_info_bars_txt_as.pnl" 357 115 T 41 1.00625 0 1 642.74375 -48
+0
+3 19 "" -1
+"" ""
+"vision/aes/AESRow.pnl" 80 140 T 47 1 0 1 58 1220
+1
+"$SCREENTYPE"""
+3 20 "PANEL_REF20" -1
+"" ""
+"objects/STD_PANELS/PT_FavMgm.pnl" 956 31 T 48 1 0 1 0 -3
+0
+0

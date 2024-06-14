@@ -1,0 +1,255 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 353 280 N "STD_panel_back" 1
+"$DP"
+E E E E E 1 -1 -1 0  36 48
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+2 0
+"hand"
+""
+1 16 62 E E E 1 E 1 E N "HVAC_Text_active" E N "STD_panel_back" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  dpSet($DP+\"cmd.manual:_original.._value\",TRUE,
+        $DP+\"cmd.auto:_original.._value\",  FALSE,
+        $DP+\"cmd.off:_original.._value\",   FALSE);
+}" 0
+ 0 2 1 0 1 E U  1 E 18 62 56 77
+0 2 2 "0s" 0 0 0 192 0 0  18 62 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 HAND
+LANG:10001 3 MAN
+LANG:10027 8 РУЧН
+2 1
+"aus"
+""
+1 57 54 E E E 1 E 1 E N "HVAC_Text_active" E N "STD_panel_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  dpSet($DP+\"cmd.manual:_original.._value\",FALSE,
+        $DP+\"cmd.auto:_original.._value\",  FALSE,
+        $DP+\"cmd.off:_original.._value\",   TRUE);
+}
+" 0
+ 0 2 1 0 1 E U  1 E 59 54 88 69
+0 2 2 "0s" 0 0 0 192 0 0  59 54 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 AUS
+LANG:10001 3 OFF
+LANG:10027 8 ВЫКЛ
+2 2
+"autobet"
+""
+1 90 61 E E E 1 E 1 E N "HVAC_Text_active" E N "STD_panel_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  dpSet($DP+\"cmd.manual:_original.._value\",FALSE,
+        $DP+\"cmd.auto:_original.._value\",  TRUE,
+        $DP+\"cmd.off:_original.._value\",   FALSE);
+}
+" 0
+ 0 2 1 0 1 E U  1 E 92 61 129 76
+0 2 2 "0s" 0 0 0 192 0 0  92 61 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 AUTO
+LANG:10001 4 AUTO
+LANG:10027 8 АВТО
+7 3
+"schalter"
+""
+1 61 85 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "HVAC_Background" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+"main()
+{
+  if(dpConnect(\"work\",$DP+\"state.manual:_online.._value\",
+                      $DP+\"state.off:_online.._value\",
+                      $DP+\"state.auto:_online.._value\") == -1)
+    setMultiValue(\"schalter\",\"backCol\",\"_dpdoesnotexist\",
+                  \"knebel\",  \"backCol\",\"_dpdoesnotexist\");
+                  
+}
+//shows state of switch
+work(string dp1, bool manual,
+     string dp2, bool off,
+     string dp3, bool automatic)
+{
+  if (manual && automatic && !off)
+  {
+    setMultiValue(\"knebel\",\"backCol\",\"HVAC_invalid\",
+		          \"knebel\",\"rotation\",0,
+                  \"schalter\",\"backCol\",\"HVAC_invalid\",
+		          \"hand\",\"foreCol\",\"_3DText\",
+		          \"aus\",\"foreCol\",\"_3DText\",
+		          \"autobet\",\"foreCol\",\"_3DText\");
+
+  }
+  if (manual && !automatic && !off)
+  {
+    setMultiValue(\"knebel\",\"backCol\",\"HVAC_Backgnd_dark\",
+		          \"knebel\",\"rotation\",44,
+                  \"schalter\",\"backCol\",\"HVAC_Backgnd_dark\",
+		          \"hand\",\"foreCol\",\"_3DText\",
+		          \"aus\",\"foreCol\",\"HVAC_Backgnd_dark\",
+		          \"autobet\",\"foreCol\",\"HVAC_Backgnd_dark\");
+
+  }
+  if (!manual && automatic && !off)
+  {
+    setMultiValue(\"knebel\",\"backCol\",\"HVAC_Backgnd_dark\",
+		          \"knebel\",\"rotation\",316,
+                  \"schalter\",\"backCol\",\"HVAC_Backgnd_dark\",
+		          \"hand\",\"foreCol\",\"HVAC_Backgnd_dark\",
+		          \"aus\",\"foreCol\",\"HVAC_Backgnd_dark\",
+		          \"autobet\",\"foreCol\",\"_3DText\");
+
+  }
+  if (off)
+  {
+    setMultiValue(\"knebel\",\"backCol\",\"HVAC_Backgnd_dark\",
+		          \"knebel\",\"rotation\",0,
+                  \"schalter\",\"backCol\",\"HVAC_Backgnd_dark\",
+		          \"hand\",\"foreCol\",\"HVAC_Backgnd_dark\",
+		          \"aus\",\"foreCol\",\"_3DText\",
+		          \"autobet\",\"foreCol\",\"HVAC_Backgnd_dark\");
+
+  }
+}
+" 0
+ E 0 1 1 0 1 E 1.07142857142857 0 1.14795918367347 5.64285714285714 0.423469387755109 1 E 61 85 14 14
+6 4
+"knebel"
+""
+1 71 98 E E E 1 E 1 E N "HVAC_Text_active" E N "HVAC_Background" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 65 79 77 128
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

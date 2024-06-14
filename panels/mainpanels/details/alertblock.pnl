@@ -1,0 +1,718 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 992 260 N "STD_panel_back" 0
+E E E E E 1 -1 -1 0  60 60
+"refFileName"0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 16
+"Border2"
+""
+1 803 91 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  0 E 803 11 851 91
+2 4
+"ar_currentLine"
+""
+1 765 44 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 767 44 823 60
+0 2 2 "3d" 3 0 0 66 0 0  767 44 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 1
+LANG:10027 1 2
+2 2
+"as_lineCount"
+""
+1 822 44 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 830 44 886 60
+0 2 2 "3d" 3 0 0 64 0 0  830 44 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 0
+LANG:10001 1 2
+LANG:10027 1 2
+2 5
+"Text1"
+""
+1 820 42 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 73 Aktuell angezeigter Alarm (oberste Zeile) / Gesamtzahl anstehender Alarme
+LANG:10001 67 Currently visible alarm (top line) / total number of pending alarms
+LANG:10027 100 Текущ. видимый аларм (верх) / общ. кол-во текущих алармов
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 825 44 830 58
+0 2 2 "0s" 0 0 0 192 0 0  825 44 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 /
+LANG:10001 1 /
+LANG:10027 1 /
+6 15
+"Border1"
+""
+1 803 89 E E E 1 E 1 E N {0,0,0} E N "_Transparent" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 803 10 849 89
+4 17
+"Line1"
+""
+1 847 11 E E E 1 E 1 E N "STD_grey_dark" E N {255,255,255} E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  850 11 803 11
+4 18
+"Line2"
+""
+1 802 10 E E E 1 E 1 E N "STD_grey_dark" E N {255,255,255} E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  802 91 802 10
+4 19
+"Line3"
+""
+1 850 10 E E E 1 E 1 E N "STD_panel_back" E N {255,255,255} E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  850 10 850 90
+4 20
+"Line4"
+""
+1 803 90 E E E 1 E 1 E N "STD_panel_back" E N {255,255,255} E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  850 90 803 90
+13 12
+"ar_up"
+""
+1 808 15 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 36 Nach oben blättern (ältere Alarme)
+LANG:10001 22 Page up (older alarms)
+LANG:10027 63 Страница вверх (предыдущие алармы)
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  806 14 846 39
+
+P 
+4294967295
+"12.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"// up
+
+main()
+{
+  int line, count;
+  
+  getValue(\"table\", \"lineVisible\", line,
+                    \"lineCount\", count);
+
+  if ( line == -1 ) line = count - 1;  // -1 means last line
+
+  if ( line > 0  )
+    setMultiValue(\"table\", \"lineVisible\", line - 1,
+                  \"ar_currentLine\", \"text\", line);  // \"current line\" indicator is 1 based
+}" 0
+ E E E
+13 13
+"ar_down"
+""
+1 808 64 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 38 Nach unten blättern (jüngere Alarme)
+LANG:10001 26 Page down (younger alarms)
+LANG:10027 57 Страница вниз (недавние алармы)
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  806 63 846 87
+
+P 
+4294967295
+"13.png"
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+"// down
+
+main()
+{
+  int lines, line;
+  
+  getValue(\"table\", \"lineCount\", lines,
+                    \"lineVisible\", line);
+
+  if ( line == -1 ) line = lines - 1;  // -1 means last line
+
+  if ( line < (lines - 1) )
+    setMultiValue(\"table\", \"lineVisible\", line + 1,
+                  \"ar_currentLine\", \"text\", line + 1 + 1);   // \"current line\" -indicator is 1 based
+}" 0
+ E E E
+25 14
+"table"
+"AlertRow"
+1 10 10 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E "// SimpleCtrlScriptStart {valid}
+main()
+{
+string sObjectName;
+getValue(\"\",\"name\",sObjectName);
+ep_acknowledgeTableFunction( sObjectName,\"1\",\"dpid\",\"time\",\"count\",\"ackable\");
+}
+// SimpleCtrlScript {EP_confirmTable}
+// Type {1}
+// Column_DPE {dpid}
+// Column_Time {time}
+// Column_Index {count}
+// Column_Confirmable {ackable}
+// SimpleCtrlScriptEnd {EP_confirmTable}
+" 0
+
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  8 8 801 93
+"dyn_bool g_colVis;           // holds the flag wheter an optional column is visible or not
+string   g_connectId;        // holds id of current query
+dyn_int  g_counterConnectId; // holds numbers of Id's
+time     g_timeLastUpdate;   // holds time of the last update
+string   g_dpCommentFilter;  // store filter
+bool     g_showInternals;
+unsigned g_maxClosedLines;   // max num of lines to be queried by closed protocoll
+unsigned g_state;            // alert-state filter
+
+int      g_busyThread;    // id of thread, which shows busyness
+
+int      g_maxLines;      // num of max lines in open protocoll
+
+//-------------------------------------------------------------------------
+// This part was inserted on the 21.2.2002 by MT
+int        g_discardThread; 
+time       g_discardStart; 
+bool       g_discarded; 
+const time MINCB_TIME = 2; 
+const time MAXCB_TIME = 5;
+
+//-------------------------------------------------------------------------
+
+main()
+{
+  as_init();
+}
+" 0
+E 0 0 1 22 3 "_abbr" 1 1 0 "s" 3
+LANG:10000 11 Kurzzeichen
+LANG:10001 8 Shortcut
+LANG:10027 10 Ярлык
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+24 "_prior" 1 1 0 "s" 3
+LANG:10000 10 Priorität
+LANG:10001 8 Priority
+LANG:10027 18 Приоритет
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+24 "timeStr" 12 1 0 "s" 3
+LANG:10000 4 Zeit
+LANG:10001 4 Time
+LANG:10027 10 Время
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+140 "dpElement" 13 0 0 "s" 3
+LANG:10000 10 DP-Element
+LANG:10001 10 DP-Element
+LANG:10027 17 DP-элемент
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+160 "dpComment" 23 1 0 "s" 3
+LANG:10000 10 Datenpunkt
+LANG:10001 9 Datapoint
+LANG:10027 23 Точка данных
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+270 "_text" 12 1 0 "s" 3
+LANG:10000 9 Meldetext
+LANG:10001 8 Msg text
+LANG:10027 29 Текст сообщения
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+144 "direction" 3 1 0 "s" 3
+LANG:10000 8 Richtung
+LANG:10001 9 Direction
+LANG:10027 22 Направление
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+48 "_value" 4 1 0 "s" 3
+LANG:10000 4 Wert
+LANG:10001 5 Value
+LANG:10027 16 Значение
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+58 "ack" 2 1 0 "s" 3
+LANG:10000 11 Quittierung
+LANG:10001 3 Ack
+LANG:10027 8 Квит
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+30 "commentStr" 4 0 0 "s" 3
+LANG:10000 9 Kommentar
+LANG:10001 7 Comment
+LANG:10027 22 Комментарий
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+56 "_ack_time" 9 0 0 "s" 3
+LANG:10000 11 Quitt.-Zeit
+LANG:10001 8 Ack Time
+LANG:10027 35 Время квитирования
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+112 "_partner" 4 0 0 "s" 3
+LANG:10000 12 Partner-Zeit
+LANG:10001 12 Partner time
+LANG:10027 27 Время партнера
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+56 "_comment" 1 1 0 "s" 3
+LANG:10000 16 Kommentar-Anzahl
+LANG:10001 8 Comments
+LANG:10027 22 Комментарии
+"main(int row)
+{
+  as_commentAction(row, \"vision/SC/AS_detail\");
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+24 "_panel" 1 0 0 "s" 3
+LANG:10000 1 >
+LANG:10001 1 >
+LANG:10027 1 >
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+24 "detail" 1 1 0 "s" 3
+LANG:10000 3 ...
+LANG:10001 3 ...
+LANG:10027 3 ...
+"main(int row)
+{
+  as_detailAction(row, \"vision/SC/AS_detail\");
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+24 "ackable" 1 0 0 "s" 3
+LANG:10000 11 quittierbar
+LANG:10001 8 Ack able
+LANG:10027 22 Квитируемый
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+24 "oldest_ack" 4 0 0 "s" 3
+LANG:10000 8 älteste
+LANG:10001 6 eldest
+LANG:10027 12 старые
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+56 "_ack_user" 4 0 0 "s" 3
+LANG:10000 4 User
+LANG:10001 4 User
+LANG:10027 24 Пользователь
+"main(int row, string col)
+{
+  as_cellAction(row, col);
+}" 0
+
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+56 "partner" 4 0 0 "s" 3
+LANG:10000 7 Partner
+LANG:10001 7 Partner
+LANG:10027 14 Партнер
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+56 "dpid" 4 0 0 "s" 3
+LANG:10000 4 dpid
+LANG:10001 4 dpid
+LANG:10027 4 dpid
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+56 "count" 4 0 0 "s" 3
+LANG:10000 5 count
+LANG:10001 5 count
+LANG:10027 11 кол-во
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+56 "time" 14 0 0 "s" 3
+LANG:10000 4 time
+LANG:10001 4 time
+LANG:10027 10 время
+E
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+168 
+26 26 "" 1 3
+LANG:10000 2 #1
+LANG:10001 2 #1
+LANG:10027 2 #1
+"" 1 3
+LANG:10000 2 #2
+LANG:10001 2 #2
+LANG:10027 2 #2
+"" 1 3
+LANG:10000 2 #3
+LANG:10001 2 #3
+LANG:10027 2 #3
+8 16
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 0 0 0 1 7
+1 0
+14 21
+"state"
+""
+1 859 8 E E E 1 E 0 E N "_3DText" E N "_3DFace" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 arial,-1,13,5,50,0,0,0,0,0
+0  858 8 983 41
+2 "0s" 0 0 0 0 0 -1  E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

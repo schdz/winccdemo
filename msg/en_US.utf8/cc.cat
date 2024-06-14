@@ -1,0 +1,251 @@
+deviceType1,SMS (GSM)
+deviceType2,Voice
+deviceType3,Pager
+deviceType4,SMS (Analog)
+deviceType5,E-mail
+deviceType6,Fax
+
+ccCallingList,Calling list management
+ccDataset,Alert group management
+ccGeneral,General settings
+ccSchedulerDays,Special day management
+ccOverPara,Overparametrizing time chart
+ccPara,Communication Center Parametrization
+ccCyclicDataset,Cyclic Datasets
+
+datasetinuse,This alert group is in use (%1 %2), cannot be deleted!
+callinglistinuse,Calling list is in use (%1 %2), cannot be deleted!
+invalidMail, E-mail address has an invalid format!
+invalidNumber,Number contains invalid characters (valid are '+' and '0'-'9')!
+invalidPIN,PIN is invalid (it must have 4 digits)!
+deviceEmpty,Please fill in all fields properly!
+recipientUsed,This user is in use (%1 %2), cannot be deleted!
+deviceUsed,This device is in use (%1 %2), cannot be deleted!
+devicetypeUsed,This device type is in use (%1 %2), cannot be deleted!
+deviceNotUsed,This device is not in use, might not be released.
+confirmRelease,Are you sure to release this device?
+shiftNameEmpty,Shift name must not be empty!
+userChanged,User has been changed! Would you like to save?
+userNotInDomain,Some users of this calling list do not belong to the current domain! Should this calling list  be used nevertheless?
+use,Use
+dontuse,Don't use
+deviceTypeNameEmpty,Device type name must not be empty!
+callingListNameEmpty,Calling list name must not be empty!
+domainNameEmpty,Domain name must not be empty!
+shiftSetNameEmpty,Shift set name must not be empty!
+shiftNameEmpty,Shift name must not be empty!
+changeTopLevel?,Would you really want to change the top level shift set to this set? ATTENTION: all overparametrizations of this domain will be deleted!
+change,Change
+deviceExists,Device already exists with this name or number!
+errorConnectAlertGroup,Error reading alert group!
+alertGroupEmpty,The domain still cannot be used, because its alert group is not yet parametrized!
+confirmPin,PIN code and PIN code confirmation are different!
+confirmPassword,Password and password confirmation are different!
+newProvider,New provider
+modifyProvider,Modifying provider
+deleteProvider?,Would you really like to delete this provider?
+providerUsed,Provider must not be deleted, he is in use (%1)!
+wrongSplitTime,The splitting time must be defined between begin and end of the interval!
+
+devicetype,device type
+device,device
+callingList,calling list
+user,user
+User,User
+Substitute,Substitute
+FallbackPerson,Fallback list
+domain,domain
+shift,shift
+Shift,Shift
+cyclicDataset,Cyclic dataset
+allocate,Allocate
+specialDays,Special days
+timeChart,Time chart of domain 
+start,Start
+end,End
+name,Name:
+deviceTypeName,Device type name
+domainName,Domain name
+shiftName,Shift name
+shiftSetName,Shift set name
+input, input
+reachability,Reachability
+printedOn,Printed on:
+newUser,New user
+
+shiftPanel,Shift Management
+shiftAggregationPanel,Shift Set Management
+dpGroups,DP groups
+newCyclic,Defining new cyclic data set
+changeCyclic,Modifying cyclic data set
+splitInterval,Splitting time interval
+
+noSubstitute,No substitution
+allocatedTimeTooLongNotAllowed,Allocated time interval must not be longer then %1 hours!
+allocatedTimeTooLong,There are allocated time intervals longer then %1 hours! Would you like to allocate?
+multipleAllocatedNotAllowed,Recipient must not be allocated in more then one shift (found also in %1)!
+multipleAllocated,Recipient will be allocated in more then one shift (found also in %1)! Would you like to allocate him?
+inDomainUsed,Domain '%1' must not be cleared, user is in use (%2 %3)!
+noFallOutSubstitute,No substitute defined for the failured user!
+
+overlappedPeriods,You have defined overlapped time periods! Please define the period again!
+operationOverlapped,Overlapped time periods defined!
+durationTooLong,The time period you defined is too long!
+noUserSelected,Please select a user first!
+fromBiggerThenTo,Start time(From) must be smaller then end time(To)!
+operationAdded,New period has been added.
+operationModified,Period has been changed.
+usedAsTopLevel,Shift set is used as top level shift set in domain '%1', it must not be deleted!
+noMixedShiftsAllowed,Week day dependent and independent shifts must not be used together in a shift set!
+notMonday,Start date of the top level shift must be a monday!
+
+cannotBeChanged,Time interval can be changed only in shift management!
+cannotBeShifted,Time interval can be shifted only in shift management!
+noUserFound,No user found!
+substituteUser(s)?,Should user(s) be substituted by user '%1'?
+substitute,Substitute
+substituteUser,Substitute user
+noGapAllowed,Gaps cannot be defined!
+cannotBeAdded,New time intervals can be defined only in shift management!
+pastNotAllowed,Settings in the past cannot be changed!
+removeOverPara,Remove overparametrization
+removeOverPara?,Would you really like to remove the overparametrization of the day %1?
+remove,Remove
+selectUser,Select user
+changeWithLeft,Change user with left
+changeWithRight,Change user with right
+startOutOfDay,Interval must not be defined before the begin of the day!
+endOutOfDay,Interval must not be defined after the end of the day!
+leftGap,Interval must not begin in a gap!
+rightGap,Interval must not end in a gap!
+overGap,Interval must not be over a gap!
+removeMessages,Remove Message
+removeMessages?,Would you really want to remove all selected message(s)?
+removeAllMessages?,Would you really want to delete all messages of the queue?
+messageDeletedBy,Message removed by WinCC OA-user 
+noDomainWithShiftPlan,There is no domain with a parametrized top level shift plan!
+queueEmpty,The queue is empty.
+noDomainSelected,Please select a domain!
+invalidID,The ID name is invalid! It must not contain '|', '<>' or '°'!
+deleteBarWithButton,Please use the delete-button (left to the time line) to delete an interval!
+notAllUsersInDomain,The selected calling list cannot be used here because it contains users who do not belong to this domain!
+duplicatedPin,This PIN has been already assigned to another user!
+noCLswitchOut,There is no calling list defined! The domain '%1' will be set to "Off"!
+noCLswitchedOut,There was no calling list defined! The domain '%1' has been set to "Off"!
+
+usedWithEmptyGroup,Domain with empty alert group cannot be used! Please click 'Edit group' to edit the alert group!
+editGroup,Edit group
+restartCtrl,Please restart the ctrl-managers with the script ccController.ctl if you have changed the settings!
+
+#ts := telScript - Texte für das Telefonat
+
+
+#MAIN
+tsHello,Hello!
+tsIntro,This is the Communication Center.
+tsCompanie,E T M.
+
+#LOGIN
+tsLogin,Please enter your PIN for authentification.
+tsLoginNoDtmf,I have not recognized any DTMF tones, please try again!
+tsLoginWrong,This PIN is not correct, please try again!
+
+#MNU_MAIN
+tsMnuMain,Main menu
+tsMnuMain1,Press 1 to hear actual alerts
+tsMnuMain2,Press 2 to confirm messeges received per SMS or EMAIL.
+tsMnuMain3,Press 3 to obtain an alert overview.
+tsMnuMain4,Press 4 to order an alert overview.
+tsMnuMain5,Press 5 to get actual data values.
+tsMnuMain#,Press # to terminate the connection
+tsMnuMainRetour,Press # for going back to the main menu.
+
+#ALERT
+tsAlert,Alarm Menu
+tsAlertCount,There are [AlertCount] alerts available.
+tsNoAlerts,There are no current alerts available.
+tsFirstAlert,That was the first alert.
+tsLastAlert,That was the last alert.
+tsAlertTextError,Internal error, there is no text for this alert.
+
+#CONFIRM
+tsAlertSessionId,Please enter the four digit confirmation-code sent to you per SMS or EMAIL.
+tsConfirmAlertCount,There are [AlertCount] alerts available.
+tsConfirmNoAlerts,The confirmation code is invalid or the alarms are not relevant anymore.
+tsAlertNotify,The alert has been confirmed.
+tsAlertNotifyError,The alert could not be confirmed.
+tsAlertNotifyAll,[AlertCount] Alerts have been confirmed.
+
+#ALERTOVERVIEW
+tsAlertOverview,Alarmoverview
+
+#OVERVIEW
+tsOverview,Requesting an alertoverview
+tsOverview1,For requesting EMAIL please press 1
+tsOverview2,For requesting FAX please press 2
+tsAskForDomain,Please select one of the domains, you belong to.
+tsNotUsersDomain,You are not belonging to domain [DomainIdx]
+tsNoMailAddress,Sorry, I have no valid EMAIL address for sending you data.
+tsMailSent,Message sent.
+tsMailNoAlerts,There are no alerts, no overview was sent.
+tsMailError,Error nummer [ErrorNumber] occured.
+
+#MNU_ALERT
+tsMnuAlert4,By pressing 4
+tsMnuAlert5,5 and
+tsMnuAlert6,6 you may navigate through the alerts.
+tsMnuAlert*,You may confirm an alert by pressing *
+tsMnuAlert0,With Zero you can confirm all alerts.
+
+#DO_ALERT
+
+#DATASET
+tsEnterDataSetID,Which dataset would you like to obtain?
+tsMnuDataSet4,By pressing 4
+tsMnuDataSet5,5 and
+tsMnuDataSet6,6 you may navigate through the datasets.
+
+tsNoDataSet,I have not found this dataset.
+tsDataSetNoDps,There is no data in this dataset available.
+tsFirstDataSet,This was the first entry.
+tsLastDataSet,This was the last entry.
+#TIMEOUT_RETRY
+tsTimeOutRetry,Hello? Are you still online?
+
+#TIMEOUT_QUIT
+tsTimeOutQuit,I terminate the connection, now.
+
+#END
+tsEnd,I wish you a pleasant day!
+tsNZD,This function is not implemented, yet.
+
+#gsm - Texte für GSM Modem
+gsmWrongPIN,Sorry, your PIN [PIN] is not correct!
+gsmWrongSessionId,Sorry, your session ID [SessionId] is not correct!
+gsmNoAlerts,Sorry, but i can't find alerts with the session ID [SessionId]!
+gsmConfirm,Thank your, I have confirm [AlertCount] alerts with [SessionId].
+
+MsgState_1,Message is recorded.
+MsgState_2,Message will be blocked.
+MsgState_3,Message is blocked.
+#MsgState_4,Message is sending.
+MsgState_4,
+MsgState_5,Message has been sent at [MsgTime] to [MsgUserName].
+MsgState_6,Message can't sent to [MsgUserName].
+MsgState_7,Message has been confirmed at [MsgTime] by [MsgUserName].
+MsgState_8,Message is not confirmed from [MsgUserName].
+MsgState_9,Message has been acknowledged at [AlertAckTime].
+MsgState_10,Message is not acknowledged, yet.
+MsgState_11,Message is done.
+MsgState_12,Message is deleted at [MsgTime].
+
+AlertState_1,came
+AlertState_2,came unacknowledged
+AlertState_3,went
+AlertState_4,came and went unacknowledged
+
+MsgTemplate,[AlertDescription] [AlertText] [AlertState] at [AlertTime], Value is [AlertValue]. [MsgState]
+#MsgTemplate_Tel,
+MsgTemplate_Sms,([MsgSessionId]) [AlertDescription] [AlertText] [AlertState] at [AlertTime]. Value: [AlertValue]. [MsgState]
+MsgTemplate_Gsm,[AlertDescription] [AlertText] [AlertState] at [AlertTime]. Value: [AlertValue]. [MsgState]
+#MsgTemplate_EMail,

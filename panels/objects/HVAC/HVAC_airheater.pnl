@@ -1,0 +1,153 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 361 428 N "HVAC_Background" 1
+"$DPE"
+E E E E E 1 -1 -1 0  47 39
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+6 0
+"Border1"
+""
+1 30 30 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "HVAC_Background" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 2 1 0 1 E U  1 E 30 30 71 110
+4 12
+"Line1"
+""
+1 30 32 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "STD_panel_back" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E  30 32 69 107
+10 2
+"Polyline1"
+""
+1 28 109 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "HVAC_Backgnd_dark" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 3 30 109
+70 109
+70 33
+ 1
+1 13 3 "" 0
+0
+2 3
+"Text1"
+""
+1 53 89 E E E 1 E 1 E N "HVAC_Object_foregnd" E N "_Transparent" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 55 89 68 109
+0 2 2 "0s" 0 0 0 192 0 0  55 89 1
+3
+LANG:10000 26 Arial,-1,18,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,18,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,18,5,50,0,0,0,0,0
+0 3
+LANG:10000 1 +
+LANG:10001 1 +
+LANG:10027 1 +
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 3 "" -1
+"" ""
+"objects/HVAC/HVAC_bar.pnl" 240 130 T 13 0.4482758620689656 0 0.5238095238095237 -63.58620689655173 -42.33333333333333
+2
+"$DPE""$DPE"
+"$Farbe""HVAC_Air_heater_bar"
+0

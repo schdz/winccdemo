@@ -1,0 +1,2283 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 1004 584 N "STD_panel_back" 0
+"main()
+{
+
+}" 0
+ E E E E 1 -1 -1 0  956 51
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 14
+"Border1"
+""
+1 30 580 E E E 1 E 1 E N "_Transparent" E N "STD_device_body" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  2  0 3  "14.bmp" 65535 E 30 10 195 580
+1 497 45 "1" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 503 46 "1" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 496 40 "" 0
+0
+13 386
+"Button3"
+""
+1 658 244 E E E 1 E 1 E N "_3DText" E N "STD_panel_back" E E
+ E E
+154 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  656 242 816 272
+
+T 
+3
+LANG:10000 17 Trendkurven heute
+LANG:10001 12 Trends today
+LANG:10027 32 Данные за сегодня
+"// SimpleCtrlScriptStart {invalid}
+main()
+{
+  time tTime = getCurrentTime();
+  string ttTime = tTime;
+  
+  ttTime = substr(ttTime, 0,10);
+  ttTime = \"Trend - \"+ ttTime;
+  
+  EP_childPanelOn(ttTime);
+}
+
+EP_childPanelOn(string ttTime)
+{
+  ChildPanelOnCentral(\"mainpanels/childs/weather_station_trend.pnl\",
+      ttTime,
+      makeDynString(\"$yesterday:\" + \"FALSE\"));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentral}
+// File {mainpanels/childs/weather_station_trend.pnl}
+// Panel {ttTime}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// PanelPara1 {$yesterday:FALSE}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+" 0
+ E E E
+13 387
+"Button4"
+""
+1 830 244 E E E 1 E 1 E N "_3DText" E N "STD_panel_back" E E
+ E E
+155 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  828 242 988 272
+
+T 
+3
+LANG:10000 19 Trendkurven gestern
+LANG:10001 16 Trends yesterday
+LANG:10027 28 Данные за вчера
+"// SimpleCtrlScriptStart {invalid}
+main()
+{  
+  time tTime = getCurrentTime()-86400;
+  string ttTime = tTime;
+  
+  ttTime = substr(ttTime, 0,10);
+  ttTime = \"Trend - \"+ ttTime;
+
+  EP_childPanelOn(ttTime);
+}
+
+EP_childPanelOn(string ttTime)
+{
+  ChildPanelOnCentral(\"mainpanels/childs/weather_station_trend.pnl\",
+      ttTime,
+      makeDynString(\"$yesterday:\" + \"TRUE\"));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentral}
+// File {mainpanels/childs/weather_station_trend.pnl}
+// Panel {ttTime}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// PanelPara1 {$yesterday:TRUE}
+// SimpleCtrlScriptEnd {EP_childPanelOn}" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+1 509 47 "" 13
+0
+1 438 2 "" 0
+0
+1 442 2 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+2 63
+"Text12"
+""
+1 298 48 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+45 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 300 50 384 67
+0 2 2 "0s" 0 0 0 192 0 0  300 50 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Temperatur:
+LANG:10001 15 Air temperature
+LANG:10027 23 Температура:
+1 443 4 "" 0
+0
+1 447 4 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+2 70
+"Text13"
+""
+1 298 98 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+48 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 300 100 410 117
+0 2 2 "0s" 0 0 0 192 0 0  300 100 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 17 Luftfeuchtigkeit:
+LANG:10001 12 Air humidity
+LANG:10027 19 Влажность:
+1 448 5 "" 0
+0
+1 452 5 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+2 76
+"Text14"
+""
+1 298 148 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+50 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 300 150 369 167
+0 2 2 "0s" 0 0 0 192 0 0  300 150 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Luftdruck:
+LANG:10001 19 Barometric pressure
+LANG:10027 36 Давление (барометр):
+6 77
+"Border4"
+""
+1 290 368 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+54 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 290 296 637 455
+1 453 6 "" 0
+0
+1 457 6 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+2 83
+"Text15"
+""
+1 298 320 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+55 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 300 322 454 339
+0 2 2 "0s" 0 0 0 192 0 0  300 322 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 20 Windgeschwindigkeit:
+LANG:10001 10 Wind speed
+LANG:10027 17 Скорость:
+1 458 7 "" 0
+0
+1 462 7 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+2 89
+"Text16"
+""
+1 298 370 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+56 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 300 372 396 389
+0 2 2 "0s" 0 0 0 192 0 0  300 372 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Windrichtung:
+LANG:10001 14 Wind direction
+LANG:10027 23 Направление:
+6 96
+"Border5"
+""
+1 291 361 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+58 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 291 297 636 456
+6 98
+"Border6"
+""
+1 290 532 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+62 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 290 474 994 572
+2 104
+"Text19"
+""
+1 298 534 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+63 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 300 536 426 553
+0 2 2 "0s" 0 0 0 192 0 0  300 536 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 17 Eingabezeitpunkt:
+LANG:10001 14 Readings from:
+LANG:10027 18 Данные от:
+6 111
+"Border7"
+""
+1 291 509 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+65 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 291 475 995 573
+2 116
+"Text22"
+""
+1 298 464 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+69 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 300 466 386 483
+0 2 2 "0s" 0 0 0 192 0 0  300 466 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 12  Bewölkung 
+LANG:10001 8  Clouds 
+LANG:10027 22  Облачность 
+2 122
+"Text23"
+""
+1 691 494 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+75 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 693 496 778 513
+0 2 2 "0s" 0 0 0 192 0 0  693 496 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 10 Bedeckung:
+LANG:10001 9 Coverage:
+LANG:10027 17 Покрытие:
+2 124
+"Text24"
+""
+1 298 494 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+77 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 300 496 399 513
+0 2 2 "0s" 0 0 0 192 0 0  300 496 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 15 Klassifikation:
+LANG:10001 15 Classification:
+LANG:10027 11 Шкала:
+2 151
+"Text25"
+""
+1 298 286 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+83 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 300 288 346 305
+0 2 2 "0s" 0 0 0 192 0 0  300 288 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 6  Wind 
+LANG:10001 6  Wind 
+LANG:10027 12  Ветер 
+6 152
+"Border8"
+""
+1 290 257 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+85 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 290 211 637 279
+2 158
+"Text26"
+""
+1 298 234 E E E 1 E 1 E N "STD_text" E N "_3DFace" E E
+ E E
+86 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 300 236 413 253
+0 2 2 "0s" 0 0 0 192 0 0  300 236 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Globalstrahlung:
+LANG:10001 20 Total solar radiaton
+LANG:10027 39 Общ.солнечн.радиация:
+6 159
+"Border9"
+""
+1 291 262 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+87 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 291 212 636 280
+2 160
+"Text27"
+""
+1 298 200 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+88 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 300 202 422 219
+0 2 2 "0s" 0 0 0 192 0 0  300 202 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 17  Strahlungsdaten 
+LANG:10001 10  Radiaton 
+LANG:10027 17 Радиация 
+1 463 15 "" 0
+0
+1 467 15 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+6 192
+"Border11"
+""
+1 647 368 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+96 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 647 296 994 455
+1 468 18 "" 0
+0
+1 472 18 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+2 198
+"Text28"
+""
+1 660 310 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+97 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 662 312 768 349
+0 2 2 "0s" 0 0 0 192 0 0  662 312 2
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 14 Niederschlags.
+LANG:10001 10 Rain fall 
+LANG:10027 25 Уровень дожд. 
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 menge (1h):
+LANG:10001 12 amount (1h):
+LANG:10027 21 осадков (1ч):
+1 473 19 "" 0
+0
+1 477 19 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+2 204
+"Text29"
+""
+1 660 360 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+98 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 662 362 751 399
+0 2 2 "0s" 0 0 0 192 0 0  662 362 2
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Schneehöhe
+LANG:10001 11 Snow height
+LANG:10027 22 Высота снеж-
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 absolut:
+LANG:10001 9 absolute:
+LANG:10027 24 ного покрова:
+6 205
+"Border12"
+""
+1 648 361 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+99 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 648 297 993 456
+2 206
+"Text30"
+""
+1 655 286 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+100 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 657 288 768 305
+0 2 2 "0s" 0 0 0 192 0 0  657 288 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 16  Niederschläge 
+LANG:10001 15  Rain and snow 
+LANG:10027 47 Снежные и дождевые осадки
+1 478 20 "" 0
+0
+1 490 20 "0" 0
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 491 25 "" 0
+0
+1 495 25 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 498 45 "" 2
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 499 45 "" 4
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 500 45 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 501 45 "" 1
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 502 45 "" 5
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 504 46 "" 2
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 505 46 "" 4
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 506 46 "" 3
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 507 46 "" 1
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+1 508 46 "" 5
+1 "confirm" 1 1 "// SimpleCtrlScriptStart {valid}
+main(int iType)
+{
+
+}
+// SimpleCtrlScript {EP_confirm}
+// dpCount {1}
+// dp1 {$dpe_value}
+// SimpleCtrlScriptEnd {EP_confirm}
+" 0
+ 
+0
+2 270
+"Text17"
+""
+1 660 410 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+130 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 662 412 755 449
+0 2 2 "0s" 0 0 0 192 0 0  662 412 2
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Änderung
+LANG:10001 11 Snow height
+LANG:10027 17 Изм. снеж-
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 Schneehöhe:
+LANG:10001 11 difference:
+LANG:10027 24 ного покрова:
+2 436
+"Text18"
+""
+1 241 520 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+161 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 243 522 268 539
+0 2 2 "0s" 0 0 0 192 0 0  243 522 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 3 Ein
+LANG:10001 2 On
+LANG:10027 7 Вкл.
+2 437
+"Text20"
+""
+1 241 545 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+162 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 243 547 273 564
+0 2 2 "0s" 0 0 0 192 0 0  243 547 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Bat.
+LANG:10001 5 Power
+LANG:10027 7 Бат.
+6 54
+"Border3"
+""
+1 291 153 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 291 26 636 195
+6 56
+"Border2"
+""
+1 290 148 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 290 25 637 194
+2 55
+"Filter"
+""
+1 300 13 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+42 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 302 15 376 32
+0 2 2 "0s" 0 0 0 192 0 0  302 15 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 11  Luftdaten 
+LANG:10001 10  Air data 
+LANG:10027 34  Данные по воздуху 
+6 364
+"Border13"
+""
+1 648 127 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+150 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 648 26 993 280
+6 351
+"Border10"
+""
+1 647 138 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+147 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 647 25 994 279
+2 384
+"Text31"
+""
+1 655 14 E E E 1 E 1 E N "STD_text" E N "STD_textfield_back" E E
+ E E
+152 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 657 16 820 33
+0 2 2 "0s" 0 0 0 192 0 0  657 16 1
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0 3
+LANG:10000 24  Zeitverlauf Temperatur 
+LANG:10001 30  Time diagram air temperature 
+LANG:10027 75 Временная диаграмма температуры воздуха
+1 512 49 "" 7
+0
+1 519 50 "" 7
+0
+1 526 51 "" 7
+0
+1 533 52 "" 7
+0
+13 118
+"Button1"
+""
+1 790 531 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+71 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  788 529 905 559
+
+T 
+3
+LANG:10000 11 Handeingabe
+LANG:10001 12 Manual input
+LANG:10027 21 Ручной ввод
+"// SimpleCtrlScriptStart {invalid}
+main()
+{
+  EP_childPanelOn();
+}
+EP_childPanelOn()
+{
+  ChildPanelOnCentral(\"mainpanels/childs/weatherstation_manual_input.pnl\",
+      getCatStr(\"DemoApp\",\"title_of_man_input\"),
+      makeDynString(\"\"));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentral}
+// File {mainpanels/childs/weatherstation_manual_input.pnl}
+// Panel {getCatStr(\"DemoApp\",\"title_of_man_input\")}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+" 0
+ E E E
+14 121
+"onlineArchiveValueBox"
+""
+1 437 530 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+74 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  435 528 680 558
+2 "0s" 0 0 0 0 0 -1  E "// SimpleCtrlScriptStart {invalid}
+main()
+{
+  EP_textFieldIn();
+}
+
+EP_textFieldIn()
+{
+  dyn_errClass err;
+  
+  if( dpSubStr( \"WS1.value.clouds.coverage:_original.._stime\", DPSUB_DP_EL ) == \"\" )
+  {
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+    return;
+  }
+  //dpConnect(\"EP_textFieldInCB\", \"WS1.value.clouds.coverage:_original.._stime\");
+  dpConnect(\"EP_textFieldInCB\", \"WS1.value.clouds.coverage:_online.._stime\");
+  err = getLastError();
+  if (dynlen(err) > 0)
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+}
+
+EP_textFieldInCB(string dp, time tNewValue)
+{
+  setValue(\"\", \"text\", tNewValue);
+}
+
+// SimpleCtrlScript {EP_textFieldIn}
+// DP {WS1.value.clouds.coverage}
+// DPConfig {:_original.._stime}
+// DPType {time}
+// UseDPUnit {FALSE}
+// UseDPFormat {FALSE}
+// SimpleCtrlScriptEnd {EP_textFieldIn}
+" 0
+ E
+14 123
+"TextField2"
+""
+1 790 492 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+76 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  788 490 904 519
+2 "0s" 0 0 0 0 0 -1  E "// SimpleCtrlScriptStart {invalid}
+main()
+{
+  EP_textFieldIn();
+}
+
+
+EP_textFieldIn()
+{
+dyn_errClass err;
+
+  if( dpSubStr( \"WS1.value.clouds.coverage:_online.._value\", DPSUB_DP_EL ) == \"\" )
+  {
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+    return;
+  }
+
+  dpConnect(\"EP_textFieldInCB\",
+            \"WS1.value.clouds.coverage:_online.._value\");
+  err = getLastError();
+  if (dynlen(err) > 0)
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+
+}
+
+
+EP_textFieldInCB(string dp, int iNewValue)
+{
+  setValue(\"\", \"text\", dpValToString(dp, iNewValue, TRUE) );
+}
+
+// SimpleCtrlScript {EP_textFieldIn}
+// DP {WS1.value.clouds.coverage}
+// DPConfig {:_online.._value}
+// DPType {int}
+// UseDPUnit {TRUE}
+// UseDPFormat {TRUE}
+// SimpleCtrlScriptEnd {EP_textFieldIn}
+" 0
+ E
+14 125
+"TextField3"
+""
+1 437 492 E E E 1 E 1 E N "STD_textfield_text" E N "STD_textfield_back" E E
+ E E
+78 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  435 490 680 519
+2 "0s" 0 0 0 0 0 -1  E "// SimpleCtrlScriptStart {invalid}
+main()
+{
+  EP_textFieldIn();
+}
+
+
+EP_textFieldIn()
+{
+dyn_errClass err;
+
+  if( dpSubStr( \"WS1.value.clouds.classification:_online.._value\", DPSUB_DP_EL ) == \"\" )
+  {
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+    return;
+  }
+
+  dpConnect(\"EP_textFieldInCB\",
+            \"WS1.value.clouds.classification:_online.._value\");
+  err = getLastError();
+  if (dynlen(err) > 0)
+    setValue(\"\", \"color\", \"_dpdoesnotexist\");
+
+}
+
+
+EP_textFieldInCB(string dp, string sNewValue)
+{
+  setValue(\"\", \"text\", dpValToString(dp, sNewValue, TRUE) );
+}
+
+// SimpleCtrlScript {EP_textFieldIn}
+// DP {WS1.value.clouds.classification}
+// DPConfig {:_online.._value}
+// DPType {string}
+// UseDPUnit {TRUE}
+// UseDPFormat {TRUE}
+// SimpleCtrlScriptEnd {EP_textFieldIn}
+" 0
+ E
+13 178
+"Button2"
+""
+1 301 418 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+92 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  299 416 459 446
+
+T 
+3
+LANG:10000 19 Windrichtungsprofil
+LANG:10001 17 Direction profile
+LANG:10027 31 Диаг.направлений
+"// SimpleCtrlScriptStart {invalid}
+main()
+{
+  EP_childPanelOn();
+}
+
+EP_childPanelOn()
+{
+  ChildPanelOnCentral(\"vision/xy_trend.pnl\",
+      getCatStr(\"DemoApp\",\"windProfile\"),
+      makeDynString(\"\"));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentral}
+// File {vision/XYTrend_1.pnl}
+// Panel {getCatStr(\"DemoApp\",\"windProfile\")}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+" 0
+ E E E
+13 226
+"Button5"
+""
+1 469 418 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+108 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,16,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,16,5,50,0,0,0,0,0
+0  467 416 627 446
+
+T 
+3
+LANG:10000 22 Häufigkeitsverteilung
+LANG:10001 12 Distribution
+LANG:10027 26 Распределение
+"// SimpleCtrlScriptStart {invalid}
+main()
+{
+  EP_childPanelOn();
+}
+
+EP_childPanelOn()
+{
+  ChildPanelOnCentral(\"vision/frequency_bar_trend.pnl\",
+      getCatStr(\"DemoApp\",\"frequdist\"),
+      makeDynString(\"$DPE:WS1.value.wind.speed\"));
+}
+
+// SimpleCtrlScript {EP_childPanelOn}
+// Function {ChildPanelOnCentral}
+// File {vision/frequency_bar_trend.pnl}
+// Panel {getCatStr(\"DemoApp\",\"frequdist\"}
+// Parent {}
+// Module {}
+// OffsetX {0}
+// OffsetY {0}
+// PanelPara1 {$DPE:WS1.value.wind.speed}
+// SimpleCtrlScriptEnd {EP_childPanelOn}
+" 0
+ E E E
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+2 26
+"Text1"
+""
+1 147 49 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	value, unit;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY);		
+
+  dpGet(\"WS1.value.wind.speed:_online.._value\",value);	
+  unit = dpGetUnit(\"WS1.value.wind.speed\");
+  
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+value+\" \"+unit),posX+10,posY+35,100,10,10);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ 0 1 1 0 1 E U  0 E 149 51 279 80
+0 2 0 "0s" 0 0 0 192 0 0  149 51 2
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 21 Windgeschwindigkeits-
+LANG:10001 15 Air speed meter
+LANG:10027 40 Датчик скорости ветра
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 19 messer (Anemometer)
+LANG:10001 12 (Anemometer)
+LANG:10027 20 (Анемометр)
+2 27
+"Text2"
+""
+1 146 13 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	value, unit;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY);		
+  				
+  dpGet(\"WS1.value.wind.direction:_online.._value\",value);	
+  unit = dpGetUnit(\"WS1.value.wind.direction\");
+  
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+value+\" \"+unit),posX+10,posY+18,100,10,10);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ 0 1 1 0 1 E U  0 E 148 15 272 29
+0 2 0 "0s" 0 0 0 192 0 0  148 15 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 19 Windrichtungsmesser
+LANG:10001 16 Direction sensor
+LANG:10027 35 Датчик направления
+2 28
+"Text3"
+""
+1 31 4 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 33 6 98 20
+0 2 0 "0s" 0 0 0 192 0 0  33 6 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Blitzableiter
+LANG:10001 13 Lightning rod
+LANG:10027 22 Молниеотвод
+2 29
+"Text4"
+""
+1 30 70 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 32 72 88 98
+0 2 0 "0s" 0 0 0 65 0 0  32 72 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Antenne
+LANG:10001 7 Antenna
+LANG:10027 14 Антенна
+2 30
+"Text5"
+""
+1 135 240 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	value, unit;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY);		
+  				
+  dpGet(\"WS1.value.radiation.global:_online.._value\",value);	
+  unit = dpGetUnit(\"WS1.value.radiation.global\");
+  
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+value+\" \"+unit),posX+60,posY+35,100,10,10);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ 0 1 1 0 1 E U  0 E 141 242 245 271
+0 2 0 "0s" 0 0 0 193 0 0  193 242 2
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 16 Strahlungsmesser
+LANG:10001 14 Solar radiaton
+LANG:10027 37 Датчик солнечной ра-
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 (Pyranometer)
+LANG:10001 20 sensor (pyranometer)
+LANG:10027 35 диации (пиранометр)
+2 31
+"Text6"
+""
+1 150 340 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	value, unit;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY);		
+  				
+  dpGet(\"WS1.value.air.humidity:_online.._value\",value);	
+  unit = dpGetUnit(\"WS1.value.air.humidity\");
+  
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+value+\" \"+unit),posX+60,posY+35,100,10,10);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ 0 1 1 0 1 E U  0 E 142 342 258 371
+0 2 0 "0s" 0 0 0 193 0 0  200 342 2
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 19 Feuchtigkeitsmesser
+LANG:10001 15 Humidity sensor
+LANG:10027 31 Датчик влажности
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 12 (Hygrometer)
+LANG:10001 12 (hygrometer)
+LANG:10027 20 (гигрометр)
+2 32
+"Text7"
+""
+1 137 411 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+32 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	value, unit;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY);		
+  				
+  dpGet(\"WS1.value.air.temperature:_online.._value\",value);	
+  unit = dpGetUnit(\"WS1.value.air.temperature\");
+  
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+value+\" \"+unit),posX+80,posY+0,100,10,10);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ 0 1 1 0 1 E U  0 E 139 413 216 427
+0 2 0 "0s" 0 0 0 192 0 0  139 413 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 11 Thermometer
+LANG:10001 11 Thermometer
+LANG:10027 18 Термометр
+2 33
+"Text8"
+""
+1 138 454 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+33 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	value, unit;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY);		
+  				
+  dpGet(\"WS1.value.rain.amount:_online.._value\",value);	
+  unit = dpGetUnit(\"WS1.value.rain.amount\");
+  
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+value+\" \"+unit),posX+80,posY+30,100,10,10);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ 0 1 1 0 1 E U  0 E 140 456 266 485
+0 2 0 "0s" 0 0 0 192 0 0  140 456 2
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 19 Niederschlagsmesser
+LANG:10001 11 Rain gauge 
+LANG:10027 23 Датчик дождя
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 (Pluviometer)
+LANG:10001 13 (pluviometer)
+LANG:10027 18 (дождемер)
+2 34
+"Text9"
+""
+1 137 429 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+34 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	value, unit;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY);		
+  				
+  dpGet(\"WS1.value.air.pressure:_online.._value\",value);	
+  unit = dpGetUnit(\"WS1.value.air.pressure\");
+  
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+value+\" \"+unit),posX+70,posY+5,100,10,10);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ 0 1 1 0 1 E U  0 E 139 431 199 445
+0 2 0 "0s" 0 0 0 192 0 0  139 431 1
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 9 Barometer
+LANG:10001 9 Barometer
+LANG:10027 16 Барометр
+2 35
+"Text10"
+""
+1 20 290 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+35 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 292 55 321
+0 2 0 "0s" 0 0 0 193 0 0  38 292 2
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Solar-
+LANG:10001 5 Solar
+LANG:10027 18 Солнечная
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 zellen
+LANG:10001 5 panel
+LANG:10027 12 панель
+2 36
+"Text11"
+""
+1 4 340 E E E 1 E 1 E N "STD_border_dark" E N "_Transparent" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E "main()
+{
+  // opens a small display to show 
+  // the name of the choosen pic-file
+  
+  float 	posX, posY;
+  string	value, unit;
+  
+  // read the position of this button and the file name
+  getMultiValue(\"\",\"position\", posX, posY);	
+  	
+  dpGet(\"WS1.value.snow.height:_online.._value\",value);	
+  unit = dpGetUnit(\"WS1.value.snow.height\");
+  
+  
+  // put a small primtive textfield with the value as a
+  // new reference element on runtime
+  addSymbol(myModuleName(), myPanelName(), \"objects/minitext.pnl\", \"textmax\", 
+            makeDynString(\"$s_text:\"+\" \"+value+\" \"+unit),posX+30,posY+35,100,10,10);
+  
+  // remove the symbol/small display after 3 secs
+  delay(3);
+  removeSymbol(myModuleName(),myPanelName(),\"textmax\");
+}" 0
+ 0 1 1 0 1 E U  0 E 2 342 84 371
+0 2 0 "0s" 0 0 0 193 0 0  43 342 2
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 13 Schneehöhen-
+LANG:10001 11 Snow height
+LANG:10027 22 Датчик уров-
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Messung
+LANG:10001 6 sensor
+LANG:10027 15 ня снега
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+1 511 48 "" 1
+0
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+3 2 "" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 287 174 T 43 1 0 1 195 -134
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.air.temperature"
+3 4 "Group6" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 450 42 T 47 1 0 1 32 48
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.air.humidity"
+3 5 "Group8" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 450 92 T 49 1 0 1 32 48
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.air.pressure"
+3 6 "Group12" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 450 42 T 51 1 0 1 31 268
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.wind.speed"
+3 7 "Group13" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 450 92 T 52 1 0 1 31 268
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.wind.direction"
+3 15 "Group27" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 464 135 T 89 1 0 1 17 95
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.radiation.global"
+3 18 "Group32" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 464 322 T 94 1 0 1 307 -12
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.rain.amount"
+3 19 "Group33" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 464 372 T 95 1 0 1 307 -12
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.snow.height"
+3 20 "" -1
+"" ""
+"objects/STD_INDICATORS/bar_1.pnl" 831 313 T 102 1.19753086419753 0 1.03703703703704 -114.925925925926 -21.7777777777778
+11
+"$b_IBit""FALSE"
+"$b_PvRange""TRUE"
+"$b_showAlert""FALSE"
+"$dpe_value""WS1.value.rain.amount"
+"$f_Max""10000"
+"$f_Min""0"
+"$s_Col""[20,20,100]"
+"$s_Text0""0%"
+"$s_Text100""100%"
+"$s_Text50""50%"
+"$s_TextUnit""XXX"
+3 25 "Group13" -1
+"" ""
+"objects/STD_VALUES/value_1.pnl" 770 360 T 129 1 0 1 1 50
+3
+"$b_IBit""FALSE"
+"$b_ShowInfo""TRUE"
+"$dpe_value""WS1.value.snow.height"
+3 40 "" -1
+"" ""
+"objects/STD_INDICATORS/trend.pnl" 597 41 T 153 0.733333333333333 0 0.955 188.866666666667 -27.805
+7
+"$b_Autoscale""TRUE"
+"$b_Menue""FALSE"
+"$b_PvRange""FALSE"
+"$dpe_value""WS1.value.air.temperature"
+"$f_Max""10000"
+"$f_Min""0"
+"$i_TimeRange""3600"
+3 45 "" -1
+"" ""
+"objects/STD_LEDS/Led_3.pnl" 200 520 T 159 0.666666666666667 0 0.666666666666667 84.6666666666667 174.333333333333
+5
+"$b_IBit""FALSE"
+"$b_ShowAlert""FALSE"
+"$dpe_value""WS1.state.on"
+"$s_ColOff""STD_led_Off"
+"$s_ColOn""STD_led_On"
+3 46 "Group24" -1
+"" ""
+"objects/STD_LEDS/Led_3.pnl" 200 520 T 160 0.666666666666667 0 0.666666666666667 84.6666666666667 199.333333333333
+5
+"$b_IBit""FALSE"
+"$b_ShowAlert""FALSE"
+"$dpe_value""WS1.alert.powersupply"
+"$s_ColOff""STD_alert"
+"$s_ColOn""STD_led_On"
+3 47 "" -1
+"" ""
+"objects/STD_INDICATORS/pie_chart.pnl" 819 478 T 162 1 0 1 275 151
+6
+"$b_pvssRange""TRUE"
+"$dpe_percentage1""WS1.value.clouds.coverage"
+"$f_max""100"
+"$f_min""0"
+"$s_col1""[0,80,100]"
+"$s_col2""[40,40,40]"
+3 48 "" -1
+"" ""
+"objects/help_button_large.pnl" 38 485 T 162 1 0 1 -28 -5
+1
+"$hlp_keyword""da_weather"
+3 49 "" -1
+"" ""
+"objects/STD_INDICATORS/tendency.pnl" 420 59 T 162 1 0 1 197 40
+1
+"$dpe""WS1.value.air.temperature"
+3 50 "" -1
+"" ""
+"objects/STD_INDICATORS/tendency.pnl" 447 110 T 163 1 0 1 170 39
+1
+"$dpe""WS1.value.air.humidity"
+3 51 "" -1
+"" ""
+"objects/STD_INDICATORS/tendency.pnl" 457 175 T 164 1 0 1 160 24
+1
+"$dpe""WS1.value.air.pressure"
+3 52 "" -1
+"" ""
+"objects/STD_INDICATORS/tendency.pnl" 455 251 T 165 1 0 1 162 38
+1
+"$dpe""WS1.value.radiation.global"
+0

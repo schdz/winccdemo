@@ -1,0 +1,1129 @@
+V 13
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+PANEL,-1 -1 391 327 N "STD_panel_back" 0
+"main()
+{
+  time now = getCurrentTime(), today, yesterday, x;
+  int  pos;
+  int  begin;
+
+today = makeTime(x=year(now),month(now),day(now), begin);							// heute
+yesterday = makeTime(year(today-86400),month(today-86400),day(today-86400));	// gestern 
+}" 0
+ E E E E 1 -1 -1 0  30 -6
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+13 42
+"ok"
+""
+1 198 288 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+41 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  198 288 288 318
+
+T 
+3
+LANG:10000 2 OK
+LANG:10001 2 OK
+LANG:10027 2 OK
+"main()
+{
+  time 			StartTime, EndTime;
+  dyn_time	 	Time = 0;
+  dyn_float 	df = 0;
+  string 		sMessageText;
+  
+  StartTime = makeTime(tib_year.text, tib_month.text, tib_day.text, tib_hour.text, tib_minute.text, tib_second.text);
+  EndTime   = makeTime(tie_year.text, tie_month.text, tie_day.text, tie_hour.text, tie_minute.text, tie_second.text);
+  
+  if (StartTime > EndTime)
+  {
+    sMessageText=getCatStr(\"DemoApp\",\"valSmall\");
+    ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),0,0);
+  }
+  if ((StartTime > getCurrentTime()) || (EndTime > getCurrentTime()))
+  { 
+      sMessageText=getCatStr(\"DemoApp\",\"timeVal\");
+      ChildPanelOnModal(\"vision/MessageWarning\",\"Warning\",makeDynString(sMessageText),0,0);
+  }
+  if ((StartTime < EndTime) && (StartTime < getCurrentTime()) && (EndTime < getCurrentTime()))
+  {
+    dynAppend(Time, StartTime);      
+    dynAppend(Time, EndTime);
+    PanelOffReturn(df, Time);
+  }
+}" 0
+ E E E
+13 43
+"abbrechen"
+""
+1 292 288 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+42 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  292 288 382 318
+
+T 
+3
+LANG:10000 9 Abbrechen
+LANG:10001 6 Cancel
+LANG:10027 16 Отменить
+"main()
+{
+  dyn_float df=0;
+  dyn_time  Time=0;
+  //PanelOff();
+  PanelOffReturn(df, Time);
+}" 0
+ E E E
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+6 3
+"Border1"
+""
+1 21 17 E E E 1 E 1 E N "_Window" E N "_Transparent" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 17 381 137
+2 4
+"Text1"
+""
+1 29 32 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 31 32 61 47
+0 2 2 "0s" 0 0 0 192 0 0  31 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 Jahr:
+LANG:10001 5 Year:
+LANG:10027 7 Год:
+2 5
+"Text2"
+""
+1 99 32 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 101 32 143 47
+0 2 2 "0s" 0 0 0 192 0 0  101 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Monat:
+LANG:10001 5 Month
+LANG:10027 11 Месяц:
+2 6
+"Text3"
+""
+1 161 32 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+6 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 161 32 187 47
+0 2 2 "0s" 0 0 0 192 0 0  161 32 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Tag:
+LANG:10001 4 Day:
+LANG:10027 9 День:
+2 11
+"Text4"
+""
+1 29 82 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+11 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 31 82 78 97
+0 2 2 "0s" 0 0 0 192 0 0  31 82 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Stunde:
+LANG:10001 5 Hour:
+LANG:10027 7 Час:
+2 12
+"Text5"
+""
+1 99 82 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+12 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 101 82 146 97
+0 2 2 "0s" 0 0 0 192 0 0  101 82 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Minute:
+LANG:10001 8 Minutes:
+LANG:10027 13 Минуты:
+2 13
+"Text6"
+""
+1 159 82 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+13 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 161 82 218 97
+0 2 2 "0s" 0 0 0 192 0 0  161 82 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Sekunde:
+LANG:10001 7 Second:
+LANG:10027 15 Секунды:
+6 14
+"Border2"
+""
+1 20 16 E E E 1 E 1 E N "_ButtonShadow" E N "_Transparent" E E
+ E E
+14 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 20 16 380 136
+2 15
+"Text7"
+""
+1 29 12 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+15 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 31 12 152 27
+0 2 2 "0s" 0 0 0 192 0 0  31 12 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 21 Zeitbereich -  Beginn
+LANG:10001 13 Starting time
+LANG:10027 23 Время начала
+6 19
+"Border3"
+""
+1 22 148 E E E 1 E 1 E N "_Window" E N "_Transparent" E E
+ E E
+19 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 22 148 381 268
+2 20
+"Text8"
+""
+1 30 163 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+20 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 32 163 62 178
+0 2 2 "0s" 0 0 0 192 0 0  32 163 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 5 Jahr:
+LANG:10001 5 Year:
+LANG:10027 7 Год:
+2 21
+"Text9"
+""
+1 100 163 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+21 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 102 163 144 178
+0 2 2 "0s" 0 0 0 192 0 0  102 163 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 6 Monat:
+LANG:10001 5 Month
+LANG:10027 11 Месяц:
+2 22
+"Text10"
+""
+1 162 163 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+22 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 162 163 188 178
+0 2 2 "0s" 0 0 0 192 0 0  162 163 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Tag:
+LANG:10001 4 Day:
+LANG:10027 9 День:
+2 27
+"Text11"
+""
+1 30 213 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+27 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 32 213 79 228
+0 2 2 "0s" 0 0 0 192 0 0  32 213 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Stunde:
+LANG:10001 5 Hour:
+LANG:10027 7 Час:
+2 28
+"Text12"
+""
+1 100 213 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+28 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 102 213 147 228
+0 2 2 "0s" 0 0 0 192 0 0  102 213 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 7 Minute:
+LANG:10001 8 Minutes:
+LANG:10027 13 Минуты:
+2 29
+"Text13"
+""
+1 160 213 E E E 1 E 1 E N "STD_text" E N "_Transparent" E E
+ E E
+29 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 162 213 219 228
+0 2 2 "0s" 0 0 0 192 0 0  162 213 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 8 Sekunde:
+LANG:10001 7 Second:
+LANG:10027 15 Секунды:
+6 30
+"Border4"
+""
+1 21 147 E E E 1 E 1 E N "_ButtonShadow" E N "_Transparent" E E
+ E E
+30 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 21 147 380 267
+2 31
+"Text14"
+""
+1 30 140 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+31 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 32 140 64 155
+0 2 2 "0s" 0 0 0 192 0 0  32 140 1
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0 3
+LANG:10000 4 Ende
+LANG:10001 11 Ending time
+LANG:10027 29 Время окончания
+21 0
+"tib_year"
+""
+1 28 48 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+0 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  28 47 97 74
+0
+
+E
+E
+E
+
+N 1970 2038 1 1970 1 1
+21 1
+"tib_month"
+""
+1 98 48 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  98 47 152 74
+0
+
+E
+E
+E
+
+N 1 12 1 1 1 1
+21 2
+"tib_day"
+""
+1 158 48 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  158 47 212 74
+0
+
+E
+E
+E
+
+N 1 31 1 1 1 1
+13 7
+"tib_today"
+""
+1 231 97 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  231 97 301 127
+
+T 
+3
+LANG:10000 5 Jetzt
+LANG:10001 3 Now
+LANG:10027 12 Сейчас
+"main()
+{
+int begin;
+time ti = getCurrentTime();
+
+dpGet(\"_Config.StartHour:_online.._value\", begin);
+
+setMultiValue(\"tib_year\",   \"text\", year(ti),
+              \"tib_month\",  \"text\", month(ti),
+              \"tib_day\",    \"text\", (1==tib_day.enabled)?day(ti):0,
+              \"tib_hour\",   \"text\", (1==tib_hour.enabled)?hour(ti):begin,
+              \"tib_minute\", \"text\", (1==tib_minute.enabled)?minute(ti):0,
+              \"tib_second\", \"text\", (1==tib_second.enabled)?second(ti):0);
+}" 0
+ E E "main()
+{
+int begin;
+time ti = getCurrentTime();
+
+dpGet(\"_Config.StartHour:_online.._value\", begin);
+
+setMultiValue(\"tib_year\",   \"text\", year(ti),
+              \"tib_month\",  \"text\", month(ti),
+              \"tib_day\",    \"text\", (1==tib_day.enabled)?day(ti-86400):0,
+              \"tib_hour\",   \"text\", (1==tib_hour.enabled)?hour(ti):begin,
+              \"tib_minute\", \"text\", (1==tib_minute.enabled)?minute(ti):0,
+              \"tib_second\", \"text\", (1==tib_second.enabled)?second(ti):0);
+}" 0
+
+21 8
+"tib_hour"
+""
+1 28 98 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  28 97 96 124
+0
+
+E
+E
+E
+
+N 0 23 1 0 1 1
+21 9
+"tib_minute"
+""
+1 98 98 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  98 97 152 124
+0
+
+E
+E
+E
+
+N 0 59 1 0 1 1
+21 10
+"tib_second"
+""
+1 158 98 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  158 97 212 124
+0
+
+E
+E
+E
+
+N 0 59 1 0 1 1
+21 16
+"tie_year"
+""
+1 28 180 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+16 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  28 179 96 206
+0
+
+E
+E
+E
+
+N 1970 2038 1 1970 1 1
+21 17
+"tie_month"
+""
+1 98 180 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+17 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  98 179 152 206
+0
+
+E
+E
+E
+
+N 1 12 1 1 1 1
+21 18
+"tie_day"
+""
+1 158 180 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+18 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  158 179 212 206
+0
+
+E
+E
+E
+
+N 1 31 1 1 1 1
+13 23
+"tie_today"
+""
+1 232 228 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+23 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  232 228 302 258
+
+T 
+3
+LANG:10000 5 Jetzt
+LANG:10001 3 Now
+LANG:10027 12 Сейчас
+"main()
+{
+int begin;
+time ti = getCurrentTime();
+
+dpGet(\"_Config.StartHour:_online.._value\", begin);
+  
+  setMultiValue(\"tie_year\",   \"text\", year(ti),
+                \"tie_month\",  \"text\", month(ti),
+                \"tie_day\",    \"text\", (1==tie_day.enabled)?day(ti):0,
+                \"tie_hour\",   \"text\", (1==tie_hour.enabled)?hour(ti):begin,
+                \"tie_minute\", \"text\", (1==tie_minute.enabled)?minute(ti):0,
+                \"tie_second\", \"text\", (1==tie_second.enabled)?second(ti):0);
+}" 0
+ E E "main()
+{
+int begin;
+time ti = getCurrentTime();
+
+dpGet(\"_Config.StartHour:_online.._value\", begin);
+  
+  setMultiValue(\"tie_year\",   \"text\", year(ti),
+                \"tie_month\",  \"text\", month(ti),
+                \"tie_day\",    \"text\", (1==tie_day.enabled)?day(ti):0,
+                \"tie_hour\",   \"text\", (1==tie_hour.enabled)?hour(ti):begin,
+                \"tie_minute\", \"text\", (1==tie_minute.enabled)?minute(ti):0,
+                \"tie_second\", \"text\", (1==tie_second.enabled)?second(ti):0);
+}" 0
+
+21 24
+"tie_hour"
+""
+1 28 230 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+24 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  28 229 96 256
+0
+
+E
+E
+E
+
+N 0 23 1 0 1 1
+21 25
+"tie_minute"
+""
+1 98 230 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+25 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  98 229 152 256
+0
+
+E
+E
+E
+
+N 0 59 1 0 1 1
+21 26
+"tie_second"
+""
+1 158 230 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+26 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  158 229 214 256
+0
+
+E
+E
+E
+
+N 0 59 1 0 1 1
+22 36
+"ti_selection"
+""
+1 215 47 E E E 1 E 1 E N "STD_inputfield_text" E N "STD_inputfield_back" E E
+ E E
+36 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  215 46 379 73
+4
+3
+LANG:10000 7 Gestern
+LANG:10001 9 yesterday
+LANG:10027 10 вчера
+
+0
+3
+LANG:10000 11 Diese Woche
+LANG:10001 9 this week
+LANG:10027 19 эта неделя
+
+0
+3
+LANG:10000 12 Vorige Woche
+LANG:10001 9 last week
+LANG:10027 27 прошлая неделя
+
+0
+3
+LANG:10000 18 Letzten 24 Stunden
+LANG:10001 13 last 24 hours
+LANG:10027 30 последние 24 часа
+
+0
+
+E
+"main()
+{ 
+  int 	pos;
+  time 	TimeRangeStart, TimeRangeEnd;
+  time 	now = getCurrentTime(), today, yesterday;
+  int 	begin;
+  int 	closed = 1;
+  int 	shift;
+
+  dpGet(\"_Config.StartHour:_online.._value\", begin,
+        \"_Config.NumShifts:_online.._value\", shift);
+  getValue(\"\",\"selectedPos\",pos);
+
+  TimeRangeStart = makeTime(tib_year.text,tib_month.text,tib_day.text,tib_hour.text, tib_minute.text,tib_second.text);
+  TimeRangeEnd   = makeTime(tie_year.text,tie_month.text,tie_day.text,tie_hour.text, tie_minute.text,tie_second.text);
+  today 		 = makeTime(year(now),month(now),day(now), begin);
+  yesterday 	 = today-86400;
+
+	switch (pos) 
+	{					
+		case 1: 	// yesterday
+					TimeRangeStart = yesterday;
+		   			TimeRangeEnd = today;
+					break;
+					
+		case 2:  	// this week
+					TimeRangeStart =today - (86400 * (weekDay(today)-1));
+					TimeRangeEnd = TimeRangeStart + 86400*7;
+					break;
+					
+		case 3:  	// last week
+					TimeRangeStart = today - (86400 * (weekDay(today)-1 + 7));
+  					TimeRangeEnd = TimeRangeStart + 86400*7;
+					break;
+					
+		case 4:  	// last 24h
+					TimeRangeStart 	= getCurrentTime() -86400;
+					TimeRangeEnd 	= TimeRangeStart +86400;
+					break;
+    	default: ;
+	}		 
+
+	setMultiValue(\"tib_year\",   \"text\", year(TimeRangeStart),
+                  \"tib_month\",  \"text\", month(TimeRangeStart),
+                  \"tib_day\",    \"text\", day(TimeRangeStart),
+                  \"tib_hour\",   \"text\", hour(TimeRangeStart),
+                  \"tib_minute\", \"text\", minute(TimeRangeStart),
+                  \"tib_second\", \"text\", second(TimeRangeStart));
+                  
+	setMultiValue(\"tie_year\",   \"text\", year(TimeRangeEnd),
+                  \"tie_month\",  \"text\", month(TimeRangeEnd),
+                  \"tie_day\",    \"text\", day(TimeRangeEnd),
+                  \"tie_hour\",   \"text\", hour(TimeRangeEnd),
+                  \"tie_minute\", \"text\", minute(TimeRangeEnd),
+                  \"tie_second\", \"text\", second(TimeRangeEnd));
+}" 0
+
+E
+ 0 0
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0

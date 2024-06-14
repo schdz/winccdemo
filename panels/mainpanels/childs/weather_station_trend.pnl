@@ -1,0 +1,585 @@
+V 13
+3
+LANG:10000 8 (NoName)
+LANG:10001 8 (NoName)
+LANG:10027 19 (Без имени)
+PANEL,-1 -1 800 555 N "STD_panel_back" 1
+"$yesterday"
+"main()
+{
+time today;
+
+  if ($yesterday == TRUE)
+  {
+    today = makeTime(year(getCurrentTime()),month(getCurrentTime()),day(getCurrentTime()),0,0,0);
+    setValue(\"trend\",\"trendStop\");
+    setValue(\"trend\",\"timeInterval\", (today) - (today - 86400));
+    setValue(\"trend\",\"timeBegin\",(today - 86400));
+  }
+  else
+  {
+    today = makeTime(year(getCurrentTime()),month(getCurrentTime()),day(getCurrentTime()),0,0,0);
+    setValue(\"trend\",\"trendStop\");
+    setValue(\"trend\",\"timeInterval\", getCurrentTime()- today);
+    setValue(\"trend\",\"timeBegin\", today);
+  }
+}" 0
+ E E E E 1 -1 -1 0  956 51
+""0  1
+E E 2
+"CBRef" "0"
+"EClose" E
+0 0 0
+""
+1
+DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
+LAYER, 0 
+3
+LANG:10000 6 Layer1
+LANG:10001 6 Layer1
+LANG:10027 6 Layer1
+6 364
+"Border13"
+""
+1 11 197 E E E 1 E 1 E N "STD_frame_light" E N "_Transparent" E E
+ E E
+9 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 11 11 790 510
+6 351
+"Border10"
+""
+1 10 171 E E E 1 E 1 E N "STD_frame_dark" E N "_Transparent" E E
+ E E
+8 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+2
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  0 E 10 10 789 508
+2 384
+"Text31"
+""
+1 20 0 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+10 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+3
+"sizePolicy" "Fixed Fixed"
+"dashclr"N "_Transparent"
+"antiAliased" "0"
+E E 0 1 1 0 1 E U  1 E 22 2 613 20
+0 2 2 "0s" 0 0 0 192 0 0  22 2 1
+3
+LANG:10000 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,17,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,17,5,50,0,0,0,0,0
+0 3
+LANG:10000 77 Temperatur, Luftdruck, Feuchte | Niederschlagsmenge, Schneehöhe, Bewölkung:
+LANG:10001 78 Air temperature, pressure, humidity | rain fall amount, snow height, coverage:
+LANG:10027 167 Темп.воздуха, давление, влажность | уровень дожд.осадков, высота снежного покрова, покрытие:
+23 388
+"trend"
+""
+1 20 21 E E E 1 E 1 E N "STD_text" E N "STD_trend_back" E E
+ E E
+7 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10001 32 Courier New,-1,12,5,50,0,0,0,0,0
+LANG:10027 32 Courier New,-1,12,5,50,0,0,0,0,0
+0  18 19 782 500
+5 E E E 2 -1 N {0,0,0} 0 0 1 0 1 0 3 0 "#1_1" "WS1.value.air.temperature" 0 2 0 0 1 "2 1 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 14 Lufttemperatur
+LANG:10001 15 Air temperature
+LANG:10027 37 Температура воздуха
+3
+LANG:10000 3 °C
+LANG:10001 3 °C
+LANG:10027 3 °C
+1 "" ""  0 -40 60 0 0 1 0 1 N "Red"
+0 0 0 0 0 0 0 0
+0 "#1_2" "WS1.value.air.pressure" 0 2 0 0 1 "4 0 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 9 Luftdruck
+LANG:10001 12 Air pressure
+LANG:10027 31 Давление воздуха
+3
+LANG:10000 3 hPa
+LANG:10001 3 hPa
+LANG:10027 3 hPa
+1 "" ""  0 600 1100 0 0 1 0 1 N "blue"
+0 0 0 0 0 0 0 0
+0 "#1_3" "WS1.value.air.humidity" 0 2 0 0 1 "2 1 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 16 Luftfeuchtigkeit
+LANG:10001 8 Humidity
+LANG:10027 18 Влажность
+3
+LANG:10000 1 %
+LANG:10001 1 %
+LANG:10027 1 %
+1 "" ""  0 0 100 0 0 1 0 1 N "Green"
+0 0 0 0 0 0 0 0
+1 1 "%X" "%x" 0 1 0 0 
+E -1 N {0,0,0} 0 0 1 0 1 0 3 0 "#2_1" "WS1.value.rain.amount" 0 2 0 0 1 "3 1 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 18 Niederschlagsmenge
+LANG:10001 16 Rain fall amount
+LANG:10027 52 Количество дождевых осадков
+3
+LANG:10000 5 l/m²
+LANG:10001 5 l/m²
+LANG:10027 7 л/м²
+1 "" ""  0 0 200 0 0 1 0 1 N "STD_trend_pen4"
+0 0 0 0 0 0 0 0
+0 "#2_2" "WS1.value.snow.height" 0 2 0 0 1 "3 0 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 11 Schneehöhe
+LANG:10001 11 Snow height
+LANG:10027 22 Высота снеж-
+3
+LANG:10000 2 cm
+LANG:10001 2 cm
+LANG:10027 4 см
+1 "" ""  1 0 0 1 0 1 N "STD_trend_pen5"
+0 0 0 0 0 0 0 0
+0 "#2_3" "WS1.value.clouds.coverage" 0 2 0 0 1 "3 1 0.0" "%x" 0 0 2 0 E
+E
+1 0 0 3 2
+3
+LANG:10000 10 Bewölkung
+LANG:10001 8 Coverage
+LANG:10027 16 Покрытие
+3
+LANG:10000 1 %
+LANG:10001 1 %
+LANG:10027 1 %
+1 "" ""  0 0 100 0 0 1 0 1 N "STD_trend_pen6"
+0 0 0 0 0 0 0 0
+1 1 "%X" "%x" 0 1 0 0 
+E 1 0 0 0 90 0 10 7200
+3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  3
+LANG:10000 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,12,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,12,5,50,0,0,0,0,0
+0  100 
+N {0,0,0} 0 0 1 0 1 150 0 5 5 1 2
+0
+13 390
+"cmd_close"
+""
+1 678 518 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+6 0 0 0 27 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  678 518 792 548
+
+T 
+3
+LANG:10000 10 Schließen
+LANG:10001 5 Close
+LANG:10027 14 Закрыть
+"main()
+{
+  removeGlobal(\"Exporting\");
+  removeGlobal(\"TrendType\");
+  removeGlobal(\"TrendName\");
+  removeGlobal(\"FileName\");
+  removeGlobal(\"StartTime\");
+  removeGlobal(\"EndTime\");
+  removeGlobal(\"DP\");
+  removeGlobal(\"name\");
+  removeGlobal(\"unit\");
+//  removeGlobal(\"ddt\");
+//  removeGlobal(\"ddf\");
+  dpSet(\"_VarTrendOpen.UiNumber:_original.._value\",0,
+        \"_VarTrendOpen.PanelName:_original.._value\",\"\",
+        \"_VarTrendOpen.TrendData:_original.._value\",\"\");
+  PanelOff();
+}" 0
+ E E E
+13 391
+"cmd_toolbar"
+""
+1 828 1198 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+5 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  558 518 672 548
+
+T 
+3
+LANG:10000 15 Funktionsleiste
+LANG:10001 7 Toolbar
+LANG:10027 22 Инструменты
+"main()
+{
+  int open;
+	
+  getValue(\"trend\",\"manageCommands\",open);
+	
+  setValue(\"trend\",\"manageCommands\",!open);  
+}
+" 0
+ E E E
+13 392
+"cmd_legend"
+""
+1 438 518 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+4 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  438 518 552 548
+
+T 
+3
+LANG:10000 7 Legende
+LANG:10001 6 Legend
+LANG:10027 29 Усл.обозначения
+"main()
+{
+  int open;
+	
+  getValue(\"trend\",\"manageLegend\",open);
+	
+  setValue(\"trend\",\"manageLegend\",!open);  
+}
+" 0
+ E E E
+13 394
+"Button4"
+""
+1 318 518 E E E 1 E 1 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+3 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  318 518 432 548
+
+T 
+3
+LANG:10000 10 Aktuell...
+LANG:10001 10 Current...
+LANG:10027 17 Текущий...
+"main()
+{
+  time tTime;
+ 
+  tTime = getCurrentTime();   
+  
+  setValue(\"trend\",\"trendStop\");
+  setValue(\"trend\",\"timeInterval\",tTime - (tTime - 3600));
+  setValue(\"trend\",\"timeBegin\",(tTime - 3600));
+  
+  trend.trendRun(); 
+}
+" 0
+ E E E
+13 396
+"Button2"
+""
+1 190 520 E E E 1 E 0 E N "STD_button_text" E N "STD_pushbutton_back" E E
+ E E
+2 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  188 518 312 548
+
+T 
+3
+LANG:10000 17 Demo- Zeitbereich
+LANG:10001 15 Demo time range
+LANG:10027 25 Демо-диапазон
+"main()
+{
+  time demoDataStart, demoDataEnd; 
+ 
+  dpGet(\"ApplicationProperties.demoDataStart:_online.._value\", demoDataStart,
+  		\"ApplicationProperties.demoDataEnd:_online.._value\", demoDataEnd);
+  
+  setValue(\"trend\",\"trendStop\");
+  setValue(\"trend\",\"timeInterval\", (demoDataEnd) - (demoDataEnd - 86400));
+  setValue(\"trend\",\"timeBegin\",(demoDataEnd - 86400));
+  
+  //trend.trendRun(); 
+}" 0
+ E E "main()
+{
+  time demoDataEnd;
+  
+  dpGet(\"ApplicationProperties.demoDataEnd:_online.._value\", demoDataEnd);
+
+  if (period(demoDataEnd) == 0) 
+    this.visible = FALSE;
+  else 
+    this.visible = TRUE;
+}" 0
+
+20 395
+"CheckButton1"
+""
+1 10 520 E E E 1 E 1 E N "STD_text" E N "STD_panel_back" E E
+ E E
+1 0 0 0 0 0
+E E E
+0
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+
+0
+3
+LANG:10000 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10001 26 Arial,-1,13,5,50,0,0,0,0,0
+LANG:10027 26 Arial,-1,13,5,50,0,0,0,0,0
+0  8 518 147 542
+1
+T 
+3
+LANG:10000 15 Auto-Skalierung
+LANG:10001 10 Auto-scale
+LANG:10027 23 Авто-масштаб
+
+0 
+3
+LANG:10000 0 
+LANG:10001 0 
+LANG:10027 0 
+E E
+0 0 0 0 0
+1
+E E
+E"main()
+{
+  bool 	bState;
+  int	air_temp_min, air_temp_max, 
+  		air_pres_min, air_pres_max,
+  		air_hum_min, air_hum_max,
+  		rai_amo_min, rai_amo_max,
+  		sno_hei_min, sno_hei_max,
+  		clo_cov_min, clo_cov_max;
+  
+  bState = this.state(0);
+  
+  switch(bState)
+  {
+    case 0:
+    {
+    
+      dpGet(\"WS1.value.air.temperature:_pv_range.._min\", air_temp_min);
+      dpGet(\"WS1.value.air.temperature:_pv_range.._max\", air_temp_max);
+      dpGet(\"WS1.value.air.pressure:_pv_range.._min\", air_pres_min);
+	  dpGet(\"WS1.value.air.pressure:_pv_range.._max\", air_pres_max);
+	  dpGet(\"WS1.value.air.humidity:_pv_range.._min\", air_hum_min);
+	  dpGet(\"WS1.value.air.humidity:_pv_range.._max\", air_hum_max);
+	  dpGet(\"WS1.value.rain.amount:_pv_range.._min\", rai_amo_min);
+	  dpGet(\"WS1.value.rain.amount:_pv_range.._max\", rai_amo_max);
+	  dpGet(\"WS1.value.snow.height:_pv_range.._min\", sno_hei_min);
+	  dpGet(\"WS1.value.snow.height:_pv_range.._max\", sno_hei_max);
+	  dpGet(\"WS1.value.clouds.coverage:_pv_range.._min\", clo_cov_min);
+	  dpGet(\"WS1.value.clouds.coverage:_pv_range.._max\", clo_cov_max);
+	  
+      setMultiValue(\"trend\",\"disconnectDirectly\",\"#1_1\",
+      				\"trend\",\"disconnectDirectly\",\"#1_2\",
+      				\"trend\",\"disconnectDirectly\",\"#1_3\",
+      				\"trend\",\"disconnectDirectly\",\"#2_1\",
+      				\"trend\",\"disconnectDirectly\",\"#2_2\",
+      				\"trend\",\"disconnectDirectly\",\"#2_3\",
+      				\"trend\",\"curveAutoscale\", \"#1_1\", FALSE,
+      				\"trend\",\"curveAutoscale\", \"#1_2\", FALSE,
+      				\"trend\",\"curveAutoscale\", \"#1_3\", FALSE,
+      				\"trend\",\"curveAutoscale\", \"#2_1\", FALSE,
+      				\"trend\",\"curveAutoscale\", \"#2_2\", FALSE,
+      				\"trend\",\"curveAutoscale\", \"#2_3\", FALSE,
+      				\"trend\",\"curveMin\", \"#1_1\", air_temp_min,
+      				\"trend\",\"curveMax\", \"#1_1\", air_temp_max,
+      				\"trend\",\"curveMin\", \"#1_2\", air_pres_min,
+      				\"trend\",\"curveMax\", \"#1_2\", air_pres_max,
+      				\"trend\",\"curveMin\", \"#1_3\", air_hum_min,
+      				\"trend\",\"curveMax\", \"#1_3\", air_hum_max,
+      				\"trend\",\"curveMin\", \"#2_1\", rai_amo_min,
+      				\"trend\",\"curveMax\", \"#2_1\", rai_amo_max,      
+      				\"trend\",\"curveMin\", \"#2_2\", sno_hei_min,
+      				\"trend\",\"curveMax\", \"#2_2\", sno_hei_max,   
+      				\"trend\",\"curveMin\", \"#2_3\", clo_cov_min,
+      				\"trend\",\"curveMax\", \"#2_3\", clo_cov_max,
+      				\"trend\",\"connectDirectly\",\"#1_1\",\"WS1.value.air.temperature:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#1_2\",\"WS1.value.air.pressure:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#1_3\",\"WS1.value.air.humidity:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#2_1\",\"WS1.value.rain.amount:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#2_2\",\"WS1.value.snow.height:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#2_3\",\"WS1.value.clouds.coverage:_online.._value\");
+      break;
+    }
+    
+    case 1:
+    {
+      setMultiValue(\"trend\",\"disconnectDirectly\",\"#1_1\",
+      				\"trend\",\"disconnectDirectly\",\"#1_2\",
+      				\"trend\",\"disconnectDirectly\",\"#1_3\",
+      				\"trend\",\"disconnectDirectly\",\"#2_1\",
+      				\"trend\",\"disconnectDirectly\",\"#2_2\",
+      				\"trend\",\"disconnectDirectly\",\"#2_3\",
+      				\"trend\",\"curveAutoscale\", \"#1_1\", TRUE,
+      				\"trend\",\"curveAutoscale\", \"#1_2\", TRUE,
+      				\"trend\",\"curveAutoscale\", \"#1_3\", TRUE,
+      				\"trend\",\"curveAutoscale\", \"#2_1\", TRUE,
+      				\"trend\",\"curveAutoscale\", \"#2_2\", TRUE,
+      				\"trend\",\"curveAutoscale\", \"#2_3\", TRUE,
+      				\"trend\",\"connectDirectly\",\"#1_1\",\"WS1.value.air.temperature:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#1_2\",\"WS1.value.air.pressure:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#1_3\",\"WS1.value.air.humidity:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#2_1\",\"WS1.value.rain.amount:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#2_2\",\"WS1.value.snow.height:_online.._value\",
+      				\"trend\",\"connectDirectly\",\"#2_3\",\"WS1.value.clouds.coverage:_online.._value\");
+      break;
+    }
+  }
+}" 0
+0
+LAYER, 1 
+3
+LANG:10000 6 Layer2
+LANG:10001 6 Layer2
+LANG:10027 6 Layer2
+0
+LAYER, 2 
+3
+LANG:10000 6 Layer3
+LANG:10001 6 Layer3
+LANG:10027 6 Layer3
+0
+LAYER, 3 
+3
+LANG:10000 6 Layer4
+LANG:10001 6 Layer4
+LANG:10027 6 Layer4
+0
+LAYER, 4 
+3
+LANG:10000 6 Layer5
+LANG:10001 6 Layer5
+LANG:10027 6 Layer5
+0
+LAYER, 5 
+3
+LANG:10000 6 Layer6
+LANG:10001 6 Layer6
+LANG:10027 6 Layer6
+0
+LAYER, 6 
+3
+LANG:10000 6 Layer7
+LANG:10001 6 Layer7
+LANG:10027 6 Layer7
+0
+LAYER, 7 
+3
+LANG:10000 6 Layer8
+LANG:10001 6 Layer8
+LANG:10027 6 Layer8
+0
+0
